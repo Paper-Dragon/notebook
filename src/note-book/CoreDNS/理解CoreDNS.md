@@ -53,7 +53,7 @@ Docker
 
 #### 环境变量
 
-CoreDNS 在其配置中支持环境变量替换。它们可以在 Corefile 中的任何地方使用。语法是（也支持`{$ENV_VAR}`更像 Windows 的语法 ）。`{%ENV_VAR%}`CoreDNS 在解析 Corefile 时替换变量的内容。
+CoreDNS 在其配置中支持环境变量替换。它们可以在 Corefile 中的任何地方使用。语法是（也支持`{\$ENV_VAR}`更像 Windows 的语法 ）。`{\%ENV_VAR\%}`CoreDNS 在解析 Corefile 时替换变量的内容。
 
 #### 服务器语法模块
 
