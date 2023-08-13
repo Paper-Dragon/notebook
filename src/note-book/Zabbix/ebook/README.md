@@ -1,6 +1,17 @@
 # ZCS认证
 
 - [ZCS5_Day_1.pdf](ZCS5_Day_1.pdf)
+
+
+
+<PDF url="/ZCS5_Day_1.pdf" />
+
+```md
+<PDF url="/ZCS5_Day_1.pdf" />
+```
+
+
+
 - [ZCS5_Day_2.pdf](ZCS5_Day_2.pdf)
 
 - [ZCS5_Day_3.pdf](ZCS5_Day_3.pdf)

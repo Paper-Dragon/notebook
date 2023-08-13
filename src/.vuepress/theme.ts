@@ -3,20 +3,20 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "paper-dragon.github.io",
   
   fullscreen: true,
   
   author: {
     name: "PaperDragon",
-    url: "https://gitee.com/PaperDragon",
+    url: "https://github.com/Paper-Dragon",
   },
 
   iconAssets: "fontawesome-with-brands",
 
   logo: "/logo.svg",
 
-  repo: "https://gitee.com/PaperDragon/note-book",
+  repo: "https://github.com/Paper-Dragon/paper-dragon",
 
   docsDir: "src",
 
@@ -34,13 +34,13 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
+      "/notebook/": ["1234"],
     },
   },
 
   // page meta
   metaLocales: {
-    editLink: "在 Gitee 上编辑此页",
+    editLink: "在 Github 上编辑此页",
   },
 
   plugins: {
