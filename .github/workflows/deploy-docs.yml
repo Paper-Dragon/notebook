@@ -1,5 +1,4 @@
-
-name: 部署文档
+name: 部署文档和发布镜像
 
 on:
   push:
@@ -11,29 +10,61 @@ permissions:
   contents: write
 
 jobs:
-  deploy-gh-pages:
+  check-os:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      # - name: Free Disk Space (Ubuntu)
+      #   uses: jlumbroso/free-disk-space@main
+      #   with:
+      #     # this might remove tools that are actually needed,
+      #     # if set to "true" but frees about 6 GB
+      #     tool-cache: false
+          
+      #     # all of these default to true, but feel free to set to
+      #     # "false" if necessary for your workflow
+      #     android: true
+      #     dotnet: true
+      #     haskell: true
+      #     large-packages: true
+      #     docker-images: true
+      #     swap-storage: true
+
+      - name: 拉源码
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          # 如果你文档需要 Git 子模块，取消注释下一行
-          # submodules: true
+          submodules: true
 
       - name: 安装 pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
           run_install: true
-          version: 8
+          version: 9
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip' # caching pip dependencies
+          cache-dependency-path: "requirements.txt"
+
+      - name: 安装python依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成图云
+        run: python main.py
 
       - name: 设置 Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: pnpm
-
+      
+      - name: 添加状态页面
+        run: |-
+          sed -i 's/关于我/内容分发网络部署状态/g' src/.vuepress/navbar.ts
+          sed -i 's/link:.*me.md\",/link: \"https:\/\/cloudflare-cloudnative-pages.geekery.cn\/\",/g' src/.vuepress/navbar.ts
+          sed -i 's/address-card/diagram-project/g' src/.vuepress/navbar.ts
 
       - name: 构建文档
         env:
@@ -45,6 +76,140 @@ jobs:
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # 这是文档部署到的分支名称
-          branch: gh-pages
+          repository-name: Paper-Dragon/notebook
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: main
           folder: src/.vuepress/dist
+      
+      - name: 登陆到DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+      - name: assets for docker
+        run: |
+          cp -rvf src/.vuepress/dist ./file
+          echo "TAG=geekery_cn-$(git rev-parse --short HEAD)" >> $GITHUB_ENV 
+
+      - name: 构建和推送主域名docker镜像
+        uses: docker/build-push-action@v4.1.1
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAG }}
+
+    # - name: 检查
+    #   run: |-
+    #     echo "==== 系统信息 ===="
+    #     echo "Hostname: $(hostname)"
+    #     echo "CPU Info: $(grep "model name" /proc/cpuinfo | uniq)"
+    #     echo "Memory Info: $(free -m | awk 'NR==2{printf "Total: %sMB, Used: %sMB (%.2f%%)\n", $2,$3,$3/$2*100 }')"
+    #     echo "Disk Info: $(df -h | awk '$NF=="/"{printf "Total: %dGB, Used: %dGB (%s)\n", $2,$3,$5}')"
+    #     echo "==== 网络信息 ===="
+    #     echo "IP Addresses:"
+    #     ip addr show | grep -w inet | awk '{print $2}'
+    #     echo "Default Gateway: $(ip route show default | awk '/default via/ {print $3}')"
+    #     echo "DNS Servers: $(grep nameserver /etc/resolv.conf | awk '{print $2}')"
+    #     echo "curl ifconfig.icu/all.json"
+    #     curl ifconfig.icu/all.json
+    #     echo "\n"
+    #     echo "==== CPU ===="
+    #     lscpu
+
+    #     echo "==== 系统负载 ===="
+    #     top -n 1 -b | grep "load average:" | awk '{print $12 $13 $14}'
+    #     echo -e "-------------------------------System Information----------------------------"
+    #     echo -e "Hostname:\t\t"`hostname`
+    #     echo -e "uptime:\t\t\t"`uptime | awk '{print $3,$4}' | sed 's/,//'`
+    #     echo -e "Manufacturer:\t\t"`cat /sys/class/dmi/id/chassis_vendor`
+    #     echo -e "Product Name:\t\t"`cat /sys/class/dmi/id/product_name`
+    #     echo -e "Version:\t\t"`cat /sys/class/dmi/id/product_version`
+    #     echo -e "Serial Number:\t\t"`cat /sys/class/dmi/id/product_serial`
+    #     echo -e "Machine Type:\t\t"`vserver=$(lscpu | grep Hypervisor | wc -l); if [ $vserver -gt 0 ]; then echo "VM"; else echo "Physical"; fi`
+    #     echo -e "Operating System:\t"`hostnamectl | grep "Operating System" | cut -d ' ' -f5-`
+    #     echo -e "Kernel:\t\t\t"`uname -r`
+    #     echo -e "Architecture:\t\t"`arch`
+    #     echo -e "Processor Name:\t\t"`awk -F':' '/^model name/ {print $2}' /proc/cpuinfo | uniq | sed -e 's/^[ \t]*//'`
+    #     echo -e "Active User:\t\t"`w | cut -d ' ' -f1 | grep -v USER | xargs -n1`
+    #     echo -e "System Main IP:\t\t"`hostname -I`
+    #     echo ""
+    #     echo -e "-------------------------------CPU/Memory Usage------------------------------"
+    #     echo -e "Memory Usage:\t"`free | awk '/Mem/{printf("%.2f%"), $3/$2*100}'`
+    #     echo -e "Swap Usage:\t"`free | awk '/Swap/{printf("%.2f%"), $3/$2*100}'`
+    #     echo -e "CPU Usage:\t"`cat /proc/stat | awk '/cpu/{printf("%.2f%\n"), ($2+$4)*100/($2+$4+$5)}' |  awk '{print $0}' | head -1`
+    #     echo ""
+    #     echo -e "-------------------------------Disk Usage >80%-------------------------------"
+    #     df -Ph | sed s/%//g | awk '{ if($5 > 80) print $0;}'
+    #     echo ""
+
+    #     echo -e "-------------------------------For WWN Details-------------------------------"
+    #     vserver=$(lscpu | grep Hypervisor | wc -l)
+    #     if [ $vserver -gt 0 ]
+    #     then
+    #     echo "$(hostname) is a VM"
+    #     else
+    #     cat /sys/class/fc_host/host?/port_name
+    #     fi
+    #     echo ""
+
+  # build-github-pages:
+  #   runs-on: ubuntu-latest
+  #   needs: check-os
+  #   steps:
+  #     - name: 拉源码
+  #       uses: actions/checkout@v3
+  #       with:
+  #         fetch-depth: 0
+  #         # 如果你文档需要 Git 子模块，取消注释下一行
+  #         submodules: true
+
+  #     - name: 安装 pnpm
+  #       uses: pnpm/action-setup@v4
+  #       with:
+  #         run_install: true
+  #         version: 9
+
+  #     - uses: actions/setup-python@v4
+  #       with:
+  #         python-version: '3.11'
+  #         cache: 'pip' # caching pip dependencies
+  #         cache-dependency-path: "requirements.txt"
+
+  #     - name: 安装python依赖
+  #       run: pip install -r requirements.txt
+
+  #     - name: 生成图云
+  #       run: python main.py
+
+  #     - name: 设置 Node.js
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 20
+  #         cache: pnpm
+      
+  #     - name: 更改主机名
+  #       run: |-
+  #         sed -i 's/hostname: "https:\/\/paper-dragon.github.io",/hostname: "https:\/\/www.geekery.cn",/g' src/.vuepress/theme.ts
+  #         grep hostname src/.vuepress/theme.ts
+      
+  #     - name: 添加状态页面
+  #       run: |-
+  #         sed -i 's/关于我/内容分发网络部署状态/g' src/.vuepress/navbar.ts
+  #         sed -i 's/link:.*me.md\",/link: \"https:\/\/cloudflare-cloudnative-pages.geekery.cn\/\",/g' src/.vuepress/navbar.ts
+  #         sed -i 's/address-card/diagram-project/g' src/.vuepress/navbar.ts
+
+  #     - name: 构建文档
+  #       env:
+  #         NODE_OPTIONS: --max_old_space_size=8192
+  #       run: |-
+  #         pnpm run docs:build
+  #         > src/.vuepress/dist/.nojekyll
+
+  #     - name: 部署文档
+  #       uses: JamesIves/github-pages-deploy-action@v4
+  #       with:
+  #         # 这是文档部署到的分支名称
+  #         branch: gh-pages
+  #         folder: src/.vuepress/dist

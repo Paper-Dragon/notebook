@@ -1,1 +1,0 @@
-for i in `git branch -r`; do git checkout `basename $i` && git pull --all; done
