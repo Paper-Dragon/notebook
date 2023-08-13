@@ -53,6 +53,26 @@ export default hopeTheme({
     //   category: "Announcements",
     //   categoryId: "DIC_kwDOG_Pt2M4COD69",
     // },
+    components: {
+      // 你想使用的组件
+      components: [
+        // "ArtPlayer",
+        // "AudioPlayer",
+        // "Badge",
+        // "BiliBili",
+        // "CodePen",
+        "PDF",
+        // "Replit",
+        // "Share",
+        // "SiteInfo",
+        // "StackBlitz",
+        // "VidStack",
+        // "VideoPlayer",
+        // "XiGua",
+        // "YouTube",
+      ],
+    },
+
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
