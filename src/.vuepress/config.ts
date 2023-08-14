@@ -1,5 +1,6 @@
 import { defineUserConfig } from "vuepress";
 import { cut } from "nodejs-jieba";
+import { umamiAnalyticsPlugin } from 'vuepress-plugin-umami-analytics'
 import { searchProPlugin } from "vuepress-plugin-search-pro"
 import theme from "./theme.js";
 
@@ -30,6 +31,11 @@ export default defineUserConfig({
       // ],
       autoSuggestions: false,
       suggestDelay: 60,
+    }),
+    umamiAnalyticsPlugin({
+      // options 
+      id: "eecd3f56-5668-4c9e-b123-b2853b91a310",
+      src: "https://analytics.umami.is/script.js"
     }),
   ],
 

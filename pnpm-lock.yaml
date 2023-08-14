@@ -20,6 +20,9 @@ devDependencies:
   vuepress-plugin-search-pro:
     specifier: 2.0.0-beta.235
     version: 2.0.0-beta.235(vuepress@2.0.0-beta.66)
+  vuepress-plugin-umami-analytics:
+    specifier: ^1.4.0
+    version: 1.4.0
   vuepress-theme-hope:
     specifier: 2.0.0-beta.235
     version: 2.0.0-beta.235(vuepress@2.0.0-beta.66)
@@ -1871,7 +1874,7 @@ packages:
   /@types/markdown-it-emoji@2.0.2:
     resolution: {integrity: sha512-2ln8Wjbcj/0oRi/6VnuMeWEHHuK8uapFttvcLmDIe1GKCsFBLOLBX+D+xhDa9oWOQV0IpvxwrSfKKssAqqroog==}
     dependencies:
-      '@types/markdown-it': 12.2.3
+      '@types/markdown-it': 13.0.0
     dev: true
 
   /@types/markdown-it@12.2.3:
@@ -1923,7 +1926,7 @@ packages:
   /@types/sax@1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 20.4.10
     dev: true
 
   /@types/trusted-types@2.0.3:
@@ -6749,6 +6752,18 @@ packages:
       sitemap: 7.1.1
       vuepress: 2.0.0-beta.66(@vuepress/client@2.0.0-beta.66)(vue@3.3.4)
       vuepress-shared: 2.0.0-beta.235(vuepress@2.0.0-beta.66)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - supports-color
+    dev: true
+
+  /vuepress-plugin-umami-analytics@1.4.0:
+    resolution: {integrity: sha512-pfd9/iV8Xa6nCEFSyHL3DM891yIFJUJ6qgjfo8XSwaF9EDz17QpoEZJmT0n9dwJshM2u7qwmiXz7SpNOPwOWYA==}
+    engines: {node: ^16.0.0 || >=18.0.0}
+    dependencies:
+      '@vuepress/client': 2.0.0-beta.66
+      '@vuepress/core': 2.0.0-beta.66
+      '@vuepress/utils': 2.0.0-beta.66
     transitivePeerDependencies:
       - '@vue/composition-api'
       - supports-color
