@@ -16,11 +16,11 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "https://github.com/Paper-Dragon/paper-dragon",
+  repo: "https://github.com/Paper-Dragon/paper-dragon.github.io",
 
   docsDir: "src",
 
-  docsBranch: "master",
+  docsBranch: "main",
 
   // navbar
   navbar,
