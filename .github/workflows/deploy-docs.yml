@@ -101,7 +101,7 @@ jobs:
           path: ./file
       - name: 部署到个人主机
         continue-on-error: true
-        run: -|
+        run: |
          sudo chattr -iaR /www/wwwroot/note-book/*
          sudo rm -rvf /www/wwwroot/note-book/*
          sudo mv -vf file/* /www/wwwroot/note-book/
