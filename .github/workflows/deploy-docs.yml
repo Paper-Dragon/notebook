@@ -1,4 +1,3 @@
-
 name: 部署文档和发布镜像
 
 on:
@@ -89,3 +88,20 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAGDATE }}
+  deploy-hosted:
+    runs-on: self-hosted
+    timeout-minutes: 60
+    steps:
+      - name: 下载上一个步骤生成的产物
+        uses: actions/download-artifact@v2.1.1
+        continue-on-error: true
+        with:
+          name: artifacts-html
+          path: ./file
+      - name: 部署到个人主机
+        continue-on-error: true
+        run: -|
+         sudo rm -rvf /www/wwwroot/note-book/
+         sudo mv -vf file/* /www/wwwroot/note-book/
+          
+    
