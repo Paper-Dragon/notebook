@@ -105,5 +105,3 @@ jobs:
          sudo chattr -iaR /www/wwwroot/note-book/*
          sudo rm -rvf /www/wwwroot/note-book/*
          sudo mv -vf file/* /www/wwwroot/note-book/
-          
-    
