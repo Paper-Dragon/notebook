@@ -90,6 +90,7 @@ jobs:
           tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAGDATE }}
   deploy-hosted:
     runs-on: self-hosted
+    needs: deploy-gh-pages
     timeout-minutes: 60
     steps:
       - name: 下载上一个步骤生成的产物
