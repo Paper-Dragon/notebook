@@ -1,5 +1,7 @@
 # 断电造成kubernetes故障
 
+> http://31mwww.linuxea.com/2580.html
+> https://blog.csdn.net/liuyij3430448/article/details/130406844
 > 因为宿主机系统 esxi 的内存条老化，导致esxi异常关机。内部虚拟机全部断电。总共30几台吧。
 >
 > 经过检查和擦拭内存金手指，服务器正常开机。
