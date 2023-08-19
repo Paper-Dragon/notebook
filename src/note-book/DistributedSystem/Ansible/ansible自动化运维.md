@@ -1,3 +1,7 @@
+# ansible自动化运维
+
+
+
 # 1-简介
 
 ## **Logo** 
@@ -1348,5 +1352,4 @@ $ANSIBLE_VAULT;1.1;AES256
     with_items:
        - testuser1
        - testuser2
-
 
