@@ -334,7 +334,7 @@ OK
 
 在redis中哈希类型是指键本身又是一种键值对结构：
 
-value格式：{{key1,value1},…{keyn,valuen}}
+value格式：{ {key1,value1},…{keyn,valuen} }
 
 ### 3.2、哈希类型应用场景
 

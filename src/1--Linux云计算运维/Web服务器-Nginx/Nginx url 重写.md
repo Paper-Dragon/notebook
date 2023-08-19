@@ -124,7 +124,7 @@ location / {
 
 ##### rewrite指令 实现重写url
 
-**rewrite <regex> <replacement> [flag];**
+**rewrite `<regex> <replacement>` [flag];**
 
 **关键字 正则 替代内容 flag标记**
 

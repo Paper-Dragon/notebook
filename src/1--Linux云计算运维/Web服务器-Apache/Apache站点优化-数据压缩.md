@@ -24,7 +24,7 @@ LoadModule deflate_module modules/mod_deflate.so
 
 2）调用模块
 
-<IfModule deflate_module>
+`<IfModule deflate_module>`
 
 DeflateCompressionLevel 4
 
@@ -41,7 +41,7 @@ SetEnvIfNoCase Request_URI .(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
 SetEnvIfNoCase Request_URI .(?:pdf|doc)$ no-gzip dont-vary
 
 ```
-<IfModule deflate_module>
+`<IfModule deflate_module>`
 # 压缩等级 4       1-9，数字越大压缩的越好，也越占用CPU时间
 DeflateCompressionLevel 4
 # 压缩类型 html、xml、php、css、js

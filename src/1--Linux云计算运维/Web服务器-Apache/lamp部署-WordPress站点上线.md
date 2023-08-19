@@ -62,7 +62,7 @@ Query OK, 1 row affected (0.01 sec)
 
 #### 3）wordpress安装
 
-打开浏览器输入[http://IP。我的IP地址是192.168.11.251 ，所以在地址栏中输入的是http://192.168.11.251![](/assets/wordpress_install_01.png)选择网站语言，我选择的简体中文，然后点继续](http://IP，我的IP地址是192.168.11.251，所以在地址栏中输入的是http://192.168.11.251!
+打开浏览器输入[http://IP。我的IP地址是192.168.11.251 ，所以在地址栏中输入的是 http://192.168.11.251/assets/wordpress_install_01.png选择网站语言，我选择的简体中文，然后点继续](http://IP，我的IP地址是192.168.11.251，所以在地址栏中输入的是http://192.168.11.251!
 ![wordpress_install_01.png](https://www.zutuanxue.com:8000/static/media/images/2020/10/18/1603014837850.png)
 选择网站语言，我选择的简体中文，然后点继续)
 

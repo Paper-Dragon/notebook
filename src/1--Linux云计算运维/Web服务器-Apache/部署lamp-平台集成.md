@@ -130,7 +130,7 @@ listen.mode = 0660
 
 1）生成测试页面
 
-echo “<?php phpinfo(); ?>” /DR/phpinfo.php
+`echo “<?php phpinfo(); ?>” /DR/phpinfo.php`
 
 2）测试
 

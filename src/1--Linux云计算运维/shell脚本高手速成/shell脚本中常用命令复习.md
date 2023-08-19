@@ -30,7 +30,7 @@ so！想学好shell脚本首先要考核一下自己的linux命令学的是否�
   	数据处理: xargs    
 ```
 
-![image-20220604181148091](C:\Users\MISSXP\AppData\Roaming\Typora\typora-user-images\image-20220604181148091.png)
+
 
 ## 一、 数据处理命令
 
