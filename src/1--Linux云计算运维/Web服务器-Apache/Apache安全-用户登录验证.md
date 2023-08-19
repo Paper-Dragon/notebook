@@ -6,7 +6,7 @@
 
 #### 1）修改apache配置文件
 
-```
+```config
 <Directory "/usr/local/apache/htdocs/web1/a">
 
 AuthName "Private"

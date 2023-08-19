@@ -22,15 +22,15 @@
 
 只要一个成功即可就通过
 
-<RequireAny>和</RequireAny>用于包含一组授权指令，其中一个指令必须成功才能使`<RequireAny>`指令成功。
+`<RequireAny>`和`</RequireAny>`用于包含一组授权指令，其中一个指令必须成功才能使`<RequireAny>`指令成功。
 
 所有指令都生效才通过
 
-<RequireAll>和</RequireAll>用于包含一组授权指令，其中无一个指令必须失败，并且至少有一个指令必须成功才能使`<RequireAll>`指令成功。
+`<RequireAll>`和`</RequireAll>`用于包含一组授权指令，其中无一个指令必须失败，并且至少有一个指令必须成功才能使`<RequireAll>`指令成功。
 
 所有指令都不生效才通过
 
-<requirenone>和</requirenone>用于包含一组授权指令，其中无一个指令必须成功才能使`<requirenone>`指令不失败。
+`<requirenone>`和`</requirenone>`用于包含一组授权指令，其中无一个指令必须成功才能使`<requirenone>`指令不失败。
 
 #### 实现代码
 
