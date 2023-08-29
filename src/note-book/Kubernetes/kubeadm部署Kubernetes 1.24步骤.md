@@ -1,3 +1,5 @@
+# kubeadm部署Kubernetes 1.24步骤
+
 # 前言
 
 kubeadm 是 Kubernetes 官方提供的用于快速安部署 Kubernetes 集群的工具，伴随 Kubernetes 每个版本的发布都会同步更新，kubeadm 会对集群配置方面的一些实践做调整，通过实验 kubeadm 可以学习到 Kubernetes 官方在集群配置上一些新的最佳实践。
@@ -727,3 +729,4 @@ helm show values kubernetes-dashboard/kubernetes-dashboard
         https://docs.projectcalico.org/
 
  
+
