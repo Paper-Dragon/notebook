@@ -1,8 +1,8 @@
-# 前言 
+# 跨宿主机通信overlay和macvlay
 
-> 本讲是从Docker系列讲解课程，单独抽离出来的一个小节，带你一起 深入了解在编排工具出现前，跨宿主机通信的两大得力干将overlay、macvlay，这也会后期学好K8s做好基本功铺垫，打下一个坚实的基础。 
+# 前言
 
-
+> 本讲是从Docker系列讲解课程，单独抽离出来的一个小节，带你一起 深入了解在编排工具出现前，跨宿主机通信的两大得力干将overlay、macvlay，这也会后期学好K8s做好基本功铺垫，打下一个坚实的基础。
 
 # 一、overlay
 
@@ -50,7 +50,7 @@
 
 vim /etc/docker/daemon.json
 
-注：在修改之前，你本地的这个文件可能只有一行，大概应该是仅配了（阿里）镜像加速。可参考如下配置，前两行可以不配置，使用默认的就可以。最后三行是要配的。 
+注：在修改之前，你本地的这个文件可能只有一行，大概应该是仅配了（阿里）镜像加速。可参考如下配置，前两行可以不配置，使用默认的就可以。最后三行是要配的。
 
     {
     "graph":"/var/lib/docker",
@@ -78,7 +78,7 @@ vim /etc/docker/daemon.json
     docker ps -a   #可以看到consul的状态是Exited
     docker start consul  #再次手动启动consul容器
 
-http://192.168.31.100:8500 访问consul（这个IP地址是在上面的/etc/docker/daemon.json中配置的）
+<http://192.168.31.100:8500> 访问consul（这个IP地址是在上面的/etc/docker/daemon.json中配置的）
 
 ### 2）修改从节点CentOS8.4
 
@@ -101,7 +101,6 @@ vim /etc/docker/daemon.json
 
 docker network ls  #分别在主从节点执行该查代码
 
-
 2）在master主节点CentOS7.9上创建自定义网络mynet
 
     #在主节点创建自定义网络：分别指定网络模式、子网网段、网关、网卡最大传输单元 ，更详细参数见：docker network create --help 
@@ -110,12 +109,12 @@ docker network ls  #分别在主从节点执行该查代码
 
 注： com.docker.network.driver.mtu 等价于--mtu，用来设置容器网卡最大传输单元
 
-可以看到自定义网络mynet创建成功，创建时指定网络模式为overlay 
+可以看到自定义网络mynet创建成功，创建时指定网络模式为overlay
 
 提示：如果创建时错误提示Error response from daemon: error getting pools config from store: could not get pools config from store，docker start consul 重新启动容器服务即可。
 3）切回从节点CentOS8.4，查看在CentOS7.9主节点创建的网络
 
-发现，从节点CentOS8.4上，可以看到主节点创建的mynet自定义网络，而本身并没有创建这个网络，原理就是通过/etc/docker/daemon.json中的配置集群信息的集群地址cluster-store和广播cluster-advertise来实现主从共享网络的。 
+发现，从节点CentOS8.4上，可以看到主节点创建的mynet自定义网络，而本身并没有创建这个网络，原理就是通过/etc/docker/daemon.json中的配置集群信息的集群地址cluster-store和广播cluster-advertise来实现主从共享网络的。
 
 ## 4.在主节点使用自定义的overlay网络模式启动nginx，并查看其I
 
@@ -123,10 +122,7 @@ docker network ls  #分别在主从节点执行该查代码
     docker run -d --network mynet --name nginx nginx:alpine   #主节点使用自定义网络启动
     docker inspect nginx #查看网络详细信息
 
- 
-
-
-   主节点nginx的虚拟IP地址：172.31.0.1 
+   主节点nginx的虚拟IP地址：172.31.0.1
 
 ## 5.在从节点上使用自定义的overlay网络模式开启tomcat，尝试和nginx互通
 
@@ -135,7 +131,7 @@ docker network ls  #分别在主从节点执行该查代码
     docker run -d --name tomcat --network mynet -p 8080:8080 tomcat:alpine #和主节点指定同一个网络
     ping -w 3 172.31.0.1  #尝试在从节点上去ping主节点的nginx的虚拟ip
 
-发现，通过该方式（在/etc/docker/daemon.json中配置）是可以实现跨宿主机通信的。 
+发现，通过该方式（在/etc/docker/daemon.json中配置）是可以实现跨宿主机通信的。
 
 注：该方式，在容器内部不能使用容器别名相互识别，也就是说A容器内部，不识别B容器的别名，尽管他们都共同链接一个网络mynet，但是仅能够通过各自的虚拟IP互通。如要实现容器内部互认别名，点进入点击进入。
 
@@ -172,10 +168,6 @@ docker network ls  #分别在主从节点执行该查代码
     
     如果你的时间和精力允许，并且对这个点比较好奇，自己可以尝试一下，看一下我们实验结果是否一致。
 
-  
-
-
-
 注：在反复实验过程中，偶尔有一次，不带--network，在从节点的容器内部不能ping通主节点nginx的虚拟ip，奇怪的是，反复，多次实验，这个仅有1次的ping不通，竟然还原不了，每次又都能ping通了。
 8.小结
 
@@ -200,15 +192,15 @@ docker network ls  #分别在主从节点执行该查代码
   - Passthrough
 
     该模式现在用的比较少，作为了解内容可以拓展一下知识面。v
-    
+
     它本身不创建网络，使用的是物理机的网卡，它会导致物理机物理网卡失效，借此会创建虚拟网卡，给虚拟网卡分配网络资源，IP等。
-    
+
     macvlan这种技术能将一块物理网卡虚拟成多块虚拟网卡 ，相当于物理网卡施展了多重影分身之术 ，由一个变多个。
-    
+
     弊端：可能会耗尽物理IP地址，网段内接入的物理机越多，广播的效率/性能就会下降。
-    
+
     该模式，对linux系统的内核版本是有要求的，支持的版本有 v3.9-3.19 和 4.0+，比较稳定的版本推荐 4.0+。它一般是以内核模块的形式存在，我们可以通过以下方法判断当前系统是否支持：
-    
+
         modprobe macvlan  #如果没有返回任何信息，代表支持
         lsmod | grep macvlan  #如果返回如下信息，代表支持
         macvlan                19239  0 
@@ -233,9 +225,9 @@ docker network ls  #分别在主从节点执行该查代码
     ip link set ens33 promisc on  #特别注意，你的物理虚拟网卡名称可能是eth0（可以在network-script里修改）
     ip a
 
-开启混合模式前，先查看一下网卡信息 
+开启混合模式前，先查看一下网卡信息
 
-分别给主从节点，开启混合网卡模式 
+分别给主从节点，开启混合网卡模式
 
 ## 3.分别在主从节点上，通过docker create -d 创建macvlan网络
 
@@ -247,10 +239,6 @@ docker network ls  #分别在主从节点执行该查代码
     
     
     docker network ls
-
- 
-
-
 
 注：对该命令的参数不了解的小伙伴，可以通过docker network create  --help来获悉更多的参数。细心的小伙伴发现，第一个案例该命令创建overlay网络时，使用的是--opt，此处使用的是-o，它们两个是一个命令，-o等价于--opt，使用场景主要是用于多个参数时，放到对应参数前面。它是一个map[]集合，也就是说，每个参数的前面都添加-o，则这些参数同属于一个-o的集合。
 
@@ -276,7 +264,7 @@ docker network ls  #分别在主从节点执行该查代码
 
  注：如果你对尾部的bash感兴趣，点击进入（从文章尾部开始向上看）
 
-## 6.收尾工作，关闭虚拟网卡混合模式，清除容器 
+## 6.收尾工作，关闭虚拟网卡混合模式，清除容器
 
     docker rm -f $(docker ps -qa)   #清除容器
     docker network ls
@@ -309,8 +297,6 @@ docker network ls  #分别在主从节点执行该查代码
     尽管overlay（overlay2）和macvlan都可以实现跨宿主机通信，但是相对的前者更为便捷一些，但是随着新容器编排技术的不断涌现，这些当时时髦的技术也终将被替代。就连docker官网自己推出的Docker-compose[官网]（它是一个单机多容器部署工具，不支持多机）编排工具，也正在被k8s（支持多容器、多机部署）替代，后续将陆续对这些编排工具做具体介绍。
     
     不过这些不重要，长江后浪推前浪，k8s终究是配置太多，强大的同时也太繁琐，终将会被更强大的其他替代，万变不离其宗，了解了这些底层些的知识，再学习其他编排工具时，也更加是游刃有余。
-
-
 
 # 附注
 
