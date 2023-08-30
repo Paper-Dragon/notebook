@@ -595,3 +595,25 @@ LimitNOFILE=20480
 sed -i 's|#DefaultLimitNOFILE=|DefaultLimitNOFILE=65535|g' /etc/systemd/system.conf
 
 还有一个办法就是不直接修改service， 使用 systemctl edit xxxx.service 进行参数覆盖
+
+## 日志切割
+
+```nginx
+http {
+    # 定义日志格式
+    log_format main '$remote_addr - $remote_user [$time_local] '
+                    '"$request" $status $body_bytes_sent '
+                    '"$http_referer" "$http_user_agent"';
+ 
+    # 定义日志路径及文件名
+    access_log /var/log/nginx/access.log main;
+ 
+    # 定义日志切割规则
+    logrotate 14;  # 按14天切割日志
+    gzip on;  # 切割后压缩日志文件
+    create 0644 nginx nginx;  # 创建新的日志文件权限
+ 
+    # 其他配置项...
+}
+```
+
