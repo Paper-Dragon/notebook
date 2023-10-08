@@ -1,4 +1,4 @@
-# Server主配置文件
+# Nginx配置示例
 
 ## book.itrusts.top.conf
 
@@ -239,7 +239,7 @@ http {
                 #root   /usr/share/nginx/html/windy.com;
                 #index  index.html index.htm;
                 proxy_pass https://www.windy.com;
-                proxy_ssl_server_name on;
+                proxy_ssl_server_name on; # 不透传sni并且设置sni为proxy_pass 域名
                 sub_filter_types *;
                 sub_filter windy.com itgpt.com;
                 sub_filter https http;
