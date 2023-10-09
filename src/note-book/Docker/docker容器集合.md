@@ -168,6 +168,8 @@ docker run -d \
 
 ### frp docker
 
+#### 服务端
+
 frp-restart.sh
 
 ```bash
@@ -209,6 +211,60 @@ token=123123123
 max_pool_count = 5
 max_ports_per_client = 0
 ```
+
+#### 客户端
+
+docker-compose.yml
+
+```yaml
+version: '3.3'
+services:
+    frpc:
+        restart: always
+        network_mode: host
+        volumes:
+            - './frpc.ini:/etc/frp/frpc.ini'
+        container_name: frpc
+        image: snowdreamtech/frpc
+```
+
+
+
+frpc.ini
+
+```ini
+[common]
+server_addr= 127.0.0.1 #服务端服务器的公网ip
+server_port= 5400 #监听端口
+token = pwd123 #服务端与客户端的认证密钥
+
+#[ssh] #ssh不建议轻易打开，被打的概率很高
+#type = tcp
+#local_ip = 127.0.0.1
+#local_port = 22
+#remote_port = 6000
+
+[jellyfin] #tcp部署
+type = tcp
+local_ip = 127.0.0.1
+local_port = 8096 #本地服务端口
+remote_port = 6001 #远程服务器端口
+
+
+#[https-web] #https部署
+#type=https #协议
+#local_port = 22300 #本地服务端口
+#custom_domains = web.com #域名，要解析好的
+
+#plugin= https2http #用于将本地的HTTP服务转为HTTPS的插件
+#plugin_local_addr = 127.0.0.1:22300 #本地服务端口 
+#plugin_crt_path = /root/ssl/web.top/web.com_bundle.crt #这两个HTTPS证书是nginx格式的,需要在证书颁发机构下载，然后放入容器内才能正常使用
+#plugin_key_path = /root/ssl/web.top/web.com.key 
+#plugin_host_header_rewrite = 127.0.0.1
+#plugin_header_X-From-Where = frp
+```
+
+
 
 ### docker ssh 探针
 
