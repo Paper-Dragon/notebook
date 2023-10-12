@@ -1,5 +1,33 @@
 # 数据切片
 
+## 字符串切片
+
+```python
+s1 = 'Hello World'
+
+print(s1[4])  # 索引从0开始
+print(s1[-1])  # 负数从-1开始，代表从后往前
+
+# 切片 类似range
+# [start:end:step]
+print(s1[0:5])  # Hello
+print(s1[:5])  # Hello
+print(s1[:])  # Hello World
+print(s1[::2])  # HloWrd
+print(s1[::-1])  # dlroW olleH
+
+# 求1000以内所有类似 121 212 的数字, 回文数
+
+for i in range(10, 1000):
+    if str(i) == str(i)[::-1]:
+        print(i)
+
+
+
+```
+
+
+
 ## 基本切片
 
 基本语法：
