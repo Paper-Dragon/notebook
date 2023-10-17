@@ -4,15 +4,18 @@
 
 ```bash
 #!/bin/bash
-yum update && yum install nginx -y && yum clean all
+yum makecache && yum install epel-* -y && yum install nginx -y && yum clean all
 
+
+systemctl start nginx
+systemctl enable nginx
 # 检查是否已经存在listen 3126;字段
 
-if grep -q "listen 3126;" /etc/nginx.conf; then
+if grep -q "listen 3126;" /etc/nginx/nginx.conf; then
   echo "代理服务器 listen 3126; 已经安装"
 else
   # 在http字段后插入新的server块
-  sed -i '/http {/a\    server {\n    listen 3126;\n    server_name _;\n    location / {\n    resolver 8.8.8.8;\n    proxy_pass $scheme://$http_host$request_uri;\n    }\n}' /etc/nginx.conf
+  sed -i '/http {/a\    server {\n    listen 3126;\n    server_name _;\n    location / {\n    resolver 8.8.8.8;\n    proxy_pass $scheme://$http_host$request_uri;\n    }\n}' /etc/nginx/nginx.conf
   echo "已配置代理服务器"
 fi
 nginx -s reload
