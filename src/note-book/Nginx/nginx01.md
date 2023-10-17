@@ -1,3 +1,5 @@
+# Nginx初级篇
+
 # 1、Nginx 的优势
 
 Nginx (engine x) 是一个高性能的HTTP(解决C10k的问题)和反向代理服务器，也是一个IMAP/POP3/SMTP服务器。反代图示
