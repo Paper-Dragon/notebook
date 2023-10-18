@@ -1,3 +1,9 @@
+# Samba共享文件时文件属性nobody
+
+
+
+Linux于Windows使用Samba共享文件时文件属性nobody nogroup的解决办法
+
 ```bash
 vim /etc/samba/smb.conf修改配置文件如下:
 在 [global] 放入以下内容
