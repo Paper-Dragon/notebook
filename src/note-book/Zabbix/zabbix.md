@@ -991,3 +991,6 @@ case $1 in
 
 
 
+## 一份生产配置
+
+![zabbix-serverconfig](zabbix.assets/zabbix-serverconfig.png)
