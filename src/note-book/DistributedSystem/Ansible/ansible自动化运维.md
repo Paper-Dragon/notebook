@@ -1305,12 +1305,14 @@ host2                      : ok=7    changed=4    unreachable=0    failed=0    s
 ## 如何在ansible中，使用不同的用户登录不同的主机？
 
 在主机清单里设置
+```
 [webservers`]
 asdf.example.com  ansible_port=5000   ansible_user=alice  ansible_pass=123456
 jkl.example.com   ansible_port=5001   ansible_user=bob   ansible_pass=654321
+```
 
 ## 如何加密hosts主机清单文件
-
+```
 [root@node1 ansible]# cat db_hosts
 localhost ansible_connection=local
 [root@node1 ansible]# ansible-vault encrypt db_hosts 
@@ -1334,22 +1336,23 @@ $ANSIBLE_VAULT;1.1;AES256
 3135626236626435640a396338616563646532623966333337366365636665663563666432333539
 61663632633130623733316232353836663366623136636432616332376266383263356264303765
 6133616235363066356164653232326139643862653464623037
+```
 
 ## 判断主机地址为10.18.46.37的主机。关闭该主机
-
+```
 - hosts: webserver
   tasks:
   - name: "shut down 10.18.46.37 systems"
     command: /usr/sbin/init 0
     when: ansible_all_ipv4_addresses == "10.18.46.37"
-
+```
 ## 循环创建多个用户
-
+```
 - hosts: host1
   tasks:
   - name: add several users
-    user: name={{ item }} state=present groups=wheel
+    user: name={ { item } } state=present groups=wheel
     with_items:
        - testuser1
        - testuser2
-
+```
