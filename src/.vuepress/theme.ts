@@ -91,11 +91,10 @@ export default hopeTheme({
       katex: true,
       mark: true,
       mermaid: true,
-      revealJs: false,
+      revealJs: true,
       playground: {
         presets: ["ts", "vue"],
       },
-      presentation: ["highlight", "math", "search", "notes", "zoom"],
       stylize: [
         {
           matcher: "Recommended",
