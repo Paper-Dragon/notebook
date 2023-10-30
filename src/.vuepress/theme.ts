@@ -91,6 +91,7 @@ export default hopeTheme({
       katex: true,
       mark: true,
       mermaid: true,
+      revealJs: false,
       playground: {
         presets: ["ts", "vue"],
       },
