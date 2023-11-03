@@ -13,6 +13,12 @@ export default navbar([
     link: "/timeline"
   },
   {
+    text: "友链",
+    icon: "link",
+    link: "/友链/友链.md",
+    ariaLabel: "友链"
+  },
+  {
     text: "实时访客",
     icon: "chart-simple",
     link: "https://analytics.umami.is/share/pvHcnC9eaFEzXn99/DevOps-Book",

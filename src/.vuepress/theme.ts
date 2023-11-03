@@ -78,6 +78,7 @@ export default hopeTheme({
     mdEnhance: {
       align: true,
       attrs: true,
+      card: true,
       chart: false,
       codetabs: true,
       demo: true,
