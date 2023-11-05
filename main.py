@@ -107,4 +107,18 @@ def create_wordlouod(wordcloud_item: dict = {"Shanghai": 30, "Beijing": 40}):
     wordcloud.to_file(f'{OUTPUT_IMG_NAME}')
 
 
-create_wordlouod(wordcloud_item=word_frequency(MARKDOWN_ROOT_PATH, key_nums=400))
+def create_front_list():
+    word_dict = word_frequency(MARKDOWN_ROOT_PATH, key_nums=400)
+    print(word_dict)
+    out = []
+    for key, value in word_dict.items():
+        out.append({"name": key, "value": value})
+    print(out)
+
+
+def wordcloud_image():
+    create_wordlouod(wordcloud_item=word_frequency(MARKDOWN_ROOT_PATH, key_nums=400))
+
+
+if __name__ == '__main__':
+    wordcloud_image()
