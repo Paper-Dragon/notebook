@@ -261,7 +261,7 @@ highlights:
 #         link: https://theme-hope.vuejs.press/zh/guide/advanced/pwa.html
 
 copyright: false
-footer: 使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> 主题 | MIT 协议, 版权所有 © 2023 Mr.Hope
+footer: <div class="girl-info hide_md"> <h4>绿水本无忧，因风皱面</h4> <h4>青山原不老，为雪白头</h4> </div><a target="_blank" rel="noopener" href="https://pages.github.com/"><img src="https://img.shields.io/badge/GitHub-pages-black"></a>&nbsp;<a href="https://www.travellings.cn/go.html" target="_blank"><img src="https://www.travellings.cn/assets/logo.gif" style="width:auto;height:18px;"></a> </br> Made with <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a>
 ---
 
 ![词云](/wordcloud.png)

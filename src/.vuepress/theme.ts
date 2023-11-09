@@ -10,6 +10,7 @@ export default hopeTheme({
   author: {
     name: "PaperDragon",
     url: "https://github.com/Paper-Dragon",
+    email: "2678885646@qq.com"
   },
 
   iconAssets: "fontawesome-with-brands",
@@ -64,7 +65,7 @@ export default hopeTheme({
         "PDF",
         // "Replit",
         // "Share",
-        // "SiteInfo",
+        "SiteInfo",
         // "StackBlitz",
         // "VidStack",
         // "VideoPlayer",
@@ -77,7 +78,7 @@ export default hopeTheme({
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
-      attrs: true,
+      attrs: false,
       card: true,
       chart: false,
       codetabs: true,
