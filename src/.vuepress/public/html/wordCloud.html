@@ -13,6 +13,16 @@
         margin: 0;
     }
 </style>
+<script>
+/*禁用F12*/
+document.onkeydown = function(){
+    if(window.event.keyCode==123) {
+        alert("大佬，别扒了！不妨加个友链？");
+        event.preventDefault(); // 阻止默认事件行为
+        event.keyCode=0;
+        event.returnValue=false;
+    }
+}</script>
 <div id='main'></div>
 <script>
     var chart = echarts.init(document.getElementById('main'));
