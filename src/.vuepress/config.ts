@@ -20,9 +20,17 @@ export default defineUserConfig({
       /*禁用F12*/
       document.onkeydown = function(){
           if(window.event.keyCode==123) {
-              alert('大佬，别扒了！不妨加个友链？\\n执意要做？再按下F12可调出控制台');
+              var x; 
+              var r=confirm('大佬，别扒了！不妨加个友链？\\n点击确认键跳转到友链！\\n\\n执意要做？亦或是再按下F12可调出控制台\\n');
+              if (r==true){
+                //x="你按下的是\\"确定\\"按钮。";
+                window.location.replace("/友链/友链.html");
+              }
+              else{
+                x="你按下的是\\"取消\\"按钮。";
+              }
+              // document.write(x)
               event.preventDefault(); // 阻止默认事件行为
-              
               event.keyCode=0;
               event.returnValue=false;
           }
