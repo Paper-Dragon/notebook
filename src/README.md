@@ -16,9 +16,9 @@ actions:
 
   - text: 时光机器
     link: ./timeline/
-head:
-- ['script', { src: '/js/echarts-wordcloud.js' }]
-- ['script', { src: '/js/echarts-wordcloud.min.js' }]
+#head:
+#- ['script', { src: '/js/echarts-wordcloud.js' }]
+#- ['script', { src: '/js/echarts-wordcloud.min.js' }]
 highlights:
 #   - header: 易于安装
 #     image: /assets/image/box.svg

@@ -13,6 +13,23 @@ export default defineUserConfig({
 
   theme,
 
+  head: [
+      ["script",
+        {},
+      `
+      /*禁用F12*/
+      document.onkeydown = function(){
+          if(window.event.keyCode==123) {
+              alert('大佬，别扒了！不妨加个友链？\\n执意要做？再按下F12可调出控制台');
+              event.preventDefault(); // 阻止默认事件行为
+              
+              event.keyCode=0;
+              event.returnValue=false;
+          }
+      }
+      `,
+      ],
+  ],
   plugins: [
     searchProPlugin({
       indexContent: true,
