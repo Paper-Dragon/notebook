@@ -29,8 +29,9 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-  footer: "默认页脚",
-
+  //footer: "主题使用 <a href=\"https://theme-hope.vuejs.press/zh/\">VuePress Theme Hope</a> | <a href=\"https://mister-hope.com/about/site.html\" target=\"_blank\">关于网站</a>",
+  footer: "运维开发绿皮书",
+  copyright: "copyleft 2023-至今 PaperDragon",
   displayFooter: true,
 
   encrypt: {
