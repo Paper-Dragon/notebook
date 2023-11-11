@@ -68,6 +68,7 @@ export default hopeTheme({
         // "Share",
         "SiteInfo",
         // "StackBlitz",
+        "VPCard",
         // "VidStack",
         // "VideoPlayer",
         // "XiGua",
@@ -80,7 +81,6 @@ export default hopeTheme({
     mdEnhance: {
       align: true,
       attrs: false,
-      card: true,
       chart: false,
       codetabs: true,
       demo: true,
