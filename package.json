@@ -11,7 +11,7 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vue/repl": "^2.6.3",
+    "@vue/repl": "^2.7.0",
     "@vuepress/client": "2.0.0-beta.68",
     "chart.js": "^4.4.0",
     "echarts": "^5.4.3",
