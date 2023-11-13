@@ -21,7 +21,7 @@ export default navbar([
     {
         text: "友链",
         icon: "link",
-        link: "/友链/友链.md",
+        link: "/about/friend.md",
         ariaLabel: "友链"
     },
     {
@@ -38,7 +38,7 @@ export default navbar([
     {
         text: "关于我",
         icon: "address-card",
-        link: "/me/about.md",
+        link: "/about/me.md",
         ariaLabel: "关于我"
     }
 ]);

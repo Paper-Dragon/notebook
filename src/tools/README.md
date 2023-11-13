@@ -21,3 +21,13 @@ sidebar: false
   repo="https://github.com/Paper-Dragon/ifconfig.icu.git"
   preview="/img/Snipaste_2023-11-09_13-04-00.png"
 />
+
+
+<SiteInfo
+  name="FastGit"
+  desc="GitHub.com 的镜像加速器"
+  url="https://doc.fastgit.org/zh-cn/guide.html"
+  logo="https://cdn.jsdelivr.net/gh/FastGitORG/logo@ad87e38c7101537010b3dc6f7d4d52bd1f915002/v2.1.png"
+  repo="https://github.com/FastGitORG"
+  preview="/img/Snipaste_2023-11-13_15-38-38.png"
+/>
