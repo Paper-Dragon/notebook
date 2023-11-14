@@ -31,3 +31,13 @@ sidebar: false
   repo="https://github.com/FastGitORG"
   preview="/img/Snipaste_2023-11-13_15-38-38.png"
 />
+
+
+<SiteInfo
+  name="密码随机生成"
+  desc="随机密码生成器"
+  url="https://paper-dragon.github.io/RandomPassword/"
+  logo="https://paper-dragon.github.io/RandomPassword/ph.jpg"
+  repo="https://github.com/Paper-Dragon/RandomPassword"
+  preview="/img/Snipaste_2023-11-14_10-44-57.png"
+/>
