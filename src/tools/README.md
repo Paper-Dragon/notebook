@@ -41,3 +41,15 @@ sidebar: false
   repo="https://github.com/Paper-Dragon/RandomPassword"
   preview="/img/Snipaste_2023-11-14_10-44-57.png"
 />
+
+
+
+
+<SiteInfo
+  name="composerize"
+  desc="将 Docker 命令转化为 Docker Compose 文件"
+  url="https://www.composerize.com/"
+  logo="https://www.composerize.com/favicon.ico"
+  repo="https://github.com/composerize/composerize"
+  preview="/img/Snipaste_2023-11-15_11-29-42.png"
+/>
