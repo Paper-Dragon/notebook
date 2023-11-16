@@ -40,6 +40,10 @@ export default hopeTheme({
     },
   },
 
+  blog: {
+    timeline: "红了樱桃，绿了芭蕉"
+  },
+
   // page meta
   metaLocales: {
     editLink: "在 Github 上编辑此页",
