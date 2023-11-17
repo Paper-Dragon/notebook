@@ -83,22 +83,32 @@ export default hopeTheme({
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
-      align: true,
+       // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
+      align: false,
+      // 是否启用自定义属性支持
       attrs: false,
+      // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
       chart: false,
       codetabs: true,
       demo: true,
       echarts: true,
       figure: true,
+      // 是否启用流程图支持
       flowchart: false,
-      gfm: true,
+      // 是否支持完整的 GFM 语法。
+      gfm: false,
       imgLazyload: true,
       imgSize: true,
       include: true,
+      // 是否通过 KaTeX 启用 TeX 语法支持
       katex: false,
       mark: true,
+      // 是否通过 Math Jax 启用 TeX 语法支持
+      mathjax: false,
+      // mermaid流程图 https://mermaid.js.org/
       mermaid: false,
-      revealJs: true,
+      // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
+      revealJs: false,
       playground: {
         presets: ["ts", "vue"],
       },
@@ -118,7 +128,7 @@ export default hopeTheme({
       sub: true,
       sup: true,
       tabs: true,
-      vPre: true,
+      vPre: false,
       vuePlayground: true,
     },
 
