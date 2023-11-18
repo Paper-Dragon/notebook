@@ -1,3 +1,4 @@
+import json
 import os
 import re
 import string
@@ -113,7 +114,10 @@ def create_front_list():
     out = []
     for key, value in word_dict.items():
         out.append({"name": key, "value": value})
-    print(out)
+    print(json.dumps(out))
+
+    with open("src/.vuepress/public/data/wordcloud.json", "w", encoding='utf-8') as f:
+        f.write(json.dumps(out, ensure_ascii=False, indent=4))
 
 
 def wordcloud_image():
@@ -121,4 +125,5 @@ def wordcloud_image():
 
 
 if __name__ == '__main__':
-    wordcloud_image()
+    # wordcloud_image()
+    create_front_list()

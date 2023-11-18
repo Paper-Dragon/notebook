@@ -26,6 +26,17 @@ jobs:
           run_install: true
           version: 8
 
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip' # caching pip dependencies
+          cache-dependency-path: "requirements.txt"
+
+      - name: 安装python依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成图云
+        run: python main.py
 
       - name: 设置 Node.js
         uses: actions/setup-node@v3
