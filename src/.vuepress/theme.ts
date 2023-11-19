@@ -89,6 +89,7 @@ export default hopeTheme({
       attrs: false,
       // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
       chart: false,
+      checkLinks: { status: "always" },
       codetabs: true,
       demo: true,
       echarts: true,

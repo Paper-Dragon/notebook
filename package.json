@@ -7,6 +7,7 @@
   "scripts": {
     "docs:build": "vuepress build src",
     "docs:clean-dev": "vuepress dev src --clean-cache",
+    "docs:debug-dev": "vuepress dev src --clean-cache --debug",
     "docs:dev": "vuepress dev src",
     "docs:update-package": "pnpm dlx vp-update"
   },

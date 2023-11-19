@@ -43,7 +43,7 @@ sidebar: false
 <VPCard
     title="VuePress"
     desc="Vue 驱动的静态网站生成器"
-    logo="https://v2.vuepress.vuejs.org/images/hero.png"
+    logo="https://theme-hope-assets.vuejs.press/logo.svg"
     link="https://v2.vuepress.vuejs.org/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
@@ -53,7 +53,7 @@ sidebar: false
 <VPCard
     title="vuepress-theme-hope"
     desc="一个具有强大功能的 vuepress 主题✨"
-    logo="https://theme-hope.vuejs.press/logo.svg"
+    logo="https://theme-hope-assets.vuejs.press/logo.svg"
     link="https://theme-hope.vuejs.press/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
@@ -61,7 +61,7 @@ sidebar: false
 <VPCard
     title="Markdown 增强"
     desc="为 VuePress2 提供更多 Markdown 增强功能"
-    logo="https://plugin-md-enhance.vuejs.press/logo.svg"
+    logo="https://theme-hope-assets.vuejs.press/logo.svg"
     link="https://plugin-md-enhance.vuejs.press/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
@@ -69,7 +69,7 @@ sidebar: false
 <VPCard
     title="vuepress-plugin-comment2"
     desc="评论与阅读量插件"
-    logo="https://plugin-comment2.vuejs.press/logo.svg"
+    logo="https://theme-hope-assets.vuejs.press/logo.svg"
     link="https://plugin-comment2.vuejs.press/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
@@ -77,7 +77,7 @@ sidebar: false
 <VPCard
     title="vuepress-plugin-components"
     desc="面向 VuePress2 的常用组件"
-    logo="https://plugin-components.vuejs.press/logo.svg"
+    logo="https://theme-hope-assets.vuejs.press/logo.svg"
     link="https://plugin-components.vuejs.press/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
@@ -86,7 +86,7 @@ sidebar: false
 <VPCard
     title="vuepress-theme-hope Font Matter"
     desc=" Font Matter 配置直达"
-    logo="https://theme-hope.vuejs.press/logo.svg"
+    logo="https://theme-hope-assets.vuejs.press/logo.svg"
     link="https://theme-hope.vuejs.press/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
