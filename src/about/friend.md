@@ -31,12 +31,19 @@ sidebar: false
 
 <VPCard
   title="Bing🐣"
-  desc="基于VuePress的个人博客，记录日常开发问题"
+  desc="记录日常开发问题"
   logo="https://liubing.me/logo.png"
   link="https://liubing.me/"
   background="rgba(253, 230, 138, 0.15)"
 />
 
+<VPCard
+  title="朱双印个人日志"
+  desc="通俗易懂的教程，实战实用的笔记，Linux运维从业者的宝藏。"
+  logo="https://www.zsythink.net/wp-content/uploads/2016/12/logotouming.png"
+  link="https://www.zsythink.net/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
 
 ## 官方文档
 
