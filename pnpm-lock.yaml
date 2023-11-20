@@ -17,6 +17,9 @@ devDependencies:
   echarts-wordcloud:
     specifier: ^2.1.0
     version: 2.1.0(echarts@5.4.3)
+  flowchart.ts:
+    specifier: ^1.0.1
+    version: 1.0.1
   nodejs-jieba:
     specifier: ^0.0.2
     version: 0.0.2
@@ -28,7 +31,7 @@ devDependencies:
     version: 2.0.0-rc.0(@vuepress/client@2.0.0-rc.0)(vue@3.3.8)
   vuepress-plugin-md-enhance:
     specifier: 2.0.0-rc.0
-    version: 2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(vuepress@2.0.0-rc.0)
+    version: 2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(flowchart.ts@1.0.1)(vuepress@2.0.0-rc.0)
   vuepress-plugin-search-pro:
     specifier: 2.0.0-rc.0
     version: 2.0.0-rc.0(vuepress@2.0.0-rc.0)
@@ -37,7 +40,7 @@ devDependencies:
     version: 1.7.0
   vuepress-theme-hope:
     specifier: 2.0.0-rc.0
-    version: 2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(vuepress@2.0.0-rc.0)
+    version: 2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(flowchart.ts@1.0.1)(vuepress@2.0.0-rc.0)
 
 packages:
 
@@ -2103,6 +2106,10 @@ packages:
       undici-types: 5.26.5
     dev: true
 
+  /@types/raphael@2.3.7:
+    resolution: {integrity: sha512-IZdbYWK8LJhB4eR9xGnACAijwzWEYjbP71910rkP6H4Qf8JsMw02YUz+3lSdVor5q8Xdqq8UL+LmzppnCDWm2g==}
+    dev: true
+
   /@types/resolve@1.17.1:
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
     dependencies:
@@ -3340,6 +3347,10 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /eve-raphael@0.5.0:
+    resolution: {integrity: sha512-jrxnPsCGqng1UZuEp9DecX/AuSyAszATSjf4oEcRxvfxa1Oux4KkIPKBAAWWnpdwfARtr+Q0o9aPYWjsROD7ug==}
+    dev: true
+
   /execa@8.0.1:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
@@ -3414,6 +3425,14 @@ packages:
     dependencies:
       locate-path: 5.0.0
       path-exists: 4.0.0
+    dev: true
+
+  /flowchart.ts@1.0.1:
+    resolution: {integrity: sha512-J0Sqob1Kt2MO+lKUH48h2uCIsTfEahXflKiOgVuG48T6p6oosVgaCl6TvjqNjP4pW1w8FVF4L1DbqHCxoxj5mA==}
+    dependencies:
+      '@types/raphael': 2.3.7
+      raphael: 2.3.0
+      tslib: 2.6.2
     dev: true
 
   /for-each@0.3.3:
@@ -4683,6 +4702,12 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
+  /raphael@2.3.0:
+    resolution: {integrity: sha512-w2yIenZAQnp257XUWGni4bLMVxpUpcIl7qgxEgDIXtmSypYtlNxfXWpOBxs7LBTps5sDwhRnrToJrMUrivqNTQ==}
+    dependencies:
+      eve-raphael: 0.5.0
+    dev: true
+
   /readable-stream@3.6.2:
     resolution: {integrity: sha512-9u/sniCrY3D5WdsERHzHE4G2YCXqoG5FTHUiCC4SIbr6XcLZBY05ya9EKjYek9O5xOAwjGq+1JdGBAS7Q9ScoA==}
     engines: {node: '>= 6'}
@@ -5252,6 +5277,10 @@ packages:
     resolution: {integrity: sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==}
     dev: true
 
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
+
   /type-fest@0.16.0:
     resolution: {integrity: sha512-eaBzG6MxNzEn9kiwvtre90cXaNLkmadMWa1zQMs3XORCXNbsH/OewwbxC5ia9dCxIxnTAsSxXJaa/p5y8DlvJg==}
     engines: {node: '>=10'}
@@ -5726,7 +5755,7 @@ packages:
       - typescript
     dev: true
 
-  /vuepress-plugin-md-enhance@2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(vuepress@2.0.0-rc.0):
+  /vuepress-plugin-md-enhance@2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(flowchart.ts@1.0.1)(vuepress@2.0.0-rc.0):
     resolution: {integrity: sha512-sDP7gEp62phCkPuTtJaLwzKI53b94zqLQ2zajlPkDGTswPyxjOOvCdt2M3bcYM2gnSAV6szZhWuh7VCs1i5D7g==}
     engines: {node: '>=18.16.0', npm: '>=8', pnpm: '>=7', yarn: '>=2'}
     peerDependencies:
@@ -5802,6 +5831,7 @@ packages:
       '@vueuse/core': 10.6.1(vue@3.3.8)
       balloon-css: 1.2.0
       echarts: 5.4.3
+      flowchart.ts: 1.0.1
       js-yaml: 4.1.0
       markdown-it: 13.0.2
       vue: 3.3.8
@@ -6103,7 +6133,7 @@ packages:
       - typescript
     dev: true
 
-  /vuepress-theme-hope@2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(vuepress@2.0.0-rc.0):
+  /vuepress-theme-hope@2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(flowchart.ts@1.0.1)(vuepress@2.0.0-rc.0):
     resolution: {integrity: sha512-wZgmpRo9jE+cy7aHTdU9fhjRayVpe88GSCnRMfkzJxpDDlvuiItmHNJAGTg3E0NQHzhjI5pbuVGGqQoX7qsDxg==}
     engines: {node: '>=18.16.0', npm: '>=8', pnpm: '>=7', yarn: '>=2'}
     peerDependencies:
@@ -6149,7 +6179,7 @@ packages:
       vuepress-plugin-copy-code2: 2.0.0-rc.0(vuepress@2.0.0-rc.0)
       vuepress-plugin-copyright2: 2.0.0-rc.0(vuepress@2.0.0-rc.0)
       vuepress-plugin-feed2: 2.0.0-rc.0(vuepress@2.0.0-rc.0)
-      vuepress-plugin-md-enhance: 2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(vuepress@2.0.0-rc.0)
+      vuepress-plugin-md-enhance: 2.0.0-rc.0(@types/js-yaml@4.0.9)(@vue/repl@2.8.0)(echarts@5.4.3)(flowchart.ts@1.0.1)(vuepress@2.0.0-rc.0)
       vuepress-plugin-photo-swipe: 2.0.0-rc.0(vuepress@2.0.0-rc.0)
       vuepress-plugin-pwa2: 2.0.0-rc.0(vuepress@2.0.0-rc.0)
       vuepress-plugin-reading-time2: 2.0.0-rc.0(vuepress@2.0.0-rc.0)

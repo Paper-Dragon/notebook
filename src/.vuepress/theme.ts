@@ -95,7 +95,7 @@ export default hopeTheme({
       echarts: true,
       figure: true,
       // 是否启用流程图支持
-      flowchart: false,
+      flowchart: true,
       // 是否支持完整的 GFM 语法。
       gfm: false,
       imgLazyload: true,
