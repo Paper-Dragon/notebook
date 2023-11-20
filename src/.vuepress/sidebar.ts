@@ -21,6 +21,5 @@ export default sidebar({
             link: "PyQt5快速上手-王铭东/",
             children: "structure",
         },
-        "slides",
     ],
 });
