@@ -1,4 +1,4 @@
-# 【bash】关于 /dev/(tcp|udp)/${HOST}/${PORT}
+# 关于 /dev/(tcp|udp)/${HOST}/${PORT}
 
 # 一、背景
 
@@ -14,11 +14,11 @@ echo >/dev/tcp/8.8.8.8/53
 
 这条命令的意思是向8.8.8.8的53端口建立一个连接，会把连接返回的东西丢弃，查看连接是否成功，成功代表端口开放状态。
 
-![image-20220902094345342](【bash】关于 dev下的tcp-udp.assets/image-20220902094345342.png)
+![image-20220902094345342](使用dev下的tcp-udp实现socket.assets/image-20220902094345342.png)
 
 如果相应的域名能够被解析，host可以是域名
 
-![image-20220902094412847](【bash】关于 dev下的tcp-udp.assets/image-20220902094412847.png)
+![image-20220902094412847](使用dev下的tcp-udp实现socket.assets/image-20220902094412847.png)
 
 # 二、How does it work?
 
@@ -30,7 +30,7 @@ echo >/dev/tcp/8.8.8.8/53
 cat /etc/shells
 ```
 
-![image-20220902094423722](【bash】关于 dev下的tcp-udp.assets/image-20220902094423722.png)
+![image-20220902094423722](使用dev下的tcp-udp实现socket.assets/image-20220902094423722.png)
 
 虽然：/dev/tcp/${HOST}/${PORT} 这个字符串看起来很像一个文件系统中的文件，并且位于 /dev 这个设备文件夹下
 
