@@ -107,6 +107,7 @@ jobs:
       - name: 下载上一个步骤生成的产物
         uses: actions/download-artifact@v2.1.1
         continue-on-error: true
+        timeout-minutes: 180
         with:
           name: artifacts-html
           path: ./file
