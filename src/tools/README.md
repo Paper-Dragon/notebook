@@ -12,7 +12,6 @@ next: false
 sidebar: false
 ---
 
-
 <SiteInfo
   name="What is my IP address？"
   desc="查询本机IP"
@@ -32,7 +31,6 @@ sidebar: false
   preview="/img/Snipaste_2023-11-13_15-38-38.png"
 />
 
-
 <SiteInfo
   name="密码随机生成"
   desc="随机密码生成器"
@@ -44,7 +42,6 @@ sidebar: false
 
 
 
-
 <SiteInfo
   name="composerize"
   desc="将 Docker 命令转化为 Docker Compose 文件"
@@ -53,3 +50,17 @@ sidebar: false
   repo="https://github.com/composerize/composerize"
   preview="/img/Snipaste_2023-11-15_11-29-42.png"
 />
+
+
+
+<SiteInfo
+  name="utsc的repository配置生成器"
+  url="https://mirrors.ustc.edu.cn/repogen/"
+  preview="/img/Snipaste_2023-11-25_11-40-54.png"
+  logo="http://mirrors.ustc.edu.cn/static/img/favicon.png"
+  desc="支持Archlinux，Debian，Ubuntu"
+/>
+
+
+
+  
