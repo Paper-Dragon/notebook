@@ -352,6 +352,21 @@ PS1='$ PWD $'
 
 
 
+### poste.io
+
+一键构建邮件服务器
+
+```bash
+docker run \
+    --net=host \
+    -itd \
+    -e TZ=Asia/Shanghai \
+    -v ./data:/data \
+    --name "mailserver" \
+    -h "mail.itgpt.com" \
+    -t analogic/poste.io:2.3.13
+```
+
 
 
 
