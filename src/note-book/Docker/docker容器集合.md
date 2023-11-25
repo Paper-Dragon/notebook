@@ -54,9 +54,9 @@ docker run \
 如果你手头没有MySQL客户端，[Admineris](https://www.adminer.org/)是一个轻量级的基于php的选项。它也可以作为 [Docker image](https://hub.docker.com/_/adminer) ,在另一个终端中运行以下命令：
 
 ```javascript
-docker run 
-  -it --rm --name adminer 
-  -p 8080:8080 
+docker run \
+  -it --rm --name adminer \
+  -p 8080:8080 \
   adminer
 ```
 
@@ -93,7 +93,12 @@ db.createUser(
 ### alist安装
 
 ```bash
-docker run -d --restart=always -v /opt/alist:/opt/alist/data -p 5244:5244 --name="alist" xhofe/alist:latest
+docker run -d \
+	--restart=always \
+	-v /opt/alist:/opt/alist/data \
+	-p 5244:5244 \
+	--name="alist" \
+	xhofe/alist:latest
 ```
 
 获取alist密码
@@ -102,10 +107,30 @@ docker run -d --restart=always -v /opt/alist:/opt/alist/data -p 5244:5244 --name
 docker exec -it alist ./alist admin
 ```
 
-###  中文版本的  portainer  
+###  中文版本的 portainer  
 
 ```bash
-docker run -d --restart=always --name="portainer" -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data 6053537/portainer-ce
+docker run -d \
+	--restart=always \
+	--name="portainer" \
+	-p 9000:9000 \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	-v ./portainer_data:/data \
+	6053537/portainer-ce
+```
+
+### 英文版本portainer
+
+```bash
+docker run -d \
+	-p 9000:9000 \
+	-p 9443:9443 \
+	--name portainer \
+	--restart=always \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+	-v ./portainer_data:/data \
+	portainer/portainer-ce:latest
+
 ```
 
 
@@ -347,8 +372,6 @@ command="脚本.sh" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3... user@example.com
 
 PS1='$ PWD $'
 ```
-
-
 
 
 
