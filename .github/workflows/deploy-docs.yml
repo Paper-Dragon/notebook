@@ -102,7 +102,7 @@ jobs:
   deploy-hosted:
     runs-on: self-hosted
     needs: deploy-gh-pages
-    timeout-minutes: 60
+    timeout-minutes: 600
     steps:
       - name: 下载上一个步骤生成的产物
         uses: actions/download-artifact@v2.1.1
