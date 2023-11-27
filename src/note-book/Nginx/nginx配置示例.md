@@ -193,6 +193,21 @@ http {
 
 ## Nginx 实现偷站Windy.com
 
+DNS解析
+
+```bash
+account.geekery.cn.	600	IN	A	23.225.xx.85
+embed.geekery.cn.	600	IN	A	23.225.xx.85
+img.geekery.cn.		600	IN	A	23.225.xx.85
+ims.geekery.cn.		600	IN	A	23.225.xx.85
+ims-s.geekery.cn.	600	IN	A	23.225.xx.85
+node.geekery.cn.	600	IN	A	23.225.xx.85
+tiles.geekery.cn.	600	IN	A	23.225.xx.85
+www.geekery.cn.		600	IN	A	23.225.xx.85
+```
+
+nginx 配置
+
 ```nginx
 user www-data;
 worker_processes  auto;
