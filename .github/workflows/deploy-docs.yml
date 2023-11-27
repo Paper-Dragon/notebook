@@ -114,7 +114,7 @@ jobs:
 
   publish-docker:
     runs-on: ubuntu-latest
-    needs: deploy-github-pages
+    needs: build-github-pages
     steps:
       - name: 拉源码
         uses: actions/checkout@v3
@@ -147,7 +147,7 @@ jobs:
 
   deploy-hosted:
     runs-on: self-hosted
-    needs: deploy-gh-pages
+    needs: build-github-pages
     timeout-minutes: 600
     steps:
       - name: 下载上一个步骤生成的产物
