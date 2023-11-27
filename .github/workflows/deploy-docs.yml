@@ -114,7 +114,7 @@ jobs:
 
   publish-docker:
     runs-on: ubuntu-latest
-    needs: deploy-gh-pages
+    needs: deploy-github-pages
     steps:
       - name: 拉源码
         uses: actions/checkout@v3
