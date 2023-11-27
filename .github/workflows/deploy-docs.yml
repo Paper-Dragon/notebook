@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  pre-build:
+  build-cloudflare-geekery_cn:
     runs-on: ubuntu-latest
     steps:
       - name: 拉源码
@@ -43,40 +43,12 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-
-  cloudflare-geekery_cn-pre-build:
-    runs-on: ubuntu-latest
-    needs: pre-build
-    steps:
-      - name: modify
+      
+      - name: 更改主机名
         run: |-
           sed -i "s/hostname: "https:\/\/paper-dragon.github.io",/hostname: "https:\/\/www.geekery.cn",/g" src/.vuepress/theme.ts
           grep hostname src/.vuepress/theme.ts
-
-
-  build-github-pages:
-    runs-on: ubuntu-latest
-    needs: pre-build
-    steps:
-      - name: 构建文档
-        env:
-          NODE_OPTIONS: --max_old_space_size=8192
-        run: |-
-          pnpm run docs:build
-          > src/.vuepress/dist/.nojekyll
-
-      - name: 上传构建产物
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: artifacts-html
-          path: src/.vuepress/dist/
-          # 产物保留时间
-          retention-days: 3
-
-  build-geekery_cn-pages:
-    runs-on: ubuntu-latest
-    needs: build-github-pages
-    steps:
+        
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
@@ -92,8 +64,59 @@ jobs:
           # 产物保留时间
           retention-days: 3
 
+
+  build-github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉源码
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          # submodules: true
+
+      - name: 安装 pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          run_install: true
+          version: 8
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip' # caching pip dependencies
+          cache-dependency-path: "requirements.txt"
+
+      - name: 安装python依赖
+        run: pip install -r requirements.txt
+
+      - name: 生成图云
+        run: python main.py
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+      - name: 构建文档
+        env:
+          NODE_OPTIONS: --max_old_space_size=8192
+        run: |-
+          pnpm run docs:build
+          > src/.vuepress/dist/.nojekyll
+
+      - name: 上传构建产物
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: artifacts-html
+          path: src/.vuepress/dist/
+          # 产物保留时间
+          retention-days: 3
+
+
   deploy-github-page:
     runs-on: ubuntu-latest
+    needs: build-github-pages
     steps:
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
@@ -103,6 +126,7 @@ jobs:
           folder: src/.vuepress/dist
 
   deploy-cloudflare-geekery_cn-page:
+    needs: build-cloudflare-geekery_cn
     runs-on: ubuntu-latest
     steps:
       - name: 部署文档
