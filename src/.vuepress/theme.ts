@@ -3,7 +3,7 @@ import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "paper-dragon.github.io",
+  hostname: "https://paper-dragon.github.io",
   
   fullscreen: true,
   
