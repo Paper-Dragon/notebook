@@ -102,7 +102,14 @@ jobs:
         run: |-
           sed -i 's/hostname: "https:\/\/paper-dragon.github.io",/hostname: "https:\/\/www.geekery.cn",/g' src/.vuepress/theme.ts
           grep hostname src/.vuepress/theme.ts
-        
+      
+      - name: 添加状态页面
+        run: |-
+          sed -i 's/关于我/构建状态/g' src/.vuepress/navbar.ts
+          sed -i 's/link:.*me.md\",/link: \"https:\/\/cloudnative-status.2678885646.workers.dev\/\",/g' src/.vuepress/navbar.ts
+          sed -i 's/address-card/diagram-project/g' src/.vuepress/navbar.ts
+          
+
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
