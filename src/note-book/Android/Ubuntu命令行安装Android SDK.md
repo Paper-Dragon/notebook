@@ -3,19 +3,30 @@
 ## 安装步骤
 
 1. 新建 **android-sdk** 作为工作目录。
-2. 下载命令行工具 [sdkman](https://www.jb51.cc/tag/sdkman/)ager: `wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip`
-3. 解压：`unzip commandlinetools-linux-7302050_latest.zip`，进入目录如下所示
-4. ![image-20230620102354072](Ubuntu命令行安装Android SDK.assets/image-20230620102354072.png)
-5. 进入 **cmdline-tools** 目录，执行 `./bin/sdkmanager` 报错 “Error: [Could](https://www.jb51.cc/tag/Could/) not deter[mine](https://www.jb51.cc/tag/mine/) SDK root.”
-6. 在当前目录新建 **latest** 目录，并将原 **cmdline-tools** 下的所有[文件](https://www.jb51.cc/tag/wenjian/)移至 **latest**下，操作如下：
 
-![image-20230620102343996](Ubuntu命令行安装Android SDK.assets/image-20230620102343996.png)
+2. 下载命令行工具 sdkmanager:
 
-7. 下载完成后，执行 `ls ..` 查看[上级目录](https://www.jb51.cc/tag/shangjimulu/)中的[文件](https://www.jb51.cc/tag/wenjian/)：
+   `wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip`
+
+3. 解压：
+
+   `unzip commandlinetools-linux-7302050_latest.zip`，
+
+   进入目录如下所示
+
+4. ![image-20230620102354072](Ubuntu命令行安装Android-SDK.assets/image-20230620102354072.png)
+
+5. 进入 **cmdline-tools** 目录，执行 `./bin/sdkmanager` 报错 “Error: Could not deter mine SDK root.”
+
+6. 在当前目录新建 **latest** 目录，并将原 **cmdline-tools** 下的所有文件移至 **latest**下，操作如下：
+
+![image-20230620102343996](Ubuntu命令行安装Android-SDK.assets/image-20230620102343996.png)
+
+7. 下载完成后，执行 `ls ..` 查看上级目录中的文件：
 
    
 
-   ![image-20230620102425568](Ubuntu命令行安装Android SDK.assets/image-20230620102425568.png)
+   ![image-20230620102425568](Ubuntu命令行安装Android-SDK.assets/image-20230620102425568.png)
 
 ## 引用
 
