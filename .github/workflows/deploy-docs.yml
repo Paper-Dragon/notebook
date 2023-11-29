@@ -190,42 +190,9 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
 
-      
-  publish-docker:
-    runs-on: ubuntu-latest
-    needs: build-github-pages
-    steps:
-      - name: 拉源码
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 1
-
-      - name: 把当前时间放到环境变量里
-        run: echo "TAGDATE=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
-
-      - name: 下载上一个步骤生成的产物
-        uses: actions/download-artifact@v2.1.1
-        with:
-          name: artifacts-html
-          path: ./file
-
-      - name: 登陆到DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-      - name: 构建和推送docker镜像
-        uses: docker/build-push-action@v4.1.1
-        with:
-          context: .
-          file: ./Dockerfile
-          push: true
-          tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAGDATE }}
-
   deploy-hosted:
     runs-on: self-hosted
-    needs: build-github-pages
+    needs: build-cloudflare-geekery_cn
     timeout-minutes: 600
     steps:
       - name: 下载上一个步骤生成的产物
@@ -233,12 +200,12 @@ jobs:
         continue-on-error: true
         timeout-minutes: 180
         with:
-          name: artifacts-html
+          name: geekery_cn-artifacts-html
           path: ./file
 
       - name: 部署到个人主机
         continue-on-error: true
         run: |
-         sudo chattr -iaR /www/wwwroot/note-book/
-         sudo rm -rvf /www/wwwroot/note-book/*
-         sudo mv -vf file/* /www/wwwroot/note-book/
+          sudo chattr -iaR /www/wwwroot/note-book/
+          sudo rm -rvf /www/wwwroot/note-book/*
+          sudo mv -vf file/* /www/wwwroot/note-book/
