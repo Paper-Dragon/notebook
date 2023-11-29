@@ -22,7 +22,7 @@ jobs:
 
       - name: 更改主机名
         run: |-
-          sed -i 's/hostname: "https:\/\/paper-dragon.github.io",/hostname: "\/",/g' src/.vuepress/theme.ts
+          sed -i 's/hostname: "https:\/\/paper-dragon.github.io",/hostname: "",/g' src/.vuepress/theme.ts
           grep hostname src/.vuepress/theme.ts
 
       - name: 安装 pnpm
