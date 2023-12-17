@@ -266,15 +266,15 @@ WARP是CloudFlare提供的一项基于WireGuard的网络流量安全及加速服
 
 - 为仅IPv6服务器添加IPv4
 
-原理如图，IPv4的流量均被WARP网卡接管，实现了让IPv4的流量通过WARP访问外部网络。 [![img](连接WARP为服务器添加IPv4IPv6网络.assets/135735404-1389d022-e5c5-4eb8-9655-f9f065e3c92e-16918431854245.png)](https://user-images.githubusercontent.com/62703343/135735404-1389d022-e5c5-4eb8-9655-f9f065e3c92e.png)
+原理如图，IPv4的流量均被WARP网卡接管，实现了让IPv4的流量通过WARP访问外部网络。 ![img](连接WARP为服务器添加IPv4IPv6网络.assets/135735404-1389d022-e5c5-4eb8-9655-f9f065e3c92e-16918431854245.png)
 
 - 为仅IPv4服务器添加IPv6
 
-原理如图，IPv6的流量均被WARP网卡接管，实现了让IPv6的流量通过WARP访问外部网络。 [![img](连接WARP为服务器添加IPv4IPv6网络.assets/135735414-01321b0b-887e-43d6-ad68-a74db20cfe84-16918431870737.png)](https://user-images.githubusercontent.com/62703343/135735414-01321b0b-887e-43d6-ad68-a74db20cfe84.png)
+原理如图，IPv6的流量均被WARP网卡接管，实现了让IPv6的流量通过WARP访问外部网络。 ![img](连接WARP为服务器添加IPv4IPv6网络.assets/135735414-01321b0b-887e-43d6-ad68-a74db20cfe84-16918431870737.png)
 
 - 双栈服务器置换网络
 
-有时我们的服务器本身就是双栈的，但是由于种种原因我们可能并不想使用其中的某一种网络，这时也可以通过WARP接管其中的一部分网络连接隐藏自己的IP地址。至于这样做的目的，最大的意义是减少一些滥用严重机房出现验证码的概率；同时部分内容提供商将WARP的落地IP视为真实用户的原生IP对待，能够解除一些基于IP识别的封锁。 [![img](连接WARP为服务器添加IPv4IPv6网络.assets/135735419-50805ed6-20ea-4440-93b4-5bcc6f2aca9b-16918431889779.png)](https://user-images.githubusercontent.com/62703343/135735419-50805ed6-20ea-4440-93b4-5bcc6f2aca9b.png)
+有时我们的服务器本身就是双栈的，但是由于种种原因我们可能并不想使用其中的某一种网络，这时也可以通过WARP接管其中的一部分网络连接隐藏自己的IP地址。至于这样做的目的，最大的意义是减少一些滥用严重机房出现验证码的概率；同时部分内容提供商将WARP的落地IP视为真实用户的原生IP对待，能够解除一些基于IP识别的封锁。 ![img](连接WARP为服务器添加IPv4IPv6网络.assets/135735419-50805ed6-20ea-4440-93b4-5bcc6f2aca9b-16918431889779.png)
 
 - 网络性能方面：内核集成＞内核模块＞wireguard-go
 
