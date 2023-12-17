@@ -81,7 +81,6 @@ wget -N https://cdn.jsdelivr.net/gh/fscarmen/warp/menu.sh && bash menu.sh d
 warp i jp
 ```
 
-## 
 
 ## 刷 Netflix 解锁 WARP IP 的方法
 
@@ -125,7 +124,6 @@ kill -9 $(pgrep -f warp)   ##杀掉正在运行的进程
 - 另外遇到问题仍然需要用户有一定的处理能力，如结束时没有网络，可以用 `warp o` 开关来获取，因此并没有写死在脚本里了。
 - 如果长时间仍然未刷出解锁IP，可以查查 CloudFlare 当地是否在维护调路由：https://www.cloudflarestatus.com/
 
-## 
 
 ## Netflix 分流到 WARP Client Proxy、WireProxy 的方法
 
@@ -169,7 +167,6 @@ kill -9 $(pgrep -f warp)   ##杀掉正在运行的进程
 }
 ```
 
-## 
 
 ## Netflix,Google 分流到 Client WARP 网络接口的方法
 
@@ -221,7 +218,6 @@ kill -9 $(pgrep -f warp)   ##杀掉正在运行的进程
 }
 ```
 
-## 
 
 ## WARP+ License 及 ID 获取
 
@@ -229,9 +225,7 @@ kill -9 $(pgrep -f warp)   ##杀掉正在运行的进程
 
 引用Luminous大神原话：实际测试WARP+在访问非CF的网站速度上和免费版没有差异，只有在访问CloudFlare的站点时付费版会通过Argo类似的技术通过与目标较近的数据中心前往源站，而免费版是仅限于连接地前往源站，仅此而已。
 
-[![img](连接WARP为服务器添加IPv4IPv6网络.assets/136070323-47f2600a-13e4-4eb0-a64d-d7eb805c28e2-16918431803793.png)](https://user-images.githubusercontent.com/62703343/136070323-47f2600a-13e4-4eb0-a64d-d7eb805c28e2.png)
-
-## 
+![img](连接WARP为服务器添加IPv4IPv6网络.assets/136070323-47f2600a-13e4-4eb0-a64d-d7eb805c28e2-16918431803793.png)
 
 ## WARP 网络接口数据，临时、永久关闭和开启
 
@@ -241,7 +235,7 @@ WireGuard 网络接口数据，查看 `wg`
 
 禁止开机启动 `systemctl disable --now wg-quick@wgcf`,恢复开机启动 `systemctl enable --now wg-quick@wgcf`
 
-## 
+
 
 ## WARP Teams 获取并用于 Linux 的方法
 
@@ -256,7 +250,6 @@ WireGuard 网络接口数据，查看 `wg`
 
 - 感谢 Misaka 演示: [1.视频教程](https://www.bilibili.com/video/BV1gU4y1K7of/) [2.图文教程](https://owo.misaka.rest/cf-teams/)
 
-## 
 
 ## WARP原理
 
@@ -284,7 +277,6 @@ Linux 5.6 及以上内核则已经集成了 WireGuard ，可以用 `hostnamectl`
 
 EUserv是 LXC 非完整虚拟化 VPS 主机，共享宿主机内核，不能更换内核，只能选择 "wireguard-go" 方案。
 
-## 
 
 ## 鸣谢下列作者的文章和项目
 
