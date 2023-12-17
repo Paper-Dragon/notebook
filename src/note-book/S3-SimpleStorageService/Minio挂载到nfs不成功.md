@@ -1,6 +1,8 @@
-# ERROR Unable to initialize backend: no locks available.
+# Minio挂载到nfs不成功
 
-![001.png](bug and Issue.assets/b390fb7d1ac006cf10b52294210348ab-16918418773061.png)
+## ERROR Unable to initialize backend: no locks available.
+
+![001.png](Minio挂载到nfs不成功.assets/b390fb7d1ac006cf10b52294210348ab-16918418773061.png)
 
 服务器做了nas共享存储后，修改minio的数据目录为nas共享目录，启动minio服务失败，报错信息如上图所示：
 
@@ -19,7 +21,7 @@ File locking: GitLab requires advisory file locking, which is only supported nat
 
 https://docs.gitlab.com/ee/administration/nfs.html
 
-![002.jpg](bug and Issue.assets/5ab750ee93dd42e3bb43496ffff3b6fc-16918418809433.png)
+![002.jpg](Minio挂载到nfs不成功.assets/5ab750ee93dd42e3bb43496ffff3b6fc-16918418809433.png)
 总结
 
 最后我们选择了方案2，但是Minio官网是推荐用nfsv4协议挂载.
