@@ -26,7 +26,12 @@ jobs:
           ip addr show | grep -w inet | awk '{print $2}'
           echo "Default Gateway: $(ip route show default | awk '/default via/ {print $3}')"
           echo "DNS Servers: $(grep nameserver /etc/resolv.conf | awk '{print $2}')"
+          echo "curl ifconfig.icu/all.json"
           curl ifconfig.icu/all.json
+          echo "\n"
+          echo "==== CPU ===="
+          lscpu
+          
           echo "==== 系统负载 ===="
           top -n 1 -b | grep "load average:" | awk '{print $12 $13 $14}'
           echo -e "-------------------------------System Information----------------------------"
