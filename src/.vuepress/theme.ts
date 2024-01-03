@@ -1,6 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
+import {cut} from "nodejs-jieba";
 
 export default hopeTheme({
   hostname: "https://paper-dragon.github.io",
@@ -34,11 +35,11 @@ export default hopeTheme({
   copyright: "copyleft 2023-至今 PaperDragon",
   displayFooter: true,
 
-  encrypt: {
-    config: {
-      "/notebook/": ["1234"],
-    },
-  },
+  // encrypt: {
+  //   config: {
+  //     "/notebook/": ["1234"],
+  //   },
+  // },
 
   blog: {
     timeline: "红了樱桃，绿了芭蕉"
@@ -52,13 +53,13 @@ export default hopeTheme({
   plugins: {
     blog: true,
     // You should generate and use your own comment service
-    comment: {
-      provider: "Giscus",
-      repo: "Paper-Dragon/paper-dragon.github.io",
-      repoId: "R_kgDOKGpjZw",
-      category: "blog",
-      categoryId: "DIC_kwDOKGpjZ84CauNO",
-    },
+    // comment: {
+    //   provider: "Giscus",
+    //   repo: "Paper-Dragon/paper-dragon.github.io",
+    //   repoId: "R_kgDOKGpjZw",
+    //   category: "blog",
+    //   categoryId: "DIC_kwDOKGpjZ84CauNO",
+    // },
     components: {
       // 你想使用的组件
       components: [
@@ -79,59 +80,88 @@ export default hopeTheme({
         // "YouTube",
       ],
     },
-
+    searchPro: true,//{
+      // // 是否在输入时提供自动建议
+      // indexContent: true,
+      // 是否在输入时提供自动建议
+      //autoSuggestions: false,
+      // // 存储查询历史的最大数量
+      // queryHistoryCount: 3,
+      // // 存储结果历史的最大数量
+      // resultHistoryCount: 10,
+      // // 结束输入到开始搜索的延时
+      // // searchDelay: 150,
+      // suggestDelay: 60,
+      // //   // Custom field for search
+      // //   // customFields: [
+      // //   // {
+      // //   //   getter: ({ frontmatter }) =>
+      // //   //     <string | undefined>frontmatter.category ?? null,
+      // //   //   formatter: "分类: $content",
+      // //   // },
+      // // ],
+      // // 输出文件名
+      // worker: "search-pro-worker-XPathResult.js",
+      // // 热重载
+      // hotReload: true,
+      // // 结果排序策略: 当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面
+      // //sortStrategy: "total",
+      // indexOptions: {
+      //   tokenize: (text, fieldName) => fieldName === "id" ? [text] : cut(text, true),
+      // },
+    // },
 
     // All features are enabled for demo, only preserve features you need here
-    mdEnhance: {
-       // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
-      align: false,
-      // 是否启用自定义属性支持
-      attrs: false,
-      // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
-      chart: false,
-      checkLinks: { status: "always" },
-      codetabs: true,
-      demo: true,
-      echarts: true,
-      figure: true,
-      // 是否启用流程图支持
-      flowchart: true,
-      // 是否支持完整的 GFM 语法。
-      gfm: false,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      // 是否通过 KaTeX 启用 TeX 语法支持
-      katex: false,
-      mark: true,
-      // 是否通过 Math Jax 启用 TeX 语法支持
-      mathjax: false,
-      // mermaid流程图 https://mermaid.js.org/
-      mermaid: false,
-      // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
-      revealJs: false,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
-          },
-        },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      vPre: false,
-      vuePlayground: true,
-    },
+    // mdEnhance: {
+    //    // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
+    //   align: false,
+    //   // 是否启用自定义属性支持
+    //   attrs: false,
+    //   // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
+    //   chart: false,
+    //   checkLinks: { status: "always" },
+    //   codetabs: true,
+    //   demo: true,
+    //   echarts: true,
+    //   figure: true,
+    //   // 是否启用流程图支持
+    //   flowchart: true,
+    //   // 是否支持完整的 GFM 语法。
+    //   gfm: false,
+    //   imgLazyload: true,
+    //   imgSize: true,
+    //   include: true,
+    //   // 是否通过 KaTeX 启用 TeX 语法支持
+    //   katex: false,
+    //   mark: true,
+    //   // 是否通过 Math Jax 启用 TeX 语法支持
+    //   mathjax: false,
+    //   // mermaid流程图 https://mermaid.js.org/
+    //   mermaid: false,
+    //   // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
+    //   revealJs: false,
+    //   playground: {
+    //     presets: ["ts", "vue"],
+    //   },
+    //   stylize: [
+    //     {
+    //       matcher: "Recommended",
+    //       replacer: ({ tag }) => {
+    //         if (tag === "em")
+    //           return {
+    //             tag: "Badge",
+    //             attrs: { type: "tip" },
+    //             content: "Recommended",
+    //           };
+    //       },
+    //     },
+    //   ],
+    //   sub: true,
+    //   sup: true,
+    //   tabs: true,
+    //   vPre: false,
+    //   vuePlayground: true,
+    // },
 
     // uncomment these if you want a pwa
     // pwa: {

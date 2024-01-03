@@ -2,6 +2,10 @@
 # category: 数据库
 # category: Nginx
 # category: Network
+# category: Linux
+# category: Shell
+# category: 神操作
+
 
 
 

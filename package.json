@@ -12,17 +12,17 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vue/repl": "^3.1.0",
+    "@vue/repl": "^3.1.1",
     "@vuepress/client": "2.0.0-rc.0",
     "echarts": "^5.4.3",
     "echarts-wordcloud": "^2.1.0",
     "flowchart.ts": "^2.0.0",
     "nodejs-jieba": "^0.1.2",
-    "vue": "^3.3.13",
+    "vue": "^3.4.3",
     "vuepress": "2.0.0-rc.0",
-    "vuepress-plugin-md-enhance": "2.0.0-rc.7",
-    "vuepress-plugin-search-pro": "2.0.0-rc.7",
+    "vuepress-plugin-md-enhance": "2.0.0-rc.10",
+    "vuepress-plugin-search-pro": "2.0.0-rc.10",
     "vuepress-plugin-umami-analytics": "1.7.0",
-    "vuepress-theme-hope": "2.0.0-rc.7"
+    "vuepress-theme-hope": "2.0.0-rc.10"
   }
 }
