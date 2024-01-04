@@ -1,7 +1,7 @@
 {
   "name": "notebook",
   "version": "2.0.1",
-  "description": "notebook by vuepress-theme-hope",
+  "description": "notebook made by vuepress-theme-hope",
   "license": "MIT",
   "type": "module",
   "scripts": {
