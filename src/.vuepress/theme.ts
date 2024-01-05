@@ -1,7 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
-import {cut} from "nodejs-jieba";
+// import {cut} from "nodejs-jieba";
 
 export default hopeTheme({
   hostname: "https://paper-dragon.github.io",
@@ -52,14 +52,14 @@ export default hopeTheme({
 
   plugins: {
     blog: true,
-    // You should generate and use your own comment service
-    // comment: {
-    //   provider: "Giscus",
-    //   repo: "Paper-Dragon/paper-dragon.github.io",
-    //   repoId: "R_kgDOKGpjZw",
-    //   category: "blog",
-    //   categoryId: "DIC_kwDOKGpjZ84CauNO",
-    // },
+    // // You should generate and use your own comment service
+    // // comment: {
+    // //   provider: "Giscus",
+    // //   repo: "Paper-Dragon/paper-dragon.github.io",
+    // //   repoId: "R_kgDOKGpjZw",
+    // //   category: "blog",
+    // //   categoryId: "DIC_kwDOKGpjZ84CauNO",
+    // // },
     components: {
       // 你想使用的组件
       components: [
@@ -80,7 +80,9 @@ export default hopeTheme({
         // "YouTube",
       ],
     },
-    searchPro: true,//{
+    searchPro: {
+      autoSuggestions: false
+    },//{
       // // 是否在输入时提供自动建议
       // indexContent: true,
       // 是否在输入时提供自动建议
