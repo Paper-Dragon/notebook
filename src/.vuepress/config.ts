@@ -39,24 +39,24 @@ export default defineUserConfig({
       ],
   ],
   plugins: [
-    searchProPlugin({
-      indexContent: true,
-      worker: "search-pro-worker-XPathResult.js",
-      hotReload: true,
-      indexOptions: {
-        tokenize: (text, fieldName) =>
-          fieldName === "id" ? [text] : cut(text, true),
-      },
-      // customFields: [
-      //   // {
-      //   //   getter: ({ frontmatter }) =>
-      //   //     <string | undefined>frontmatter.category ?? null,
-      //   //   formatter: "分类: $content",
-      //   // },
-      // ],
-      autoSuggestions: false,
-      suggestDelay: 60,
-    }),
+    // searchProPlugin({
+    //   indexContent: true,
+    //   worker: "search-pro-worker-XPathResult.js",
+    //   hotReload: true,
+    //   indexOptions: {
+    //     tokenize: (text, fieldName) =>
+    //       fieldName === "id" ? [text] : cut(text, true),
+    //   },
+    //   // customFields: [
+    //   //   // {
+    //   //   //   getter: ({ frontmatter }) =>
+    //   //   //     <string | undefined>frontmatter.category ?? null,
+    //   //   //   formatter: "分类: $content",
+    //   //   // },
+    //   // ],
+    //   autoSuggestions: false,
+    //   suggestDelay: 60,
+    // }),
     umamiAnalyticsPlugin({
       // options 
       id: "eecd3f56-5668-4c9e-b123-b2853b91a310",

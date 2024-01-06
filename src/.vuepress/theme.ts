@@ -34,11 +34,11 @@ export default hopeTheme({
   copyright: "copyleft 2023-至今 PaperDragon",
   displayFooter: true,
 
-  encrypt: {
-    config: {
-      "/notebook/": ["1234"],
-    },
-  },
+  // encrypt: {
+  //   config: {
+  //     "/notebook/": ["1234"],
+  //   },
+  // },
 
   blog: {
     timeline: "红了樱桃，绿了芭蕉"
@@ -79,6 +79,7 @@ export default hopeTheme({
         // "YouTube",
       ],
     },
+    searchPro: true,
 
 
     // All features are enabled for demo, only preserve features you need here
