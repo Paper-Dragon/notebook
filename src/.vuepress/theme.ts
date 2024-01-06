@@ -1,6 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import navbar from "./navbar.js";
 import sidebar from "./sidebar.js";
+import {cut} from "nodejs-jieba";
 
 export default hopeTheme({
   hostname: "https://paper-dragon.github.io",
@@ -79,7 +80,20 @@ export default hopeTheme({
         // "YouTube",
       ],
     },
-    searchPro: true,
+
+    docsearch: false,
+    searchPro: {
+      hotReload: true,
+      queryHistoryCount: 2,
+      resultHistoryCount: 2,
+      indexContent: true,
+      searchDelay: 300,
+      indexOptions: {
+        // 使用 nodejs-jieba 进行分词
+        tokenize: (text, fieldName) =>
+          fieldName === "id" ? [text] : cut(text, true),
+      },
+    },
 
 
     // All features are enabled for demo, only preserve features you need here
