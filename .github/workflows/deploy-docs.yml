@@ -212,5 +212,5 @@ jobs:
         continue-on-error: true
         run: |
           sudo chattr -iaR /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
-          sudo rm -rvf /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
-          sudo mv -vf file/* /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
+          sudo rm -rvf /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index/*
+          sudo mv -vf file/* /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index/
