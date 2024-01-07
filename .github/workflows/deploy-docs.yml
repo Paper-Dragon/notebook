@@ -211,6 +211,6 @@ jobs:
       - name: 部署到个人主机
         continue-on-error: true
         run: |
-          sudo chattr -iaR /www/wwwroot/note-book/
-          sudo rm -rvf /www/wwwroot/note-book/*
-          sudo mv -vf file/* /www/wwwroot/note-book/
+          sudo chattr -iaR /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
+          sudo rm -rvf /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
+          sudo mv -vf file/* /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
