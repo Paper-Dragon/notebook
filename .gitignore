@@ -5,3 +5,4 @@ src/.vuepress/.temp/
 src/.vuepress/dist/
 .vscode
 .idea
+.DS_Store
