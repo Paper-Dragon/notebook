@@ -1,4 +1,8 @@
-# bridge-nf-call-iptables
+# docker报错bridge-nf-call-iptables内核修整
+
+## bridge-nf-call-iptables
+
+
 
 1）警告信息如下：
 
@@ -33,8 +37,7 @@ sysctl net.bridge.bridge-nf-call-iptables=1
 sysctl net.bridge.bridge-nf-call-ip6tables=1
 ```
 
-4）I run my Docker on CentOS with SELinux enforcing and FirewallD on
-To resolve this Warning I add those two lines info my /etc/sysctl.conf
+4）必须写进去报错才会消失，如果没消失，检查selinux和firewalld是否有其他阻碍的规则 /etc/sysctl.conf
 
 ```bash
 net.bridge.bridge-nf-call-ip6tables = 1
@@ -45,7 +48,7 @@ net.bridge.bridge-nf-call-iptables = 1
 
 
 
-# net.ipv4.ip_forward
+## net.ipv4.ip_forward
 
 解决方法：
 
