@@ -52,14 +52,14 @@ export default hopeTheme({
 
   plugins: {
     blog: true,
-    // // You should generate and use your own comment service
-    // // comment: {
-    // //   provider: "Giscus",
-    // //   repo: "Paper-Dragon/paper-dragon.github.io",
-    // //   repoId: "R_kgDOKGpjZw",
-    // //   category: "blog",
-    // //   categoryId: "DIC_kwDOKGpjZ84CauNO",
-    // // },
+    // You should generate and use your own comment service
+    comment: {
+      provider: "Giscus",
+      repo: "Paper-Dragon/paper-dragon.github.io",
+      repoId: "R_kgDOKGpjZw",
+      category: "blog",
+      categoryId: "DIC_kwDOKGpjZ84CauNO",
+    },
     components: {
       // 你想使用的组件
       components: [
@@ -114,56 +114,56 @@ export default hopeTheme({
     // },
 
     // All features are enabled for demo, only preserve features you need here
-    // mdEnhance: {
-    //    // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
-    //   align: false,
-    //   // 是否启用自定义属性支持
-    //   attrs: false,
-    //   // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
-    //   chart: false,
-    //   checkLinks: { status: "always" },
-    //   codetabs: true,
-    //   demo: true,
-    //   echarts: true,
-    //   figure: true,
-    //   // 是否启用流程图支持
-    //   flowchart: true,
-    //   // 是否支持完整的 GFM 语法。
-    //   gfm: false,
-    //   imgLazyload: true,
-    //   imgSize: true,
-    //   include: true,
-    //   // 是否通过 KaTeX 启用 TeX 语法支持
-    //   katex: false,
-    //   mark: true,
-    //   // 是否通过 Math Jax 启用 TeX 语法支持
-    //   mathjax: false,
-    //   // mermaid流程图 https://mermaid.js.org/
-    //   mermaid: false,
-    //   // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
-    //   revealJs: false,
-    //   playground: {
-    //     presets: ["ts", "vue"],
-    //   },
-    //   stylize: [
-    //     {
-    //       matcher: "Recommended",
-    //       replacer: ({ tag }) => {
-    //         if (tag === "em")
-    //           return {
-    //             tag: "Badge",
-    //             attrs: { type: "tip" },
-    //             content: "Recommended",
-    //           };
-    //       },
-    //     },
-    //   ],
-    //   sub: true,
-    //   sup: true,
-    //   tabs: true,
-    //   vPre: false,
-    //   vuePlayground: true,
-    // },
+    mdEnhance: {
+       // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
+      align: false,
+      // 是否启用自定义属性支持
+      attrs: false,
+      // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
+      chart: false,
+      checkLinks: { status: "always" },
+      codetabs: true,
+      demo: true,
+      echarts: true,
+      figure: true,
+      // 是否启用流程图支持
+      flowchart: true,
+      // 是否支持完整的 GFM 语法。
+      gfm: false,
+      imgLazyload: true,
+      imgSize: true,
+      include: true,
+      // 是否通过 KaTeX 启用 TeX 语法支持
+      katex: false,
+      mark: true,
+      // 是否通过 Math Jax 启用 TeX 语法支持
+      mathjax: false,
+      // mermaid流程图 https://mermaid.js.org/
+      mermaid: false,
+      // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
+      revealJs: false,
+      playground: {
+        presets: ["ts", "vue"],
+      },
+      stylize: [
+        {
+          matcher: "Recommended",
+          replacer: ({ tag }) => {
+            if (tag === "em")
+              return {
+                tag: "Badge",
+                attrs: { type: "tip" },
+                content: "Recommended",
+              };
+          },
+        },
+      ],
+      sub: true,
+      sup: true,
+      tabs: true,
+      vPre: false,
+      vuePlayground: true,
+    },
 
     // uncomment these if you want a pwa
     // pwa: {
