@@ -43,6 +43,8 @@ export default defineUserConfig({
       indexContent: true,
       worker: "search-pro-worker-XPathResult.js",
       hotReload: true,
+      // 结果排序策略: 当有多个匹配的结果时，会按照策略对结果进行排序。max 表示最高分更高的页面会排在前面。total 表示总分更高的页面会排在前面。
+      sortStrategy: "max",
       indexOptions: {
         tokenize: (text, fieldName) =>
           fieldName === "id" ? [text] : cut(text, true),
