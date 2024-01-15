@@ -1,3 +1,21 @@
+---
+​---
+article: false
+breadcrumb: false
+category: 
+  - Tools
+comment: false
+icon: splotch
+title: 工具集合
+timeline: false
+prev: false
+next: false
+sidebar: false
+​---
+---
+
+
+
 # WARP帮助页面
 
 > 如果你使用了团队 `paperdragon` 且遇到了问题点击求助按钮，或者点击debug按钮将会跳转到这个界面。可以在这个页面的评论区评论你的问题，作者将会一一回答。
