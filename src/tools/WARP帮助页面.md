@@ -1,4 +1,3 @@
----
 ​---
 article: false
 breadcrumb: false
@@ -12,7 +11,6 @@ prev: false
 next: false
 sidebar: false
 ​---
----
 
 
 
