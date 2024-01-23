@@ -611,7 +611,7 @@ sed -i 's|#DefaultLimitNOFILE=|DefaultLimitNOFILE=65535|g' /etc/systemd/system.c
 
 还有一个办法就是不直接修改service， 使用 systemctl edit xxxx.service 进行参数覆盖
 
-## 日志切割
+## 日志轮转切割
 
 ```nginx
 http {
@@ -629,6 +629,246 @@ http {
     create 0644 nginx nginx;  # 创建新的日志文件权限
  
     # 其他配置项...
+}
+```
+
+## log文件记录请求url
+
+配置[nginx](https://so.csdn.net/so/search?q=nginx&spm=1001.2101.3001.7020)配置文件default.conf ，使用nginx内置变量 $host 和$request即可获得url数据
+
+```c
+log_format main escape=json  '{'
+                                '"host": "$host",'
+                                '"request": "$request"'
+                                '}' ;
+access_log  /var/log/nginx/access.log  main;
+```
+
+## log文件记录请求body和[header](https://so.csdn.net/so/search?q=header&spm=1001.2101.3001.7020)
+
+① body：配置中打开lua\_need\_body\_request on 即可将request\_body 记录到$request\_body变量
+
+② header：header数据需要在header\_filter\_by\_lua\_block阶段中手动赋值，读取请求中的header信息赋值给$request\_header 变量
+
+修改后配置文件如下：
+
+```c
+log_format main escape=json  '{'
+                                '"host": "$host",'
+                                '"request": "$request",'
+                                '"request_header": "$request_header",'
+                                '"request_body": "$request_body"'
+                                '}' ;
+access_log  /var/log/nginx/access.log  main;
+ 
+server {
+    # 记录请求body
+    lua_need_request_body   on;
+    # 记录请求header
+    set $response_header     "";
+    header_filter_by_lua_block     {
+        json = require "cjson"
+        ngx.var.request_header = json.encode(ngx.req.get_headers())
+    }
+}
+```
+
+## log文件记录返回body和header
+
+① body：body数据需要在body\_filter\_by\_lua\_block阶段中手动赋值， 读取response body中的数据赋值给 $response\_body 变量
+
+② header：response header数据获取方式，同request header的获取方式一致。
+
+完整配置如下
+
+```c
+log_format main escape=json  '{'
+                                '"host": "$host",'
+                                '"request": "$request",'
+                                '"request_header": "$request_header",'
+                                '"request_body": "$request_body",'
+                                '"response_header": "$response_header",'
+                                '"response_body": "$response_body"'
+                                '}' ;
+access_log  /var/log/nginx/access.log  main;
+ 
+server {
+    # 记录请求body
+    lua_need_request_body   on;
+ 
+    # 记录请求header和返回header
+    set $response_header     "";
+    header_filter_by_lua_block     {
+        json = require "cjson"
+        ngx.var.request_header = json.encode(ngx.req.get_headers())
+        ngx.var.response_header = json.encode(ngx.resp.get_headers())
+        ngx.var.request_query = json.encode(ngx.req.get_uri_args()) # 记录 request query 数据
+    }
+    
+    # 记录返回body
+    set $response_body      "";
+    body_filter_by_lua_block     {
+        local response_body = string.sub(ngx.arg[1],1,10000)
+        ngx.ctx.buffered =  (ngx.ctx.buffered or "")   .. response_body  
+        if ngx.arg[2] then
+            ngx.var.response_body = ngx.ctx.buffered
+        end
+    }
+}
+```
+
+## Nginx实现记录mine.qubic.li的所有请求信息
+
+```c
+
+#user  nobody;
+worker_processes  auto;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    log_format logbody escape=json '$remote_addr - $remote_user [$time_local] "$request" $status $body_bytes_sent "$http_referer" "$http_user_agent" "\n" "request: $request_body" "\n" "response: $response_body"';
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+
+
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    # server {
+    #     listen       80;
+    #     server_name  localhost;
+
+    #     #charset koi8-r;
+
+    #     #access_log  logs/host.access.log  main;
+
+    #     location / {
+    #         root   html;
+    #         index  index.html index.htm;
+    #     }
+
+    #     #error_page  404              /404.html;
+
+    #     # redirect server error pages to the static page /50x.html
+    #     #
+    #     error_page   500 502 503 504  /50x.html;
+    #     location = /50x.html {
+    #         root   html;
+    #     }
+
+    #     # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #     #
+    #     #location ~ \.php$ {
+    #     #    proxy_pass   http://127.0.0.1;
+    #     #}
+
+    #     # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #     #
+    #     #location ~ \.php$ {
+    #     #    root           html;
+    #     #    fastcgi_pass   127.0.0.1:9000;
+    #     #    fastcgi_index  index.php;
+    #     #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #     #    include        fastcgi_params;
+    #     #}
+
+    #     # deny access to .htaccess files, if Apache's document root
+    #     # concurs with nginx's one
+    #     #
+    #     #location ~ /\.ht {
+    #     #    deny  all;
+    #     #}
+    # }
+
+
+    server {
+            lua_need_request_body on;
+            set $response_body "";
+            body_filter_by_lua_block     {
+                local response_body = string.sub(ngx.arg[1],1,10000)
+                ngx.ctx.buffered =  (ngx.ctx.buffered or "")   .. response_body
+                if ngx.arg[2] then
+                    ngx.var.response_body = ngx.ctx.buffered
+                end
+            }
+
+        listen 8899;
+        root /var/www/html;
+
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name     qb.myauth.top;
+
+        proxy_set_header Host mine.qubic.li;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header x-forwarded-for  $remote_addr;
+
+            access_log logs/proxy_log_detail.log logbody;
+
+        location / {
+
+                proxy_pass https://mine.qubic.li;
+                 proxy_ssl_server_name on;
+        }
+    }
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    #server {
+    #    listen       8000;
+    #    listen       somename:8080;
+    #    server_name  somename  alias  another.alias;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
+
+
+    # HTTPS server
+    #
+    #server {
+    #    listen       443 ssl;
+    #    server_name  localhost;
+
+    #    ssl_certificate      cert.pem;
+    #    ssl_certificate_key  cert.key;
+
+    #    ssl_session_cache    shared:SSL:1m;
+    #    ssl_session_timeout  5m;
+
+    #    ssl_ciphers  HIGH:!aNULL:!MD5;
+    #    ssl_prefer_server_ciphers  on;
+
+    #    location / {
+    #        root   html;
+    #        index  index.html index.htm;
+    #    }
+    #}
 }
 ```
 
