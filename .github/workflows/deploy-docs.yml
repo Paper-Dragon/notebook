@@ -110,8 +110,8 @@ jobs:
       
       - name: 添加状态页面
         run: |-
-          sed -i 's/关于我/构建状态/g' src/.vuepress/navbar.ts
-          sed -i 's/link:.*me.md\",/link: \"https:\/\/cloudnative-status.2678885646.workers.dev\/\",/g' src/.vuepress/navbar.ts
+          sed -i 's/关于我/内容分发网络部署状态/g' src/.vuepress/navbar.ts
+          sed -i 's/link:.*me.md\",/link: \"https:\/\/cloudflare-cloudnative-pages.geekery.cn\/\",/g' src/.vuepress/navbar.ts
           sed -i 's/address-card/diagram-project/g' src/.vuepress/navbar.ts
           
 
