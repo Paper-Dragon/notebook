@@ -13,23 +13,47 @@ import numpy as np
 
 MARKDOWN_ROOT_PATH = "./src/"
 
-stop_words = ['你', '我', '的', '了', '们', 'True', 'False', 'Node']
+stop_words = ['你', '我', '的', '了', '们', 'True', 'False']
 
 FONT = "./MiSans-Normal.ttf"
 OUTPUT_IMG_NAME = "./wordcloud.png"
 WORDCLOUD_IMAGE_MASK = "./coding.jpg"
-RE_POLICY = (r"^(-|#|\.|\*|:|0-9|_|a-z|A-Z|0|png|the|to|RegionOne|"
+RE_BLACK_LIST = (r"^(-|#|\.|\*|:|0-9|_|a-z|A-Z|0|png|the|to|RegionOne|"
              r"服务器|配置文件|一个|接下来|软件包|自定义|默认值|字符串|尽可能|是因为|表达式|相当于|客户端|初始化|解决方案|"
              r"优先级|运算符|管理员|"
              r"True|False|"
-             r"KiB|MiB|GiB|"
              r"Shanghai|Server|Client|Local|Address|Image|Runner|Label|Please|Master|Ctrl|"
              r"List|Array|String|Field|Column|Name|Version|Live|Depends|Path|"
              r"Creating|Running|Stopped|Applying|Installing|Pulling|Active|"
              r"Enable|Optional|Ready|Files|Configure|Configuration|"
              r"Pull|Node|None|"
-             r"User|Users|Default|Value|This|Type|File|Asia|\+)*$")
+             r"User|Users|Default|Value|This|Type|File|Asia|\+)*$|"
+             r"^[a-z].*$|"
+             r"^.*[0-9]$|^[0-9].*$|"
+             r"^assets.*$|"
+             r"^[A-Z][A-Z][A-Z].*$|"
+             r"^[A-Z][a-z][a-z]$|"
+             r".*[个次]|"
+             r"^(KiB|MiB|GiB|KB|MB|GB|PB|bit|byte|bytes|bits|kb|mb|gb|pb|)")
 
+
+
+            # r"^[a-z]{1,7}$|"
+            #  # role
+            #  r"(role|master|Master|Slave|Worker|slave|worker|cluster|user|admin|root|host|controller)|"
+            #  # Linux命令
+            #  r"(yum|echo|ls|mkdir|cd|passwd|group|useradd|userdel|file|ping|grep|egrep|awk|tar|size|sudo|cat|vim|zone)|"
+            #  # 编程语言
+            #  r"(local|self|main|printf|print|return|with|set|type|from|for|test|true|false|version|shell|app|null|module|timeout|not|def|create|yes|no|reset|read|base)|"
+            #  # 文件类型
+            #  r"(img|txt|md|png|avi|pdf|json|bash|conf|config|service|html|data|index|script|text|image)|"
+            #  # 国际顶级域名
+            #  r"(http|https|www|com|edu|gov|int|mil|net|org|biz|info|name|xxx|idv|coop|pro|museum|coop|aero)|"
+            #  # 计算机容量单位
+            #  
+            #  # Linux系统的目录
+            #  r"^(kernel|bin|boot|cdrom|dev|etc|home|lib|lib32|lib64|libx32|lost+found|media|mnt|opt|proc|root|run|sbin|snap|srv|swapfile|sys|tmp|usr|var)$|"
+      
 
 def word_frequency(directory, key_nums=200):
     """
@@ -59,13 +83,7 @@ def word_frequency(directory, key_nums=200):
 
                     # 统计名词的词频
                     for word in words:
-                        word = re.sub(RE_POLICY, '', word)
-                        word = re.sub(r'^assets.*$', '', word)
-                        word = re.sub(r'^[a-z].*$', '', word)
-                        word = re.sub(r'^[A-Z][A-Z][A-Z].*$', '', word)
-                        word = re.sub(r'^[A-Z][a-z][a-z]$', '', word)
-                        word = re.sub(r'^[0-9].*$', '', word)
-                        word = re.sub(r'.*[个次]', '', word)
+                        word = re.sub(RE_BLACK_LIST, '', word)
                         if len(word) < 3 or word == string.punctuation:  # 排除单个字符的分词结果
                             continue
                         else:
@@ -91,7 +109,7 @@ def word_frequency(directory, key_nums=200):
 # word_frequency(MARKDOWN_ROOT_PATH)
 
 
-def create_wordlouod(wordcloud_item: dict = {"Shanghai": 30, "Beijing": 40}):
+def create_wordcloud(wordcloud_item: dict = {"Shanghai": 30, "Beijing": 40}):
     mask = np.array(Image.open(f"{WORDCLOUD_IMAGE_MASK}"))
 
     wordcloud = WordCloud(background_color="white",
@@ -110,18 +128,19 @@ def create_wordlouod(wordcloud_item: dict = {"Shanghai": 30, "Beijing": 40}):
 
 def create_front_list():
     word_dict = word_frequency(MARKDOWN_ROOT_PATH, key_nums=400)
-    print(word_dict)
+    # print(word_dict)
     out = []
     for key, value in word_dict.items():
         out.append({"name": key, "value": value})
-    print(json.dumps(out))
+    # 实际生成的产物
+    # print(json.dumps(out))
 
     with open("src/.vuepress/public/data/wordcloud.json", "w", encoding='utf-8') as f:
         f.write(json.dumps(out, ensure_ascii=False, indent=4))
 
 
 def wordcloud_image():
-    create_wordlouod(wordcloud_item=word_frequency(MARKDOWN_ROOT_PATH, key_nums=400))
+    create_wordcloud(wordcloud_item=word_frequency(MARKDOWN_ROOT_PATH, key_nums=400))
 
 
 if __name__ == '__main__':
