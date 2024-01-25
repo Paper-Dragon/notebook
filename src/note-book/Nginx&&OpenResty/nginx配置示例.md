@@ -506,7 +506,7 @@ DESCRIPTION
 
 描述中明确表示PAM既可以用于应用程序鉴权，也可以用于服务鉴权。这里的服务指的是以`init`进程为根进程的，被称作`SysV`的机制，也就是各发行版在使用`systemd`之前广泛使用的服务机制。
 
-那么问题来了：对于`systemd`，到底是否依旧沿用PAM模块实现资源限制呢？我在RedHat Bugzilla找到了Systemd最初被引入时的一篇Ticket：[Bug 754285 - Hint that /etc/security/limits.conf does not apply to systemd services](https://link.zhihu.com/?target=https%3A//bugzilla.redhat.com/show_bug.cgi%3Fid%3D754285)。帖子中提到了一模一样的问题。Systemd的作者之一Kay Sievers当时给与了以下回复：
+那么问题来了：对于`systemd`，到底是否依旧沿用PAM模块实现资源限制呢？我在RedHat Bugzilla找到了Systemd最初被引入时的一篇Ticket：[Bug 754285 - Hint that /etc/security/limits.conf does not apply to systemd services](https://bugzilla.redhat.com/show_bug.cgi?id=754285)。帖子中提到了一模一样的问题。Systemd的作者之一Kay Sievers当时给与了以下回复：
 
 > Systemd does not support global limits, the file is intentionally ignored. LimitNOFILE= in the service file can be set to specify the number of open file descriptors for a specific service.
 

@@ -17,7 +17,7 @@ docker_compose_version=v2.2.2 \
 
 ```bsah
 docker_compose_version=v2.2.2 \
-&& curl -L "https://mirror-symbol.q32.top:8443/staticfile/software/%E8%99%9A%E6%8B%9F%E5%8C%96/docker/${docker_compose_version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+&& curl -L "https://mirror-symbol.q32.top:8443/staticfile/software/虚拟化/docker/${docker_compose_version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
 && chmod +x /usr/local/bin/docker-compose \
 && ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```

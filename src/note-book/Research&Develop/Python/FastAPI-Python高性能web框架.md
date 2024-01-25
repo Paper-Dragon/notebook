@@ -26,7 +26,7 @@ Starlette是一个轻量级的ASGI框架/工具包，是构建高性能Asyncio�
 
 ![image-20210202092756107](FastAPI-Python高性能web框架.assets/2ab113f5bbfc49a9befae75e5d06fa08tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.webp)
 
-安装环境，python环境必须是3.6以上的，然后去github中将[github.com/liaogx/fast…](https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Fliaogx%2Ffastapi-tutorial) 拷贝下来，安装reqiurements.txt里面的包
+安装环境，python环境必须是3.6以上的，然后去github中将[github.com/liaogx/fastapi-tutorial](https://github.com/liaogx/fastapi-tutorial) 拷贝下来，安装reqiurements.txt里面的包
 
 一定要注意版本的兼容性
 

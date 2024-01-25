@@ -334,7 +334,7 @@ rtt min/avg/max/mdev = 30.690/30.690/30.690/0.000 ms
 
 - 如果是在虚拟机上做上述操作，记得打开网卡的混杂模式（不是在Linux里面，而是在虚拟机的配置上面，如VirtualBox上相应虚拟机的网卡配置项里面），不然veth1的网络会不通，因为eth0不在混杂模式的话，会丢掉目的mac地址是veth1的数据包
 
-- 上面虽然通了，但由于[Linux下arp的特性](https://link.segmentfault.com/?enc=dFIL%2FBuwvCRdZjizxtISnA%3D%3D.RHQxUHvVbmRf3wzllfKDve3GzQ8tZe855FmvF0Fbsso%3D)，当协议栈收到外面的arp请求时，不管是问101还是102，都会回复两个arp应答，分别包含br0和veth1的mac地址，也即Linux觉得外面发给101和102的数据包从br0和veth1进协议栈都一样，没有区别。由于回复了两个arp应答，而外面的设备只会用其中的一个，并且具体用哪个会随着时间发生变化，于是导致一个问题，就是外面回复给102的数据包可能从101的br0上进来，即通过102  ping外面时，可能在veth1抓不到回复包，而在br0上能抓到回复包。说明数据流在交换机那层没有完全的隔离开，br0和veth1会收到对方的IP应答包。为了解决上述问题，可以配置rp_filter, arp_filter, arp_ignore, arp_announce等参数，但不建议这么做，容易出错，调试比较麻烦。
+- 上面虽然通了，但由于[Linux下arp的特性](https://link.segmentfault.com/?enc=dFIL/BuwvCRdZjizxtISnA==.RHQxUHvVbmRf3wzllfKDve3GzQ8tZe855FmvF0Fbsso=))，当协议栈收到外面的arp请求时，不管是问101还是102，都会回复两个arp应答，分别包含br0和veth1的mac地址，也即Linux觉得外面发给101和102的数据包从br0和veth1进协议栈都一样，没有区别。由于回复了两个arp应答，而外面的设备只会用其中的一个，并且具体用哪个会随着时间发生变化，于是导致一个问题，就是外面回复给102的数据包可能从101的br0上进来，即通过102  ping外面时，可能在veth1抓不到回复包，而在br0上能抓到回复包。说明数据流在交换机那层没有完全的隔离开，br0和veth1会收到对方的IP应答包。为了解决上述问题，可以配置rp_filter, arp_filter, arp_ignore, arp_announce等参数，但不建议这么做，容易出错，调试比较麻烦。
 
 - 在无线网络环境中，情况会变得比较复杂，因为无线网络需要登录，登陆后无线路由器只认一个mac地址，所有从这台机器出去的mac地址都必须是那一个，于是通过无线网卡上网的机器上的所有虚拟机想要上网的话，都必须依赖虚拟机管理软件（如VirtualBox）将每个虚拟机的网卡mac地址转成出口的mac地址（即无线网卡的mac地址），数据包回来的时候还要转回来，所以如果一个IP有两个ARP应答包的话，有可能导致mac地址的转换有问题，导致网络不通，或者有时通有时不通。解决办法就是将连接进br0的所有设备的mac地址都改成和eth0一样的mac地址，因为eth0的mac地址会被虚拟机正常的做转换。在上面的例子中，执行下面的命令即可：
 
@@ -476,7 +476,7 @@ rtt min/avg/max/mdev = 1.242/1.242/1.242/0.000 ms
 
 ## 参考
 
-- [Linux 上的基础网络设备详解](https://link.segmentfault.com/?enc=Tzdk2PJaTsnp7cwKc2iBww%3D%3D.P6TWWVTnqJYCDuaLlJuJPsLMZskAlz6DPcNKKZWslgRuwBjcLBzWVNN0rKQ6yuGYlGY3mebiEvGBbHOaun%2F9TjR2hBnuigqTx0C40QOP1Rg%3D)
-- [Harping on ARP](https://link.segmentfault.com/?enc=7h4aO5kWGC7HTF95uw750g%3D%3D.wzPJqfJIw9G5fFPWevsVpbdFMbxirQw5Ib0n2XXxszE%3D)
-- [MAC address spoofing](https://link.segmentfault.com/?enc=2hqPbO%2BbWq5VEV9%2B%2FweUCw%3D%3D.uzcYrhi9W2l5RqlpQpg193h9gpYwh7Keu1mKwyHO9gISR8GfS%2Fa%2Bz5PnTAgrracYTTIjPQT573d9GMPM6JK2BQ%3D%3D)
-- [It doesn't work with my Wireless card!](https://link.segmentfault.com/?enc=HmmwDkPntyRVg%2FZ0xe6FQw%3D%3D.fShdCDmcrsZFYcDv4Yq5jh2KFAqn2uCxigQQXewHvwe6iPAhONThCfbziXASt3V0BEFzf3GT9Eqv69jJNs6kJT7OnM8odTl1qslsA%2B1NOOoBCF5mWvHlvmAdtddWs2em)
+- [Linux 上的基础网络设备详解](https://link.segmentfault.com/?enc=Tzdk2PJaTsnp7cwKc2iBww==.P6TWWVTnqJYCDuaLlJuJPsLMZskAlz6DPcNKKZWslgRuwBjcLBzWVNN0rKQ6yuGYlGY3mebiEvGBbHOaun/9TjR2hBnuigqTx0C40QOP1Rg=)
+- [Harping on ARP](https://link.segmentfault.com/?enc=7h4aO5kWGC7HTF95uw750g==.wzPJqfJIw9G5fFPWevsVpbdFMbxirQw5Ib0n2XXxszE=)
+- [MAC address spoofing](https://link.segmentfault.com/?enc=2hqPbO+bWq5VEV9+/weUCw==.uzcYrhi9W2l5RqlpQpg193h9gpYwh7Keu1mKwyHO9gISR8GfS/a+z5PnTAgrracYTTIjPQT573d9GMPM6JK2BQ==)
+- [It doesn't work with my Wireless card!](https://link.segmentfault.com/?enc=HmmwDkPntyRVg/Z0xe6FQw==.fShdCDmcrsZFYcDv4Yq5jh2KFAqn2uCxigQQXewHvwe6iPAhONThCfbziXASt3V0BEFzf3GT9Eqv69jJNs6kJT7OnM8odTl1qslsA+1NOOoBCF5mWvHlvmAdtddWs2em)

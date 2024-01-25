@@ -8,7 +8,7 @@
 
 Mac版本：[http://download.codetutor.top/software/Mac/Qt%20Designer.dmg](http://download.codetutor.top/software/Mac/Qt Designer.dmg)
 
-Windows版本：[http://download.codetutor.top/software/win/Qt%20Designer%20Setup.exe](http://download.codetutor.top/software/win/Qt Designer Setup.exe)
+Windows版本：[http://download.codetutor.top/software/win/Qt Designer Setup.exe](http://download.codetutor.top/software/win/Qt Designer Setup.exe)
 
 ### 2. 安装&运行
 

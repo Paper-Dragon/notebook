@@ -229,11 +229,11 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 
 ![image-20231008151257015](Docker逃逸漏洞案例.assets/image-20231008151257015.png)
 
-这里如果我们继续访问[http://192.168.198.129:2375/version](https://link.zhihu.com/?target=http%3A//192.168.198.129%3A2375/version)，会返回docker的版本信息，这样证明该漏洞存在。
+这里如果我们继续访问[http://192.168.198.129:2375/version](http://192.168.198.129:2375/version)，会返回docker的版本信息，这样证明该漏洞存在。
 
 ![image-20231008151305785](Docker逃逸漏洞案例.assets/image-20231008151305785.png)
 
-比如访问 [http://192.168.198.129:2375/containers/json](https://link.zhihu.com/?target=http%3A//192.168.198.129%3A2375/containers/json) 会返回docker信息，和在docker CLI上执行 docker ps 的效果一样，其他操作比如创建/删除container，拉取image等操作也都可以通过API调用完成。
+比如访问 [http://192.168.198.129:2375/containers/json](http://192.168.198.129:2375/containers/json) 会返回docker信息，和在docker CLI上执行 docker ps 的效果一样，其他操作比如创建/删除container，拉取image等操作也都可以通过API调用完成。
 
 ![image-20231008151315859](Docker逃逸漏洞案例.assets/image-20231008151315859.png)
 
@@ -241,7 +241,7 @@ Portainer是一个可视化的容器镜像的图形管理工具，利用Portaine
 
 ### **利用方法1 命令执行**
 
-访问 [http://192.168.198.129:2375/containers/json](https://link.zhihu.com/?target=http%3A//192.168.198.129%3A2375/containers/json) 获得刚刚返回的exec_id的参数，构造如下数据包：
+访问 [http://192.168.198.129:2375/containers/json](http://192.168.198.129:2375/containers/json) 获得刚刚返回的exec_id的参数，构造如下数据包：
 
 ![image-20231008151325115](Docker逃逸漏洞案例.assets/image-20231008151325115.png)
 
