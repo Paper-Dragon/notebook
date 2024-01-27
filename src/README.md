@@ -375,7 +375,6 @@ const option = {
 };
 
 myChart.resize({
-  width: 1366,
   height: 768
 });
 
