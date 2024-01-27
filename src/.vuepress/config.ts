@@ -1,8 +1,9 @@
 import { defineUserConfig } from "vuepress";
 import { umamiAnalyticsPlugin } from 'vuepress-plugin-umami-analytics'
-import { cut } from "nodejs-jieba";
-import { searchProPlugin } from "vuepress-plugin-search-pro";
+//import { cut } from "nodejs-jieba";
+//import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
+import { viteBundler } from '@vuepress/bundler-vite';
 
 export default defineUserConfig({
   base: "/",
@@ -11,6 +12,7 @@ export default defineUserConfig({
   title: "运维开发绿皮书",
   description: "运维开发绿皮书,放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重。",
 
+  bundler: viteBundler(),
   theme,
 
   head: [
