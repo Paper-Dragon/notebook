@@ -1,3 +1,5 @@
+# Bind9安装和使用
+
 CentOS下， yum install bind安装bind软件来实现DNS服务, yum info bind可以查看到描述：
 
     Description : BIND (Berkeley Internet Name Domain) is an implementation of the DNS
@@ -21,7 +23,7 @@ BIND是DNS协议的一种实现。BIND包含了一个DNS Server（服务名叫na
         nsupdate
     bind-chroot：切根程序，用来切换默认目录到另外一个深层的安全的目录/var/named/chroot，类似于前面光盘进入救援模式的那种情况。
 
-named 涉及的文件
+## named 涉及的文件
 
     /etc/named.conf              # bind主配置文件
     /etc/named.rfc1912.zones     # 定义zone的文件
@@ -56,7 +58,8 @@ named 涉及的文件
                 └── my.slave.internal.zone.db
 
 根据参考来配置各个文件。
-named主配置文件
+
+## named主配置文件
 
 主配置文件/etc/named.conf包括：
 
@@ -188,9 +191,12 @@ named主配置文件
         file "zhangqifei.top.zone";
     };
 
-区域配置文件
+## 区域配置文件
 
 /var/named/ZONE_NAME.zone区域配置文件
+
+## 正向区域文件
+
 这里给出我一个自定义的区域文件：zhangqifei.top.zone
 
 
@@ -253,7 +259,7 @@ chown :named zhangqifei.top.zone
 service named start|restart
 ```
 
-**反向区域**
+## **反向区域**
 
 
 
@@ -304,7 +310,7 @@ $TTL 1D
 
 
 
-测试
+## 测试
 
 ```bash
 
