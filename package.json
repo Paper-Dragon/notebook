@@ -14,7 +14,6 @@
   "devDependencies": {
     "@vue/repl": "^3.4.0",
     "@vuepress/bundler-vite": "2.0.0-rc.2",
-    "@vuepress/client": "2.0.0-rc.2",
     "echarts": "^5.4.3",
     "echarts-wordcloud": "^2.1.0",
     "flowchart.ts": "^3.0.0",

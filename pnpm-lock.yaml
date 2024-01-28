@@ -11,9 +11,6 @@ devDependencies:
   '@vuepress/bundler-vite':
     specifier: 2.0.0-rc.2
     version: 2.0.0-rc.2
-  '@vuepress/client':
-    specifier: 2.0.0-rc.2
-    version: 2.0.0-rc.2
   echarts:
     specifier: ^5.4.3
     version: 5.4.3
