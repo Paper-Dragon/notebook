@@ -41,7 +41,6 @@ sidebar: false
 />
 
 
-
 <SiteInfo
   name="composerize"
   desc="将 Docker 命令转化为 Docker Compose 文件"
@@ -51,8 +50,6 @@ sidebar: false
   preview="/img/Snipaste_2023-11-15_11-29-42.png"
 />
 
-
-
 <SiteInfo
   name="utsc的repository配置生成器"
   url="https://mirrors.ustc.edu.cn/repogen/"
@@ -61,6 +58,20 @@ sidebar: false
   desc="支持Archlinux，Debian，Ubuntu"
 />
 
+<SiteInfo
+  name="MobaXterm Crack"
+  url="http://mobaxterm.myauth.top/"
+  preview="/img/2024-01-07_13.57.29.png"
+  repo="https://github.com/Paper-Dragon/mobaxterm-crack"
+  logo="https://mobaxterm.mobatek.net/img/moba/xterm_logo.png"
+  desc="破解mobaxterm令牌，仅供学习使用。"
+/>
 
-
-  
+<SiteInfo
+  name="netdisk-fast-download"
+  url="https://lz.qaiu.top/"
+  preview="/img/Snipaste_2024-01-11_16-27-34.png"
+  repo="https://github.com/qaiu/netdisk-fast-download"
+  logo="https://q2.qlogo.cn/headimg_dl?dst_uin=736226400&spec=640"
+  desc="网盘直链解析，支持蓝奏云/奶牛快传/移动云云空间/小飞机盘/亿方云/123云盘"
+/>

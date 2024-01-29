@@ -10,12 +10,12 @@ sidebar: false
 <VPCard
   title="运维开发绿皮书"
   desc="放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!"
-  logo="https://paper-dragon.github.io/logo.svg"
-  link="https://paper-dragon.github.io/"
+  logo="https://www.geekery.cn/logo.svg"
+  link="https://www.geekery.cn/"
   background="rgba(253, 230, 138, 0.15)"
 />
 
-# 友链申请 https://paper-dragon.github.io/about/friend.html
+# 友链申请 https://www.geekery.cn/about/friend.html
 ```
 
 ## 友链
@@ -44,6 +44,26 @@ sidebar: false
   link="https://www.zsythink.net/"
   background="rgba(253, 230, 138, 0.15)"
 />
+
+<VPCard
+  title="浪海导航"
+  desc="浪海导航 ~ 收录各种类型的博客"
+  logo="https://www.langhai.net/assets/images/favicon.ico"
+  link="https://www.langhai.net/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+
+<VPCard
+  title="云梦博客"
+  desc="云梦博客为云梦个人博客，始创于2022年6月，致力于分享科技资源."
+  logo="https://www.fnmqs.work/usr/themes/Akina/images/favicon.ico"
+  link="https://www.fnmqs.work/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
+
+
+
+
 
 ## 官方文档
 

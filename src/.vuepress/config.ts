@@ -3,7 +3,8 @@ import { umamiAnalyticsPlugin } from 'vuepress-plugin-umami-analytics'
 //import { cut } from "nodejs-jieba";
 //import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
-import { viteBundler } from '@vuepress/bundler-vite';
+import { viteBundler } from '@vuepress/bundler-vite'
+import { path } from "vuepress/utils";
 
 export default defineUserConfig({
   base: "/",
@@ -14,6 +15,12 @@ export default defineUserConfig({
 
   bundler: viteBundler(),
   theme,
+
+  // 修改页面模板，https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/theme/templates/index.build.html
+  // 配置参考：https://vuepress.github.io/zh/reference/theme-api.html#templatebuild
+  templateBuild: path.resolve(__dirname, "templateBuild.html"),
+
+  templateDev: path.resolve(__dirname, "templateBuild.html"),
 
   head: [
       ["script",

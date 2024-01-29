@@ -195,6 +195,48 @@ docker run -d \
 
 #### 服务端
 
+限制端口版本frp
+
+```bash
+
+docker run -it -d \
+	--restart always \
+	-p 50000-50004:50000-50004 \
+	-v ./frps.toml:/etc/frp/frps.toml \
+	--name frp-20240111 \
+	snowdreamtech/frps:0.52.3
+```
+
+```toml
+[common]
+bind_port = 50000
+# 启用面板
+dashboard_port = 50001
+# 面板登录名和密码
+dashboard_user = admin
+dashboard_pwd = xxxxxx
+# 使用http代理并使用8888端口进行穿透
+#vhost_http_port = 8889
+# 使用https代理并使用9999端口进行穿透
+#vhost_https_port = 9999
+# 日志路径
+log_file = ./frps.log
+# 日志级别
+log_level = info
+# 日志最大保存天数
+log_max_days = 2
+# 认证超时时间
+authentication_timeout = 900
+# 认证token，客户端需要和此对应
+token=xxxxx
+# 最大连接数
+max_pool_count = 5
+max_ports_per_client = 0
+
+```
+
+
+
 frp-restart.sh
 
 ```bash

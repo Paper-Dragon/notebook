@@ -1,4 +1,4 @@
-# Linux下DNS服务(Bind9)之Web管理利器-NamedManager部署说明
+# Linux下Bind9之Web管理-NamedManager部署
 
  
 

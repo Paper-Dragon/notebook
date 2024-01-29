@@ -239,7 +239,7 @@ CONFIG_SITE=$LFS/usr/share/config.site
 
 #### 登录shell和非登陆shell读取配置文件的区别
 
-- https://gitee.com/link?target=https%3A%2F%2Fwww.cnblogs.com%2Fpigwan7%2Fp%2F9593540.html
+- https://www.cnblogs.com/pigwan7/p/9593540.html
 
 ## 交叉工具链相关的内容
 

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ lang }}" data-theme="{{ themeMode }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress {{ version }}" />
+    <meta name="theme" content="VuePress Theme Hope {{ themeVersion }}" />
+    <link rel="stylesheet"  href="/sakana-widget/lib/index.css"/>
+    <style>
+      html {
+        background: var(--bg-color, #fff);
+      }
+
+      html[data-theme="dark"] {
+        background: var(--bg-color, #1d1e1f);
+      }
+
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <!--vuepress-ssr-head-->
+    <!--vuepress-ssr-styles-->
+    <!--vuepress-ssr-preload-->
+    <!--vuepress-ssr-prefetch-->
+  </head>
+  <body>
+    <div id="app"><!--vuepress-ssr-content--></div>
+    <!--vuepress-ssr-scripts-->
+
+    <!-- sakana区块 -->
+    <div id="sakana-widget" style="position: fixed; bottom: 64px; right: 45px; z-index: 999;"></div>
+    <script>
+    function initSakanaWidget() {
+        new SakanaWidget().mount('#sakana-widget');
+    }
+    </script>
+    <script async onload="initSakanaWidget()" src="/sakana-widget/lib/index.js"></script>
+    <!-- end sakana区块 -->
+  </body>
+</html>
