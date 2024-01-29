@@ -12,7 +12,7 @@
 https://learn.microsoft.com/zh-cn/windows/wsl/install
 ```
 
-![image-20240121171210055](./Windows_ WSL2安装nvidia-cuda驱动.assets/image-20240121171210055.png)
+![image-20240121171210055](Windows-wsl2安装nvidia-cuda驱动.assets/image-20240121171210055.png)
 
 
 
@@ -40,7 +40,7 @@ nvidia-smi
 
 如果出现类似于下图效果，即安装完成。
 
-![img](./Windows_ WSL2安装nvidia-cuda驱动.assets/7076ecb6aa51f991b36aff688a2a56b47e72c51f.png@1256w_704h_!web-article-pic.avif)
+![img](Windows-wsl2安装nvidia-cuda驱动.assets/7076ecb6aa51f991b36aff688a2a56b47e72c51f.png@1256w_704h_!web-article-pic.avif)
 
 记下图中的CUDA version 
 
@@ -50,7 +50,7 @@ nvidia-smi
 
     参考CUDA官网，选择自己对应的版本。
 
-![image-20240121171058802](./Windows_ WSL2安装nvidia-cuda驱动.assets/image-20240121171058802.png)
+![image-20240121171058802](Windows-wsl2安装nvidia-cuda驱动.assets/image-20240121171058802.png)
 
 ```bash
 https://developer.nvidia.com/cuda-downloads
@@ -62,7 +62,7 @@ https://developer.nvidia.com/cuda-downloads
 
 **一定要选择标注的WSL版本！！！** 
 
-![image-20240121171429136](./Windows_ WSL2安装nvidia-cuda驱动.assets/image-20240121171429136.png)
+![image-20240121171429136](Windows-wsl2安装nvidia-cuda驱动.assets/image-20240121171429136.png)
 
 选择完版本后，下面会有整个安装提示，在WSL２中按照方法来就行，如： 
 
