@@ -92,8 +92,8 @@ export default hopeTheme({
       // // 结束输入到开始搜索的延时
       // // searchDelay: 150,
       // suggestDelay: 60,
-        // Custom field for search
-        customFields: [
+      // Custom field for search
+      customFields: [
         {
           getter: ({ frontmatter }) =>
             <string | undefined>frontmatter.category ?? null,
