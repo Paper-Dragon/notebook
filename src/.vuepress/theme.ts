@@ -81,12 +81,10 @@ export default hopeTheme({
       ],
     },
     searchPro: {
-      autoSuggestions: false
-    },//{
-      // // 是否在输入时提供自动建议
-      // indexContent: true,
       // 是否在输入时提供自动建议
-      //autoSuggestions: false,
+      indexContent: true,
+      // 是否在输入时提供自动建议
+      autoSuggestions: false,
       // // 存储查询历史的最大数量
       // queryHistoryCount: 3,
       // // 存储结果历史的最大数量
@@ -94,24 +92,24 @@ export default hopeTheme({
       // // 结束输入到开始搜索的延时
       // // searchDelay: 150,
       // suggestDelay: 60,
-      // //   // Custom field for search
-      // //   // customFields: [
-      // //   // {
-      // //   //   getter: ({ frontmatter }) =>
-      // //   //     <string | undefined>frontmatter.category ?? null,
-      // //   //   formatter: "分类: $content",
-      // //   // },
-      // // ],
+        // Custom field for search
+        customFields: [
+        {
+          getter: ({ frontmatter }) =>
+            <string | undefined>frontmatter.category ?? null,
+          formatter: "分类: $content",
+        },
+      ],
       // // 输出文件名
       // worker: "search-pro-worker-XPathResult.js",
       // // 热重载
-      // hotReload: true,
-      // // 结果排序策略: 当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面
-      // //sortStrategy: "total",
+      hotReload: true,
+      // 结果排序策略: 当有多个匹配的结果时，会按照策略对结果进行排序。`max` 表示最高分更高的页面会排在前面。`total` 表示总分更高的页面会排在前面
+      sortStrategy: "max",
       // indexOptions: {
       //   tokenize: (text, fieldName) => fieldName === "id" ? [text] : cut(text, true),
       // },
-    // },
+    },
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
