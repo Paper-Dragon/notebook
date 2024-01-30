@@ -14,7 +14,7 @@ category:
 ```bash
 function ls {
     # 将命令的标准输出和标准错误重定向到 /dev/null 中
-    "$@" &>/dev/null
+    "$@" &>/dev/null    # 删除斜线，因为jinja2冲突
 }
 ```
 
