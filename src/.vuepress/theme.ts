@@ -80,6 +80,7 @@ export default hopeTheme({
         // "YouTube",
       ],
     },
+    feed: false,
     searchPro: {
       // 是否在输入时提供自动建议
       indexContent: true,
