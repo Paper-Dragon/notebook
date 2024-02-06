@@ -13,10 +13,13 @@ export default navbar([
         link: "/timeline"
     },
     {
-        text: "工具",
+        text: "免费服务",
         icon: "splotch",
-        link: "/tools/README.md",
-        ariaLabel: "工具"
+        children: [
+            "/tools/README.md",
+            "/free-service/docker-hub-mirror.md",
+            "/free-service/cloudflare-warp.md"
+        ]
     },
     {
         text: "友链",

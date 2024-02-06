@@ -4,8 +4,8 @@ breadcrumb: false
 category: 
   - Tools
 comment: false
-icon: splotch
-title: 工具集合
+icon: wrench
+title: 小工具
 timeline: false
 prev: false
 next: false

@@ -21,5 +21,13 @@ export default sidebar({
             link: "PyQt5快速上手-王铭东/",
             children: "structure",
         },
+        {
+            collapsible: true,
+            text: "本站免费服务",
+            icon: "dollar-sign",
+            prefix: "free-service/",
+            link: "free-service/",
+            children: "structure",
+        },
     ],
 });
