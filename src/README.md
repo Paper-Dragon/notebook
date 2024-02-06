@@ -3,10 +3,11 @@ home: true
 icon: home
 title: 主页
 heroImage: /logo.svg
-bgImage: /bg/6-light.svg
-bgImageDark: https://theme-hope-assets.vuejs.press/bg/6-dark.svg
+bgImage: /bg/bg1.jpg
+bgImageDark: /bg/bg1-dark.png
 bgImageStyle:
   background-attachment: fixed
+  background-position: center bottom
 heroText: 运维开发绿皮书
 tagline: 放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!
 actions:
