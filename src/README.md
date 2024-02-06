@@ -3,8 +3,8 @@ home: true
 icon: home
 title: 主页
 heroImage: /logo.svg
-bgImage: /bg/bg1.jpg
-bgImageDark: /bg/bg1-dark.png
+bgImage: /bg/bg1-light.jpg
+bgImageDark: /bg/bg1-dark.jpg
 bgImageStyle:
   background-attachment: fixed
   background-position: center bottom
