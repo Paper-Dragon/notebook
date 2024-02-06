@@ -1,6 +1,26 @@
 import {sidebar} from "vuepress-theme-hope";
 
 export default sidebar({
+    "/free-service/": [
+        "/",
+        {
+            collapsible: true,
+            text: "本站免费服务",
+            icon: "dollar-sign",
+            //prefix: "free-service/",
+            children: "structure",
+        },
+    ],
+    "/PyQt5快速上手-王铭东/": [
+        "/note-book/",
+        {
+            text: "PyQt5快速上手-王铭东",
+            icon: "book",
+            // 是否可折叠
+            collapsible: true,
+            children: "structure",
+        },
+    ],
     "/": [
         "",
         {
@@ -21,13 +41,6 @@ export default sidebar({
             link: "PyQt5快速上手-王铭东/",
             children: "structure",
         },
-        {
-            collapsible: true,
-            text: "本站免费服务",
-            icon: "dollar-sign",
-            prefix: "free-service/",
-            link: "free-service/",
-            children: "structure",
-        },
+
     ],
 });

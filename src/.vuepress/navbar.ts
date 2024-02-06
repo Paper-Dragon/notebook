@@ -8,18 +8,18 @@ export default navbar([
         link: "/note-book"
     },
     {
-        text: "时间线",
-        icon: "history",
-        link: "/timeline"
-    },
-    {
         text: "免费服务",
         icon: "splotch",
         children: [
-            "/tools/README.md",
+            "/free-service/tools.md",
             "/free-service/docker-hub-mirror.md",
             "/free-service/cloudflare-warp.md"
         ]
+    },
+    {
+        text: "时间线",
+        icon: "history",
+        link: "/timeline"
     },
     {
         text: "友链",
