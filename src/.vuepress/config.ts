@@ -47,13 +47,6 @@ export default defineUserConfig({
       `,
       ],
   ],
-  // plugins: [
-  //   umamiAnalyticsPlugin({
-  //     // options
-  //     id: "eecd3f56-5668-4c9e-b123-b2853b91a310",
-  //     src: "https://analytics.umami.is/script.js"
-  //   }),
-  // ],
 
   // Enable it with pwa
   shouldPrefetch: false,
