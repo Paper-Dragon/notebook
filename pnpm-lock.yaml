@@ -35,9 +35,6 @@ devDependencies:
   vuepress-plugin-search-pro:
     specifier: 2.0.0-rc.23
     version: 2.0.0-rc.23(vuepress@2.0.0-rc.7)
-  vuepress-plugin-umami-analytics:
-    specifier: 1.8.0
-    version: 1.8.0
   vuepress-theme-hope:
     specifier: 2.0.0-rc.23
     version: 2.0.0-rc.23(@vue/repl@3.4.0)(@vuepress/plugin-redirect@2.0.0-rc.12)(echarts@5.4.3)(flowchart.ts@3.0.0)(markdown-it@14.0.0)(vuepress-plugin-search-pro@2.0.0-rc.23)(vuepress@2.0.0-rc.7)
@@ -990,19 +987,6 @@ packages:
       - typescript
     dev: true
 
-  /@vuepress/client@2.0.0-rc.2:
-    resolution: {integrity: sha512-gQ4CfBhzWYOCW4OcAUd6S8Jr9m/8UkZZuN/70t12GltbX/cdm6zrGnf89GiVjgvoK8+OYoc7luoBuWbyc/X5sg==}
-    dependencies:
-      '@vue/devtools-api': 6.5.1
-      '@vuepress/shared': 2.0.0-rc.2
-      '@vueuse/core': 10.7.2(vue@3.4.15)
-      vue: 3.4.15
-      vue-router: 4.2.5(vue@3.4.15)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - typescript
-    dev: true
-
   /@vuepress/client@2.0.0-rc.7:
     resolution: {integrity: sha512-T8jf9h8dfP1ln/7uOIiTAJrdyKRTyq1x+RHXuc7GoRxTfOw+bIYgGvh63Z7m1e3K/yh1nO9aM1WcXbDN1Swp4w==}
     dependencies:
@@ -1013,20 +997,6 @@ packages:
       vue-router: 4.2.5(vue@3.4.15)
     transitivePeerDependencies:
       - '@vue/composition-api'
-      - typescript
-    dev: true
-
-  /@vuepress/core@2.0.0-rc.2:
-    resolution: {integrity: sha512-C/bHG0y+v5oeCrfaesy2yFa0dyCah05g1w7vArZk8ABsVECjZKAC5/ev39UFQm2dCdNzsj2E3KgLIxYWqpcKeg==}
-    dependencies:
-      '@vuepress/client': 2.0.0-rc.2
-      '@vuepress/markdown': 2.0.0-rc.2
-      '@vuepress/shared': 2.0.0-rc.2
-      '@vuepress/utils': 2.0.0-rc.2
-      vue: 3.4.15
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - supports-color
       - typescript
     dev: true
 
@@ -1057,29 +1027,6 @@ packages:
       vuepress: 2.0.0-rc.7(@vuepress/bundler-vite@2.0.0-rc.7)(vue@3.4.15)
     transitivePeerDependencies:
       - typescript
-    dev: true
-
-  /@vuepress/markdown@2.0.0-rc.2:
-    resolution: {integrity: sha512-5/RmJnap+MGKxDhSO+Mv6zB8PoPHhhBujnNKKO3PnyfPrj0LyL0AuTm8m3Ea271wMp9956WINjw8jlpn+Z1sBg==}
-    dependencies:
-      '@mdit-vue/plugin-component': 2.0.0
-      '@mdit-vue/plugin-frontmatter': 2.0.0
-      '@mdit-vue/plugin-headers': 2.0.0
-      '@mdit-vue/plugin-sfc': 2.0.0
-      '@mdit-vue/plugin-title': 2.0.0
-      '@mdit-vue/plugin-toc': 2.0.0
-      '@mdit-vue/shared': 2.0.0
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
-      '@types/markdown-it-emoji': 2.0.4
-      '@vuepress/shared': 2.0.0-rc.2
-      '@vuepress/utils': 2.0.0-rc.2
-      markdown-it: 14.0.0
-      markdown-it-anchor: 8.6.7(@types/markdown-it@13.0.7)(markdown-it@14.0.0)
-      markdown-it-emoji: 3.0.0
-      mdurl: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@vuepress/markdown@2.0.0-rc.7:
@@ -1320,34 +1267,10 @@ packages:
       - typescript
     dev: true
 
-  /@vuepress/shared@2.0.0-rc.2:
-    resolution: {integrity: sha512-2kmm0rw+WalRWrSC5pW0TXRz8Wyuh57XmOZEUOhPOflw4o8Dno+PcaWbdOZ/TLkTgTt3X1n7r1/c1ALtaLta8g==}
-    dependencies:
-      '@mdit-vue/types': 2.0.0
-    dev: true
-
   /@vuepress/shared@2.0.0-rc.7:
     resolution: {integrity: sha512-zNsYzAW5tuENb4vML0pK/61W3EscyOcn5JVPC+c6AwvsYWyAigZaMSu9ycGAptjDwzdYSi3gd33N9Q9T7pG77Q==}
     dependencies:
       '@mdit-vue/types': 2.0.0
-    dev: true
-
-  /@vuepress/utils@2.0.0-rc.2:
-    resolution: {integrity: sha512-g93yFJKtztpdXm4XyOIQ9QcUrKuvuWizvH3qWDQ5/WKlxa6VqE7nVNPlkudgGUIc7Bl4AGrlHcmgvkwaNoMcfA==}
-    dependencies:
-      '@types/debug': 4.1.12
-      '@types/fs-extra': 11.0.4
-      '@types/hash-sum': 1.0.2
-      '@vuepress/shared': 2.0.0-rc.2
-      debug: 4.3.4
-      fs-extra: 11.2.0
-      globby: 14.0.0
-      hash-sum: 2.0.0
-      ora: 8.0.1
-      picocolors: 1.0.0
-      upath: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /@vuepress/utils@2.0.0-rc.7:
@@ -2849,19 +2772,6 @@ packages:
       vuepress-shared: 2.0.0-rc.23(vuepress@2.0.0-rc.7)
     transitivePeerDependencies:
       - '@vue/composition-api'
-      - typescript
-    dev: true
-
-  /vuepress-plugin-umami-analytics@1.8.0:
-    resolution: {integrity: sha512-3FNmr9+0Ytn54/mQtsvDukx+ysmDwS+pcIcUi/Jh8wXpWffyrXyZwfYTN4RXJYCRou7mWw4L77CX4GArwDuS6g==}
-    engines: {node: ^16.0.0 || >=18.0.0}
-    dependencies:
-      '@vuepress/client': 2.0.0-rc.2
-      '@vuepress/core': 2.0.0-rc.2
-      '@vuepress/utils': 2.0.0-rc.2
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - supports-color
       - typescript
     dev: true
 
