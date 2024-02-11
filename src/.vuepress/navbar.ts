@@ -5,7 +5,7 @@ export default navbar([
     {
         text: "使用指南",
         icon: "book",
-        link: "/note-book"
+        link: "/note-book/"
     },
     {
         text: "免费服务",
