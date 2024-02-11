@@ -19,7 +19,7 @@ export default navbar([
     {
         text: "时间线",
         icon: "history",
-        link: "/timeline"
+        link: "/timeline/"
     },
     {
         text: "友链",
