@@ -74,3 +74,13 @@ next: false
   logo="https://q2.qlogo.cn/headimg_dl?dst_uin=736226400&spec=640"
   desc="网盘直链解析，支持蓝奏云/奶牛快传/移动云云空间/小飞机盘/亿方云/123云盘"
 />
+
+
+<SiteInfo
+  name="Convert curl commands"
+  url="https://curlconverter.com/"
+  preview="/img/Snipaste_2024-02-18_10-30-00.png"
+  repo="https://github.com/curlconverter/curlconverter"
+  logo="https://curlconverter.com/apple-touch-icon.png"
+  desc="将curl命令转换为Python、JavaScript等"
+/>
