@@ -28,10 +28,23 @@ export default navbar([
         ariaLabel: "友链"
     },
     {
-        text: "开往",
-        icon: "subway",
-        link: "https://www.travellings.cn/go.html",
-        ariaLabel: "开往"
+        text: "博客联盟",
+        icon: "circle-nodes",
+        children: [
+            {
+                text: "开往",
+                icon: "subway",
+                link: "https://www.travellings.cn/go.html",
+                ariaLabel: "开往"
+            },
+            {
+                text: "十年之约",
+                icon: "https://foreverblog.cn/favicon.ico",
+                link: "https://www.foreverblog.cn/go.html",
+                ariaLabel: "十年之约"
+            }
+        ]
+        
     },
     {
         text: "实时访客",
