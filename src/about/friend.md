@@ -119,10 +119,30 @@ sidebar: false
 />
 
 
+## 图标仓库
+
 <VPCard
     title="fontawesome"
     desc="开源图标库"
     logo="https://fontawesome.com/images/favicon/icon.svg"
     link="https://fontawesome.com/"
+    background="rgb(0, 197, 210, 0.15)"
+/>
+
+
+<VPCard
+    title="Iconfont"
+    desc="开源图标库"
+    logo="https://img.alicdn.com/imgextra/i4/O1CN01Z5paLz1O0zuCC7osS_!!6000000001644-55-tps-83-82.svg"
+    link="https://www.iconfont.cn/"
+    background="rgb(0, 197, 210, 0.15)"
+/>
+
+
+<VPCard
+    title="Iconify"
+    desc="开源图标库"
+    logo="https://icon-sets.iconify.design/assets/logo-basic-light.svg"
+    link="https://icon-sets.iconify.design/"
     background="rgb(0, 197, 210, 0.15)"
 />
