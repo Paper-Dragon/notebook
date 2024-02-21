@@ -13,7 +13,8 @@ export default navbar([
         children: [
             "/free-service/tools.md",
             "/free-service/docker-hub-mirror.md",
-            "/free-service/cloudflare-warp.md"
+            "/free-service/cloudflare-warp.md",
+            "/free-service/github-direct.md"
         ]
     },
     {
