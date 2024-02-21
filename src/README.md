@@ -260,7 +260,7 @@ highlights:
 #         link: https://theme-hope.vuejs.press/zh/guide/advanced/pwa.html
 
 copyright: false
-footer: <div class="girl-info hide_md"> <h4>绿水本无忧，因风皱面</h4> <h4>青山原不老，为雪白头</h4> </div><div><a target="_blank" rel="noopener" href="https://pages.github.com/"><img src="https://img.shields.io/badge/GitHub-pages-black"></a>&nbsp;<a href="https://www.travellings.cn/go.html" target="_blank"><img src="https://www.travellings.cn/assets/logo.gif" style="width:auto;height:18px;"></a> <a href="https://www.foreverblog.cn/go.html" target="_blank"><img src="https://img.foreverblog.cn/wormhole_3.gif" alt="" style="width:auto;height:24px" title="穿梭虫洞-随机访问十年之约友链博客"></a></div><div> Made with <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> </div>
+footer: <div class="girl-info hide_md"> <h4>绿水本无忧，因风皱面</h4> <h4>青山原不老，为雪白头</h4> </div><div><a target="_blank" rel="noopener" href="https://pages.github.com/"><img src="https://img.shields.io/badge/GitHub-pages-black"></a>&nbsp;<a href="https://www.travellings.cn/go.html" target="_blank"><img src="https://www.travellings.cn/assets/logo.gif" style="width:auto;height:18px;"></a></div><div> Made with <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> </div>
 ---
 
 
