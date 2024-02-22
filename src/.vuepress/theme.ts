@@ -53,13 +53,19 @@ export default hopeTheme({
   plugins: {
     blog: true,
     // You should generate and use your own comment service
+    // comment: {
+    //   provider: "Giscus",
+    //   repo: "Paper-Dragon/paper-dragon.github.io",
+    //   repoId: "R_kgDOKGpjZw",
+    //   category: "blog",
+    //   categoryId: "DIC_kwDOKGpjZ84CauNO",
+    // },
+
     comment: {
-      provider: "Giscus",
-      repo: "Paper-Dragon/paper-dragon.github.io",
-      repoId: "R_kgDOKGpjZw",
-      category: "blog",
-      categoryId: "DIC_kwDOKGpjZ84CauNO",
+      provider: "Waline",
+      serverURL: "https://comment.geekery.cn/"
     },
+
     components: {
       // 你想使用的组件
       components: [
