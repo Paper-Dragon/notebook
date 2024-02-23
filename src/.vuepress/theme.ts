@@ -125,8 +125,7 @@ export default hopeTheme({
       // 是否启用自定义属性支持
       attrs: false,
       // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
-      chart: false,
-      checkLinks: { status: "always" },
+      chart: false,    
       codetabs: true,
       demo: true,
       echarts: true,
