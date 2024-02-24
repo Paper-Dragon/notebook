@@ -143,7 +143,7 @@ export default hopeTheme({
       // 是否通过 Math Jax 启用 TeX 语法支持
       mathjax: false,
       // mermaid流程图 https://mermaid.js.org/
-      mermaid: false,
+      mermaid: true,
       // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
       revealJs: false,
       playground: {
