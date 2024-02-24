@@ -7,13 +7,11 @@ sidebar: false
 ### 一个模板
 
 ```yaml
-<VPCard
-  title="运维开发绿皮书"
-  desc="放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!"
-  logo="https://www.geekery.cn/logo.svg"
-  link="https://www.geekery.cn/"
-  background="rgba(253, 230, 138, 0.15)"
-/>
+title="运维开发绿皮书"
+desc="放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!"
+logo="https://www.geekery.cn/logo.svg"
+link="https://www.geekery.cn/"
+background="rgba(253, 230, 138, 0.15)"
 
 # 友链申请 https://www.geekery.cn/about/friend.html
 ```
