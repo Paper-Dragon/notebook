@@ -62,6 +62,13 @@ sidebar: false
 />
 
 
+<VPCard
+  title="DexterCai's 伯克尔"
+  desc="明天太远，今天太短"
+  logo="https://gravatar.loli.net/avatar/dd1e4ede7694a2c0e7b6e0e29b4f16bf?s=220&r=X&d=mm"
+  link="https://blog.dextercai.com/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
 
 
 
