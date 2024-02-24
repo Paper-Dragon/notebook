@@ -17,19 +17,12 @@ category:
 
 具体是这样的流程
 
-```flow
-c=>start: 客户机
-r=>operation: My Operation
-cond=>condition: Linux主机？
-是否包含上报字符
-remove=>inputoutput: 丢弃数据包
+```mermaid
+graph LR
+c[客户机] -->|Linux主机？| cond{是否包含上报字符}
+cond -- yes --> remove[丢弃数据包]
+cond -- no --> s[病毒收集控制服务器]
 
-s=>operation: 病毒收集控制服务器
-
-
-c->cond->s
-cond(yes)->remove
-cond(no)->s
 
 ```
 
