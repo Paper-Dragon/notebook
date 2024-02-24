@@ -7,13 +7,11 @@ sidebar: false
 ### 一个模板
 
 ```yaml
-<VPCard
-  title="运维开发绿皮书"
-  desc="放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!"
-  logo="https://www.geekery.cn/logo.svg"
-  link="https://www.geekery.cn/"
-  background="rgba(253, 230, 138, 0.15)"
-/>
+title="运维开发绿皮书"
+desc="放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!"
+logo="https://www.geekery.cn/logo.svg"
+link="https://www.geekery.cn/"
+background="rgba(253, 230, 138, 0.15)"
 
 # 友链申请 https://www.geekery.cn/about/friend.html
 ```
@@ -62,6 +60,13 @@ sidebar: false
 />
 
 
+<VPCard
+  title="DexterCai's 伯克尔"
+  desc="明天太远，今天太短"
+  logo="https://gravatar.loli.net/avatar/dd1e4ede7694a2c0e7b6e0e29b4f16bf?s=220&r=X&d=mm"
+  link="https://blog.dextercai.com/"
+  background="rgba(253, 230, 138, 0.15)"
+/>
 
 
 
