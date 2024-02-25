@@ -69,6 +69,14 @@ background="rgba(253, 230, 138, 0.15)"
 />
 
 
+<VPCard
+    title="Oragekk's Blog"
+    desc="上冬十二 到最后，竟庆幸于夕阳仍留在身上"
+    logo="https://oragekk.me/logo.svg"
+    link="https://oragekk.me/"
+    background="rgba(253, 230, 138, 0.15)"
+/>
+
 
 ## 官方文档
 
@@ -122,6 +130,8 @@ background="rgba(253, 230, 138, 0.15)"
     link="https://theme-hope.vuejs.press/zh/"
     background="rgb(0, 197, 210, 0.15)"
 />
+
+
 
 
 ## 图标仓库
