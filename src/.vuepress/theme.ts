@@ -63,7 +63,8 @@ export default hopeTheme({
 
     comment: {
       provider: "Waline",
-      serverURL: "https://comment.geekery.cn/"
+      serverURL: "https://comment.geekery.cn/",
+      reaction: true,
     },
 
     components: {
