@@ -78,6 +78,17 @@ background="rgba(253, 230, 138, 0.15)"
 />
 
 
+<VPCard
+    title="小刘说"
+    desc="砥砺前行"
+    logo="https://www.xiaoliutalk.cn/img/favicon.ico"
+    link="https://www.xiaoliutalk.cn/"
+    background="rgba(253, 230, 138, 0.15)"
+/>
+
+
+
+
 ## 官方文档
 
 <VPCard
