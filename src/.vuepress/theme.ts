@@ -63,7 +63,8 @@ export default hopeTheme({
 
     comment: {
       provider: "Waline",
-      serverURL: "https://comment.geekery.cn/"
+      serverURL: "https://comment.geekery.cn/",
+      reaction: true,
     },
 
     components: {
@@ -131,7 +132,7 @@ export default hopeTheme({
       echarts: true,
       figure: true,
       // 是否启用流程图支持
-      flowchart: true,
+      flowchart: false,
       // 是否支持完整的 GFM 语法。
       gfm: false,
       imgLazyload: true,
@@ -143,7 +144,7 @@ export default hopeTheme({
       // 是否通过 Math Jax 启用 TeX 语法支持
       mathjax: false,
       // mermaid流程图 https://mermaid.js.org/
-      mermaid: false,
+      mermaid: true,
       // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
       revealJs: false,
       playground: {
