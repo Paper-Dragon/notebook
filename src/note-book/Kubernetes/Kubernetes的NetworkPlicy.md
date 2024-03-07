@@ -374,9 +374,9 @@ iptables -A KUBE-POD-SPECIFIC-FW-CHAIN -j REJECT --reject-with icmp-port-unreach
 可以看到，首先在第一条规则里，我们会把 IP 包转交给前面定义的 KUBE-NWPLCY-CHAIN 规则去进行匹配。按照我们之前的讲述，如果匹配成功，那么 IP 包就会被“允许通过”。而如果匹配失败，IP 包就会来到第二条规则上。可以看到，它是一条 REJECT 规则。通过这条规则，不满足 NetworkPolicy 定义的请求就会被拒绝掉，从而实现了对该容器的“隔离”。
 
 以上，就是 CNI 网络插件实现 NetworkPolicy 的基本方法了。
-7. # 总结
+## 总结
 
-    Kubernetes 对 Pod 进行“隔离”的手段，即：NetworkPolicy。
+Kubernetes 对 Pod 进行“隔离”的手段，即：NetworkPolicy。
 
 而基于上述讲述，你就会发现这样一个事实：
 
