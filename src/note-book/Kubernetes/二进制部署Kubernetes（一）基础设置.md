@@ -1,4 +1,6 @@
-# 架构
+# 二进制部署Kubernetes（一）基础设置
+
+## 架构
 
 | 主机名             | ip               |                         |
 | ------------------ | ---------------- | ----------------------- |
@@ -10,14 +12,14 @@
 | DNS&&DHCP&&smb     | 192.168.0.543/24 | Fileserver              |
 
 
-# 安装Docker
+## 安装Docker
 ```bash 
 curl -sSL https://get.docker.com | bash
 systemctl start docker
 docker info
 ```
 
-# 关闭 swap 分区
+## 关闭 swap 分区
 1、如果开启了 swap 分区，kubelet 会启动失败(可以通过将参数 --fail-swap-on 设置为false 来忽略 swap on)，故需要在每台机器上关闭 swap 分区：
 ```bash
 $ sudo swapoff -a
@@ -40,14 +42,14 @@ SELINUX=disabled
 ```
 
 
-# 加载内核模块
+## 加载内核模块
 ```bash
 $ sudo modprobe br_netfilter
 $ sudo modprobe ip_vs
 ```
 
 
-# 设置系统参数
+## 设置系统参数
 ```bash
 $ cat > kubernetes.conf <<EOF
 net.bridge.bridge-nf-call-iptables=1
@@ -69,7 +71,7 @@ $ sudo mount -t cgroup -o cpu,cpuacct none /sys/fs/cgroup/cpu,cpuacct
 ```
 
 
-# 设置系统时区
+## 设置系统时区
 1、调整系统 TimeZone
 ```bash
 $ sudo timedatectl set-timezone Asia/Shanghai
@@ -86,22 +88,22 @@ $ sudo systemctl restart rsyslog
 $ sudo systemctl restart crond
 ```
 
-# 更新系统时间
+## 更新系统时间
 ```bash
 $ yum -y install ntpdate
 $ sudo ntpdate cn.pool.ntp.org
 ```
 
 
-# 检查系统内核和模块是否适合运行
+## 检查系统内核和模块是否适合运行
 docker (仅适用于linux 系统)
 ```bash
 $ curl https://raw.githubusercontent.com/docker/docker/master/contrib/check-config.sh > check-config.sh
 $ chmod +x check-config.sh
 $ bash ./check-config.sh
 ```
-# 创建根证书 CA
-## 创建CA配置文件
+## 创建根证书 CA
+### 创建CA配置文件
 
 CA 配置文件用于配置根证书的使用场景 (profile) 和具体参数 (usage，过期时间、服务端认证、客户端认证、加密等)，后续在签名其它证书时需要指定特定场景。
 ```bash
@@ -130,7 +132,7 @@ CA 配置文件用于配置根证书的使用场景 (profile) 和具体参数 (u
 ① signing ：表示该证书可用于签名其它证书，生成的 ca.pem 证书中CA=TRUE ；
 ② server auth ：表示 client 可以用该该证书对 server 提供的证书进行验证；
 ③ client auth ：表示 server 可以用该该证书对 client 提供的证书进行验证；
-## 创建生成CA证书签名请求（csr）的json配置文件
+### 创建生成CA证书签名请求（csr）的json配置文件
 `/opt/cert/ca-csr.json`
 ```bash
 
@@ -158,7 +160,7 @@ CA 配置文件用于配置根证书的使用场景 (profile) 和具体参数 (u
 ③ kube-apiserver 将提取的 User、Group 作为 RBAC 授权的用户标识；
 
 
-## 生成 CA 证书和私钥
+### 生成 CA 证书和私钥
 ```bash
 
                                               证书和私钥放一起  |   分开 承载式证书
@@ -180,7 +182,7 @@ total 20
 [root@harbor certs]#
 ```
 
-## 分发证书文件
+### 分发证书文件
 
 将生成的 CA 证书、秘钥文件、配置文件拷贝到所有节点的/opt/k8s/cert 目录下：
 
