@@ -1,3 +1,5 @@
+# kubernetes进阶（二）核心网络插件Flannel
+
 **网络插件Flannel介绍：https://www.kubernetes.org.cn/3682.html**
 
 首先，flannel利用Kubernetes API或者etcd用于存储整个集群的网络配置，其中最主要的内容为设置集群的网络地址空间。例如，设定整个集群内所有容器的IP都取自网段“10.1.0.0/16”。
@@ -10,7 +12,7 @@
 
  
 
-一、下载flannel插件
+## 一、下载flannel插件
 
 在所有node节点安装flannel插件，本次环境在hdss7-21，hdss7-22上：
 
