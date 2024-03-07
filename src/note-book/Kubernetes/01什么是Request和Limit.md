@@ -1,4 +1,4 @@
-# **Requests和Limits**
+# 什么是Requests和Limits
 
 一个问题是K8s里在定义容器资源时候的Request和Limit有啥联系和区别。
 
