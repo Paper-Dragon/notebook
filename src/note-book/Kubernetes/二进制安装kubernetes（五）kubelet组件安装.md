@@ -1,6 +1,8 @@
-# 概述资料地址：https://blog.csdn.net/bbwangj/article/details/81904350
+# 二进制安装kubernetes（五）kubelet组件安装
 
-![img](二进制安装kubernetes（五） kubelet组件安装.assets/1034759-20191113174751232-1888238592-16918405999271.png)
+>  概述资料地址：https://blog.csdn.net/bbwangj/article/details/81904350
+
+![img](二进制安装kubernetes（五）kubelet组件安装.assets/1034759-20191113174751232-1888238592-16918405999271.png)
 
  
 
@@ -241,7 +243,7 @@ stdout_events_enabled=false                       ; emit events on stdout writes
 # supervisorctl status
 ```
 
-![img](二进制安装kubernetes（五） kubelet组件安装.assets/1034759-20191113184508160-1125579373-16918406039403.png)
+![img](二进制安装kubernetes（五）kubelet组件安装.assets/1034759-20191113184508160-1125579373-16918406039403.png)
 
  
 
@@ -251,5 +253,5 @@ stdout_events_enabled=false                       ; emit events on stdout writes
 # kubectl label node hdss7-21.host.com node-role.kubernetes.io/master=
 ```
 
-![img](二进制安装kubernetes（五） kubelet组件安装.assets/1034759-20191113191113083-612100625-16918406060675.png)
+![img](二进制安装kubernetes（五）kubelet组件安装.assets/1034759-20191113191113083-612100625-16918406060675.png)
 
