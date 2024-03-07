@@ -1,3 +1,5 @@
+# kubernetes进阶（五）dashboard--WEB管理
+
 dashboard是k8s的可视化管理平台，是三种管理k8s集群方法之一
 
 首先下载镜像上传到我们的私有仓库中：hdss7-200
