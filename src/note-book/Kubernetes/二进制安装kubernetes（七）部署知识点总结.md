@@ -8,7 +8,7 @@
 # cfssl-certinfo -domain=ca.pem -cert=client.pem
 ```
 
-![img](二进制安装kubernetes（七） 部署知识点总结.assets/1034759-20191120110308446-345298667.png)
+![img](二进制安装kubernetes（七）部署知识点总结.assets/1034759-20191120110308446-345298667.png)
 
  
 
