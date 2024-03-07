@@ -1,3 +1,5 @@
+# 二进制安装kubernetes（六）kube-proxy组件安装
+
 **Kube-Proxy简述**
 
 参考文献：
@@ -213,7 +215,7 @@ spec:
 # kubectl get pods 
 ```
 
-![image-20220516193406144](二进制安装kubernetes（六） kube-proxy组件安装.assets/image-20220516193406144-16918408422451.png)
+![image-20220516193406144](二进制安装kubernetes（六）kube-proxy组件安装.assets/image-20220516193406144-16918408422451.png)
 
  
 
@@ -227,7 +229,7 @@ etcd controller-manager scheduler状态：
 #kubectl get cs
 ```
 
-![image-20220516193416297](二进制安装kubernetes（六） kube-proxy组件安装.assets/image-20220516193416297-16918408436743.png)
+![image-20220516193416297](二进制安装kubernetes（六）kube-proxy组件安装.assets/image-20220516193416297-16918408436743.png)
 
 
 nodes状态：
@@ -236,7 +238,7 @@ nodes状态：
 # kubectl get nodes
 ```
 
-![image-20220516193438192](二进制安装kubernetes（六） kube-proxy组件安装.assets/image-20220516193438192-16918408455955.png)
+![image-20220516193438192](二进制安装kubernetes（六）kube-proxy组件安装.assets/image-20220516193438192-16918408455955.png)
 
 
  pods状态：
@@ -245,4 +247,4 @@ nodes状态：
 #kubectl get pods
 ```
 
-![image-20220516193449323](二进制安装kubernetes（六） kube-proxy组件安装.assets/image-20220516193449323-16918408483467.png)
+![image-20220516193449323](二进制安装kubernetes（六）kube-proxy组件安装.assets/image-20220516193449323-16918408483467.png)
