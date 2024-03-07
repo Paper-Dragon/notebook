@@ -1,9 +1,11 @@
-# 简介
+# Kubernetes的NetworkPlicy
+
+## 简介
 
 网络策略（NetworkPolicy）是一种关于 Pod 间及与其他网络端点间所允许的通信规则的规范。
 
 NetworkPolicy 资源使用 标签 选择 Pod，并定义选定 Pod 所允许的通信规则。
-# 语法
+## 语法
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
@@ -61,7 +63,7 @@ spec:
     
     （Egress 规则）允许从带有 “role=db” 标签的命名空间下的任何 Pod 到 CIDR 10.0.0.0/24 下 5978TCP 端口的连接。
 
-# 选择器 to 和 from 的行为
+## 选择器 to 和 from 的行为
 
 可以在 ingress from 部分或 egress to 部分中指定四种选择器：
 
@@ -114,11 +116,11 @@ ipBlock: 这将选择特定的 IP CIDR 范围以用作入口源或出口目的�
 在进入的情况下，这意味着在某些情况下，您可以根据实际的原始源 IP 过滤传入的数据包，而在其他情况下，NetworkPolicy 所作用的 源IP 则可能是 LoadBalancer 或 Pod 的节点等。
 
 对于出口，这意味着从 Pod 到被重写为集群外部 IP 的 Service IP 的连接可能会或可能不会受到基于 ipBlock 的策略的约束
-# 默认策略
+## 默认策略
 
 默认情况下，如果命名空间中不存在任何策略，则所有进出该命名空间中的 Pod 的流量都被允许。以下示例使您可以更改该命名空间中的默认行为。
 
-## 4.1 默认拒绝所有入口流量
+### 4.1 默认拒绝所有入口流量
 
 您可以通过创建选择所有容器但不允许任何进入这些容器的入口流量的 NetworkPolicy 来为命名空间创建 “default” 隔离策略。
 ```yaml
@@ -134,7 +136,7 @@ spec:
 
 这样可以确保即使容器没有选择其他任何 NetworkPolicy，也仍然可以被隔离。此策略不会更改默认的出口隔离行为。
 
-## 4.2 默认允许所有入口流量
+### 4.2 默认允许所有入口流量
 
 如果要允许所有流量进入某个命名空间中的所有 Pod（即使添加了导致某些 Pod 被视为“隔离”的策略），则可以创建一个策略来明确允许该命名空间中的所有流量。
 ```yaml
@@ -150,7 +152,7 @@ spec:
   - Ingress
 ```
 
-## 4.3 默认拒绝所有出口流量
+### 4.3 默认拒绝所有出口流量
 
 您可以通过创建选择所有容器但不允许来自这些容器的任何出口流量的 NetworkPolicy 来为命名空间创建 “default” egress 隔离策略。
 ```yaml
@@ -164,7 +166,7 @@ spec:
   - Egress
 ```
 
-## 4.4 默认允许所有出口流量
+### 4.4 默认允许所有出口流量
 
 如果要允许来自命名空间中所有 Pod 的所有流量（即使添加了导致某些 Pod 被视为“隔离”的策略），则可以创建一个策略，该策略明确允许该命名空间中的所有出口流量。
 ```yaml
@@ -180,7 +182,7 @@ spec:
   - Egress
 ```
 
-## 4.5 默认拒绝所有入口和所有出口流量
+### 4.5 默认拒绝所有入口和所有出口流量
 
 您可以为命名空间创建 “default” 策略，以通过在该命名空间中创建以下 NetworkPolicy 来阻止所有入站和出站流量。
 ```yaml
@@ -195,9 +197,9 @@ spec:
   - Egress
 ```
 
-# 实战示例
+## 实战示例
 
-  ## 5.1 创建一个nginx Deployment 并且通过服务将其暴露
+  ### 5.1 创建一个nginx Deployment 并且通过服务将其暴露
 
 ```bash
 $ kubectl create deployment nginx --image=nginx
@@ -210,7 +212,7 @@ Connecting to nginx (10.100.0.16:80)
 remote file exists
 ```
 
-## 5.2 限制 nginx 服务的访问
+### 5.2 限制 nginx 服务的访问
 
 如果想限制对 nginx 服务的访问，只让那些拥有标签 access: true 的 Pod 访问它， 那么可以创建一个如下所示的 NetworkPolicy 对象：
 ```yaml
