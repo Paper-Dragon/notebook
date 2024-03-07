@@ -20,7 +20,7 @@
 # kubectl get ns
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120162038299-1719142838.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120162038299-1719142838.png)
 
  
 
@@ -42,7 +42,7 @@
 # kubectl create ns app
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120163051927-1329056471.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120163051927-1329056471.png)
 
  
 
@@ -54,7 +54,7 @@
 # kubectl delete ns app
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120163157819-1947277387.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120163157819-1947277387.png)
 
  
 
@@ -67,7 +67,7 @@
 # kubectl get deploy -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120181727487-1964819809.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120181727487-1964819809.png)
 
  
 
@@ -82,7 +82,7 @@
 # kubectl get pod -o wide -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120182326063-1712655305.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120182326063-1712655305.png)
 
  
 
@@ -108,7 +108,7 @@
 # kubectl exec -ti nginx-dp-5dfc689474-4bhfh /bin/bash -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120183446194-77387750.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120183446194-77387750.png)
 
  
 
@@ -122,7 +122,7 @@
 # kubectl delete pods nginx-dp-5dfc689474-4bhfh -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120184142792-1084906192.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120184142792-1084906192.png)
 
  
 
@@ -138,7 +138,7 @@
 # kubectl delete deploy nginx-dp -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120184830277-1576468381.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120184830277-1576468381.png)
 
  
 
@@ -152,11 +152,11 @@
 # kubectl scale deployment nginx-dp --replicas=2 -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120191239821-1469821172.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120191239821-1469821172.png)
 
  
 
- ![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120191254127-1868023507.png)
+ ![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120191254127-1868023507.png)
 
  
 
@@ -171,7 +171,7 @@
 # kubectl expose deploy nginx-dp --port=80 -n kube-public
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120190417014-1885879823.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120190417014-1885879823.png)
 
  
 
@@ -179,7 +179,7 @@
 
 可以使用ipvsadm -Ln来查看：nq为ipvs调度算法中的一种，其他调度算法请自行查阅。
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120190609614-39153588.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120190609614-39153588.png)
 
  
 
@@ -187,17 +187,17 @@
 
 我们通过删除pod的方式，让pod漂移到另一台node节点，再来查看一下：
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120190907800-107826727.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120190907800-107826727.png)
 
  
 
  可以看到，虽然pod漂移了，但是service资源提供的接入点是不变的，这得益于ipvs的强大。
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120191007242-742957714.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120191007242-742957714.png)
 
  
 
- ![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120191351319-1327643689.png)
+ ![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120191351319-1327643689.png)
 
  
 
@@ -219,7 +219,7 @@
 # kubectl explain service.metadata
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191120192527111-2002912807.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191120192527111-2002912807.png)
 
  
 
@@ -258,7 +258,7 @@ spec:
 # kubectl create -f nginx-ds-svc.yaml
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191121151749735-1039780189.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191121151749735-1039780189.png)
 
  
 
@@ -268,7 +268,7 @@ spec:
 # kubectl get svc nginx-ds -o yaml -n default
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191121152848475-1793715531.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191121152848475-1793715531.png)
 
  
 
@@ -287,7 +287,7 @@ spec:
 
 可以看到端口从80变成了881
 
- ![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191121183313312-407916940.png)
+ ![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191121183313312-407916940.png)
 
  
 
@@ -299,7 +299,7 @@ spec:
 # kubectl edit svc nginx-ds -n default
 ```
 
-![img](kubernetes进阶（一） kubectl工具使用详解.assets/1034759-20191121184355023-942641319.png)
+![img](kubernetes进阶（一）kubectl工具使用详解.assets/1034759-20191121184355023-942641319.png)
 
  
 
