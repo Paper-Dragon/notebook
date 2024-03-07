@@ -1,10 +1,12 @@
-1. # 介绍
+# Kubernetes的crictl管理命令详解
+
+## 介绍
 
 crictl 是 CRI 兼容的容器运行时命令行接口。 你可以使用它来检查和调试 Kubernetes 节点上的容器运行时和应用程序。 crictl 和它的源代码在 cri-tools 代码库。
-2. # 安装 crictl
+## 安装 crictl
 
 下载：https://github.com/kubernetes-sigs/cri-tools/releases
-3. # 配置
+## 配置 crictl
 
 crictl 命令有几个子命令和运行时参数。 有关详细信息，请使用 crictl help 或 crictl help 获取帮助信息。
 
@@ -27,7 +29,7 @@ pull-image-on-create: false
 disable-pull-on-run: false
 ```
 
-4. # 命令
+## 命令用法
 
 如果使用 crictl 在正在运行的 Kubernetes 集群上创建 Pod 沙盒或容器， kubelet 最终将删除它们。 crictl 不是一个通用的工作流工具，而是一个对调试有用的工具。
 
@@ -110,7 +112,7 @@ crictl logs --tail=1 87d3992f84f74
 
 ```
 
-# 运行 Pod 沙盒
+## 运行 Pod 沙盒
 用 crictl 运行 Pod 沙盒对容器运行时排错很有帮助。 在运行的 Kubernetes 集群中，沙盒会随机地被 kubelet 停止和删除。
 
 编写下面的 JSON 文件：
@@ -135,7 +137,8 @@ crictl logs --tail=1 87d3992f84f74
 $ crictl runp pod-config.json
 ```
 
-创建容器
+## 创建容器
+
 用 crictl 创建容器对容器运行时排错很有帮助。 在运行的 Kubernetes 集群中，沙盒会随机的被 kubelet 停止和删除。
 
 拉取 busybox 镜像
@@ -145,7 +148,7 @@ crictl pull busybox
 Image is up to date for busybox@sha256:141c253bc4c3fd0a201d32dc1f493bcf3fff003b6df416dea4f41046e0f37d472
 ```
 
-创建 Pod 和容器的配置：
+## 创建 Pod 和容器的配置：
 
 Pod 配置：
 
@@ -196,7 +199,8 @@ CONTAINER ID        IMAGE               CREATED             STATE               
 3e025dd50a72d       busybox             32 seconds ago      Created             busybox             0
 ```
 
-启动容器
+## 启动容器
+
 要启动容器，要将容器 ID 传给 crictl start：
 
 ```bash
