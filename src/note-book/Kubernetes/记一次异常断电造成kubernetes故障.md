@@ -1,4 +1,8 @@
-# 断电造成kubernetes故障
+
+
+# 记一次异常断电造成kubernetes故障
+
+## 断电造成kubernetes故障
 
 > http://31mwww.linuxea.com/2580.html
 > https://blog.csdn.net/liuyij3430448/article/details/130406844
@@ -8,7 +12,7 @@
 >
 > 老家伙你不能倒下啊。你不run了我就得run啊。。。
 
-## 服务器显示状态
+服务器显示状态
 
 ![image-20230818150814096](记一次异常断电造成kubernetes故障.assets/image-20230818150814096.png)
 
