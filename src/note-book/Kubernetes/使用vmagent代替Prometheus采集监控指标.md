@@ -1,3 +1,5 @@
+# 使用vmagent代替Prometheus采集监控指标
+
 vmagent 可以帮助我们从各种来源收集指标并将它们存储在 VM 或者任何其他支持 remote write 协议的 Prometheus 兼容的存储系统中。
 
 # 特性
@@ -15,7 +17,7 @@ vmagent 相比于 Prometheus 抓取指标来说具有更多的灵活性，比如
 - 可以通过在抓取时间和将其发送到远程存储系统之前限制唯一时间序列的数量来处理高基数和高流失率问题
 - 可以从多个文件中加载 scrape 配置
 
-![图片](使用 vmagent 代替 Prometheus 采集监控指标.assets/640-16918410575371.jpeg)
+![图片](使用vmagent代替Prometheus采集监控指标.assets/640-16918410575371.jpeg)
 
 # 部署
 
@@ -472,10 +474,10 @@ data:
 sum(container_memory_working_set_bytes{image!=""}) by(namespace, pod) / sum(container_spec_memory_limit_bytes{image!=""}) by(namespace, pod) * 100 != +inf
 ```
 
-![图片](使用 vmagent 代替 Prometheus 采集监控指标.assets/640-16523171953011-16918410644683.jpeg)
+![图片](使用vmagent代替Prometheus采集监控指标.assets/640-16523171953011-16918410644683.jpeg)
 
 vmagent 作为采集指标重要的一环，当然对它的监控也不可少。vmagent 通过 `http://vmagent:8429/metrics` 暴露了很多指标，如 `vmagent_remotewrite_conns` 远程存储连接，`vm_allowed_memory_bytes` 可使用的内存大小，我们把一些重要的指标收集起来，通过 Grafana 进行展示，能够更好的帮助我们分析 vmagent 的状态。
 
 我们可以使用 https://grafana.com/grafana/dashboards/12683 来展示 vmagent 的状态。
 
-![图片](使用 vmagent 代替 Prometheus 采集监控指标.assets/640-16523171953022-16918410670325.png)
+![图片](使用vmagent代替Prometheus采集监控指标.assets/640-16523171953022-16918410670325.png)
