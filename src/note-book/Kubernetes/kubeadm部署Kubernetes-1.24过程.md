@@ -1,4 +1,4 @@
-# kubeadm部署Kubernetes 1.24步骤
+# kubeadm部署Kubernetes-1.24过程
 
 # 前言
 
@@ -718,7 +718,7 @@ helm show values kubernetes-dashboard/kubernetes-dashboard
 
 使用上面的 token 登录 k8s dashboard。
 
-![img](使用 kubeadm 部署 Kubernetes 1.24 详细步骤总结.assets/d77e768317fdf704128c6a92a58bfd41.png)
+![img](kubeadm部署Kubernetes-1.24过程.assets/d77e768317fdf704128c6a92a58bfd41.png)
 
 参考
 
