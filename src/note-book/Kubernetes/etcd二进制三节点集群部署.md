@@ -1,4 +1,6 @@
-# 在200的运维主机上创建生成CA证书的JSON配置文件
+# etcd二进制三节点集群部署
+
+## 在200的运维主机上创建生成CA证书的JSON配置文件
 
 ```bash
 vi /opt/certs/ca-config.json
@@ -76,7 +78,9 @@ cd /opt/certs
 certs]# cfssl gencert -ca=ca.pem -ca-key=ca-key.pem -config=ca-config.json -profile=peer etcd-peer-csr.json | cfssl-json -bare etcd-peer
 ```
 
-# 在10.4.7.12 主机上按照架构设计，在hdss7-12，hdss7-21, hdss7-22三台上部署etcd服务：
+## 在10.4.7.12 主机上按照架构设计
+
+在hdss7-12，hdss7-21, hdss7-22三台上部署etcd服务：
 
 首先创建etcd用户：
 ```bash
@@ -197,7 +201,7 @@ stdout_events_enabled=false                                     ; emit events on
 
 
 
-# 更新supervisord
+## 更新supervisord
 
 ```
 # supervisorctl update
