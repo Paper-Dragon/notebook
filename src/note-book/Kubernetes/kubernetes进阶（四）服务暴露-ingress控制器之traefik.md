@@ -1,3 +1,5 @@
+# kubernetes进阶（四）服务暴露-ingress控制器之traefik
+
 上一章我们测试了在集群内部解析service名称，
 
 下面我们测试在集群外部解析：
