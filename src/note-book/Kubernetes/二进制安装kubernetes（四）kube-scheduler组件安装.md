@@ -1,12 +1,14 @@
-# 介绍资料转载地址：https://www.jianshu.com/p/c4c60ccda8d0
+# 二进制安装kubernetes（四）kube-scheduler组件安装
 
-# kube-scheduler在集群中的作用
+## 介绍资料转载地址：https://www.jianshu.com/p/c4c60ccda8d0
+
+## kube-scheduler在集群中的作用
 
 kube-scheduler是以插件形式存在的组件，正因为以插件形式存在，所以其具有可扩展可定制的特性。kube-scheduler相当于整个集群的调度决策者，其通过预选和优选两个过程决定容器的最佳调度位置。
 
-# kube-scheduler源码中的关键性调用链
+## kube-scheduler源码中的关键性调用链
 
-![img](二进制安装kubernetes（四） kube-scheduler组件安装.assets/webp-16918409243531.webp)
+![img](二进制安装kubernetes（四）kube-scheduler组件安装.assets/webp-16918409243531.webp)
 
 
 
@@ -86,7 +88,7 @@ stdout_events_enabled=false                                              ; emit 
 # supervisorctl status
 ```
 
-![image-20220516193153415](二进制安装kubernetes（四） kube-scheduler组件安装.assets/image-20220516193153415-16918409997831.png)
+![image-20220516193153415](二进制安装kubernetes（四）kube-scheduler组件安装.assets/image-20220516193153415-16918409997831.png)
 
 
 
@@ -98,7 +100,7 @@ stdout_events_enabled=false                                              ; emit 
 # kubectl get cs
 ```
 
-![image-20220516193203467](二进制安装kubernetes（四） kube-scheduler组件安装.assets/image-20220516193203467-16918410015233.png)
+![image-20220516193203467](二进制安装kubernetes（四）kube-scheduler组件安装.assets/image-20220516193203467-16918410015233.png)
 
  
 
