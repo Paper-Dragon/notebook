@@ -1,3 +1,5 @@
+# 二进制安装kubernetes（二）kube-apiserver组件安装
+
 根据架构图，我们的apiserver部署在hdss7-21和hdss7-22上：
 
 首先在hdss7-200上申请证书并拷贝到21和22上：
@@ -288,7 +290,7 @@ stdout_events_enabled=false                                     ; emit events on
 # supervisorctl status
 ```
 
-![img](二进制安装kubernetes（二） kube-apiserver组件安装.assets/1034759-20191113161103150-1839664051-16918405238861.png)
+![img](二进制安装kubernetes（二）kube-apiserver组件安装.assets/1034759-20191113161103150-1839664051-16918405238861.png)
 
  
 
@@ -461,13 +463,13 @@ vrrp_instance VI_1 {
 
 7-11是主，现在vip绑定在主上，正常：
 
-![img](二进制安装kubernetes（二） kube-apiserver组件安装.assets/1034759-20191113163151886-1369051614-16918405286763.png)
+![img](二进制安装kubernetes（二）kube-apiserver组件安装.assets/1034759-20191113163151886-1369051614-16918405286763.png)
 
  
 
  如果keepalived出现脑裂问题，两台上面都有vip，可以加入以下配置，将多播修改成单播：
 
-![img](二进制安装kubernetes（二） kube-apiserver组件安装.assets/1034759-20191209165848123-1526028674-16918405319815.png)
+![img](二进制安装kubernetes（二）kube-apiserver组件安装.assets/1034759-20191209165848123-1526028674-16918405319815.png)
 
  
 
