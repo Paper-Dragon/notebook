@@ -1,10 +1,13 @@
-起一个 jenkins
+# jenkins的docker部署文档
+
+
+## 起一个 jenkins
 
 ```bash
 docker run  -u root  -it   -d  -p 8080:8080 -p 50000:50000 -v jenkins-data:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
 ```
 
-配置docker api接口
+## 配置docker api接口
 
 ```bash
 
