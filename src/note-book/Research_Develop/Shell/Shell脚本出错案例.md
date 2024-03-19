@@ -1,4 +1,6 @@
-# bad substitution
+# Shell脚本出错案例
+
+## 01bad substitution
 
 初接触shell脚本，在vim中写代码，出现了好几次 Bad substitution。
 

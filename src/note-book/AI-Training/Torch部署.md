@@ -25,7 +25,7 @@ sudo ./cuda*.run --override
 
 **不选择重装驱动**
 
-![image-20230531170233024](torch 环境.assets/image-20230531170233024.png)
+![image-20230531170233024](Torch部署.assets/image-20230531170233024.png)
 
 ## 下载cuDNN
 
