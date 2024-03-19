@@ -10,7 +10,7 @@ find . -type f -name "*.md" | while read file; do
         first_line=$(grep '\#\ ' "$file" | head -n 1 | sed 's/^# //')
         if [[ "$filename" != "$first_line" ]]; then
             echo "文件 $file 内容不一致"
-            echo -e "==文件名$filename\n==标题名$first_line"
+            echo -e "==> 文件名: [$filename]\n==> 标题名: [$first_line]"
         fi
     fi
 done
