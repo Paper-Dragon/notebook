@@ -1,3 +1,5 @@
+# Git远程仓库回退到指定版本
+
 ## step1：查看提交记录，获得版本号
 
 `git log`
@@ -32,12 +34,11 @@ git reset --hard <版本号>
 git reset --hard 203738c9ccad7d95b728c8d9d287f2ff24eaaca2
 ```
 
-## step3：远程仓库也退到相应的版本
+## step3：远程仓库也退到相应的版本（慎重执行）
 
 ```bash
 git push origin <分支名> --force
 
 git push origin master --force
-
 ```
 

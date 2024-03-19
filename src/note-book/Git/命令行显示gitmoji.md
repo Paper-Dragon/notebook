@@ -1,6 +1,6 @@
 
 
-# emojify
+# 命令行显示gitmoji
 
 
 ## [Emoji on the command line    😱 ](https://www.mianshigee.com/project/emojify/#emoji-on-the-command-line-scream) 
@@ -98,13 +98,3 @@ $ bats emojify_tests.bats
 ```
 $ shellcheck --exclude=SC1117 emojify
 ```
-
-## [Related](https://www.mianshigee.com/project/emojify/#related)
-
-- [pyemojify](https://github.com/lord63/pyemojify) - python port
-
-
-
-## [License](https://www.mianshigee.com/project/emojify/#license)
-
-MIT
