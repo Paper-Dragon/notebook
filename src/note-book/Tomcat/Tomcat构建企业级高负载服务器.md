@@ -1,4 +1,4 @@
-# TOMCAT构建企业级高负载服务器
+# Tomcat构建企业级高负载服务器
 
 ## 前言
 
@@ -10,7 +10,7 @@
 ### JAVA 如何做到跨平台
 
     同一个JAVA程序(JAVA字节码的集合)，通过JAVA虚拟机(JVM)运行于各大主流操作系统平台比如Windows、CentOS、Ubuntu等。程序以虚拟机为中介，来实现跨平台。
-![img](tomcat.assets\1.png)
+![img](Tomcat构建企业级高负载服务器.assets\1.png)
 
 ## Tomcat部署
 
@@ -426,7 +426,7 @@ export JAVA_OPTS='-Xms64m -Xmx128m'
     http://192.168.75.226:8083
 ## JVM常用分析工具
 
-![image-20211110215222063](tomcat.assets\image-20211110215222063.png)
+![image-20211110215222063](Tomcat构建企业级高负载服务器.assets\image-20211110215222063.png)
 
 
 
@@ -812,7 +812,7 @@ jconsole
 
 ~jconsole
 
-![在这里插入图片描述](tomcat.assets\2.png)
+![在这里插入图片描述](Tomcat构建企业级高负载服务器.assets\2.png)
 
 
 reference：
@@ -832,4 +832,4 @@ Visual VM是一款All-in-One的Java分析工具，堆栈信息、线程信息等
 
 ~ jvisualvm
 
-![在这里插入图片描述](tomcat.assets\3.png)
+![在这里插入图片描述](Tomcat构建企业级高负载服务器.assets\3.png)
