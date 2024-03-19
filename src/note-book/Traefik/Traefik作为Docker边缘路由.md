@@ -1,4 +1,4 @@
-# Traefik作为docker的边缘路由
+# Traefik作为Docker边缘路由
 
 > 即： provider为docker
 
@@ -8,7 +8,7 @@
 
 流量想象成流动的水，我们的目的是把水进行分流到每个需要服务的地方，就如下图所示，我们要做的是需要利用Traefik的自动发现机制自动发现服务，然后自动注册到管道处：
 
-![image-20230112131250935](traefik作为docker边缘路由.assets/image-20230112131250935.png)
+![image-20230112131250935](Traefik作为Docker边缘路由.assets/image-20230112131250935.png)
 
 
 
