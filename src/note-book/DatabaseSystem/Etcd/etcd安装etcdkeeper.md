@@ -1,4 +1,4 @@
-# etcd安装dashboard-etcdkeeper
+# etcd安装etcdkeeper
 
 ## 安装etcd keeper
 

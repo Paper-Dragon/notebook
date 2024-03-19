@@ -1,4 +1,4 @@
-# 使用Redis插件
+# CoreDNS使用Redis插件
 ## Description
 
 *redis* enables reading zone data from redis database.

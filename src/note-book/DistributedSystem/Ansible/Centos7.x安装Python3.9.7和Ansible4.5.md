@@ -1,4 +1,4 @@
-# Centos7.x 安装Python3.9.7 & Ansible4.5 （已验证）
+# Centos7.x安装Python3.9.7和Ansible4.5
 
 ## 1、环境信息
 

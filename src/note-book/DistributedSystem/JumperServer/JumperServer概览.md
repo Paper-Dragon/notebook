@@ -1,6 +1,6 @@
-# JumperServer Insight
+# JumperServer概览
 
-![!界面展示](README.assets/dashboard.png)
+![!界面展示](JumperServer概览.assets/dashboard.png)
 
 ## Over View
 
