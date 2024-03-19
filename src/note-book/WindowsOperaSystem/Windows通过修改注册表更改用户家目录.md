@@ -1,4 +1,4 @@
-# Windows系统更改/迁移用户目录
+# Windows通过修改注册表更改用户家目录
 
 系统盘为C盘，C盘空间不足，C盘太满了，C盘清理时查看发现`C:\Users`目录占用几十个GB，以下方法可将`Users`目录大部分空间转移。
 
@@ -16,7 +16,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\
 
 将`ProfilesDirectory`项改为将要迁移的路径，例如`D:\Users`；
 
-![img](Windows系统更改迁移用户目录.assets/1595110-20220127110635449-1457191292.png)
+![img](Windows通过修改注册表更改用户家目录.assets/1595110-20220127110635449-1457191292.png)
 
 然后进入系统`控制面板`新建一个新系统账户，并设置为管理员；
 
@@ -28,7 +28,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\
 
 完成目录切换后，为避免更改的注册表引发其他问题，还需将注册表的`ProfilesDirectory`项还原成`%SystemDrive%\Users`，如下：
 
-![img](Windows系统更改迁移用户目录.assets/1595110-20220127110709303-1880697834.png)
+![img](Windows通过修改注册表更改用户家目录.assets/1595110-20220127110709303-1880697834.png)
 
 做完这一步，**用户目录更改/迁移就已经完成了**；文章后面的内容为补充内容，有兴趣的朋友可以看看。
 
@@ -42,7 +42,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList\
 
 展开该路径显示子项，左边长串数字的子项就是系统所有的用户项。
 
-![img](Windows系统更改迁移用户目录.assets/1595110-20220127111521217-224314927.png)
+![img](Windows通过修改注册表更改用户家目录.assets/1595110-20220127111521217-224314927.png)
 
 ### 5. 其他方法
 
