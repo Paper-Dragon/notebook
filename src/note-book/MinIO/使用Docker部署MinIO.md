@@ -1,4 +1,4 @@
-# 使用Docker部署minio
+# 使用Docker部署MinIO
 
 
 
