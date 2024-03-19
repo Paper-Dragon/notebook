@@ -4,7 +4,7 @@ category:
 ---
 
 # 通过cdn流量伪装防止防火墙封ip和端口
- 
+
 
 ## 边缘计算系统构建
 
@@ -12,25 +12,25 @@ category:
 
 #### 1.[登录CDN网站](https://dash.cloudflare.com/login/)，找到增加域名选项
 
-![image-20220819194959187](cfw-cdn-ssl-ws-tls.assets/image-20220819194959187.png)
+![image-20220819194959187](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819194959187.png)
 
 #### 2.点击添加域名
 
-![image-20220819195044991](cfw-cdn-ssl-ws-tls.assets/image-20220819195044991.png)
+![image-20220819195044991](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819195044991.png)
 
 #### 3.选择Free计划
 
-![image-20220819195120435](cfw-cdn-ssl-ws-tls.assets/image-20220819195120435.png)
+![image-20220819195120435](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819195120435.png)
 
 #### 4.临时添加一条记录，让CDN去验证域名合法性
 
-![image-20220819195321479](cfw-cdn-ssl-ws-tls.assets/image-20220819195321479.png)
+![image-20220819195321479](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819195321479.png)
 
 
 
 #### 5.复制新生成的两个ns服务器备用
 
-![image-20220819195427838](cfw-cdn-ssl-ws-tls.assets/image-20220819195427838.png)
+![image-20220819195427838](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819195427838.png)
 
 
 
@@ -38,9 +38,9 @@ category:
 
 #### 6.登录域名服务厂商，找到域名管理处，修改ns服务器为CloudFlare服务器
 
-![image-20220819195544445](cfw-cdn-ssl-ws-tls.assets/image-20220819195544445.png)
+![image-20220819195544445](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819195544445.png)
 
-![image-20220819200101082](cfw-cdn-ssl-ws-tls.assets/image-20220819200101082.png)
+![image-20220819200101082](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819200101082.png)
 
 
 
@@ -48,7 +48,7 @@ category:
 
 
 
-![image-20220819201003518](cfw-cdn-ssl-ws-tls.assets/image-20220819201003518.png)
+![image-20220819201003518](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819201003518.png)
 
 
 
@@ -66,7 +66,7 @@ bash <(curl -Ls https://raw.githubusercontent.com/chenyue168881/x-ui/master/inst
 
 内存大于500M，硬盘大于5G
 
-![image-20220819201800853](cfw-cdn-ssl-ws-tls.assets/image-20220819201800853.png)
+![image-20220819201800853](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819201800853.png)
 
 #### 2.运行脚本并安装x-ui，看到如下图为安装成功
 
@@ -81,13 +81,13 @@ apt-get install curl -y
 
 
 
-![image-20220819202106697](cfw-cdn-ssl-ws-tls.assets/image-20220819202106697.png)
+![image-20220819202106697](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819202106697.png)
 
 
 
 安装成功
 
-![image-20220819202309901](cfw-cdn-ssl-ws-tls.assets/image-20220819202309901.png)
+![image-20220819202309901](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819202309901.png)
 
 #### 3.修改x-ui web密码
 
@@ -104,7 +104,7 @@ EOF
 
 出现这个界面为运行成功
 
-![image-20220819202652563](cfw-cdn-ssl-ws-tls.assets/image-20220819202652563.png)
+![image-20220819202652563](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819202652563.png)
 
 
 
@@ -112,13 +112,13 @@ EOF
 
 > url类似于 http://xxx.xxx.xxx.xxx:54321/
 
-![image-20220819215155571](cfw-cdn-ssl-ws-tls.assets/image-20220819215155571.png)
+![image-20220819215155571](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819215155571.png)
 
 ### 在CDN上增加域名
 
 打开此界面，点击增加A记录
 
-![image-20220819203228352](cfw-cdn-ssl-ws-tls.assets/image-20220819203228352.png)
+![image-20220819203228352](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819203228352.png)
 
 如图配置，获得的域名应该是 `example-1111.456987.top`  指向 `45.91.82.122` 并通过`cf`伪装所有流量
 
@@ -128,9 +128,9 @@ EOF
 测试网站 ping.chinaz.com
 ```
 
-![image-20220819203606534](cfw-cdn-ssl-ws-tls.assets/image-20220819203606534.png)
+![image-20220819203606534](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819203606534.png)
 
-![image-20220819203635664](cfw-cdn-ssl-ws-tls.assets/image-20220819203635664.png)
+![image-20220819203635664](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819203635664.png)
 
 
 
@@ -138,9 +138,9 @@ EOF
 
 ### 生成加密证书(已生成）
 
-![image-20220820011711344](cfw-cdn-ssl-ws-tls.assets/image-20220820011711344.png)
+![image-20220820011711344](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220820011711344.png)
 
-![image-20220820011541397](cfw-cdn-ssl-ws-tls.assets/image-20220820011541397.png)
+![image-20220820011541397](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220820011541397.png)
 
 
 
@@ -225,7 +225,7 @@ lE+ACh0f58oLg7eOwJu7CpZj
 
 
 
-![image-20220819214643980](cfw-cdn-ssl-ws-tls.assets/image-20220819214643980.png)
+![image-20220819214643980](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819214643980.png)
 
 
 
@@ -245,4 +245,4 @@ lE+ACh0f58oLg7eOwJu7CpZj
 
 
 
-![image-20220819214729276](cfw-cdn-ssl-ws-tls.assets/image-20220819214729276.png)
+![image-20220819214729276](通过cdn流量伪装防止防火墙封ip和端口.assets/image-20220819214729276.png)

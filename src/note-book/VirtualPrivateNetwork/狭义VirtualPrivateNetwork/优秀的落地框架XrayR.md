@@ -1,4 +1,4 @@
-# 一个优秀的流量落地框架XrayR
+# 优秀的流量落地框架XrayR
 
 > 原项目地址 https://github.com/XrayR-project
 >
