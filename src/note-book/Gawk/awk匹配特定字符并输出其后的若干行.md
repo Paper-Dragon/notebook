@@ -1,4 +1,4 @@
-# awk 输出配行及匹配下面的三行
+# awk匹配特定字符并输出其后的若干行
 
 ## 用法：
 
@@ -10,7 +10,7 @@ awk '/xxoo/{p=4}p-->0'
 
 ### 示例：
 
-    
+
     # cat /etc/passwd
     
     root:x:0:0:root:/root:/bin/bash
