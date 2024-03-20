@@ -1,6 +1,6 @@
 
 
-# [Linux虚拟网络设备之bridge(桥)](https://segmentfault.com/a/1190000009491002)
+# Linux虚拟网络设备之bridge
 
 转自：https://segmentfault.com/a/1190000009491002
 

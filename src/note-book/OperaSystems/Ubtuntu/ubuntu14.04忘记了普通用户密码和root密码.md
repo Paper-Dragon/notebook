@@ -1,4 +1,4 @@
-#  [ubuntu 14.04 忘记用户登录密码](https://www.cnblogs.com/z-l-m/p/8004972.html)
+#  ubuntu14.04忘记用户登录密码
 
 1.在VMware Workstatiom中点击“开启此虚拟机”，注意，进入系统自启时随即先点击一下屏幕，目的是让鼠标从VM切换到ubuntu启动（否则下面长按shift时可能不会进入GNU GRUN界面）；
 
