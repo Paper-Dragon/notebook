@@ -1,4 +1,4 @@
-# ACLLIb
+# ACLLib
 
 - 是一个基于Win32API的函数库，提供了相对较为简单的方式来做Windows程序
 - 实际提供了一个c和两个h文件，可以在msvc和dev c++（MingGW）中使用
