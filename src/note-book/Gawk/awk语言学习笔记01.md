@@ -70,7 +70,7 @@ A line lnA line 2
 End
 ```
 
-![img](awk语言学习笔记  01.assets/v2-cc1f3c7bd92f3a31ddf1dd29ac69eaa7_720w.png)
+![img](awk语言学习笔记01.assets/v2-cc1f3c7bd92f3a31ddf1dd29ac69eaa7_720w.png)
 
 当使用不带参数的`print`时，它就打印当前行，当`print`的参数是以逗号进行分隔时，打印时则以空格作为定界符。在awk的print语句块中双引号是被当作拼接符使用，例如：
 

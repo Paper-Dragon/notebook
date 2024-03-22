@@ -190,6 +190,6 @@ docker官方文档上介绍了一种通过CA认证方式使用Remote API
 
  
 
-![img](Docker 2375攻击和解决方案.assets/t_70.png)
+![img](Docker的2375攻击和解决方案.assets/t_70.png)
 
 文章知识点与官方知识档案匹配，可进一步学习相关知识

@@ -10,7 +10,7 @@ Portainer是Docker的图形化管理工具，提供状态显示面板、应用�
 
     docker search portainer
 
-![image-20220512153403266](Portainer 单机部署.assets/image-20220512153403266-16918417647751.png)
+![image-20220512153403266](Portainer单机部署.assets/image-20220512153403266-16918417647751.png)
 
 ## 2、下载镜像
 
@@ -36,4 +36,4 @@ docker.io/portainer/portainer
 访问方式：http://IP:9000
 单机版这里选择local即可，选择完毕，点击Connect即可连接到本地docker:
 
-![img](Portainer 单机部署.assets/873d0d604255d027e119bf1eff940055-320756-16918417668203.png)
+![img](Portainer单机部署.assets/873d0d604255d027e119bf1eff940055-320756-16918417668203.png)

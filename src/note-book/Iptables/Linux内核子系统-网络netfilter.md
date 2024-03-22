@@ -20,39 +20,39 @@
 
 `/Proc/sys/net/ipv4/`存放着`TCP`参数的文件,目录中的内容用来添加网络设置，在其中的许多设置，可以用来阻止对系统的攻击，或用来设置系统的路由功能。
 
-![image-20230808180108720](Linux内核子系统 - 网络 netfilter.assets/image-20230808180108720.png)
+![image-20230808180108720](Linux内核子系统-网络netfilter.assets/image-20230808180108720.png)
 
 `tcp_syn_retries` 客户端发起`SYN`连接，如果超时会进行重传，重传的次数
 
-![img](Linux内核子系统 - 网络 netfilter.assets/v2-a477b9c05cf6e89811178c08e0fc9cae_720w.png)
+![img](Linux内核子系统-网络netfilter.assets/v2-a477b9c05cf6e89811178c08e0fc9cae_720w.png)
 
 
 
-![image-20230808180206252](Linux内核子系统 - 网络 netfilter.assets/image-20230808180206252.png)
+![image-20230808180206252](Linux内核子系统-网络netfilter.assets/image-20230808180206252.png)
 
 接着我们使用`sysctl net.ipv4.tcp_syn_retries=2`把这个参数修改为`2`测试一下
 
-![img](Linux内核子系统 - 网络 netfilter.assets/v2-7fc6f14876857909c2753424b93e59d4_720w.png)
+![img](Linux内核子系统-网络netfilter.assets/v2-7fc6f14876857909c2753424b93e59d4_720w.png)
 
 接着我们来验证一下，我们去`ssh`一台不存在的主机，因为`ssh`也是基于`tcp` 
 
-![img](Linux内核子系统 - 网络 netfilter.assets/v2-63a0f0854b03b51b6d678833445b91fd_720w.png)
+![img](Linux内核子系统-网络netfilter.assets/v2-63a0f0854b03b51b6d678833445b91fd_720w.png)
 
 通过`wireshark`抓包可以看到，果然重传了`2`个数据包
 
-![img](Linux内核子系统 - 网络 netfilter.assets/v2-3113edfaa426134fe9dee7568a5333c5_720w.png)
+![img](Linux内核子系统-网络netfilter.assets/v2-3113edfaa426134fe9dee7568a5333c5_720w.png)
 
 `net.ipv4.tcp_window_scaling`启用或关闭窗口扩大因子选项
 
-![img](Linux内核子系统 - 网络 netfilter.assets/v2-1b8c58acbfbea23c8fb8ccd77be9ac4f_720w.webp)
+![img](Linux内核子系统-网络netfilter.assets/v2-1b8c58acbfbea23c8fb8ccd77be9ac4f_720w.webp)
 
-![image-20230808180259263](Linux内核子系统 - 网络 netfilter.assets/image-20230808180259263.png)
+![image-20230808180259263](Linux内核子系统-网络netfilter.assets/image-20230808180259263.png)
 
-![img](Linux内核子系统 - 网络 netfilter.assets/v2-423d1323a2f8a4a9f56a7e6bead8c483_720w.png)
+![img](Linux内核子系统-网络netfilter.assets/v2-423d1323a2f8a4a9f56a7e6bead8c483_720w.png)
 
 `Net.ipv4.tcp_sack`启用或关闭选择确认`（Selective Acknowledgement， SACK）`选项
 
-![image-20230808180239924](Linux内核子系统 - 网络 netfilter.assets/image-20230808180239924.png)
+![image-20230808180239924](Linux内核子系统-网络netfilter.assets/image-20230808180239924.png)
 
 | 名称                       | 默认值            | 建议值                 | 描述                                                         |
 | -------------------------- | ----------------- | ---------------------- | ------------------------------------------------------------ |
@@ -95,7 +95,7 @@
 
 `/Proc/sys/net/netfilter/`是对`netfilter`的参数配置，具体可以参照Linux内核文档
 
-![image-20230808180325857](Linux内核子系统 - 网络 netfilter.assets/image-20230808180325857.png)
+![image-20230808180325857](Linux内核子系统-网络netfilter.assets/image-20230808180325857.png)
 
 
 
@@ -125,7 +125,7 @@ sys/class/net/eth0/statistics/tx_dropped 发包时丢弃的数据包
 
 Linux网卡的参数可以在`/sys/class/net/`进入对应网卡目录去查看，比如网卡的`MAC地址`，`速率(speed)`,`MTU`等等
 
-![image-20230808180343322](Linux内核子系统 - 网络 netfilter.assets/image-20230808180343322.png)
+![image-20230808180343322](Linux内核子系统-网络netfilter.assets/image-20230808180343322.png)
 
 
 
