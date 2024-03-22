@@ -1,4 +1,6 @@
-# Nginx的url过长出现的问题 414 Request-URI Too Large
+# Nginx的url过长导致fastcgi协议崩溃
+
+> Nginx的url过长出现的问题 414 Request-URI Too Large
 
 > 研发写了个非常脑残的功能，竟然要把图片变成base64编码然后通过patch方法去发送给服务端。我人麻了。竟然要把这么复制的东西放到http head里，这尼玛离谱。下面是这件事的解决过程。
 

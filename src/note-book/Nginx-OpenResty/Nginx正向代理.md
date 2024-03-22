@@ -1,4 +1,4 @@
-# nginx代理
+# Nginx正向代理
 
 >  nginx本身是不支持https协议请求转发，为了让nginx能达到这一效果需要借助第三方模块ngx_http_proxy_connect_module
 

@@ -1,4 +1,4 @@
-# Nginx配置示例
+# Nginx配置案例
 
 ## book.itrusts.top.conf
 

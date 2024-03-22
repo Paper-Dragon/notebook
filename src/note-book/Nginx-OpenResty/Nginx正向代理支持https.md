@@ -1,7 +1,5 @@
 ---
 category: Nginx
-# category: 网络安全
-# category: 数据库
 ---
 
 # Nginx正向代理支持https

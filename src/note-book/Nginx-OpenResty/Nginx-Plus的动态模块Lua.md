@@ -1,4 +1,4 @@
-# 动态模块Lua
+# Nginx-Plus的动态模块Lua
 
 > 将Lua联合例程集成到NGINX事件处理模型中，使用由NGINX,Inc。编写和支持的Lua动态模块。
 >
