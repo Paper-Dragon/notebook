@@ -1,4 +1,6 @@
-# 一键安装docker
+# RockyLinux安装Docker
+
+## 一键安装docker
 
 
 
@@ -13,7 +15,7 @@ yum -y install epel-release \
   && systemctl status docker -l
 ```
 
-# 安装docker-compose
+## 安装docker-compose
 
 > 以centos上可以直接用yum安装docker-compose的，在rocky linux上有冲突，只好手动安装了。
 >  手工安装的这个docker-compose版本，交互效果更好看些，不过也有问题“会多出一些莫名的空容器，状态为Created”。

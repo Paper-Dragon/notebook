@@ -1,4 +1,4 @@
-# Deamon.json Simple
+# Docker配置daemon.json文件
 
 ## All
 
