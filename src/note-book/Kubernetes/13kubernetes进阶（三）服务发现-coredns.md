@@ -307,11 +307,11 @@ spec:
 # kubectl get all -n kube-system
 ```
 
-![![img](kubernetes进阶（三）服务发现-coredns.assets/1034759-20191123171511586-952619728-16918406481011.png)
+![img](kubernetes进阶（三）服务发现-coredns.assets/1034759-20191123171511586-952619728-16918406481011.png)
 
  
 
- 查看coredns的cluster ip：
+查看coredns的cluster ip：
 
 ```
 # kubectl get svc -o wide -n kube-system
