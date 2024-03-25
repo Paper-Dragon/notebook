@@ -1,4 +1,4 @@
-# ELK+kafka构建高并发分布式日志收集系统
+# ELK和kafka构建高并发分布式日志收集系统
 
 # ELK+Kafka集群
 
@@ -9,7 +9,7 @@
 业务层可以直接写入到kafka队列中，不用担心elasticsearch的写入效率问题。
 图示
 
-![在这里插入图片描述](.\elk+kfaka.assets\基本架构.png)
+![在这里插入图片描述](.\ELK和kafka构建高并发分布式日志收集系统.assets\基本架构.png)
 
 # Kafka
 
@@ -49,7 +49,7 @@ partition：
 
 ### 拓扑
 
-![基本架构](elk+kfaka.assets\基本架构.png)
+![基本架构](ELK和kafka构建高并发分布式日志收集系统.assets\基本架构.png)
 
 ### 说明
 
@@ -184,7 +184,7 @@ LISTEN     0      50          :::9300                    :::*                   
 
 访问192.168.88.153:9200
 
-![在这里插入图片描述](elk+kfaka.assets\web-api.png)
+![在这里插入图片描述](ELK和kafka构建高并发分布式日志收集系统.assets\web-api.png)
 
 （3）、安装es的管理插件
  （1）、说明：es官方提供一个用于管理es的插件，可清晰直观看到es集群的状态，以及对集群的操作管理，安装方法如下：
@@ -197,7 +197,7 @@ LISTEN     0      50          :::9300                    :::*                   
 
 安装好之后，访问方式为： http://192.168.0.110:9200/_plugin/head，
  由于集群中现在暂时没有数据，所以显示为空,
- ![在这里插入图片描述](elk+kfaka.assets\web.png)
+ ![在这里插入图片描述](ELK和kafka构建高并发分布式日志收集系统.assets\web.png)
 
 #### 2、Logstash客户端安装配置（在webserver1上安装logstassh，用于采集日志）
 
@@ -448,7 +448,7 @@ system - messages    #可以看到这个主题已经生成了
 
 输出信息：
 
-![在这里插入图片描述](elk+kfaka.assets\queue.png)
+![在这里插入图片描述](ELK和kafka构建高并发分布式日志收集系统.assets\queue.png)
 
 
 
@@ -508,13 +508,13 @@ index => "test-system-messages-%{+YYYY-MM}"  #区分之前实验，新名字“t
 
 查看es管理界面：
 
-![在这里插入图片描述](elk+kfaka.assets\es-manage.png)
+![在这里插入图片描述](ELK和kafka构建高并发分布式日志收集系统.assets\es-manage.png)
 
 
 
 总结
 
-![last-not-least](elk+kfaka.assets\last-not-least.png)
+![last-not-least](ELK和kafka构建高并发分布式日志收集系统.assets\last-not-least.png)
 
 
 
@@ -614,4 +614,4 @@ Redis与Kafka
 
 
 
-![img](elk+kfaka.assets\Center.jpeg)
+![img](ELK和kafka构建高并发分布式日志收集系统.assets\Center.jpeg)

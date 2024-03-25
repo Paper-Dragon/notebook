@@ -1,4 +1,4 @@
-# AWK中的字符串操作函数
+# Awk中的字符串操作函数
 
 - [gensub()](https://blog.csdn.net/zsx0728/article/details/104040922#gensub_18)
 - [gsub()](https://blog.csdn.net/zsx0728/article/details/104040922#gsub_86)

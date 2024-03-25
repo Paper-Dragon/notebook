@@ -1,4 +1,4 @@
-# 007-Qt Designer
+# 007-QtDesigner
 
 ## 一、介绍
 

@@ -1,4 +1,4 @@
-# apt查询某个软件有哪些版本
+# Apt查询某个软件有哪些版本
 
 > https://blog.csdn.net/quantum7/article/details/103417643
 

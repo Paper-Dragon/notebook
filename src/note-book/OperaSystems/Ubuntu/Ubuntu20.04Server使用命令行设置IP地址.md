@@ -1,4 +1,4 @@
-# Ubuntu20.04Server使用命令行设置 IP 地址
+# Ubuntu20.04Server使用命令行设置IP地址
 
 > 转载From ： https://blog.csdn.net/justidle/article/details/114372558
 

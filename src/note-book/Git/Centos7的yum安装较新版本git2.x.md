@@ -1,4 +1,4 @@
-# Centos7 yum install git2.x(较新版本)
+# Centos7的yum安装较新版本git2.x
 
 centos7 默认的git版本是1.8.x
 

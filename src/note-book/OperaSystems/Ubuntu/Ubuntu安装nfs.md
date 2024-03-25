@@ -1,4 +1,4 @@
-# ubuntu安装nfs
+# Ubuntu安装nfs
 
 1. ## 安装
 ```
