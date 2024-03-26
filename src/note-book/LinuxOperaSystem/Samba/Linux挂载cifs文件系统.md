@@ -1,4 +1,4 @@
-# Linux挂cifs共享存储
+# Linux挂载cifs文件系统
 
 ## 1、挂载方法
 

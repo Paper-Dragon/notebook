@@ -1,4 +1,4 @@
-# Samba共享文件时文件属性nobody
+# Samba共享文件时文件属性nobody解决方法
 
 
 

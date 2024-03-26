@@ -1,5 +1,6 @@
-# 使用Systemback克隆Ubuntu系统
+# Linux备份为liveOS
 
+> 使用Systemback克隆Ubuntu系统
 > https://zhuanlan.zhihu.com/p/375912899
 
 \#基于Systemback⼯具实现ubuntu系统的镜像归档、复制和克隆安装#

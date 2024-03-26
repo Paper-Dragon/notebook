@@ -1,4 +1,4 @@
-# Ubuntu 20.04 安装VNC Server超简单教程
+# Ubuntu20.04安装VNC教程
 
 ## 1.确保安装了GNOME DESKTOP
 
