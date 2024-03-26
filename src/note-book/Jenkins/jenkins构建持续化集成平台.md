@@ -671,40 +671,6 @@ tomcat启动之前的内存：
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # 解决jenkins报错：AWT is not properly configured on this server
 
 ```bash

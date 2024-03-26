@@ -1,4 +1,4 @@
-# Linux内核子系统 - 网络
+# Linux内核子系统-网络
 
 > 某教育内核讨论区：https://kernel.0voice.com/forum.php?mod=guide&view=newthread
 >

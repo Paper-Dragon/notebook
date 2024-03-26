@@ -2,9 +2,9 @@
 
 官方文档url：https://docs.gitlab.com/ee/ci
 
-# **一.** 概念介绍
+# 一. 概念介绍
 
-## **0.**   **Gitlab** **触发** **CI** 流程图
+## 0.   Gitlab 触发 CI 流程图
 
  
 
