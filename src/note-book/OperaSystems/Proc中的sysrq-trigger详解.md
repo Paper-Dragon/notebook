@@ -1,4 +1,4 @@
-# /proc/sysrq-trigger详解
+# Proc中的sysrq-trigger详解
 
 ## 立即重新启动计算机
 
@@ -62,3 +62,17 @@ echo s > /proc/sysrq-trigger
 echo u > /proc/sysrq-trigger
 ```
 
+
+
+
+为了安全起见，在红帽企业版Linux里面，默认SysRq组合键是关闭的。 打开这个功能，运行：
+
+```bash
+# echo 1 > /proc/sys/kernel/sysrq
+```
+
+关闭这个功能：
+```bash
+# echo 0 > /proc/sys/kernel/sysrq
+```
+如果想让此功能一直生效，在/etc/sysctl.conf里面设置kernel.sysrq的值为1. 重新启动以后，此功能将会自动打开。
