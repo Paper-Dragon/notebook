@@ -105,12 +105,10 @@
   "pidfile": "",
   # 增加代理配置
   "proxies": {
-    "default": {
-      "httpProxy": "http://proxy.example.com:3128",
-      "httpsProxy": "https://proxy.example.com:3129",
-      "noProxy": "*.test.example.com,.example.org,127.0.0.0/8"
-    }
-  }，
+    "http-proxy": "http://proxy.example.com:80",
+    "https-proxy": "https://proxy.example.com:443",
+    "no-proxy": "*.test.example.com,.example.org"
+  },
   "raw-logs": false,
   #镜像源管理
   "registry-mirrors": [],
