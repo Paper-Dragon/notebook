@@ -103,6 +103,12 @@
   ],
   "oom-score-adjust": -500,
   "pidfile": "",
+  # 增加代理配置
+  "proxies": {
+    "http-proxy": "http://<user>:<password>@<domain>:<port>",
+    "https-proxy": "http://<user>:<password>@<domain>:<port>",
+    "no-proxy": "<registry.domain>"
+  },
   "raw-logs": false,
   #镜像源管理
   "registry-mirrors": [],
