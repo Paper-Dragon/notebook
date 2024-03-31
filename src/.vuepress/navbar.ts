@@ -14,7 +14,8 @@ export default navbar([
             "/free-service/tools.md",
             "/free-service/docker-hub-mirror.md",
             "/free-service/cloudflare-warp.md",
-            "/free-service/github-direct.md"
+            "/free-service/github-direct.md",
+            "/free-service/radeon-mirror.md"
         ]
     },
     {

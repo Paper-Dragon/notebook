@@ -1,3 +1,9 @@
+---
+title: Radeon镜像站
+icon: fa-brands fa-microchip
+breadcrumb: false
+---
+
 # Radeon镜像站
 
 最近在使用Ubuntu安装Amd显卡驱动的时候访问国外镜像站网速特别慢，于是乎我自己做了个镜像站，用于加速驱动的下载。
