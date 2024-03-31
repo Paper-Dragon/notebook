@@ -11,7 +11,7 @@ breadcrumb: false
 在Linux系统中，运行以下命令来配置镜像加速服务：
 
 ```bash
-curl -sSL https://www.geekery.cn/sh/docker/set_mirror.sh | bash
+curl -sSL https://www.geekery.cn/sh/docker/set_docker_mirror.sh | bash
 ```
 
 或者
