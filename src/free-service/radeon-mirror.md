@@ -19,7 +19,7 @@ radeon.geekery.cn	<--> https://repo.radeon.com
 一键设置脚本
 
 ```bash
-curl -sSL https://www.geekery.cn/sh/radeo/set_radeon_mirror.sh | bash
+curl -sSL https://www.geekery.cn/sh/radeon/set_radeon_mirror.sh | bash
 ```
 
 ​	
