@@ -1,6 +1,6 @@
 ---
 title: Radeon镜像站
-icon: fa-brands fa-microchip
+icon: fa-solid fa-microchip
 breadcrumb: false
 ---
 
