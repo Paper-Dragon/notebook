@@ -4,16 +4,22 @@ icon: fa-solid fa-microchip
 breadcrumb: false
 ---
 
-# Radeon镜像站
+# Amd的Radeon镜像站
 
 最近在使用Ubuntu安装Amd显卡驱动的时候访问国外镜像站网速特别慢，于是乎我自己做了个镜像站，用于加速驱动的下载。
 
 ## 镜像内容
 
-镜像站内容
+镜像的内容
 
-```bash
-radeon.geekery.cn	<--> https://repo.radeon.com
+```mermaid
+---
+title: 镜像Radeon全站
+---
+
+flowchart LR;
+    A["https://repo.radeon.com"] --> B["https://radeon.geekery.cn"] --> C["你的电脑"];
+
 ```
 
 一键设置脚本
@@ -21,8 +27,6 @@ radeon.geekery.cn	<--> https://repo.radeon.com
 ```bash
 curl -sSL https://www.geekery.cn/sh/radeon/set_radeon_mirror.sh | bash
 ```
-
-​	
 
 ## 安装教程
 
