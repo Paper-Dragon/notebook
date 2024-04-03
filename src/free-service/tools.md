@@ -50,7 +50,7 @@ next: false
 
 <SiteInfo
   name="MobaXterm Crack"
-  url="http://mobaxterm.myauth.top/"
+  url="http://mobaxterm.geekery.cn/"
   preview="/img/2024-01-07_13.57.29.png"
   repo="https://github.com/Paper-Dragon/mobaxterm-crack"
   logo="https://mobaxterm.mobatek.net/img/moba/xterm_logo.png"
