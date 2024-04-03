@@ -22,15 +22,6 @@ next: false
 
 
 <SiteInfo
-  name="FastGit"
-  desc="GitHub.com 的镜像加速器"
-  url="https://doc.fastgit.org/zh-cn/guide.html"
-  logo="https://cdn.jsdelivr.net/gh/FastGitORG/logo@ad87e38c7101537010b3dc6f7d4d52bd1f915002/v2.1.png"
-  repo="https://github.com/FastGitORG"
-  preview="/img/Snipaste_2023-11-13_15-38-38.png"
-/>
-
-<SiteInfo
   name="密码随机生成"
   desc="随机密码生成器"
   url="https://password.geekery.cn/"
