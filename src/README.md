@@ -2,6 +2,11 @@
 home: true
 icon: home
 title: 主页
+description: 放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!
+head:
+  - - meta
+    - name: keywords
+      content: Linux,Docker,文件系统,操作系统,数据库,极客世界,云原生,运维开发
 heroImage: /logo.svg
 bgImage: /bg/bg1-light.jpg
 bgImageDark: /bg/bg1-dark.jpg
