@@ -1,4 +1,4 @@
-# PowerShell 打印环境变量
+# PowerShell打印环境变量
 
 ```powershell
 PS C:\Users\IT-Desktop> Get-ChildItem -Path Env:
