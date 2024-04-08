@@ -87,7 +87,13 @@ background="rgba(253, 230, 138, 0.15)"
 />
 
 
-
+<VPCard
+    title="极客蜂巢(GeekHive)"
+    desc="共创型综合技术博客，在这里你能学习Java、C#等软件开发与测试知识。"
+    logo="https://cdn.oscode.top/wp/2023/09/20230903072315127-e1693725895386.png"
+    link="https://www.gkhive.com/"
+    background="rgba(253, 230, 138, 0.15)"
+/>
 
 ## 官方文档
 
