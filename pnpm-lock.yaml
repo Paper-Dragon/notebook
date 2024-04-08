@@ -296,67 +296,67 @@ packages:
       '@lit-labs/ssr-dom-shim': 1.2.0
     dev: true
 
-  /@mdit-vue/plugin-component@2.0.0:
-    resolution: {integrity: sha512-cTRxlocav/+mfgDcp0P2z/gWuWBez+iNuN4D+b74LpX4AR6UAx2ZvWtCrUZ8VXrO4eCt1/G0YC/Af7mpIb3aoQ==}
+  /@mdit-vue/plugin-component@2.1.0:
+    resolution: {integrity: sha512-C3y7/hB90WcCpuxw+Z7uWmF3+NJpjv89PI8EVdxFJMFUfdX9JGBAkW34UA9+JdQSx7ARVeXgcb06zkD5z37cbw==}
     dependencies:
-      '@types/markdown-it': 13.0.7
+      '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/plugin-frontmatter@2.0.0:
-    resolution: {integrity: sha512-/LrT6E60QI4XV4mqx3J87hqYXlR7ZyMvndmftR2RGz7cRAwa/xL+kyFLlgrMxkBIKitOShKa3LS/9Ov9b0fU+g==}
+  /@mdit-vue/plugin-frontmatter@2.1.0:
+    resolution: {integrity: sha512-vVDjrv1RZorGo1yW7PZg7/dwRupSBzMt8YE8mmM+TMA0NtFEhYfWdHj8vWgkXm1ZJUugmXheL6SxJzo6fz6uHA==}
     dependencies:
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
+      '@mdit-vue/types': 2.1.0
+      '@types/markdown-it': 14.0.0
       gray-matter: 4.0.3
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/plugin-headers@2.0.0:
-    resolution: {integrity: sha512-ITMMPCnLEYHHgj3XEUL2l75jsNn8guxNqr26YrMSi1f5zcgq4XVy1LIvfwvJ1puqM6Cc5v4BHk3oAyorAi7l1A==}
+  /@mdit-vue/plugin-headers@2.1.0:
+    resolution: {integrity: sha512-vau2AtVIN+nqjlMrvYOpz2toBkJJGUcqJY48Mlo33YybBYNDRCBrX/1VFWJ++B3IeJpdFFMLwhZvRN5tsuhPhQ==}
     dependencies:
-      '@mdit-vue/shared': 2.0.0
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
+      '@mdit-vue/shared': 2.1.0
+      '@mdit-vue/types': 2.1.0
+      '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/plugin-sfc@2.0.0:
-    resolution: {integrity: sha512-OXrMXOyk0iwdIou2jRoIHIbjskwghkO14C9/OjgVHXSSX+iM/WQ4l4yi1aWmNlbQNjtP8IXcVAyJB9K0DFYmLg==}
+  /@mdit-vue/plugin-sfc@2.1.0:
+    resolution: {integrity: sha512-7M07z3sADHQXwf9CuOXQBK4+Ga+wxnyTNrwsuk0knnvXRO7l6N6yL5sPgzgz67e4UBsqDwsxgWzTgsnzmv6OMg==}
     dependencies:
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
+      '@mdit-vue/types': 2.1.0
+      '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/plugin-title@2.0.0:
-    resolution: {integrity: sha512-eqBoETPVkMXNLvwFshz/A2+Cz81VB5HEkXDm0tt6RBW/rTvnoWmGJ1Z+mvcjR5ck5W4nYdIyT68oHxX2JI2M4g==}
+  /@mdit-vue/plugin-title@2.1.0:
+    resolution: {integrity: sha512-16KmXwMnWxDwj6CelA1Fyf12/OYvkA2c2MN1iFAdJQnK7wOSPcUscdVO7nxverThuPQLENt/8500/AJqjH4/3Q==}
     dependencies:
-      '@mdit-vue/shared': 2.0.0
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
+      '@mdit-vue/shared': 2.1.0
+      '@mdit-vue/types': 2.1.0
+      '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/plugin-toc@2.0.0:
-    resolution: {integrity: sha512-PKQ8sZna3D5chTnt2lxL+ddpyXd++6Nyc0l8VXCeDgStlySQwiP9jaLeeC88oqY4BtRu4cAmILmxDrvuX0Rrdg==}
+  /@mdit-vue/plugin-toc@2.1.0:
+    resolution: {integrity: sha512-CUVIHELx73yPypYKvnG+6cwjudUCq5vqXOCb3HfFQOICVXk9Y5W0MFOnGBcyt2JxY4D1dUWusj3YT4o0MDm/Eg==}
     dependencies:
-      '@mdit-vue/shared': 2.0.0
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
+      '@mdit-vue/shared': 2.1.0
+      '@mdit-vue/types': 2.1.0
+      '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/shared@2.0.0:
-    resolution: {integrity: sha512-PdxpQpbyTazeo2JT87qms6RPZIzyJd+gwuB+1jSwLDI7+0u5g79y2XgTAbZromSVgY2f3UU5HWdwaLbV9w4uOw==}
+  /@mdit-vue/shared@2.1.0:
+    resolution: {integrity: sha512-eLPdmaB9f7VGjC6AzA5Q2pOzj1s5uJMtF+925SQTjlZIzlJbv1KFwjcO57dlr8aOzF1XrWm8j8nB1qYlecW4Ig==}
     dependencies:
-      '@mdit-vue/types': 2.0.0
-      '@types/markdown-it': 13.0.7
+      '@mdit-vue/types': 2.1.0
+      '@types/markdown-it': 14.0.0
       markdown-it: 14.1.0
     dev: true
 
-  /@mdit-vue/types@2.0.0:
-    resolution: {integrity: sha512-1BeEB+DbtmDMUAfvbNUj5Hso8cSl2sBVK2iTyOMAqhfDVLdh+/9+D0JmQHaCeUk/vuJoMhOwbweZvh55wHxm4w==}
+  /@mdit-vue/types@2.1.0:
+    resolution: {integrity: sha512-TMBB/BQWVvwtpBdWD75rkZx4ZphQ6MN0O4QB2Bc0oI5PC2uE57QerhNxdRZ7cvBHE2iY2C+BUNUziCfJbjIRRA==}
     dev: true
 
   /@mdit/plugin-alert@0.8.0(markdown-it@14.1.0):
@@ -1077,14 +1077,14 @@ packages:
   /@vuepress/markdown@2.0.0-rc.9:
     resolution: {integrity: sha512-e7as2ar3RQp0bUyMiwBPi7L/G2fzscb3s0BywNcAwubFR22o0/dBEYRYdrN0clPQ2FXpPxF6AFj4aD7O1heCbw==}
     dependencies:
-      '@mdit-vue/plugin-component': 2.0.0
-      '@mdit-vue/plugin-frontmatter': 2.0.0
-      '@mdit-vue/plugin-headers': 2.0.0
-      '@mdit-vue/plugin-sfc': 2.0.0
-      '@mdit-vue/plugin-title': 2.0.0
-      '@mdit-vue/plugin-toc': 2.0.0
-      '@mdit-vue/shared': 2.0.0
-      '@mdit-vue/types': 2.0.0
+      '@mdit-vue/plugin-component': 2.1.0
+      '@mdit-vue/plugin-frontmatter': 2.1.0
+      '@mdit-vue/plugin-headers': 2.1.0
+      '@mdit-vue/plugin-sfc': 2.1.0
+      '@mdit-vue/plugin-title': 2.1.0
+      '@mdit-vue/plugin-toc': 2.1.0
+      '@mdit-vue/shared': 2.1.0
+      '@mdit-vue/types': 2.1.0
       '@types/markdown-it': 13.0.7
       '@types/markdown-it-emoji': 2.0.5
       '@vuepress/shared': 2.0.0-rc.9
@@ -1347,7 +1347,7 @@ packages:
   /@vuepress/shared@2.0.0-rc.9:
     resolution: {integrity: sha512-XfI6CWNv4/Vp9Iew6GJil9RUSy1rM7zGdjwikr0j3Rkh55q3f00w1wud47wE9kxRqsZ0PIvsMget5CxEn5rA/w==}
     dependencies:
-      '@mdit-vue/types': 2.0.0
+      '@mdit-vue/types': 2.1.0
     dev: true
 
   /@vuepress/utils@2.0.0-rc.9:
@@ -2016,8 +2016,8 @@ packages:
       domelementtype: 2.3.0
     dev: true
 
-  /dompurify@3.0.11:
-    resolution: {integrity: sha512-Fan4uMuyB26gFV3ovPoEoQbxRRPfTu3CvImyZnhGq5fsIEO+gEFLp45ISFt+kQBWsK5ulDdT0oV28jS1UrwQLg==}
+  /dompurify@3.1.0:
+    resolution: {integrity: sha512-yoU4rhgPKCo+p5UrWWWNKiIq+ToGqmVVhk0PmMYBK4kRsR3/qhemNFL8f6CFmBd4gMwm3F4T7HBoydP5uY07fA==}
     dev: true
 
   /domutils@3.1.0:
@@ -2566,7 +2566,7 @@ packages:
       d3-sankey: 0.12.3
       dagre-d3-es: 7.0.10
       dayjs: 1.11.10
-      dompurify: 3.0.11
+      dompurify: 3.1.0
       elkjs: 0.9.2
       katex: 0.16.10
       khroma: 2.1.0

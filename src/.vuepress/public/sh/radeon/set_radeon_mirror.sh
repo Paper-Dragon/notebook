@@ -17,7 +17,7 @@ old_domain="repo.radeon.com"
 new_domain="radeon.geekery.cn"
 
 # 遍历需要修改的文件列表
-files=("/etc/source.list.d/amdgpu.list" "/etc/source.list.d/rocm.list" "/etc/source.list.d/amdgpu-proprietary.list")
+files=("/etc/sources.list.d/amdgpu.list" "/etc/sources.list.d/rocm.list" "/etc/sources.list.d/amdgpu-proprietary.list")
 
 for file in "${files[@]}"
 do
