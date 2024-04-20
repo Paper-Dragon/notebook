@@ -41,6 +41,31 @@ title: Cloudflare Warp 团队服务
 
 点击连接，就可以享受快速安全 【** 网络】了。
 
+## 其他
+
+共享wg.config
+
+```bash
+[Interface]
+PrivateKey = mPTd45aIz6bw9SSHMtgxs3tjcTywPynLYEv4qQ4lL3s=
+Address = 172.16.0.2/32, 2606:4700:110:8f83:8307:9d28:f35a:db55/128
+DNS = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001
+MTU = 1280
+[Peer]
+PublicKey = bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
+AllowedIPs = 0.0.0.0/0
+AllowedIPs = ::/0
+Endpoint = engage.cloudflareclient.com:2408
+```
+
+共享key
+
+```bash
+🔐 Key: Y9U8f53G-0C8Z9d1j-C37hg8c9 (剩余24598562 GB)
+```
+
+
+
 #### 注意事项： 如果你在评论区评论了超过2天并没有得到回答或者没得到理想回答
 
 #### 联系:
