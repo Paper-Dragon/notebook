@@ -95,6 +95,14 @@ background="rgba(253, 230, 138, 0.15)"
     background="rgba(253, 230, 138, 0.15)"
 />
 
+<VPCard
+    title="Rachel030219"
+    desc="Where dreams converge"
+    logo="https://rachelt.one/res/small_avatar.svg"
+    link="https://rachelt.one"
+    background="rgba(253, 230, 138, 0.15)"
+/>
+
 ## 官方文档
 
 <VPCard
