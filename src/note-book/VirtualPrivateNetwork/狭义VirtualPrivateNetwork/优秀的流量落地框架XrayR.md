@@ -40,7 +40,6 @@ A Xray backend framework that can easily support many panels.
 - 修改配置自动重启实例。
 - 方便编译和升级，可以快速更新核心版本， 支持Xray-core新特性。
 
-## 
 
 ## 功能介绍
 
@@ -59,7 +58,6 @@ A Xray backend framework that can easily support many panels.
 | 按照用户限速    | √     | √      | √           |
 | 自定义DNS       | √     | √      | √           |
 
-## 
 
 ## 支持前端
 
@@ -70,7 +68,6 @@ A Xray backend framework that can easily support many panels.
 | [PMPanel](https://github.com/ByteInternetHK/PMPanel)   | √     | √      | √                              |
 | [ProxyPanel](https://github.com/ProxyPanel/ProxyPanel) | √     | √      | √                              |
 
-## 
 
 ## V2ray支持协议
 
@@ -80,7 +77,6 @@ A Xray backend framework that can easily support many panels.
 | VMessAEAD | tcp, tcp+http, tcp+tls, ws, ws+tls, h2c, h2+tls, grpc, grpc+tls |
 | VLess     | tcp, tcp+http, tcp+tls/xtls, ws, ws+tls/xtls, h2c, h2+tls/xtls, grpc, grpc+tls/xtls |
 
-## 
 
 ## Trojan支持协议
 
@@ -88,7 +84,6 @@ A Xray backend framework that can easily support many panels.
 | ------ | -------- |
 | Trojan | √        |
 
-## 
 
 ## Shadowsocks支持协议
 
@@ -165,7 +160,6 @@ docker-compose仅需两条简单通用的命令即可实现更新、删除容器
 docker-compose pull
 docker-compose up -d
 ```
-
 
 
 
