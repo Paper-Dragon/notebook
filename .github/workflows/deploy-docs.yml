@@ -195,22 +195,22 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
 
-  deploy-hosted:
-    runs-on: self-hosted
-    needs: build-cloudflare-geekery_cn
-    timeout-minutes: 600
-    steps:
-      - name: 下载上一个步骤生成的产物
-        uses: actions/download-artifact@v2.1.1
-        continue-on-error: true
-        timeout-minutes: 180
-        with:
-          name: geekery_cn-artifacts-html
-          path: ./file
+  # deploy-hosted:
+  #   runs-on: self-hosted
+  #   needs: build-cloudflare-geekery_cn
+  #   timeout-minutes: 600
+  #   steps:
+  #     - name: 下载上一个步骤生成的产物
+  #       uses: actions/download-artifact@v2.1.1
+  #       continue-on-error: true
+  #       timeout-minutes: 180
+  #       with:
+  #         name: geekery_cn-artifacts-html
+  #         path: ./file
 
-      - name: 部署到个人主机
-        continue-on-error: true
-        run: |
-          sudo chattr -iaR /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
-          sudo rm -rvf /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index/*
-          sudo mv -vf file/* /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index/
+  #     - name: 部署到个人主机
+  #       continue-on-error: true
+  #       run: |
+  #         sudo chattr -iaR /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index
+  #         sudo rm -rvf /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index/*
+  #         sudo mv -vf file/* /opt/1panel/apps/openresty/openresty/www/sites/book.myauth.top/index/
