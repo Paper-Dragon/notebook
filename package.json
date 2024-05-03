@@ -12,7 +12,7 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vue/repl": "^4.1.1",
+    "@vue/repl": "^4.1.2",
     "@vuepress/bundler-vite": "2.0.0-rc.9",
     "@vuepress/plugin-redirect": "2.0.0-rc.25",
     "@waline/client": "^3.1.3",
