@@ -170,8 +170,6 @@ jobs:
         continue-on-error: true
         run: |
           docker pull ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-$(git rev-parse --short HEAD)
-
-          cat TAG.txt >> $GITHUB_ENV
           docker ps | grep 32770 | awk '{print $1}' | docker rm -f
           docker run -it -d -p 32770:80 --restart=always ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-$(git rev-parse --short HEAD)
 
