@@ -139,7 +139,7 @@ jobs:
 
       
       - name: 把当前时间放到环境变量里
-        run: echo "TAGDATE=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
+        run: echo "TAGDATE=$(date +'%Y-%m-%d-%H-%M')" | tee TAG.txt >> $GITHUB_ENV 
 
       
       - name: 登陆到DockerHub
@@ -168,6 +168,7 @@ jobs:
       - name: 执行docker命令
         continue-on-error: true
         run: |
+          cat TAG.txt >> $GITHUB_ENV 
           docker run -it -d -p 32770:80 --restart=always ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${{ env.TAGDATE }}
 
 
