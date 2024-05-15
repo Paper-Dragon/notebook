@@ -68,7 +68,7 @@ jobs:
           fi
           echo ""
 
-  build-cloudflare-geekery_cn:
+  build-geekery_cn:
     needs: check-os
     runs-on: ubuntu-latest
     steps:
@@ -136,6 +136,39 @@ jobs:
           # 这是文档部署到的分支名称
           branch: geekery_cn-pages
           folder: src/.vuepress/dist
+      
+      - name: 登陆到DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      
+      - name: assets for docker
+        run: |
+          cp -rvf src/.vuepress/dist ./file
+          echo "TAG=geekery_cn-$(git rev-parse --short HEAD)" >> $GITHUB_ENV 
+
+      - name: 构建和推送主域名docker镜像
+        uses: docker/build-push-action@v4.1.1
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAG }}
+          
+
+  run-docker-on-hosted:
+    runs-on: self-hosted
+    needs: build-geekery_cn
+    timeout-minutes: 600
+    steps:
+      - name: 执行docker命令
+        continue-on-error: true
+        run: |
+          docker pull ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
+          docker ps | grep 32770 | awk '{print $1}' | docker rm -f
+          docker run -it -d -p 32770:80 --restart=always ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
+
 
 
   build-github-pages:
