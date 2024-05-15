@@ -96,3 +96,13 @@ jobs:
           push: true
           tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAGDATE }}
 
+
+
+  run-docker-on-hosted:
+    runs-on: self-hosted
+    timeout-minutes: 600
+    steps:
+      - name: 执行docker命令
+        continue-on-error: true
+        run: |
+          docker run -it -d -p 32770:80 --restart=always ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAGDATE }}
