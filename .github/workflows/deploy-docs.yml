@@ -166,8 +166,8 @@ jobs:
         continue-on-error: true
         run: |
           docker pull ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
-          docker ps | grep 32770 | awk '{print $1}' | docker rm -f
-          docker run -it -d -p 32770:80 --restart=always ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
+          docker rm -f ${{ vars.DOCKERHUB_USERNAME }}-notebook
+          docker run -it -d -p 32770:80 --restart=always --name=${{ vars.DOCKERHUB_USERNAME }}-notebook ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
 
 
 
