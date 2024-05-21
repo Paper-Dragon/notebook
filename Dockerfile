@@ -1,3 +1,6 @@
 FROM nginx
-MAINTAINER <Paper-Dragon 2678885646@qq.com>
+
+LABEL org.opencontainers.image.authors="<Paper-Dragon 2678885646@qq.com>"
+ENV TZ=Asia/Shanghai
+
 ADD ./file /usr/share/nginx/html
