@@ -1,5 +1,4 @@
 import { defineUserConfig } from "vuepress";
-import { umamiAnalyticsPlugin } from 'vuepress-plugin-umami-analytics'
 //import { cut } from "nodejs-jieba";
 //import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";

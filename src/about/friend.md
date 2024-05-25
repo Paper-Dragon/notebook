@@ -37,7 +37,7 @@ background="rgba(253, 230, 138, 0.15)"
 
 <VPCard
   title="朱双印个人日志"
-  desc="通俗易懂的教程，实战实用的笔记，Linux运维从业者的宝藏。"
+  desc="Linux运维从业者的宝藏。"
   logo="https://www.zsythink.net/wp-content/uploads/2016/12/logotouming.png"
   link="https://www.zsythink.net/"
   background="rgba(253, 230, 138, 0.15)"
@@ -53,7 +53,7 @@ background="rgba(253, 230, 138, 0.15)"
 
 <VPCard
   title="云梦博客"
-  desc="云梦博客为云梦个人博客，始创于2022年6月，致力于分享科技资源."
+  desc="云梦博客，致力于分享科技资源."
   logo="https://www.fnmqs.work/usr/themes/Akina/images/favicon.ico"
   link="https://www.fnmqs.work/"
   background="rgba(253, 230, 138, 0.15)"
@@ -71,7 +71,7 @@ background="rgba(253, 230, 138, 0.15)"
 
 <VPCard
     title="Oragekk's Blog"
-    desc="上冬十二 到最后，竟庆幸于夕阳仍留在身上"
+    desc="最后，竟庆幸于夕阳仍留在身上"
     logo="https://oragekk.me/logo.svg"
     link="https://oragekk.me/"
     background="rgba(253, 230, 138, 0.15)"
