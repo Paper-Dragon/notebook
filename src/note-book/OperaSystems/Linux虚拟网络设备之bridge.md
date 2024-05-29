@@ -338,7 +338,7 @@ rtt min/avg/max/mdev = 30.690/30.690/30.690/0.000 ms
 
 - 在无线网络环境中，情况会变得比较复杂，因为无线网络需要登录，登陆后无线路由器只认一个mac地址，所有从这台机器出去的mac地址都必须是那一个，于是通过无线网卡上网的机器上的所有虚拟机想要上网的话，都必须依赖虚拟机管理软件（如VirtualBox）将每个虚拟机的网卡mac地址转成出口的mac地址（即无线网卡的mac地址），数据包回来的时候还要转回来，所以如果一个IP有两个ARP应答包的话，有可能导致mac地址的转换有问题，导致网络不通，或者有时通有时不通。解决办法就是将连接进br0的所有设备的mac地址都改成和eth0一样的mac地址，因为eth0的mac地址会被虚拟机正常的做转换。在上面的例子中，执行下面的命令即可：
 
-  ```routeros
+  ```bash
   dev@debian:~$ sudo ip link set dev veth1 down
   #08:00:27:3b:0d:b9是eth0的mac地址
   dev@debian:~$ sudo ip link set dev veth1 address 08:00:27:3b:0d:b9

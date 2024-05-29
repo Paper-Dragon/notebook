@@ -36,7 +36,7 @@ reboot
 
 查看是否支持
 
-```undefined
+```bash
 cat /proc/filesystems
 ```
 

@@ -6,15 +6,15 @@ this plugin should be located right next to *etcd* in *plugins.cfg*
 
 ## Syntax
 
-~~~
+```
 redis
-~~~
+```
 
 redis loads authoritative zones from redis server
 
 
 address will default to local redis serrver (localhost:6379)
-~~~
+```bash
 redis {
     address ADDR
     password PWD
@@ -24,7 +24,7 @@ redis {
     read_timeout TIMEOUT
     ttl TTL
 }
-~~~
+```
 
 
 
@@ -39,7 +39,7 @@ redis {
 
 ## Examples
 
-~~~ corefile
+```bash
 . {
     redis example.com {
         address localhost:6379
@@ -50,7 +50,7 @@ redis {
         prefix _dns:
     }
 }
-~~~
+```
 
 ## Reverse Zones
 
@@ -66,12 +66,12 @@ proxy is not supported yet.
 
 each zone is stored in redis as a hash map with *zone* as key
 
-~~~
+```
 redis-cli>KEYS *
 1) "example.com."
 2) "example.net."
 redis-cli>
-~~~
+```
 
 ### DNS RRs
 
@@ -80,62 +80,62 @@ dns RRs are stored in redis as json strings inside a hash map using address as f
 
 #### A
 
-~~~json
+```json
 {
     "a":{
         "ip4" : "1.2.3.4",
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### AAAA
 
-~~~json
+```json
 {
     "aaaa":{
         "ip6" : "::1",
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### CNAME
 
-~~~json
+```json
 {
     "cname":{
         "host" : "x.example.com.",
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### TXT
 
-~~~json
+```json
 {
     "txt":{
         "text" : "this is a text",
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### NS
 
-~~~json
+```json
 {
     "ns":{
         "host" : "ns1.example.com.",
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### MX
 
-~~~json
+```json
 {
     "mx":{
         "host" : "mx1.example.com",
@@ -143,11 +143,11 @@ dns RRs are stored in redis as json strings inside a hash map using address as f
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### SRV
 
-~~~json
+```json
 {
     "srv":{
         "host" : "sip.example.com.",
@@ -157,11 +157,11 @@ dns RRs are stored in redis as json strings inside a hash map using address as f
         "ttl" : 360
     }
 }
-~~~
+```
 
 #### SOA
 
-~~~json
+```json
 {
     "soa":{
         "ttl" : 100,
@@ -172,11 +172,11 @@ dns RRs are stored in redis as json strings inside a hash map using address as f
         "expire" : 66
     }
 }
-~~~
+```
 
 #### Example
 
-~~~
+```
 $ORIGIN example.net.
  example.net.                 300 IN  SOA   <SOA RDATA>
  example.net.                 300     NS    ns1.example.net.
@@ -189,11 +189,11 @@ $ORIGIN example.net.
  _ssh.tcp.host2.example.net.  300     SRV   <SRV RDATA>
  subdel.example.net.          300     NS    ns1.subdel.example.net.
  subdel.example.net.          300     NS    ns2.subdel.example.net.
-~~~
+```
 
 above zone data should be stored at redis as follow:
 
-~~~
+```
 redis-cli> hgetall example.net.
  1) "_ssh._tcp.host1"
  2) "{\"srv\":[{\"ttl\":300, \"target\":\"tcp.example.com.\",\"port\":123,\"priority\":10,\"weight\":100}]}"
@@ -210,4 +210,4 @@ redis-cli> hgetall example.net.
 13) "@"
 14) "{\"soa\":{\"ttl\":300, \"minttl\":100, \"mbox\":\"hostmaster.example.net.\",\"ns\":\"ns1.example.net.\",\"refresh\":44,\"retry\":55,\"expire\":66},\"ns\":[{\"ttl\":300, \"host\":\"ns1.example.net.\"},{\"ttl\":300, \"host\":\"ns2.example.net.\"}]}"
 redis-cli>
-~~~
+```

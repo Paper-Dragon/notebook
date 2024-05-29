@@ -10,7 +10,7 @@ git ls-files | xargs cat | wc -l
 
 ## 只查看项目文件列表
 
-```undefined
+```bash
 git ls-files
 ```
 

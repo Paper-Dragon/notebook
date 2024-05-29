@@ -20,7 +20,7 @@
 
 ![image-20211115110133707](haproxy.assets\image-20211115110133707-16369452956832.png)
 
-```hosts
+```bash
 172.16.100.14 web1
 172.16.100.15 web2
 172.16.100.21 haproxy
@@ -160,7 +160,7 @@ systemctl start haproxy
 
 环境
 
-```hosts
+```bash
 haproxy
 htmla
 htmlb

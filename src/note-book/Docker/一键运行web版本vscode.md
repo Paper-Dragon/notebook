@@ -15,7 +15,7 @@ docker_compose_version=v2.2.2 \
 
 自己搭建的加速链接，避免github龟速
 
-```bsah
+```bash
 docker_compose_version=v2.2.2 \
 && curl -L "https://mirror-symbol.q32.top:8443/staticfile/software/虚拟化/docker/${docker_compose_version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
 && chmod +x /usr/local/bin/docker-compose \

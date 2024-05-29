@@ -522,7 +522,7 @@ index => "test-system-messages-%{+YYYY-MM}"  #区分之前实验，新名字“t
 
  （1）、在nginx-proxy上面yum安装nginx
 
-```absh
+```bash
 # yum install -y nignx
 
 ```

@@ -62,7 +62,7 @@
 
 > 创建备份目录，并对目录递归属主属组权限
 
-```undefined
+```bash
 mkdir /backup
 chown -R jenkins.jenkins /backup
 ```

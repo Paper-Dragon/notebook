@@ -300,7 +300,7 @@ sudo：有效用户 ID 不是 0，sudo 属于 root 并设置了 setuid 位吗？
 
 在实际环境中，为了防止黑客对root账户进行暴力破解，我们通常禁止root账户SSH远程连接。操作如下：
 
-```ba'sh
+```bash
 //修改 /etc/ssh/sshd.config 文件，将
 #PermitRootLogin yes
 修改为

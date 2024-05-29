@@ -1154,7 +1154,7 @@ StrictHostKeyChecking=yes # 最安全的级别，如果连接与key不匹配，�
 
 【解决方法1】在 `.ssh/config`（或者`/etc/ssh/ssh_config`）中配置：
 
-```conf
+```txt
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 ```

@@ -33,7 +33,7 @@ shc是linux的一款加密脚本的插件，将shc放到系统的可执行目录
 
 
 
-```mipsasm
+```bash
 [root@k8s001 test]# shc -v -rT -f test-shc.sh 
 shc shll=bash
 shc [-i]=-c

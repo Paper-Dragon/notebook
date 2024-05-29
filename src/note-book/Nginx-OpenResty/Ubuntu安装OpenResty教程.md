@@ -1,4 +1,4 @@
-# apt安装OpenResty教程
+# Ubuntu安装OpenResty教程
 
 > 参考链接： https://blog.openresty.com.cn/cn/ubuntu20-or-install/
 >

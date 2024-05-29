@@ -99,7 +99,7 @@ docker -H tcp://42.96.MOSAIC.MOSAIC:2375 ps
 
 省略了一部分输出，镜像还蛮多的，就选个ubuntu吧
 
-```objectivec
+```bash
 # docker -H tcp://42.96.MOSAIC.MOSAIC:2375 run --rm -it --entrypoint bash -v /root:/tmp/root -v /etc/ssh:/tmp/ssh_etc -v /var/log:/tmp/log ubuntu
 ```
 
@@ -165,7 +165,7 @@ ssh -i /tmp/id_rsa root@42.96.MOSAIC.MOSAIC
 
 docker官网第一篇文档quick start上有句话是这样子的：
 
-```vbnet
+```txt
 Warning: Changing the default docker daemon binding to a TCP port or
 Unix docker user group will increase your security risks by allowing
 non-root users to gain root access on the host. Make sure you control

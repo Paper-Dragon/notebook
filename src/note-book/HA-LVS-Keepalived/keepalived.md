@@ -491,7 +491,7 @@ ONBOOT=yes
 
 vim /etc/rc.local   [web1 and web2]
 
-```bash]
+```bash
 /sbin/route add -host  172.16.100.22 dev lo:0
 ```
 

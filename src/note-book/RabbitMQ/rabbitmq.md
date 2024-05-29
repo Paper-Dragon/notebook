@@ -194,7 +194,7 @@ metadata_expire=300
 
 （3）安装rabbitMq
 
-```bash'
+```bash
 [root@log1 local]# yum install rabbitmq-server-3.7.13
 ```
 

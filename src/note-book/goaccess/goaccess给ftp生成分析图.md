@@ -23,7 +23,7 @@ Sat Sep 23 2023 17:57:18 1 113.57.80.8 61 /salmon.txt b _ POST g LiuDanYi ftp 0 
 
 
 
-```bahs
+```bash
 time-format 参数 time-format 后跟随一个空格符，指定日志的时间格式，包含普通字符与特殊格式说明符的任意组合。他们都由百分号 (%)开始。参考 `man strftime`。 %T 或者 %H:%M:%S.
 ​
 注意: 如果给定的时间戳以微秒计算，则必须在 time-format 中使用参数 %f 。

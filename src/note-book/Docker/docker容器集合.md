@@ -343,7 +343,7 @@ remote_port = 6001 #远程服务器端口
 >
 > 参考链接4：[Docker-Gitlab 与主机共用 ssh 的 22 端口 · Zs's Blog (zzsqwq.cn)](https://blog.zzsqwq.cn/posts/docker-gitlab-ssh/)
 
-``` \
+```yaml
 ---
 version: "2.1"
 services:

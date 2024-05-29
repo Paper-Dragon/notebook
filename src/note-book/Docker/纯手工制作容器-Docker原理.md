@@ -2,7 +2,7 @@
 
 ## 前提
 
-```bsah
+```bash
 # 删除share选项防止mnt共享
 [root@out-container ~]# grep root /proc/self/mountinfo
 40 0 253:0 / / rw,relatime shared:1 - xfs /dev/mapper/centos_monther-root rw,seclabel,attr2,inode64,noquota
@@ -41,7 +41,7 @@ anaconda-post.log  bin  dev  etc  home  lib  lib64  media  mnt  opt  proc  root 
 
 ### USER隔离
 
-```bsah
+```bash
 # 默认已经隔离
 [root@out-container ~]# id
 uid=0(root) gid=0(root) groups=0(root) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
@@ -98,7 +98,7 @@ systemd-resolve:x:193:193:systemd Resolver:/:/sbin/nologin
 
 实验过程
 
-```bsah
+```bash
 # 标记宿主机主机名
 [root@monther mkRootfs]# hostnamectl set-hostname out-container
 [root@monther mkRootfs]# exec bash
