@@ -436,3 +436,43 @@ docker run \
 
 
 
+### zero-ui
+
+```yaml
+version: "3"
+
+services:
+  zerotier:
+    image: zyclonite/zerotier:1.10.6
+    container_name: zu-controller
+    restart: unless-stopped
+    volumes:
+      - ./zerotier-one:/var/lib/zerotier-one
+    environment:
+      - ZT_OVERRIDE_LOCAL_CONF=true
+      - ZT_ALLOW_MANAGEMENT_FROM=0.0.0.0/0
+    expose:
+      - "9993/tcp"
+    ports:
+      - "9993:9993/udp"
+  zero-ui:
+    image: dec0dos/zero-ui:latest
+    container_name: zu-main
+    restart: unless-stopped
+    depends_on:
+      - zerotier
+    volumes:
+      - ./zerotier-one:/var/lib/zerotier-one
+      - ./data:/app/backend/data
+    environment:
+      - ZU_CONTROLLER_ENDPOINT=http://zerotier:9993/
+      - ZU_SECURE_HEADERS=false
+      - ZU_DEFAULT_USERNAME=admin
+      - ZU_DEFAULT_PASSWORD=admin
+      - LISTEN_ADDRESS=0.0.0.0
+    expose:
+      - "4000"
+    ports:
+      - "33863:4000"
+```
+
