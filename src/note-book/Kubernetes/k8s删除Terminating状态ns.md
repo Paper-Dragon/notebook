@@ -2,7 +2,7 @@
 
 # k8s删除Terminating状态ns
 
-# 假设你要删掉ns资源，发现一直删不了处于terminating状态
+## 假设你要删掉ns资源，发现一直删不了处于terminating状态
 
 ```bash
 # kubectl get ns
@@ -103,7 +103,7 @@ kube-system       Active        7h11m
 ## 然后本机服务暴露在本地端口的8001端口上
 
     kubectl proxy
-
+    
     kubectl proxy
     Starting to serve on 127.0.0.1:8001
 
