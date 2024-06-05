@@ -1,6 +1,4 @@
 import { defineUserConfig } from "vuepress";
-//import { cut } from "nodejs-jieba";
-//import { searchProPlugin } from "vuepress-plugin-search-pro";
 import theme from "./theme.js";
 import { viteBundler } from '@vuepress/bundler-vite'
 import { path } from "vuepress/utils";
@@ -11,7 +9,7 @@ export default defineUserConfig({
 
   lang: "zh-CN",
   title: "运维开发绿皮书",
-  description: "运维开发绿皮书,放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重。",
+  description: "放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！",
 
   bundler: viteBundler(),
   theme,

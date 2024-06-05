@@ -9,8 +9,6 @@ export default {
   name: "vuepress-plugin-copypdf",
   
   onPrepared: (app: App) => {
-    console.log(app.env.isBuild);
-    
     jsWatcher = watch(path.join(app.dir.source(), "/**/*.pdf"), {
       ignored: /(^|[\/\\])\../,
     });
@@ -22,7 +20,6 @@ export default {
       fs.copySync(sourceFilePath, tempFilePath, { overwrite: true });
     });
   },
-
 
   onGenerated: async (app: App) => {
     await jsWatcher.close();

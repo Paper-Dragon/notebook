@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: 主页
-description: 放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!
+description: 放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！
 head:
   - - meta
     - name: keywords
@@ -14,7 +14,7 @@ bgImageStyle:
   background-attachment: fixed
   background-position: center bottom
 heroText: 运维开发绿皮书
-tagline: 放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!
+tagline: 放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！
 actions:
   - text: 使用指南 💡
     link: ./note-book/
