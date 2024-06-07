@@ -1,0 +1,3 @@
+[submodule "src/.vuepress/public/mobaxterm-crack"]
+	path = src/.vuepress/public/mobaxterm-crack
+	url = https://github.com/Paper-Dragon/mobaxterm-crack.git

@@ -48,14 +48,6 @@ next: false
   desc="支持Archlinux，Debian，Ubuntu"
 />
 
-<SiteInfo
-  name="MobaXterm Crack"
-  url="http://mobaxterm.geekery.cn/"
-  preview="/img/2024-01-07_13.57.29.png"
-  repo="https://github.com/Paper-Dragon/mobaxterm-crack"
-  logo="https://mobaxterm.mobatek.net/img/moba/xterm_logo.png"
-  desc="破解mobaxterm令牌，仅供学习使用。"
-/>
 
 <SiteInfo
   name="netdisk-fast-download"

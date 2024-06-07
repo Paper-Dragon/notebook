@@ -16,7 +16,8 @@ export default navbar([
             "/free-service/cloudflare-warp.md",
             "/free-service/github-direct.md",
             "/free-service/radeon-mirror.md",
-            "/free-service/nvidia-mirror.md"
+            "/free-service/nvidia-mirror.md",
+            "/free-service/mobaxterm-crack.md"
         ]
     },
     {

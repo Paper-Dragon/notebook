@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0
           # 如果你文档需要 Git 子模块，取消注释下一行
-          # submodules: true
+          submodules: true
 
       - name: 更改主机名
         run: |-
@@ -71,8 +71,10 @@ jobs:
       - name: 拉源码
         uses: actions/checkout@v3
         with:
-          fetch-depth: 1
-
+          fetch-depth: 0
+          # 如果你文档需要 Git 子模块，取消注释下一行
+          submodules: true
+        
       - name: 把当前时间放到环境变量里
         run: echo "TAGDATE=$(date +'%Y-%m-%d-%H-%M')" >> $GITHUB_ENV
 

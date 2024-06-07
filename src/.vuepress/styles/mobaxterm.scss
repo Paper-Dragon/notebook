@@ -1,0 +1,13 @@
+  #mobaxterm{
+    iframe {
+      position: relative;
+      left: 0;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border:dashed red($color: #000000) 3px;
+      border-style: dashed;
+      border-radius: 40px;
+    }
+  }
+
