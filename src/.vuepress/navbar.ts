@@ -17,7 +17,8 @@ export default navbar([
             "/free-service/github-direct.md",
             "/free-service/radeon-mirror.md",
             "/free-service/nvidia-mirror.md",
-            "/free-service/mobaxterm-crack.md"
+            "/free-service/mobaxterm-crack.md",
+            "/free-service/random-password"
         ]
     },
     {

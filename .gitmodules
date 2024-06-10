@@ -1,3 +1,6 @@
 [submodule "src/.vuepress/public/mobaxterm-crack"]
 	path = src/.vuepress/public/mobaxterm-crack
 	url = https://github.com/Paper-Dragon/mobaxterm-crack.git
+[submodule "src/.vuepress/public/RandomPassword"]
+	path = src/.vuepress/public/RandomPassword
+	url = https://github.com/Paper-Dragon/RandomPassword.git
