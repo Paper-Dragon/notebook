@@ -8,7 +8,7 @@ breadcrumb: false
 
 在Ubuntu系统使用Nvidia显卡时下载驱动非常的慢，于是乎我做了个镜像加速。
 
-这个镜像站共有两个地址，一个地址[nvidia-developer.geekery.cn](nvidia-developer.geekery.cn)是镜像的开发者工具地址，其中包含必不可少的 CUDA 工具。另一个地址是镜像的nvidia的Docker Runtime地址 [nvidia-docker.geekery.cn](nvidia-docker.geekery.cn)，实现这个功能的软件叫 libnvidia-container 让容器内支持nvidia显卡。
+这个镜像站共有两个地址，一个地址 [nvidia-developer.geekery.cn](https://nvidia-developer.geekery.cn) 是镜像的开发者工具地址，其中包含必不可少的 CUDA 工具。另一个地址是镜像的nvidia的Docker Runtime地址  [nvidia-docker.geekery.cn](https://nvidia-docker.geekery.cn) ，实现这个功能的软件叫 libnvidia-container 让容器内支持nvidia显卡。
 
 ```mermaid
 graph TD;
@@ -17,9 +17,9 @@ graph TD;
 
 ```
 
-- [libnvidia-container ](https://nvidia-docker.geekery.cn/libnvidia-container/stable/)    https://nvidia-docker.geekery.cn/libnvidia-container/stable/
+- **libnvidia-container** 镜像源  [https://nvidia-docker.geekery.cn/libnvidia-container/stable/](https://nvidia-docker.geekery.cn/libnvidia-container/stable/)
 
-- [cuda镜像仓库](https://nvidia-developer.geekery.cn/compute/cuda/repos/)    https://nvidia-developer.geekery.cn/compute/cuda/repos/
+- **cuda** 镜像仓库    [https://nvidia-developer.geekery.cn/compute/cuda/repos/](https://nvidia-developer.geekery.cn/compute/cuda/repos/)
 
 
 
