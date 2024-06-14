@@ -15,7 +15,7 @@
     "@vue/repl": "^4.2.1",
     "@vuepress/bundler-vite": "2.0.0-rc.13",
     "@vuepress/plugin-redirect": "2.0.0-rc.34",
-    "@waline/client": "^3.2.1",
+    "@waline/client": "^3.2.2",
     "chokidar": "^3.6.0",
     "echarts": "^5.5.0",
     "echarts-wordcloud": "^2.1.0",
