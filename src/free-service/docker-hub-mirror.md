@@ -5,7 +5,9 @@ breadcrumb: false
 ---
 # Docker镜像拉取加速服务及配置指南
 
-免费Docker镜像拉取加速服务，需要按照以下步骤进行配置：
+免费Docker镜像拉取加速服务，按照以下步骤设置镜像站即可使用。
+
+
 
 ## Linux
 在Linux系统中，运行以下命令来配置镜像加速服务：
@@ -67,4 +69,14 @@ Windows系统上的Docker For Windows用户可以按照以下步骤配置镜像�
 
 
 
-感谢您选择我们提供的Docker镜像加速服务！如果您需要进一步的协助或有任何疑问，评论区联系我。
+## 一键安装Docker
+
+一键安装脚本
+
+```bash
+curl -sSL get-docker.com | bash
+```
+
+为了防止脚本卡住，于是我做了完整的镜像，包括安装包仓库。
+
+这个脚本会直接设置 [https://download-docker.geekery.cn](https://download-docker.geekery.cn) 为系统源的镜像加速。替换掉原有的 [https://download.docker.com](https://download.docker.com) 域名。
