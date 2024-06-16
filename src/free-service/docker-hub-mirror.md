@@ -74,7 +74,7 @@ Windows系统上的Docker For Windows用户可以按照以下步骤配置镜像�
 一键安装脚本
 
 ```bash
-curl -sSL get-docker.com | bash
+curl -sSL get-docker.geekery.cn | bash
 ```
 
 为了防止脚本卡住，于是我做了完整的镜像，包括安装包仓库。
