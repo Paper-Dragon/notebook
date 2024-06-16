@@ -64,7 +64,15 @@ export default hopeTheme({
     comment: {
       provider: "Waline",
       serverURL: "https://comment.geekery.cn/",
+      // 为文章增加表情互动功能，设置为 true 提供默认表情，也可以通过设置表情地址数组来自定义表情图片，最大支持 8 个表情。
       reaction: true,
+      // 评论列表排序方式。可选值: 'latest', 'oldest', 'hottest'
+      commentSorting: "latest",
+      // 评论者相关属性。可选值: 'nick', 'mail', 'link',
+      // 默认值: ['nick', 'mail', 'link']
+      meta:  ['nick', 'mail', 'link'],
+      // 设置必填项，默认匿名，可选值:
+      requiredMeta: ['nick', 'mail'],
     },
 
     components: {
