@@ -112,6 +112,15 @@ background="rgba(253, 230, 138, 0.15)"
     background="rgba(253, 230, 138, 0.15)"
 />
 
+
+<VPCard
+    title="落霞湾影视"
+    desc="落霞湾每天搜集互联网新电影和电视剧，为广大用户免费提供无广告在线观看电影和电视剧服务，及时收录最新、最热、最全的电影大片,高清正版免费看！"
+    logo="https://www.e116.com/upload/mxcms/20230424-1/0cbcf92fb52b18c09f9d9ccf89d57ed1.png"
+    link="https://www.e116.com"
+    background="rgba(253, 230, 138, 0.15)"
+/>
+
 ## 官方文档
 
 <VPCard
