@@ -68,8 +68,6 @@ Swap:     511M     66M    445M
 
 建议把脚本加Linux 定时任务里面每周清理一次，这个就可以保证docker 不产生而外的日志文件。
 
-
-
 **生产环境如下所示**
 
 df -TH docker 使用系统磁盘的93%
@@ -102,4 +100,3 @@ ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
  
 ```
-

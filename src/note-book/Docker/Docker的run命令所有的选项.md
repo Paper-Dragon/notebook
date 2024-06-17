@@ -1,10 +1,10 @@
 # Docker的run命令所有的选项
 
-> 如果要看更详细的解释，参考官方文档： [https://docs.docker.com/reference/cli/docker/container/run/](https://docs.docker.com/reference/cli/docker/container/run/) 
+> 如果要看更详细的解释，参考官方文档： [https://docs.docker.com/reference/cli/docker/container/run/](https://docs.docker.com/reference/cli/docker/container/run/)
 
 ## docker run --help
 
-```
+```bash
 
 --add-host list 添加自定义主机到 IP 映射 (host:ip)
   -a, --attach list 附加到 STDIN、STDOUT 或 STDERR

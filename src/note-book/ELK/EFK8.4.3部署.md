@@ -13,9 +13,9 @@ Elastic Stack包含：
 
 ## 相关网站
 
-- https://www.elastic.co/cn/downloads/
-- https://www.elastic.co/cn/downloads/elasticsearch
-- https://www.elastic.co/guide/en/elasticsearch/reference/8.5/rpm.html#rpm-repo
+- <https://www.elastic.co/cn/downloads/>
+- <https://www.elastic.co/cn/downloads/elasticsearch>
+- <https://www.elastic.co/guide/en/elasticsearch/reference/8.5/rpm.html#rpm-repo>
 
 ## 构建yum源
 
@@ -41,11 +41,9 @@ setenforce 0
 sed -i 's/SELINUX.*/SELINUX=disabled/g' /etc/selinux/conf
 ```
 
-
-
 ## 安装ES
 
-- https://www.elastic.co/cn/downloads/elasticsearch
+- <https://www.elastic.co/cn/downloads/elasticsearch>
 
 ```bash
 [root@monther ~]# yum list --showduplicates elasticsearch
@@ -123,8 +121,6 @@ Complete!
 
 ```
 
-
-
 ![image-20221103092324945](EFK8.4.3部署.assets/image-20221103092324945.png)
 
 ## 配置ES
@@ -153,7 +149,7 @@ http.host: 0.0.0.0
 
 ## ES报错和处理
 
-- 在线json美化工具     https://toolgg.com/json-beautifier.html
+- 在线json美化工具     <https://toolgg.com/json-beautifier.html>
 
 ### ①
 
@@ -191,8 +187,6 @@ va.lang.RuntimePermission" "getenv.*")The system environment variables are not a
 
 ## 安装Kibana
 
-
-
 ```bash
 [root@monther ~]# yum list --showduplicates kibana
 Loaded plugins: fastestmirror
@@ -225,8 +219,6 @@ kibana.x86_64                                                                   
 
 ```
 
-
-
 ## 配置kibana
 
 ```bash
@@ -254,8 +246,6 @@ i18n.locale: "zh-CN"
 ```
 
 ## 安装FileBeat
-
-
 
 ```bash
 
@@ -336,4 +326,3 @@ processors:
   - add_kubernetes_metadata: ~
 
 ```
-

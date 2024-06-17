@@ -32,7 +32,7 @@ sudo gpasswd -a ${USER} docker
 sudo chmod a+rw /var/run/docker.sock
 ```
 
-##  docker 常用的容器
+## docker 常用的容器
 
 ### mysql容器
 
@@ -88,17 +88,15 @@ db.createUser(
  )
 ```
 
-
-
 ### alist安装
 
 ```bash
 docker run -d \
-	--restart=always \
-	-v /opt/alist:/opt/alist/data \
-	-p 5244:5244 \
-	--name="alist" \
-	xhofe/alist:latest
+ --restart=always \
+ -v /opt/alist:/opt/alist/data \
+ -p 5244:5244 \
+ --name="alist" \
+ xhofe/alist:latest
 ```
 
 获取alist密码
@@ -107,33 +105,31 @@ docker run -d \
 docker exec -it alist ./alist admin
 ```
 
-###  中文版本的 portainer  
+### 中文版本的 portainer  
 
 ```bash
 docker run -d \
-	--restart=always \
-	--name="portainer" \
-	-p 9000:9000 \
-	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v ./portainer_data:/data \
-	6053537/portainer-ce
+ --restart=always \
+ --name="portainer" \
+ -p 9000:9000 \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v ./portainer_data:/data \
+ 6053537/portainer-ce
 ```
 
 ### 英文版本portainer
 
 ```bash
 docker run -d \
-	-p 9000:9000 \
-	-p 9443:9443 \
-	--name portainer \
-	--restart=always \
-	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v ./portainer_data:/data \
-	portainer/portainer-ce:latest
+ -p 9000:9000 \
+ -p 9443:9443 \
+ --name portainer \
+ --restart=always \
+ -v /var/run/docker.sock:/var/run/docker.sock \
+ -v ./portainer_data:/data \
+ portainer/portainer-ce:latest
 
 ```
-
-
 
 ### jupyter镜像
 
@@ -145,15 +141,13 @@ docker run -d \
 docker run -p 8090:8000 -d --name jupyterhub001  --restart=always jupyterhub/jupyterhub:latest
 ```
 
-#### 个人镜像  (GPU) 
+#### 个人镜像  (GPU)
 
 ```bash
 docker run -p 8000:8000 -d --name jupyterhub  --restart=always --gpus all muaimingjun/jupyterhub:1.2.0
 ```
 
-
-
-### WireGuard 
+### WireGuard
 
 #### 服务器端
 
@@ -177,7 +171,7 @@ docker run -d \
 
 * windows 客户端下载  （科学上网）[Installation - WireGuard](https://www.wireguard.com/install/)
 
-* ubuntu 
+* ubuntu
 
 * ```bash
   sudo apt install -y iptables wireguard openresolv
@@ -189,8 +183,6 @@ docker run -d \
   wg show
   ```
 
-
-
 ### frp docker
 
 #### 服务端
@@ -200,11 +192,11 @@ docker run -d \
 ```bash
 
 docker run -it -d \
-	--restart always \
-	-p 50000-50004:50000-50004 \
-	-v ./frps.toml:/etc/frp/frps.toml \
-	--name frp-20240111 \
-	snowdreamtech/frps:0.52.3
+ --restart always \
+ -p 50000-50004:50000-50004 \
+ -v ./frps.toml:/etc/frp/frps.toml \
+ --name frp-20240111 \
+ snowdreamtech/frps:0.52.3
 ```
 
 ```toml
@@ -234,8 +226,6 @@ max_pool_count = 5
 max_ports_per_client = 0
 
 ```
-
-
 
 frp-restart.sh
 
@@ -295,8 +285,6 @@ services:
         image: snowdreamtech/frpc
 ```
 
-
-
 frpc.ini
 
 ```ini
@@ -330,8 +318,6 @@ remote_port = 6001 #远程服务器端口
 #plugin_host_header_rewrite = 127.0.0.1
 #plugin_header_X-From-Where = frp
 ```
-
-
 
 ### docker ssh 探针
 
@@ -381,8 +367,6 @@ networks:
 
 ```
 
-
-
 然后在宿主机运行以下脚本
 
 方法1（两次密码认证）
@@ -415,8 +399,6 @@ command="脚本.sh" ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC3... user@example.com
 PS1='$ PWD $'
 ```
 
-
-
 ### poste.io
 
 一键构建邮件服务器
@@ -431,10 +413,6 @@ docker run \
     -h "mail.itgpt.com" \
     -t analogic/poste.io:2.3.13
 ```
-
-
-
-
 
 ### zero-ui
 
@@ -475,4 +453,3 @@ services:
     ports:
       - "33863:4000"
 ```
-

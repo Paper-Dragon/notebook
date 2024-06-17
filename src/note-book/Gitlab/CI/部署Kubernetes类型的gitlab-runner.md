@@ -1,66 +1,88 @@
-# 一、安装helm工具
+# 部署Kubernetes类型的gitlab-runner
 
-## （1）下载软件包
+## 一、安装helm工具
 
-    wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
+### （1）下载软件包
 
-## （2）解压并拷贝文件位置
+```bash
+wget https://get.helm.sh/helm-v3.8.0-linux-amd64.tar.gz
+```
 
-    tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
-    
-    mv linux-amd64/helm /usr/local/bin/helm
+### （2）解压并拷贝文件位置
+
+```bash
+tar -zxvf helm-v3.8.0-linux-amd64.tar.gz
+
+mv linux-amd64/helm /usr/local/bin/helm
+```
 
 这里需要注意的是将 /usr/local/bin 添加到环境变量中
 
-# 二、配置chart存储库
+## 二、配置chart存储库
 
-## （1）添加chart存储库
+### （1）添加chart存储库
 
-    helm repo add gitlab https://charts.gitlab.io
+```bash
+helm repo add gitlab https://charts.gitlab.io
+```
 
-## （2）验证源
+### （2）验证源
 
-    helm repo list
+```bash
+helm repo list
+```
 
-## （3）查询可安装的gitlab-runner chart
+### （3）查询可安装的gitlab-runner chart
 
-    helm search repo -l gitlab/gitlab-runner
+```bash
+helm search repo -l gitlab/gitlab-runner
+```
 
 然后查询gitlab的版本，根据gitlab的版本选择gitlab-runner的版本。比如这里查询到gitlab的版本是14.9.0，runner选择0.39.0
 
-    helm fetch gitlab/gitlab-runner --version=0.39.0
+```bash
+helm fetch gitlab/gitlab-runner --version=0.39.0
+```
 
-# 三、编辑配置文件
+## 三、编辑配置文件
 
-## （1）首先解压文件
+### （1）首先解压文件
 
-    tar -zxvf gitlab-runner-0.39.0.tgz
+```bash
+tar -zxvf gitlab-runner-0.39.0.tgz
+```
 
-## （2）编辑配置文件
+### （2）编辑配置文件
 
-    cd gitlab-runner
-    vi values.yaml
+```bash
+cd gitlab-runner
+vi values.yaml
+```
 
 然后根据实际需要配置文件
 
-# 四、部署Chart
+## 四、部署Chart
 
 使用如下命令部署
 
-    cd ..
-    kubectl create namespace gitlab-runner
-    helm install gitlab-runner --namespace gitlab-runner ./gitlab-runner
+```bash
+cd ..
+kubectl create namespace gitlab-runner
+helm install gitlab-runner --namespace gitlab-runner ./gitlab-runner
+```
 
 若后续更新了配置文件，则使用如下命令更新即可
 
-    helm upgrade gitlab-runner --namespace gitlab-runner ./gitlab-runner
+```bash
+helm upgrade gitlab-runner --namespace gitlab-runner ./gitlab-runner
+```
 
 至此即可在gitlab上看到runner了
 ![image-20220815102732430](部署Kubernetes类型的gitlab-runner.assets/image-20220815102732430.png)
 
-# 五、一份已经配置好的values文件
+## 五、一份已经配置好的values文件
 
-## values.yaml
+### values.yaml
 
 ```yaml
 ## GitLab Runner Image
@@ -787,4 +809,3 @@ volumes: []
   #   persistentVolumeClaim:
   #     claimName: my-pvc
 ```
-

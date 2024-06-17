@@ -5,22 +5,20 @@
 突发奇想，做了一个无比小的容器，仅能维持shell的正常使用，无其他功能。但是吧，它确实是小，比官方宣称的busybox都要小。
 
 ## 制作方法
+
 这个最小化容器制作方法是
+
 - 找到目标程序
 - 定位动态链接库
 - 提取所有动态连接库
 - 封装为docker
 - docker作为镜像导入
 
-
-
 ## 运行
 
 ```bash
 docker run -it jockerdragon/mini_bash:5.0 bash
 ```
-
-
 
 ## 构建
 
@@ -30,8 +28,6 @@ docker run -it jockerdragon/mini_bash:5.0 bash
 git clone --branch mini_bash --single-branch https://github.com/Paper-Dragon/docker-sh.git
 cd docker-sh/
 ```
-
-
 
 打包为docker可识别的rootfs
 
@@ -72,10 +68,6 @@ sha256:7cc56da0013130d77639ffb0c137ac755d66dc39474d7321ae9642e7ebb1d0fb
 0m0.002s 0m0.001s
 [I have no name!@71d003f24aed /]#
 ```
-
-
-
-
 
 ## 制作过程
 

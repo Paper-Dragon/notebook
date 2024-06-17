@@ -65,7 +65,7 @@ haproxy 5大部分内容
 
 
 
-```perl
+```text
 global					# 全局配置
 	log 127.0.0.1 local3 info					# 日志配置 ，记录到本机
 	maxconn 4096					# 最大连接限制（优先级低）

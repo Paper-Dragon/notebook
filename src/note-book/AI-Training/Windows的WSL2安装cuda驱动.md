@@ -48,7 +48,7 @@ nvidia-smi
 
 ## 在WSL２中安装CUDA（WSL２中操作）
 
-    参考CUDA官网，选择自己对应的版本。
+参考CUDA官网，选择自己对应的版本。
 
 ![image-20240121171058802](Windows的WSL2安装cuda驱动.assets/image-20240121171058802.png)
 

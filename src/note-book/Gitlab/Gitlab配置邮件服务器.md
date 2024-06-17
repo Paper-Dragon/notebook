@@ -2,8 +2,6 @@
 
 ## outlook
 
-
-
 ```bash
 ### Email Settings
 gitlab_rails['gitlab_email_enabled'] = true
@@ -45,7 +43,7 @@ gitlab_rails['smtp_enable_starttls_auto'] = true
 
 ## QQ Mail
 
-与Outlook不同的是 
+与Outlook不同的是
 
 - 密码填授权码
 
@@ -74,17 +72,9 @@ gitlab_rails['gitlab_email_from'] = 'xx@qq.com'
 gitlab_rails['gitlab_email_display_name'] = 'Gitlab'
 ```
 
-
-
-
-
 ## 其他的都类似
 
-
-
 # 测试是否配置成功
-
-
 
 ```bash
 gitlab-rails console
@@ -92,6 +82,3 @@ gitlab-rails console
 #进入控制台，然后发送邮件
 Notify.test_email('xxx@qq.com', '邮件标题', '邮件正文').deliver_now
 ```
-
-
-

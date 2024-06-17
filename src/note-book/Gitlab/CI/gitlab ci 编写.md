@@ -1,6 +1,6 @@
 # gitlab ci/cd 的两大要素
 
-* gitlab runner 
+* gitlab runner
 * gitlab-ci.yml
 
 .gitlab-ci.yml 基本关键词的使用
@@ -51,8 +51,6 @@ when
 
 * `include` ， 从其他YAML里导入配置
 
-  
-
 ### stages
 
 `stages` 是用来定义流水线各个阶段的，示例如下：
@@ -68,11 +66,11 @@ stages:
 
 如果你没有主动使用`stages`关键字定义阶段的话，gitlab默认会有下面5个阶段：
 
-- `.pre`
-- `build`
-- `test`
-- `deploy`
-- `.post`
+* `.pre`
+* `build`
+* `test`
+* `deploy`
+* `.post`
 
 ### workflow
 
@@ -92,8 +90,8 @@ workflow:
 
 在上面的示例中，定义的是严格的规则。里面使用了两个Gitlab预定义的变量`$CI_COMMIT_MESSAGE`和 `$CI_PIPELINE_SOURCE`，前者的含义是你往gitlab仓库里提交的commit信息，后者的含义是你往gitlab仓库里做的操作（例如推送`push`，合并请求`merge`等）。上面两个条件的以上就是：
 
-- 如果提交信息里有`-draft`，那么这个流水线就不会运行（`when: never`表示永不执行）
-- 如果做的操作是`push`，那么流水线就会执行。
+* 如果提交信息里有`-draft`，那么这个流水线就不会运行（`when: never`表示永不执行）
+* 如果做的操作是`push`，那么流水线就会执行。
 
 只有符合上面两个条件的流水线会有下一步操作，其他任何类型流水线都不会执行。这个东西有点类似于linux里的防火墙，即符合某些规则的流量会放行或拒绝，其他不匹配的全部丢弃。
  有严格的匹配，也有宽松的匹配，看下面的例子：
@@ -148,12 +146,12 @@ job2:
 
 在上面的示例中，定义了一个全局变量`DEPLOY_VARIABLE`，默认值是`default_deploy`，然后会根据下面的workflow判断，在不同的任务中会使用不同的值，分为以下几种情况：
 
-- 当触发流水线的分支是默认分支时（一般是master），则
+* 当触发流水线的分支是默认分支时（一般是master），则
 
-  - job1里`DEPLOY_VARIABLE`的值是`job1-deploy-production`（因为job1里的rules匹配了，此时rules下面的变量定义生效）
-  - job2里`DEPLOY_VARIABLE`的值是`deploy-production`，此时workflow里的rules匹配，变量定义生效。
+  * job1里`DEPLOY_VARIABLE`的值是`job1-deploy-production`（因为job1里的rules匹配了，此时rules下面的变量定义生效）
+  * job2里`DEPLOY_VARIABLE`的值是`deploy-production`，此时workflow里的rules匹配，变量定义生效。
 
-- 当触发的分支是feature时，workflow里的rules规则匹配，会创建变量
+* 当触发的分支是feature时，workflow里的rules规则匹配，会创建变量
 
   ```
   IS_A_FEATURE: "true"
@@ -161,13 +159,13 @@ job2:
 
   ，对两个任务同时生效。
 
-  - job1里的`DEPLOY_VARIABLE`的值是`job1-default-production`，局部变量覆盖全局变量
-  - job2里的`DEPLOY_VARIABLE`的值是`default-deploy`，使用最开始的全局变量
+  * job1里的`DEPLOY_VARIABLE`的值是`job1-default-production`，局部变量覆盖全局变量
+  * job2里的`DEPLOY_VARIABLE`的值是`default-deploy`，使用最开始的全局变量
 
-- 当触发流水线的分支是其他时
+* 当触发流水线的分支是其他时
 
-  - job1里`DEPLOY_VARIABLE`的值是`job1-default-deploy`，局部变量覆盖全局变量
-  - job2里`DEPLOY_VARIABLE`的值是`default-deploy`，使用最开始的全局变量
+  * job1里`DEPLOY_VARIABLE`的值是`job1-default-deploy`，局部变量覆盖全局变量
+  * job2里`DEPLOY_VARIABLE`的值是`default-deploy`，使用最开始的全局变量
 
 变量关键字`variables`和规则`rules`解决我们在第一篇文章里提出来的两个问题。
 
@@ -176,10 +174,10 @@ job2:
 `include`关键字也是一个全局关键字，用来导入其他YAML文件，这样可以把一个很长的`.gitlab-ci.yml`文件分割成很多个小文件，然后通过`include`包含进来，可以提高文件的可读性和复用性。
  `include`包含进来的文件必须是`.yml`或`.yaml`结尾的，其他类型文件会被忽略。支持下面四种包含方法：
 
-- `local`，导入相同项目下的文件
-- `file`，导入其他项目仓库下的文件
-- `remote`，从远程URL里导入文件，这个URL必须是可以公开访问的。
-- `template`，包含Gitlab提供的模板文件
+* `local`，导入相同项目下的文件
+* `file`，导入其他项目仓库下的文件
+* `remote`，从远程URL里导入文件，这个URL必须是可以公开访问的。
+* `template`，包含Gitlab提供的模板文件
 
 #### local
 
@@ -268,14 +266,14 @@ include:
 
 用来定义变量，既可以在全局范围使用，也可以单任务级别使用。在gitlab里，变量分为两种类型：
 
-- 自定义变量，即使用variables关键字定义的变量
-- 预定义变量，即gitlab官方提前定义好的变量，可以直接使用。例如CI_COMMIT_REF_NAME，表示正在构建项目的分支或者tag名称。
+* 自定义变量，即使用variables关键字定义的变量
+* 预定义变量，即gitlab官方提前定义好的变量，可以直接使用。例如CI_COMMIT_REF_NAME，表示正在构建项目的分支或者tag名称。
 
 变量定义的一些规则：
 
-- 在变量的名称和值里都只能出现数字和字符串。
-- 出现同名变量时，后出现的值覆盖先出现的。
-- 所有YAML格式定义的变量在服务容器里都可以访问到。
+* 在变量的名称和值里都只能出现数字和字符串。
+* 出现同名变量时，后出现的值覆盖先出现的。
+* 所有YAML格式定义的变量在服务容器里都可以访问到。
 
 示例如下：
 
@@ -341,9 +339,9 @@ build-job1:
 
 镜像的名称遵循下面的格式：
 
-- `image: <image-name>`（等同于`image-name:latest`）
-- `image: <image-name>:<tag>`
-- `image: <image-name>@<digest>`
+* `image: <image-name>`（等同于`image-name:latest`）
+* `image: <image-name>:<tag>`
+* `image: <image-name>@<digest>`
    即使用最新镜像，标签指定镜像，哈希值指定镜像
 
 ### image的扩展用法
@@ -384,16 +382,16 @@ image:
 
 这个关键字用来指定一个服务容器镜像，在任务运行的时候，会创建一个服务容器，链接到image关键字里指定的镜像创建的任务容器上。实际上的流程比这一句要复杂的多，简单概括一下，应该是：
 
-- 根据services里指定的镜像，启动一个服务容器（service container）
-- 根据job里的image启动一个任务容器（job container）
-- 将服务容器和任务容器链接到一起，然后在任务容器里可以通过主机名访问服务容器里提供的服务（目前还不知道有什么用）
+* 根据services里指定的镜像，启动一个服务容器（service container）
+* 根据job里的image启动一个任务容器（job container）
+* 将服务容器和任务容器链接到一起，然后在任务容器里可以通过主机名访问服务容器里提供的服务（目前还不知道有什么用）
 
 目前服务容器主要作用还是当做一个单独的小数据库使用，官方文档上提供的4种服务容器类型分别是：
 
-- postgresql
-- mysql
-- redis
-- gitlab
+* postgresql
+* mysql
+* redis
+* gitlab
    具体的用法后面再具体研究，这个`services`在`.gitlab-ci.yml`文件里的用法如下所示：
 
 ```css
@@ -442,10 +440,10 @@ test:
 
 在services下支持另外4个参数：
 
-- name，服务名称，也是镜像名称
-- alias，别名，可以用来在任务容器里访问服务，因为默认名称在带有registry信息的时候非常长，不方便使用，可以设置一个简短的别名。
-- entrypoint，用来覆盖服务镜像默认执行命令
-- command，和Dockerfile里的CMD指令类似，用来覆盖镜像里默认的CMD指令。
+* name，服务名称，也是镜像名称
+* alias，别名，可以用来在任务容器里访问服务，因为默认名称在带有registry信息的时候非常长，不方便使用，可以设置一个简短的别名。
+* entrypoint，用来覆盖服务镜像默认执行命令
+* command，和Dockerfile里的CMD指令类似，用来覆盖镜像里默认的CMD指令。
 
 ## 隐藏任务（hidden_job）
 
@@ -483,9 +481,9 @@ rspec:
 
 在这个例子里，rspec任务复用了来自`.tests`任务模板里的配置。然后在实际执行时，Gitlab会做以下操作：
 
-- 基于键做深度迭代合并
-- 合并.tests的内容到rspec任务
-- 不会合并键对应的值
+* 基于键做深度迭代合并
+* 合并.tests的内容到rspec任务
+* 不会合并键对应的值
 
 最终解析出来的rspec任务内容如下所示：
 
@@ -645,8 +643,8 @@ job4:
 
 对于并发执行的任务，有一些前提条件：
 
-- 有多个runner，可以一次运行多个任务
-- 一个runner里的concurrent设置大于1，表示一个runner可以同时运行超过1个任务，此时可以并发执行多个任务。
+* 有多个runner，可以一次运行多个任务
+* 一个runner里的concurrent设置大于1，表示一个runner可以同时运行超过1个任务，此时可以并发执行多个任务。
 
 ### `stage: .pre`和`stage: .post`
 
@@ -680,19 +678,19 @@ last-job:
 
 在上面的示例里，4个任务的执行顺序按照规则依次是：
 
-- first-job
-- job1
-- job2
-- last-job
+* first-job
+* job1
+* job2
+* last-job
 
 ## before_script
 
 `before_script`用来定义一个命令数组，在任务运行之前，会先执行这部分命令。但是`artifacts`比`before_script`先执行，后面会介绍`artfacts`的用途。
  `beforce_script`里定义的命令类型包括：
 
-- 单行命令
-- 分为多行的单个长命令
-- YAML锚
+* 单行命令
+* 分为多行的单个长命令
+* YAML锚
 
 `before_script示例如下：
 
@@ -757,9 +755,9 @@ job:
 
 在after_script里定义的命令类型包括：
 
-- 单行命令
-- 分为多行的单个长命令
-- YAML锚
+* 单行命令
+* 分为多行的单个长命令
+* YAML锚
 
 after_script示例：
 
@@ -773,19 +771,15 @@ ob:
 
 提示：在`after_script`里指定的脚本是在新shell里执行的，和`before_script`以及`script`命令的执行环境是隔离开的。因此：
 
-- 会将当前工作目录设置为默认值
-- 无权访问before_script或script里定义的命令做出的修改，包括：
-  - 在script脚本里定义的命令别名或导出的变量
-  - 在工作树以外做出的修改（取决于runner执行器），像在before_script里或script里安装的软件。
-- 有一个独立的超时时间，硬编码为5min
-- 不会影响任务的结束代码。如果任务的script部分成功执行，但是after_script超时导致失败。整个任务的结束代码还是0（表示任务成功执行）
-- 如果任务超时或者被取消，after_script不会执行。
+* 会将当前工作目录设置为默认值
+* 无权访问before_script或script里定义的命令做出的修改，包括：
+  * 在script脚本里定义的命令别名或导出的变量
+  * 在工作树以外做出的修改（取决于runner执行器），像在before_script里或script里安装的软件。
+* 有一个独立的超时时间，硬编码为5min
+* 不会影响任务的结束代码。如果任务的script部分成功执行，但是after_script超时导致失败。整个任务的结束代码还是0（表示任务成功执行）
+* 如果任务超时或者被取消，after_script不会执行。
 
 以上就是今天学习的几个脚本关键字，明天继续。
-
-
-
-
 
 ## 💖[预定义 CI/CD 变量](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html)
 
@@ -905,13 +899,11 @@ ob:
 
 今天自己看了这么多关键字，感觉最有用的几个关键字是：
 
-- artifacts，用来配置不同任务之间传递的文件
-- rules、when，用来配置在什么时候启用任务，有多种条件的结合
-- tags，用来选择不同的runner
-- retry，任务执行失败时可以重试，而不是直接结束任务和流水线。
-- !reference，用来选择其他位置定义的变量或脚本，类似于锚，但是比锚更灵活。
-
-
+* artifacts，用来配置不同任务之间传递的文件
+* rules、when，用来配置在什么时候启用任务，有多种条件的结合
+* tags，用来选择不同的runner
+* retry，任务执行失败时可以重试，而不是直接结束任务和流水线。
+* !reference，用来选择其他位置定义的变量或脚本，类似于锚，但是比锚更灵活。
 
 # gitlab-ci.yml里使用的YAML特性
 
@@ -919,16 +911,16 @@ ob:
 
 这篇文章要介绍的是`.gitlab-ci.yml`文件里使用的YAML特性，主要介绍：
 
-- 一些特殊符号的含义
-- 锚的含义和使用。
+* 一些特殊符号的含义
+* 锚的含义和使用。
 
 ## 特殊符号
 
 在`.gitlab-ci.yml`文件里常用的特殊符号主要有以下几个：
 
-- `&`，用来定义一个锚的名称，具体什么是锚，有什么用，下面第二部分会具体讲解。
-- `*`，后面跟上锚的名称，用来引用锚
-- `<<`，用于字典合并的，YAML文件的格式和嵌套字典非常类似，一层一层嵌套的键值对。而这个符号就是用来在指定位置插入新的键值对或者嵌套的键值对。因此被称为字典合并。
+* `&`，用来定义一个锚的名称，具体什么是锚，有什么用，下面第二部分会具体讲解。
+* `*`，后面跟上锚的名称，用来引用锚
+* `<<`，用于字典合并的，YAML文件的格式和嵌套字典非常类似，一层一层嵌套的键值对。而这个符号就是用来在指定位置插入新的键值对或者嵌套的键值对。因此被称为字典合并。
 
 上面三个符号，除了最后一个以外，前面两个都是和锚相关的，这三个符号都是用来提高`.gitlab-ci.yml`文件里代码的复用性及可读性。降低代码复杂度，让你写出来的`.gitlab-ci.yml`文件更容易理解。
 
@@ -1055,8 +1047,6 @@ job_no_git_strategy:
 
 # cache缓存和artifacts工件
 
-
-
 缓存是任务下载和保存的一个或多个文件，随后的任务可以直接使用这部分文件，用以加快执行速度。而工件也是任务执行过程中保存下来的文件。
 
 ## 缓存和工件的区别
@@ -1139,8 +1129,8 @@ Runner会使用缓存来加速任务的执行，因为它可以复用数据，�
 
 在Gitlab的web界面，按下面流程执行：
 
-- 在顶部，选择Menu->Projects，找到你的项目
-- 在左侧边栏，点击CI/CD->Pipelines页
-- 在右上方，点击Clear runner caches
+* 在顶部，选择Menu->Projects，找到你的项目
+* 在左侧边栏，点击CI/CD->Pipelines页
+* 在右上方，点击Clear runner caches
 
 下一次提交代码的时候，你的CI/CD任务会使用一个新的缓存。

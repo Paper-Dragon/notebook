@@ -84,15 +84,19 @@ tensor([[0.9530, 0.4746, 0.9819],
 注意把下边的xx.x替换为自己的cuda版本。
 cuda10.0及以下的卸载：
 
-    cd /usr/local/cuda-xx.x/bin/
-    sudo ./uninstall_cuda_xx.x.pl
-    sudo rm -rf /usr/local/cuda-xx.x
+```bash
+cd /usr/local/cuda-xx.x/bin/
+sudo ./uninstall_cuda_xx.x.pl
+sudo rm -rf /usr/local/cuda-xx.x
+```
 
 cuda10.1及以上的卸载：
 
-    cd /usr/local/cuda-xx.x/bin/
-    sudo ./cuda-uninstaller
-    sudo rm -rf /usr/local/cuda-xx.x
+```bash
+cd /usr/local/cuda-xx.x/bin/
+sudo ./cuda-uninstaller
+sudo rm -rf /usr/local/cuda-xx.x
+```
 
 最后边加了一句sudo rm -rf /usr/local/cuda-xx.x，这是因为一般情况下cuda都配置了cudnn，在运行卸载程序时只会卸载cuda而不会一并删除cudnn的文件。因为cudnn文件还在的缘故，自己的cuda-xx.x文件夹仍然在，需要手动删除。
 所以如果自己要卸载的cuda没有配置cudnn，那么cuda-xx.x文件夹在卸载完成后会被自动删除，也就没必要再运行最后一句了。

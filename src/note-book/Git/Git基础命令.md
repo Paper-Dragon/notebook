@@ -1,14 +1,12 @@
 # Git基础命令
 
-# Git 基本操作
+## Git 基本操作
 
 Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。
 
 本章将对有关创建与提交你的项目快照的命令作介绍。
 
 Git 常用的是以下 6 个命令：**git clone**、**git push**、**git add** 、**git commit**、**git checkout**、**git pull**，后面我们会详细介绍。
-
-
 
 **说明：**
 
@@ -19,10 +17,10 @@ Git 常用的是以下 6 个命令：**git clone**、**git push**、**git add** 
 
 一个简单的操作步骤：
 
-```
-$ git init    
-$ git add .    
-$ git commit  
+```bash
+git init    
+git add .    
+git commit  
 ```
 
 - git init - 初始化仓库。
@@ -34,71 +32,65 @@ $ git commit
 下表列出了 git 创建仓库的命令：
 
 | 命令         | 说明                                   |
-| ------------ | -------------------------------------- |
+| ---- | ---- |
 | `git init`   | 初始化仓库                             |
-| `git clone ` | 拷贝一份远程仓库，也就是下载一个项目。 |
+| `git clone` | 拷贝一份远程仓库，也就是下载一个项目。 |
 
-------
-
-## 提交与修改
+### 提交与修改
 
 Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。
 
 下表列出了有关创建与提交你的项目的快照的命令：
 
 | 命令          | 说明                                     |
-| ------------- | ---------------------------------------- |
+| - | ---- |
 | `git add`     | 添加文件到仓库                           |
-| `git status ` | 查看仓库当前的状态，显示有变更的文件。   |
-| `git diff `   | 比较文件的不同，即暂存区和工作区的差异。 |
-| `git commit ` | 提交暂存区到本地仓库。                   |
-| `git reset `  | 回退版本。                               |
-| `git rm `     | 删除工作区文件。                         |
-| `git mv `     | 移动或重命名工作区文件。                 |
+| `git status` | 查看仓库当前的状态，显示有变更的文件。   |
+| `git diff`   | 比较文件的不同，即暂存区和工作区的差异。 |
+| `git commit` | 提交暂存区到本地仓库。                   |
+| `git reset`  | 回退版本。                               |
+| `git rm`     | 删除工作区文件。                         |
+| `git mv`     | 移动或重命名工作区文件。                 |
 
 ### 提交日志
 
 | 命令                       | 说明                                 |
-| -------------------------- | ------------------------------------ |
+| -- |  |
 | `git log`                  | 查看历史提交记录                     |
-| `git blame <file>        ` | 以列表形式查看指定文件的历史修改记录 |
+| `git blame <file>` | 以列表形式查看指定文件的历史修改记录 |
 
 ### 远程操作
 
-
-
-
-
 | 命令               | 说明               |
-| ------------------ | ------------------ |
+| ---- | ---- |
 | `git remote`       | 远程仓库操作       |
-| `git fetch `       | 从远程获取代码库   |
-| `git pull    `     | 下载远程代码并合并 |
-| `git push        ` | 上传远程代码并合并 |
+| `git fetch`       | 从远程获取代码库   |
+| `git pull`     | 下载远程代码并合并 |
+| `git push` | 上传远程代码并合并 |
 
-# Git 分支管理
+## Git 分支管理
 
 几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。
 
 有人把 Git 的分支模型称为**必杀技特性**，而正是因为它，将 **Git** 从版本控制系统家族里区分出来。
 
-创建分支命令：
+### 创建分支
 
-```
+```bash
 git branch (branchname)
 ```
 
-切换分支命令:
+### 切换分支
 
-```
+```bash
 git checkout (branchname)
 ```
 
 当你切换分支的时候，Git 会用该分支的最后提交的快照替换你的工作目录的内容， 所以多个分支不需要多个目录。
 
-合并分支命令:
+### 合并分支
 
-```
+```bash
 git merge 
 ```
 
@@ -106,7 +98,7 @@ git merge
 
 开始前我们先创建一个测试目录：
 
-```
+```bash
 $ mkdir gitdemo
 $ cd gitdemo/
 $ git init
@@ -119,32 +111,28 @@ $ git commit -m '第一次版本提交'
  create mode 100644 README
 ```
 
-------
-
-## Git 分支管理
-
 ### 列出分支
 
 列出分支基本命令：
 
-```
+```bash
 git branch
 ```
 
 没有参数时，**git branch** 会列出你在本地的分支。
 
-```
+```bash
 $ git branch
 * master
 ```
 
-此例的意思就是，我们有一个叫做 **master** 的分支，并且该分支是当前分支。 
+此例的意思就是，我们有一个叫做 **master** 的分支，并且该分支是当前分支。
 
 当你执行 **git init** 的时候，默认情况下 Git 就会为你创建 **master** 分支。
 
 如果我们要手动创建一个分支。执行 git branch (branchname) 即可。
 
-```
+```bash
 $ git branch testing
 $ git branch
 * master
@@ -157,7 +145,7 @@ $ git branch
 
 接下来我们将演示如何切换分支，我们用 git checkout (branch) 切换到我们要修改的分支。
 
-```
+```bash
 $ ls
 README
 $ echo 'runoob.com' > test.txt
@@ -176,7 +164,7 @@ README
 
 当我们切换到 **testing** 分支的时候，我们添加的新文件 test.txt 被移除了。切换回 **master** 分支的时候，它们有重新出现了。
 
-```
+```bash
 $ git checkout master
 Switched to branch 'master'
 $ ls
@@ -185,7 +173,7 @@ README        test.txt
 
 我们也可以使用 git checkout -b (branchname)  命令来创建新分支并立即切换到该分支下，从而在该分支中操作。
 
-```
+```bash
 $ git checkout -b newtest
 Switched to a new branch 'newtest'
 $ git rm test.txt 
@@ -207,7 +195,7 @@ $ ls
 README        test.txt
 ```
 
-如你所见，我们创建了一个分支，在该分支上移除了一些文件 test.txt，并添加了 runoob.php 文件，然后切换回我们的主分支，删除的 test.txt 文件又回来了，且新增加的 runoob.php 不存在主分支中。 
+如你所见，我们创建了一个分支，在该分支上移除了一些文件 test.txt，并添加了 runoob.php 文件，然后切换回我们的主分支，删除的 test.txt 文件又回来了，且新增加的 runoob.php 不存在主分支中。
 
 使用分支将工作切分开来，从而让我们能够在不同开发环境中做事，并来回切换。
 
@@ -215,13 +203,13 @@ README        test.txt
 
 删除分支命令：
 
-```
+```bash
 git branch -d (branchname)
 ```
 
 例如我们要删除 testing 分支：
 
-```
+```bash
 $ git branch
 * master
   testing
@@ -235,7 +223,7 @@ $ git branch
 
 一旦某分支有了独立内容，你终究会希望将它合并回到你的主分支。 你可以使用以下命令将任何分支合并到当前分支中去：
 
-```
+```bash
 git merge
 $ git branch
 * master
@@ -258,14 +246,14 @@ README        runoob.php
 
 合并完后就可以删除分支:
 
-```
+```bash
 $ git branch -d newtest
 Deleted branch newtest (was c1501a2).
 ```
 
 删除后， 就只剩下 master 分支了：
 
-```
+```bash
 $ git branch
 * master
 ```
@@ -274,7 +262,7 @@ $ git branch
 
 合并并不仅仅是简单的文件添加、移除的操作，Git 也会合并修改。
 
-```
+```bash
 $ git branch
 * master
 $ cat runoob.php
@@ -282,7 +270,7 @@ $ cat runoob.php
 
 首先，我们创建一个叫做 change_site 的分支，切换过去，我们将 runoob.php 内容改为:
 
-```
+```bash
 <?php
 echo 'runoob';
 ?>
@@ -290,7 +278,7 @@ echo 'runoob';
 
 创建 change_site 分支：
 
-```
+```bash
 $ git checkout -b change_site
 Switched to a new branch 'change_site'
 $ vim runoob.php
@@ -304,9 +292,9 @@ $ git commit -am 'changed the runoob.php'
  
 ```
 
-将修改的内容提交到  change_site 分支中。 现在，假如切换回  master  分支我们可以看内容恢复到我们修改前的(空文件，没有代码)，我们再次修改 runoob.php  文件。 
+将修改的内容提交到  change_site 分支中。 现在，假如切换回  master  分支我们可以看内容恢复到我们修改前的(空文件，没有代码)，我们再次修改 runoob.php  文件。
 
-```
+```bash
 $ git checkout master
 Switched to branch 'master'
 $ cat runoob.php
@@ -331,7 +319,7 @@ $ git commit -am '修改代码'
 
 现在这些改变已经记录到我的 "master" 分支了。接下来我们将 "change_site" 分支合并过来。
 
-```
+```bash
 $ git merge change_site
 Auto-merging runoob.php
 CONFLICT (content): Merge conflict in runoob.php
@@ -349,7 +337,7 @@ echo 'runoob';
 
 我们将前一个分支合并到  master  分支，一个合并冲突就出现了，接下来我们需要手动去修改它。
 
-```
+```bash
 $ vim runoob.php 
 $ cat runoob.php
 <?php
@@ -370,7 +358,7 @@ index ac60739,b63d7d7..0000000
 
 在 Git 中，我们可以用 git add 要告诉 Git 文件冲突已经解决
 
-```
+```bash
 $ git status -s
 UU runoob.php
 $ git add runoob.php
@@ -382,133 +370,133 @@ $ git commit
 
 现在我们成功解决了合并中的冲突，并提交了结果。
 
-#  Git 查看提交历史
+## Git 查看提交历史
 
 Git 提交历史一般常用两个命令：
 
 - **git log** - 查看历史提交记录。
 - **git blame \<file\>** - 以列表形式查看指定文件的历史修改记录。
-- ### git log
+
+### git log
 
 - 在使用 Git 提交了若干更新之后，又或者克隆了某个项目，想回顾下提交历史，我们可以使用 git log 命令查看。
 
 - 针对我们前一章节的操作，使用 git log 命令列出历史提交记录如下：
 
-- ```
-  $ git log
-  commit d5e9fc2c811e0ca2b2d28506ef7dc14171a207d9 (HEAD -> master)
-  Merge: c68142b 7774248
-  Author: runoob <test@runoob.com>
-  Date:   Fri May 3 15:55:58 2019 +0800
-  
-      Merge branch 'change_site'
-  
-  commit c68142b562c260c3071754623b08e2657b4c6d5b
-  Author: runoob <test@runoob.com>
-  Date:   Fri May 3 15:52:12 2019 +0800
-  
-      修改代码
-  
-  commit 777424832e714cf65d3be79b50a4717aea51ab69 (change_site)
-  Author: runoob <test@runoob.com>
-  Date:   Fri May 3 15:49:26 2019 +0800
-  
-      changed the runoob.php
-  
-  commit c1501a244676ff55e7cccac1ecac0e18cbf6cb00
-  Author: runoob <test@runoob.com>
-  Date:   Fri May 3 15:35:32 2019 +0800
-  ```
+```bash
+$ git log
+commit d5e9fc2c811e0ca2b2d28506ef7dc14171a207d9 (HEAD -> master)
+Merge: c68142b 7774248
+Author: runoob <test@runoob.com>
+Date:   Fri May 3 15:55:58 2019 +0800
+
+    Merge branch 'change_site'
+
+commit c68142b562c260c3071754623b08e2657b4c6d5b
+Author: runoob <test@runoob.com>
+Date:   Fri May 3 15:52:12 2019 +0800
+
+    修改代码
+
+commit 777424832e714cf65d3be79b50a4717aea51ab69 (change_site)
+Author: runoob <test@runoob.com>
+Date:   Fri May 3 15:49:26 2019 +0800
+
+    changed the runoob.php
+
+commit c1501a244676ff55e7cccac1ecac0e18cbf6cb00
+Author: runoob <test@runoob.com>
+Date:   Fri May 3 15:35:32 2019 +0800
+```
 
 - 我们可以用 --oneline 选项来查看历史记录的简洁的版本。
 
-- ```
-  $ git log --oneline
-  $ git log --oneline
-  d5e9fc2 (HEAD -> master) Merge branch 'change_site'
-  c68142b 修改代码
-  7774248 (change_site) changed the runoob.php
-  c1501a2 removed test.txt、add runoob.php
-  3e92c19 add test.txt
-  3b58100 第一次版本提交
-  ```
+```bash
+$ git log --oneline
+$ git log --oneline
+d5e9fc2 (HEAD -> master) Merge branch 'change_site'
+c68142b 修改代码
+7774248 (change_site) changed the runoob.php
+c1501a2 removed test.txt、add runoob.php
+3e92c19 add test.txt
+3b58100 第一次版本提交
+```
 
 - 这告诉我们的是，此项目的开发历史。
 
 - 我们还可以用 --graph 选项，查看历史中什么时候出现了分支、合并。以下为相同的命令，开启了拓扑图选项：
 
-- ```
-  *   d5e9fc2 (HEAD -> master) Merge branch 'change_site'
-  |\  
-  | * 7774248 (change_site) changed the runoob.php
-  * | c68142b 修改代码
-  |/  
-  * c1501a2 removed test.txt、add runoob.php
-  * 3e92c19 add test.txt
-  * 3b58100 第一次版本提交
-  ```
+```bash
+*   d5e9fc2 (HEAD -> master) Merge branch 'change_site'
+|\  
+| * 7774248 (change_site) changed the runoob.php
+* | c68142b 修改代码
+|/  
+* c1501a2 removed test.txt、add runoob.php
+* 3e92c19 add test.txt
+* 3b58100 第一次版本提交
+```
 
 - 现在我们可以更清楚明了地看到何时工作分叉、又何时归并。
 
 - 你也可以用 **--reverse** 参数来逆向显示所有日志。
 
-- ```
-  $ git log --reverse --oneline
-  3b58100 第一次版本提交
-  3e92c19 add test.txt
-  c1501a2 removed test.txt、add runoob.php
-  7774248 (change_site) changed the runoob.php
-  c68142b 修改代码
-  d5e9fc2 (HEAD -> master) Merge branch 'change_site'
-  ```
+```bash
+$ git log --reverse --oneline
+3b58100 第一次版本提交
+3e92c19 add test.txt
+c1501a2 removed test.txt、add runoob.php
+7774248 (change_site) changed the runoob.php
+c68142b 修改代码
+d5e9fc2 (HEAD -> master) Merge branch 'change_site'
+```
 
 - 如果只想查找指定用户的提交日志可以使用命令：git log --author , 例如，比方说我们要找 Git 源码中 Linus 提交的部分：
 
-- ```
-  $ git log --author=Linus --oneline -5
-  81b50f3 Move 'builtin-*' into a 'builtin/' subdirectory
-  3bb7256 make "index-pack" a built-in
-  377d027 make "git pack-redundant" a built-in
-  b532581 make "git unpack-file" a built-in
-  112dd51 make "mktag" a built-in
-  ```
+```bash
+$ git log --author=Linus --oneline -5
+81b50f3 Move 'builtin-*' into a 'builtin/' subdirectory
+3bb7256 make "index-pack" a built-in
+377d027 make "git pack-redundant" a built-in
+b532581 make "git unpack-file" a built-in
+112dd51 make "mktag" a built-in
+```
 
-- 如果你要指定日期，可以执行几个选项：--since 和 --before，但是你也可以用 --until 和 --after。 
-
+- 如果你要指定日期，可以执行几个选项：--since 和 --before，但是你也可以用 --until 和 --after。
 - 例如，如果我要看 Git 项目中三周前且在四月十八日之后的所有提交，我可以执行这个（我还用了 --no-merges 选项以隐藏合并提交）：
 
-- ```
-  $ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges
-  5469e2d Git 1.7.1-rc2
-  d43427d Documentation/remote-helpers: Fix typos and improve language
-  272a36b Fixup: Second argument may be any arbitrary string
-  b6c8d2d Documentation/remote-helpers: Add invocation section
-  5ce4f4e Documentation/urls: Rewrite to accomodate transport::address
-  00b84e9 Documentation/remote-helpers: Rewrite description
-  03aa87e Documentation: Describe other situations where -z affects git diff
-  77bc694 rebase-interactive: silence warning when no commits rewritten
-  636db2c t3301: add tests to use --format="%N"
-  ```
+```bash
+$ git log --oneline --before={3.weeks.ago} --after={2010-04-18} --no-merges
+5469e2d Git 1.7.1-rc2
+d43427d Documentation/remote-helpers: Fix typos and improve language
+272a36b Fixup: Second argument may be any arbitrary string
+b6c8d2d Documentation/remote-helpers: Add invocation section
+5ce4f4e Documentation/urls: Rewrite to accomodate transport::address
+00b84e9 Documentation/remote-helpers: Rewrite description
+03aa87e Documentation: Describe other situations where -z affects git diff
+77bc694 rebase-interactive: silence warning when no commits rewritten
+636db2c t3301: add tests to use --format="%N"
+```
 
-- 更多 git log 命令可查看：http://git-scm.com/docs/git-log
+- 更多 git log 命令可查看：[http://git-scm.com/docs/git-log](http://git-scm.com/docs/git-log)
 
-- ### git blame 
+### git blame
 
 - 如果要查看指定文件的修改记录可以使用 git blame 命令，格式如下：
 
-- ```
-  git blame <file>
-  ```
+```bash
+git blame <file>
+```
 
 - git blame 命令是以列表形式显示修改记录，如下实例：
 
-- ```
-  $ git blame README 
-  ^d2097aa (tianqixin 2020-08-25 14:59:25 +0800 1) # Runoob Git 测试
-  db9315b0 (runoob    2020-08-25 16:00:23 +0800 2) # 菜鸟教程 
-  ```
+```bash
+$ git blame README 
+^d2097aa (tianqixin 2020-08-25 14:59:25 +0800 1) # Runoob Git 测试
+db9315b0 (runoob    2020-08-25 16:00:23 +0800 2) # 菜鸟教程 
+```
 
-# Git 标签
+## Git 标签
 
 如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。
 
@@ -516,15 +504,15 @@ Git 提交历史一般常用两个命令：
 
  -a 选项意为"创建一个带注解的标签"。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。
 
-```
-$ git tag -a v1.0 
+```bash
+git tag -a v1.0 
 ```
 
 当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。
 
 现在，注意当我们执行 git log --decorate 时，我们可以看到我们的标签了：
 
-```
+```bash
 *   d5e9fc2 (HEAD -> master) Merge branch 'change_site'
 |\  
 | * 7774248 (change_site) changed the runoob.php
@@ -539,7 +527,7 @@ $ git tag -a v1.0
 
  例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：
 
-```
+```bash
 $ git tag -a v0.9 85fc7e7
 $ git log --oneline --decorate --graph
 *   d5e9fc2 (HEAD -> master) Merge branch 'change_site'
@@ -554,7 +542,7 @@ $ git log --oneline --decorate --graph
 
 如果我们要查看所有标签可以使用以下命令：
 
-```
+```bash
 $ git tag
 v0.9
 v1.0
@@ -562,53 +550,49 @@ v1.0
 
 指定标签信息命令：
 
-```
+```bash
 git tag -a <tagname> -m "runoob.com标签"
 ```
 
 PGP签名标签命令：
 
-```
+```bash
 git tag -s <tagname> -m "runoob.com标签"
 ```
 
-# Git 远程仓库(Github)
+## Git 远程仓库(Github)
 
-Git 并不像 SVN 那样有个中心服务器。 
+Git 并不像 SVN 那样有个中心服务器。
 
 目前我们使用到的 Git 命令都是在本地执行，如果你想通过 Git 分享你的代码或者与其他开发人员合作。 你就需要将数据放到一台其他开发人员能够连接的服务器上。
 
-本例使用了 Github 作为远程仓库，你可以先阅读我们的 [Github 简明教程。](https://www.runoob.com/w3cnote/git-guide.html)
+本例使用了 Github 作为远程仓库，你可以先阅读我们的 [Github 简明教程](https://www.runoob.com/w3cnote/git-guide.html)
 
 ![img](git基础命令.assets/Git-push-command.jpeg)
 
-------
-
-## 添加远程库
+### 添加远程库
 
 要添加一个新的远程仓库，可以指定一个简单的名字，以便将来引用,命令格式如下：
 
-```
+```bash
 git remote add [shortname] [url]
 ```
 
-本例以 Github 为例作为远程仓库，如果你没有 Github 可以在官网 https://github.com/注册。
-
-
+本例以 Github 为例作为远程仓库，如果你没有 Github 可以在官网 [https://github.com/](https://github.com/) 注册
 
 由于你的本地 Git 仓库和 GitHub 仓库之间的传输是通过SSH加密的，所以我们需要配置验证信息：
 
 使用以下命令生成 SSH Key：
 
-```
-$ ssh-keygen -t rsa -C "youremail@example.com"
+```bash
+ssh-keygen -t rsa -C "youremail@example.com"
 ```
 
-后面的 **your_email@youremail.com** 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。
+后面的 **<your_email@youremail.com>** 改为你在 Github 上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。
 
 成功的话会在 **~/** 下生成 **.ssh** 文件夹，进去，打开 **id_rsa.pub**，复制里面的 **key**。
 
-```
+```bash
 $ ssh-keygen -t rsa -C "429240967@qq.com"
 Generating public/private rsa key pair.
 Enter file in which to save the key (/Users/tianqixin/.ssh/id_rsa): 
@@ -644,13 +628,11 @@ The key's randomart image is:
 
 添加成功后界面如下所示
 
-
-
 ![img](git基础命令.assets/EC8F8872-091A-4CAB-90F2-616F34F350A9.jpg)
 
 为了验证是否成功，输入以下命令：
 
-```
+```bash
 $ ssh -T git@github.com
 The authenticity of host 'github.com (52.74.223.119)' can't be established.
 RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
@@ -677,7 +659,7 @@ Hi tianqixin! You've successfully authenticated, but GitHub does not provide she
 
 现在，我们根据 GitHub 的提示，在本地的仓库下运行命令：
 
-```
+```bash
 $ mkdir runoob-git-test                     # 创建测试目录
 $ cd runoob-git-test/                       # 进入测试目录
 $ echo "# 菜鸟教程 Git 测试" >> README.md     # 创建 README.md 文件并写入内容
@@ -701,19 +683,17 @@ $ git push -u origin master
 
 ![img](git基础命令.assets/53CA927D-F36F-4A00-AFB2-5EAED05B535E.jpg)
 
-------
-
-## 查看当前的远程库
+### 查看当前的远程库
 
 要查看当前配置有哪些远程仓库，可以用命令：
 
-```
+```bash
 git remote
 ```
 
-### 实例
+#### 实例
 
-```
+```bash
 $ git remote
 origin
 $ git remote -v
@@ -723,15 +703,13 @@ origin    git@github.com:tianqixin/runoob-git-test.git (push)
 
 执行时加上 -v 参数，你还可以看到每个别名的实际链接地址。
 
-------
-
-## 提取远程仓库
+### 提取远程仓库
 
 Git 有两个命令用来提取远程仓库的更新。
 
 1、从远程仓库下载新分支与数据：
 
-```
+```bash
 git fetch
 ```
 
@@ -739,7 +717,7 @@ git fetch
 
 2、从远端仓库提取数据并尝试合并到当前分支：
 
-```
+```bash
 git merge
 ```
 
@@ -755,7 +733,7 @@ git merge
 
 然后我们在本地更新修改。
 
-```
+```bash
 $ git fetch origin
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
@@ -767,7 +745,7 @@ From github.com:tianqixin/runoob-git-test
 
 以上信息"0205aab..febd8ed  master     -> origin/master" 说明 master 分支已被更新，我们可以使用以下命令将更新同步到本地：
 
-```
+```bash
 $ git merge origin/master
 Updating 0205aab..febd8ed
 Fast-forward
@@ -777,25 +755,24 @@ Fast-forward
 
 查看  README.md  文件内容：
 
-```
+```bash
 $ cat README.md 
 # 菜鸟教程 Git 测试
 ## 第一次修改内容
+
 ```
 
-------
-
-## 推送到远程仓库
+### 推送到远程仓库
 
 推送你的新分支与数据到某个远端仓库命令:
 
-```
+```bash
 git push [alias] [branch]
 ```
 
 以上命令将你的 [branch] 分支推送成为 [alias] 远程仓库上的 [branch] 分支，实例如下。
 
-```
+```bash
 $ touch runoob-test.txt      # 添加文件
 $ git add runoob-test.txt 
 $ git commit -m "添加到远程"
@@ -810,19 +787,17 @@ $ git push origin master    # 推送到 Github
 
 ![img](git基础命令.assets/79A84530-7DC0-4D25-9F83-8776433A4C32.jpg)
 
-------
-
-## 删除远程仓库
+### 删除远程仓库
 
 删除远程仓库你可以使用命令：
 
-```
+```bash
 git remote rm [别名]
 ```
 
-### 实例
+#### 实例
 
-```
+```bash
 $ git remote -v
 origin    git@github.com:tianqixin/runoob-git-test.git (fetch)
 origin    git@github.com:tianqixin/runoob-git-test.git (push)
@@ -842,10 +817,3 @@ $ git remote -v
 origin    git@github.com:tianqixin/runoob-git-test.git (fetch)
 origin    git@github.com:tianqixin/runoob-git-test.git (push)
 ```
-
-
-
-
-
-
-

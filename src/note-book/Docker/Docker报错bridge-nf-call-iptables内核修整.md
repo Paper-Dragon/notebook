@@ -2,8 +2,6 @@
 
 ## bridge-nf-call-iptables
 
-
-
 1）警告信息如下：
 
 ```bash
@@ -27,9 +25,11 @@ echo 1 > /proc/sys/net/bridge/bridge-nf-call-ip6tables
 ```
 
 centos7需要增加执行权限：
+
 ```bash
-    chmod +x　/etc/rc,d/rc.local
+chmod +x　/etc/rc,d/rc.local
 ```
+
 3)I solve this problem by execting two commands:
 
 ```bash
@@ -44,10 +44,6 @@ net.bridge.bridge-nf-call-ip6tables = 1
 net.bridge.bridge-nf-call-iptables = 1
 ```
 
-
-
-
-
 ## net.ipv4.ip_forward
 
 解决方法：
@@ -57,4 +53,3 @@ sudo vim /usr/lib/sysctl.d/00-system.conf
 #添加如下代码：
 net.ipv4.ip_forward=1
 ```
-

@@ -8,23 +8,15 @@
 
 弹性搜索，日志**存储**
 
-
-
 # L Logstash
 
 日志收集
-
-
 
 # K Kibana
 
 日志展示
 
-
-
 ![](ELK.assets\image-20211116151442638.png)
-
-
 
 # 实战
 
@@ -43,16 +35,11 @@ sed -i 's/SELINUX.*/SELINUX=disabled/g' /etc/selinux/conf
 # 域名解析
 172.16.100.18 elk-node1
 172.16.100.21 elk-node2
-
-
-
 ```
 
 master-slave模式
 
 ![image-20211117083904657](ELK.assets\image-20211117083904657.png)
-
-
 
 内存：大于2G
 
@@ -154,8 +141,6 @@ Content-Length: 95
 
 ```
 
-
-
 ### 安装插件1
 
 elk-node1/node2都安装
@@ -168,8 +153,6 @@ elk-node1/node2都安装
 http://20.0.0.10:9200/_plugin/head/
 
 ```
-
-
 
 elasticsearch集群部署
 
@@ -186,8 +169,6 @@ http://20.0.0.10:9200/_plugin/head/
 
 ```
 
-
-
 ### 安装插件2
 
 安装监控组件
@@ -197,21 +178,15 @@ http://20.0.0.10:9200/_plugin/head/
 chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/plugins
 ```
 
-
-
 ### 两台服务器均可插件测试
 
 ![image-20211117231143675](ELK.assets\image-20211117231143675.png)
 
 ![image-20211117231243044](ELK.assets\image-20211117231243044.png)
 
-
-
 ![image-20211117231251486](ELK.assets\image-20211117231251486.png)
 
 ![image-20211117231308169](ELK.assets\image-20211117231308169.png)
-
-
 
 ## Logstash
 
@@ -313,14 +288,6 @@ output {                #logstash输出：输出给elasticsearch（以IP地址�
 
 ![image-20211117235501571](ELK.assets\image-20211117235501571.png)
 
-
-
-
-
-
-
-
-
 ## Kibana
 
 添加logstash配置，收集apache服务的访问日志和错误日志中的数据
@@ -353,8 +320,6 @@ kibana.index: ".kibana"
 [root@node1 kibana]# /usr/local/kibana/bin/kibana
 
 ```
-
-
 
 ```bash
 [root@apache ~]# cd /etc/logstash/conf.d/
@@ -395,13 +360,9 @@ output {
 
 ![image-20211118000504423](ELK.assets\image-20211118000504423.png)
 
-
-
 ![image-20211118000526400](ELK.assets\image-20211118000526400.png)
 
 ![image-20211118000641707](ELK.assets\image-20211118000641707.png)
-
-
 
 # Elasticsearch + Redis
 
@@ -467,7 +428,6 @@ web server （192.168.1.13）：
     127.0.0.1:6379> 
     由此说明已经产生数据到redis了。
 
-
 接下来在logstash server这台机器上操作
 
 logstash安装不再演示
@@ -496,7 +456,7 @@ logstash安装不再演示
 
 至这里，运行结果会把收集到的日志信息，标准输入至屏幕；
 
-打开浏览器输入" http://192.168.1.13" 刷新几次，你会发现logstach server 这台服务器的屏幕会出现日志滚动信息，都是刚刚刷新收集到的最新日志信息；
+打开浏览器输入" <http://192.168.1.13>" 刷新几次，你会发现logstach server 这台服务器的屏幕会出现日志滚动信息，都是刚刚刷新收集到的最新日志信息；
 
 最后,在es这台机器上，安装elasticsearch + kibana,安装方法不再演示:
 
@@ -515,7 +475,7 @@ logstash安装不再演示
     复制一个终端
     ss -tanl 查看5601端口是否开启
 
-浏览器输入" http://192.168.1.10:5601"打开kibana界面
+浏览器输入" <http://192.168.1.10:5601"打开kibana界面>
 
 接下来还返回logstash server服务器
 
@@ -553,19 +513,10 @@ logstash安装不再演示
 
 接下来在kibana上显示：
 
-浏览器" http://192.168.1.10:5601/"
+浏览器" <http://192.168.1.10:5601/>"
 
-
-
-# 面试题：
-
-
+# 面试题
 
 ELK插件
 
-https://blog.csdn.net/sinat_35930259/article/details/81052139
-
-
-
-
-
+<https://blog.csdn.net/sinat_35930259/article/details/81052139>

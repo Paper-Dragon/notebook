@@ -20,8 +20,6 @@ Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
 
 默认情况下，Docker守护程序将一次提取图像的三个层。 如果您使用的是低带宽连接，这可能会导致超时问题，您可能需要降低这个选项 `--max-concurrent-downloads` daemon 选项.请参阅 [daemon documentation](https://docs.docker.com/engine/reference/commandline/dockerd/) 获得更多信息.
 
-
-
 ## docker push
 
 ```bash

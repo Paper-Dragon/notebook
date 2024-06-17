@@ -29,8 +29,8 @@ Git 会把仓库中的每次提交串成一条时间线，这条时间线就是�
 具体创建分支命令如下
 
 ```bash
-    git branch dev //创建一个新的dev分支
-    git checkout dev //切换到该分支上
+git branch dev //创建一个新的dev分支
+git checkout dev //切换到该分支上
 ```
 
 当然你也可以使用git checkout -b dev或者git switch -c dev创建dev并切换，相当于以上两条命令。最新版本的 Git 提供了新的git switch命令来切换分支，以便更好的与git checkout 进行区分。
@@ -38,7 +38,7 @@ Git 会把仓库中的每次提交串成一条时间线，这条时间线就是�
 
 
 ```bash
-    git branch
+git branch
 ```
 
 该命令会列出所有的分支，而当前分支前面会标一个*号。
@@ -58,7 +58,7 @@ Git分支合并非常的便捷，直接把master指向dev的当前提交，就�
 
 
 ```bash
-    git merge --no-ff -m "禁用Fast forward模式" dev
+git merge --no-ff -m "禁用Fast forward模式" dev
 ```
 
 来禁用Fast forward模式。合并后，我们用git log看看分支历史：

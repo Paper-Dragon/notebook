@@ -1,78 +1,81 @@
 
-
-
-
 # Harbor离线搭建
 
 > 使用离线安装包安装Harbor和
 
-# 先要条件
+## 先要条件
 
-## 1.下载haobor安装包和docker-compose安装包
+### 1.下载haobor安装包和docker-compose安装包
 
-harbor载地址：http://harbor.orientsoft.cn/
+harbor载地址：[http://harbor.orientsoft.cn/](http://harbor.orientsoft.cn/)
 
 本次下载后放入的目录是/home/carter，解压安装包
 
-    tar xf harbor-offline-installer-v1.10.10.tgz
+```bash
+tar xf harbor-offline-installer-v1.10.10.tgz
+```
 
 下载docker-composer，存放到/usr/local/bin目录下。
 
-    # 这个是官方地址，可能比较慢，推荐使用下面的国内镜像地址
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-    
-    # 国内镜像地址
-    curl -L https://get.daocloud.io/docker/compose/releases/download/1.29.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-    
-    # 下载完之后可以看下 /usr/local/bin 这个目录有没有 docker-compose 这个文件
+```bash
+# 这个是官方地址，可能比较慢，推荐使用下面的国内镜像地址
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-## 2.安装docker-compose
+# 国内镜像地址
+curl -L https://get.daocloud.io/docker/compose/releases/download/1.29.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 
-    chmod +x /usr/local/bin/docker-compose
-    
-    ll /usr/local/bin/ |grep docker-compose
+# 下载完之后可以看下 /usr/local/bin 这个目录有没有 docker-compose 这个文件
+```
+
+### 2.安装docker-compose
+
+```bash
+chmod +x /usr/local/bin/docker-compose
+ll /usr/local/bin/ |grep docker-compose
+```
 
 检查docker-compose是否安装成功：
 
-    [root@harbor ~]# docker-compose --version
-    docker-compose version 1.29.1, build c34c88b2
-    [root@harbor ~]#
+```bash
+[root@harbor ~]# docker-compose --version
+docker-compose version 1.29.1, build c34c88b2
+[root@harbor ~]#
+```
 
-## 3.修改barbor默认端口和设置管理后台的admin密码
+### 3.修改barbor默认端口和设置管理后台的admin密码
 
 harbor的默认服务端口是80端口，但一般服务器上的80端口会被其他的服务占用，所以最后修改harbor的默认端口，这里修改为5000端口。
 
-1）编辑/home/carter/harbor/docker-compose.yml文件：
+编辑/home/carter/harbor/docker-compose.yml文件：
 
-    cd /home/carter/harbor/
-    vi docker-compose.yml
+```bash
+cd /home/carter/harbor/
+vi docker-compose.yml
+```
 
-
-# 安装
+## 安装
 
 环境：centos7.6
 
-## 1、安装docker
+### 1、安装docker
 
-详情见：https://www.cnblogs.com/wukc/p/13265528.html
+详情见：[https://www.cnblogs.com/wukc/p/13265528.html](https://www.cnblogs.com/wukc/p/13265528.html)
 
-2、配置时区 
+2、配置时区
 
-```
+```bash
 timedatectl set-timezone Asia/Shanghai
 ```
 
-## 3、修改主机名称
+### 3、修改主机名称
 
-```
+```bash
 hostnamectl set-hostname harbor
 ```
 
-## 4、创建磁盘并挂载
+### 4、创建磁盘并挂载
 
-
-
-```
+```bash
 pvcreate /dev/vdb
 vgcreate data /dev/vdb
 lvcreate -l 100%VG -n lv_harbor data 
@@ -86,11 +89,15 @@ Filesystem                 1K-blocks    Used Available Use% Mounted on
 /dev/mapper/data-lv_harbor 209608708 1415772 208192936   1% /harbor
 ```
 
+### 5、harbor安装
+
+```bash
+wget https://github.com/goharbor/harbor/releases/download/v1.10.1/harbor-offline-installer-v1.10.1.tgz 
+```
 
 
-## 5、harbor安装
 
-wget https://github.com/goharbor/harbor/releases/download/v1.10.1/harbor-offline-installer-v1.10.1.tgz #下载文件
+下载文件
 
 ```bash
 
@@ -265,11 +272,7 @@ proxy:
 
 ```
 
-
-
-
-
-```
+```bash
 解压tar -zxvf /harbor/harbor-offline-installer-v1.10.1.tgz
 加载镜像 cd harbor/&& docker load -i harbor.v1.10.1.tar.gz
 将docker-compose 放到/usr/local/bin 目录下 并赋权
@@ -361,17 +364,24 @@ server {
 
 ```
 
+### 6、登录验证
 
+http://YOUR-IP-ADDRESS  
 
-## 6、登录验证
+账号密码为上面配置文件中：
 
-http://ip  账号密码为上面配置文件中：admin：Harbor12345
+默认账户密码是
 
-## 7、配置docker使用harbor仓库
-
-
-
+```text
+admin
+Harbor12345
 ```
+
+
+
+### 7、配置docker使用harbor仓库
+
+```bash
 修改配置文件
 vi /etc/docker/daemon.json 
 {
@@ -381,11 +391,9 @@ systemctl restart docker
 docker login:172.21.210.20
 ```
 
+### 8、harbor启动和重启
 
-
-##  8、harbor启动和重启
-
-```
+```bash
 cd /harbor/harbor
 docker-compose up -d     #后台启动
 docker-compose restart   #重启

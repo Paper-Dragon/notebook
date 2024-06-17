@@ -53,8 +53,6 @@ iptables中总共有4张表还有5条链，我们可以在链上加不同的规�
 
 ![image-20230331150919181](手撕docker网络.assets/image-20230331150919181.png)
 
-
-
 这并不复杂。但是在这想该怎么办之前，我们得先搞清楚，通常情况下我们会对流量做那些控制？无非如下：
 
 1. 丢弃来自xxx的流量
@@ -77,7 +75,7 @@ iptables中总共有4张表还有5条链，我们可以在链上加不同的规�
 
 ## 默认的docker规则
 
-```ini
+```bash
 ##地址转发表nat中的规则链及默认
 *nat
 #PREROUTING规则链默认策略是ACCEPT
@@ -171,11 +169,9 @@ DOCKER-USER链中的过滤规则，将先于Docker默认创建的规则被加载
 
 例如，Docker启动后，默认任何外部source IP都被允许转发，从而能够从该source IP连接到宿主机上的任何Docker容器实例。如果只允许一个指定的IP访问容器实例，可以插入路由规则到DOCKER-USER链中，从而能够在DOCKER链之前被加载。
 
-
-
 ## 当我暴露一个端口
 
-```ini
+```bash
 *nat
 :PREROUTING ACCEPT [0:0]
 :INPUT ACCEPT [0:0]
@@ -210,8 +206,6 @@ DOCKER-USER链中的过滤规则，将先于Docker默认创建的规则被加载
 -A DOCKER-ISOLATION-STAGE-2 -o docker0 -j DROP
 -A DOCKER-ISOLATION-STAGE-2 -j RETURN
 -A DOCKER-USER -j RETURN
-
-
 ```
 
 ## diff
@@ -235,8 +229,6 @@ DOCKER-USER链中的过滤规则，将先于Docker默认创建的规则被加载
 -A DOCKER -d 172.17.0.2/32 ! -i docker0 -o docker0 -p tcp -m tcp --dport 80 -j ACCEPT
 ```
 
-
-
 # 解释netns
 
 Linux 网络命名空间
@@ -246,12 +238,16 @@ Linux 命名空间 是 Docker 实现容器使用的底层技术之一，命名�
 什么是网络命名空间，按照官方文档的说法：
 1
 
-    A network namespace is logically another copy of the network stack, with its own routes, firewall rules, and network devices.
+```text
+A network namespace is logically another copy of the network stack, with its own routes, firewall rules, and network devices.
+```
 
 2
 
-    Network namespaces provide isolation of the system resources associated with networking: network devices, IPv4 and IPv6 protocol stacks, IP routing tables, firewall rules, the /proc/net directory (which is a symbolic link to /proc/PID/net), the
-    /sys/class/net directory, various files under /proc/sys/net, port numbers (sockets), and so on.
+```text
+Network namespaces provide isolation of the system resources associated with networking: network devices, IPv4 and IPv6 protocol stacks, IP routing tables, firewall rules, the /proc/net directory (which is a symbolic link to /proc/PID/net), the
+/sys/class/net directory, various files under /proc/sys/net, port numbers (sockets), and so on.
+```
 
 简单可以理解为系统刚启动时只有一个全局的网络命名空间，这个命名空间包含网络协议栈，网络接口，路由表，防火墙规则，以及一些网络配置等。
 
@@ -259,41 +255,47 @@ Linux 命名空间 是 Docker 实现容器使用的底层技术之一，命名�
 
 初始时，没有其他的网络命名空间：
 
-    root@ubuntu21:~# ip netns ls
+```bash
+root@ubuntu21:~# ip netns ls
+```
 
 我们现在来用 ip netns add 创建一个名为 netns0 的网络命名空间：
 
-    root@ubuntu21:~# ip netns add netns0
-    root@ubuntu21:~# ip netns ls
-    netns0
+```bash
+root@ubuntu21:~# ip netns add netns0
+root@ubuntu21:~# ip netns ls
+netns0
+```
 
 接着用 ip netns exec 命令在这个网络命名空间执行一些命令看下这个网络命名空间有什么东西：
 
-   
+```bash
+root@ubuntu21:~# ip netns exec netns0 ip link
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    
+root@ubuntu21:~# ip netns exec netns0 ip route
+Error: ipv4: FIB table does not exist.
+Dump terminated
 
-    root@ubuntu21:~# ip netns exec netns0 ip link
-    1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-        
-    root@ubuntu21:~# ip netns exec netns0 ip route
-    Error: ipv4: FIB table does not exist.
-    Dump terminated
-    
-    root@ubuntu21:~# ip netns exec netns0 iptables -L
-    Chain INPUT (policy ACCEPT)
-    target     prot opt source               destination         
-    
-    Chain FORWARD (policy ACCEPT)
-    target     prot opt source               destination         
-    
-    Chain OUTPUT (policy ACCEPT)
-    target     prot opt source               destination      
+root@ubuntu21:~# ip netns exec netns0 iptables -L
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination      
+```
 
 可以看到这个命名空间
 
-    只有一个环回接口 lo。
-    路由表为空【将换回接口 lo up 后可以看到】。
-    iptables 规则为空。
+```text
+只有一个环回接口 lo。
+路由表为空【将换回接口 lo up 后可以看到】。
+iptables 规则为空。
+```
 
 与我们的全局网络命名空间完全不一样！
 
@@ -308,71 +310,75 @@ Linux 命名空间 是 Docker 实现容器使用的底层技术之一，命名�
 
 先来创建一对虚拟以太网口【veth】：
 
-
-
-    root@ubuntu21:~# ip link add veth0 type veth peer name ceth0
-    root@ubuntu21:~# ip link ls
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    ...
-    7: ceth0@veth0: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/ether ee:91:1e:b9:0d:7c brd ff:ff:ff:ff:ff:ff
-    8: veth0@ceth0: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/ether 7e:c4:14:4d:71:b9 brd ff:ff:ff:ff:ff:ff
+```bash
+root@ubuntu21:~# ip link add veth0 type veth peer name ceth0
+root@ubuntu21:~# ip link ls
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+...
+7: ceth0@veth0: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether ee:91:1e:b9:0d:7c brd ff:ff:ff:ff:ff:ff
+8: veth0@ceth0: <BROADCAST,MULTICAST,M-DOWN> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 7e:c4:14:4d:71:b9 brd ff:ff:ff:ff:ff:ff
+```
 
 创建的这对虚拟网口 veth0 和 ceth0 在根网络命名空间。这对虚拟网口简单来说就是发往 veth0 的数据包会从 ceth0 收到，反之亦然。
 
 接下来我们将 ceth0 放到容器的命名空间中：
 
-
-
-    root@ubuntu21:~# ip link set ceth0 netns netns0
-    root@ubuntu21:~# ip link
-    1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    ...
-    8: veth0@if7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/ether 7e:c4:14:4d:71:b9 brd ff:ff:ff:ff:ff:ff link-netns netns0
-    root@ubuntu21:~# ip netns exec netns0 ip link ls
-    1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
-    7: ceth0@if8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
-        link/ether ee:91:1e:b9:0d:7c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+```bash
+root@ubuntu21:~# ip link set ceth0 netns netns0
+root@ubuntu21:~# ip link
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+...
+8: veth0@if7: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether 7e:c4:14:4d:71:b9 brd ff:ff:ff:ff:ff:ff link-netns netns0
+root@ubuntu21:~# ip netns exec netns0 ip link ls
+1: lo: <LOOPBACK> mtu 65536 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+7: ceth0@if8: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN mode DEFAULT group default qlen 1000
+    link/ether ee:91:1e:b9:0d:7c brd ff:ff:ff:ff:ff:ff link-netnsid 0
+```
 
 可以看到根命名空间少了网口 ceth0 ，容器内多了一个网口 ceth0。
 
 然后我们给 veth0 配上 172.18.0.11/16 地址，给容器内的 ceth0 配上 172.18.0.10/16 地址：
 
-    root@ubuntu21:~# ip link set veth0 up
-    root@ubuntu21:~# ip addr add 172.18.0.11/16 dev veth0
-    
-    root@ubuntu21:~# ip netns exec netns0 ip link set lo up
-    root@ubuntu21:~# ip netns exec netns0 ip link set ceth0 up
-    root@ubuntu21:~# ip netns exec netns0 addr add 172.18.0.10/16 dev ceth0
+```bash
+root@ubuntu21:~# ip link set veth0 up
+root@ubuntu21:~# ip addr add 172.18.0.11/16 dev veth0
+
+root@ubuntu21:~# ip netns exec netns0 ip link set lo up
+root@ubuntu21:~# ip netns exec netns0 ip link set ceth0 up
+root@ubuntu21:~# ip netns exec netns0 addr add 172.18.0.10/16 dev ceth0
+```
 
 这样主机和容器之间就可以互 ping 了：
 
-    root@ubuntu21:~# ip netns exec netns0 ping 172.18.0.11
-    PING 172.18.0.11 (172.18.0.11) 56(84) bytes of data.
-    64 bytes from 172.18.0.11: icmp_seq=1 ttl=64 time=0.186 ms
-    64 bytes from 172.18.0.11: icmp_seq=2 ttl=64 time=0.089 ms
-    64 bytes from 172.18.0.11: icmp_seq=3 ttl=64 time=0.086 ms
-    ^C
-    --- 172.18.0.11 ping statistics ---
-    3 packets transmitted, 3 received, 0% packet loss, time 2046ms
-    rtt min/avg/max/mdev = 0.086/0.120/0.186/0.046 ms
+```bash
+root@ubuntu21:~# ip netns exec netns0 ping 172.18.0.11
+PING 172.18.0.11 (172.18.0.11) 56(84) bytes of data.
+64 bytes from 172.18.0.11: icmp_seq=1 ttl=64 time=0.186 ms
+64 bytes from 172.18.0.11: icmp_seq=2 ttl=64 time=0.089 ms
+64 bytes from 172.18.0.11: icmp_seq=3 ttl=64 time=0.086 ms
+^C
+--- 172.18.0.11 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2046ms
+rtt min/avg/max/mdev = 0.086/0.120/0.186/0.046 ms
+```
 
-
-​    
+```bash
     root@ubuntu21:~# ping 172.18.0.10
-    PING 172.18.0.10 (172.18.0.10) 56(84) bytes of data.
-    64 bytes from 172.18.0.10: icmp_seq=1 ttl=64 time=0.070 ms
-    64 bytes from 172.18.0.10: icmp_seq=2 ttl=64 time=0.078 ms
-    64 bytes from 172.18.0.10: icmp_seq=3 ttl=64 time=0.070 ms
-    ^C
-    --- 172.18.0.10 ping statistics ---
-    3 packets transmitted, 3 received, 0% packet loss, time 2053ms
-    rtt min/avg/max/mdev = 0.070/0.072/0.078/0.003 ms
+​    PING 172.18.0.10 (172.18.0.10) 56(84) bytes of data.
+​    64 bytes from 172.18.0.10: icmp_seq=1 ttl=64 time=0.070 ms
+​    64 bytes from 172.18.0.10: icmp_seq=2 ttl=64 time=0.078 ms
+​    64 bytes from 172.18.0.10: icmp_seq=3 ttl=64 time=0.070 ms
+​    ^C
+​    --- 172.18.0.10 ping statistics ---
+​    3 packets transmitted, 3 received, 0% packet loss, time 2053ms
+​    rtt min/avg/max/mdev = 0.070/0.072/0.078/0.003 ms
+```
 
 就是这样的情形：
 
@@ -381,48 +387,54 @@ Linux 命名空间 是 Docker 实现容器使用的底层技术之一，命名�
 
 接下来我们重复上面的操作，创建另一个容器：
 
-    ip netns add netns1
-    ip link add veth1 type veth peer name ceth1
-    ip link set ceth1 netns netns1
-    ip link set veth1 up
-    ip addr add 172.18.0.21/16 dev veth1
-    
-    ip netns exec netns1 ip link set lo up
-    ip netns exec netns1 ip link set ceth1 up
-    ip netns exec netns1 ip addr add 172.18.0.20/16 dev ceth1
+```bash
+ip netns add netns1
+ip link add veth1 type veth peer name ceth1
+ip link set ceth1 netns netns1
+ip link set veth1 up
+ip addr add 172.18.0.21/16 dev veth1
+
+ip netns exec netns1 ip link set lo up
+ip netns exec netns1 ip link set ceth1 up
+ip netns exec netns1 ip addr add 172.18.0.20/16 dev ceth1
+```
 
 此时却发现它和主机不能互 ping 成功，两个容器之间也不能互 ping 成功：
 
-    root@ubuntu21:~# ip netns exec netns1 ping 172.18.0.21
-    PING 172.18.0.21 (172.18.0.21) 56(84) bytes of data.
-    ^C
-    --- 172.18.0.21 ping statistics ---
-    2 packets transmitted, 0 received, 100% packet loss, time 1021ms
-    
-    root@ubuntu21:~# ping 172.18.0.20
-    PING 172.18.0.20 (172.18.0.20) 56(84) bytes of data.
-    ^C
-    --- 172.18.0.20 ping statistics ---
-    2 packets transmitted, 0 received, 100% packet loss, time 1010ms
-    
-    root@ubuntu21:~# ip netns exec netns0 ping 172.18.0.20
-    PING 172.18.0.20 (172.18.0.20) 56(84) bytes of data.
-    ^C
-    --- 172.18.0.20 ping statistics ---
-    2 packets transmitted, 0 received, 100% packet loss, time 1030ms
-    
-    root@ubuntu21:~# ip netns exec netns1 ping 172.18.0.10
-    PING 172.18.0.10 (172.18.0.10) 56(84) bytes of data.
-    ^C
-    --- 172.18.0.10 ping statistics ---
-    2 packets transmitted, 0 received, 100% packet loss, time 1019ms
+```bash
+root@ubuntu21:~# ip netns exec netns1 ping 172.18.0.21
+PING 172.18.0.21 (172.18.0.21) 56(84) bytes of data.
+^C
+--- 172.18.0.21 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1021ms
+
+root@ubuntu21:~# ping 172.18.0.20
+PING 172.18.0.20 (172.18.0.20) 56(84) bytes of data.
+^C
+--- 172.18.0.20 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1010ms
+
+root@ubuntu21:~# ip netns exec netns0 ping 172.18.0.20
+PING 172.18.0.20 (172.18.0.20) 56(84) bytes of data.
+^C
+--- 172.18.0.20 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1030ms
+
+root@ubuntu21:~# ip netns exec netns1 ping 172.18.0.10
+PING 172.18.0.10 (172.18.0.10) 56(84) bytes of data.
+^C
+--- 172.18.0.10 ping statistics ---
+2 packets transmitted, 0 received, 100% packet loss, time 1019ms
+```
 
 这是怎么回事？
 
 查看主机上的路由表如下：
 
-    172.18.0.0/16 dev veth0 proto kernel scope link src 172.18.0.11 
-    172.18.0.0/16 dev veth1 proto kernel scope link src 172.18.0.21 
+```bash
+172.18.0.0/16 dev veth0 proto kernel scope link src 172.18.0.11 
+172.18.0.0/16 dev veth1 proto kernel scope link src 172.18.0.21 
+```
 
 原来由于 veth0 和 veth1 在同一个网段，于是就有两条主机路由。
 在这里插入图片描述
@@ -435,49 +447,51 @@ Linux 命名空间 是 Docker 实现容器使用的底层技术之一，命名�
 
 于是将 veth0 和 veth1 的IP地址去掉：
 
-    root@ubuntu21:~# ip addr del 172.18.0.11/16 dev veth0  
-    root@ubuntu21:~# ip addr del 172.18.0.21/16 dev veth1  
+```bash
+root@ubuntu21:~# ip addr del 172.18.0.11/16 dev veth0  
+root@ubuntu21:~# ip addr del 172.18.0.21/16 dev veth1  
+```
 
 创建一个网桥将它们加入：
 
-    root@ubuntu21:~# ip link add br0 type bridge
-    root@ubuntu21:~# ip link set br0 up
-    root@ubuntu21:~# ip link set veth0 master br0
-    root@ubuntu21:~# ip link set veth1 master br0
+```bash
+root@ubuntu21:~# ip link add br0 type bridge
+root@ubuntu21:~# ip link set br0 up
+root@ubuntu21:~# ip link set veth0 master br0
+root@ubuntu21:~# ip link set veth1 master br0
+```
 
 这样它们之间就能互 ping 了！
 
-    root@ubuntu21:~# ip netns exec netns0 ping 172.18.0.20
-    PING 172.18.0.20 (172.18.0.20) 56(84) bytes of data.
-    64 bytes from 172.18.0.20: icmp_seq=1 ttl=64 time=0.097 ms
-    64 bytes from 172.18.0.20: icmp_seq=2 ttl=64 time=0.120 ms
-    ^C
-    --- 172.18.0.20 ping statistics ---
-    2 packets transmitted, 2 received, 0% packet loss, time 1002ms
-    rtt min/avg/max/mdev = 0.097/0.108/0.120/0.011 ms
-    root@ubuntu21:~# 
-    root@ubuntu21:~# ip netns exec netns1 ping 172.18.0.10 
-    PING 172.18.0.10 (172.18.0.10) 56(84) bytes of data.
-    64 bytes from 172.18.0.10: icmp_seq=1 ttl=64 time=0.073 ms
-    64 bytes from 172.18.0.10: icmp_seq=2 ttl=64 time=0.106 ms
-    ^C
-    --- 172.18.0.10 ping statistics ---
-    2 packets transmitted, 2 received, 0% packet loss, time 1021ms
-    rtt min/avg/max/mdev = 0.073/0.089/0.106/0.016 ms
+```bash
+root@ubuntu21:~# ip netns exec netns0 ping 172.18.0.20
+PING 172.18.0.20 (172.18.0.20) 56(84) bytes of data.
+64 bytes from 172.18.0.20: icmp_seq=1 ttl=64 time=0.097 ms
+64 bytes from 172.18.0.20: icmp_seq=2 ttl=64 time=0.120 ms
+^C
+--- 172.18.0.20 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1002ms
+rtt min/avg/max/mdev = 0.097/0.108/0.120/0.011 ms
+root@ubuntu21:~# 
+root@ubuntu21:~# ip netns exec netns1 ping 172.18.0.10 
+PING 172.18.0.10 (172.18.0.10) 56(84) bytes of data.
+64 bytes from 172.18.0.10: icmp_seq=1 ttl=64 time=0.073 ms
+64 bytes from 172.18.0.10: icmp_seq=2 ttl=64 time=0.106 ms
+^C
+--- 172.18.0.10 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1021ms
+rtt min/avg/max/mdev = 0.073/0.089/0.106/0.016 ms
+```
 
 就是如下的情形：
 在这里插入图片描述
 说明： 如果 ping 不通，使用如下的命令【我使用的是 Ubuntu 21.10，已经安装了 Docker 】
 
-    iptables -P FORWARD ACCEPT
+```bash
+iptables -P FORWARD ACCEPT
+```
 
 将 iptables filter 表 FORWARD 链默认策略改为 ACCEPT。
-
-
-
-
-
-
 
 # 实战1
 
@@ -570,11 +584,7 @@ Commercial support is available at
 </body>
 </html>
 root@k8s-server:/home/k8s#
-
-
 ```
-
-
 
 ## 增加DNAT规则
 
@@ -606,11 +616,7 @@ Commercial support is available at
 <p><em>Thank you for using nginx.</em></p>
 </body>
 </html>
-
-
 ```
-
-
 
 修改允许流量转发，
 
@@ -670,8 +676,4 @@ iptables -D DOCKER-ISOLATION-STAGE-2 -t filter  -j LOG --log-prefix "filter-DOCK
 
 iptables -P FORWARD ACCEPT
 iptables -P FORWARD DROP
-
-
-
 ```
-

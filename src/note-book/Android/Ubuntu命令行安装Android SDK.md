@@ -30,6 +30,5 @@
 
 ## 引用
 
-1. [cmdline-tools : could not determine SDK root
-    ](https://stackoverflow.com/questions/65262340/cmdline-tools-could-not-determine-sdk-root)
+1. [cmdline-tools : could not determine SDK root](https://stackoverflow.com/questions/65262340/cmdline-tools-could-not-determine-sdk-root)
 2. [sdkmanager](https://developer.android.com/studio/command-line/sdkmanager#list_installed_and_available_packages)

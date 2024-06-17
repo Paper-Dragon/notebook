@@ -144,8 +144,6 @@
 
 ```
 
-
-
 ## Simple1
 
 ```json
@@ -207,22 +205,19 @@ systemctl enable docker
 
 docker中国区官方镜像加速：
 
-- https://registry.docker-cn.com
+- [https://registry.docker-cn.com](https://registry.docker-cn.com)
 
 网易镜像加速：
 
-- http://hub-mirror.c.163.com
+- [http://hub-mirror.c.163.com](http://hub-mirror.c.163.com)
 
+腾讯云镜像加速：
 
-腾讯云镜像加速： 
-
-- https://mirror.ccs.tencentyun.com
+- [https://mirror.ccs.tencentyun.com](https://mirror.ccs.tencentyun.com)
 
 阿里云镜像加速：
 
-- https://ung2thfc.mirror.aliyuncs.com
-
-
+- [https://ung2thfc.mirror.aliyuncs.com](https://ung2thfc.mirror.aliyuncs.com)
 
 创建或修改/etc/docker/daemon.json文件
 默认没有daemon文件，先创建。
@@ -239,4 +234,3 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 }
 EOF
 ```
-
