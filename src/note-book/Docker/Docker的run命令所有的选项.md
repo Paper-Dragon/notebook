@@ -1,5 +1,7 @@
 # Docker的run命令所有的选项
 
+> 如果要看更详细的解释，参考官方文档： [https://docs.docker.com/reference/cli/docker/container/run/](https://docs.docker.com/reference/cli/docker/container/run/) 
+
 ## docker run --help
 
 ```
