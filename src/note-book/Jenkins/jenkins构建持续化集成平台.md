@@ -183,27 +183,28 @@ password: xxxxxxxx
 
 
 
-    安装依赖包：
-    [root@jenkins-server ~]# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker -y
-    官网下载GIT最新的版本：
-    [root@jenkins-server ~]# wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz
-    解压GIT并且cd到解压目录进行编译安装：
-    [root@jenkins-server ~]# tar -xvf git-2.9.5.tar.gz -C /usr/local
-    [root@jenkins-server ]# cd git-2.9.5/
-    编译源码包、源码安装
-    [root@jenkins-server git-2.9.5]# make prefix=/usr/local/git all
-    [root@jenkins-server git-2.9.5]# make prefix=/usr/local/git install
-    添加GIT所需要的环境变量：
-    [root@jenkins-server ~]# vim /etc/bashrc
-    PATH=$PATH:$HOME/bin:/usr/local/git/bin
-    [root@jenkins-server ~]# source /etc/bashrc
-    关于bashrc和profile：
-    /etc/profile：此文件为系统的每个用户设置环境信息,当用户第一次！！！登录！！！时,该文件被执行。 并从/etc/profile.d目录的配置文件中搜集shell的设置.
-    /etc/bashrc：为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.
-    测试GIT是否安装成功：
-    [root@jenkins-server ~]# git --version
-    git version 1.8.3.1
-
+安装依赖包：
+```bash
+[root@jenkins-server ~]# yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker -y
+官网下载GIT最新的版本：
+[root@jenkins-server ~]# wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz
+解压GIT并且cd到解压目录进行编译安装：
+[root@jenkins-server ~]# tar -xvf git-2.9.5.tar.gz -C /usr/local
+[root@jenkins-server ]# cd git-2.9.5/
+编译源码包、源码安装
+[root@jenkins-server git-2.9.5]# make prefix=/usr/local/git all
+[root@jenkins-server git-2.9.5]# make prefix=/usr/local/git install
+添加GIT所需要的环境变量：
+[root@jenkins-server ~]# vim /etc/bashrc
+PATH=$PATH:$HOME/bin:/usr/local/git/bin
+[root@jenkins-server ~]# source /etc/bashrc
+关于bashrc和profile：
+/etc/profile：此文件为系统的每个用户设置环境信息,当用户第一次！！！登录！！！时,该文件被执行。 并从/etc/profile.d目录的配置文件中搜集shell的设置.
+/etc/bashrc：为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.
+测试GIT是否安装成功：
+[root@jenkins-server ~]# git --version
+git version 1.8.3.1
+```
 
 
 ## ２、部署JDK环境
@@ -217,11 +218,13 @@ password: xxxxxxxx
 
 添加JDK所需要的环境变量：
 
-    [root@jenkins-server local]# cd
-    [root@jenkins-server ~]# vim /etc/bashrc
-    JAVA_HOME=/usr/local/java
-    export PATH=$PATH:$JAVA_HOME/bin
-    [root@jenkins-server ~]# source /etc/bashrc
+```bash
+[root@jenkins-server local]# cd
+[root@jenkins-server ~]# vim /etc/bashrc
+JAVA_HOME=/usr/local/java
+export PATH=$PATH:$JAVA_HOME/bin
+[root@jenkins-server ~]# source /etc/bashrc
+```
 
 测试JDK环境是否安装成功：
 
@@ -248,11 +251,14 @@ Java HotSpot™ 64-Bit Server VM (build 25.151-b12, mixed mode)
 
 添加maven所需要的环境变量：
 
-    [root@jenkins-server ~]# vim /etc/bashrc
-    export M2_HOME=/usr/local/maven
-    export M2=$M2_HOME/bin
-    export PATH=$M2:$PATH
-    [root@jenkins-server ~]# source /etc/bashrc测试maven是否安装成功：
+```bash
+[root@jenkins-server ~]# vim /etc/bashrc
+export M2_HOME=/usr/local/maven
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+[root@jenkins-server ~]# source /etc/bashrc测试maven是否安装成功：
+```
+
 
 ```bash
 [root@jenkins-server ~]# mvn -version
@@ -277,19 +283,20 @@ OS name: “linux”, version: “3.10.0-693.el7.x86_64”, arch: “amd64”, f
 
 添加Tomcat所需要的环境变量：
 
-    [root@jenkins-server ~]# vim /etc/bashrc
-    CATALINA_HOME=/usr/local/tomcat
-    export CATALINA_HOME
-    [root@jenkins-server ~]# source /etc/bashrc
-    启动Tomcat：
-    [root@jenkins-server ~]# /usr/local/tomcat/bin/startup.sh
-    浏览器访问Tomcat是否安装成功：
-    http://10.11.67.38:8080
-    先关闭Tomcat：
-    [root@jenkins-server ~]# /usr/local/tomcat/bin/shutdown.sh
-    补充：配置Tomcat的角色和用户：
-    [root@jenkins-server ~]# vim /usr/local/tomcat/conf/tomcat-users.xml
-
+```bash
+[root@jenkins-server ~]# vim /etc/bashrc
+CATALINA_HOME=/usr/local/tomcat
+export CATALINA_HOME
+[root@jenkins-server ~]# source /etc/bashrc
+启动Tomcat：
+[root@jenkins-server ~]# /usr/local/tomcat/bin/startup.sh
+浏览器访问Tomcat是否安装成功：
+http://10.11.67.38:8080
+先关闭Tomcat：
+[root@jenkins-server ~]# /usr/local/tomcat/bin/shutdown.sh
+补充：配置Tomcat的角色和用户：
+[root@jenkins-server ~]# vim /usr/local/tomcat/conf/tomcat-users.xml
+````
 
 
 ## ５、部署Jenkins
@@ -519,12 +526,15 @@ Jenkins-server登录Tomcat业务主机不需要密码即可
 
 出错也在这里看
 
+```bash
 Started by user kakaops
 Started by user kakaops
 Running as SYSTEM
 Building in workspace /root/.jenkins/workspace/kakaops-job
 The recommended git tool is: NONE
 No credentials specified
+```
+
 
 ```bash
 /usr/local/git/bin/git rev-parse --is-inside-work-tree # timeout=10
@@ -624,17 +634,17 @@ WARNING [Handling GET /jenkins/login from 10.0.0.174 : http-nio-8080-exec-3 Huds
 \#vim /usr/local/tomcat/conf/context.xml
 
 ```xml
-   <Context>
+<Context>
 
-    <!-- Default set of monitored resources. If one of these changes, the    -->
-    <!-- web application will be reloaded.                                   -->
-    <WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
-    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
-    <Resources
-        cachingAllowed="true"
-        cacheMaxSize="100000"
-    />
+<!-- Default set of monitored resources. If one of these changes, the    -->
+<!-- web application will be reloaded.                                   -->
+<WatchedResource>WEB-INF/web.xml</WatchedResource>
+<WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+<WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+<Resources
+    cachingAllowed="true"
+    cacheMaxSize="100000"
+/>
 </Context>
 
 ```
