@@ -2,69 +2,71 @@
 
 ## book.itrusts.top.conf
 
-    server {
-        listen 80;
-       listen 443 ssl http2;
-        server_name book.itools.top book.itrusts.top book.todesk.top 42.192.117.251;
-        index index.php index.html index.htm default.php default.htm default.html;
-        root /www/wwwroot/book.itools.top;
-    
-        #SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
-        #error_page 404/404.html;
-        ssl_certificate    /www/server/panel/vhost/cert/book.itools.top/fullchain.pem;
-        ssl_certificate_key    /www/server/panel/vhost/cert/book.itools.top/privkey.pem;
-        ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-        ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
-        ssl_prefer_server_ciphers on;
-        ssl_session_cache shared:SSL:10m;
-        ssl_session_timeout 10m;
-        add_header Strict-Transport-Security "max-age=31536000";
-        error_page 497  https://$host$request_uri;
-    
-        #SSL-END
-       #Directory protection rules, do not manually delete
-       include /www/server/panel/vhost/nginx/dir_auth/book.itools.top/*.conf;
-    
-        #ERROR-PAGE-START  错误页配置，可以注释、删除或修改
-        #error_page 404 /404.html;
-        #error_page 502 /502.html;
-        #ERROR-PAGE-END
-    
-        #PHP-INFO-START  PHP引用配置，可以注释或修改
-        include enable-php-00.conf;
-        #PHP-INFO-END
-    
-        #REWRITE-START URL重写规则引用,修改后将导致面板设置的伪静态规则失效
-        include /www/server/panel/vhost/rewrite/book.itools.top.conf;
-        #REWRITE-END
-    
-        #禁止访问的文件或目录
-        location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
-        {
-            return 404;
-        }
-    
-        #一键申请SSL证书验证目录相关设置
-        location ~ \.well-known{
-            allow all;
-        }
-    
-        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-        {
-            expires      30d;
-            error_log /dev/null;
-            access_log /dev/null;
-        }
-    
-        location ~ .*\.(js|css)?$
-        {
-            expires      12h;
-            error_log /dev/null;
-            access_log /dev/null;
-        }
-        access_log  /www/wwwlogs/book.itools.top.log;
-        error_log  /www/wwwlogs/book.itools.top.error.log;
+```nginx
+server {
+    listen 80;
+   listen 443 ssl http2;
+    server_name book.itools.top book.itrusts.top book.todesk.top 42.192.117.251;
+    index index.php index.html index.htm default.php default.htm default.html;
+    root /www/wwwroot/book.itools.top;
+
+    #SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
+    #error_page 404/404.html;
+    ssl_certificate    /www/server/panel/vhost/cert/book.itools.top/fullchain.pem;
+    ssl_certificate_key    /www/server/panel/vhost/cert/book.itools.top/privkey.pem;
+    ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
+    ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+    ssl_prefer_server_ciphers on;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+    add_header Strict-Transport-Security "max-age=31536000";
+    error_page 497  https://$host$request_uri;
+
+    #SSL-END
+   #Directory protection rules, do not manually delete
+   include /www/server/panel/vhost/nginx/dir_auth/book.itools.top/*.conf;
+
+    #ERROR-PAGE-START  错误页配置，可以注释、删除或修改
+    #error_page 404 /404.html;
+    #error_page 502 /502.html;
+    #ERROR-PAGE-END
+
+    #PHP-INFO-START  PHP引用配置，可以注释或修改
+    include enable-php-00.conf;
+    #PHP-INFO-END
+
+    #REWRITE-START URL重写规则引用,修改后将导致面板设置的伪静态规则失效
+    include /www/server/panel/vhost/rewrite/book.itools.top.conf;
+    #REWRITE-END
+
+    #禁止访问的文件或目录
+    location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
+    {
+        return 404;
     }
+
+    #一键申请SSL证书验证目录相关设置
+    location ~ \.well-known{
+        allow all;
+    }
+
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+    {
+        expires      30d;
+        error_log /dev/null;
+        access_log /dev/null;
+    }
+
+    location ~ .*\.(js|css)?$
+    {
+        expires      12h;
+        error_log /dev/null;
+        access_log /dev/null;
+    }
+    access_log  /www/wwwlogs/book.itools.top.log;
+    error_log  /www/wwwlogs/book.itools.top.error.log;
+}
+```
 
 # 实例
 
@@ -72,7 +74,7 @@
 
 ## log-html.conf
 
-```
+```nginx
 location ~* ^/log.html* {
     #AUTH_START
     auth_basic "Authorization";
@@ -90,7 +92,7 @@ test:teH0wLIpW0gyQ
 
 ## root_admin.conf
 
-```bash
+```nginx
 location ~* ^/* {
     #AUTH_START
     auth_basic "Authorization";
@@ -174,7 +176,7 @@ stream {
 
 ## Nginx限速
 
-```c
+```nginx
 http {
     limit_conn_zone $binary_remote_addr zone=addr:10m; # 根据来源地址生产容器
     limit_req_zone $binary_remote_addr zone=baism:10m rate=1r/s; # 现在连接速率 
@@ -454,7 +456,7 @@ server {
 
 **报错**
 
-```nginx
+```text
 socket() failed (24: Too many open files) while connecting to upstream
 ```
 
@@ -636,7 +638,7 @@ http {
 
 配置[nginx](https://so.csdn.net/so/search?q=nginx&spm=1001.2101.3001.7020)配置文件default.conf ，使用nginx内置变量 $host 和$request即可获得url数据
 
-```c
+```nginx
 log_format main escape=json  '{'
                                 '"host": "$host",'
                                 '"request": "$request"'
@@ -652,7 +654,7 @@ access_log  /var/log/nginx/access.log  main;
 
 修改后配置文件如下：
 
-```c
+```nginx
 log_format main escape=json  '{'
                                 '"host": "$host",'
                                 '"request": "$request",'
@@ -681,7 +683,7 @@ server {
 
 完整配置如下
 
-```c
+```nginx
 log_format main escape=json  '{'
                                 '"host": "$host",'
                                 '"request": "$request",'
@@ -719,7 +721,7 @@ server {
 
 ## Nginx实现记录mine.qubic.li的所有请求信息
 
-```c
+```nginx
 
 #user  nobody;
 worker_processes  auto;
