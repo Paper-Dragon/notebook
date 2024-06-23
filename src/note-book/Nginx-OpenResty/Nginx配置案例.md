@@ -1,84 +1,18 @@
 # Nginx配置案例
 
-## book.itrusts.top.conf
 
-```nginx
-server {
-    listen 80;
-   listen 443 ssl http2;
-    server_name book.itools.top book.itrusts.top book.todesk.top 42.192.117.251;
-    index index.php index.html index.htm default.php default.htm default.html;
-    root /www/wwwroot/book.itools.top;
-
-    #SSL-START SSL相关配置，请勿删除或修改下一行带注释的404规则
-    #error_page 404/404.html;
-    ssl_certificate    /www/server/panel/vhost/cert/book.itools.top/fullchain.pem;
-    ssl_certificate_key    /www/server/panel/vhost/cert/book.itools.top/privkey.pem;
-    ssl_protocols TLSv1.1 TLSv1.2 TLSv1.3;
-    ssl_ciphers EECDH+CHACHA20:EECDH+CHACHA20-draft:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
-    ssl_prefer_server_ciphers on;
-    ssl_session_cache shared:SSL:10m;
-    ssl_session_timeout 10m;
-    add_header Strict-Transport-Security "max-age=31536000";
-    error_page 497  https://$host$request_uri;
-
-    #SSL-END
-   #Directory protection rules, do not manually delete
-   include /www/server/panel/vhost/nginx/dir_auth/book.itools.top/*.conf;
-
-    #ERROR-PAGE-START  错误页配置，可以注释、删除或修改
-    #error_page 404 /404.html;
-    #error_page 502 /502.html;
-    #ERROR-PAGE-END
-
-    #PHP-INFO-START  PHP引用配置，可以注释或修改
-    include enable-php-00.conf;
-    #PHP-INFO-END
-
-    #REWRITE-START URL重写规则引用,修改后将导致面板设置的伪静态规则失效
-    include /www/server/panel/vhost/rewrite/book.itools.top.conf;
-    #REWRITE-END
-
-    #禁止访问的文件或目录
-    location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
-    {
-        return 404;
-    }
-
-    #一键申请SSL证书验证目录相关设置
-    location ~ \.well-known{
-        allow all;
-    }
-
-    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-    {
-        expires      30d;
-        error_log /dev/null;
-        access_log /dev/null;
-    }
-
-    location ~ .*\.(js|css)?$
-    {
-        expires      12h;
-        error_log /dev/null;
-        access_log /dev/null;
-    }
-    access_log  /www/wwwlogs/book.itools.top.log;
-    error_log  /www/wwwlogs/book.itools.top.error.log;
-}
-```
 
 # 实例
 
-## 配置密码
+## 配置网站密码
 
-## log-html.conf
+### log-html.conf
 
 ```nginx
 location ~* ^/log.html* {
     #AUTH_START
     auth_basic "Authorization";
-    auth_basic_user_file /www/server/pass/book.itools.top/log-html.pass;
+    auth_basic_user_file /www/server/pass/www.geekery.cn/log-html.pass;
     include enable-php-00.conf;
     #AUTH_END
 }
@@ -90,13 +24,13 @@ log-html.pass
 test:teH0wLIpW0gyQ
 ```
 
-## root_admin.conf
+### root_admin.conf
 
 ```nginx
 location ~* ^/* {
     #AUTH_START
     auth_basic "Authorization";
-    auth_basic_user_file /www/server/pass/book.itools.top/rootadmin.pass;
+    auth_basic_user_file /www/server/pass/www.geekery.cn/rootadmin.pass;
     include enable-php-00.conf;
     #AUTH_END
 }
@@ -174,7 +108,7 @@ stream {
 }
 ```
 
-## Nginx限速
+## Nginx网络限速
 
 ```nginx
 http {
@@ -367,7 +301,7 @@ http {
 
 ```
 
-## nginx实现缓存服务器
+## Nginx实现缓存服务器
 
 ```nginx
 

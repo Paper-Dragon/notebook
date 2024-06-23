@@ -4,7 +4,7 @@
 
 ## 配置
 
-```bash
+```nginx
 #user  nobody;
 worker_processes  1;
 #error_log  logs/error.log;
@@ -32,7 +32,8 @@ server {
         #charset koi8-r;
         #access_log  logs/host.access.log  main;
         location / {
-             proxy_pass https://$host$request_uri;     #设定http代理服务器的协议和地址
+             # http_host 显示端口 host不显示端口
+             proxy_pass https://$http_host$request_uri;     #设定http代理服务器的协议和地址
              proxy_set_header HOST $host;
              proxy_buffers 256 4k;
              proxy_max_temp_file_size 0k;
@@ -58,7 +59,8 @@ server {
        proxy_connect;
        proxy_connect_allow            443 563;
        location / {
-             proxy_pass https://$host$request_uri;     #设定https代理服务器的协议和地址
+             # http_host 显示端口 host不显示端口
+             proxy_pass https://$http_host$request_uri;     #设定https代理服务器的协议和地址
              proxy_set_header HOST $host;
              proxy_buffers 256 4k;
              proxy_max_temp_file_size 0k;
