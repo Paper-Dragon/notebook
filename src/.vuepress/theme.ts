@@ -35,11 +35,11 @@ export default hopeTheme({
   copyright: "copyleft 2023-至今 PaperDragon",
   displayFooter: true,
 
-  // encrypt: {
-  //   config: {
-  //     "/notebook/": ["1234"],
-  //   },
-  // },
+  encrypt: {
+    config: {
+      "/note-book/Security/": ["paperdragon666"],
+    },
+  },
 
   blog: {
     timeline: "红了樱桃，绿了芭蕉"
