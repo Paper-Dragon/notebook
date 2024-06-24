@@ -2,7 +2,7 @@ import { defineUserConfig } from "vuepress";
 import theme from "./theme.js";
 import { viteBundler } from '@vuepress/bundler-vite'
 import { path } from "vuepress/utils";
-import copyjs from "./copypdf.js";
+import copyplus from "./copyplus.js";
 
 export default defineUserConfig({
   base: "/",
@@ -15,7 +15,7 @@ export default defineUserConfig({
   theme,
 
   plugins: [
-    copyjs
+    copyplus
   ],
 
   // 修改页面模板，https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/theme/templates/index.build.html

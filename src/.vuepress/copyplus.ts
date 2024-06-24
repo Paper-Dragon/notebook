@@ -6,10 +6,10 @@ import { App } from "vuepress";
 let jsWatcher: FSWatcher;
 
 export default {
-  name: "vuepress-plugin-copypdf",
+  name: "vuepress-plugin-copy-plus",
   
   onPrepared: (app: App) => {
-    jsWatcher = watch(path.join(app.dir.source(), "/**/*.pdf"), {
+    jsWatcher = watch(path.join(app.dir.source(), "/**/*.{pdf,zip,rar,tar,gz,bz2,tgz,7z,txt,py,c,cpp,h,hpp}"), {
       ignored: /(^|[\/\\])\../,
     });
 
