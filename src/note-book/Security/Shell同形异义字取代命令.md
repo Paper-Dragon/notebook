@@ -28,7 +28,13 @@ chmod 493 "$o"
 
 ## 字符相似度测试脚本
 
-右键下载 [unicode](./ssss)
+右键下载 [shell-character-check.sh](./Shell同形异义字取代命令.assets/shell-character-check.sh)
+
+> 检验网站 [https://www.rapidtables.org/zh-CN/code/text/unicode-characters.html](https://www.rapidtables.org/zh-CN/code/text/unicode-characters.html)
+
+
+
+
 
 备注：本脚本由AI生成，或许可能有错误，仅提供参考，核对后使用。
 
