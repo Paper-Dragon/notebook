@@ -9,7 +9,7 @@ export default {
   name: "vuepress-plugin-copy-plus",
   
   onPrepared: (app: App) => {
-    jsWatcher = watch(path.join(app.dir.source(), "/**/*.{pdf,zip,rar,tar,gz,bz2,tgz,7z,txt,py,c,cpp,h,hpp}"), {
+    jsWatcher = watch(path.join(app.dir.source(), "/**/*.{pdf,zip,rar,tar,gz,bz2,tgz,7z,txt,py,c,cpp,h,hpp,sh}"), {
       ignored: /(^|[\/\\])\../,
     });
 
