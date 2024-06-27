@@ -5,9 +5,9 @@ import sidebar from "./sidebar.js";
 
 export default hopeTheme({
   hostname: "https://paper-dragon.github.io",
-  
+
   fullscreen: true,
-  
+
   author: {
     name: "PaperDragon",
     url: "https://github.com/Paper-Dragon",
@@ -23,6 +23,10 @@ export default hopeTheme({
   docsDir: "src",
 
   docsBranch: "main",
+
+  darkmode: "disable",
+
+  print: true,
 
   // navbar
   navbar,
@@ -70,7 +74,7 @@ export default hopeTheme({
       commentSorting: "latest",
       // 评论者相关属性。可选值: 'nick', 'mail', 'link',
       // 默认值: ['nick', 'mail', 'link']
-      meta:  ['nick', 'mail', 'link'],
+      meta: ['nick', 'mail', 'link'],
       // 设置必填项，默认匿名，可选值:
       requiredMeta: ['nick', 'mail'],
     },
@@ -129,12 +133,12 @@ export default hopeTheme({
 
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
-       // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
+      // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
       align: false,
       // 是否启用自定义属性支持
       attrs: false,
       // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
-      chart: false,    
+      chart: false,
       codetabs: true,
       demo: true,
       echarts: true,
