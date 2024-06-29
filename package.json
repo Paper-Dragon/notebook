@@ -21,7 +21,7 @@
     "echarts-wordcloud": "^2.1.0",
     "fs-extra": "^11.2.0",
     "mermaid": "^10.9.1",
-    "vite": "5.3.1",
+    "vite": "5.3.2",
     "vue": "^3.4.31",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-md-enhance": "2.0.0-rc.50",
