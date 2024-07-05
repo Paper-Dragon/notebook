@@ -83,7 +83,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           run_install: true
-          version: 8
+          version: 9
 
       - uses: actions/setup-python@v4
         with:
@@ -122,13 +122,13 @@ jobs:
           pnpm run docs:build
           > src/.vuepress/dist/.nojekyll
 
-      - name: 上传构建产物
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: geekery_cn-artifacts-html
-          path: src/.vuepress/dist/
-          # 产物保留时间
-          retention-days: 3
+      # - name: 上传构建产物
+      #   uses: actions/upload-artifact@v3.1.2
+      #   with:
+      #     name: geekery_cn-artifacts-html
+      #     path: src/.vuepress/dist/
+      #     # 产物保留时间
+      #     retention-days: 3
           
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
@@ -157,17 +157,17 @@ jobs:
           tags: ${{ vars.DOCKERHUB_USERNAME }}/notebook:${{ env.TAG }}
           
 
-  run-docker-on-hosted:
-    runs-on: self-hosted
-    needs: build-geekery_cn
-    timeout-minutes: 600
-    steps:
-      - name: 执行docker命令
-        continue-on-error: true
-        run: |
-          docker pull ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
-          docker rm -f ${{ vars.DOCKERHUB_USERNAME }}-notebook
-          docker run -it -d -p 32770:80 --restart=always --name=${{ vars.DOCKERHUB_USERNAME }}-notebook ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
+  # run-docker-on-hosted:
+  #   runs-on: self-hosted
+  #   needs: build-geekery_cn
+  #   timeout-minutes: 600
+  #   steps:
+  #     - name: 执行docker命令
+  #       continue-on-error: true
+  #       run: |
+  #         docker pull ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
+  #         docker rm -f ${{ vars.DOCKERHUB_USERNAME }}-notebook
+  #         docker run -it -d -p 32770:80 --restart=always --name=${{ vars.DOCKERHUB_USERNAME }}-notebook ${{ vars.DOCKERHUB_USERNAME }}/notebook:geekery_cn-${GITHUB_SHA::10}
 
 
 
@@ -186,7 +186,7 @@ jobs:
         uses: pnpm/action-setup@v2
         with:
           run_install: true
-          version: 8
+          version: 9
 
       - uses: actions/setup-python@v4
         with:
@@ -213,13 +213,13 @@ jobs:
           pnpm run docs:build
           > src/.vuepress/dist/.nojekyll
 
-      - name: 上传构建产物
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: artifacts-html
-          path: src/.vuepress/dist/
-          # 产物保留时间
-          retention-days: 3
+      # - name: 上传构建产物
+      #   uses: actions/upload-artifact@v3.1.2
+      #   with:
+      #     name: artifacts-html
+      #     path: src/.vuepress/dist/
+      #     # 产物保留时间
+      #     retention-days: 3
           
       - name: 部署文档
         uses: JamesIves/github-pages-deploy-action@v4
