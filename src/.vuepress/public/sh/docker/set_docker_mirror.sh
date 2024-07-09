@@ -38,6 +38,7 @@ judge() {
 }
 
 MIRRORS=(https://hub.geekery.cn https://ghcr.geekery.cn)
+DAEMON_JSON_PATH="/etc/docker/daemon.json"
 
 install_jq() {
     if command -v jq &> /dev/null; then
