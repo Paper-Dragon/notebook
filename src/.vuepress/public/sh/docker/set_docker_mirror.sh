@@ -76,7 +76,7 @@ check_docker_installed() {
 
 configure_daemon_json() {
     if [ ! -f "$DAEMON_JSON_PATH" ]; then
-        echo -e "${Warhing} 没找到 ${DAEMON_JSON_PATH} 创建中..."
+        echo -e "${Warning} 没找到 ${DAEMON_JSON_PATH} 创建中..."
         mkdir -p /etc/docker/
         echo '{}' > "$DAEMON_JSON_PATH"
         judge "创建 ${DAEMON_JSON_PATH}"
