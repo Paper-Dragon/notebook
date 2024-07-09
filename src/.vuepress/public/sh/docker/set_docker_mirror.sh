@@ -37,6 +37,7 @@ judge() {
     fi
 }
 
+MIRRORS=(https://hub.geekery.cn https://ghcr.geekery.cn)
 
 install_jq() {
     if command -v jq &> /dev/null; then
@@ -75,7 +76,10 @@ check_docker_installed() {
 
 configure_daemon_json() {
     if [ ! -f "$DAEMON_JSON_PATH" ]; then
+        echo -e "${Warhing} 没找到 ${DAEMON_JSON_PATH} 创建中..."
+        mkdir -p /etc/docker/
         echo '{}' > "$DAEMON_JSON_PATH"
+        judge "创建 ${DAEMON_JSON_PATH}"
     fi
     
     for MIRROR in "${MIRRORS[@]}"; do
