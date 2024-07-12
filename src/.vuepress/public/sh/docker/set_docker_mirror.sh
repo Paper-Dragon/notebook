@@ -30,9 +30,9 @@ Docker 镜像源配置助手,作者 2678885646@qq.com
 
 judge() {
     if [[ 0 -eq $? ]]; then
-        echo -e "${OK} ${GreenBG} $1 ${Font}"
+        echo -e "${OK} ${GreenBG} $1 完成${Font}"
     else
-        echo -e "${Error} ${RedBG} $2 失败${Font}"
+        echo -e "${Error} ${RedBG} $1 失败${Font}"
         exit 1
     fi
 }
