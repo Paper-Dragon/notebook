@@ -267,10 +267,10 @@ highlights:
 
 footer: |-
   <div style="display: block;text-align:left;">
-    <a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank" style="color:inherit;text-decoration:none;white-space:nowrap;">
+    <!-- <a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank" style="color:inherit;text-decoration:none;white-space:nowrap;">
       <img src="http://www.beian.gov.cn/img/ghs.png" alt="" style="width:1rem;vertical-align:middle;"> 鲁ICP备2023019857号-2
     </a>
-    /
+    / -->
     <a target="_blank" rel="noopener" href="https://github.com/Paper-Dragon/paper-dragon.github.io/deployments/github-pages">
       <img src="https://img.shields.io/badge/Github-Pages-76B900.svg?logo=github&logoColor=white" style="width:auto;height:19px;vertical-align:middle;">
     </a>

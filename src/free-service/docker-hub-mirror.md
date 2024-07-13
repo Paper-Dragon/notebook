@@ -10,19 +10,22 @@ breadcrumb: false
 
 
 ## Linux
-在Linux系统中，运行以下命令来配置镜像加速服务：
+运行以下命令来配置镜像加速服务：
 
 ```bash
 curl -sSL https://www.geekery.cn/sh/docker/set_docker_mirror.sh | bash
 ```
 
-或者
+或者使用下面的命令进行配置
 
 ```bash
 #!/bin/sh
 cat <<-EOF > /etc/docker/daemon.json 
 {
-  "registry-mirrors": ["https://hub.geekery.cn/"]
+  "registry-mirrors": [
+  	"https://hub.geekery.cn/",
+  	"https://ghcr.geekery.cn"
+  	]
 }
 EOF
 systemctl daemon-reload
@@ -43,6 +46,7 @@ systemctl restart docker
 
 ```json
 https://hub.geekery.cn/
+https://ghcr.geekery.cn/
 ```
 
 点击Apply & Restart按钮使设置生效。
@@ -61,6 +65,7 @@ Windows系统上的Docker For Windows用户可以按照以下步骤配置镜像�
 
   ```json
   https://hub.geekery.cn/
+  https://ghcr.geekery.cn/
   ```
 
 - 点击Apply，重新生成Docker环境以使配置生效。
@@ -77,6 +82,8 @@ Windows系统上的Docker For Windows用户可以按照以下步骤配置镜像�
 curl -sSL get-docker.geekery.cn | bash
 ```
 
-为了防止脚本卡住，于是我做了完整的镜像，包括安装包仓库。
+为了防止脚本卡住，于是我做了完整的镜像，包括脚本内的安装包仓库。
 
-这个脚本会直接设置 [https://download-docker.geekery.cn](https://download-docker.geekery.cn) 为系统源的镜像加速。替换掉原有的 [https://download.docker.com](https://download.docker.com) 域名。
+这个脚本会直接设置 [https://download-docker.geekery.cn](https://download-docker.geekery.cn) 为系统源的镜像加速。
+
+然后替换掉原有的 [https://download.docker.com](https://download.docker.com) 域名。
