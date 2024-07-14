@@ -41,35 +41,25 @@ title: Cloudflare Warp 团队服务
 
 点击连接，就可以享受快速安全 【** 网络】了。
 
-## 其他
+## 免费 Cloudflare Plus key
 
-共享wg.config
 
-```bash
-[Interface]
-PrivateKey = mPTd45aIz6bw9SSHMtgxs3tjcTywPynLYEv4qQ4lL3s=
-Address = 172.16.0.2/32, 2606:4700:110:8f83:8307:9d28:f35a:db55/128
-DNS = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1111, 2606:4700:4700::1001
-MTU = 1280
-[Peer]
-PublicKey = bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-AllowedIPs = 0.0.0.0/0
-AllowedIPs = ::/0
-Endpoint = engage.cloudflareclient.com:2408
-```
-
-共享key
 
 ```bash
-🔐 Key: Y9U8f53G-0C8Z9d1j-C37hg8c9 (剩余24598562 GB)
+🔐 Key: J9VIq346-D71r46Jf-M30C5x2d (1923837100 GB)
+
+🔐 密钥：A2cJ467T-6n0uzU18-07Dwf6o5 (1923837100 GB)
+🔐 密钥：2K4Lb0p3-92PuLd47-BH6Yd184 (1923837100 GB)
+🔐 密钥：nc950IH4-62IxSF95-5o9H01Af (1923837100 GB)
+🔐 密钥：y13g68Os-0YU8d14G-9J3WUA16 (1923837100 GB)
+🔐 密钥：J57nCz81-dH0743Ou-4r7Z9N5M (1923837100 GB)
+🔐 密钥：d9Hy104X-70j9h5pr-kU1g260X (1923837100 GB)
+🔐 密钥：0428hTFz-5s748xBr-t9esR431 (1923837100 GB)
+🔐 密钥：HTk43z51-78G2t3Nk-2lK9H13Q (1923837100 GB)
+🔐 密钥：e06Vch28-1830MLpA-9GZ2z53B (1923837100 GB)
+🔐 密钥：7568KIYE-1kB957CE-32UdS50C (1923837100 GB)
+
 ```
 
 
 
-#### 注意事项： 如果你在评论区评论了超过2天并没有得到回答或者没得到理想回答
-
-#### 联系:
-
-Q: 2678885646
-
-E-mail: 2678885646@qq.com
