@@ -221,3 +221,4 @@ Default user accounts are:
 
 ## 安装成功
 
+![image-20240715154812923](./Glpi-开源的IT资源管理平台部署.assets/image-20240715154812923.png)
