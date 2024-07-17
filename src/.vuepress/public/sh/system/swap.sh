@@ -83,14 +83,14 @@ del_swap() {
         judge "从 /etc/fstab 移除 swapfile"
         
         swapoff /swapfile
-        judge "关闭 swapfile" "关闭 swapfile"
+        judge "关闭 swapfile"
         
         rm -f /swapfile
-        judge "删除 swapfile" "删除 swapfile"
+        judge "删除 swapfile"
         
         echo -e "${OK} swap 删除成功！${Font}"
     else
-        judge "未检测到 swapfile，无法删除 swap！" "检测 swapfile"
+        echo -e "${Error}未检测到 swapfile，无法删除 swap！${Front}"
     fi
 }
 
@@ -113,7 +113,6 @@ main() {
             del_swap
             ;;
         *)
-            clear
             echo -e "${Warning} 请输入正确的数字 [1-2]${Font}"
             sleep 2s
             main
