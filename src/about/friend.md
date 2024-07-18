@@ -8,7 +8,7 @@ sidebar: false
 
 ```yaml
 title="运维开发绿皮书"
-desc="放置我的笔记、搜集、摘录、实践，保持好奇心。看文需谨慎，后果很严重!"
+desc="放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！"
 logo="https://www.geekery.cn/logo.svg"
 link="https://www.geekery.cn/"
 background="rgba(253, 230, 138, 0.15)"

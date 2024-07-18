@@ -83,7 +83,6 @@ export default hopeTheme({
       // 你想使用的组件
       components: [
         // "ArtPlayer",
-        // "AudioPlayer",
         // "Badge",
         // "BiliBili",
         // "CodePen",
@@ -93,10 +92,8 @@ export default hopeTheme({
         "SiteInfo",
         // "StackBlitz",
         "VPCard",
-        // "VidStack",
-        // "VideoPlayer",
+        "VidStack",
         // "XiGua",
-        // "YouTube",
       ],
     },
     feed: false,
