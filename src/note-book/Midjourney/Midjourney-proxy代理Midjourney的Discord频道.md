@@ -6,7 +6,9 @@
 >
 > 找到一个文档版本在部署免得时间上的浪费。
 >
-> 已测试 v2.3.0 为不稳定版本，存在进度卡住的问题。
+> 已测试 [v2.3.0](https://github.com/trueai-org/midjourney-proxy/releases/tag/v2.3.0) 为不稳定版本，存在进度卡住的问题。
+>
+> [https://github.com/trueai-org/midjourney-proxy](https://github.com/trueai-org/midjourney-proxy)
 
 ## 主要功能
 
