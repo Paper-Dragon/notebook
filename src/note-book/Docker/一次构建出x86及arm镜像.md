@@ -25,7 +25,7 @@
 ### 安装Docker
 
 ```bash
-curl -sSL get.docker.com | bash
+curl -sSL get-docker.geekery.cn | bash
 ```
 
 ### 安装CPU指令集模拟平台
@@ -54,6 +54,21 @@ binfmt-support: 解析不同系统的二进制文件给内核运行，再将执�
 ![image-20230220094104848](一次构建出x86及arm镜像.assets/image-20230220094104848.png)
 
 
+
+## 在x86上交叉编译ARM版本的开发环境构建
+
+> 要注意必须使用正确的底包镜像
+>
+> - arm32v7/ubuntu:22.04
+> - arm64v8/ubuntu:16.04 
+
+```bash
+# 64位的：
+docker run -it --rm -v /usr/bin/qemu-aarch64-static:/usr/bin/qemu-aarch64-static arm64v8/ubuntu:16.04 bash
+
+# 32位的：
+docker run -it --rm -v /usr/bin/qemu-arm-static:/usr/bin/qemu-arm-static arm32v7/ubuntu:22.04 bash
+```
 
 
 
