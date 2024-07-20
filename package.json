@@ -14,7 +14,7 @@
   "devDependencies": {
     "@vue/repl": "^4.3.1",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
-    "@vuepress/plugin-redirect": "2.0.0-rc.38",
+    "@vuepress/plugin-redirect": "2.0.0-rc.39",
     "@waline/client": "^3.3.0",
     "chokidar": "^3.6.0",
     "dashjs": "^4.7.4",
@@ -27,8 +27,8 @@
     "vite": "5.3.3",
     "vue": "^3.4.33",
     "vuepress": "2.0.0-rc.14",
-    "vuepress-plugin-md-enhance": "2.0.0-rc.51",
-    "vuepress-plugin-search-pro": "2.0.0-rc.51",
-    "vuepress-theme-hope": "2.0.0-rc.51"
+    "vuepress-plugin-md-enhance": "2.0.0-rc.52",
+    "vuepress-plugin-search-pro": "2.0.0-rc.52",
+    "vuepress-theme-hope": "2.0.0-rc.52"
   }
 }
