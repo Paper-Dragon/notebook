@@ -4,7 +4,7 @@
 
 ## 消息队列/中间件
 
-![image-20211120102031495](rabbitmq.assets\image-20211120102031495.png)
+![image-20211120102031495](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120102031495.png)
 
 ## RabbitMQ详解
 
@@ -32,25 +32,25 @@
 
 ### AMQP
 
-![image-20211120103710289](rabbitmq.assets\image-20211120103710289.png)
+![image-20211120103710289](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120103710289.png)
 
 
 
 ### 应用场景
 
-![image-20211120103801764](rabbitmq.assets\image-20211120103801764.png)
+![image-20211120103801764](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120103801764.png)
 
 ### 同类产品
 
-![image-20211120103405952](rabbitmq.assets\image-20211120103405952.png)
+![image-20211120103405952](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120103405952.png)
 
-![image-20211120103340249](rabbitmq.assets\image-20211120103340249.png)
+![image-20211120103340249](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120103340249.png)
 
-![image-20211120103610159](rabbitmq.assets\image-20211120103610159.png)
+![image-20211120103610159](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120103610159.png)
 
 ### 架构
 
-![image-20211120104154618](rabbitmq.assets\image-20211120104154618.png)
+![image-20211120104154618](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120104154618.png)
 
 ### 常用术语
 
@@ -241,7 +241,7 @@ Applying plugin configuration to rabbit@log1... started 6 plugins.
 
 {loopback_users, []} 删除前面的注释%%，同时注意后面的逗号，只有一个配置项的时候，请删除后面的逗号。
 
-![img](rabbitmq.assets\1132141-20170716161340457-1049750179.png)
+![img](大型网站高并发架构-RabbitMQ消息队列.assets\1132141-20170716161340457-1049750179.png)
 
 **以上7步在log2主机上都要执行**
 
@@ -273,7 +273,7 @@ rabbitmq-server.
 
 浏览器输入URL：http://ip/15672
 
-![image-20211120195905026](rabbitmq.assets\image-20211120195905026.png)
+![image-20211120195905026](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120195905026.png)
 
 
 
@@ -281,7 +281,7 @@ rabbitmq-server.
 
 Rabbitmq的集群是依赖于erlang的集群来工作的，所以必须先构建起erlang的集群环境。Erlang的集群中各节点是通过一个magic cookie来实现的，这个cookie存放在  /var/lib/rabbitmq/.erlang.cookie  中，文件是400的权限。所以必须保证各节点cookie保持一致，否则节点之间就无法通信。
 
-![img](rabbitmq.assets\1132141-20170716161835644-1187328631.png)
+![img](大型网站高并发架构-RabbitMQ消息队列.assets\1132141-20170716161835644-1187328631.png)
 
 将其中一台节点上的.erlang.cookie值复制下来保存到其他节点上。或者使用scp的方法也可，但是要注意文件的权限和属主属组。我这里将log1中的cookie 复制到log2中。
 
@@ -395,7 +395,7 @@ Cluster status of node rabbit@rabbitmq3 ...
 
 这样RabbitMQ集群就正常工作了。可以访问任意一个web管控台：http://ip/15672
 
-![img](rabbitmq.assets\1132141-20170716162446660-215618095.png)
+![img](大型网站高并发架构-RabbitMQ消息队列.assets\1132141-20170716162446660-215618095.png)
 
 
 
@@ -466,7 +466,7 @@ rabbitmqctl set_policy  [-p  vhostpath ] { name } { pattern } { definition } [ p
 
 这行命令创建了一个策略，策略名称为ha-all,策略模式为 all ，即复制到所有节点，包含新增节点，策略正则表达式为 “^” 表示所有匹配所有队列名称。
 
-![image-20211120213908198](rabbitmq.assets\image-20211120213908198.png)
+![image-20211120213908198](大型网站高并发架构-RabbitMQ消息队列.assets\image-20211120213908198.png)
 
 **5. 集群退出**
 
