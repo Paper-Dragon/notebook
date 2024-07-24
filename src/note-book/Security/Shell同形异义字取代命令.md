@@ -31,6 +31,8 @@ chmod 493 "$o"
 右键下载 [shell-character-check.sh](./Shell同形异义字取代命令.assets/shell-character-check.sh)
 
 > 检验网站 [https://www.rapidtables.org/zh-CN/code/text/unicode-characters.html](https://www.rapidtables.org/zh-CN/code/text/unicode-characters.html)
+>
+> Unicode 符号表 [https://symbl.cc/cn/unicode-table/](https://symbl.cc/cn/unicode-table/)
 
 
 
@@ -81,6 +83,7 @@ chmod 493 "$o"
 | n    | ո          | \u0578       | 亚美尼亚字母  |
 | n    | ŋ          | \u014b       | 拉丁字母      |
 | o    | о          | \u043e       | 西里尔字母    |
+| o    | օ          | \u0585       | 亚美尼亚字母  |
 | o    | ο          | \u03bf       | 希腊字母      |
 | p    | р          | \u0440       | 西里尔字母    |
 | p    | ρ          | \u03c1       | 希腊字母      |
