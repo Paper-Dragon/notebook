@@ -418,15 +418,15 @@ GET /v2
 可以通过一个HEAD 请求来校验一个layer是否存在。 请求格式如下：
 
 ```bash
-HEAD /v2/<name>/blobs/<digest> 
+HEAD /v2/[name]/blobs/[digest] 
 ```
 
 如果返回的状态码为200 OK ,则表示指定的layer已存在，若已存在则client 则跳过该layer的上传。由于HEAD 请求根据HTTP规范没有body,因此HEADER中带了以下信息
 
 ```bash
 200
-Content-Length: <length of blob>
-Docker-Content-Digest: <digest> 
+Content-Length: [length of blob]
+Docker-Content-Digest: [digest] 
 ```
 
 看上边burp的抓包结果
@@ -436,20 +436,20 @@ Docker-Content-Digest: <digest>
 该请求的参数是镜像命名空间，layer将在该命名空间被链接。该请求的格式是：
 
 ```bash
-POST  /v2/<name>/blobs/uploads/
+POST  /v2/[name]/blobs/uploads/
 ```
 
 如果返回202 Accepted 则表明请求成功，其HEADER携带了以下信息：
 
 ```bash
 202 Accepted
-Location: /v2/<name>/blobs/uploads/<uuid>
-Range: bytes=0-<offset>
+Location: /v2/[name]/blobs/uploads/[uuid]
+Range: bytes=0-[offset]
 Content-Length: 0
-Docker-Upload-UUID: <uuid>
+Docker-Upload-UUID: [uuid]
 ```
 
-其中Location 返回下一步镜像上传的地址,其API格式为/v2/<name>/blobs/uploads/<uuid>
+其中Location 返回下一步镜像上传的地址,其API格式为/v2/[name]/blobs/uploads/[uuid]
 如果本地客户端想和远程registry的上传状态相关联，可以使用Docker-Upload-UUID中的值。这个id可以作为上一次 location header 的key 来实现可恢复上传。
 
 ```bash

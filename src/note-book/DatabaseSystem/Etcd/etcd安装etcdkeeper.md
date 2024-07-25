@@ -74,7 +74,7 @@ WantedBy=multi-user.target
 
 [https://github.com/evildecay/etcdkeeper/issues/57](https://github.com/evildecay/etcdkeeper/issues/57)
 
-如果etcd集群开启了鉴权。(etcdctl --endpoints=<http://127.0.0.1:2379> auth enable)
+如果etcd集群开启了鉴权。(etcdctl --endpoints=[http://127.0.0.1:2379] auth enable)
 
 那么etcdkeeper启动时需要添加参数-auth true
 

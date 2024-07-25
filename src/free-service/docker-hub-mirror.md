@@ -105,16 +105,16 @@ curl -sSL get-docker.geekery.cn | bash
 
 ### 步骤 1: 登录到私有仓库
 
-首先，你需要登录到你的私有Docker仓库。在终端中运行以下命令，并替换 `<username>` 和 `<password>` 为你的用户名和密码：
+首先，你需要登录到你的私有Docker仓库。在终端中运行以下命令，并替换 `[username]` 和 `[password]` 为你的用户名和密码：
 
 ```bash
-docker login hub.geekery.cn -u <username> -p <password>
+docker login hub.geekery.cn -u [username] -p [password]
 ```
 
 如果私有仓库使用了不同的认证机制，如Token认证，你也可以使用`--password-stdin`选项来输入你的Token：
 
 ```bash
-docker login hub.geekery.cn -u <username> --password-stdin <<< "<token>"
+docker login hub.geekery.cn -u [username] --password-stdin <<< "<token>"
 ```
 
 ### 步骤 2: 拉取镜像

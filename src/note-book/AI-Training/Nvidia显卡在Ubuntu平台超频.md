@@ -95,7 +95,7 @@ nvidia-smi -i 0 -ac 3003,1531
 
 ```bash
 -ac, --applications-clocks=MEM_CLOCK,GRAPHICS_CLOCK
-将最大<内存、图形>时钟指定为一对（例如 2000,800）
+将最大[内存、图形]时钟指定为一对（例如 2000,800）
 它定义了在 GPU 上运行应用程序时 GPU™的速度。为
 来自 Kepler+ 系列的 Tesla 设备和基于 Maxwell 的 GeForce Titan。
 需要 root，除非使用 -acp 命令放宽了限制。

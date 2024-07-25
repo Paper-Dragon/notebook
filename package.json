@@ -14,7 +14,6 @@
   "devDependencies": {
     "@vue/repl": "^4.3.1",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
-    "@vuepress/plugin-redirect": "2.0.0-rc.39",
     "@waline/client": "^3.3.0",
     "chokidar": "^3.6.0",
     "dashjs": "^4.7.4",
@@ -25,7 +24,7 @@
     "mermaid": "^10.9.1",
     "vidstack": "^1.11.30",
     "vite": "5.3.4",
-    "vue": "^3.4.33",
+    "vue": "^3.4.34",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-md-enhance": "2.0.0-rc.52",
     "vuepress-plugin-search-pro": "2.0.0-rc.52",
