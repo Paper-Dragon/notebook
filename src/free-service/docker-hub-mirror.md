@@ -11,11 +11,11 @@ breadcrumb: false
 
 功能独家支持：
 
-- [支持Dockerhub账户直接登录镜像站](# 步骤 1: 登录到私有仓库)
-- [支持拉取Dockerhub的私有仓库的镜像](# Docker镜像站拉取私有账户的镜像)
-- [支持推送镜像到Dockerhub账户](# Docker通过镜像站推送镜像到Dockerhub)
-- [支持利用镜像站一键安装Docker](# 一键安装Docker)
-- [支持一键配置Docker镜像加速](# Docker配置镜像Dockerhub加速)
+- [支持Dockerhub账户直接登录镜像站](#步骤-1-登录到私有仓库)
+- [支持拉取Dockerhub的私有仓库的镜像](#docker镜像站拉取私有账户的镜像)
+- [支持推送镜像到Dockerhub账户](#docker通过镜像站推送镜像到dockerhub)
+- [支持利用镜像站一键安装Docker](#一键安装docker)
+- [支持一键配置Docker镜像加速](#Docker配置镜像dockerhub加速)
 
 ## Docker配置镜像Dockerhub加速
 
@@ -184,6 +184,18 @@ docker push hub.geekery.cn/myuser/myrepo:latest
 这将把标记过的镜像推送到你的私有仓库，然后回到dockerhub检查，镜像已经推送到dockerhub当中去了。
 
 
+
+## 你用的节点在哪里？
+
+
+
+::: info
+<div id="mobaxterm">
+    <iframe style="height:800px" src="https://cloudflare-cloudnative-pages.geekery.cn/docker"></iframe>
+</div>
+
+
+:::
 
 
 
