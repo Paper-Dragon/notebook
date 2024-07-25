@@ -1,4 +1,4 @@
-# Docker的Login和Push的接口逆向过程
+# Docker的Pull和Push接口调用流程
 
 找了很多的资料，没有人写过Docker接口逆向的教程。国家封锁了海外的Dockerhub镜像站，而且禁止国内的各大高校和企业镜像官方仓库。这下技术人员犯了难，所需要的镜像都没有了，趁手的工具都没有了，怎么去搞技术，于是乎开始有民间制作的Dockerhub镜像加速地址。这些加速地址优良参差不齐，有的速度极慢、有的要趁机收费发一笔横财、有的被滥用（白嫖过度）甚至过不了几天就要跑路。我配置在docker damon进程里的镜像加速地址换了又换，自己的实验地址这样操作是没问题的，可是业务容器不能容忍重启daemon进程，会导致整个namespace重置，业务中断，这就让人犯了难，于是乎我就根据大佬的教程搭建了一个镜像站，加速是实现了，速度也还能够满足，利用全球网络流量占比20%的CloudFlare Worker每天100,000次的免费请求进行无成本构建，满足了需求，并打通了Dockerhub的高速流量隧道。
 
@@ -397,4 +397,64 @@ Alt-Svc: h3=":443"; ma=86400
 
 ### Push过程
 
-[API文档](https://distribution.github.io/distribution/spec/api/)
+>  [API文档](https://distribution.github.io/distribution/spec/api/)
+
+
+
+####  Api 版本确认
+
+registry 服务器会通过/v2/接口根据返回的状态码来提供api的版本信息，请求格式如下
+
+```bash
+GET /v2
+```
+
+如果返回200 OK 则表明registry实现了V2接口，并且客户端可以安全的去使用其他所有的v2接口
+如果返回401 Unauthorized, 则表示客户端需要根据WWW-Authenticate header 重新请求接口。根据访问控制设置，用户即使这里通过验证，在访问不同的资源的时候可能仍需身份验证
+如果返回404 NOT FOUND ,则客户端应认为registry未实现v2接口
+
+#### 校验layer是否存在
+
+可以通过一个HEAD 请求来校验一个layer是否存在。 请求格式如下：
+
+```bash
+HEAD /v2/<name>/blobs/<digest> 
+```
+
+如果返回的状态码为200 OK ,则表示指定的layer已存在，若已存在则client 则跳过该layer的上传。由于HEAD 请求根据HTTP规范没有body,因此HEADER中带了以下信息
+
+```bash
+200
+Content-Length: <length of blob>
+Docker-Content-Digest: <digest> 
+```
+
+看上边burp的抓包结果
+
+#### 发送post请求
+
+该请求的参数是镜像命名空间，layer将在该命名空间被链接。该请求的格式是：
+
+```bash
+POST  /v2/<name>/blobs/uploads/
+```
+
+如果返回202 Accepted 则表明请求成功，其HEADER携带了以下信息：
+
+```bash
+202 Accepted
+Location: /v2/<name>/blobs/uploads/<uuid>
+Range: bytes=0-<offset>
+Content-Length: 0
+Docker-Upload-UUID: <uuid>
+```
+
+其中Location 返回下一步镜像上传的地址,其API格式为/v2/<name>/blobs/uploads/<uuid>
+如果本地客户端想和远程registry的上传状态相关联，可以使用Docker-Upload-UUID中的值。这个id可以作为上一次 location header 的key 来实现可恢复上传。
+
+```bash
+POST /v2/hello-world/blobs/uploads/ HTTP/1.1
+Host: hub.vic.com
+User-Agent: docker/17.12.0-ce go/go1.9.2 git-commit/c97c6d6 kernel/3.10.0-693.el7.x86
+```
+
