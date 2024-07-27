@@ -41,9 +41,6 @@ importers:
       vidstack:
         specifier: ^1.11.30
         version: 1.11.30
-      vite:
-        specifier: 5.3.4
-        version: 5.3.4(@types/node@20.14.12)(sass@1.77.8)
       vue:
         specifier: ^3.4.34
         version: 3.4.34
