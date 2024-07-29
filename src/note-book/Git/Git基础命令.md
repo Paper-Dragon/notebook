@@ -568,7 +568,7 @@ Git 并不像 SVN 那样有个中心服务器。
 
 本例使用了 Github 作为远程仓库，你可以先阅读我们的 [Github 简明教程](https://www.runoob.com/w3cnote/git-guide.html)
 
-![img](git基础命令.assets/Git-push-command.jpeg)
+![img](Git基础命令.assets/Git-push-command.jpeg)
 
 ### 添加远程库
 
@@ -618,17 +618,17 @@ The key's randomart image is:
 
 回到 github 上，进入 Account => Settings（账户配置）。
 
-![img](git基础命令.assets/48840BF0-992F-4CCC-A388-15CB74819D88.jpg)
+![img](Git基础命令.assets/48840BF0-992F-4CCC-A388-15CB74819D88.jpg)
 
 左边选择 **SSH and GPG keys**，然后点击 **New SSH key** 按钮,title 设置标题，可以随便填，粘贴在你电脑上生成的 key。
 
-![img](git基础命令.assets/B0589847-A498-4415-8700-252BDE1B20C0.jpg)
+![img](Git基础命令.assets/B0589847-A498-4415-8700-252BDE1B20C0.jpg)
 
-![img](git基础命令.assets/106AD534-A38A-47F3-88A3-B7BE3F2FEEF1.jpg)
+![img](Git基础命令.assets/106AD534-A38A-47F3-88A3-B7BE3F2FEEF1.jpg)
 
 添加成功后界面如下所示
 
-![img](git基础命令.assets/EC8F8872-091A-4CAB-90F2-616F34F350A9.jpg)
+![img](Git基础命令.assets/EC8F8872-091A-4CAB-90F2-616F34F350A9.jpg)
 
 为了验证是否成功，输入以下命令：
 
@@ -645,15 +645,15 @@ Hi tianqixin! You've successfully authenticated, but GitHub does not provide she
 
 之后登录后点击" New repository " 如下图所示：
 
-![img](git基础命令.assets/github1.jpg)
+![img](Git基础命令.assets/github1.jpg)
 
 之后在在Repository name 填入 runoob-git-test(远程仓库名) ，其他保持默认设置，点击"Create repository"按钮，就成功地创建了一个新的Git仓库：
 
-![img](git基础命令.assets/299CF000-7B6E-4BEC-B8C2-D9AEB053307B.jpg)
+![img](Git基础命令.assets/299CF000-7B6E-4BEC-B8C2-D9AEB053307B.jpg)
 
 创建成功后，显示如下信息：
 
-![img](git基础命令.assets/1BCB4379-1A25-4C77-BB82-92B3E7185435.jpg)
+![img](Git基础命令.assets/1BCB4379-1A25-4C77-BB82-92B3E7185435.jpg)
 
 以上信息告诉我们可以从这个仓库克隆出新的仓库，也可以把本地仓库的内容推送到GitHub仓库。
 
@@ -681,7 +681,7 @@ $ git push -u origin master
 
 接下来我们返回 Github 创建的仓库，就可以看到文件已上传到 Github上：
 
-![img](git基础命令.assets/53CA927D-F36F-4A00-AFB2-5EAED05B535E.jpg)
+![img](Git基础命令.assets/53CA927D-F36F-4A00-AFB2-5EAED05B535E.jpg)
 
 ### 查看当前的远程库
 
@@ -723,13 +723,13 @@ git merge
 
 该命令就是在执行 **git fetch** 之后紧接着执行 **git merge** 远程分支到你所在的任意分支。
 
-![img](git基础命令.assets/main-qimg-00a6b5a8ec82400657444504c4d4d1a7.png)
+![img](Git基础命令.assets/main-qimg-00a6b5a8ec82400657444504c4d4d1a7.png)
 
 假设你配置好了一个远程仓库，并且你想要提取更新的数据，你可以首先执行 **git fetch [alias]** 告诉 Git 去获取它有你没有的数据，然后你可以执行 **git merge [alias]/[branch]** 以将服务器上的任何更新（假设有人这时候推送到服务器了）合并到你的当前分支。
 
 接下来我们在 Github 上点击" README.md" 并在线修改它:
 
-![img](git基础命令.assets/C5A6670F-202D-4F2C-8A63-07CEA37BB67A.jpg)
+![img](Git基础命令.assets/C5A6670F-202D-4F2C-8A63-07CEA37BB67A.jpg)
 
 然后我们在本地更新修改。
 
@@ -785,7 +785,7 @@ $ git push origin master    # 推送到 Github
 
 重新回到我们的 Github 仓库，可以看到文件已经提交上来了：
 
-![img](git基础命令.assets/79A84530-7DC0-4D25-9F83-8776433A4C32.jpg)
+![img](Git基础命令.assets/79A84530-7DC0-4D25-9F83-8776433A4C32.jpg)
 
 ### 删除远程仓库
 
