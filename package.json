@@ -23,7 +23,7 @@
     "hls.js": "^1.5.13",
     "mermaid": "^10.9.1",
     "vidstack": "^1.11.30",
-    "vue": "^3.4.34",
+    "vue": "^3.4.35",
     "vuepress": "2.0.0-rc.14",
     "vuepress-plugin-md-enhance": "2.0.0-rc.52",
     "vuepress-plugin-search-pro": "2.0.0-rc.52",

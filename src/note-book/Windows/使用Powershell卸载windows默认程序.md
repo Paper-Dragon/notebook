@@ -4,6 +4,7 @@
 输入 <kbd>Win</kbd> 键打开开始菜单，输入powershell，然后选择管理员身份运行。
 
 显示：左键单击Windows Powershell（管理员）
+
 ![在这里插入图片描述](使用Powershell卸载windows默认程序.assets/80054742bcc0565a573a881abcb26d63.png)
 
 ## 寻找你要卸载的程序
@@ -15,8 +16,7 @@
 2、使用get-appxpackage *edge*命令进行模糊搜索（你想要卸载什么程序就将edge换为什么程序）
 PS：get-appxpackage [你要卸载的程序]
 
-3、复制PackageFullName（包全名）备用
-(在这个例子中即 Microsoft.TranslatorforMicrosoftEdge_0.91.51.0_neutral__8wekyb3d8bbwe
+3、复制PackageFullName（包全名）备用在这个例子中即 Microsoft.TranslatorforMicrosoftEdge_0.91.51.0_neutral_8wekyb3d8bbwe
 
 ![在这里插入图片描述](使用Powershell卸载windows默认程序.assets/40859f303a618f976f92b1085d20336a.png)
 
