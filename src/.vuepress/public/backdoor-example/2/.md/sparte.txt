@@ -1,0 +1,2 @@
+root:qq123123 192.168.15.152 port: 22 -->         COMMAND NOT SUPPORTED
+  
