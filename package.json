@@ -20,13 +20,13 @@
     "echarts": "^5.5.1",
     "echarts-wordcloud": "^2.1.0",
     "fs-extra": "^11.2.0",
-    "hls.js": "^1.5.14",
+    "hls.js": "^1.5.13",
     "mermaid": "^10.9.1",
     "vidstack": "^1.12.9",
     "vue": "^3.4.38",
     "vuepress": "2.0.0-rc.14",
-    "vuepress-plugin-md-enhance": "2.0.0-rc.52",
-    "vuepress-plugin-search-pro": "2.0.0-rc.52",
-    "vuepress-theme-hope": "2.0.0-rc.52"
+    "vuepress-plugin-md-enhance": "2.0.0-rc.51",
+    "vuepress-plugin-search-pro": "2.0.0-rc.51",
+    "vuepress-theme-hope": "2.0.0-rc.51"
   }
 }
