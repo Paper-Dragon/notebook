@@ -12,7 +12,7 @@ svn log --xml | grep "^<author" | sort -u | \awk -F '<author>' '{print $2}' | aw
 
 输出的 userinfo.txt 文件内容如下：
 
-```ba'sh
+```bash
 edmond
 ```
 
