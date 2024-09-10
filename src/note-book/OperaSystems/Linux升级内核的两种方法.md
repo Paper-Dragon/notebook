@@ -229,29 +229,31 @@ make -j `nproc` && make modules_install && make install
 
 2021年9月，网络源的内核版本只有5.14和5.4啦
 
-    [root@hdp-1 ~]# yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
-    Loaded plugins: fastestmirror
-    Determining fastest mirrors
-     * elrepo-kernel: mirror.yandex.ru
-    https://mirror.yandex.ru/elrepo/kernel/el7/x86_64/repodata/repomd.xml: [Errno 14] curl#51 - "Unable to communicate securely with peer: requested domain name does not match the server's certificate."
-    Trying other mirror.
-    elrepo-kernel                                                                                                                                        | 3.0 kB  00:00:00     
-    elrepo-kernel/primary_db                                                                                                                             | 2.0 MB  00:01:24     
-    Available Packages
-    elrepo-release.noarch                                                                 7.0-5.el7.elrepo                                                         elrepo-kernel
-    kernel-lt.x86_64                                                                      5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-lt-devel.x86_64                                                                5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-lt-doc.noarch                                                                  5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-lt-headers.x86_64                                                              5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-lt-tools.x86_64                                                                5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-lt-tools-libs.x86_64                                                           5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-lt-tools-libs-devel.x86_64                                                     5.4.144-1.el7.elrepo                                                     elrepo-kernel
-    kernel-ml.x86_64                                                                      5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    kernel-ml-devel.x86_64                                                                5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    kernel-ml-doc.noarch                                                                  5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    kernel-ml-headers.x86_64                                                              5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    kernel-ml-tools.x86_64                                                                5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    kernel-ml-tools-libs.x86_64                                                           5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    kernel-ml-tools-libs-devel.x86_64                                                     5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    perf.x86_64                                                                           5.14.1-1.el7.elrepo                                                      elrepo-kernel
-    python-perf.x86_64                                                                    5.14.1-1.el7.elrepo                                                      elrepo-kernel
+```bash
+[root@hdp-1 ~]# yum --disablerepo="*" --enablerepo="elrepo-kernel" list available
+Loaded plugins: fastestmirror
+Determining fastest mirrors
+ * elrepo-kernel: mirror.yandex.ru
+https://mirror.yandex.ru/elrepo/kernel/el7/x86_64/repodata/repomd.xml: [Errno 14] curl#51 - "Unable to communicate securely with peer: requested domain name does not match the server's certificate."
+Trying other mirror.
+elrepo-kernel                                                                                                                                        | 3.0 kB  00:00:00     
+elrepo-kernel/primary_db                                                                                                                             | 2.0 MB  00:01:24     
+Available Packages
+elrepo-release.noarch                                                                 7.0-5.el7.elrepo                                                         elrepo-kernel
+kernel-lt.x86_64                                                                      5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-lt-devel.x86_64                                                                5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-lt-doc.noarch                                                                  5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-lt-headers.x86_64                                                              5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-lt-tools.x86_64                                                                5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-lt-tools-libs.x86_64                                                           5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-lt-tools-libs-devel.x86_64                                                     5.4.144-1.el7.elrepo                                                     elrepo-kernel
+kernel-ml.x86_64                                                                      5.14.1-1.el7.elrepo                                                      elrepo-kernel
+kernel-ml-devel.x86_64                                                                5.14.1-1.el7.elrepo                                                      elrepo-kernel
+kernel-ml-doc.noarch                                                                  5.14.1-1.el7.elrepo                                                      elrepo-kernel
+kernel-ml-headers.x86_64                                                              5.14.1-1.el7.elrepo                                                      elrepo-kernel
+kernel-ml-tools.x86_64                                                                5.14.1-1.el7.elrepo                                                      elrepo-kernel
+kernel-ml-tools-libs.x86_64                                                           5.14.1-1.el7.elrepo                                                      elrepo-kernel
+kernel-ml-tools-libs-devel.x86_64                                                     5.14.1-1.el7.elrepo                                                      elrepo-kernel
+perf.x86_64                                                                           5.14.1-1.el7.elrepo                                                      elrepo-kernel
+python-perf.x86_64                                                                    5.14.1-1.el7.elrepo                                                      elrepo-kernel
+```
