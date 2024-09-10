@@ -14,7 +14,7 @@
   "devDependencies": {
     "@vue/repl": "^4.3.1",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
-    "@waline/client": "^3.3.0",
+    "@waline/client": "^3.3.1",
     "chokidar": "^3.6.0",
     "dashjs": "^4.7.4",
     "echarts": "^5.5.1",
