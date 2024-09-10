@@ -162,12 +162,16 @@ grub2-mkconfig -o /boot/grub2/grub.cfg
 
 root账号操作哦，编译这么重大的事，别的普通用户不用想的。
 
+```bash
 wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.4.69.tar.xz   
+```
 
 ### 下载xz包，解压它
 
 
-    tar -xf  linux-5.4.69.tar.xz
+```bash
+tar -xf  linux-5.4.69.tar.xz
+```
 
 ### 编译前的环境准备
 
