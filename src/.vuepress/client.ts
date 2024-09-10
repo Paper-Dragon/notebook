@@ -1,6 +1,6 @@
-import { defineEchartsConfig } from "vuepress-plugin-md-enhance/client";
+import { defineEChartsConfig  } from "vuepress-plugin-md-enhance/client";
 
-defineEchartsConfig({
+defineEChartsConfig({
     setup: async () => {
         await import('echarts-wordcloud');
     },

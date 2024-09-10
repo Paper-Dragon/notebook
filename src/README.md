@@ -395,6 +395,12 @@ myChart.resize({
   height: 768
 });
 
+      // myChart.on("click", function(params) {
+      //   console.log(params);
+      //   if (params.name == "搜索引擎") {
+      //     window.location.href = params.data.url;
+      //   }
+      // });
 ```
 
 :::
