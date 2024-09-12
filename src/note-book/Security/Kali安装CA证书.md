@@ -50,7 +50,6 @@ Running hooks in /etc/ca-certificates/update.d...
 done.
 正在处理用于 ca-certificates-java (20240118) 的触发器 ...
 done.
-           
 ```
 
 

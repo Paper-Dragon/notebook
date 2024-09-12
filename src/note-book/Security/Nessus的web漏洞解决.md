@@ -13,10 +13,6 @@
 
 
 
-
-
-
-
 ![bab8233ff3b44afacd3f0e2ad639da10_](./Nessus的web漏洞解决.assets/bab8233ff3b44afacd3f0e2ad639da10_.png)
 
 
@@ -32,30 +28,36 @@
 钓鱼网站就是使用这个技术，通过诱导用户进行点击，比如设计一个"妹妹寂寞了"等之类的网页，诱导用户点击，但实际结果，你看到的不是"妹妹",而是被恶意微博吸粉。 
 所以为了防止网站被钓鱼，可以使用window.top来防止你的网页被iframe.
 
-    if(window != window.top){
-        window.top.location.href = correctURL;
-    }
+```javascript
+if(window != window.top){
+    window.top.location.href = correctURL;
+}
+```
 
 这段代码的主要用途是限定你的网页不能嵌套在任意网页内。如果你想引用同域的框架的话，可以判断域名。
 
-    if (top.location.host != window.location.host) {
-    　　top.location.href = window.location.href;
-    }
+```javascript
+if (top.location.host != window.location.host) {
+　　top.location.href = window.location.href;
+}
+```
 
 当然，如果你网页不同域名的话，上述就会报错。
 所以，这里可以使用try...catch...进行错误捕获。如果发生错误，则说明不同域，表示你的页面被盗用了。可能有些浏览器这样写是不会报错，所以需要降级处理。
 这时候再进行跳转即可.
 
-    try{
-    　　top.location.hostname;  //检测是否出错
-    　　//如果没有出错，则降级处理
-    　　if (top.location.hostname != window.location.hostname) { 
-    　　　　top.location.href =window.location.href;
-    　　}
-    }
-    catch(e){
-    　　top.location.href = window.location.href;
-    }
+```javascript
+try{
+　　top.location.hostname;  //检测是否出错
+　　//如果没有出错，则降级处理
+　　if (top.location.hostname != window.location.hostname) { 
+　　　　top.location.href =window.location.href;
+　　}
+}
+catch(e){
+　　top.location.href = window.location.href;
+}
+```
 
 这只是浏览器端，对iframe页面的权限做出相关的设置。 我们还可以在服务器上，对使用iframe的权限进行设置.
 
@@ -71,9 +73,11 @@
 
 等价于：
 
-    if(window != window.top){
-        window.top.location.href = window.location.href;
-    }
+```javascript
+if(window != window.top){
+    window.top.location.href = window.location.href;
+}
+```
 
 ##### SAMEORIGIN
 
@@ -82,10 +86,11 @@
 设置后如果在不同域名页面通过iframe加载会报下面错误：in a frame because it set 'X-Frame-Options' to 'sameorigin'.
 
 等价于：
-
-    if (top.location.hostname != window.location.hostname) { 
-    　　　　top.location.href =window.location.href;
-    }
+```javascript
+if (top.location.hostname != window.location.hostname) { 
+　　　　top.location.href =window.location.href;
+}
+```
 
 ##### ALLOW-FROM uri
 

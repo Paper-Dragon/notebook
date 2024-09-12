@@ -291,7 +291,7 @@ mv docker-compose  /usr/local/bin  && chmod u+x /usr/local/bin/docker-compose
 新建数据目录 mkdir /data/harbor
 环境预配          ./prepare
 habbor安装        ./install.sh
-       
+
 Creating network "harbor_harbor" with the default driver
 Creating harbor-log ... done
 Creating harbor-portal ... done

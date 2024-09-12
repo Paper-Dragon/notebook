@@ -49,19 +49,19 @@ add_swap() {
         echo -e "${Warning} 未检测到 swapfile，正在创建 swapfile...${Font}"
         fallocate -l ${swapsize}M /swapfile
         judge "创建 swapfile"
-        
+
         chmod 600 /swapfile
         judge "设置 swapfile 权限"
-        
+
         mkswap /swapfile
         judge "设置 swapfile"
-        
+
         swapon /swapfile
         judge "启用 swapfile"
-        
+
         echo '/swapfile none swap defaults 0 0' >> /etc/fstab
         judge "写入 /etc/fstab"
-        
+
         echo -e "${OK} swap 创建成功，信息如下：${Font}"
         cat /proc/swaps
         grep Swap /proc/meminfo
@@ -75,19 +75,19 @@ del_swap() {
     # 检查是否存在 swapfile
     if grep -q "swapfile" /etc/fstab; then
         echo -e "${Info} 检测到 swapfile，正在移除...${Font}"
-        
+
         echo "3" > /proc/sys/vm/drop_caches
         judge "迁移swap数据到内存"
-        
+
         sed -i '/swapfile/d' /etc/fstab
         judge "从 /etc/fstab 移除 swapfile"
-        
+
         swapoff /swapfile
         judge "关闭 swapfile"
-        
+
         rm -f /swapfile
         judge "删除 swapfile"
-        
+
         echo -e "${OK} swap 删除成功！${Font}"
     else
         echo -e "${Error}未检测到 swapfile，无法删除 swap！${Front}"

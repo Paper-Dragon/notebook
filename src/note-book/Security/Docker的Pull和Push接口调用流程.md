@@ -217,7 +217,8 @@ Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
 Installing collected packages: websockets, uvloop, urllib3, typing-extensions, sniffio, shellingham, pyyaml, python-multipart, python-dotenv, pygments, multidict, mdurl, maxminddb, MarkupSafe, idna, httptools, h11, frozenlist, dnspython, click, charset-normalizer, certifi, attrs, annotated-types, yarl, uvicorn, requests, pydantic-core, markdown-it-py, jinja2, httpcore, email_validator, anyio, aiosignal, watchfiles, starlette, rich, pydantic, httpx, aiohttp, typer, geoip2, fastapi-cli, fastapi
 Successfully installed MarkupSafe-2.1.5 aiohttp-3.9.5 aiosignal-1.3.1 annotated-types-0.7.0 anyio-4.4.0 attrs-23.2.0 certifi-2024.7.4 charset-normalizer-3.3.2 click-8.1.7 dnspython-2.6.1 email_validator-2.2.0 fastapi-0.111.1 fastapi-cli-0.0.4 frozenlist-1.4.1 geoip2-4.8.0 h11-0.14.0 httpcore-1.0.5 httptools-0.6.1 httpx-0.27.0 idna-3.7 jinja2-3.1.4 markdown-it-py-3.0.0 maxminddb-2.6.2 mdurl-0.1.2 multidict-6.0.5 pydantic-2.8.2 pydantic-core-2.20.1 pygments-2.18.0 python-dotenv-1.0.1 python-multipart-0.0.9 pyyaml-6.0.1 requests-2.32.3 rich-13.7.1 shellingham-1.5.4 sniffio-1.3.1 starlette-0.37.2 typer-0.12.3 typing-extensions-4.12.2 urllib3-2.2.2 uvicorn-0.30.1 uvloop-0.19.0 watchfiles-0.22.0 websockets-12.0 yarl-1.9.4
 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
-                                                                                                                                                                                                                                           
+
+
 [notice] A new release of pip is available: 24.0 -> 24.1.2                                                                                                                                                                                 
 [notice] To update, run: pip install --upgrade pip                                                                                                                                                                                         
 Removing intermediate container 3def86822d95                                                                                                                                                                                               
@@ -246,7 +247,6 @@ Successfully tagged hub.geekery.cn/jockerdragon/test:0.0.0.3
      2      "max-concurrent-downloads": 1,
      3      "max-concurrent-uploads": 1
      4  }
-                
 ```
 
 推送测试

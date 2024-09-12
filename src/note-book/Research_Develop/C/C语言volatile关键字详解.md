@@ -23,7 +23,6 @@ volatile属于C语言的关键字，《C Primer Plus》 是这样解释关键字
         else {
             printf("a != b");
         }
-        
         return 0;
     }
 
@@ -39,7 +38,7 @@ volatile属于C语言的关键字，《C Primer Plus》 是这样解释关键字
         b = i;
      
         printf("a = b");
-       
+
         return 0;
     }
 
@@ -117,11 +116,11 @@ gcc -O2 -O hello hello.c
     
         //一个全局变量a
         int a = 1;
-         
+
         int main(){
-         
+
             int b,c,d,e,f;
-            
+
             //多次赋值
             b = a;
             c = a;
@@ -130,13 +129,13 @@ gcc -O2 -O hello hello.c
             f = a;
             ....
         }
-         
+
         void *child_pth_fun{
-         
+
             //子线程修改a值
             a = 2;
             ......
-         
+
         }
     
     如果每次赋值都去内存中读入 a , 对于程序来说开销实在太大了，这时候编译器优化会引入一个中间变量，加快程序执行效率，也正是因为优化原因，如果这个全局变量是多线程共享的，子线程可能在任意时刻改变a的值，但是主程序引入的中间变量值确实过去a的值，就可能出现数据未同步问题。

@@ -31,7 +31,7 @@ jobs:
           echo "\n"
           echo "==== CPU ===="
           lscpu
-          
+
           echo "==== 系统负载 ===="
           top -n 1 -b | grep "load average:" | awk '{print $12 $13 $14}'
           echo -e "-------------------------------System Information----------------------------"
@@ -57,7 +57,7 @@ jobs:
           echo -e "-------------------------------Disk Usage >80%-------------------------------"
           df -Ph | sed s/%//g | awk '{ if($5 > 80) print $0;}'
           echo ""
-          
+
           echo -e "-------------------------------For WWN Details-------------------------------"
           vserver=$(lscpu | grep Hypervisor | wc -l)
           if [ $vserver -gt 0 ]
@@ -113,7 +113,7 @@ jobs:
           sed -i 's/关于我/内容分发网络部署状态/g' src/.vuepress/navbar.ts
           sed -i 's/link:.*me.md\",/link: \"https:\/\/cloudflare-cloudnative-pages.geekery.cn\/\",/g' src/.vuepress/navbar.ts
           sed -i 's/address-card/diagram-project/g' src/.vuepress/navbar.ts
-          
+
       - name: 构建文档
         env:
           NODE_OPTIONS: --max_old_space_size=8192
@@ -200,7 +200,7 @@ jobs:
   #       run: |-
   #         pnpm run docs:build
   #         > src/.vuepress/dist/.nojekyll
-          
+
   #     - name: 部署文档
   #       uses: JamesIves/github-pages-deploy-action@v4
   #       with:

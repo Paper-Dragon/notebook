@@ -199,7 +199,7 @@ http {
             root   html;
         }
  
-        
+
  
         location /live {
             flv_live on;
@@ -264,7 +264,7 @@ rtmp {
             #开启直播
             live on;
             record off;
-            
+
             #可以把转完码的视频放在这个文件里，这样可以拉这个视频进行播放
             #play /opt/video;
  
@@ -276,7 +276,7 @@ rtmp {
  
             # 20秒内没有push，就断开链接。
             drop_idle_publisher 20s;
-           
+
             ##打开 GOP 缓存，减少首屏等待时间
             gop_cache on; 
  

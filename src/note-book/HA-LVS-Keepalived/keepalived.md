@@ -117,7 +117,7 @@ vrrp_instance VI_1 {                            # 实例名字两台路由器相
                 auth_type PASS
                 auth_pass 123456
         }
-        
+
         virtual_ipaddress {
         	172.16.100.12					# VIP
         }
@@ -160,7 +160,7 @@ vrrp_instance VI_1 {                            # 实例名字两台路由器相
                 auth_type PASS
                 auth_pass 123456
         }
-        
+
         virtual_ipaddress {
         	172.16.100.12					# VIP
         }
@@ -265,7 +265,7 @@ vrrp_instance VI_1 {                            # 实例名字两台路由器相
                 auth_type PASS
                 auth_pass 123456
         }
-        
+
         virtual_ipaddress {
         	172.16.100.22/24 dev ens32 					# VIP
         }
@@ -323,7 +323,7 @@ vrrp_instance VI_1 {                            # 实例名字两台路由器相
                 auth_type PASS
                 auth_pass 123456
         }
-        
+
         virtual_ipaddress {
         	172.16.100.22/24 dev ens32 					# VIP
         }

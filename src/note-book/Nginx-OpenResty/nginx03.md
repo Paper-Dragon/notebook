@@ -144,7 +144,7 @@ max_requests = 500
             # pm.min_spare_servers = 32
             # pm.max_spare_servers = 64
             # pm.max_requests = 1500
-        
+
     2. 重启生效： systemctl  restart  php-fpm
     3. 查看进程数：ps aux|grep php|wc -l    
 ### 启动php状态监控页面功能

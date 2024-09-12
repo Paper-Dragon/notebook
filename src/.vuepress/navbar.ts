@@ -43,13 +43,7 @@ export default navbar([
                 ariaLabel: "开往"
             }
         ]
-        
     },
-    // {
-    //     text: "实时访客",
-    //     icon: "chart-simple",
-    //     link: "https://analytics.umami.is/share/pvHcnC9eaFEzXn99/DevOps-Book",
-    // },
     {
         text: "关于我",
         icon: "address-card",

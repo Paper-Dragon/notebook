@@ -75,7 +75,7 @@ else
                                 export LD_LIBRARY_PATH=/usr/local/cuda-12.2/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
                                 sudo apt-get update
                                 ;;
-                            
+
                             "22.04")
                                 # Commands specific to Ubuntu 22.04
                                 sudo -- sh -c 'apt-get update; apt-get upgrade -y; apt-get autoremove -y; apt-get autoclean -y'
@@ -147,7 +147,7 @@ else
                                 ;;
                         esac
                         ;;
-                    
+
                     "debian")
                         case $VERSION in
                             "10"|"11")
