@@ -2,60 +2,68 @@
 
 CentOS下， yum install bind安装bind软件来实现DNS服务, yum info bind可以查看到描述：
 
-    Description : BIND (Berkeley Internet Name Domain) is an implementation of the DNS
-                : (Domain Name System) protocols. BIND includes a DNS server (named),
-                : which resolves host names to IP addresses; a resolver library
-                : (routines for applications to use when interfacing with DNS); and
-                : tools for verifying that the DNS server is operating properly.
+```bash
+Description : BIND (Berkeley Internet Name Domain) is an implementation of the DNS
+            : (Domain Name System) protocols. BIND includes a DNS server (named),
+            : which resolves host names to IP addresses; a resolver library
+            : (routines for applications to use when interfacing with DNS); and
+            : tools for verifying that the DNS server is operating properly.
+```
 
 BIND是DNS协议的一种实现。BIND包含了一个DNS Server（服务名叫named）,用来解析主机名到ip地址；一个解析库；一些辅助工具，还有一个安全目录工具，分别属于下面几个包：
 
-    bind：包里主要包含：
-        named DNS服务
-        named-chkconfig（named.conf文件检查工具）
-        named-checkzone(zone文件检车工具）
-        rndc（本地和远程dns控制工具）
-    bind-libs：named DNS服务的库
-    bind-utils：包含一系列辅助工具来测试
-        host
-        dig
-        nslookup
-        nsupdate
-    bind-chroot：切根程序，用来切换默认目录到另外一个深层的安全的目录/var/named/chroot，类似于前面光盘进入救援模式的那种情况。
+```bash
+bind：包里主要包含：
+    named DNS服务
+    named-chkconfig（named.conf文件检查工具）
+    named-checkzone(zone文件检车工具）
+    rndc（本地和远程dns控制工具）
+bind-libs：named DNS服务的库
+bind-utils：包含一系列辅助工具来测试
+    host
+    dig
+    nslookup
+    nsupdate
+bind-chroot：切根程序，用来切换默认目录到另外一个深层的安全的目录/var/named/chroot，类似于前面光盘进入救援模式的那种情况。
+```
 
 ## named 涉及的文件
 
-    /etc/named.conf              # bind主配置文件
-    /etc/named.rfc1912.zones     # 定义zone的文件
-    /etc/rc.d/init.d/named       # bind脚本文件
-    /etc/rndc.conf               # rndc配置文件
-    /usr/sbin/named-checkconf    # 检测/etc/named.conf文件语法
-    /usr/sbin/named-checkzone    # 检测zone和对应zone文件的语法
-    /usr/sbin/rndc               # 远程dns管理工具
-    /usr/sbin/rndc-confgen       # 生成rndc密钥
-    /var/named/named.ca          # 根解析库
-    /var/named/named.localhost   # 本地主机解析库
-    /var/named/slaves            # 从ns服务器文件夹
+```bash
+/etc/named.conf              # bind主配置文件
+/etc/named.rfc1912.zones     # 定义zone的文件
+/etc/rc.d/init.d/named       # bind脚本文件
+/etc/rndc.conf               # rndc配置文件
+/usr/sbin/named-checkconf    # 检测/etc/named.conf文件语法
+/usr/sbin/named-checkzone    # 检测zone和对应zone文件的语法
+/usr/sbin/rndc               # 远程dns管理工具
+/usr/sbin/rndc-confgen       # 生成rndc密钥
+/var/named/named.ca          # 根解析库
+/var/named/named.localhost   # 本地主机解析库
+/var/named/slaves            # 从ns服务器文件夹
+```
 
 可以查看/usr/share/doc/bind-9.9.4/sample/下有各种例子可以参考：
 
-    [root@centos7 sample]#tree
-    .
-    ├── etc
-    │   ├── named.conf
-    │   └── named.rfc1912.zones
-    └── var
-        └── named
-            ├── data
-            ├── my.external.zone.db
-            ├── my.internal.zone.db
-            ├── named.ca
-            ├── named.empty
-            ├── named.localhost
-            ├── named.loopback
-            └── slaves
-                ├── my.ddns.internal.zone.db
-                └── my.slave.internal.zone.db
+```bash
+[root@centos7 sample]#tree
+.
+├── etc
+│   ├── named.conf
+│   └── named.rfc1912.zones
+└── var
+    └── named
+        ├── data
+        ├── my.external.zone.db
+        ├── my.internal.zone.db
+        ├── named.ca
+        ├── named.empty
+        ├── named.localhost
+        ├── named.loopback
+        └── slaves
+            ├── my.ddns.internal.zone.db
+            └── my.slave.internal.zone.db
+```
 
 根据参考来配置各个文件。
 
@@ -63,92 +71,98 @@ BIND是DNS协议的一种实现。BIND包含了一个DNS Server（服务名叫na
 
 主配置文件/etc/named.conf包括：
 
-    监听端口(listen-on port)和ip地址
-    服务作用范围（本机还是指定网段还是全网）（allow-query）
-    递归还是迭代查询(recursion)
-    根区域解析文件（zone），其他区域文件可以看到有个include “/etc/named.rfc1912.zones”;，这下面保存了localhost的区域文件，如果新添加的，卸载这个zones文件里，里面指向了zone文件地址。然后每一个zone文件，是在/var/named下面。
+```bash
+监听端口(listen-on port)和ip地址
+服务作用范围（本机还是指定网段还是全网）（allow-query）
+递归还是迭代查询(recursion)
+根区域解析文件（zone），其他区域文件可以看到有个include “/etc/named.rfc1912.zones”;，这下面保存了localhost的区域文件，如果新添加的，卸载这个zones文件里，里面指向了zone文件地址。然后每一个zone文件，是在/var/named下面。
+```
 
 下面是原配置文件的部分：
 
-    [root@centos7 named]#cat /etc/named.conf 
-    options {
-       listen-on port 53 { 127.0.0.1; };// ipv4监听端口和ip地址，默认只有本地的
-       listen-on-v6 port 53 { ::1; }; // ipv6的监听端口和ip地址
-       directory    "/var/named";
-       dump-file    "/var/named/data/cache_dump.db";
-       statistics-file "/var/named/data/named_stats.txt";
-       memstatistics-file "/var/named/data/named_mem_stats.txt";
-       allow-query     { localhost; };
-    
-       /* 
-        - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
-        - If you are building a RECURSIVE (caching) DNS server, you need to enable 
-          recursion. 
-        - If your recursive DNS server has a public IP address, you MUST enable access 
-          control to limit queries to your legitimate users. Failing to do so will
-          cause your server to become part of large scale DNS amplification 
-          attacks. Implementing BCP38 within your network would greatly
-          reduce such attack surface 
-       */
-       recursion yes; // 递归还是迭代查询
-    
-       dnssec-enable yes; // dns安全扩展,可以改为no关闭
-       dnssec-validation yes; //可以改为no关闭
-    
-       /* Path to ISC DLV key */
-       bindkeys-file "/etc/named.iscdlv.key";
-    
-       managed-keys-directory "/var/named/dynamic";
-    
-       pid-file "/run/named/named.pid";
-       session-keyfile "/run/named/session.key";
-    };
-    
-    logging {
-            channel default_debug {
-                    file "data/named.run";
-                    severity dynamic;
-            };
-    };
-    
-    zone "." IN { // 定义zone文件，这里是定义的根域的文件位置
-       type hint;
-       file "named.ca";
-    };
-    
-    include "/etc/named.rfc1912.zones"; // 把named.rfc1912.zones文件包含进来
-    include "/etc/named.root.key"; // 把/etc/named.root.key文件包含进来
+```bash
+[root@centos7 named]#cat /etc/named.conf 
+options {
+   listen-on port 53 { 127.0.0.1; };// ipv4监听端口和ip地址，默认只有本地的
+   listen-on-v6 port 53 { ::1; }; // ipv6的监听端口和ip地址
+   directory    "/var/named";
+   dump-file    "/var/named/data/cache_dump.db";
+   statistics-file "/var/named/data/named_stats.txt";
+   memstatistics-file "/var/named/data/named_mem_stats.txt";
+   allow-query     { localhost; };
+
+   /* 
+    - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
+    - If you are building a RECURSIVE (caching) DNS server, you need to enable 
+      recursion. 
+    - If your recursive DNS server has a public IP address, you MUST enable access 
+      control to limit queries to your legitimate users. Failing to do so will
+      cause your server to become part of large scale DNS amplification 
+      attacks. Implementing BCP38 within your network would greatly
+      reduce such attack surface 
+   */
+   recursion yes; // 递归还是迭代查询
+
+   dnssec-enable yes; // dns安全扩展,可以改为no关闭
+   dnssec-validation yes; //可以改为no关闭
+
+   /* Path to ISC DLV key */
+   bindkeys-file "/etc/named.iscdlv.key";
+
+   managed-keys-directory "/var/named/dynamic";
+
+   pid-file "/run/named/named.pid";
+   session-keyfile "/run/named/session.key";
+};
+
+logging {
+        channel default_debug {
+                file "data/named.run";
+                severity dynamic;
+        };
+};
+
+zone "." IN { // 定义zone文件，这里是定义的根域的文件位置
+   type hint;
+   file "named.ca";
+};
+
+include "/etc/named.rfc1912.zones"; // 把named.rfc1912.zones文件包含进来
+include "/etc/named.root.key"; // 把/etc/named.root.key文件包含进来
+```
 
 下面贴出一个修改后的区域文件：
 
-    options {
-        listen-on port 53 { 192.168.111.254; 127.0.0.1; };  //监听端口修改为某一网卡地址，和回环地址。
-        listen-on-v6 port 53 { ::1; };
-        directory   "/var/named";
-        dump-file   "/var/named/data/cache_dump.db";
-        statistics-file "/var/named/data/named_stats.txt";
-        memstatistics-file "/var/named/data/named_mem_stats.txt";
-        allow-query     { 192.168.111.0/24; }; //查询范围只允许192.168.111.0网段查询。
-        recursion yes;
-        dnssec-enable no;  //关闭dnssec
-        dnssec-validation no;  //关闭dnssec
-        bindkeys-file "/etc/named.iscdlv.key";
-        managed-keys-directory "/var/named/dynamic";
-        pid-file "/run/named/named.pid";
-        session-keyfile "/run/named/session.key";
-    };
-    logging {
-            channel default_debug {
-                    file "data/named.run";
-                    severity dynamic;
-            };
-    };
-    zone "." IN {
-        type hint;
-        file "named.ca";
-    };
-    include "/etc/named.rfc1912.zones";
-    include "/etc/named.root.key";
+```bash
+options {
+    listen-on port 53 { 192.168.111.254; 127.0.0.1; };  //监听端口修改为某一网卡地址，和回环地址。
+    listen-on-v6 port 53 { ::1; };
+    directory   "/var/named";
+    dump-file   "/var/named/data/cache_dump.db";
+    statistics-file "/var/named/data/named_stats.txt";
+    memstatistics-file "/var/named/data/named_mem_stats.txt";
+    allow-query     { 192.168.111.0/24; }; //查询范围只允许192.168.111.0网段查询。
+    recursion yes;
+    dnssec-enable no;  //关闭dnssec
+    dnssec-validation no;  //关闭dnssec
+    bindkeys-file "/etc/named.iscdlv.key";
+    managed-keys-directory "/var/named/dynamic";
+    pid-file "/run/named/named.pid";
+    session-keyfile "/run/named/session.key";
+};
+logging {
+        channel default_debug {
+                file "data/named.run";
+                severity dynamic;
+        };
+};
+zone "." IN {
+    type hint;
+    file "named.ca";
+};
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
+```
 
 配置解析库文件（Zone files）,一般是在/var/named下写，文件名格式一般写为ZONE_NAME.zone
 
@@ -186,14 +200,16 @@ BIND是DNS协议的一种实现。BIND包含了一个DNS Server（服务名叫na
 ```
 这里给出一个自定义的总的区域定义文件，新加一个区域文件的定义：
 
-    zone "zhangqifei.top" IN {
-        type master;
-        file "zhangqifei.top.zone";
-    };
+```bash
+zone "zhangqifei.top" IN {
+    type master;
+    file "zhangqifei.top.zone";
+};
+```
 
 ## 区域配置文件
 
-/var/named/ZONE_NAME.zone区域配置文件
+**/var/named/ZONE_NAME.zone**区域配置文件
 
 ## 正向区域文件
 
@@ -263,30 +279,34 @@ service named start|restart
 
 
 
-    区域名称：是网络地址的犯些.in-addr.arpa.
-    
-    192.168.111. –> 111.168.192.in-addr.arpa.
-    
-    配置方法：
-    
-    先在/etc/named.rfc1512.zones文件下插入下面内容：
-    zone "Reverse_Net_Addr.in-addr.arpa" IN {
-        type {master|slave|forward};
-        file "Net_Addr.zone"
-    }
+```bash
+区域名称：是网络地址的犯些.in-addr.arpa.
+
+192.168.111. –> 111.168.192.in-addr.arpa.
+
+配置方法：
+
+先在/etc/named.rfc1512.zones文件下插入下面内容：
+zone "Reverse_Net_Addr.in-addr.arpa" IN {
+    type {master|slave|forward};
+    file "Net_Addr.zone"
+}
+```
 
 例子：
 
-    zone "111.168.192.in-addr.arpa" IN {
-        type master;
-        file "192.168.111.zone";
-    };
-    配置/var/named/ZONE_NAME.zone
-    不需要MX、A、AAAA，要有NS记录，以PTR记录为主。
+```bash
+zone "111.168.192.in-addr.arpa" IN {
+    type master;
+    file "192.168.111.zone";
+};
+配置/var/named/ZONE_NAME.zone
+不需要MX、A、AAAA，要有NS记录，以PTR记录为主。
+```
 
 例子：
 
-```c
+```bash
 配置192.168.111.zone：
 
 $TTL 1D
