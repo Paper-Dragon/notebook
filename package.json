@@ -12,7 +12,7 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vue/repl": "^4.3.1",
+    "@vue/repl": "^4.4.1",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@waline/client": "^3.3.1",
     "chokidar": "^3.6.0",

@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@vue/repl':
-        specifier: ^4.3.1
-        version: 4.3.1
+        specifier: ^4.4.1
+        version: 4.4.1
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.14
         version: 2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8)
@@ -49,13 +49,13 @@ importers:
         version: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)
       vuepress-plugin-md-enhance:
         specifier: 2.0.0-rc.51
-        version: 2.0.0-rc.51(@vue/repl@4.3.1)(echarts@5.5.1)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
+        version: 2.0.0-rc.51(@vue/repl@4.4.1)(echarts@5.5.1)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
       vuepress-plugin-search-pro:
         specifier: 2.0.0-rc.51
         version: 2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
       vuepress-theme-hope:
         specifier: 2.0.0-rc.51
-        version: 2.0.0-rc.51(@vue/repl@4.3.1)(@vuepress/plugin-redirect@2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(@waline/client@3.3.1)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.14)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vidstack@1.12.9)(vuepress-plugin-search-pro@2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
+        version: 2.0.0-rc.51(@vue/repl@4.4.1)(@vuepress/plugin-redirect@2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(@waline/client@3.3.1)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.14)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vidstack@1.12.9)(vuepress-plugin-search-pro@2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
 
 packages:
 
@@ -685,8 +685,8 @@ packages:
   '@vue/reactivity@3.5.4':
     resolution: {integrity: sha512-HKKbEuP7tYSGCq4e4nK6ZW6l5hyG66OUetefBp4budUyjvAYsnQDf+bgFzg2RAgnH0CInyqXwD9y47jwJEHrQw==}
 
-  '@vue/repl@4.3.1':
-    resolution: {integrity: sha512-yzUuLhR+MqOGBDES+xbnm27SfPIEv7XKwhFWWpQhL7HUbXj77GVu+x50Q56JhCWWKTUJzk9MOvAn7bSgdvB5og==}
+  '@vue/repl@4.4.1':
+    resolution: {integrity: sha512-1IR/6gWungvvKV+ul+hOWid0xBUQft6tw2JqbhoVr/VWl5Vl0sdTmK3xPZF2KtewApQFfqSRqr4+6CohGxzl8A==}
 
   '@vue/runtime-core@3.4.38':
     resolution: {integrity: sha512-21z3wA99EABtuf+O3IhdxP0iHgkBs1vuoCAsCKLVJPEjpVqvblwBnTj42vzHRlWDCyxu9ptDm7sI2ZMcWrQqlA==}
@@ -2769,7 +2769,7 @@ snapshots:
     dependencies:
       '@vue/shared': 3.5.4
 
-  '@vue/repl@4.3.1': {}
+  '@vue/repl@4.4.1': {}
 
   '@vue/runtime-core@3.4.38':
     dependencies:
@@ -3027,9 +3027,9 @@ snapshots:
   '@vuepress/plugin-redirect@2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))':
     dependencies:
       '@vuepress/helper': 2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
-      '@vueuse/core': 10.11.0(vue@3.4.38)
+      '@vueuse/core': 10.11.0(vue@3.5.4)
       cac: 6.7.14
-      vue: 3.4.38
+      vue: 3.5.4
       vuepress: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)
     transitivePeerDependencies:
       - '@vue/composition-api'
@@ -3125,6 +3125,17 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
+  '@vueuse/core@10.11.0(vue@3.5.4)':
+    dependencies:
+      '@types/web-bluetooth': 0.0.20
+      '@vueuse/metadata': 10.11.0
+      '@vueuse/shared': 10.11.0(vue@3.5.4)
+      vue-demi: 0.14.10(vue@3.5.4)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    optional: true
+
   '@vueuse/core@11.0.3(vue@3.5.4)':
     dependencies:
       '@types/web-bluetooth': 0.0.20
@@ -3145,6 +3156,14 @@ snapshots:
     transitivePeerDependencies:
       - '@vue/composition-api'
       - vue
+
+  '@vueuse/shared@10.11.0(vue@3.5.4)':
+    dependencies:
+      vue-demi: 0.14.10(vue@3.5.4)
+    transitivePeerDependencies:
+      - '@vue/composition-api'
+      - vue
+    optional: true
 
   '@vueuse/shared@11.0.3(vue@3.5.4)':
     dependencies:
@@ -4440,7 +4459,7 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  vuepress-plugin-md-enhance@2.0.0-rc.51(@vue/repl@4.3.1)(echarts@5.5.1)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)):
+  vuepress-plugin-md-enhance@2.0.0-rc.51(@vue/repl@4.4.1)(echarts@5.5.1)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)):
     dependencies:
       '@mdit/plugin-alert': 0.12.0(markdown-it@14.1.0)
       '@mdit/plugin-align': 0.12.0(markdown-it@14.1.0)
@@ -4475,7 +4494,7 @@ snapshots:
       vuepress: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)
       vuepress-shared: 2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
     optionalDependencies:
-      '@vue/repl': 4.3.1
+      '@vue/repl': 4.4.1
       echarts: 5.5.1
       katex: 0.16.11
       mermaid: 10.9.1
@@ -4515,7 +4534,7 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  vuepress-theme-hope@2.0.0-rc.51(@vue/repl@4.3.1)(@vuepress/plugin-redirect@2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(@waline/client@3.3.1)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.14)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vidstack@1.12.9)(vuepress-plugin-search-pro@2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)):
+  vuepress-theme-hope@2.0.0-rc.51(@vue/repl@4.4.1)(@vuepress/plugin-redirect@2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(@waline/client@3.3.1)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.14)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vidstack@1.12.9)(vuepress-plugin-search-pro@2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)))(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)):
     dependencies:
       '@vuepress/helper': 2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
       '@vuepress/plugin-active-header-links': 2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
@@ -4547,7 +4566,7 @@ snapshots:
       vue: 3.4.38
       vuepress: 2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38)
       vuepress-plugin-components: 2.0.0-rc.51(artplayer@5.1.6)(dashjs@4.7.4)(hls.js@1.5.14)(vidstack@1.12.9)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
-      vuepress-plugin-md-enhance: 2.0.0-rc.51(@vue/repl@4.3.1)(echarts@5.5.1)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
+      vuepress-plugin-md-enhance: 2.0.0-rc.51(@vue/repl@4.4.1)(echarts@5.5.1)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@10.9.1)(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
       vuepress-shared: 2.0.0-rc.51(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
     optionalDependencies:
       '@vuepress/plugin-redirect': 2.0.0-rc.38(vuepress@2.0.0-rc.14(@vuepress/bundler-vite@2.0.0-rc.14(@types/node@22.0.2)(sass@1.77.8))(vue@3.4.38))
