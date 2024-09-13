@@ -15,7 +15,7 @@
     "@vue/repl": "^4.4.1",
     "@vuepress/bundler-vite": "2.0.0-rc.14",
     "@waline/client": "^3.3.1",
-    "chokidar": "^3.6.0",
+    "chokidar": "^4.0.0",
     "dashjs": "^4.7.4",
     "echarts": "^5.5.1",
     "echarts-wordcloud": "^2.1.0",
