@@ -75,7 +75,7 @@ jobs:
       - name: 拉源码
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
           submodules: true
 
       - name: 安装 pnpm
