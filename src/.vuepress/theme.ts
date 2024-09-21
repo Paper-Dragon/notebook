@@ -56,15 +56,6 @@ export default hopeTheme({
 
   plugins: {
     blog: true,
-    // You should generate and use your own comment service
-    // comment: {
-    //   provider: "Giscus",
-    //   repo: "Paper-Dragon/paper-dragon.github.io",
-    //   repoId: "R_kgDOKGpjZw",
-    //   category: "blog",
-    //   categoryId: "DIC_kwDOKGpjZ84CauNO",
-    // },
-
     comment: {
       provider: "Waline",
       serverURL: "https://comment.geekery.cn/",
@@ -77,24 +68,6 @@ export default hopeTheme({
       meta: ['nick', 'mail', 'link'],
       // 设置必填项，默认匿名，可选值:
       requiredMeta: ['nick', 'mail'],
-    },
-
-    components: {
-      // 你想使用的组件
-      components: [
-        // "ArtPlayer",
-        // "Badge",
-        // "BiliBili",
-        // "CodePen",
-        "PDF",
-        // "Replit",
-        // "Share",
-        "SiteInfo",
-        // "StackBlitz",
-        "VPCard",
-        "VidStack",
-        // "XiGua",
-      ],
     },
     feed: false,
     searchPro: {
@@ -127,7 +100,6 @@ export default hopeTheme({
       //   tokenize: (text, fieldName) => fieldName === "id" ? [text] : cut(text, true),
       // },
     },
-
     // All features are enabled for demo, only preserve features you need here
     mdEnhance: {
       // https://theme-hope.vuejs.press/zh/guide/markdown/align.html
@@ -143,15 +115,16 @@ export default hopeTheme({
       flowchart: false,
       // 是否支持完整的 GFM 语法。
       gfm: false,
-      include: true,
-      mark: true,
+      // 是否启用 Markdown 导入支持。你可以传入一个函数进行路径解析。
+      include: false,
+
+      mark: false,
       // mermaid流程图 https://mermaid.js.org/
       mermaid: true,
       // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
       revealJs: false,
-      playground: {
-        presets: ["ts", "vue"],
-      },
+
+
       stylize: [
         {
           matcher: "Recommended",
@@ -165,13 +138,31 @@ export default hopeTheme({
           },
         },
       ],
-      sub: true,
-      sup: true,
+      sub: false,
+      sup: false,
       tabs: true,
       vPre: false,
-      vuePlayground: true,
+      vuePlayground: false,
     },
-
+    linksCheck: true,
+    components: {
+      // 你想使用的组件
+      components: [
+        // "ArtPlayer",
+        // "Badge",
+        // "BiliBili",
+        // "CodePen",
+        //"FontIcon",
+        "PDF",
+        // "Share",
+        // "StackBlitz",
+        // "VPBanner",
+        "VPCard",
+        "VidStack",
+        "SiteInfo"
+        // "XiGua",
+      ],
+    },
     // uncomment these if you want a pwa
     // pwa: {
     //   favicon: "/favicon.ico",
