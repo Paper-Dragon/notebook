@@ -1,4 +1,4 @@
-## Sony Xperia 10 IV(pdx225)AOSP14编译和刷机方法
+# Sony Xperia 10 IV(pdx225)AOSP14编译和刷机方法
 
 ## 编译机环境准备
 
