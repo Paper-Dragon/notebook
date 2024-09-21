@@ -6,10 +6,15 @@
   }
 
 
-  .vp-hero-info-wrapper {
-    min-height: 600px;
-  }
+.vp-hero-info-wrapper {
+  min-height: 600px;
+}
 
+.vp-comment {
+  max-width: var(--content-width, 740px);
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+}
 
 @import "./mobaxterm.scss";
 
