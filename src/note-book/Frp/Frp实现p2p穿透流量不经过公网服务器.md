@@ -76,7 +76,7 @@ log_level = info
 log_max_days = 2
 # 认证超时时间
 authentication_timeout = 900
-# 认证token，客户端需要和此对应,要长，建议在 https://paper-dragon.github.io/RandomPassword/ 生成
+# 认证token，客户端需要和此对应,要长，建议在 https://password.geekery.cn/ 生成
 token="abc123abc"
 # 最大连接数
 max_pool_count = 5

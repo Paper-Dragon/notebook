@@ -703,9 +703,9 @@ git push -f origin master # 强制推送文件，缩写 -f（全写--force）
 ## clone
 
 ```bash
-git clone git://github.com/Paper-Dragon/paper-dragon.github.io   
-git clone git://github.com/Paper-Dragon/paper-dragon.github.io --depth=1  
-git clone git://github.com/Paper-Dragon/paper-dragon.github.io mypro # 克隆到自定义文件夹  
+git clone git://github.com/Paper-Dragon/notebook   
+git clone git://github.com/Paper-Dragon/notebook --depth=1  
+git clone git://github.com/Paper-Dragon/notebook mypro # 克隆到自定义文件夹  
 git clone [user@]example.com:path/to/repo.git/ # SSH协议还有另一种写法。  
 # 克隆指定的分支
 git clone -b dev --single-branch <repository URL>

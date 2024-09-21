@@ -4,7 +4,7 @@ import sidebar from "./sidebar.js";
 // import {cut} from "nodejs-jieba";
 
 export default hopeTheme({
-  hostname: "https://paper-dragon.github.io",
+  hostname: "https://www.geekery.cn",
 
   fullscreen: true,
 
@@ -18,7 +18,7 @@ export default hopeTheme({
 
   logo: "/logo.svg",
 
-  repo: "https://github.com/Paper-Dragon/paper-dragon.github.io",
+  repo: "https://github.com/Paper-Dragon/notebook",
 
   docsDir: "src",
 

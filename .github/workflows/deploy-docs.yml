@@ -73,10 +73,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 拉源码
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          # 如果你文档需要 Git 子模块，取消注释下一行
+          fetch-depth: 1
           submodules: true
 
       - name: 安装 pnpm
@@ -102,11 +101,6 @@ jobs:
         with:
           node-version: 18
           cache: pnpm
-      
-      - name: 更改主机名
-        run: |-
-          sed -i 's/hostname: "https:\/\/paper-dragon.github.io",/hostname: "https:\/\/www.geekery.cn",/g' src/.vuepress/theme.ts
-          grep hostname src/.vuepress/theme.ts
       
       - name: 添加状态页面
         run: |-
