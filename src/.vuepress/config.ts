@@ -3,6 +3,7 @@ import theme from "./theme.js";
 import { viteBundler } from '@vuepress/bundler-vite'
 import { path } from "vuepress/utils";
 import copyplus from "./copyplus.js";
+import { googleAnalyticsPlugin } from '@vuepress/plugin-google-analytics';
 
 export default defineUserConfig({
   base: "/",
@@ -15,7 +16,11 @@ export default defineUserConfig({
   theme,
 
   plugins: [
-    copyplus
+    copyplus,
+    googleAnalyticsPlugin({
+      id: "G-8TD726BYZK",
+      debug: true
+    })
   ],
 
   // 修改页面模板，https://github.com/vuepress-theme-hope/vuepress-theme-hope/blob/main/packages/theme/templates/index.build.html

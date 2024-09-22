@@ -14,6 +14,7 @@
   "devDependencies": {
     "@vue/repl": "^4.4.2",
     "@vuepress/bundler-vite": "2.0.0-rc.15",
+    "@vuepress/plugin-google-analytics": "2.0.0-rc.42",
     "@waline/client": "^3.3.2",
     "chokidar": "^4.0.0",
     "dashjs": "^4.7.4",
@@ -21,7 +22,7 @@
     "echarts-wordcloud": "^2.1.0",
     "fs-extra": "^11.2.0",
     "hls.js": "^1.5.15",
-    "mermaid": "^10.9.1",
+    "mermaid": "^11.2.1",
     "sass-embedded": "^1.79.3",
     "vidstack": "^1.12.11",
     "vue": "^3.5.7",
