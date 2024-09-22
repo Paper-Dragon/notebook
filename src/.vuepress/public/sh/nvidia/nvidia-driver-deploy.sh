@@ -216,12 +216,12 @@ else
     if [ -f "$FILE" ]; then
         sudo rm "$FILE"
     fi
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o "$FILE"
+    curl -fsSL https://download-docker.geekery.cn/linux/ubuntu/gpg | sudo gpg --dearmor -o "$FILE"
     sudo chmod a+r /etc/apt/keyrings/docker.gpg
 
     # Add Docker-ce repository to Apt sources and install
     echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download-docker.geekery.cn/linux/ubuntu \
       $(. /etc/os-release; echo "$VERSION_CODENAME") stable" | \
       sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt update -y
@@ -272,6 +272,10 @@ echo "Applying workaround for NVIDIA Docker issue as per https://github.com/NVID
 # Edit the Docker daemon configuration.
 sudo bash -c 'cat <<EOF > /etc/docker/daemon.json
 {
+	"registry-mirrors": [
+		"https://hub.geekery.cn",
+		"https://ghcr.geekery.cn"
+	],
    "runtimes": {
        "nvidia": {
            "path": "nvidia-container-runtime",
