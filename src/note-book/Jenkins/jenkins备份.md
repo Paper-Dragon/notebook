@@ -2,7 +2,7 @@
 
 　**1.手动备份**
 
-　　比较简单就像上述迁移步骤那样，把原始机器上的数据打包。打包后有两种选择，第一种是在原始机器上，其他路径下创建一个文件夹，把数据丢进去。例如原始机器上的数据是存储在/home/jenkins，我们打包后可以放到/home/backups，这样做的好处是如果误删了jenkins，我们可以到backups下找回原始数据；第二种是将打包的文件拷贝到另外一台物理机上，这样做的好处是如果原始机器宕机了，我们可以在另外一台机器上找到备份文件，在最短的时间内恢复工作。
+　　比较简单就像上述迁移步骤那样，把原始机器上的数据打包。打包后有两种选择，第一种是在原始机器上，其他路径下创建一个文件夹，把数据丢进去。例如原始机器上的数据是存储在/home/jenkins，我们打包后可以放到/home/backups，这样做的好处是如果误删了Jenkins，我们可以到backups下找回原始数据；第二种是将打包的文件拷贝到另外一台物理机上，这样做的好处是如果原始机器宕机了，我们可以在另外一台机器上找到备份文件，在最短的时间内恢复工作。
 
 ```bash
 
@@ -12,7 +12,7 @@
 
 　**2.自动备份**
 
-　　相对于手动备份，我们也可以编写脚本实现自动备份，例如linux系统中，使用shell脚本，如下命令可以实现备份：
+　　相对于手动备份，我们也可以编写脚本实现自动备份，例如Linux系统中，使用shell脚本，如下命令可以实现备份：
 
 ```bash
 　　cp -r /home/jenkins/需要备份的文件夹名 /home/backups/目标文件夹名
@@ -23,27 +23,27 @@
 
 
 
-当jenkins在用起来的时候，我们很难保证它不会出故障，除了故障怎么快速恢复呢？作为运维，备份极其重要。但jenkins本身不提供备份的功能，所以这里就需要借助jenkins自带的插件来进行备份恢复，jenkins自带的插件有thinbackup和periodic backup。下面进行分别介绍
+当Jenkins在用起来的时候，我们很难保证它不会出故障，除了故障怎么快速恢复呢？作为运维，备份极其重要。但Jenkins本身不提供备份的功能，所以这里就需要借助Jenkins自带的插件来进行备份恢复，Jenkins自带的插件有thinbackup和periodic backup。下面进行分别介绍
 
 ### 一、通过插件ThinBackup进行备份恢复
 
-**1.以管理员的身份登录jenkins，点击系统管理—>插件管理—->可选插件—>(过滤里面输入ThinBackup进行查找)**
+**1.以管理员的身份登录Jenkins，点击系统管理—>插件管理—->可选插件—>(过滤里面输入ThinBackup进行查找)**
 
-![img](jenkins备份.assets/1200.png)
+![img](Jenkins备份.assets/1200.png)
 
 查找thinbackup.png
 
 
 **2.勾选ThinBackup—>点击直接安装**
 
-![img](jenkins备份.assets/1200-16399812651583.png)
+![img](Jenkins备份.assets/1200-16399812651583.png)
 
 安装thinbackup.png
 
  等待安装完成。
 **3.点击系统管理—>选择ThinBackup插件**
 
-![img](jenkins备份.assets/1200-16399812683915.png)
+![img](Jenkins备份.assets/1200-16399812683915.png)
 
 选择插件.png
 
@@ -54,7 +54,7 @@
 >  Restore: 恢复备份
 >  Settings: 备份参数的设置
 
-![img](jenkins备份.assets/1200-16399812721917.png)
+![img](Jenkins备份.assets/1200-16399812721917.png)
 
 查看thinbackup.png
 
@@ -69,14 +69,14 @@ chown -R jenkins.jenkins /backup
 
 **5.设置定时备份，周一至周五的凌晨2点进行备份（可排除不需要备份的文件）**
 
-![img](jenkins备份.assets/1200-16399814764389.png)
+![img](Jenkins备份.assets/1200-16399814764389.png)
 
 thinbackup设置.png
 
 
 **6.手动备份**
 
-![img](jenkins备份.assets/1200-163998163919711.png)
+![img](Jenkins备份.assets/1200-163998163919711.png)
 
 手动备份.png
 
@@ -115,13 +115,13 @@ hudson.tasks.Maven.xml
 
 **7.恢复**
 
-![img](jenkins备份.assets/1200-163998165250813.png)
+![img](Jenkins备份.assets/1200-163998165250813.png)
 
 恢复.png
 
 
 
-![img](jenkins备份.assets/1200-163998165716515.png)
+![img](Jenkins备份.assets/1200-163998165716515.png)
 
 选择备份文件.png
 
@@ -134,7 +134,7 @@ hudson.tasks.Maven.xml
 备份除了上面提到的插件还有一个插件是Periodic Backup，安装Periodic Backup和安装thinbackup一样，安装完成后可以在系统管理菜单下面有一个Periodic Backup Manager菜单
  **1.打开Periodic Backup Manager，第一次打开是没有任何东西的，需要我们自己去建立一个规则，点击Configure**
 
-![img](jenkins备份.assets/1200-163998166702717.jpeg)
+![img](Jenkins备份.assets/1200-163998166702717.jpeg)
 
 Periodic Backup配置.jpg
 
@@ -151,6 +151,6 @@ Periodic Backup配置.jpg
 >  Storage Strategy: 存储策略，就是是否需要进行压缩存储
 >  Backup Location: 备份的位置，都是本地目录
 
-![img](jenkins备份.assets/1200-163998167455619.png)
+![img](Jenkins备份.assets/1200-163998167455619.png)
 
 配置.png

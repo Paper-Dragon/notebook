@@ -2,9 +2,9 @@
 
 > 部分资料来自： https://blog.laoyutang.cn/linux/clash.html
 
-官方Clash部署需要采用两个镜像分别启动服务和面板，博主使用官方server镜像和官方管理面板前端代码，重新修改打包构建，使用一个镜像可以直接启动服务和管理面板，简单轻量。
+官方Clash部署需要采用两个镜像分别启动服务和面板，博主使用官方Server镜像和官方管理面板前端代码，重新修改打包构建，使用一个镜像可以直接启动服务和管理面板，简单轻量。
 
->  clash和它的面板已经很久不更新了，建议使用Meta内核和MetaCube面板，随我来这个文档部署：
+>  Clash和它的面板已经很久不更新了，建议使用Meta内核和MetaCube面板，随我来这个文档部署：
 >
 >  [Docker一键部署Meta和MetacubexD面板](https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/Docker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2Meta%E5%92%8CMetacubexD%E9%9D%A2%E6%9D%BF.html)
 
@@ -20,9 +20,9 @@
 ## 修改内容
 
 - 修改前端接口baseurl，不再通过用户配置，使用页面相对路径`/api`。
-- 去除clash服务接口配置框。
-- docker镜像增加nginx和前端打包文件。
-- nginx反代clash管理接口，实现管理页面无需配置直接管理容器内clash服务。
+- 去除Clash服务接口配置框。
+- Docker镜像增加Nginx和前端打包文件。
+- Nginx反代Clash管理接口，实现管理页面无需配置直接管理容器内Clash服务。
 
 ## 启动容器
 

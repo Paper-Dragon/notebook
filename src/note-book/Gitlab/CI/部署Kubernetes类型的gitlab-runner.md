@@ -38,7 +38,7 @@ helm repo list
 helm search repo -l gitlab/gitlab-runner
 ```
 
-然后查询gitlab的版本，根据gitlab的版本选择gitlab-runner的版本。比如这里查询到gitlab的版本是14.9.0，runner选择0.39.0
+然后查询Gitlab的版本，根据Gitlab的版本选择gitlab-runner的版本。比如这里查询到Gitlab的版本是14.9.0，runner选择0.39.0
 
 ```bash
 helm fetch gitlab/gitlab-runner --version=0.39.0
@@ -77,7 +77,7 @@ helm install gitlab-runner --namespace gitlab-runner ./gitlab-runner
 helm upgrade gitlab-runner --namespace gitlab-runner ./gitlab-runner
 ```
 
-至此即可在gitlab上看到runner了
+至此即可在Gitlab上看到runner了
 ![image-20220815102732430](部署Kubernetes类型的gitlab-runner.assets/image-20220815102732430.png)
 
 ## 五、一份已经配置好的values文件

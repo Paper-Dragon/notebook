@@ -52,7 +52,7 @@ gitlab启动报warning: redis: unable to open supervise/ok: file does not exist�
 
 - 新打开一个窗口
 
-- 执行systemctl restart [gitlab](https://so.csdn.net/so/search?q=gitlab&spm=1001.2101.3001.7020)-runsvdir命令
+- 执行systemctl restart gitlab-runsvdir命令
 
 解决方案:
 在另外开启一个终端启动如下命令
@@ -75,7 +75,7 @@ sudo gitlab-ctl reconfigure
 
 # GitLab 未启动 systemctl start gitlab-runsvdir.service 无反应
 
-重启了一台服务器，发现配置的 gitlab 没有启动。手动启动`sudo gitlab-ctl start`提示一堆`runsv not running`的信息。
+重启了一台服务器，发现配置的 Gitlab 没有启动。手动启动`sudo gitlab-ctl start`提示一堆`runsv not running`的信息。
 
 
 

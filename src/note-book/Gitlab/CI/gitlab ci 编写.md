@@ -199,7 +199,7 @@ include: configs/**/*.yml
 
 #### file
 
-要导入相同gitlab服务器上其他仓库里的文件，可以使用file格式，这个时候需要使用绝对路径，如下所示：
+要导入相同Gitlab服务器上其他仓库里的文件，可以使用file格式，这个时候需要使用绝对路径，如下所示：
 
 ```yaml
 include:
@@ -264,10 +264,10 @@ include:
 
 ## variables
 
-用来定义变量，既可以在全局范围使用，也可以单任务级别使用。在gitlab里，变量分为两种类型：
+用来定义变量，既可以在全局范围使用，也可以单任务级别使用。在Gitlab里，变量分为两种类型：
 
 * 自定义变量，即使用variables关键字定义的变量
-* 预定义变量，即gitlab官方提前定义好的变量，可以直接使用。例如CI_COMMIT_REF_NAME，表示正在构建项目的分支或者tag名称。
+* 预定义变量，即Gitlab官方提前定义好的变量，可以直接使用。例如CI_COMMIT_REF_NAME，表示正在构建项目的分支或者tag名称。
 
 变量定义的一些规则：
 
@@ -1063,7 +1063,7 @@ job_no_git_strategy:
 
 | runner执行器类型                      | 缓存的路径                                                   |
 | ------------------------------------- | ------------------------------------------------------------ |
-| shell（linux主机类型）                | 本地目录，在gitlab-runner用户的家目录：`/home/gitlab-runner/cache/<user>/<project>/<cache-key>/cache.zip.` |
+| Shell（Linux主机类型）                | 本地目录，在gitlab-runner用户的家目录：`/home/gitlab-runner/cache/<user>/<project>/<cache-key>/cache.zip.` |
 | Docker （容器类型）                   | Docker卷下，路径是：`/var/lib/docker/volumes/<volume-id>/_data/<user>/<project>/<cache-key>/cache.zip` |
 | Docker主机（自动扩展runner，例如k8s） | 和Docker一样                                                 |
 

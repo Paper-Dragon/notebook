@@ -57,7 +57,6 @@ category:
 ### 在Server端安装x-ui
 
 ```bash
-
 输入以下代码自动安装x-ui服务器
 bash <(curl -Ls https://raw.githubusercontent.com/chenyue168881/x-ui/master/install.sh)
 ```

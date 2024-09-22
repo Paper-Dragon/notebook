@@ -46,7 +46,7 @@ SCM英文全称：Source Control Management (Software Version Control)中文全�
 
 
 
-# gitlab
+# Gitlab
 
 清华镜像站
 
@@ -92,7 +92,7 @@ curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/scrip
 
 ```
 
-5、安装gitlab
+5、安装Gitlab
 
 ```bash
 yum install gitlab-ce -y

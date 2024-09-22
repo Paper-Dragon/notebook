@@ -2,7 +2,7 @@
 
 > 通常ip被污染之后使用 WARP进行增加ip复活
 >
-> 使用warp有概率刷出原生ip
+> 使用Warp有概率刷出原生ip
 >
 > 开源地址 https://github.com/fscarmen/warp
 

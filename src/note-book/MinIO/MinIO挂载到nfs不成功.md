@@ -15,7 +15,7 @@
 
 参考
 
-gitlab底层也是用的minio,gitlab官方文档是这么写的
+Gitlab底层也是用的minio,Gitlab官方文档是这么写的
 
 File locking: GitLab requires advisory file locking, which is only supported natively in NFS version 4. NFSv3 also supports locking as long as Linux Kernel 2.6.5+ is used. We recommend using version 4 and do not specifically test NFSv3
 

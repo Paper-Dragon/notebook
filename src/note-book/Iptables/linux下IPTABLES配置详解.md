@@ -1,4 +1,4 @@
-# linux下IPTABLES配置详解
+# Linux下Iptables配置详解
 
 ```bash
 **-A RH-Firewall-1-INPUT -p tcp -m state --state NEW -m tcp --dport 24000 -j ACCEPT
@@ -11,7 +11,7 @@
 
 **我们来配置一个filter表的防火墙.**
 
-### **(1)查看本机关于IPTABLES的设置情况**
+### **(1)查看本机关于Iptables的设置情况**
 
 ```bash
 [root@tp ~]# iptables -L -n
@@ -39,9 +39,9 @@ ACCEPT   tcp -- 0.0.0.0/0      0.0.0.0/0      state NEW tcp dpt:25
 REJECT   all -- 0.0.0.0/0      0.0.0.0/0      reject-with icmp-host-prohibited 
 ```
 
-可以看出我在安装linux时,选择了有防火墙,并且开放了22,80,25端口.
+可以看出我在安装Linux时,选择了有防火墙,并且开放了22,80,25端口.
 
-如果你在安装linux时没有选择启动防火墙,是这样的
+如果你在安装Linux时没有选择启动防火墙,是这样的
 
 ```bash
 [root@tp ~]# iptables -L -n
@@ -59,7 +59,7 @@ target   prot opt source        destination
 
 ### **(2)清除原有规则.**
 
-不管你在安装linux时是否启动了防火墙,如果你想配置属于自己的防火墙,那就清除现在filter的所有规则.
+不管你在安装Linux时是否启动了防火墙,如果你想配置属于自己的防火墙,那就清除现在filter的所有规则.
 
 ```bash
 [root@tp ~]# iptables -F   清除预设表filter中的所有规则链的规则
@@ -81,7 +81,7 @@ Chain OUTPUT (policy ACCEPT)
 target   prot opt source        destination   
 ```
 
-什么都没有了吧,和我们在安装linux时没有启动防火墙是一样的.(提前说一句,这些配置就像用命令配置IP一样,重起就会失去作用),怎么保存.
+什么都没有了吧,和我们在安装Linux时没有启动防火墙是一样的.(提前说一句,这些配置就像用命令配置IP一样,重起就会失去作用),怎么保存.
 
 ```bash
 [root@tp ~]# /etc/rc.d/init.d/iptables save
@@ -405,8 +405,10 @@ target   prot opt source        destination
 
 三、例子
 ①iptables -t filter -A INPUT -s 192.168.1.5 -i eth0 -j DROP
-禁止IP为192.168.1.5的主机从eth0访问本机②iptables -t filter -I INPUT 2 -s 192.168.5.0/24 -p tcp --dport 80 -j DROP
-禁止子网192.168.5.0访问web服务③iptables -t filter -I INPUT 2 -s 192.168.7.9 -p tcp --dport ftp -j DROP
+禁止IP为192.168.1.5的主机从eth0访问本机
+②iptables -t filter -I INPUT 2 -s 192.168.5.0/24 -p tcp --dport 80 -j DROP
+禁止子网192.168.5.0访问web服务
+③iptables -t filter -I INPUT 2 -s 192.168.7.9 -p tcp --dport ftp -j DROP
 禁止IP为192.168.7.9访问FTP服务
 ④iptables -t filter -L INPUT
 查看filter表中INPUT链的规则
@@ -429,6 +431,4 @@ kern.=notice                                            /var/log/firewall.log
 systemctl restart syslog rsyslog
 
 iptables –A FORWARD  –j LOG --log-level 5 --log-prefix ”IPTABLES FORWARD -> ”
-
-
 ```
