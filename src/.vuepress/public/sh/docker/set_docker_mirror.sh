@@ -14,7 +14,7 @@ Error="${Red}[错误]${Font}"
 Warning="${Red}[警告]${Font}"
 
 # 显示启动横幅
-echo -e "\n${GreenBG}
+echo -e "\n${GreenBG}${Font}\n
 ${GreenBG} ███████                    ██                    ████     ████ ██                              ${Font}
 ${GreenBG}░██░░░░██                  ░██                   ░██░██   ██░██░░                               ${Font}
 ${GreenBG}░██    ░██  ██████   █████ ░██  ██  █████  ██████░██░░██ ██ ░██ ██ ██████ ██████  ██████  ██████${Font}
