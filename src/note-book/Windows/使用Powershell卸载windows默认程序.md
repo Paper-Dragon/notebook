@@ -16,7 +16,14 @@
 使用get-appxpackage *edge*命令进行模糊搜索（你想要卸载什么程序就将edge换为什么程序）
 PS：get-appxpackage [你要卸载的程序]
 
-复制PackageFullName（包全名）备用在这个例子中即 Microsoft.TranslatorforMicrosoftEdge_0.91.51.0_neutral_8wekyb3d8bbwe
+
+复制`PackageFullName`（包全名）备用在这个例子中即
+
+```powershell
+Microsoft.TranslatorforMicrosoftEdge_0.91.51.0_neutral_8wekyb3d8bbwe
+```
+
+如图
 
 ![在这里插入图片描述](使用Powershell卸载windows默认程序.assets/40859f303a618f976f92b1085d20336a.png)
 
