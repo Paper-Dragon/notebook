@@ -16,7 +16,7 @@
     "@vuepress/bundler-vite": "2.0.0-rc.15",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.42",
     "@waline/client": "^3.3.2",
-    "chokidar": "^4.0.0",
+    "chokidar": "^4.0.1",
     "dashjs": "^4.7.4",
     "echarts": "^5.5.1",
     "echarts-wordcloud": "^2.1.0",
