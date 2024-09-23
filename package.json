@@ -15,6 +15,8 @@
     "@vue/repl": "^4.4.2",
     "@vuepress/bundler-vite": "2.0.0-rc.15",
     "@vuepress/plugin-google-analytics": "2.0.0-rc.42",
+    "@vuepress/plugin-markdown-tab": "2.0.0-rc.47",
+    "@vuepress/plugin-redirect": "2.0.0-rc.51",
     "@waline/client": "^3.3.2",
     "chokidar": "^4.0.1",
     "dashjs": "^4.7.4",
@@ -29,6 +31,6 @@
     "vuepress": "2.0.0-rc.15",
     "vuepress-plugin-md-enhance": "2.0.0-rc.54",
     "vuepress-plugin-search-pro": "2.0.0-rc.54",
-    "vuepress-theme-hope": "2.0.0-rc.55"
+    "vuepress-theme-hope": "2.0.0-rc.56"
   }
 }

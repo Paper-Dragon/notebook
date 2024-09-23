@@ -108,7 +108,6 @@ export default hopeTheme({
       attrs: false,
       // 是否启用图表支持 https://theme-hope.vuejs.press/zh/guide/markdown/chartjs.html
       chart: false,
-      codetabs: true,
       demo: true,
       echarts: true,
       // 是否启用流程图支持
@@ -121,9 +120,6 @@ export default hopeTheme({
       mark: false,
       // mermaid流程图 https://mermaid.js.org/
       mermaid: true,
-      // 是否启用幻灯片支持。你可以传递选项控制导入的插件和主题
-      revealJs: false,
-
 
       stylize: [
         {
@@ -140,10 +136,27 @@ export default hopeTheme({
       ],
       sub: false,
       sup: false,
-      tabs: true,
       vPre: false,
       vuePlayground: false,
     },
+    markdownTab:{
+      tabs: true,
+      codeTabs: false
+    },
+    // 在dev server中如果想要看到git历史可以打开，消耗cpu巨多
+    // git:{
+    //   createdTime: true,
+    //   updatedTime: true,
+    //   contributors: true
+    // },
+
+    // 默认代码块主题，自动逸的话需要手动安装@vuepress/plugin-prismjs
+    // prismjs:{
+    //   themes: {
+    //     light: "ghcolors",
+    //     dark: "nord"
+    //   },
+    // },
     linksCheck: true,
     components: {
       // 你想使用的组件
