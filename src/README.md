@@ -267,10 +267,10 @@ highlights:
 
 footer: |-
   <div style="display: block;text-align:left;">
-    <!-- <a href="http://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank" style="color:inherit;text-decoration:none;white-space:nowrap;">
-      <img src="http://www.beian.gov.cn/img/ghs.png" alt="" style="width:1rem;vertical-align:middle;"> 鲁ICP备2023019857号-2
+    <a href="https://icp.gov.moe/?keyword=20247111" rel="noopener noreferrer" target="_blank" style="color:inherit;text-decoration:none;white-space:nowrap;">
+      <img src="https://travel.moe/images/ico64.png" alt="" style="width:1rem;vertical-align:middle;"> <a href="https://icp.gov.moe/?keyword=20247111" target="_blank">萌ICP备20247111号</a>
     </a>
-    / -->
+    /
     <a  href="https://www.travellings.cn/go.html" target="_blank"><img src="https://www.travellings.cn/assets/logo.gif" style="width:auto;height:19px;vertical-align:middle;"></a>
   </div>
 copyright: |-
