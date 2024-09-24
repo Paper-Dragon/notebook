@@ -1,7 +1,7 @@
 # 使用Powershell卸载windows默认程序
 
-## 管理员身份打开powershell
-输入 <kbd>Win</kbd> 键打开开始菜单，输入powershell，然后选择管理员身份运行。
+## 管理员身份打开Powershell
+输入 <kbd>Win</kbd> 键打开开始菜单，输入Powershell，然后选择管理员身份运行。
 
 显示：左键单击Windows Powershell（管理员）
 

@@ -1,6 +1,6 @@
-# docker容器集合
+# Docker容器集合
 
-## docker 部署和镜像仓库优化
+## Docker 部署和镜像仓库优化
 
 ```bash
 sudo curl -fsSL get.docker.com  && sudo sh
@@ -14,7 +14,7 @@ sudo systemctl enable docker
 sudo systemctl start docker
 ```
 
-### 普通用户使用docker
+### 普通用户使用Docker
 
 > 以下方法仅适用于单用户电脑，若为多用户，即有越权漏洞！！！！
 
@@ -32,9 +32,9 @@ sudo gpasswd -a ${USER} docker
 sudo chmod a+rw /var/run/docker.sock
 ```
 
-## docker 常用的容器
+## Docker常用的容器
 
-### mysql容器
+### MySQL容器
 
 ```bash
 docker run \
@@ -62,7 +62,7 @@ docker run \
 
 启动后，在浏览器中打开 `http://localhost:8080` 并输入MySQL登录凭据：
 
-### mongodb容器
+### MongoDB容器
 
 ```bash
 docker run  -d \
@@ -88,7 +88,7 @@ db.createUser(
  )
 ```
 
-### alist安装
+### Alist安装
 
 ```bash
 docker run -d \
@@ -99,13 +99,13 @@ docker run -d \
  xhofe/alist:latest
 ```
 
-获取alist密码
+获取Alist密码
 
 ```bash
 docker exec -it alist ./alist admin
 ```
 
-### 中文版本的 portainer  
+### 中文版本的 Portainer  
 
 ```bash
 docker run -d \
@@ -117,7 +117,7 @@ docker run -d \
  6053537/portainer-ce
 ```
 
-### 英文版本portainer
+### 英文版本Portainer
 
 ```bash
 docker run -d \
@@ -131,7 +131,7 @@ docker run -d \
 
 ```
 
-### jupyter镜像
+### Jupyter镜像
 
 -----------------------
 
@@ -183,7 +183,7 @@ docker run -d \
   wg show
   ```
 
-### frp docker
+### frp Docker
 
 #### 服务端
 
@@ -319,7 +319,7 @@ remote_port = 6001 #远程服务器端口
 #plugin_header_X-From-Where = frp
 ```
 
-### docker ssh 探针
+### Docker ssh 探针
 
 > 参考链接1： [sshd_config（5） - OpenBSD 手册页](https://man.openbsd.org/sshd_config#Match)
 >
