@@ -144,11 +144,11 @@ export default hopeTheme({
       codeTabs: false
     },
     // 在dev server中如果想要看到git历史可以打开，消耗cpu巨多
-    // git:{
-    //   createdTime: true,
-    //   updatedTime: true,
-    //   contributors: true
-    // },
+    git:{
+      createdTime: true,
+      updatedTime: true,
+      contributors: true
+    },
 
     // 默认代码块主题，自动逸的话需要手动安装@vuepress/plugin-prismjs
     // prismjs:{

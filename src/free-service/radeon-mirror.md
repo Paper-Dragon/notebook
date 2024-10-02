@@ -14,11 +14,21 @@ breadcrumb: false
 
 ```mermaid
 ---
-title: 镜像Radeon全站
+title: Radeon官方仓库至国内镜像站的数据流
 ---
 
 flowchart LR;
-    A["https://repo.radeon.com"] --> B["https://radeon.geekery.cn"] --> C["你的电脑"];
+    subgraph 官方源
+        A[点击访问: <a href="https://repo.radeon.com" target="_blank">https://repo.radeon.com</a>]
+    end
+    subgraph 国内镜像
+        B[点击访问: <a href="https://radeon.geekery.cn" target="_blank">https://radeon.geekery.cn</a>]
+    end
+    subgraph 用户设备
+        C["你的电脑"]
+    end
+    A -->|同步更新| B
+    B -->|下载使用| C
 
 ```
 
