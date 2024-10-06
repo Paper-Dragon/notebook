@@ -4,3 +4,6 @@
 [submodule "src/.vuepress/public/RandomPassword"]
 	path = src/.vuepress/public/RandomPassword
 	url = https://github.com/Paper-Dragon/RandomPassword.git
+[submodule "src/note-book/Zabbix/FontSet"]
+	path = src/note-book/Zabbix/FontSet
+	url = git@github.com:Paper-Dragon/FontSet.git
