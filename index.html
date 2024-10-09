@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    
+    <!-- 添加百度搜索验证代码 -->
+    <meta name="baidu-site-verification" content="codeva-udZGoBkoXj" />
+    <!-- end 添加百度搜索验证代码 -->
+    
+    <style>
+      html {
+        background: var(--bg-color, #fff);
+      }
+
+      html[data-theme="dark"] {
+        background: var(--bg-color, #1d1e1f);
+      }
+
+      body {
+        background: var(--bg-color);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem("vuepress-theme-hope-scheme");
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (userMode === "dark" || (userMode !== "light" && systemDarkMode)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    </script>
+    <meta name="keywords" content="Linux,Docker,文件系统,操作系统,数据库,极客世界,云原生,运维开发"><meta property="og:url" content="https://www.geekery.cn/"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="主页"><meta property="og:description" content="放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！"><meta property="og:type" content="website"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2024-09-23T17:05:16.000Z"><meta property="article:modified_time" content="2024-09-23T17:05:16.000Z"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"主页","description":"放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！"}</script><script>
+      /*禁用F12*/
+      document.onkeydown = function(){
+          if(window.event.keyCode==123) {
+              var x;
+              var r=confirm('大佬，别扒了！不妨加个友链？\n点击确认键跳转到友链！\n\n执意要做？亦或是再按下F12可调出控制台\n');
+              if (r==true){
+                //x="你按下的是\"确定\"按钮。";
+                window.location.replace("/友链/友链.html");
+              }
+              else{
+                x="你按下的是\"取消\"按钮。";
+              }
+              // document.write(x)
+              event.preventDefault(); // 阻止默认事件行为
+              event.keyCode=0;
+              event.returnValue=false;
+          }
+      }
+      </script><title>主页 | 运维开发绿皮书</title><meta name="description" content="放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！">
+    <link rel="preload" href="/assets/style-BOrDMF5m.css" as="style"><link rel="stylesheet" href="/assets/style-BOrDMF5m.css">
+    <link rel="modulepreload" href="/assets/app-COjiYc5s.js"><link rel="modulepreload" href="/assets/index.html-fYZcHhbM.js"><link rel="modulepreload" href="/assets/plugin-vue_export-helper-DlAUqK2U.js">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><!--[--><!--[--><span tabindex="-1"></span><a href="#main-content" class="vp-skip-link sr-only">跳至主要內容</a><!--]--><div class="theme-container no-sidebar external-link-icon" vp-container><!--[--><header id="navbar" class="vp-navbar" vp-navbar><div class="vp-navbar-start"><button type="button" class="vp-toggle-sidebar-button" title="Toggle Sidebar"><span class="icon"></span></button><!----><!--[--><a class="route-link vp-brand" href="/" aria-label="带我回家"><img class="vp-nav-logo" src="/logo.svg" alt><!----><span class="vp-site-name hide-in-pad">运维开发绿皮书</span></a><!--]--><!----></div><div class="vp-navbar-center"><!----><!--[--><nav class="vp-nav-links"><div class="vp-nav-item hide-in-mobile"><a class="route-link route-link-active auto-link" href="/" aria-label="主页"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-home" style=""></span><!--]-->主页<!----></a></div><div class="vp-nav-item hide-in-mobile"><a class="route-link auto-link" href="/note-book/" aria-label="使用指南"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-book" style=""></span><!--]-->使用指南<!----></a></div><div class="vp-nav-item hide-in-mobile"><div class="vp-dropdown-wrapper"><button type="button" class="vp-dropdown-title" aria-label="免费服务"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-splotch" style=""></span>免费服务<!--]--><span class="arrow"></span><ul class="vp-dropdown"><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/tools.html" aria-label="小工具"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-wrench" style=""></span><!--]-->小工具<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/docker-hub-mirror.html" aria-label="DockerHub镜像加速"><!--[--><span class="font-icon icon fa-fw fa-sm fa-brands fa-docker" style=""></span><!--]-->DockerHub镜像加速<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/cloudflare-warp.html" aria-label="Cloudflare Warp 团队服务"><!--[--><span class="font-icon icon fa-fw fa-sm fa-brands fa-cloudflare" style=""></span><!--]-->Cloudflare Warp 团队服务<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/github-direct.html" aria-label="GitHub加速下载"><!--[--><span class="font-icon icon fa-fw fa-sm fa-brands fa-github" style=""></span><!--]-->GitHub加速下载<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/radeon-mirror.html" aria-label="Radeon镜像站"><!--[--><span class="font-icon icon fa-fw fa-sm fa-solid fa-microchip" style=""></span><!--]-->Radeon镜像站<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/nvidia-mirror.html" aria-label="Nvidia镜像站"><!--[--><span class="font-icon icon fa-fw fa-sm fa-solid fa-microchip" style=""></span><!--]-->Nvidia镜像站<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/mobaxterm-crack.html" aria-label="Mobaxterm破解"><!--[--><span class="font-icon icon fa-fw fa-sm fa-solid fa-terminal" style=""></span><!--]-->Mobaxterm破解<!----></a></li><li class="vp-dropdown-item"><a class="route-link auto-link" href="/free-service/random-password.html" aria-label="密码生成器"><!--[--><span class="font-icon icon fa-fw fa-sm fa-solid fa-key" style=""></span><!--]-->密码生成器<!----></a></li></ul></button></div></div><div class="vp-nav-item hide-in-mobile"><a class="route-link auto-link" href="/timeline/" aria-label="时间线"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-history" style=""></span><!--]-->时间线<!----></a></div><div class="vp-nav-item hide-in-mobile"><a class="route-link auto-link" href="/about/friend.html" aria-label="友链"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-link" style=""></span><!--]-->友链<!----></a></div><div class="vp-nav-item hide-in-mobile"><div class="vp-dropdown-wrapper"><button type="button" class="vp-dropdown-title" aria-label="博客联盟"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-circle-nodes" style=""></span>博客联盟<!--]--><span class="arrow"></span><ul class="vp-dropdown"><li class="vp-dropdown-item"><a class="auto-link external-link" href="https://www.travellings.cn/go.html" aria-label="开往" rel="noopener noreferrer" target="_blank"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-subway" style=""></span><!--]-->开往<!----></a></li></ul></button></div></div><div class="vp-nav-item hide-in-mobile"><a class="auto-link external-link" href="https://cloudflare-cloudnative-pages.geekery.cn/" aria-label="内容分发网络部署状态" rel="noopener noreferrer" target="_blank"><!--[--><span class="font-icon icon fa-fw fa-sm fas fa-diagram-project" style=""></span><!--]-->内容分发网络部署状态<!----></a></div></nav><!--]--><!----></div><div class="vp-navbar-end"><!----><!--[--><!----><div class="vp-nav-item vp-action"><a class="vp-action-link" href="https://github.com/Paper-Dragon/notebook" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" class="icon github-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="github icon" name="github" style="width:1.25rem;height:1.25rem;vertical-align:middle;"><path d="M511.957 21.333C241.024 21.333 21.333 240.981 21.333 512c0 216.832 140.544 400.725 335.574 465.664 24.49 4.395 32.256-10.07 32.256-23.083 0-11.69.256-44.245 0-85.205-136.448 29.61-164.736-64.64-164.736-64.64-22.315-56.704-54.4-71.765-54.4-71.765-44.587-30.464 3.285-29.824 3.285-29.824 49.195 3.413 75.179 50.517 75.179 50.517 43.776 75.008 114.816 53.333 142.762 40.79 4.523-31.66 17.152-53.377 31.19-65.537-108.971-12.458-223.488-54.485-223.488-242.602 0-53.547 19.114-97.323 50.517-131.67-5.035-12.33-21.93-62.293 4.779-129.834 0 0 41.258-13.184 134.912 50.346a469.803 469.803 0 0 1 122.88-16.554c41.642.213 83.626 5.632 122.88 16.554 93.653-63.488 134.784-50.346 134.784-50.346 26.752 67.541 9.898 117.504 4.864 129.834 31.402 34.347 50.474 78.123 50.474 131.67 0 188.586-114.73 230.016-224.042 242.09 17.578 15.232 33.578 44.672 33.578 90.454v135.85c0 13.142 7.936 27.606 32.854 22.87C862.25 912.597 1002.667 728.747 1002.667 512c0-271.019-219.648-490.667-490.71-490.667z"></path></svg></a></div><div class="vp-nav-item hide-in-mobile"><button type="button" class="vp-outlook-button" tabindex="-1" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="icon outlook-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="outlook icon" name="outlook"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4 38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32 51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0 102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2 6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4 0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2 9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224 419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4 470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0 22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6 12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128 505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2 16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8 86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4 80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6 6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg><div class="vp-outlook-dropdown"><!----></div></button></div><!--[--><button type="button" class="search-pro-button" aria-label="搜索"><svg xmlns="http://www.w3.org/2000/svg" class="icon search-icon" viewBox="0 0 1024 1024" fill="currentColor" aria-label="search icon" name="search"><path d="M192 480a256 256 0 1 1 512 0 256 256 0 0 1-512 0m631.776 362.496-143.2-143.168A318.464 318.464 0 0 0 768 480c0-176.736-143.264-320-320-320S128 303.264 128 480s143.264 320 320 320a318.016 318.016 0 0 0 184.16-58.592l146.336 146.368c12.512 12.48 32.768 12.48 45.28 0 12.48-12.512 12.48-32.768 0-45.28"></path></svg><div class="search-pro-placeholder">搜索</div><div class="search-pro-key-hints"><kbd class="search-pro-key">Ctrl</kbd><kbd class="search-pro-key">K</kbd></div></button><!--]--><!--]--><!----><button type="button" class="vp-toggle-navbar-button" aria-label="Toggle Navbar" aria-expanded="false" aria-controls="nav-screen"><span><span class="vp-top"></span><span class="vp-middle"></span><span class="vp-bottom"></span></span></button></div></header><!----><!--]--><!----><div class="toggle-sidebar-wrapper"><span class="arrow start"></span></div><aside id="sidebar" class="vp-sidebar" vp-sidebar><!----><ul class="vp-sidebar-links"></ul><!----></aside><!--[--><main id="main-content" class="vp-page vp-project-home" aria-labelledby="main-title"><!----><header class="vp-hero-info-wrapper"><!--[--><div class="vp-hero-mask light" style="background-image:url(/bg/bg1-light.jpg);background-attachment:fixed;background-position:center bottom;"></div><div class="vp-hero-mask dark" style="background-image:url(/bg/bg1-dark.jpg);background-attachment:fixed;background-position:center bottom;"></div><!--]--><div class="vp-hero-info"><!--[--><img class="vp-hero-image" style="" src="/logo.svg" alt="运维开发绿皮书"><!--]--><div class="vp-hero-infos"><h1 id="main-title" class="vp-hero-title">运维开发绿皮书</h1><p id="main-description">放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</p><p class="vp-hero-actions"><a class="route-link auto-link vp-hero-action primary no-external-link-icon" href="/note-book/" aria-label="使用指南 💡"><!---->使用指南 💡<!----></a><a class="route-link auto-link vp-hero-action default no-external-link-icon" href="/timeline/" aria-label="时光机器"><!---->时光机器<!----></a></p></div></div></header><!----><!----><div class="theme-hope-content" vp-content><h2 id="词云" tabindex="-1"><a class="header-anchor" href="#词云"><span>词云</span></a></h2><!--[--><!----><div class="echarts-wrapper"><div class="echarts-container" id="echarts-3"></div><div class="loading-icon-wrapper echarts-loading" style="display:flex;align-items:center;justify-content:center;height:360px;"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" preserveAspectRatio="xMidYMid" viewBox="25 25 50 50"><animateTransform attributeName="transform" type="rotate" dur="2s" keyTimes="0;1" repeatCount="indefinite" values="0;360"></animateTransform><circle cx="50" cy="50" r="20" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"><animate attributeName="stroke-dasharray" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" values="1,200;90,200;1,200"></animate><animate attributeName="stroke-dashoffset" dur="1.5s" keyTimes="0;0.5;1" repeatCount="indefinite" values="0;-35px;-125px"></animate></circle></svg></div></div><!--]--></div><!----></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer"><div style="display: block;text-align:left;">
+  <a href="https://icp.gov.moe/?keyword=20247111" rel="noopener noreferrer" target="_blank" style="color:inherit;text-decoration:none;white-space:nowrap;">
+    <img src="https://travel.moe/images/ico64.png" alt="" style="width:1rem;vertical-align:middle;"> <a href="https://icp.gov.moe/?keyword=20247111" target="_blank">萌ICP备20247111号</a>
+  </a>
+  /
+  <a  href="https://www.travellings.cn/go.html" target="_blank"><img src="https://www.travellings.cn/assets/logo.gif" style="width:auto;height:19px;vertical-align:middle;"></a>
+</div></div><div class="vp-copyright"><div>主题使用 <a href="https://theme-hope.vuejs.press/zh/" target="_blank">VuePress Theme Hope</a> </div></div></footer></div><!--]--><!--[--><!----><!----><!--[--><!--]--><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-COjiYc5s.js" defer></script>
+
+    <!-- sakana区块 -->
+    <!-- <link rel="stylesheet" href="/sakana-widget/lib/index.css" /> -->
+    <!-- <div
+      id="sakana-widget"
+      style="position: fixed; bottom: 64px; right: 45px; z-index: 999"
+    ></div>
+    <script>
+      if (!/Mobi|Android/i.test(navigator.userAgent)) {
+        function initSakanaWidget() {
+          new SakanaWidget().mount("#sakana-widget");
+        }
+
+        var script = document.createElement("script");
+        script.async = true;
+        script.onload = initSakanaWidget;
+        script.src = "/sakana-widget/lib/index.js";
+        document.body.appendChild(script);
+      }
+    </script> -->
+    <!-- end sakana区块 -->
+  </body>
+</html>

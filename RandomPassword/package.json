@@ -1,0 +1,15 @@
+{
+  "name": "RandomPassword",
+  "version": "1.0.0",
+  "description": "generate password",
+  "scripts": {
+    "dev": "wrangler pages dev . --compatibility-date=2024-01-01",
+    "deploy": "wrangler pages deploy ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wrangler": "^3.44.0"
+  }
+}
