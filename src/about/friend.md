@@ -86,15 +86,6 @@ background="rgba(253, 230, 138, 0.15)"
     background="rgba(253, 230, 138, 0.15)"
 />
 
-
-<VPCard
-    title="极客蜂巢(GeekHive)"
-    desc="共创型综合技术博客，在这里你能学习Java、C#等软件开发与测试知识。"
-    logo="https://cdn.oscode.top/wp/2023/09/20230903072315127-e1693725895386.png"
-    link="https://www.gkhive.com/"
-    background="rgba(253, 230, 138, 0.15)"
-/>
-
 <VPCard
     title="Rachel030219"
     desc="Where dreams converge"
@@ -116,10 +107,22 @@ background="rgba(253, 230, 138, 0.15)"
 <VPCard
     title="落霞湾影视"
     desc="落霞湾每天搜集互联网新电影和电视剧，为广大用户免费提供无广告在线观看电影和电视剧服务，及时收录最新、最热、最全的电影大片,高清正版免费看！"
-    logo="https://www.e116.com/upload/mxcms/20230424-1/0cbcf92fb52b18c09f9d9ccf89d57ed1.png"
+    logo="https://www.e116.com/favicon.ico"
     link="https://www.e116.com"
     background="rgba(253, 230, 138, 0.15)"
 />
+
+
+
+## 博客虫洞
+
+<VPCard
+    title="中文博客导航-随机跳转"
+    desc="尝试链接几乎所有的中文博客"
+    link="https://boke.lu/sj"
+    logo="https://zhblogs.ohyee.cc/logo.png"
+/>
+
 
 ## 官方文档
 

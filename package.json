@@ -23,7 +23,7 @@
     "echarts": "^5.5.1",
     "echarts-wordcloud": "^2.1.0",
     "fs-extra": "^11.2.0",
-    "hls.js": "^1.5.15",
+    "hls.js": "^1.5.16",
     "mermaid": "^11.3.0",
     "sass-embedded": "^1.79.4",
     "vidstack": "^1.12.11",
