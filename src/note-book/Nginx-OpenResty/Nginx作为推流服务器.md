@@ -2,7 +2,7 @@
 
 > 本文档参考文档制作： https://www.fnmqs.work/archives/161/
 >
-> 感谢云梦工具箱，因为教程里使用的 https://github.com/arut/nginx-rtmp-module.git 这个模块太老了，3年之前更新过，所以重新更改方案使用了https://github.com/winshining/nginx-http-flv-module，这个模块在实现前者的功能的同时还实现了flv拉流量的功能，功能上强很多，而且更新及时。
+> 教程里使用的 https://github.com/arut/nginx-rtmp-module.git 这个模块太老了，3年之前更新过，所以重新更改方案使用了https://github.com/winshining/nginx-http-flv-module，这个模块在实现前者的功能的同时还实现了flv拉流量的功能，功能上强很多，而且更新及时。
 
 ## 功能对比
 
@@ -48,7 +48,7 @@ apt install libpcre3-dev zlib1g-dev libssl-dev libxml2-dev libxslt1-dev
 
 ## 下载源代码
 
-nginx官网:https://nginx.org/en/download.html 可以从官网找到很多版本的源代码， 这里示范为nginx1.22版本
+Nginx官网:https://nginx.org/en/download.html 可以从官网找到很多版本的源代码， 这里示范为Nginx 1.22版本
 
 ### 下载Nginx和Nginx-http-flv-module源代码
 
@@ -60,39 +60,41 @@ git clone https://github.com/winshining/nginx-http-flv-module.git
 
 #### 过程
 
-    root@user-VirtualBox:/home/user/Desktop/nginx-flv# wget http://nginx.org/download/nginx-1.25.4.tar.gz
-    --2024-02-18 17:05:07--  http://nginx.org/download/nginx-1.25.4.tar.gz
-    Resolving nginx.org (nginx.org)... 3.125.197.172, 52.58.199.22, 2a05:d014:5c0:2601::6, ...
-    Connecting to nginx.org (nginx.org)|3.125.197.172|:80... connected.
-    HTTP request sent, awaiting response... 200 OK
-    Length: 1236273 (1.2M) [application/octet-stream]
-    Saving to: ‘nginx-1.25.4.tar.gz’
-    
-    nginx-1.25.4.tar.gz               100%[=============================================================>]   1.18M   697KB/s    in 1.7s    
-    
-    2024-02-18 17:05:10 (697 KB/s) - ‘nginx-1.25.4.tar.gz’ saved [1236273/1236273]
-    
-    root@user-VirtualBox:/home/user/Desktop/nginx-flv# tar -xvf nginx-1.25.4.tar.gz 
-    nginx-1.25.4/
-    nginx-1.25.4/man/
-    nginx-1.25.4/LICENSE
-    nginx-1.25.4/configure
-    nginx-1.25.4/auto/
-    nginx-1.25.4/CHANGES
-    nginx-1.25.4/CHANGES.ru
-    nginx-1.25.4/html/
-    nginx-1.25.4/contrib/
-    nginx-1.25.4/README
-    
-    root@user-VirtualBox:/home/user/Desktop/nginx-flv# git clone https://github.com/winshining/nginx-http-flv-module.git
-    Cloning into 'nginx-http-flv-module'...
-    remote: Enumerating objects: 2514, done.
-    remote: Counting objects: 100% (163/163), done.
-    remote: Compressing objects: 100% (97/97), done.
-    remote: Total 2514 (delta 86), reused 92 (delta 66), pack-reused 2351
-    Receiving objects: 100% (2514/2514), 3.86 MiB | 3.18 MiB/s, done.
-    Resolving deltas: 100% (1720/1720), done.
-    root@user-VirtualBox:/home/user/Desktop/nginx-flv# 
+```bash
+root@user-VirtualBox:/home/user/Desktop/nginx-flv# wget http://nginx.org/download/nginx-1.25.4.tar.gz
+--2024-02-18 17:05:07--  http://nginx.org/download/nginx-1.25.4.tar.gz
+Resolving nginx.org (nginx.org)... 3.125.197.172, 52.58.199.22, 2a05:d014:5c0:2601::6, ...
+Connecting to nginx.org (nginx.org)|3.125.197.172|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 1236273 (1.2M) [application/octet-stream]
+Saving to: ‘nginx-1.25.4.tar.gz’
+
+nginx-1.25.4.tar.gz               100%[=============================================================>]   1.18M   697KB/s    in 1.7s    
+
+2024-02-18 17:05:10 (697 KB/s) - ‘nginx-1.25.4.tar.gz’ saved [1236273/1236273]
+
+root@user-VirtualBox:/home/user/Desktop/nginx-flv# tar -xvf nginx-1.25.4.tar.gz 
+nginx-1.25.4/
+nginx-1.25.4/man/
+nginx-1.25.4/LICENSE
+nginx-1.25.4/configure
+nginx-1.25.4/auto/
+nginx-1.25.4/CHANGES
+nginx-1.25.4/CHANGES.ru
+nginx-1.25.4/html/
+nginx-1.25.4/contrib/
+nginx-1.25.4/README
+
+root@user-VirtualBox:/home/user/Desktop/nginx-flv# git clone https://github.com/winshining/nginx-http-flv-module.git
+Cloning into 'nginx-http-flv-module'...
+remote: Enumerating objects: 2514, done.
+remote: Counting objects: 100% (163/163), done.
+remote: Compressing objects: 100% (97/97), done.
+remote: Total 2514 (delta 86), reused 92 (delta 66), pack-reused 2351
+Receiving objects: 100% (2514/2514), 3.86 MiB | 3.18 MiB/s, done.
+Resolving deltas: 100% (1720/1720), done.
+root@user-VirtualBox:/home/user/Desktop/nginx-flv# 
+```
 
 
 ## 编译安装
@@ -319,26 +321,28 @@ ffmpeg -re -i test-video.mp4 -c copy -f flv rtmp://192.168.10.111:1936/live/test
 
 #看到如下信息，就是开始推流了
 
-    fmpeg version 3.4.11-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
-      built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
-      configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
-      libavutil      55. 78.100 / 55. 78.100
-      libavcodec     57.107.100 / 57.107.100
-      libavformat    57. 83.100 / 57. 83.100
-      libavdevice    57. 10.100 / 57. 10.100
-      libavfilter     6.107.100 /  6.107.100
-      libavresample   3.  7.  0 /  3.  7.  0
-      libswscale      4.  8.100 /  4.  8.100
-      libswresample   2.  9.100 /  2.  9.100
-      libpostproc    54.  7.100 / 54.  7.100
-    Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'test-video.mp4':
-      Metadata:
-        major_brand     : isom
-        minor_version   : 512
-        compatible_brands: isomiso2avc1mp41
-        encoder         : Lavf57.56.101
-      Duration: 00:01:25.27, start: 0.000000, bitrate: 166 kb/s
-        Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 1280x638, 156 kb/s, 29.01 fps, 29 tbr, 1000k tbn, 2000k tbc (default)
+```bash
+fmpeg version 3.4.11-0ubuntu0.1 Copyright (c) 2000-2022 the FFmpeg developers
+  built with gcc 7 (Ubuntu 7.5.0-3ubuntu1~18.04)
+  configuration: --prefix=/usr --extra-version=0ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-librsvg --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+  libavutil      55. 78.100 / 55. 78.100
+  libavcodec     57.107.100 / 57.107.100
+  libavformat    57. 83.100 / 57. 83.100
+  libavdevice    57. 10.100 / 57. 10.100
+  libavfilter     6.107.100 /  6.107.100
+  libavresample   3.  7.  0 /  3.  7.  0
+  libswscale      4.  8.100 /  4.  8.100
+  libswresample   2.  9.100 /  2.  9.100
+  libpostproc    54.  7.100 / 54.  7.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'test-video.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf57.56.101
+  Duration: 00:01:25.27, start: 0.000000, bitrate: 166 kb/s
+    Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 1280x638, 156 kb/s, 29.01 fps, 29 tbr, 1000k tbn, 2000k tbc (default)
+```
 
 ### 拉流测试
 
@@ -379,10 +383,10 @@ http://example.com[:port]/dir?[port=xxx&]app=appname&stream=streamname
 
 ## 查看统计
 
-\#前提需要在nginx主配置文件里配置了stat服务，并且需要在nginx-http-flv-module-master源码包里把统计代码**stat.xsl**文件copy到nginx配置的目录里
+\#前提需要在Nginx主配置文件里配置了stat服务，并且需要在nginx-http-flv-module-master源码包里把统计代码**stat.xsl**文件copy到Nginx配置的目录里
 
 ```bash
 http://192.168.10.111:89/stat
 ```
 
-![image-20240218175104892](使用Nginx作为推流服务器.assets/image-20240218175104892.png)
+![image-20240218175104892](Nginx作为推流服务器.assets/image-20240218175104892.png)
