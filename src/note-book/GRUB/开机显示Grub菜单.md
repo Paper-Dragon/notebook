@@ -1,4 +1,4 @@
-# 开机显示菜单
+# 开机显示Grub菜单
 
 ## 开机显示菜单
 
@@ -17,7 +17,7 @@ GRUB_CMDLINE_LINUX=""
 update-grub
 ```
 
-## 让用户在GRUB开机菜单选定的开机项目自动成为默认值
+## 让用户在Grub开机菜单选定的开机项目自动成为默认值
 
 ```c
 GRUB_SAVEDEFAULT=true
