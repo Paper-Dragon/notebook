@@ -5,6 +5,10 @@ breadcrumb: false
 ---
 # Docker镜像拉取加速服务及配置指南
 
+>  6月6日，[上海交大的 Docker Hub 镜像加速器](https://mirrors.ustc.edu.cn/help/dockerhub.html) 宣布因监管要求被下架，Dockerhub 无法访问。[具体可看此通知](https://web.archive.org/web/20240606081039/https://sjtug.org/post/mirror-news/2024-06-06-takedown-dockerhub/)。
+
+![image-20241010100318565](./docker-hub-mirror.assets/image-20241010100318565.png)
+
 免费Docker镜像拉取加速服务，大陆地区无限速拉取。
 
 私有镜像功能独家支持，源码闭源，防止滥用，按照以下步骤设置镜像站即可畅快使用。
@@ -16,6 +20,8 @@ breadcrumb: false
 - [支持推送镜像到Dockerhub账户](#docker通过镜像站推送镜像到dockerhub)
 - [支持利用镜像站一键安装Docker](#一键安装docker)
 - [支持一键配置Docker镜像加速](#Docker配置镜像dockerhub加速)
+
+
 
 ## Docker配置镜像Dockerhub加速
 
