@@ -112,6 +112,14 @@ background="rgba(253, 230, 138, 0.15)"
     background="rgba(253, 230, 138, 0.15)"
 />
 
+<VPCard
+    title="Co1a’s Blog"
+    desc="CTF小白 想当高手.png"
+    logo="https://the0n3.top/medias/friends/syz1.png"
+    link="https://the0n3.top/"
+    background="#62cff7"
+/>
+
 
 
 ## 博客虫洞
