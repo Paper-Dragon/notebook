@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 351
+        "value": 352
     },
     {
         "name": "Docker",
@@ -25,7 +25,7 @@
     },
     {
         "name": "Windows",
-        "value": 117
+        "value": 122
     },
     {
         "name": "Kubernetes",
@@ -76,11 +76,11 @@
         "value": 74
     },
     {
-        "name": "虚拟机",
-        "value": 71
+        "name": "Ubuntu",
+        "value": 72
     },
     {
-        "name": "Ubuntu",
+        "name": "虚拟机",
         "value": 71
     },
     {
@@ -116,15 +116,15 @@
         "value": 58
     },
     {
+        "name": "环境变量",
+        "value": 58
+    },
+    {
         "name": "正则表达式",
         "value": 57
     },
     {
         "name": "文件夹",
-        "value": 55
-    },
-    {
-        "name": "环境变量",
         "value": 55
     },
     {
@@ -292,6 +292,10 @@
         "value": 33
     },
     {
+        "name": "发行版",
+        "value": 32
+    },
+    {
         "name": "数据结构",
         "value": 32
     },
@@ -308,12 +312,12 @@
         "value": 32
     },
     {
-        "name": "大小写",
+        "name": "GitHub",
         "value": 30
     },
     {
-        "name": "GitHub",
-        "value": 29
+        "name": "大小写",
+        "value": 30
     },
     {
         "name": "重定向",
@@ -336,19 +340,15 @@
         "value": 29
     },
     {
+        "name": "编辑器",
+        "value": 28
+    },
+    {
         "name": "流水线",
         "value": 28
     },
     {
-        "name": "编辑器",
-        "value": 27
-    },
-    {
         "name": "Status",
-        "value": 27
-    },
-    {
-        "name": "发行版",
         "value": 27
     },
     {
@@ -496,6 +496,10 @@
         "value": 22
     },
     {
+        "name": "执行命令",
+        "value": 22
+    },
+    {
         "name": "Bash",
         "value": 22
     },
@@ -517,10 +521,6 @@
     },
     {
         "name": "内核模块",
-        "value": 21
-    },
-    {
-        "name": "执行命令",
         "value": 21
     },
     {
@@ -632,6 +632,10 @@
         "value": 19
     },
     {
+        "name": "PowerShell",
+        "value": 19
+    },
+    {
         "name": "复杂度",
         "value": 19
     },
@@ -673,10 +677,6 @@
     },
     {
         "name": "Thread",
-        "value": 18
-    },
-    {
-        "name": "PowerShell",
         "value": 18
     },
     {
@@ -812,6 +812,10 @@
         "value": 16
     },
     {
+        "name": "Enter",
+        "value": 16
+    },
+    {
         "name": "网络服务",
         "value": 16
     },
@@ -865,10 +869,6 @@
     },
     {
         "name": "互联网",
-        "value": 15
-    },
-    {
-        "name": "Enter",
         "value": 15
     },
     {
@@ -1176,6 +1176,10 @@
         "value": 12
     },
     {
+        "name": "以下内容",
+        "value": 12
+    },
+    {
         "name": "Metadata",
         "value": 12
     },
@@ -1332,10 +1336,6 @@
         "value": 11
     },
     {
-        "name": "以下内容",
-        "value": 11
-    },
-    {
         "name": "Success",
         "value": 11
     },
@@ -1345,6 +1345,10 @@
     },
     {
         "name": "Options",
+        "value": 11
+    },
+    {
+        "name": "重新启动",
         "value": 11
     },
     {
@@ -1513,10 +1517,6 @@
     },
     {
         "name": "IfVersion",
-        "value": 10
-    },
-    {
-        "name": "重新启动",
         "value": 10
     },
     {
