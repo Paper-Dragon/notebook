@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# 定义颜色变量
 Green="\033[32m"
 Red="\033[31m"
 GreenBG="\033[42;37m"
@@ -8,17 +7,14 @@ RedBG="\033[41;37m"
 YellowBG="\033[43;37m"
 Font="\033[0m"
 
-# 定义通知信息
 Info="${Green}[信息]${Font}"
 OK="${Green}[OK]${Font}"
 Error="${Red}[错误]${Font}"
 Warning="${Red}[警告]${Font}"
 
-# 获取操作系统版本信息
 source '/etc/os-release'
-VERSION=$(echo "${VERSION_ID}" | awk -F "[()]" '{print $2}')
+VERSION="${VERSION_ID}"
 
-# 检查是否为root用户
 is_root() {
   if [ "$EUID" -eq 0 ]; then
     echo -e "${OK} ${GreenBG} 当前用户是root用户，进入安装流程 ${Font}"
@@ -29,7 +25,14 @@ is_root() {
   fi
 }
 
-# 判断命令执行结果
+check_version() {
+  if [ "$VERSION" != "7" ]; then
+    echo -e "${Error} ${RedBG} 该脚本仅适用于CentOS 7，当前系统版本为: $VERSION ${Font}"
+    exit 1
+  fi
+  echo -e "${OK} ${GreenBG} 确认当前系统版本为CentOS 7 ${Font}"
+}
+
 judge() {
   if [[ $? -eq 0 ]]; then
     echo -e "${OK} ${GreenBG} $1 完成 ${Font}"
@@ -45,7 +48,8 @@ main() {
   # 检查是否为root用户
   is_root
 
-  # 定义变量
+  check_version
+
   REPO_DIR="/etc/yum.repos.d/"
   ALIYUN_REPO_CONTENT='
 [base]
@@ -119,17 +123,14 @@ gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 '
 
-  # 清理原有的repo文件
   echo -e "${Info} 正在删除原有的repo文件..."
   rm -f "$REPO_DIR"*.repo
   judge "删除原有的repo文件"
 
-  # 将新的阿里云源写入repo文件
   echo -e "${Info} 正在将阿里云源写入repo文件..."
   echo "$ALIYUN_REPO_CONTENT" > "$REPO_DIR/CentOS-Base.repo"
   judge "写入阿里云源"
 
-  # 创建新的yum缓存
   echo -e "${Info} 创建新的yum缓存..."
   yum makecache
   judge "创建新的yum缓存"
@@ -137,5 +138,4 @@ gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
   echo -e "${OK} 阿里云源配置完成！"
 }
 
-# 执行主函数
 main
