@@ -48,76 +48,76 @@ main() {
   # 定义变量
   REPO_DIR="/etc/yum.repos.d/"
   ALIYUN_REPO_CONTENT='
-  [base]
-  name=CentOS-$releasever - base - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/os/$basearch/
-  enabled=1
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[base]
+name=CentOS-$releasever - base - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/os/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [updates]
-  name=CentOS-$releasever - updates - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/updates/$basearch/
-  enabled=1
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[updates]
+name=CentOS-$releasever - updates - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/updates/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [extras]
-  name=CentOS-$releasever - extras - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/extras/$basearch/
-  enabled=1
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[extras]
+name=CentOS-$releasever - extras - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/extras/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [centosplus]
-  name=CentOS-$releasever - centosplus - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/centosplus/$basearch/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[centosplus]
+name=CentOS-$releasever - centosplus - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/centosplus/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [fasttrack]
-  name=CentOS-$releasever - fasttrack - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/fasttrack/$basearch/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[fasttrack]
+name=CentOS-$releasever - fasttrack - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/fasttrack/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [atomic]
-  name=CentOS-$releasever - atomic - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/atomic/$basearch/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[atomic]
+name=CentOS-$releasever - atomic - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/atomic/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [dotnet]
-  name=CentOS-$releasever - dotnet - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/dotnet/$basearch/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[dotnet]
+name=CentOS-$releasever - dotnet - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/dotnet/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [rt]
-  name=CentOS-$releasever - rt - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/rt/$basearch/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[rt]
+name=CentOS-$releasever - rt - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/rt/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [sclo-rh]
-  name=CentOS-$releasever - sclo-rh - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/sclo/$basearch/rh/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+[sclo-rh]
+name=CentOS-$releasever - sclo-rh - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/sclo/$basearch/rh/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 
-  [sclo-sclo]
-  name=CentOS-$releasever - sclo-sclo - mirrors.aliyun.com
-  baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/sclo/$basearch/sclo/
-  enabled=0
-  gpgcheck=1
-  gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
-  '
+[sclo-sclo]
+name=CentOS-$releasever - sclo-sclo - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/sclo/$basearch/sclo/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
+'
 
   # 清理原有的repo文件
   echo -e "${Info} 正在删除原有的repo文件..."
