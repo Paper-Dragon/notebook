@@ -28,7 +28,7 @@ is_root() {
 check_version() {
   if [ "$VERSION" != "7" ]; then
     echo -e "${Error} ${RedBG} 该脚本仅适用于CentOS 7，当前系统版本为: $VERSION ${Font}"
-    exit 1
+    exit 0
   fi
   echo -e "${OK} ${GreenBG} 确认当前系统版本为CentOS 7 ${Font}"
 }
