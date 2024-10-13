@@ -5,7 +5,7 @@
 ## 一键设置
 
 ```bash
-curl -sSL https://www.geekery.cn/sh/system/clean_and_set_mirror_centos7.sh | 
+curl -sSL https://www.geekery.cn/sh/system/clean_and_set_mirror_centos7.sh | bash
 ```
 
 
