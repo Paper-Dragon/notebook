@@ -25,7 +25,7 @@
     },
     {
         "name": "Windows",
-        "value": 122
+        "value": 126
     },
     {
         "name": "Kubernetes",
@@ -276,6 +276,10 @@
         "value": 37
     },
     {
+        "name": "计算机",
+        "value": 36
+    },
+    {
         "name": "Language",
         "value": 35
     },
@@ -297,10 +301,6 @@
     },
     {
         "name": "数据结构",
-        "value": 32
-    },
-    {
-        "name": "计算机",
         "value": 32
     },
     {
@@ -464,6 +464,10 @@
         "value": 23
     },
     {
+        "name": "注册表",
+        "value": 23
+    },
+    {
         "name": "BTree",
         "value": 23
     },
@@ -524,7 +528,7 @@
         "value": 21
     },
     {
-        "name": "注册表",
+        "name": "Microsoft",
         "value": 21
     },
     {
@@ -565,10 +569,6 @@
     },
     {
         "name": "计数器",
-        "value": 20
-    },
-    {
-        "name": "Microsoft",
         "value": 20
     },
     {
@@ -646,6 +646,10 @@
     {
         "name": "拉丁字母",
         "value": 19
+    },
+    {
+        "name": "安全性",
+        "value": 18
     },
     {
         "name": "Pack",
@@ -798,10 +802,6 @@
     {
         "name": "Couldn",
         "value": 17
-    },
-    {
-        "name": "安全性",
-        "value": 16
     },
     {
         "name": "Note",
