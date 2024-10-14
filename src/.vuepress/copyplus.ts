@@ -36,7 +36,7 @@ export default {
     console.log("\nCopy Plus Plugin initialized.");
     console.log("\nRunning in Dev Server?:", app.env.isDev);
 
-    const watchPath = `${app.dir.source()}/**/*.{pdf,zip,rar,tar,gz,bz2,tgz,7z,txt,py,c,cpp,h,hpp,sh,mp4,otf,ttf}`;
+    const watchPath = `${app.dir.source()}/**/*.{pdf,zip,rar,tar,gz,bz2,tgz,7z,txt,py,c,cpp,h,hpp,sh,mp4,otf,ttf,reg}`;
     console.log("Watching files at path:", watchPath);
 
     if (!fs.existsSync(app.dir.source())) {
