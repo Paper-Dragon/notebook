@@ -1,0 +1,55 @@
+.body {
+
+	padding: 20px;
+	/* background-color: #f7f7f7; */
+	background-color: rgba(247, 247, 247, 0.5);
+	/*background-image: url("");*/
+	/* width: 800px; */
+	margin: 0 auto;
+	/* margin-top: 100px; */
+	border-radius: 35px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.text {
+	/* width: 450px; */
+	margin: 0 auto;
+	text-align: center;
+}
+
+.box {
+	display: flex;
+	/*justify-content: center;*/
+	width: 500px;
+}
+
+.felxs {
+	margin: 0 auto;
+	width: 450px;
+}
+
+.felx {
+	width: 500px;
+	justify-content: flex-start;
+}
+
+input,
+textarea {
+	border-radius: 5px;
+	border: 1px solid #444444;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+.button {
+	background-color: #01baff;
+	color: white;
+	border: none;
+	margin: 10px 0;
+	width: 80px;
+	height: 30px;
+	border-radius: 5px;
+	cursor: pointer;
+}
