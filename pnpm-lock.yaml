@@ -42,8 +42,8 @@ importers:
         specifier: ^11.2.0
         version: 11.2.0
       hls.js:
-        specifier: ^1.5.16
-        version: 1.5.16
+        specifier: ^1.5.17
+        version: 1.5.17
       mermaid:
         specifier: ^11.3.0
         version: 11.3.0
@@ -67,7 +67,7 @@ importers:
         version: 2.0.0-rc.57(sass-embedded@1.79.5)(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
       vuepress-theme-hope:
         specifier: 2.0.0-rc.58
-        version: 2.0.0-rc.58(@vue/repl@4.4.2)(@waline/client@3.3.2)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.16)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@11.3.0)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress-plugin-search-pro@2.0.0-rc.57(sass-embedded@1.79.5)(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
+        version: 2.0.0-rc.58(@vue/repl@4.4.2)(@waline/client@3.3.2)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.17)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@11.3.0)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress-plugin-search-pro@2.0.0-rc.57(sass-embedded@1.79.5)(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
 
 packages:
 
@@ -1516,8 +1516,8 @@ packages:
   hast-util-whitespace@3.0.0:
     resolution: {integrity: sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==}
 
-  hls.js@1.5.16:
-    resolution: {integrity: sha512-+wAWr4aeRq9ODN8/Vgz0Cee1Cw6Ysr7vyEkZJCwOJYNwlld7CNmhKE+dLwfpUO2UuotYLGF0of6UFiN6zA7mig==}
+  hls.js@1.5.17:
+    resolution: {integrity: sha512-wA66nnYFvQa1o4DO/BFgLNRKnBTVXpNeldGRBJ2Y0SvFtdwvFKCbqa9zhHoZLoxHhZ+jYsj3aIBkWQQCPNOhMw==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -4271,7 +4271,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
 
-  hls.js@1.5.16: {}
+  hls.js@1.5.17: {}
 
   hookable@5.5.3: {}
 
@@ -5057,7 +5057,7 @@ snapshots:
       '@vue/server-renderer': 3.5.12(vue@3.5.12)
       '@vue/shared': 3.5.12
 
-  vuepress-plugin-components@2.0.0-rc.57(artplayer@5.1.6)(dashjs@4.7.4)(hls.js@1.5.16)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)):
+  vuepress-plugin-components@2.0.0-rc.57(artplayer@5.1.6)(dashjs@4.7.4)(hls.js@1.5.17)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)):
     dependencies:
       '@stackblitz/sdk': 1.11.0
       '@vuepress/helper': 2.0.0-rc.52(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
@@ -5072,7 +5072,7 @@ snapshots:
     optionalDependencies:
       artplayer: 5.1.6
       dashjs: 4.7.4
-      hls.js: 1.5.16
+      hls.js: 1.5.17
       sass-embedded: 1.79.5
       vidstack: 1.12.11(webpack-sources@3.2.3)
     transitivePeerDependencies:
@@ -5143,7 +5143,7 @@ snapshots:
       - '@vue/composition-api'
       - typescript
 
-  vuepress-theme-hope@2.0.0-rc.58(@vue/repl@4.4.2)(@waline/client@3.3.2)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.16)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@11.3.0)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress-plugin-search-pro@2.0.0-rc.57(sass-embedded@1.79.5)(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)):
+  vuepress-theme-hope@2.0.0-rc.58(@vue/repl@4.4.2)(@waline/client@3.3.2)(artplayer@5.1.6)(dashjs@4.7.4)(echarts@5.5.1)(hls.js@1.5.17)(katex@0.16.11)(markdown-it@14.1.0)(mermaid@11.3.0)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress-plugin-search-pro@2.0.0-rc.57(sass-embedded@1.79.5)(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)):
     dependencies:
       '@vuepress/helper': 2.0.0-rc.52(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
       '@vuepress/plugin-active-header-links': 2.0.0-rc.52(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
@@ -5177,7 +5177,7 @@ snapshots:
       chokidar: 3.6.0
       vue: 3.5.12
       vuepress: 2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12)
-      vuepress-plugin-components: 2.0.0-rc.57(artplayer@5.1.6)(dashjs@4.7.4)(hls.js@1.5.16)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
+      vuepress-plugin-components: 2.0.0-rc.57(artplayer@5.1.6)(dashjs@4.7.4)(hls.js@1.5.17)(sass-embedded@1.79.5)(vidstack@1.12.11(webpack-sources@3.2.3))(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
       vuepress-plugin-md-enhance: 2.0.0-rc.57(@vue/repl@4.4.2)(echarts@5.5.1)(markdown-it@14.1.0)(mermaid@11.3.0)(sass-embedded@1.79.5)(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
       vuepress-shared: 2.0.0-rc.57(vuepress@2.0.0-rc.17(@vuepress/bundler-vite@2.0.0-rc.17(@types/node@22.7.5)(sass-embedded@1.79.5))(vue@3.5.12))
     optionalDependencies:
