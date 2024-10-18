@@ -77,7 +77,8 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           repository-name: Paper-Dragon/notebook
-          branch: geekery_cn-pages
+          token: ${{ secrets.ACCESS_TOKEN }}
+          branch: main
           folder: src/.vuepress/dist
       
       - name: 登陆到DockerHub
