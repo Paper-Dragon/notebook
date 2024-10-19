@@ -25,7 +25,7 @@
     },
     {
         "name": "Windows",
-        "value": 126
+        "value": 125
     },
     {
         "name": "OpenStack",
@@ -61,7 +61,7 @@
     },
     {
         "name": "Nginx",
-        "value": 86
+        "value": 87
     },
     {
         "name": "IP地址",
