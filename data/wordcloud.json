@@ -13,7 +13,7 @@
     },
     {
         "name": "操作系统",
-        "value": 150
+        "value": 151
     },
     {
         "name": "Python",
@@ -61,7 +61,7 @@
     },
     {
         "name": "Ubuntu",
-        "value": 72
+        "value": 73
     },
     {
         "name": "Zabbix",
