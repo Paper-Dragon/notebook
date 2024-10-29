@@ -13,7 +13,7 @@
     },
     {
         "name": "操作系统",
-        "value": 151
+        "value": 152
     },
     {
         "name": "Python",
@@ -30,6 +30,10 @@
     {
         "name": "Kubernetes",
         "value": 99
+    },
+    {
+        "name": "Ubuntu",
+        "value": 97
     },
     {
         "name": "HarmonyOS",
@@ -58,10 +62,6 @@
     {
         "name": "Form",
         "value": 74
-    },
-    {
-        "name": "Ubuntu",
-        "value": 73
     },
     {
         "name": "Zabbix",
@@ -229,7 +229,7 @@
     },
     {
         "name": "应用程序",
-        "value": 29
+        "value": 30
     },
     {
         "name": "Time",
@@ -240,12 +240,20 @@
         "value": 29
     },
     {
+        "name": "Install",
+        "value": 28
+    },
+    {
         "name": "Status",
         "value": 27
     },
     {
         "name": "全局变量",
         "value": 27
+    },
+    {
+        "name": "Systemback",
+        "value": 26
     },
     {
         "name": "RouterOS",
@@ -269,10 +277,6 @@
     },
     {
         "name": "Unix",
-        "value": 24
-    },
-    {
-        "name": "Install",
         "value": 24
     },
     {
@@ -329,6 +333,10 @@
     },
     {
         "name": "详细信息",
+        "value": 22
+    },
+    {
+        "name": "Pack",
         "value": 22
     },
     {
@@ -416,6 +424,10 @@
         "value": 20
     },
     {
+        "name": "镜像文件",
+        "value": 19
+    },
+    {
         "name": "Starting",
         "value": 19
     },
@@ -445,14 +457,6 @@
     },
     {
         "name": "Shell",
-        "value": 18
-    },
-    {
-        "name": "镜像文件",
-        "value": 18
-    },
-    {
-        "name": "Pack",
         "value": 18
     },
     {
@@ -825,10 +829,6 @@
     },
     {
         "name": "特殊字符",
-        "value": 12
-    },
-    {
-        "name": "Systemback",
         "value": 12
     },
     {
@@ -1552,6 +1552,10 @@
         "value": 7
     },
     {
+        "name": "注意事项",
+        "value": 7
+    },
+    {
         "name": "自动识别",
         "value": 7
     },
@@ -1593,10 +1597,6 @@
     },
     {
         "name": "LimitNOFILE",
-        "value": 7
-    },
-    {
-        "name": "Uncomment",
         "value": 7
     }
 ]
