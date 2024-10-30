@@ -270,12 +270,9 @@ echo "Applying workaround for NVIDIA Docker issue as per https://github.com/NVID
 # Disable cgroups for Docker containers to prevent the issue.
 # Edit the Docker daemon configuration.
 sudo mkdir -pv /etc/docker/ || true
+
 sudo bash -c 'cat <<EOF > /etc/docker/daemon.json
 {
-	"registry-mirrors": [
-		"https://hub.geekery.cn",
-		"https://ghcr.geekery.cn"
-	],
    "runtimes": {
        "nvidia": {
            "path": "nvidia-container-runtime",
@@ -285,6 +282,15 @@ sudo bash -c 'cat <<EOF > /etc/docker/daemon.json
    "exec-opts": ["native.cgroupdriver=cgroupfs"]
 }
 EOF'
+
+country=$(curl -s https://ifconfig.icu/country)
+echo "你所在的国家是:${country}"
+if [[ $country == *"China"* ]]; then
+    source <(curl -Ss https://www.geekery.cn/sh/docker/set_docker_mirror.sh)
+    echo "设置Docker镜点成功。"
+else
+    echo "当前国家不是China，未执行Docker镜点设置。"
+fi
 
 # Restart Docker to apply changes.
 sudo systemctl restart docker
