@@ -1,11 +1,11 @@
 [
     {
         "name": "Linux",
-        "value": 353
+        "value": 354
     },
     {
         "name": "Docker",
-        "value": 277
+        "value": 272
     },
     {
         "name": "文件系统",
@@ -21,7 +21,7 @@
     },
     {
         "name": "Windows",
-        "value": 128
+        "value": 127
     },
     {
         "name": "Ubuntu",
@@ -61,7 +61,7 @@
     },
     {
         "name": "CentOS",
-        "value": 84
+        "value": 83
     },
     {
         "name": "RabbitMQ",
@@ -564,10 +564,6 @@
         "value": 14
     },
     {
-        "name": "Dockerhub",
-        "value": 13
-    },
-    {
         "name": "当前目录",
         "value": 13
     },
@@ -768,6 +764,10 @@
         "value": 11
     },
     {
+        "name": "Dockerhub",
+        "value": 10
+    },
+    {
         "name": "Intel",
         "value": 10
     },
@@ -869,10 +869,6 @@
     },
     {
         "name": "Plus",
-        "value": 9
-    },
-    {
-        "name": "Daemon",
         "value": 9
     },
     {
@@ -1009,6 +1005,14 @@
     },
     {
         "name": "Nvidia",
+        "value": 8
+    },
+    {
+        "name": "DockerHub",
+        "value": 8
+    },
+    {
+        "name": "Daemon",
         "value": 8
     },
     {
@@ -1440,6 +1444,10 @@
         "value": 6
     },
     {
+        "name": "Engine",
+        "value": 6
+    },
+    {
         "name": "LiuDanYi",
         "value": 6
     },
@@ -1589,14 +1597,6 @@
     },
     {
         "name": "子网掩码",
-        "value": 6
-    },
-    {
-        "name": "Binutils",
-        "value": 6
-    },
-    {
-        "name": "模式匹配",
         "value": 6
     }
 ]
