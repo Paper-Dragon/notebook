@@ -36,16 +36,16 @@
         "value": 99
     },
     {
+        "name": "GitLab",
+        "value": 97
+    },
+    {
         "name": "HarmonyOS",
         "value": 96
     },
     {
         "name": "Sans",
         "value": 96
-    },
-    {
-        "name": "GitLab",
-        "value": 94
     },
     {
         "name": "Fonts",
@@ -104,12 +104,12 @@
         "value": 49
     },
     {
-        "name": "OpenResty",
+        "name": "解决方案",
         "value": 48
     },
     {
-        "name": "解决方案",
-        "value": 47
+        "name": "OpenResty",
+        "value": 48
     },
     {
         "name": "System",
@@ -228,11 +228,19 @@
         "value": 24
     },
     {
+        "name": "Runner",
+        "value": 24
+    },
+    {
         "name": "SakanaWidget",
         "value": 24
     },
     {
         "name": "Github",
+        "value": 23
+    },
+    {
+        "name": "Bash",
         "value": 23
     },
     {
@@ -248,19 +256,11 @@
         "value": 23
     },
     {
-        "name": "Runner",
-        "value": 23
-    },
-    {
         "name": "详细信息",
         "value": 22
     },
     {
         "name": "Pack",
-        "value": 22
-    },
-    {
-        "name": "Bash",
         "value": 22
     },
     {
@@ -844,11 +844,11 @@
         "value": 10
     },
     {
-        "name": "Email",
+        "name": "Deployment",
         "value": 10
     },
     {
-        "name": "Deployment",
+        "name": "Email",
         "value": 10
     },
     {
@@ -1320,6 +1320,10 @@
         "value": 7
     },
     {
+        "name": "解决问题",
+        "value": 7
+    },
+    {
         "name": "Ubuntu14.04",
         "value": 7
     },
@@ -1593,10 +1597,6 @@
     },
     {
         "name": "Repo",
-        "value": 6
-    },
-    {
-        "name": "子网掩码",
         "value": 6
     }
 ]
