@@ -28,11 +28,11 @@
         "value": 104
     },
     {
-        "name": "OpenStack",
-        "value": 99
+        "name": "Kubernetes",
+        "value": 100
     },
     {
-        "name": "Kubernetes",
+        "name": "OpenStack",
         "value": 99
     },
     {
@@ -61,7 +61,7 @@
     },
     {
         "name": "CentOS",
-        "value": 83
+        "value": 84
     },
     {
         "name": "RabbitMQ",
