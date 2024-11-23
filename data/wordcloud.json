@@ -17,7 +17,7 @@
     },
     {
         "name": "Python",
-        "value": 128
+        "value": 127
     },
     {
         "name": "Windows",
@@ -700,10 +700,6 @@
         "value": 11
     },
     {
-        "name": "图形界面",
-        "value": 11
-    },
-    {
         "name": "Updating",
         "value": 11
     },
@@ -757,6 +753,10 @@
     },
     {
         "name": "Firefox",
+        "value": 11
+    },
+    {
+        "name": "图形界面",
         "value": 11
     },
     {
@@ -888,10 +888,6 @@
         "value": 9
     },
     {
-        "name": "常用命令",
-        "value": 9
-    },
-    {
         "name": "程序运行",
         "value": 9
     },
@@ -949,6 +945,10 @@
     },
     {
         "name": "Kernel",
+        "value": 9
+    },
+    {
+        "name": "常用命令",
         "value": 9
     },
     {
@@ -1504,10 +1504,6 @@
         "value": 6
     },
     {
-        "name": "程序开发",
-        "value": 6
-    },
-    {
         "name": "OpenJDK",
         "value": 6
     },
@@ -1597,6 +1593,10 @@
     },
     {
         "name": "Resource",
+        "value": 6
+    },
+    {
+        "name": "网络协议",
         "value": 6
     }
 ]
