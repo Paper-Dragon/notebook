@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 29 Nov 2024 06:09:37 GMT</pubDate>
-    <lastBuildDate>Fri, 29 Nov 2024 06:09:37 GMT</lastBuildDate>
+    <pubDate>Fri, 29 Nov 2024 09:06:38 GMT</pubDate>
+    <lastBuildDate>Fri, 29 Nov 2024 09:06:38 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Linux</category>
@@ -504,7 +504,7 @@
 <p>为了方便，已经书写为脚本，一键设置镜像加速。早就写好了，为了下次再用，记录一下脚本吧。</p>
 </blockquote>
 <h2>一键设置</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/system/clean_and_set_mirror_centos7.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/LinuxCTS/tools/clean_and_set_mirror_centos7.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
