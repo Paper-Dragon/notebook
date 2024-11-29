@@ -564,6 +564,10 @@
         "value": 14
     },
     {
+        "name": "Azure",
+        "value": 13
+    },
+    {
         "name": "当前目录",
         "value": 13
     },
@@ -657,10 +661,6 @@
     },
     {
         "name": "体系结构",
-        "value": 12
-    },
-    {
-        "name": "Azure",
         "value": 12
     },
     {
@@ -1204,6 +1204,10 @@
         "value": 7
     },
     {
+        "name": "China",
+        "value": 7
+    },
+    {
         "name": "注意事项",
         "value": 7
     },
@@ -1593,10 +1597,6 @@
     },
     {
         "name": "Resource",
-        "value": 6
-    },
-    {
-        "name": "网络协议",
         "value": 6
     }
 ]
