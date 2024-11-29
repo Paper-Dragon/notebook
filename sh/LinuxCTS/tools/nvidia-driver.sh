@@ -13,21 +13,21 @@ RedBG="\033[41;37m"
 Font="\033[0m"
 
 # Set Gloabal Variables
-    # Detect OS
-        OS="$(uname)"
-        case $OS in
-            "Linux")
-                # Detect Linux Distro
-                if [ -f /etc/os-release ]; then
-                    . /etc/os-release
-                    DISTRO=$ID
-                    VERSION=$VERSION_ID
-                else
-                    echo "Your Linux distribution is not supported."
-                    exit 1
-                fi
-                ;;
-        esac
+# Detect OS
+OS="$(uname)"
+case $OS in
+    "Linux")
+        # Detect Linux Distro
+        if [ -f /etc/os-release ]; then
+            . /etc/os-release
+            DISTRO=$ID
+            VERSION=$VERSION_ID
+        else
+            echo "Your Linux distribution is not supported."
+            exit 1
+        fi
+        ;;
+esac
 
 # Detect if an Nvidia GPU is present
 NVIDIA_PRESENT=$(lspci | grep -i nvidia || true)

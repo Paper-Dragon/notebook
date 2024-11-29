@@ -17,8 +17,8 @@ VERSION="${VERSION_ID}"
 
 is_root() {
   if [ "$EUID" -eq 0 ]; then
-    echo -e "${OK} ${GreenBG} 当前用户是root用户，进入安装流程 ${Font}"
-    sleep 3
+    # echo -e "${OK} ${GreenBG} 当前用户是root用户，进入安装流程 ${Font}"
+    sleep 1
   else
     echo -e "${Error} ${RedBG} 当前用户不是root用户，请切换到root用户后重新执行脚本 ${Font}"
     exit 1
