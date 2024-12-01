@@ -42,17 +42,17 @@ fi
 
 # Test / Install nvidia-docker
 if [[ ! -z "$NVIDIA_PRESENT" ]] || true; then
-    if sudo docker run --gpus all --rm hub.geekery.cn/nvidia/nvidia/cuda:11.0.3-base-ubuntu18.04 nvidia-smi &>/dev/null; then
+    if  docker run --gpus all --rm hub.geekery.cn/nvidia/nvidia/cuda:11.0.3-base-ubuntu18.04 nvidia-smi &>/dev/null; then
         echo "nvidia-docker is enabled and working. Exiting script."
     else
         echo "nvidia-docker does not seem to be enabled. Proceeding with installations..."
         distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
         # nvidia.github.io <- nvidia-docker.geekery.cn
-        curl -s -L https://nvidia-docker.geekery.cn/nvidia-docker/gpgkey | sudo apt-key add
-        curl -s -L https://nvidia-docker.geekery.cn/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-        sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
+        curl -s -L https://nvidia-docker.geekery.cn/nvidia-docker/gpgkey |  apt-key add
+        curl -s -L https://nvidia-docker.geekery.cn/nvidia-docker/$distribution/nvidia-docker.list |  tee /etc/apt/sources.list.d/nvidia-docker.list
+        apt-get update &&  apt-get install -y nvidia-container-toolkit
         mkdir -pv /etc/docker/ || true
-        sudo bash -c 'cat <<EOF > /etc/docker/daemon.json
+        bash -c 'cat <<EOF > /etc/docker/daemon.json
         {
         "runtimes": {
             "nvidia": {
@@ -63,13 +63,13 @@ if [[ ! -z "$NVIDIA_PRESENT" ]] || true; then
         "exec-opts": ["native.cgroupdriver=cgroupfs"]
         }
         EOF'
-        sudo systemctl restart docker
-        sudo docker run --gpus all --rm hub.geekery.cn/nvidia/cuda:11.0.3-base-ubuntu18.04 nvidia-smi
+        systemctl restart docker
+        docker run --gpus all --rm hub.geekery.cn/nvidia/cuda:11.0.3-base-ubuntu18.04 nvidia-smi
     fi
 fi
 
-sudo apt-mark hold 'nvidia*' 'libnvidia*'
+apt-mark hold 'nvidia*' 'libnvidia*'
 # Add docker group and user to group docker
-sudo groupadd docker || true
-sudo usermod -aG docker $USER || true
+groupadd docker || true
+usermod -aG docker $USER || true
 newgrp docker || true

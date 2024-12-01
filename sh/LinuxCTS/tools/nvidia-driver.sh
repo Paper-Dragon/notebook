@@ -3,7 +3,7 @@
 # set -euxo pipefail
 
 # export DEBIAN_FRONTEND=noninteractive
-# sudo dpkg --set-selections <<< "cloud-init install" || true
+# dpkg --set-selections <<< "cloud-init install" || true
 Green="\033[32m"
 Red="\033[31m"
 Yellow="\033[43;37m"
@@ -89,27 +89,27 @@ else
                         case $VERSION in
                             "18.04")
                                 # Commands specific to Ubuntu 20.04
-                                sudo apt-get update -y
-                                sudo apt install $selected_version -y
+                                apt-get update -y
+                                apt install $selected_version -y
                                 ;;
 
                             "20.04")
                                 # Commands specific to Ubuntu 20.04
-                                sudo apt-get update -y
-                                sudo apt install $selected_version -y
+                                apt-get update -y
+                                apt install $selected_version -y
                                 ;;
 
                             "22.04")
                                 # Commands specific to Ubuntu 22.04
                                 # 390/418/430/435/440/450/455/460/465/470/495/510/515/520/525/530/535/545/550
-                                sudo apt-get update -y
-                                sudo apt install $selected_version -y
+                                apt-get update -y
+                                apt install $selected_version -y
                                 ;;
 
                             "24.04")
                                 # Commands specific to Ubuntu 18.04
-                                sudo apt-get update -y
-                                sudo apt install $selected_version -y
+                                apt-get update -y
+                                apt install $selected_version -y
                                 ;;
 
                             *)
@@ -124,13 +124,13 @@ else
                             "10"|"11")
                                 # Commands specific to Debian 10 & 11
                                 sudo -- sh -c 'apt update; apt upgrade -y; apt autoremove -y; apt autoclean -y'
-                                sudo apt install linux-headers-$(uname -r) -y
-                                sudo apt update -y
-                                sudo apt install nvidia-driver firmware-misc-nonfree
+                                apt install linux-headers-$(uname -r) -y
+                                apt update -y
+                                apt install nvidia-driver firmware-misc-nonfree
                                 wget https://nvidia-developer.geekery.cn/compute/cuda/repos/debian${VERSION}/x86_64/cuda-keyring_1.1-1_all.deb
-                                sudo sed -i 's@//developer.download.nvidia.com@//nvidia-developer.geekery.cn@g' /etc/apt/sources.list.d/cuda-wsl-ubuntu-x86_64.list
-                                sudo apt install nvidia-cuda-dev nvidia-cuda-toolkit
-                                sudo apt update -y
+                                sed -i 's@//developer.download.nvidia.com@//nvidia-developer.geekery.cn@g' /etc/apt/sources.list.d/cuda-wsl-ubuntu-x86_64.list
+                                apt install nvidia-cuda-dev nvidia-cuda-toolkit
+                                apt update -y
                                 ;;
 
                             *)
@@ -149,10 +149,10 @@ else
                 # For Windows Subsystem for Linux (WSL) with Ubuntu
                 if grep -q Microsoft /proc/version; then
                     wget https://nvidia-developer.geekery.cn/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
-                    sudo dpkg -i cuda-keyring_1.1-1_all.deb
-                    sudo sed -i 's@//developer.download.nvidia.com@//nvidia-developer.geekery.cn@g' /etc/apt/sources.list.d/cuda-wsl-ubuntu-x86_64.list
-                    sudo apt-get update
-                    sudo apt-get -y install cuda
+                    dpkg -i cuda-keyring_1.1-1_all.deb
+                    sed -i 's@//developer.download.nvidia.com@//nvidia-developer.geekery.cn@g' /etc/apt/sources.list.d/cuda-wsl-ubuntu-x86_64.list
+                    apt-get update
+                    apt-get -y install cuda
                 else
                     echo "This bash script can't be executed on Windows directly unless using WSL with Ubuntu. For other scenarios, consider using a PowerShell script or manual installation."
                     exit 1
@@ -166,6 +166,6 @@ else
         esac
 	echo "System will now reboot !!! Please re-run this script after restart to complete installation !"
  	sleep 5s
-        sudo reboot
+        reboot
     fi
 fi
