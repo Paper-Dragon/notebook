@@ -140,16 +140,16 @@
         "value": 41
     },
     {
+        "name": "License",
+        "value": 41
+    },
+    {
         "name": "驱动程序",
         "value": 41
     },
     {
         "name": "Markdown",
         "value": 40
-    },
-    {
-        "name": "License",
-        "value": 39
     },
     {
         "name": "PyQt",
@@ -176,6 +176,10 @@
         "value": 35
     },
     {
+        "name": "GitHub",
+        "value": 34
+    },
+    {
         "name": "Tomcat",
         "value": 32
     },
@@ -186,10 +190,6 @@
     {
         "name": "数据结构",
         "value": 32
-    },
-    {
-        "name": "GitHub",
-        "value": 30
     },
     {
         "name": "Ubuntu20.04",
@@ -240,6 +240,10 @@
         "value": 23
     },
     {
+        "name": "详细信息",
+        "value": 23
+    },
+    {
         "name": "Bash",
         "value": 23
     },
@@ -254,10 +258,6 @@
     {
         "name": "Proxy",
         "value": 23
-    },
-    {
-        "name": "详细信息",
-        "value": 22
     },
     {
         "name": "Pack",
@@ -424,6 +424,10 @@
         "value": 17
     },
     {
+        "name": "CloudFlare",
+        "value": 16
+    },
+    {
         "name": "OpenSSH",
         "value": 16
     },
@@ -496,6 +500,10 @@
         "value": 14
     },
     {
+        "name": "当前目录",
+        "value": 14
+    },
+    {
         "name": "Description",
         "value": 14
     },
@@ -565,10 +573,6 @@
     },
     {
         "name": "Azure",
-        "value": 13
-    },
-    {
-        "name": "当前目录",
         "value": 13
     },
     {
@@ -756,6 +760,10 @@
         "value": 11
     },
     {
+        "name": "Deployment",
+        "value": 11
+    },
+    {
         "name": "图形界面",
         "value": 11
     },
@@ -800,10 +808,6 @@
         "value": 10
     },
     {
-        "name": "CloudFlare",
-        "value": 10
-    },
-    {
         "name": "Dockerfile",
         "value": 10
     },
@@ -821,6 +825,10 @@
     },
     {
         "name": "Mounted",
+        "value": 10
+    },
+    {
+        "name": "Update",
         "value": 10
     },
     {
@@ -856,10 +864,6 @@
         "value": 10
     },
     {
-        "name": "Deployment",
-        "value": 10
-    },
-    {
         "name": "Email",
         "value": 10
     },
@@ -877,6 +881,10 @@
     },
     {
         "name": "搜索引擎",
+        "value": 9
+    },
+    {
+        "name": "Warp",
         "value": 9
     },
     {
@@ -1085,10 +1093,6 @@
     },
     {
         "name": "备份文件",
-        "value": 8
-    },
-    {
-        "name": "Update",
         "value": 8
     },
     {
@@ -1540,6 +1544,10 @@
         "value": 6
     },
     {
+        "name": "Build",
+        "value": 6
+    },
+    {
         "name": "Nessus",
         "value": 6
     },
@@ -1589,14 +1597,6 @@
     },
     {
         "name": "Algorithm",
-        "value": 6
-    },
-    {
-        "name": "Repeat",
-        "value": 6
-    },
-    {
-        "name": "Resource",
         "value": 6
     }
 ]
