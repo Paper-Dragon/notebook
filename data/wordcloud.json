@@ -172,12 +172,12 @@
         "value": 37
     },
     {
-        "name": "Language",
+        "name": "GitHub",
         "value": 35
     },
     {
-        "name": "GitHub",
-        "value": 34
+        "name": "Language",
+        "value": 35
     },
     {
         "name": "Time",
@@ -240,10 +240,6 @@
         "value": 23
     },
     {
-        "name": "Github",
-        "value": 23
-    },
-    {
         "name": "普通用户",
         "value": 23
     },
@@ -277,6 +273,10 @@
     },
     {
         "name": "身份验证",
+        "value": 22
+    },
+    {
+        "name": "Github",
         "value": 22
     },
     {
@@ -904,10 +904,6 @@
         "value": 9
     },
     {
-        "name": "Action",
-        "value": 9
-    },
-    {
         "name": "常用命令",
         "value": 9
     },
@@ -1153,6 +1149,10 @@
     },
     {
         "name": "Physical",
+        "value": 8
+    },
+    {
+        "name": "Action",
         "value": 8
     },
     {
