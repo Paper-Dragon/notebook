@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 04 Dec 2024 04:30:51 GMT</pubDate>
-    <lastBuildDate>Wed, 04 Dec 2024 04:30:51 GMT</lastBuildDate>
+    <pubDate>Sun, 08 Dec 2024 04:42:13 GMT</pubDate>
+    <lastBuildDate>Sun, 08 Dec 2024 04:42:13 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Linux</category>
@@ -367,28 +367,28 @@
 <li>注意：Systemback支持的Ubuntu版本最高为Ubuntu 16，可在安装提示中选择“4 ─ Ubuntu 16.04.X LTS (Xenial Xerus)”。</li>
 </ol>
 <p>安装成功后，屏幕将打印出 <code>Systemback installation is successful.</code></p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <h3>使用Systemback制作系统镜像并写入U盘</h3>
 <ol>
 <li>
 <p>在“应用中心”（按下Win键）搜索并打开Systemback。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>输入用户密码登录后，进入主界面。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>点击“创建Live系统”，输入镜像名称，勾选“包含用户数据文件”，然后点击“创建新的”镜像，等待完成。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>完成后，会提示写入U盘，点击“确定”后返回主界面。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>在主界面中，选择刚创建的镜像文件，选中待写入的U盘（U盘为ext4格式，若未检测到，请点击刷新按钮），然后点击“向目标设备写入”开始刻录U盘。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 </ol>
 <p>等待写入完成后，一个Live模式的Ubuntu系统盘即制作完成。</p>
@@ -400,19 +400,19 @@
 </li>
 <li>
 <p>开机后，进入Systemback的Live恢复模式页面，出现乱码界面时可直接按回车进入Live模式的Ubuntu系统。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>在应用程序中找到Systemback，打开并选择“系统安装”。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>输入新系统的用户名、密码和主机名，点击下一步。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>在系统安装页面，需对硬盘进行分区配置。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 </ol>
 <h4>分区设置</h4>
@@ -426,21 +426,21 @@
 <ol>
 <li>
 <p>先删除已有分区。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>依次创建<code>/</code>（ext4）、<code>/home</code>（ext4）、<code>swap</code>、<code>/boot/efi</code> 4个分区。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 </li>
 <li>
 <p>完成分区挂载。</p>
-<figure><figcaption>img</figcaption></figure>
-<figure><figcaption>img</figcaption></figure>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
+<p></p>
+<p></p>
 </li>
 </ol>
 <p>挂载完成后，勾选“传递用户配置文件及用户数据”，点击“下一步”开始安装系统。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <h3>安装完成后</h3>
 <ol>
 <li>安装完成后，重启主机。</li>
@@ -453,7 +453,7 @@
       <link>https://www.geekery.cn/note-book/Windows/Windows11%E7%9A%8424H2%E5%87%BA%E7%8E%B0%E6%89%A9%E5%B1%95%E9%94%99%E8%AF%AF.html</link>
       <guid>https://www.geekery.cn/note-book/Windows/Windows11%E7%9A%8424H2%E5%87%BA%E7%8E%B0%E6%89%A9%E5%B1%95%E9%94%99%E8%AF%AF.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Windows11的24H2出现扩展错误</source>
-      <description>Windows11的24H2出现扩展错误 原因 默认SMB签名要求：为了提高安全性，防止网络篡改和中继攻击，默认所有连接都需要SMB签名。 禁用来宾登录：为了提升连接到不可信设备时的安全性，Windows 11 24H2 专业版及后续版本中禁用了不安全的来宾登录。 解决方案 79490a2342343d81f46f9e0a4a5cf85a79490a2...</description>
+      <description>Windows11的24H2出现扩展错误 原因 默认SMB签名要求：为了提高安全性，防止网络篡改和中继攻击，默认所有连接都需要SMB签名。 禁用来宾登录：为了提升连接到不可信设备时的安全性，Windows 11 24H2 专业版及后续版本中禁用了不安全的来宾登录。 解决方案 79490a2342343d81f46f9e0a4a5cf85a 可以通过调整...</description>
       <pubDate>Mon, 14 Oct 2024 08:31:23 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>原因</h2>
@@ -464,7 +464,7 @@
 </ul>
 </blockquote>
 <h2>解决方案</h2>
-<figure><figcaption>79490a2342343d81f46f9e0a4a5cf85a</figcaption></figure>
+<p></p>
 <p>可以通过调整组策略或直接修改注册表来解决问题。</p>
 <h3>方法1：通过组策略调整</h3>
 <h4><strong>禁用SMB客户端签名要求</strong></h4>
@@ -512,14 +512,14 @@
       <link>https://www.geekery.cn/note-book/Fossology/Fossy%E5%B9%B3%E5%8F%B0%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%86%E6%9E%90.html</link>
       <guid>https://www.geekery.cn/note-book/Fossology/Fossy%E5%B9%B3%E5%8F%B0%E7%A6%BB%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%86%E6%9E%90.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Fossy平台离线部署分析</source>
-      <description>Fossy平台离线部署分析 压缩包上传检测方法 image-20241010154938422image-20241010154938422 下载报告 经过测试DEP5更直观。 image-20241010155049729image-20241010155049729 可否离线工作 一些官方未修复bug的解决方法 scancode /root/.ca...</description>
+      <description>Fossy平台离线部署分析 压缩包上传检测方法 image-20241010154938422 下载报告 经过测试DEP5更直观。 image-20241010155049729 可否离线工作 一些官方未修复bug的解决方法 scancode /root/.cache Permission denied 解决方法 在官方的文件基础上增加环境变量</description>
       <pubDate>Fri, 11 Oct 2024 01:42:26 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>压缩包上传检测方法</h2>
-<figure><figcaption>image-20241010154938422</figcaption></figure>
+<p></p>
 <h2>下载报告</h2>
 <p>经过测试DEP5更直观。</p>
-<figure><figcaption>image-20241010155049729</figcaption></figure>
+<p></p>
 <h2>可否离线工作</h2>
 <p>| 组件名称                            | 离线工作状态 | 功能描述                                                     | 问题描述                                                    | 备注                                                    |
 |</p>
@@ -634,7 +634,7 @@
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">oobe\bypassnro.cmd</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>PS：若无法输入命令，可以电脑插入鼠标点击一下命令行窗口（看到窗口外框变黑）再尝试。</p>
 <p>我们就可以选择 我没有Internet链接 这个选项了（此时计算机如果插着网线正在联网的话需要先把网线拔掉才能有此选项）</p>
-<figure><figcaption>8d6f2c8cee85e4e1412b76e36deda690</figcaption></figure>
+<p></p>
 <h2>方式二</h2>
 <blockquote>
 <p>适用于24年新版系统安装Windows 11跳过微软账户</p>
@@ -645,7 +645,7 @@
 <p>在用户账户界面新建账户，该账户用于以后登陆</p>
 <h3>修改注册表</h3>
 <p>Win+R 输入regedit.exe 调出注册表编辑器</p>
-<figure><figcaption>捕获.PNG</figcaption></figure>
+<p></p>
 <p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：BypassNRO，将值设置为1</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：HideEULAPage，将值设置为1</span></span>
@@ -668,25 +668,25 @@
       <link>https://www.geekery.cn/note-book/Windows/Windows%E7%BB%95%E8%BF%87MicroSoft%20Store%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E5%BA%94%E7%94%A8.html</link>
       <guid>https://www.geekery.cn/note-book/Windows/Windows%E7%BB%95%E8%BF%87MicroSoft%20Store%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E5%BA%94%E7%94%A8.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Windows绕过MicroSoft Store直接下载应用</source>
-      <description>Windows绕过MicroSoft Store直接下载应用 https://zhuanlan.zhihu.com/p/631642243 在浏览器打开微软商店（Microsoft 应用程序），搜索所需要的应用，复制应用的Url链接 imgimg 打开这个网站Microsoft Store - Generation Project ，在输入框黏贴复制的...</description>
+      <description>Windows绕过MicroSoft Store直接下载应用 https://zhuanlan.zhihu.com/p/631642243 在浏览器打开微软商店（Microsoft 应用程序），搜索所需要的应用，复制应用的Url链接 img 打开这个网站Microsoft Store - Generation Project ，在输入框黏贴复制的链接，...</description>
       <pubDate>Mon, 23 Sep 2024 06:25:43 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
 <p>https://zhuanlan.zhihu.com/p/631642243</p>
 </blockquote>
 <p>在浏览器打开微软商店（<a href="https://apps.microsoft.com/store/apps" target="_blank" rel="noopener noreferrer">Microsoft 应用程序</a>），搜索所需要的应用，复制应用的Url链接</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>打开这个网站<a href="https://store.rg-adguard.net/" target="_blank" rel="noopener noreferrer">Microsoft Store - Generation Project </a> ，在输入框黏贴复制的链接，点击 <strong>√</strong>（查询）。</p>
 <p>出来查询结果，找到后缀为（appxBundle）的进行<strong>下载</strong>（记住这个文件保存的位置）。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>在win11或win10的【设置】里面，找到开发人员选项，打开"允许任意（外部）安装应用"。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>打开Windows PowerShell对刚刚下载的包进行安装</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span># 命令</span></span>
 <span class="line"><span>Add-AppxPackage -Path "下载的包绝对路径"</span></span>
 <span class="line"><span># 示例</span></span>
 <span class="line"><span>Add-AppxPackage -Path "C:\temp\Microsoft.HEIFImageExtension_1.0.61171.0_neutral_~_8wekyb3d8bbwe.AppxBundle"</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>img</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>The end。</p>
 ]]></content:encoded>
     </item>
@@ -872,13 +872,13 @@
       <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%AD%E7%A7%BB%E9%99%A4Snap%E8%BD%AF%E4%BB%B6%E5%8C%85.html</link>
       <guid>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%AD%E7%A7%BB%E9%99%A4Snap%E8%BD%AF%E4%BB%B6%E5%8C%85.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Ubuntu中移除Snap软件包</source>
-      <description>Ubuntu中移除Snap软件包 Ubuntu中移除Snap软件包 1、在你的系统中打开一个终端，使用以下命令查看已经安装的 Snap 软件包的列表。它显示了 Snap 软件包，比如 Firefox，软件商店，主题以及其它默认已经安装的核心软件包。 image-20240902153642327image-20240902153642327 Ubunt...</description>
+      <description>Ubuntu中移除Snap软件包 Ubuntu中移除Snap软件包 1、在你的系统中打开一个终端，使用以下命令查看已经安装的 Snap 软件包的列表。它显示了 Snap 软件包，比如 Firefox，软件商店，主题以及其它默认已经安装的核心软件包。 image-20240902153642327 Ubuntu Snap 包列表 2、按照以下的顺序移除 ...</description>
       <pubDate>Mon, 02 Sep 2024 07:40:46 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Ubuntu中移除Snap软件包</h2>
 <p>1、在你的系统中打开一个终端，使用以下命令查看已经安装的 Snap 软件包的列表。它显示了 Snap 软件包，比如 Firefox，软件商店，主题以及其它默认已经安装的核心软件包。</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>snap list</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>image-20240902153642327</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>Ubuntu Snap 包列表</p>
 <p>2、按照以下的顺序移除 Snap 软件包。首先移除 Firefox。然后是软件商店，和用以上命令看到的你的系统中的其它软件包。</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>sudo snap remove --purge firefox</span></span>
@@ -891,7 +891,7 @@
 <span class="line"><span>sudo snap remove --purge snapd</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3、最后，通过 <code>apt</code> 命令移除 Snap 服务。</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>sudo apt remove --autoremove snapd</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>image-20240902153708910</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>移除 Snap 包和其它</p>
 <p>这还没完，即使你用以上命令移除了 Snap 软件包，但是如果你没有关闭 apt 触发器，<code>sudo apt update</code> 命令会再一次将 Snap 安装回来。</p>
 <p>4、所以，要关闭它，我们需要在 <code>/etc/apt/preferences.d/</code> 目录下创建一个 apt 设置文件 <code>nosnap.pref</code> 来关闭 Snap 服务。</p>
@@ -900,7 +900,7 @@
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>Package: snapd</span></span>
 <span class="line"><span>Pin: release a=*</span></span>
 <span class="line"><span>Pin-Priority: -10</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>image-20240902153731295</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>创建设置文件</p>
 <p>如果你知道如何使用它，那么这个 apt 设置文件是一个潜在的工具。举个例子，在以上的状态中，<code>Pin-Priority -10</code> 意思就是阻止 Snap 软件包的安装。</p>
 <p>与这个教程不相关的，举个例子，如果你想给所有发行版代号为 “bulleye” 的软件包超高优先权的话，那么就可以查看这些设置文件。如果你想了解更多，你可以访问 <a href="https://manpages.ubuntu.com/manpages/focal/man5/apt_preferences.5.html" target="_blank" rel="noopener noreferrer">apt 手册页</a>。</p>
@@ -919,7 +919,7 @@
 <span class="line"><span>apt update</span></span>
 <span class="line"><span>apt install -t 'o=LP-PPA-mozillateam' firefox</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>添加 PPA 仓库</p>
-<figure><figcaption>image-20240902153857180</figcaption></figure>
+<p></p>
 <p>从 PPA 仓库以 deb 文件形式安装 Firefox</p>
 <p>一旦你已经安装完 Firefox，使用以下命令开启自动更新。要了解更多，<a href="https://www.debugpoint.com/2021/09/remove-firefox-snap-ubuntu/" target="_blank" rel="noopener noreferrer">访问此页</a>。</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox</span></span></code></pre>
@@ -1499,13 +1499,13 @@
       <link>https://www.geekery.cn/note-book/Windows/%E4%BD%BF%E7%94%A8Powershell%E5%8D%B8%E8%BD%BDwindows%E9%BB%98%E8%AE%A4%E7%A8%8B%E5%BA%8F.html</link>
       <guid>https://www.geekery.cn/note-book/Windows/%E4%BD%BF%E7%94%A8Powershell%E5%8D%B8%E8%BD%BDwindows%E9%BB%98%E8%AE%A4%E7%A8%8B%E5%BA%8F.html</guid>
       <source url="https://www.geekery.cn/rss.xml">使用Powershell卸载windows默认程序</source>
-      <description>使用Powershell卸载windows默认程序 管理员身份打开Powershell 输入 Win 键打开开始菜单，输入Powershell，然后选择管理员身份运行。 显示：左键单击Windows Powershell（管理员） 在这里插入图片描述在这里插入图片描述 寻找你要卸载的程序 （这里以TranslatorforMicrosoftEdge为例...</description>
+      <description>使用Powershell卸载windows默认程序 管理员身份打开Powershell 输入 Win 键打开开始菜单，输入Powershell，然后选择管理员身份运行。 显示：左键单击Windows Powershell（管理员） 在这里插入图片描述 寻找你要卸载的程序 （这里以TranslatorforMicrosoftEdge为例） 你可能记不住程...</description>
       <pubDate>Sun, 28 Jul 2024 06:09:33 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>管理员身份打开Powershell</h2>
 <p>输入 <kbd>Win</kbd> 键打开开始菜单，输入Powershell，然后选择管理员身份运行。</p>
 <p>显示：左键单击Windows Powershell（管理员）</p>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
+<p></p>
 <h2>寻找你要卸载的程序</h2>
 <p>（这里以TranslatorforMicrosoftEdge为例）</p>
 <p>你可能记不住程序的全名，使用*进行代替,进行模糊搜索，其实除了程序开发者外的其他人，或许没有人能够记住程序的全名了吧！！</p>
@@ -1514,12 +1514,12 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <p>复制<code>PackageFullName</code>（包全名）备用在这个例子中即</p>
 <div class="language-powershell line-numbers-mode" data-highlighter="shiki" data-ext="powershell" data-title="powershell" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">Microsoft.TranslatorforMicrosoftEdge_0.</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">91.51</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.0_neutral_8wekyb3d8bbwe</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>如图</p>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
+<p></p>
 <h2>使用命令卸载程序</h2>
 <p>1、remove-appxpackage [你要卸载的包全名]</p>
 <p>2、打回车<kbd>Enter</kbd></p>
 <p>3、程序自动卸载</p>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
+<p></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -1637,7 +1637,7 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">router-id</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 3.3.3.3</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>总结</h2>
 <p>通过以上配置步骤，为每个路由器配置了 OSPF 协议，支持 IPv4 和 IPv6 路由。每个路由器的接口均已分配相应的 IP 地址，并已启用 OSPF 来支持区域 0 的路由。</p>
-<figure><figcaption>ba4b930c7b0175e117286a93e790d73a</figcaption></figure>
+<p></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -1845,7 +1845,7 @@ PS：get-appxpackage [你要卸载的程序]</p>
 </blockquote>
 <h2>拓扑图</h2>
 <p>在此拓扑中，我们有两个路由器（R1和R2），它们通过Serial0/0/0接口连接，并且它们之间的通信需要通过静态路由来实现。</p>
-<figure><figcaption>image-20240725185014805</figcaption></figure>
+<p></p>
 <h2>R1的配置</h2>
 <h3>进入特权模式</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">enable</span></span></code></pre>
@@ -2104,7 +2104,7 @@ PS：get-appxpackage [你要卸载的程序]</p>
 
 
 </p>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
+<p></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -2120,7 +2120,7 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <p>这种模式，才是所谓的 RabbitMQ 的高可用模式。跟普通集群模式不一样的是，在镜像集群模式下，你创建的 queue，无论元数据还是 queue 里的消息都会存在于多个实例上，就是说，每个 RabbitMQ 节点都有这个 queue 的一个完整镜像，包含 queue 的全部数据的意思。然后每次你写消息到 queue 的时候，都会自动把消息同步到多个实例的 queue 上。</p>
 <h2>环境准备</h2>
 <p>采用3节点rabbit1、rabbit2、rabbit3进行搭建。</p>
-<figure><figcaption>eb1693c6ba6195194b3876201a0b5a48</figcaption></figure>
+<p></p>
 <h3>安装与配置</h3>
 <p>确保在所有节点上已经安装了RabbitMQ，并且版本相同。</p>
 <h2>步骤</h2>
@@ -2174,12 +2174,12 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit3 ~]#</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>6. 配置高可用队列</h3>
 <h4>添加高可用规则</h4>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
+<p></p>
+<p></p>
+<p></p>
 <p>确保在所有节点上配置镜像队列策略，所有节点策略保持一致，这样即使某个节点宕机，消息仍能在集群内传递。</p>
 <h4>配置队列</h4>
-<figure><figcaption>在这里插入图片描述</figcaption></figure>
+<p></p>
 <h2>结论</h2>
 <p>现在你已经成功搭建了一个由三个节点组成的RabbitMQ镜像集群，该集群能够提供高可用性和容错能力，适合生产环境部署。</p>
 ]]></content:encoded>
@@ -2434,17 +2434,17 @@ PS：get-appxpackage [你要卸载的程序]</p>
       <link>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E5%AD%A4%E7%8B%AC%E4%B8%8E%E4%BF%A1%E4%BB%B0%EF%BC%9A%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9.html</link>
       <guid>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E5%AD%A4%E7%8B%AC%E4%B8%8E%E4%BF%A1%E4%BB%B0%EF%BC%9A%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9.html</guid>
       <source url="https://www.geekery.cn/rss.xml">孤独与信仰：我们该如何面对</source>
-      <description>孤独与信仰：我们该如何面对 ​ 有一种药，如果吃了就能彻底治愈，不再需要继续服用。我们称这种药为解药或良药。然而，如果有一种药，你吃了之后还会想吃，想要更多，甚至希望每天都服用，并希望身边的人也一同分享，这绝对不是解药，而是毒药。而我所知道，这种药叫做信仰。 image-20240720113523197image-20240720113523197 ...</description>
+      <description>孤独与信仰：我们该如何面对 ​ 有一种药，如果吃了就能彻底治愈，不再需要继续服用。我们称这种药为解药或良药。然而，如果有一种药，你吃了之后还会想吃，想要更多，甚至希望每天都服用，并希望身边的人也一同分享，这绝对不是解药，而是毒药。而我所知道，这种药叫做信仰。 image-20240720113523197 ​ 信仰为何如此诱人？因为信仰紧紧抓住了人类的...</description>
       <pubDate>Sat, 20 Jul 2024 03:43:15 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>​	有一种药，如果吃了就能彻底治愈，不再需要继续服用。我们称这种药为解药或良药。然而，如果有一种药，你吃了之后还会想吃，想要更多，甚至希望每天都服用，并希望身边的人也一同分享，这绝对不是解药，而是毒药。而我所知道，这种药叫做信仰。</p>
-<figure><figcaption>image-20240720113523197</figcaption></figure>
+<p></p>
 <p>​	信仰为何如此诱人？因为信仰紧紧抓住了人类的软肋——孤独。信仰承诺了一个美好的未来和幻境，以安抚我们对孤独的恐惧。然而，我们必须明白，孤独不仅仅是一种修辞，它更是一种真实的感受。因此，如果你不想感到孤独，就不要总想着“终将”。享受当下的每一刻，不要在夏天思考秋天，不要在相聚时忧虑离别。但如果你想深入思考人生的终极意义，就不可避免地要面对孤独。</p>
 <p>​	你问我，我身边朋友朋友父亲最孤独的那一刻是哪一刻？是我朋友父亲48岁那一年，那是他的第四个本命年。我的朋友的奶奶因突发心肌梗塞去世。人在极度悲痛的背后，往往会陷入一种平静。在火葬场回家的路上，他的父亲非常平静地说了一句：“妈走了，家散了。”那一年夏天，随着拖拉机的轰鸣，我朋友家的老街被推平。老街曾承载了他父亲的青春，也承载了他的童年。</p>
-<figure><figcaption>image-20240720113954924</figcaption></figure>
+<p></p>
 <p>​	尽管现在他们逢年过节依旧团团聚聚，一起吃饭，对方说：“你看，其实家没有散，因为我家现在逢年过节也是一家子团团聚聚，一起吃饭。其实老街也没有散，因为现在那一条老街被更繁华的星巴克和麦当劳所占据。”然而，我知道那一刻，世界上再也没有人记得我朋友的父亲是如何长大的了。没有任何记忆能够填补前面的一段记忆。</p>
 <p>​	我们有时觉得自己不孤独，觉得自己特别完整、自足和满足，但其实，我们并不是完整的个体，而是因为每一片碎片都有一个地方和一个人替我们珍藏。可是，我要告诉大家的是，终有一天，这些触角将永远消失。就像90后开始失去了，00后开始失去了，互联网也开始坍缩了，总有一天我们都会失去。今天，青春年少时我们风光无限，风雨无阻。我们不断收集碎片，有些碎片可以和别人的拼接，拼接成越来越大的版图。然而，终有一天，我们转头一看，会发现满目疮痍，曾经的记忆已被遗忘。</p>
-<figure><figcaption>image-20240720113359393</figcaption></figure>
+<p></p>
 <p>​	最终，没有人能够告诉我们，我们是从何而来，我们将向何处去。因为没有人能活着告诉我们死亡的真实感受。人生最悲哀的事，莫过于终将变成孤儿。在时间的维度面前，人类不过是时间的孤儿。然而，这恰恰是人类最幸运的事情。因为人终将成为孤儿，所以我们不可依赖于天赋，也不寻找上帝。只有我是自己的主人
 只有我能是自己的主人，那一刻，我感受到了孤独给予我的自由。</p>
 ]]></content:encoded>
@@ -3885,14 +3885,14 @@ Big O：
       <link>https://www.geekery.cn/note-book/Kubernetes/Kubernetes%E7%9A%84%E8%AF%81%E4%B9%A6%E7%AD%BE%E5%8F%91%E5%85%B3%E7%B3%BB.html</link>
       <guid>https://www.geekery.cn/note-book/Kubernetes/Kubernetes%E7%9A%84%E8%AF%81%E4%B9%A6%E7%AD%BE%E5%8F%91%E5%85%B3%E7%B3%BB.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Kubernetes的证书签发关系</source>
-      <description>Kubernetes的证书签发关系 关系图 图片比较大，下载后查看 22</description>
+      <description>Kubernetes的证书签发关系 关系图 图片比较大，下载后查看 2</description>
       <pubDate>Mon, 01 Apr 2024 09:49:50 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>关系图</h2>
 <blockquote>
 <p>图片比较大，下载后查看</p>
 </blockquote>
-<figure><figcaption>2</figcaption></figure>
+<p></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -4309,13 +4309,13 @@ Big O：
       <link>https://www.geekery.cn/note-book/AI-Training/Nvidia%E6%98%BE%E5%8D%A1%E5%9C%A8Ubuntu%E5%B9%B3%E5%8F%B0%E8%B6%85%E9%A2%91.html</link>
       <guid>https://www.geekery.cn/note-book/AI-Training/Nvidia%E6%98%BE%E5%8D%A1%E5%9C%A8Ubuntu%E5%B9%B3%E5%8F%B0%E8%B6%85%E9%A2%91.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Nvidia显卡在Ubuntu平台超频</source>
-      <description>Nvidia显卡在Ubuntu平台超频 nvidia-smi 借用网络上的一张图，这个命令结束后代表的含义 image-20240305095312766image-20240305095312766 对特殊参数进行解释 开启持久模式 设置目标 GPUs 的持久模式。有关持久性模式的描述，请参见 (GPU ATTRIBUTES) 部分。需要 root。...</description>
+      <description>Nvidia显卡在Ubuntu平台超频 nvidia-smi 借用网络上的一张图，这个命令结束后代表的含义 image-20240305095312766 对特殊参数进行解释 开启持久模式 设置目标 GPUs 的持久模式。有关持久性模式的描述，请参见 (GPU ATTRIBUTES) 部分。需要 root。除非使用 -i 参数指定单个 GPU，否则它将...</description>
       <pubDate>Tue, 05 Mar 2024 02:23:54 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>nvidia-smi</h2>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">nvidia-smi</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>借用网络上的一张图，这个命令结束后代表的含义</p>
-<figure><figcaption>image-20240305095312766</figcaption></figure>
+<p></p>
 <p>对特殊参数进行解释</p>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>持久模式：persistence mode 能够让 GPU 更快响应任务，待机功耗增加。</span></span>
 <span class="line"><span>    关闭 persistence mode 同样能够启动任务。</span></span>
@@ -4458,12 +4458,12 @@ Big O：
       <link>https://www.geekery.cn/free-service/docker-hub-mirror.html</link>
       <guid>https://www.geekery.cn/free-service/docker-hub-mirror.html</guid>
       <source url="https://www.geekery.cn/rss.xml">DockerHub镜像加速</source>
-      <description>Docker镜像拉取加速服务及配置指南 6月6日，上海交大的 Docker Hub 镜像加速器 宣布因监管要求被下架，Dockerhub 无法访问。具体可看此通知。 image-20241010100318565image-20241010100318565 功能简介 免费学习使用的Docker镜像拉取加速服务，破解Docker官方限制频率等多种应用场...</description>
+      <description>Docker镜像拉取加速服务及配置指南 6月6日，上海交大的 Docker Hub 镜像加速器 宣布因监管要求被下架，Dockerhub 无法访问。具体可看此通知。 image-20241010100318565 功能简介 免费学习使用的Docker镜像拉取加速服务，破解Docker官方限制频率等多种应用场景，无限速拉取镜像。 很多种功能都是独家支持，...</description>
       <pubDate>Tue, 06 Feb 2024 07:55:02 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
 <p>6月6日，<a href="https://mirrors.ustc.edu.cn/help/dockerhub.html" target="_blank" rel="noopener noreferrer">上海交大的 Docker Hub 镜像加速器</a> 宣布因监管要求被下架，Dockerhub 无法访问。<a href="https://web.archive.org/web/20240606081039/https://sjtug.org/post/mirror-news/2024-06-06-takedown-dockerhub/" target="_blank" rel="noopener noreferrer">具体可看此通知</a>。</p>
-<figure><figcaption>image-20241010100318565</figcaption></figure>
+<p></p>
 </blockquote>
 <h2>功能简介</h2>
 <p>免费学习使用的Docker镜像拉取加速服务，破解Docker官方限制频率等多种应用场景，无限速拉取镜像。</p>
@@ -4524,7 +4524,7 @@ Big O：
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   "https://ghcr.geekery.cn"</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>image-20241113143138309</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>点击Apply&amp;restart，使配置生效。</p>
 <h2>一键安装Docker</h2>
 <blockquote>
@@ -4578,7 +4578,7 @@ Big O：
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> search</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.geekery.cn/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">search</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> imag</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>例如</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> search</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.geekery.cn/nginx</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>bf8a67569ceb26e94afae3612092230b_720</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <h2>黑名单</h2>
 <p>本站建立的初衷是用于个人学习使用，方便自己也方便别人，近期发现有人滥用，我加功能的时候也写了个防火墙。</p>
 <p>有源地址每天请求几万次，经过日志审计我认为是在生产的集群上使用了本加速镜像。我这边的自动程序处理方法是将你的源ip地址自动添加进黑名单，生产使用请联系我捐助解除禁止。</p>
@@ -4661,7 +4661,7 @@ Big O：
       <link>https://www.geekery.cn/note-book/Nginx-OpenResty/Ubuntu%E5%AE%89%E8%A3%85OpenResty%E6%95%99%E7%A8%8B.html</link>
       <guid>https://www.geekery.cn/note-book/Nginx-OpenResty/Ubuntu%E5%AE%89%E8%A3%85OpenResty%E6%95%99%E7%A8%8B.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Ubuntu安装OpenResty教程</source>
-      <description>Ubuntu安装OpenResty教程 参考链接： https://blog.openresty.com.cn/cn/ubuntu20-or-install/ 适合于Ubuntu各个版本，并非只有20.04。都可以被成功an&amp;apos;z 今天我想演示一下如何通过 apt-get 在 Ubuntu 20.04 上安装 OpenResty 。 截图 1截图 1 我...</description>
+      <description>Ubuntu安装OpenResty教程 参考链接： https://blog.openresty.com.cn/cn/ubuntu20-or-install/ 适合于Ubuntu各个版本，并非只有20.04。都可以被成功an&amp;apos;z 今天我想演示一下如何通过 apt-get 在 Ubuntu 20.04 上安装 OpenResty 。 截图 1 我们将在这...</description>
       <pubDate>Tue, 23 Jan 2024 04:20:43 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
@@ -4669,108 +4669,108 @@ Big O：
 <p>适合于Ubuntu各个版本，并非只有20.04。都可以被成功an'z</p>
 </blockquote>
 <p>今天我想演示一下如何通过 <code>apt-get</code> 在 Ubuntu 20.04 上安装 OpenResty 。</p>
-<figure><figcaption>截图 1</figcaption></figure>
+<p></p>
 <p>我们将在这个视频中使用这个全新安装的 Ubuntu 20.04 。</p>
 <p>我们可以到 <a href="http://openresty.org/cn/linux-packages.html#ubuntu" target="_blank" rel="noopener noreferrer">openresty.org 网站</a>上找到相关的说明，这里可以找到所有启用 APT 仓库和安装 OpenResty Deb 包的命令。</p>
-<figure><figcaption>截图 3</figcaption></figure>
+<p></p>
 <p>回到我们的 Ubuntu 20.04 系统。如果你已经有服务监听本地 80 端口，那么你应该先禁用它。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> lsof</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i:80</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 4</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>在这里，我们没有任何这样的服务。</p>
 <p>首先，要确保系统时间正确。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ntpdate</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -v</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> time.google.com</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 6</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>你可能想在这里使用你附近的其他 NTP 服务器。</p>
 <p>我们应该通过添加 GPG 公钥来安装一些需要的组件。这些可以在之后删除。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --no-install-recommends</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> gnupg</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 8</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>然后导入我们的 GPG 密钥。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -O</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://openresty.org/package/pubkey.gpg</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-key</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 9</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>接着添加我们的官方 APT 库。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "deb http://openresty.org/package/ubuntu $(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">lsb_release</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sc</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">) main"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">openresty.list</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty.list</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/sources.list.d/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>截图 10</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>请注意，这是针对 <code>x86_64</code> 或 <code>amd64</code> 系统的。</p>
 <p>对于 Aarch64 或 ARM64 系统，你应该使用这个 URL 来代替。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "deb http://openresty.org/package/arm64/ubuntu $(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">lsb_release</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sc</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">) main"</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 12</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>现在更新 APT 索引。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 13</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>请注意，这里我们需要 <code>sudo</code>。</p>
 <p>现在是时候安装我们的主要 RPM 包，<code>openresty</code>。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --no-install-recommends</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 15</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>检查 <code>openresty</code> 可执行文件是否可用。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">which</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 16</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>这个 <code>openresty</code> 可执行文件只是一个符号链接。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">file</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">which</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty`</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 17</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>并检查其版本。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">openresty</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -V</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 18</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>我们可以像这样启动默认的 openresty 服务。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> start</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 19</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>检查 nginx 进程是否启动并运行。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ps</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> aux</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">|</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> nginx</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 20</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>完美。</p>
 <p>用 <code>curl</code> 命令测试默认主页。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 127.0.0.1/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 22</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>是的，它的工作。</p>
 <p>但请注意，resty 命令行工具还没有安装。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">which</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> resty</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 24</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>如果你想要它，那么你可以从同一个仓库安装 <code>openresty-resty</code> RPM 包。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-resty</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 25</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>现在应该可以了。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">which</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> resty</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">resty</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -e</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'print("Hello Resty")'</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>截图 26</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>同样，如果你想使用 <code>restydoc</code> 命令行工具，你应该安装 <code>openresty-doc</code> 包。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-restydoc</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 27</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>现在也有了。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">restydoc</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> content_by_lua_file</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 28</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>我们也可以安装 OPM 来安装更多由 OpenResty 社区贡献的 Lua 模块。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-opm</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 29</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>现在可以尝试安装 James Hurst 编写的 <code>lua-resty-http</code> 库。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> opm</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> pintsized/lua-resty-http</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 30</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>试着用 <code>resty</code> 工具加载它。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">resty</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -e</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'require "resty.http"'</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 31</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>成功了！</p>
 <p>还有一个 OpenResty 的调试构建，其中包括调试日志和所有启用的内部断言。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-debug</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 33</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>我们可以这样调用这个调试版的 openresty 。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">which</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-debug</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这个 <code>openresty-debug</code> 可执行文件也是一个符号链接。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">file</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">which</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-debug`</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 35</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>我们不应该在生产中使用它，因为它比发行版慢得多。</p>
 <p>此外，还有可以通过 Valgrind 检查内存问题的特殊构建。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-valgrind</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 37</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>当你有内存问题要调试时，可以试试这些。我们可能会在以后的教程中涉及这些内容。</p>
 <p>要将 OpenResty 包升级到最新版本，只需运行这些命令。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --only-upgrade</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'openresty*'</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>截图 39</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>检查我们 openresty 仓库中所有可用的软件包。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'openresty*'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">less</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>截图 40</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p>这里有很多二进制包。</p>
 <p>可以在网页上找到所有这些 Deb 包的详细文档，https://openresty.org/en/deb-packages.html ，有很多软件包供用户选择。</p>
-<figure><figcaption>截图 42</figcaption></figure>
+<p></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -4818,7 +4818,7 @@ Big O：
 <h2>安装WSL2</h2>
 <p>这一步可以参考Windows官网，以及其他B站UP主的安装教程，贴两个链接（一定要装WSL2）。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://learn.microsoft.com/zh-cn/windows/wsl/install</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>image-20240121171210055</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <h2>安装Windows的nvidia驱动（Windows下操作）</h2>
 <p>下载并安装带有WSL2驱动的nvidia-Windows驱动</p>
 <p>根据自己电脑显卡类型，分GeForce和QUADRO两个版本，自己电脑是哪个就选哪个。下载驱动后，安装。（安装过程中可以直接选择“精简”模式）</p>
@@ -4828,16 +4828,16 @@ Big O：
 <p>cmd命令行输入：</p>
 <p>nvidia-smi</p>
 <p>如果出现类似于下图效果，即安装完成。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>记下图中的CUDA version</p>
 <h2>在WSL２中安装CUDA（WSL２中操作）</h2>
 <p>参考CUDA官网，选择自己对应的版本。</p>
-<figure><figcaption>image-20240121171058802</figcaption></figure>
+<p></p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://developer.nvidia.com/cuda-downloads</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这里的cuda版本，要比刚才cmd中标注的CUDA version要低。</p>
 <p>比如我的CUDA　version是11.6，我在下载CUDA驱动时，可以安装最新的11.5版本。</p>
 <p><strong>一定要选择标注的WSL版本！！！</strong></p>
-<figure><figcaption>image-20240121171429136</figcaption></figure>
+<p></p>
 <p>选择完版本后，下面会有整个安装提示，在WSL２中按照方法来就行，如：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://developer.download.nvidia.com/compute/cuda/12.3.2/local_installers/cuda_12.3.2_545.23.08_linux.runsudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sh</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cuda_12.3.2_545.23.08_linux.run</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>安装相关依赖库</p>
@@ -4922,18 +4922,18 @@ Big O：
 <h2>step1</h2>
 <p>在链接 http://ebank1.ccb.com/chn/home/ebank/company/wsyx/xzzq/index.shtml</p>
 <p>下载驱动 <strong>E路护航网银安全组件</strong></p>
-<figure><figcaption>image-20231213153117416</figcaption></figure>
+<p></p>
 <h2>step2</h2>
 <p>安装浏览器插件，Windows默认未edge浏览器。</p>
 <p>点击链接安装插件 <a href="http://www.ccb.com/cn/html1/office/ebank/dzb/subject/qywyzy/qywyzy.html" target="_blank" rel="noopener noreferrer">ccb.com/cn/html1/office/ebank/dzb/subject/qywyzy/qywyzy.html</a></p>
-<figure><figcaption>image-20231213153839991</figcaption></figure>
+<p></p>
 <h2>step3</h2>
 <p>打开上一步安装的软件，点击检测按钮。然后点击修复按钮，直到全部选项显示为绿色。</p>
-<figure><figcaption>151703</figcaption></figure>
-<figure><figcaption>151817</figcaption></figure>
+<p></p>
+<p></p>
 <h2>step4</h2>
 <p>插入u盾到usb口，将会自动弹出网页,选中证书并确认，将会弹出密码输入窗口。u盾即可正常使用。</p>
-<figure><figcaption>image-20231213153005296</figcaption></figure>
+<p></p>
 ]]></content:encoded>
     </item>
     <item>
@@ -5055,12 +5055,12 @@ Big O：
       <link>https://www.geekery.cn/note-book/%E6%B4%8B%E5%9E%83%E5%9C%BE%E4%B8%BB%E6%9C%BA/CPU%E9%B8%A1%E8%A1%80BIOS.html</link>
       <guid>https://www.geekery.cn/note-book/%E6%B4%8B%E5%9E%83%E5%9C%BE%E4%B8%BB%E6%9C%BA/CPU%E9%B8%A1%E8%A1%80BIOS.html</guid>
       <source url="https://www.geekery.cn/rss.xml">CPU鸡血BIOS</source>
-      <description>CPU鸡血BIOS 鸡血bios能提升性能，获得更大好处。现在对一些关键操作的参数进行解释。 这是我们本文的主角 image-20231219170358590image-20231219170358590 参数介绍 2696v3是e5 v3系列最强的cpu 它是2699v3的 oem定制版 2699v3是 18核36线程 睿频 （ 12-36）单核3...</description>
+      <description>CPU鸡血BIOS 鸡血bios能提升性能，获得更大好处。现在对一些关键操作的参数进行解释。 这是我们本文的主角 image-20231219170358590 参数介绍 2696v3是e5 v3系列最强的cpu 它是2699v3的 oem定制版 2699v3是 18核36线程 睿频 （ 12-36）单核3.6G 全核2.8G tdp 145w 269...</description>
       <pubDate>Tue, 19 Dec 2023 09:33:35 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>鸡血bios能提升性能，获得更大好处。现在对一些关键操作的参数进行解释。</p>
 <p>这是我们本文的主角</p>
-<figure><figcaption>image-20231219170358590</figcaption></figure>
+<p></p>
 <p>参数介绍</p>
 <p>2696v3是e5 v3系列最强的cpu 它是2699v3的 oem定制版
 2699v3是 18核36线程  睿频  （ 12-36）单核3.6G 全核2.8G  tdp 145w
@@ -5068,7 +5068,7 @@ Big O：
 所以他们唯一的区别就四单核睿频从3.6g提升到了3.8G
 但是因为E5 V3鸡血bios的出现 可以全核最大睿频 即单核3.6G就可以全核3.6G 单核3.8G就可以全核3.8G.但是全核睿频功耗不能超过tdp功耗 就是145w 所以18核满载超过145w就会降频</p>
 <p>CPU-Z性能测试</p>
-<figure><figcaption>image-20231219170454270</figcaption></figure>
+<p></p>
 <h2>CPU状态 CStates</h2>
 <p>EIST全名Enhanced Intel SpeedStep Technology（增强型Intel  SpeedStep技术），是Intel的新节能技术。和早期的SpeedStep技术不同，增强型的EIST技术可以动态调整CPU频率，随着CPU使用率地下或者接近0时候降低CPU频率并且降压，从而降低功耗和发热。一旦检测到CPU使用率高，立马回复原始工作频率。</p>
 <p>| 状态 | 通意               | 含义                                                         |
@@ -5090,7 +5090,7 @@ Big O：
 <p>享受价格红利的同时也不能忘记巨大风险的存在，我们如何为矿卡检测体质呢？这是本文的主题。</p>
 </blockquote>
 <p>矿卡型号一览表 来自 https://www.bilibili.com/read/cv21654310/</p>
-<figure><figcaption>image-20231218112838003</figcaption></figure>
+<p></p>
 <h2>预先准备</h2>
 <p>设置</p>
 <ul>
@@ -5133,42 +5133,42 @@ Big O：
       <link>https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/%E9%80%9A%E8%BF%87cdn%E6%B5%81%E9%87%8F%E4%BC%AA%E8%A3%85%E9%98%B2%E6%AD%A2%E9%98%B2%E7%81%AB%E5%A2%99%E5%B0%81ip%E5%92%8C%E7%AB%AF%E5%8F%A3.html</link>
       <guid>https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/%E9%80%9A%E8%BF%87cdn%E6%B5%81%E9%87%8F%E4%BC%AA%E8%A3%85%E9%98%B2%E6%AD%A2%E9%98%B2%E7%81%AB%E5%A2%99%E5%B0%81ip%E5%92%8C%E7%AB%AF%E5%8F%A3.html</guid>
       <source url="https://www.geekery.cn/rss.xml">通过cdn流量伪装防止防火墙封ip和端口</source>
-      <description>通过cdn流量伪装防止防火墙封ip和端口 边缘计算系统构建 将域名绑定到CDN上 1.登录CDN网站，找到增加域名选项 image-20220819194959187image-20220819194959187 2.点击添加域名 image-20220819195044991image-20220819195044991 3.选择Free计划 ima...</description>
+      <description>通过cdn流量伪装防止防火墙封ip和端口 边缘计算系统构建 将域名绑定到CDN上 1.登录CDN网站，找到增加域名选项 image-20220819194959187 2.点击添加域名 image-20220819195044991 3.选择Free计划 image-20220819195120435 4.临时添加一条记录，让CDN去验证域名合法性 i...</description>
       <category>VirtualPrivateNetwork</category>
       <pubDate>Fri, 08 Dec 2023 15:59:33 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>边缘计算系统构建</h2>
 <h3>将域名绑定到CDN上</h3>
 <h4><a class="header-anchor" href="#_1-登录cdn网站-找到增加域名选项"><span>1.</span></a><a href="https://dash.cloudflare.com/login/" target="_blank" rel="noopener noreferrer">登录CDN网站</a>，找到增加域名选项</h4>
-<figure><figcaption>image-20220819194959187</figcaption></figure>
+<p></p>
 <h4>2.点击添加域名</h4>
-<figure><figcaption>image-20220819195044991</figcaption></figure>
+<p></p>
 <h4>3.选择Free计划</h4>
-<figure><figcaption>image-20220819195120435</figcaption></figure>
+<p></p>
 <h4>4.临时添加一条记录，让CDN去验证域名合法性</h4>
-<figure><figcaption>image-20220819195321479</figcaption></figure>
+<p></p>
 <h4>5.复制新生成的两个ns服务器备用</h4>
-<figure><figcaption>image-20220819195427838</figcaption></figure>
+<p></p>
 <h4>6.登录域名服务厂商，找到域名管理处，修改ns服务器为CloudFlare服务器</h4>
-<figure><figcaption>image-20220819195544445</figcaption></figure>
-<figure><figcaption>image-20220819200101082</figcaption></figure>
+<p></p>
+<p></p>
 <h4>7.等待全球DNS记录刷新，在CloudFlare见到此页面为 ns服务器绑定成功</h4>
-<figure><figcaption>image-20220819201003518</figcaption></figure>
+<p></p>
 <h2>节点增加</h2>
 <h3>在Server端安装x-ui</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">输入以下代码自动安装x-ui服务器</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> &lt;(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -Ls</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://raw.githubusercontent.com/chenyue168881/x-ui/master/install.sh)</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h4>1.登录服务器并确认配置</h4>
 <p>内存大于500M，硬盘大于5G</p>
-<figure><figcaption>image-20220819201800853</figcaption></figure>
+<p></p>
 <h4>2.运行脚本并安装x-ui，看到如下图为安装成功</h4>
 <p>如果出现 -bash: curl: command not found</p>
 <p>运行</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><figure><figcaption>image-20220819202106697</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
 <p>安装成功</p>
-<figure><figcaption>image-20220819202309901</figcaption></figure>
+<p></p>
 <h4>3.修改x-ui web密码</h4>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sqlite3</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &amp;&amp; </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sqlite3</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/x-ui/x-ui.db</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt;&lt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
@@ -5179,23 +5179,23 @@ Big O：
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.q</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>出现这个界面为运行成功</p>
-<figure><figcaption>image-20220819202652563</figcaption></figure>
+<p></p>
 <h4>4.登录web界面</h4>
 <blockquote>
 <p>url类似于 http://xxx.xxx.xxx.xxx:54321/</p>
 </blockquote>
-<figure><figcaption>image-20220819215155571</figcaption></figure>
+<p></p>
 <h3>在CDN上增加域名</h3>
 <p>打开此界面，点击增加A记录</p>
-<figure><figcaption>image-20220819203228352</figcaption></figure>
+<p></p>
 <p>如图配置，获得的域名应该是 <code>example-1111.456987.top</code>  指向 <code>45.91.82.122</code> 并通过<code>cf</code>伪装所有流量</p>
 <p>如下图为成功配置</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">测试网站</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ping.chinaz.com</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>image-20220819203606534</figcaption></figure>
-<figure><figcaption>image-20220819203635664</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
+<p></p>
 <h3>生成加密证书(已生成）</h3>
-<figure><figcaption>image-20220820011711344</figcaption></figure>
-<figure><figcaption>image-20220820011541397</figcaption></figure>
+<p></p>
+<p></p>
 <p>泛解析</p>
 <p>以下正式用于*.456987.top, 456987.top 有效期15年)</p>
 <p>crt.pem（公钥）</p>
@@ -5207,14 +5207,14 @@ Big O：
       <link>https://www.geekery.cn/note-book/LinuxOperaSystem/Bash%E5%88%A9%E7%94%A8%E6%89%A9%E5%B1%95%E5%AD%97%E7%AC%A6%E9%9B%86%E5%AE%9E%E7%8E%B0rm.html</link>
       <guid>https://www.geekery.cn/note-book/LinuxOperaSystem/Bash%E5%88%A9%E7%94%A8%E6%89%A9%E5%B1%95%E5%AD%97%E7%AC%A6%E9%9B%86%E5%AE%9E%E7%8E%B0rm.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Bash利用扩展字符集实现rm</source>
-      <description>Bash利用扩展字符集实现rm 事出有因 昨天在群里看到一个暴躁老哥遇到了一个恶搞教程,使用一段特殊的代码删除了自己的/home目录。气的他直骂自己是傻逼。 果然，自己的快乐是建立在别人的痛苦之上的，不好意思我笑出声来了。 image-20231121165908477image-20231121165908477 5FEC69FE77FFF25597...</description>
+      <description>Bash利用扩展字符集实现rm 事出有因 昨天在群里看到一个暴躁老哥遇到了一个恶搞教程,使用一段特殊的代码删除了自己的/home目录。气的他直骂自己是傻逼。 果然，自己的快乐是建立在别人的痛苦之上的，不好意思我笑出声来了。 image-20231121165908477 5FEC69FE77FFF255977FC97C31C2E6D7 这个是什么意思呢...</description>
       <pubDate>Tue, 21 Nov 2023 09:47:28 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>事出有因</h2>
 <p>昨天在群里看到一个暴躁老哥遇到了一个恶搞教程,使用一段特殊的代码删除了自己的/home目录。气的他直骂自己是傻逼。</p>
 <p>果然，自己的快乐是建立在别人的痛苦之上的，不好意思我笑出声来了。</p>
-<figure><figcaption>image-20231121165908477</figcaption></figure>
-<figure><figcaption>5FEC69FE77FFF255977FC97C31C2E6D7</figcaption></figure>
+<p></p>
+<p></p>
 <p>这个是什么意思呢？我这边查了一些资料然后把过程记录下来。</p>
 <h2>过程</h2>
 <h3>金蝉脱壳</h3>
@@ -5237,7 +5237,7 @@ Big O：
       <link>https://www.geekery.cn/note-book/Iptables/iptables%E6%8B%A6%E6%88%AA%E5%86%85%E7%BD%91%E5%A5%87%E8%99%8E%E8%BD%AF%E4%BB%B6%E7%97%85%E6%AF%92%E4%B8%8A%E6%8A%A5.html</link>
       <guid>https://www.geekery.cn/note-book/Iptables/iptables%E6%8B%A6%E6%88%AA%E5%86%85%E7%BD%91%E5%A5%87%E8%99%8E%E8%BD%AF%E4%BB%B6%E7%97%85%E6%AF%92%E4%B8%8A%E6%8A%A5.html</guid>
       <source url="https://www.geekery.cn/rss.xml">iptables拦截内网奇虎软件病毒上报</source>
-      <description>iptables拦截内网奇虎软件病毒上报 案例初衷 整理旧的项目，手里的内容实在太多了，整理一下这个案例。 这个东西开始是别人介绍的一个小项目，作用是要从中间流量阻止来自客户机 奇虎360的查毒软件向主服务器病毒上报。 image-20231120150307670image-20231120150307670 具体是这样的流程 经过tcpdump抓包...</description>
+      <description>iptables拦截内网奇虎软件病毒上报 案例初衷 整理旧的项目，手里的内容实在太多了，整理一下这个案例。 这个东西开始是别人介绍的一个小项目，作用是要从中间流量阻止来自客户机 奇虎360的查毒软件向主服务器病毒上报。 image-20231120150307670 具体是这样的流程 经过tcpdump抓包显示奇虎360客户机向服务器上报病毒的渠道是h...</description>
       <category>iptables</category>
       <category>Network</category>
       <category>网络安全</category>
@@ -5246,13 +5246,13 @@ Big O：
 <h2>案例初衷</h2>
 <p>整理旧的项目，手里的内容实在太多了，整理一下这个案例。</p>
 <p>这个东西开始是别人介绍的一个小项目，作用是要从中间流量阻止来自客户机 <strong>奇虎360</strong>的查毒软件向主服务器病毒上报。</p>
-<figure><figcaption>image-20231120150307670</figcaption></figure>
+<p></p>
 <p>具体是这样的流程</p>
 <p>经过<code>tcpdump</code>抓包显示<strong>奇虎360</strong>客户机向服务器上报病毒的渠道是http协议，</p>
 <p>信息如下：</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" data-title="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>http://[病毒收集server]:80/api/upload_client_log.json？mid=balabala&amp;ver=1.0 # 上报查杀日志</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption></figcaption></figure>
-<figure><figcaption>image-20231120162712847</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
+<p></p>
 <p>吐槽几句，是tcp明文传输，我不禁想，这传输也太落后了，查杀病毒自己还不安全上传病毒样本的渠道竟然是明文的，这靠谱么？到底是查杀病毒还是协助病毒扩散。哎，国产软件的悲哀，看不见的地方全是偷工减料。往往国企还花重金去购买这种垃圾软件，悲哀啊。</p>
 <p>得，吐槽几句得了。</p>
 <p>tcpdump明文的话这事情就好解决了。</p>
@@ -5275,24 +5275,24 @@ Big O：
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">iptables</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> –A</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FORWARD</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  –j</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> LOG</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --log-level</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 5</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --log-prefix</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ”IPTABLES</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FORWARD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> -&gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">”</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # -I在最前面插入规则，这条规则将会最先被执行</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>实时查看流量变化</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">watch</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -n</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> iptables</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -nxvL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FORWARD</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>image-20231120162935155</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <h2>深入研究</h2>
 <h3>两种字符串匹配算法</h3>
 <p>iptables支持kmp和bm两种字符串搜索算法</p>
 <p>引用 https://blog.csdn.net/weixin_45616285/article/details/128242976 的一张效率对比图片</p>
-<figure><figcaption>image-20231120161530476</figcaption></figure>
+<p></p>
 <p>两种方法和案例来自 https://www.cnblogs.com/AD-milk/p/13040713.html</p>
 <h4>KMP</h4>
 <p>朴素做法虽然简单，但主串与模式串的指针都要来回移动。我们去书上找东西一般都是一眼扫过去，有没有什么办法可以让主串的指针不往回走，降低比较的趟数？</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>在上面这个例子中，很明显更快的做法是在第一次匹配失败之后，跳过第二次匹配，进行第三次匹配。也就是说，应该向后移动两格而不是一格。KMP的思想就在于利用已知信息，不把"搜索位置"移回已经比较过的位置，继续向后移。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>我们可以利用模式串自身的特点，利用已经匹配过的结果来减少枚举过程，跳过不可能成功的比较，加速匹配过程。画个抽象点的图：</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>在主串指针不往后退的前提下， 我们的模式串指针最多回退到哪里就可以继续进行匹配呢？</p>
 <p>如上图，回退之后的字符串肯定是要能与主串匹配成功的。也就是说它与之前的模式串有着交集。从图中可以看到，P串的后缀与P'的前缀相同。那个这个问题：在已有N个匹配成功的结果下，第N+1个字符匹配失败时，模式串应该退回到第？个匹配成功的结果下？也就转换成了：模式串的各个字串中，能使前后缀相等的最大长度是多少？</p>
 <p>我们用next数组来存储回退到的下标</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>虽然说1那里应该等于0，但其实这时候已经退无可退了。所以应该退出循环，让主串指针向前走一位，开始新一轮比较。</p>
 <p>利用这个next数组，比如我们比较到下标3的时候发现不匹配，没关系，我们退一步。退一步之后就到了下标1(回退看的next应该是已经匹配成功的那个，也就是看下标2存的是几)，如果这时候还不匹配，那我们就会退回到-1，也就是说，这轮匹配失败了，主串可以往前走了。</p>
 <p>看看代码就清楚了</p>
@@ -5343,17 +5343,17 @@ Big O：
 <h5>坏字符规则</h5>
 <p>BM算法与我们平常接触的字符串比较方法不同，它是按模式串从大到小的顺序，倒着比的。这样做也是有好处的，起码直观上是这样感觉的。就像做算数选择题，出卷老师为了让你花的时间久一点，故意把正确答案放到C跟D上。所以聪明点的做法应该是先算C跟D。这跟这个比较方法有点类似。</p>
 <p>考虑下面这张图：</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>别忘了我们是从模式串最大的开始往后匹配，所以这里先比较了C和D。这个时候，有意思的来了，这个 <code>D</code> 在模式串中就没有出现过，是一个<code>坏字符</code>，有它在的字串可能不匹配。</p>
 <p>惹不起还躲不起吗？溜之大吉，模式串直接移动五位，重新匹配。一下移动这么多，是不是特别的爽？</p>
 <p>但你千万不要以为只有没在模式串中出现过的才叫<code>坏字符</code>,实际上这个只是从后往前第一个不匹配的字符。一旦发生不匹配，坏字符规则的做法是模式串指针继续往回走，找到第一个与其匹配的字符停止，然后再继续新一轮的匹配。</p>
 <p>也就是说，移动的距离等于：<code>当前模式串的下标(Si) - 往回走找到的第一个与当前不匹配字符匹配的下标(Xi)</code>。如果没有找到，则减数为-1。</p>
 <p>这么一想，好像用坏字符规则就万事大吉了。但因为实际代码中，我们不会每次不匹配都会往前找，那样太耗费时间，取而代之的是使用散列表纪录不同字符在模式串中“最后出现的位置”,并不是 Si 的位置往前查找的第一个位置，所以可能会出现 Xi 大于 Si  的情况。比如上图的例子，主串"ABABDABABCAB",模式串"ABABC"当从左开始数的一个B不匹配时，找到的A的下标是最后一次在模式串中出现的下标(也就是最后一个a的位置，比A大)。这时候，模式串非但不往前滑动，还回退了。为了解决这个问题，我们需要<code>好后缀</code>来帮忙。(实际上，两个规则都可以独立使用，如果坏字符你是往回遍历而不是保存在散列表里面的话)</p>
 <h5>好后缀规则</h5>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>当遇到上图的情况时，我们依然可以用坏字符规则来移动，但这次让我们来看看好后缀是如何工作的？</p>
 <p>我们把在主串中已经匹配成功的字符串用<code> u</code>标记，现在要做的是找到模式串中与其匹配的<code>u*</code>如果找到了，那模式串就滑动到使得<code>u*</code>与u对齐的位置。如果不匹配，那么溜之大吉，直接移动一个模式串长度的位置。虽然一次移动那么多是很爽，但这样做有可能错过可以匹配的情况。</p>
-<figure><figcaption>img</figcaption></figure>
+<p></p>
 <p>实际上这里应该跟KMP一样，如果模式串中前缀与好后缀的后缀相同，那么就移动相应位置使其匹配。</p>
 <h4>算法取舍</h4>
 <p>BM算法相对于KMP算法有以下几个优点：</p>
@@ -5521,7 +5521,7 @@ Big O：
 <p>今天朋友安装驱动遇到了一些问题，给了一张日志图片问我怎么办，我看着显示报错最后一行显示 PCI-E xxx.xxxx.xxx
 nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <p>nvidia给了不同类型的驱动多种版本，开源驱动对Linux支持较差，在切换闭源官方驱动的时候经常出现各种问题。</p>
-<figure><figcaption>image-20231110113058910</figcaption></figure>
+<p></p>
 <p>下面是安装步骤的总结</p>
 <h2>正常安装步骤</h2>
 <h3>检查开源驱动的存在情况</h3>
@@ -5581,12 +5581,12 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
       <link>https://www.geekery.cn/PyQt5%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E7%8E%8B%E9%93%AD%E4%B8%9C/001-PyQt%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85.html</link>
       <guid>https://www.geekery.cn/PyQt5%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E7%8E%8B%E9%93%AD%E4%B8%9C/001-PyQt%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85.html</guid>
       <source url="https://www.geekery.cn/rss.xml">001-PyQt介绍与安装</source>
-      <description>001-PyQt介绍与安装 一、介绍 1. Qt Qt 是什么Qt 是什么 Qt（官方发音 [kju:t]）是一个跨平台的C++开发库，主要用来开发图形用户界面（Graphical User Interface，GUI）程序 Qt 是纯 C++ 开发的，正常情况下需要先学习C语言、然后在学习C++然后才能使用Qt开发带界面的程序 多亏了开源社区使得Qt...</description>
+      <description>001-PyQt介绍与安装 一、介绍 1. Qt Qt 是什么 Qt（官方发音 [kju:t]）是一个跨平台的C++开发库，主要用来开发图形用户界面（Graphical User Interface，GUI）程序 Qt 是纯 C++ 开发的，正常情况下需要先学习C语言、然后在学习C++然后才能使用Qt开发带界面的程序 多亏了开源社区使得Qt 还可以用P...</description>
       <pubDate>Sun, 29 Oct 2023 12:02:01 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>一、介绍</h2>
 <h3>1. Qt</h3>
-<figure><figcaption>Qt 是什么</figcaption></figure>
+<p></p>
 <p>Qt（官方发音 <code>[kju:t]</code>）是一个跨平台的C++开发库，主要用来开发图形用户界面（Graphical User Interface，GUI）程序</p>
 <p>Qt 是纯 C++ 开发的，正常情况下需要先学习C语言、然后在学习C++然后才能使用Qt开发带界面的程序</p>
 <p>多亏了开源社区使得<strong>Qt 还可以用Python、Ruby、Perl 等脚本语言进行开发。</strong></p>
@@ -5625,7 +5625,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <p>下面我们以在Python虚拟环境中，使用pip进行安装PyQT</p>
 <h3>1. 创建新的虚拟环境</h3>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>mkvirtualenv -p python3 py3-qt --no-download</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><figure><figcaption>image-20201026145031213</figcaption></figure>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <h3>2. 安装pyqt5（命令行）</h3>
 <ol>
 <li>
@@ -5633,16 +5633,16 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>workon py3-qt</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
 </ol>
-<figure><figcaption>image-20201026145150218</figcaption></figure>
+<p></p>
 <p>安装pyqt5</p>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>pip install pyqt5 -i https://pypi.tuna.tsinghua.edu.cn/simple</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ol>
-<li><figcaption>image-20201026145249845</figcaption></li>
+<li></li>
 </ol>
 <h3>3. 安装pyqt5（pycharm图形界面）</h3>
-<figure><figcaption>image-20201026150007316</figcaption></figure>
+<p></p>
 <h3>4. 安装成功效果如下</h3>
-<figure><img src="https://doc.itprojects.cn/0001.zhishi/python.0008.pyqt5rumen/assets/image-20201026150340265.png" alt="image-20201026150340265" tabindex="0" loading="lazy"><figcaption>image-20201026150340265</figcaption></figure>
+<p><img src="https://doc.itprojects.cn/0001.zhishi/python.0008.pyqt5rumen/assets/image-20201026150340265.png" alt="image-20201026150340265"></p>
 <p>在当前安装PyQt的虚拟环境中输入如下测试代码：</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 如果执行成功，没有任何错误提示，则表明环境搭建成功</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> PyQt5 </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> QtWidgets</span></span>
@@ -5668,7 +5668,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
       <link>https://www.geekery.cn/PyQt5%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E7%8E%8B%E9%93%AD%E4%B8%9C/002-PyQt%E5%9F%BA%E6%9C%ACUI.html</link>
       <guid>https://www.geekery.cn/PyQt5%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E7%8E%8B%E9%93%AD%E4%B8%9C/002-PyQt%E5%9F%BA%E6%9C%ACUI.html</guid>
       <source url="https://www.geekery.cn/rss.xml">002-PyQt基本UI</source>
-      <description>002-PyQt基本UI 一、第一个PyQt程序 运行上述代码的效果如下： image-20201119172023747image-20201119172023747 程序解释说明： image-20201119172557560image-20201119172557560 二、模块介绍 PyQt中有非常多的功能模块,开发中最常用的功能模块主要有三...</description>
+      <description>002-PyQt基本UI 一、第一个PyQt程序 运行上述代码的效果如下： image-20201119172023747 程序解释说明： image-20201119172557560 二、模块介绍 PyQt中有非常多的功能模块,开发中最常用的功能模块主要有三个: QtCore:包含了核心的非GUI的功能。主要和时间、文件与文件夹、各种数据、流、UR...</description>
       <pubDate>Sun, 29 Oct 2023 12:02:01 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>一、第一个PyQt程序</h2>
@@ -5690,9 +5690,9 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 程序进行循环等待状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行上述代码的效果如下：</p>
-<figure><figcaption>image-20201119172023747</figcaption></figure>
+<p></p>
 <p>程序解释说明：</p>
-<figure><figcaption>image-20201119172557560</figcaption></figure>
+<p></p>
 <h2>二、模块介绍</h2>
 <p>PyQt中有非常多的功能模块,开发中最常用的功能模块主要有三个:</p>
 <ul>
@@ -5731,7 +5731,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 程序进行循环等待状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行效果：</p>
-<figure><figcaption>image-20201119174456690</figcaption></figure>
+<p></p>
 <h3>2. 文本</h3>
 <p>纯文本控件名称为 <code> QLabel</code>  ， 位于 <code>PyQt5.QtWidgets</code>  里面</p>
 <p>纯文本控件仅仅作为标识显示而已，类似输入内容前的一段标签提示（账号 、密码）</p>
@@ -5764,7 +5764,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 程序进行循环等待状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行效果：</p>
-<figure><figcaption>image-20201119174747564</figcaption></figure>
+<p></p>
 <h3>3. 输入框</h3>
 <p>输入框的控件名称为 <code>QLineEdit</code>， 位于 <code>PyQt5.QtWidgets</code>  里面</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> sys</span></span>
@@ -5798,7 +5798,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 程序进行循环等待状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行效果：</p>
-<figure><figcaption>image-20201119180244607</figcaption></figure>
+<p></p>
 <h3>4. 调整窗口大小</h3>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> sys</span></span>
 <span class="line"></span>
@@ -5821,7 +5821,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 程序进行循环等待状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行效果：</p>
-<figure><figcaption>image-20201119180544806</figcaption></figure>
+<p></p>
 <h3>5. 窗口显示在屏幕的中间</h3>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> sys</span></span>
 <span class="line"></span>
@@ -5859,9 +5859,9 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 程序进行循环等待状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不在中央的样子</p>
-<figure><figcaption>image-20201119181842503</figcaption></figure>
+<p></p>
 <p>在中央的样子</p>
-<figure><figcaption>image-20201119182825369</figcaption></figure>
+<p></p>
 <h3>6. 设置窗口icon</h3>
 <p>可以下载icon图标网站：https://www.easyicon.net/</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> sys</span></span>
@@ -5960,7 +5960,7 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">exec</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">()</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>运行效果：</p>
-<figure><figcaption>image-20201119191232844</figcaption></figure>
+<p></p>
 <p>水平布局</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> sys</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> PyQt5.QtWidgets </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> QApplication, QWidget, QGroupBox, QVBoxLayout, QHBoxLayout, QRadioButton</span></span>
