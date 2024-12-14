@@ -172,12 +172,12 @@
         "value": 37
     },
     {
-        "name": "GitHub",
+        "name": "Language",
         "value": 35
     },
     {
-        "name": "Language",
-        "value": 35
+        "name": "GitHub",
+        "value": 34
     },
     {
         "name": "Time",
@@ -624,10 +624,6 @@
         "value": 12
     },
     {
-        "name": "特殊字符",
-        "value": 12
-    },
-    {
         "name": "Beijing",
         "value": 12
     },
@@ -749,6 +745,10 @@
     },
     {
         "name": "Updating",
+        "value": 11
+    },
+    {
+        "name": "特殊字符",
         "value": 11
     },
     {
@@ -1044,10 +1044,6 @@
         "value": 8
     },
     {
-        "name": "比较简单",
-        "value": 8
-    },
-    {
         "name": "Instance",
         "value": 8
     },
@@ -1220,10 +1216,6 @@
         "value": 7
     },
     {
-        "name": "Deploy",
-        "value": 7
-    },
-    {
         "name": "转义字符",
         "value": 7
     },
@@ -1233,6 +1225,10 @@
     },
     {
         "name": "高可用性",
+        "value": 7
+    },
+    {
+        "name": "比较简单",
         "value": 7
     },
     {
@@ -1597,6 +1593,10 @@
     },
     {
         "name": "子网掩码",
+        "value": 6
+    },
+    {
+        "name": "Ping",
         "value": 6
     }
 ]

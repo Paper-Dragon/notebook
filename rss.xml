@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 14 Dec 2024 03:27:42 GMT</pubDate>
-    <lastBuildDate>Sat, 14 Dec 2024 03:27:42 GMT</lastBuildDate>
+    <pubDate>Sat, 14 Dec 2024 05:13:28 GMT</pubDate>
+    <lastBuildDate>Sat, 14 Dec 2024 05:13:28 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Linux</category>
@@ -4418,33 +4418,8 @@ Big O：
 <li>加速 <a href="https://codeload.github.com" target="_blank" rel="noopener noreferrer">https://codeload.github.com</a> 的下载</li>
 </ul>
 <h2>如何使用</h2>
-<p>您只需将原始URL替换为我们代理服务的地址，即可享受到加速下载的便利。举个例子：</p>
-<ul>
-<li>
-<p>分支源码</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://github.geekery.cn/https://github.com/user/project/archive/master.zip</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-<li>
-<p>release源码</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://github.geekery.cn/https://github.com/user/project/archive/v0.1.0.tar.gz</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-<li>
-<p>release文件</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://github.geekery.cn/https://github.com/user/project/releases/download/v0.1.0/example.zip</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-<li>
-<p>分支文件</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://github.geekery.cn/https://github.com/user/project/blob/master/filename</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-<li>
-<p>Raw</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://github.geekery.cn/https://raw.githubusercontent.com/user/project/archive/master.zip</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-<li>
-<p>使用Git</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> clone</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://github.geekery.cn/https://github.com/user/project</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-</ul>
+<p>您只需将原始URL替换为我代理服务的地址，即可享受到加速下载的便利。举例：</p>
+
 <h2>联系我</h2>
 <p>如果您有任何问题或建议，请随时评论区联系我。仅供学习使用，非法使用必追究法律责任！</p>
 ]]></content:encoded>
@@ -4499,21 +4474,9 @@ Big O：
 <p>为了方便使用，Linux设置镜像站已经写为脚本。</p>
 </blockquote>
 <h3>Linux</h3>
-<p>一键配置镜像站：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/docker/set_docker_mirror.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>使用命令手动配置</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#!/bin/sh</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt;&lt;-</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/etc/docker/daemon.json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">{</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  "registry-mirrors": [</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       "https://hub.geekery.cn/",</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       "https://ghcr.geekery.cn"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">   ]</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">}</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> daemon-reload</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> docker</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>适用于Ubuntu、Debian、CentOS、Fedora、Arch Linux、openSUSE 等系统。</p>
+<p>配置镜像站</p>
+
+<p>适用于Ubuntu、Debian、CentOS、Fedora、Arch Linux、openSUSE 等系统。</p>
 <p>其他版本可能有细微不同，请访问官方文档获取更多详情。</p>
 <h3>MacOS</h3>
 <blockquote>
@@ -4545,21 +4508,11 @@ Big O：
 <p>点击Apply&amp;restart，使配置生效。</p>
 <h2>一键安装Docker</h2>
 <blockquote>
-<p>适用于Linux</p>
+<p>这个脚本适用于Linux</p>
+<p>一键安装脚本，为了防止脚本卡住，于是我做了完整的镜像，包括安装包仓库。默认使用 <code>https://download-docker.geekery.cn</code> 为镜像站</p>
 </blockquote>
-<p>一键安装脚本，使用默认下载站</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 为了防止脚本卡住，于是我做了完整的镜像，包括安装包仓库。默认使用 https://download-docker.geekery.cn 为镜像站</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> get-docker.geekery.cn</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>一键安装脚本，使用其他镜像站</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 使用Azure China镜像站下载</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://get-docker.geekery.cn</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --mirror</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> AzureChinaCloud</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 使用阿里云镜像站下载</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://get-docker.geekery.cn</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --mirror</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Aliyun</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 使用自定义镜像站下载</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://get-docker.geekery.cn</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">DOWNLOAD_URL</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">https://mirrors.ustc.edu.cn/docker-ce</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> bash</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>通过镜像站拉取DockerHub私有账户的镜像</h2>
+
+<h2>通过镜像站拉取DockerHub私有账户的镜像</h2>
 <h3>登录到镜像站</h3>
 <p>首先，你需要登陆到镜像站。如果还没有登录，可以使用以下命令：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> login</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.geekery.cn</span></span></code></pre>
