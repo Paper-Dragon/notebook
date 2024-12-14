@@ -5,7 +5,7 @@
     },
     {
         "name": "Docker",
-        "value": 274
+        "value": 275
     },
     {
         "name": "文件系统",
@@ -13,7 +13,7 @@
     },
     {
         "name": "操作系统",
-        "value": 152
+        "value": 153
     },
     {
         "name": "Python",
@@ -25,7 +25,7 @@
     },
     {
         "name": "Ubuntu",
-        "value": 104
+        "value": 106
     },
     {
         "name": "Kubernetes",
@@ -308,6 +308,10 @@
         "value": 20
     },
     {
+        "name": "Debian",
+        "value": 19
+    },
+    {
         "name": "Memory",
         "value": 19
     },
@@ -330,10 +334,6 @@
     {
         "name": "拉丁字母",
         "value": 19
-    },
-    {
-        "name": "Debian",
-        "value": 18
     },
     {
         "name": "Shell",
@@ -458,6 +458,10 @@
     {
         "name": "Shadowsocks",
         "value": 16
+    },
+    {
+        "name": "Nvidia",
+        "value": 15
     },
     {
         "name": "十六进制",
@@ -1021,10 +1025,6 @@
     },
     {
         "name": "Perl",
-        "value": 8
-    },
-    {
-        "name": "Nvidia",
         "value": 8
     },
     {

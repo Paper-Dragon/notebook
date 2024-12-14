@@ -109,7 +109,7 @@ case $num in
     source <(curl -s ${download_url}/tools/nvidia-driver.sh)
     ;;
 28)
-    source <(curl -s https://www.geekery.cn/sh/nvidia/nvidia-driver-deploy.sh)
+    source <(curl -s ${download_url}/tools/nvidia-docker.sh)
     ;;
 30)
     echo -e "${Yellow} 安装miniconda,首先需要您退出到普通用户使用下面连接一键安装....  ${Font}"
