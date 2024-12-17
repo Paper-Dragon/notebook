@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 14 Dec 2024 06:00:19 GMT</pubDate>
-    <lastBuildDate>Sat, 14 Dec 2024 06:00:19 GMT</lastBuildDate>
+    <pubDate>Tue, 17 Dec 2024 13:27:08 GMT</pubDate>
+    <lastBuildDate>Tue, 17 Dec 2024 13:27:08 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Linux</category>
@@ -3605,14 +3605,14 @@ Big O：
       <link>https://www.geekery.cn/note-book/Anaconda/Anaconda-Navigator%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</link>
       <guid>https://www.geekery.cn/note-book/Anaconda/Anaconda-Navigator%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Anaconda-Navigator打不开的解决方法</source>
-      <description>Anaconda-Navigator打不开的解决方法 解决方案 使用管理员权限运行 Anaconda Prompt 升级navigator，执行conda update anaconda-navigator 重置navigator，执行anaconda-navigator --reset 升级客户端，执行conda update anaconda-cl...</description>
+      <description>Anaconda-Navigator打不开的解决方法 解决方案 使用管理员权限运行 Anaconda Prompt 升级 navigator，执行 conda update anaconda-navigator 重置 navigator，执行 anaconda-navigator --reset 升级客户端，执行conda update anacond...</description>
       <pubDate>Mon, 06 May 2024 04:11:48 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>解决方案</h2>
 <ul>
 <li>使用管理员权限运行 Anaconda Prompt</li>
-<li>升级navigator，执行conda update anaconda-navigator</li>
-<li>重置navigator，执行anaconda-navigator --reset</li>
+<li>升级 <code>navigator</code>，执行 <code>conda update anaconda-navigator</code></li>
+<li>重置 <code>navigator</code>，执行 <code>anaconda-navigator --reset</code></li>
 <li>升级客户端，执行conda update anaconda-client</li>
 <li>升级安装依赖包，执行conda update -f anaconda-client</li>
 </ul>

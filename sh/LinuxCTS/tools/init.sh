@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # 全局变量
 Green="\033[32m"
 Red="\033[31m"
@@ -12,7 +11,17 @@ RedBG="\033[41;37m"
 Font="\033[0m"
 shanshuo1="\033[5m"
 shanshuo2="\033[0m"
+Red_font_prefix="\033[31m"
+Font_color_suffix="\033[0m"
 Error="${Red_font_prefix}[错误]${Font_color_suffix}"
+#变量引用
+opsy=$( get_opsy )
+cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
+tram=$( free -m | awk '/Mem/ {print $2}' )
+uram=$( free -m | awk '/Mem/ {print $3}' )
+ipaddr=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}')
+
+ipdz=$(curl -s myip.ipip.net | awk -F '：' '{print $3}')
 
 #检查账号
 check_root(){
@@ -71,25 +80,23 @@ get_opsy(){
 }
 
 
-#变量引用
-opsy=$( get_opsy )
-cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
-tram=$( free -m | awk '/Mem/ {print $2}' )
-uram=$( free -m | awk '/Mem/ {print $3}' )
-ipaddr=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}')
 
 headers(){
-    echo -e "${blue}=====================================================${Font}"
-    echo -e "${blue}=             LinuxCTS - 综合Linux脚本              =${Font}"
-    echo -e "${blue}=                                                   =${Font}"
-    echo -e "${blue}=                当前版本 V2.6                      =${Font}"
-    echo -e "${blue}=            更新时间 2024年11月29日                =${Font}"
-    echo -e "${blue}=              bug 反馈 ⬇⬇⬇⬇⬇⬇😳                    =${Font}"
-    echo -e "${blue}= https://github.com/hyh1750522171/LinuxCTS/issues  =${Font}"
-    echo -e "${blue}=                                                   =${Font}"
-    echo -e "${blue}=====================================================${Font}"
-    echo -e "操作系统${Green} $opsy ${Font}CPU${Green} $cores ${Font}核 系统内存${Green} $tram ${Font}MB"
-    echo -e "IP地址${Green} $ipaddr $ipdz ${Font}"
-    echo -e "====================================================="
+    # 定义表头内容
+    header="${blue}=====================================================${Font}
+${blue}=             LinuxCTS - 综合Linux脚本              =${Font}
+${blue}=                                                   =${Font}
+${blue}=                当前版本 V2.6                      =${Font}
+${blue}=            更新时间 2024年11月29日                =${Font}
+${blue}=              bug 反馈 ⬇⬇⬇⬇⬇⬇😳                    =${Font}
+${blue}= https://github.com/hyh1750522171/LinuxCTS/issues  =${Font}
+${blue}=                                                   =${Font}
+${blue}=====================================================${Font}
+操作系统${Green} $opsy ${Font}CPU${Green} $cores ${Font}核 系统内存${Green} $tram ${Font}MB
+IP地址${Green} $ipaddr $ipdz ${Font}
+====================================================="
+
+    # 组合命令，先输出表头，再输出动态数据（去除表头所在行，假设动态数据命令输出有表头需要去除）
+    echo -e "$header"
 }
-# headers 
+

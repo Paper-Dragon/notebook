@@ -136,10 +136,6 @@
         "value": 43
     },
     {
-        "name": "License",
-        "value": 41
-    },
-    {
         "name": "驱动程序",
         "value": 41
     },
@@ -172,12 +168,16 @@
         "value": 37
     },
     {
+        "name": "License",
+        "value": 36
+    },
+    {
         "name": "Language",
         "value": 35
     },
     {
         "name": "GitHub",
-        "value": 34
+        "value": 32
     },
     {
         "name": "Time",
@@ -214,10 +214,6 @@
     {
         "name": "Network",
         "value": 25
-    },
-    {
-        "name": "SakanaWidget",
-        "value": 24
     },
     {
         "name": "Nmap",
@@ -292,10 +288,6 @@
         "value": 21
     },
     {
-        "name": "Block",
-        "value": 20
-    },
-    {
         "name": "网络设备",
         "value": 20
     },
@@ -340,6 +332,10 @@
         "value": 18
     },
     {
+        "name": "Block",
+        "value": 18
+    },
+    {
         "name": "Compute",
         "value": 18
     },
@@ -364,7 +360,7 @@
         "value": 18
     },
     {
-        "name": "Support",
+        "name": "文本文件",
         "value": 17
     },
     {
@@ -432,10 +428,6 @@
         "value": 16
     },
     {
-        "name": "文本文件",
-        "value": 16
-    },
-    {
         "name": "网络接口",
         "value": 16
     },
@@ -449,6 +441,10 @@
     },
     {
         "name": "网络服务",
+        "value": 16
+    },
+    {
+        "name": "Support",
         "value": 16
     },
     {
@@ -504,15 +500,7 @@
         "value": 14
     },
     {
-        "name": "Widget",
-        "value": 14
-    },
-    {
         "name": "当前目录",
-        "value": 14
-    },
-    {
-        "name": "静态方法",
         "value": 14
     },
     {
@@ -680,6 +668,10 @@
         "value": 12
     },
     {
+        "name": "静态方法",
+        "value": 12
+    },
+    {
         "name": "虚拟地址",
         "value": 12
     },
@@ -789,6 +781,10 @@
     },
     {
         "name": "解决办法",
+        "value": 10
+    },
+    {
+        "name": "Widget",
         "value": 10
     },
     {
@@ -1041,10 +1037,6 @@
     },
     {
         "name": "Restart",
-        "value": 8
-    },
-    {
-        "name": "Instance",
         "value": 8
     },
     {
@@ -1356,6 +1348,10 @@
         "value": 7
     },
     {
+        "name": "Instance",
+        "value": 7
+    },
+    {
         "name": "内存大小",
         "value": 7
     },
@@ -1484,18 +1480,6 @@
         "value": 6
     },
     {
-        "name": "Auto",
-        "value": 6
-    },
-    {
-        "name": "SakanaWidgetState",
-        "value": 6
-    },
-    {
-        "name": "SakanaWidgetCharacter",
-        "value": 6
-    },
-    {
         "name": "模式匹配",
         "value": 6
     },
@@ -1597,6 +1581,22 @@
     },
     {
         "name": "Ping",
+        "value": 6
+    },
+    {
+        "name": "Binutils",
+        "value": 6
+    },
+    {
+        "name": "压缩文件",
+        "value": 6
+    },
+    {
+        "name": "Journal",
+        "value": 6
+    },
+    {
+        "name": "Generation",
         "value": 6
     }
 ]

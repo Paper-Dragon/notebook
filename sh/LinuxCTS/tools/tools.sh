@@ -5,39 +5,42 @@ clear
 #       linux系统实用功能       #
 #===============================#
 headers
-echo -e "—————————————————————————— 安装软件源 ——————————————————————————"
-echo -e "${Green}1.${Font} centos添加epel软件源"
-echo -e "${Green}2.${Font} ubuntu添加epel软件源"
-echo -e "${Green}3.${Font} debian添加epel软件源"
-echo -e "${Green}31.${Font} centos7 更换base源"
-echo -e "—————————————————————————— 系统升级 ——————————————————————————"
-echo -e "${Green}4.${Font} centos升级软件和系统"
-echo -e "${Green}5.${Font} ubuntu升级软件和系统"
-echo -e "${Green}6.${Font} debian升级软件和系统"
-echo -e "—————————————————————————— 安装1panel ——————————————————————————"
-echo -e "${Green}7.${Font} centos安装1panel"
-echo -e "${Green}8.${Font} ubuntu安装1panel"
-echo -e "${Green}9.${Font} debian安装1panel"
-echo -e "—————————————————————————— 系统功能 ——————————————————————————"
-echo -e "${Green}10.${Font} 修改root密码"
-echo -e "${Green}11.${Font} 修改时间为中国"
-echo -e "${Green}12.${Font} 重启当前系统"
-echo -e "${Green}13.${Font} 关闭当前系统"
-echo -e "—————————————————————————— 安装软件包 ——————————————————————————"
-echo -e "${Green}14.${Font}  Frps服务端-管理脚本               ${Green}15.${Font}  Todesk 安装 (debian/ubuntu)"
-echo -e "${Green}16.${Font}  Frps客户端-管理脚本               ${Green}17.${Font}  鱼香 ros 安装"
-echo -e "${Green}18.${Font}  Nezha哪吒监控-云探针              ${Green}19.${Font}  星火应用商店 安装"
-echo -e "${Green}20.${Font}  ServerStatus-云探针               ${Green}21.${Font}  "
-echo -e "${Green}22.${Font}  iptables-端口转发                 ${Green}23.${Font}  "
-echo -e "${Green}24.${Font}  Docker 安装                       ${Green}25.${Font}  "
-echo -e "${Green}26.${Font}  Nvidia显卡驱动安装                ${Green}27.${Font}  "
-echo -e "${Green}28.${Font}  Nvidia-Docker安装                 ${Green}29.${Font}  "
-echo -e "${Green}30.${Font}  Miniconda安装                     ${Green}31.${Font}  "
-echo -e "—————————————————————————— 附加脚本 ——————————————————————————"
-echo -e "${Green}99.${Font} 返回综合脚本"
-echo -e "${Green}0.${Font} 退出当前脚本\n"
+headers_tools="—————————————————————————— 安装软件源 ——————————————————————————
+${Green}1.${Font} centos添加epel软件源
+${Green}2.${Font} ubuntu添加epel软件源
+${Green}3.${Font} debian添加epel软件源
+—————————————————————————— 系统升级 ——————————————————————————
+${Green}4.${Font} centos升级软件和系统
+${Green}5.${Font} ubuntu升级软件和系统
+${Green}6.${Font} debian升级软件和系统
+—————————————————————————— 安装1panel ——————————————————————————
+${Green}7.${Font} centos安装1panel
+${Green}8.${Font} ubuntu安装1panel
+${Green}9.${Font} debian安装1panel
+—————————————————————————— 系统功能 ——————————————————————————
+${Green}10.${Font} 修改root密码
+${Green}11.${Font} 修改时间为中国
+${Green}12.${Font} 重启当前系统
+${Green}13.${Font} 关闭当前系统
+—————————————————————————— 安装软件包 ——————————————————————————
+${Green}14.${Font}  Frps服务端-管理脚本               ${Green}15.${Font}  Todesk 安装 (debian/ubuntu)
+${Green}16.${Font}  Frps客户端-管理脚本               ${Green}17.${Font}  鱼香 ros 安装
+${Green}18.${Font}  Nezha哪吒监控-云探针              ${Green}19.${Font}  星火应用商店 安装
+${Green}20.${Font}  ServerStatus-云探针               ${Green}21.${Font}  
+${Green}22.${Font}  iptables-端口转发                 ${Green}23.${Font}  
+${Green}24.${Font}  Docker 安装                       ${Green}25.${Font}  
+${Green}26.${Font}  Nvidia显卡驱动安装                ${Green}27.${Font}  
+${Green}28.${Font}  Nvidia-Docker安装                 ${Green}29.${Font} 
+${Green}30.${Font}  Miniconda安装                     ${Green}31.${Font}  
+—————————————————————————— 附加脚本 ——————————————————————————
+${Green}99.${Font} 返回综合脚本
+${Green}0.${Font} 退出当前脚本
+——————————————————————————————————————————————————————————————"
 
-read -rp "请输入对应的数字：" num
+echo -e "$headers_tools"
+
+echo -e -n "${Green}请输入对应功能的${Font}  ${Red}数字：${Font}"
+read num
 case $num in
 1)
     yum install epel-release -y

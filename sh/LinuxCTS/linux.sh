@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-ipdz=$(curl -s myip.ipip.net | awk -F '：' '{print $3}')
 #全局参数
 url=https://ifconfig.icu
 country=$(curl -s ${url}/country)
@@ -9,29 +8,30 @@ if [[ $country == *"China"* ]]; then
 else
     download_url=https://raw.githubusercontent.com/hyh1750522171/LinuxCTS/main
 fi
-
+# 引用全局初始化脚本
 source <(curl -s ${download_url}/tools/init.sh)
 
 #脚本菜单
 start_linux(){
     clear
-    echo -e "\033[42;37m您计算机所在的国家地区:\033[0m \033[32m ${ipdz} \033[0m"
+    echo -e "${GreenBG}您计算机所在的国家地区:${Font} ${Green} ${ipdz} ${Font}"
     headers
     # echo -en "=  ${Green}11${Font}  " && gpt_style_output 'VPS信息和性能测试 VPS information test'
-    echo -e "=  ${Green}11${Font}  Linux信息和性能测试 VPS information test" 
-    echo -e "=  ${Green}12${Font}  Bench系统性能测试  Bench performance test  "
-    echo -e "=  ${Green}13${Font}  Linux常用工具安装  Linux utility function  "
-    echo -e "=  ${Green}14${Font}  Linux路由追踪检测  Linux traceroute test  "
-    echo -e "="
-    echo -e "=  ${Green}21${Font}  Linux修改交换内存  Modify swap memory  "
-    echo -e "=  ${Green}22${Font}  Linux修改服务器DNS  Modify server DNS  "
-    echo -e "=  ${Green}23${Font}  流媒体区域限制测试  Streaming media testing  "
-    echo -e "=  ${Green}24${Font}  Linux系统bbr-tcp加速  System bbr-tcp speed up  "
-    echo -e "=  ${Green}25${Font}  Linux网络重装dd系统  Network reloading system  "
-    echo -e "="
-    echo -e "=  ${Green}99${Font}  退出当前脚本  Exit the current script  "
-    echo -e "====================================================="
-    echo -e -n "=  ${Green}请输入对应功能的${Font}  ${Red}数字：${Font}"
+    table_linux="=  ${Green}11${Font}  Linux信息和性能测试 VPS information test
+=  ${Green}12${Font}  Bench系统性能测试  Bench performance test  
+=  ${Green}13${Font}  Linux常用工具安装  Linux utility function  
+=  ${Green}14${Font}  Linux路由追踪检测  Linux traceroute test  
+=
+=  ${Green}21${Font}  Linux修改交换内存  Modify swap memory  
+=  ${Green}22${Font}  Linux修改服务器DNS  Modify server DNS  
+=  ${Green}23${Font}  流媒体区域限制测试  Streaming media testing  
+=  ${Green}24${Font}  Linux系统bbr-tcp加速  System bbr-tcp speed up  
+=  ${Green}25${Font}  Linux网络重装dd系统  Network reloading system  
+=
+=  ${Green}99${Font}  退出当前脚本  Exit the current script  
+====================================================="
+    echo -e "$table_linux"
+    echo -e -n "${Green}请输入对应功能的${Font}  ${Red}数字：${Font}"
     
     read num
     case $num in
@@ -67,7 +67,7 @@ start_linux(){
         ;;
     *)
         clear
-        echo -e "${Error}:请输入正确数字 [0-99], 5秒后刷新"
+        echo -e "${Error}:请输入正确数字 [0-99],${Font} 5秒后刷新"
         countdown_sleep 5
         start_linux
         ;;
