@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 17 Dec 2024 13:57:28 GMT</pubDate>
-    <lastBuildDate>Tue, 17 Dec 2024 13:57:28 GMT</lastBuildDate>
+    <pubDate>Tue, 17 Dec 2024 14:14:01 GMT</pubDate>
+    <lastBuildDate>Tue, 17 Dec 2024 14:14:01 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -3115,6 +3115,22 @@ Big O：
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>密码生成器</title>
+      <link>https://www.geekery.cn/free-service/random-password.html</link>
+      <guid>https://www.geekery.cn/free-service/random-password.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">密码生成器</source>
+      <description>密码生成器 生成随机密码。 密码随机生成是一个用于生成随机密码的工具。它可以帮助用户创建强密码，以提高帐户的安全性。 源码开源在 GitHub 仓库 , 目前已经更新为vue版本。</description>
+      <category>Tools</category>
+      <pubDate>Mon, 10 Jun 2024 06:02:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>生成随机密码。</p>
+<p>密码随机生成是一个用于生成随机密码的工具。它可以帮助用户创建强密码，以提高帐户的安全性。</p>
+</blockquote>
+<p>源码开源在 <a href="https://github.com/Paper-Dragon/RandomPassword" target="_blank" rel="noopener noreferrer">GitHub 仓库</a> , 目前已经更新为vue版本。</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>CentOS的灾难恢复-chmod对整个根目录赋予000权限</title>
       <link>https://www.geekery.cn/note-book/OperaSystems/RedHatEnterpriseLinux/CentOS%E7%9A%84%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D-chmod%E5%AF%B9%E6%95%B4%E4%B8%AA%E6%A0%B9%E7%9B%AE%E5%BD%95%E8%B5%8B%E4%BA%88000%E6%9D%83%E9%99%90.html</link>
       <guid>https://www.geekery.cn/note-book/OperaSystems/RedHatEnterpriseLinux/CentOS%E7%9A%84%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D-chmod%E5%AF%B9%E6%95%B4%E4%B8%AA%E6%A0%B9%E7%9B%AE%E5%BD%95%E8%B5%8B%E4%BA%88000%E6%9D%83%E9%99%90.html</guid>
@@ -5553,93 +5569,6 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 友链申请 https://www.geekery.cn/about/friend.html</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>友链</h2>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>001-PyQt介绍与安装</title>
-      <link>https://www.geekery.cn/PyQt5%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E7%8E%8B%E9%93%AD%E4%B8%9C/001-PyQt%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85.html</link>
-      <guid>https://www.geekery.cn/PyQt5%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B-%E7%8E%8B%E9%93%AD%E4%B8%9C/001-PyQt%E4%BB%8B%E7%BB%8D%E4%B8%8E%E5%AE%89%E8%A3%85.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">001-PyQt介绍与安装</source>
-      <description>001-PyQt介绍与安装 一、介绍 1. Qt Qt 是什么 Qt（官方发音 [kju:t]）是一个跨平台的C++开发库，主要用来开发图形用户界面（Graphical User Interface，GUI）程序 Qt 是纯 C++ 开发的，正常情况下需要先学习C语言、然后在学习C++然后才能使用Qt开发带界面的程序 多亏了开源社区使得Qt 还可以用P...</description>
-      <pubDate>Sun, 29 Oct 2023 12:02:01 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>一、介绍</h2>
-<h3>1. Qt</h3>
-<p></p>
-<p>Qt（官方发音 <code>[kju:t]</code>）是一个跨平台的C++开发库，主要用来开发图形用户界面（Graphical User Interface，GUI）程序</p>
-<p>Qt 是纯 C++ 开发的，正常情况下需要先学习C语言、然后在学习C++然后才能使用Qt开发带界面的程序</p>
-<p>多亏了开源社区使得<strong>Qt 还可以用Python、Ruby、Perl 等脚本语言进行开发。</strong></p>
-<p><strong>Qt 支持的操作系统有很多，例如通用操作系统 Windows、Linux、Unix，智能手机系统Android、iOS， 嵌入式系统等等</strong>。可以说是跨平台的</p>
-<p>QT官网：https://doc.qt.io/qt-5/index.html</p>
-<h3>2. PyQt</h3>
-<p>PyQt的开发者是英国的“Riverbank  Computing”公司。它提供了GPL（简单的说，以GPL协议发布到网上的素材，你可以使用，也可以更改，但是经过你更改然后再次发布的素材必须也遵守GPL协议，主要要求是必须开源，而且不能删减原作者的声明信息等）与商业协议两种授权方式，因此它可以免费地用于自由软件的开发。</p>
-<p><strong>PyQt可以运行于Microsoft Windows、Mac OS X、Linux以及Unix的多数变种上</strong>。</p>
-<p>PyQt是Python语言的GUI（Graphical User Interface，简称 GUI，又称图形用户接口）编程解决方案之一</p>
-<p>可以用来代替Python内置的<code>Tkinter</code>。其它替代者还有<code>PyGTK</code>、<code>wxPython</code>等，与Qt一样，PyQt是一个自由软件</p>
-<p>文档相关地址：https://www.riverbankcomputing.com/software/pyqt/</p>
-<p>比较不错的参考资料：https://wiki.python.org/moin/PyQt/Tutorials</p>
-<h3>3. 一句话概括</h3>
-<ul>
-<li>Qt (C++ 语言 GUI  )</li>
-<li>PyQt =  Python  +  Qt技术</li>
-</ul>
-<h3>4. Python GUI开发热门选择</h3>
-<ul>
-<li>
-<p>Tkinter</p>
-<p>Python官方采用的标准库，优点是作为Python标准库、稳定、发布程序较小，缺点是控件相对较少。</p>
-</li>
-<li>
-<p>wxPython</p>
-<p>基于wxWidgets的Python库，优点是控件比较丰富，缺点是稳定性相对差点、文档少、用户少。</p>
-</li>
-<li>
-<p>PySide2、PyQt5</p>
-<p>基于Qt 的Python库，优点是控件比较丰富、跨平台体验好、文档完善、用户多。</p>
-<p>缺点是 库比较大，发布出来的程序比较大。</p>
-<p>PyQt5 的开发者是英国的“Riverbank Computing”公司  ， 而 PySide2 则是 qt 针对python语言提供的专门</p>
-</li>
-</ul>
-<h2>二、安装</h2>
-<p>下面我们以在Python虚拟环境中，使用pip进行安装PyQT</p>
-<h3>1. 创建新的虚拟环境</h3>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>mkvirtualenv -p python3 py3-qt --no-download</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<h3>2. 安装pyqt5（命令行）</h3>
-<ol>
-<li>
-<p>切换到指定的虚拟环境</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>workon py3-qt</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
-</ol>
-<p></p>
-<p>安装pyqt5</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>pip install pyqt5 -i https://pypi.tuna.tsinghua.edu.cn/simple</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ol>
-<li></li>
-</ol>
-<h3>3. 安装pyqt5（pycharm图形界面）</h3>
-<p></p>
-<h3>4. 安装成功效果如下</h3>
-<p><img src="https://doc.itprojects.cn/0001.zhishi/python.0008.pyqt5rumen/assets/image-20201026150340265.png" alt="image-20201026150340265"></p>
-<p>在当前安装PyQt的虚拟环境中输入如下测试代码：</p>
-<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" data-title="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 如果执行成功，没有任何错误提示，则表明环境搭建成功</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> PyQt5 </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> QtWidgets</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 当然也可以查看PyQt版本</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> PyQt5.QtCore </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> *</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">print</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#383A42;--shiki-dark:#D19A66">QT_VERSION_STR</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>5. 注意</h3>
-<p>如果安装缓慢，可以尝试修改pip加速，加速地址如下</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>阿里云  https://mirrors.aliyun.com/pypi/simple/</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>中国科技大学 https://pypi.mirrors.ustc.edu.cn/simple/</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>豆瓣(douban) https://pypi.douban.com/simple/</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>清华大学 https://pypi.tuna.tsinghua.edu.cn/simple/</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>中国科学技术大学 https://pypi.mirrors.ustc.edu.cn/simple/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
