@@ -904,6 +904,10 @@
         "value": 9
     },
     {
+        "name": "Base64",
+        "value": 9
+    },
+    {
         "name": "常用命令",
         "value": 9
     },
@@ -1456,6 +1460,14 @@
         "value": 6
     },
     {
+        "name": "英文字母",
+        "value": 6
+    },
+    {
+        "name": "电子邮件",
+        "value": 6
+    },
+    {
         "name": "Engine",
         "value": 6
     },
@@ -1585,18 +1597,6 @@
     },
     {
         "name": "Binutils",
-        "value": 6
-    },
-    {
-        "name": "压缩文件",
-        "value": 6
-    },
-    {
-        "name": "Journal",
-        "value": 6
-    },
-    {
-        "name": "Generation",
         "value": 6
     }
 ]

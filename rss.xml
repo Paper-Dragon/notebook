@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 17 Dec 2024 14:14:01 GMT</pubDate>
-    <lastBuildDate>Tue, 17 Dec 2024 14:14:01 GMT</lastBuildDate>
+    <pubDate>Wed, 18 Dec 2024 06:58:07 GMT</pubDate>
+    <lastBuildDate>Wed, 18 Dec 2024 06:58:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -18,6 +18,20 @@
     <category>iptables</category>
     <category>Network</category>
     <category>网络安全</category>
+    <item>
+      <title>Base64在线编码解码</title>
+      <link>https://www.geekery.cn/free-service/base64.html</link>
+      <guid>https://www.geekery.cn/free-service/base64.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Base64在线编码解码</source>
+      <description>Base64在线编码解码 最好用的 Base64 在线工具, 支持图片编解码和预览</description>
+      <category>Tools</category>
+      <pubDate>Wed, 18 Dec 2024 06:54:34 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>最好用的 Base64 在线工具, 支持图片编解码和预览</p>
+</blockquote>
+]]></content:encoded>
+    </item>
     <item>
       <title>代码差异对比</title>
       <link>https://www.geekery.cn/free-service/code-diff.html</link>
@@ -5549,25 +5563,6 @@ nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
 <h4>引导界面更改mode</h4>
 <p>进入grub界面，将这个界面的最后部分的“quiet splash —”改为“nomodeset”。F10保存，就可以进入安装界面，进行安装。</p>
 <h4>按照正常安装步骤进行安装</h4>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>友情链接</title>
-      <link>https://www.geekery.cn/about/friend.html</link>
-      <guid>https://www.geekery.cn/about/friend.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">友情链接</source>
-      <description>友情链接 一个模板 友链</description>
-      <pubDate>Fri, 03 Nov 2023 10:34:07 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h3>一个模板</h3>
-<div class="language-yaml line-numbers-mode" data-highlighter="shiki" data-ext="yaml" data-title="yaml" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">title="运维开发绿皮书"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">desc="放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">logo="https://www.geekery.cn/logo.svg"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">link="https://www.geekery.cn/"</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">background="rgba(253, 230, 138, 0.15)"</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 友链申请 https://www.geekery.cn/about/friend.html</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>友链</h2>
 ]]></content:encoded>
     </item>
   </channel>
