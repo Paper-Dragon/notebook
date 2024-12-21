@@ -16,7 +16,7 @@ check_system_os(){
 	else
 		release="Unknown"
 		echo -e "\n 系统不受支持，安装失败 \n"
-		exit 1
+		exit
 	fi
 }
 
@@ -24,7 +24,7 @@ check_system_os(){
 check_root(){
 	if [[ $EUID != 0 ]];then
 		echo -e " 当前非ROOT账号，无法继续操作。\n 请更换ROOT账号登录服务器。 " 
-		exit 1
+		exit
 	else
 		echo -e "\n 管理员权限检查通过 "
 	fi
@@ -40,7 +40,7 @@ dependent_install(){
 		apt-get -y install virt-what
 	else
 		echo -e " 系统不受支持，退出...... \n"
-		exit 1
+		exit
 	fi
 }
 
@@ -100,7 +100,7 @@ set_swap(){
 			fi
 		else
 			echo -e "\n 用户取消，程序退出 \n"
-			exit 1
+			exit
 		fi
 	else
 		echo " " # 为了美观输出一个空行 

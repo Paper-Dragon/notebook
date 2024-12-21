@@ -25,11 +25,11 @@ pre_check() {
     command -v systemctl >/dev/null 2>&1
     if [[ $? != 0 ]]; then
         echo "不支持此系统：未找到 systemctl 命令"
-        exit 1
+        exit
     fi
 
     # check root
-    [[ $EUID -ne 0 ]] && echo -e "${red}错误: ${plain} 必须使用root用户运行此脚本！\n" && exit 1
+    [[ $EUID -ne 0 ]] && echo -e "${red}错误: ${plain} 必须使用root用户运行此脚本！\n" && exit
 
     ## os_arch
     if [[ $(uname -m | grep 'x86_64') != "" ]]; then
@@ -115,7 +115,7 @@ update_script() {
     sleep 3s
     clear
     exec ./nezha.sh
-    exit 0
+    exit
 }
 
 before_show_menu() {
@@ -495,7 +495,7 @@ show_menu() {
 
     case "${num}" in
     0)
-        exit 0
+        exit
         ;;
     1)
         install_dashboard

@@ -19,7 +19,7 @@ touch $conf
 setupService(){
     cat > /usr/local/bin/dnat.sh <<"AAAA"
 #! /bin/bash
-[[ "$EUID" -ne '0' ]] && echo "Error:This script must be run as root!" && exit 1;
+[[ "$EUID" -ne '0' ]] && echo "Error:This script must be run as root!" && exit;
 
 base=/etc/dnat
 mkdir $base 2>/dev/null

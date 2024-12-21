@@ -140,7 +140,7 @@ case "$mirror" in
 		;;
 	*)
 		>&2 echo "unknown mirror '$mirror': use either 'Aliyun', or 'AzureChinaCloud'."
-		exit 1
+		exit
 		;;
 esac
 
@@ -149,7 +149,7 @@ case "$CHANNEL" in
 		;;
 	*)
 		>&2 echo "unknown CHANNEL '$CHANNEL': use either stable or test."
-		exit 1
+		exit
 		;;
 esac
 
@@ -388,7 +388,7 @@ do_install() {
 			Error: this installer needs the ability to run commands as root.
 			We are unable to find either "sudo" or "su" available to make this happen.
 			EOF
-			exit 1
+			exit
 		fi
 	fi
 
@@ -521,7 +521,7 @@ do_install() {
 						echo
 						echo "ERROR: '$VERSION' not found amongst apt-cache madison results"
 						echo
-						exit 1
+						exit
 					fi
 					if version_gte "18.09"; then
 							search_command="apt-cache madison docker-ce-cli | grep '$pkg_pattern' | head -1 | awk '{\$1=\$1};1' | cut -d' ' -f 3"
@@ -549,7 +549,7 @@ do_install() {
 				$sh_c "DEBIAN_FRONTEND=noninteractive apt-get -y -qq install $pkgs >/dev/null"
 			)
 			echo_docker_as_nonroot
-			exit 0
+			exit
 			;;
 		centos|fedora|rhel)
 			repo_file_url="$DOWNLOAD_URL/linux/$lsb_dist/$REPO_FILE"
@@ -612,7 +612,7 @@ do_install() {
 						echo
 						echo "ERROR: '$VERSION' not found amongst $pkg_manager list results"
 						echo
-						exit 1
+						exit
 					fi
 					if version_gte "18.09"; then
 						# older versions don't support a cli package
@@ -645,12 +645,12 @@ do_install() {
 				$sh_c "$pkg_manager $pkg_manager_flags install $pkgs"
 			)
 			echo_docker_as_nonroot
-			exit 0
+			exit
 			;;
 		sles)
 			if [ "$(uname -m)" != "s390x" ]; then
 				echo "Packages for SLES are currently only available for s390x"
-				exit 1
+				exit
 			fi
 			repo_file_url="$DOWNLOAD_URL/linux/$lsb_dist/$REPO_FILE"
 			pre_reqs="ca-certificates curl libseccomp2 awk"
@@ -688,7 +688,7 @@ do_install() {
 						echo
 						echo "ERROR: '$VERSION' not found amongst zypper list results"
 						echo
-						exit 1
+						exit
 					fi
 					search_command="zypper search -s --match-exact 'docker-ce-cli' | grep '$pkg_pattern' | tail -1 | awk '{print \$6}'"
 					# It's okay for cli_pkg_version to be blank, since older versions don't support a cli package
@@ -718,7 +718,7 @@ do_install() {
 				$sh_c "zypper -q install -y $pkgs"
 			)
 			echo_docker_as_nonroot
-			exit 0
+			exit
 			;;
 		*)
 			if [ -z "$lsb_dist" ]; then
@@ -727,16 +727,16 @@ do_install() {
 					echo "ERROR: Unsupported operating system 'macOS'"
 					echo "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
 					echo
-					exit 1
+					exit
 				fi
 			fi
 			echo
 			echo "ERROR: Unsupported distribution '$lsb_dist'"
 			echo
-			exit 1
+			exit
 			;;
 	esac
-	exit 1
+	exit
 }
 
 # wrapped up in a function so that we have some protection against only getting

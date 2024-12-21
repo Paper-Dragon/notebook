@@ -72,7 +72,7 @@ checkurl() {
 
   if [[ -z "$url" ]]; then
     echo "错误：缺少URL参数！"
-    exit 1
+    exit
   fi
 
   local retries=0
@@ -91,7 +91,7 @@ checkurl() {
     echo "下载地址检查OK，继续！"
   else
     echo "下载地址检查出错，退出！"
-    exit 1
+    exit
   fi
 }
 
@@ -107,7 +107,7 @@ check_cn() {
       apt-get install -y jq
     else
       echo "无法安装jq命令。请手动安装jq后再试。"
-      exit 1
+      exit
     fi
   fi
 
@@ -174,7 +174,7 @@ download_file() {
     echo -e "\e[32m文件下载成功或已经是最新。\e[0m"
   else
     echo -e "\e[31m文件下载失败，退出状态码: $status\e[0m"
-    exit 1
+    exit
   fi
 }
 
@@ -184,7 +184,7 @@ check_empty() {
 
   if [[ -z $var_value ]]; then
     echo "$var_value 是空值，退出！"
-    exit 1
+    exit
   fi
 }
 
@@ -223,7 +223,7 @@ installbbr() {
         yum install -y kernel-c7.rpm
         yum install -y kernel-headers-c7.rpm
       else
-        echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+        echo -e "${Error} 不支持x86_64以外的系统 !" && exit
       fi
     fi
 
@@ -269,7 +269,7 @@ installbbr() {
       dpkg -i linux-image-d10.deb
       dpkg -i linux-headers-d10.deb
     else
-      echo -e "${Error} 不支持x86_64及arm64/aarch64以外的系统 !" && exit 1
+      echo -e "${Error} 不支持x86_64及arm64/aarch64以外的系统 !" && exit
     fi
   fi
 
@@ -312,7 +312,7 @@ installbbrplus() {
         yum install -y kernel-c7.rpm
         yum install -y kernel-headers-c7.rpm
       else
-        echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+        echo -e "${Error} 不支持x86_64以外的系统 !" && exit
       fi
     fi
 
@@ -332,7 +332,7 @@ installbbrplus() {
       dpkg -i linux-image.deb
       dpkg -i linux-headers.deb
     else
-      echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+      echo -e "${Error} 不支持x86_64以外的系统 !" && exit
     fi
   fi
 
@@ -356,7 +356,7 @@ installbbrplus() {
 installlot() {
   bit=$(uname -m)
   if [[ ${bit} != "x86_64" ]]; then
-    echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+    echo -e "${Error} 不支持x86_64以外的系统 !" && exit
   fi
   if [[ ${bit} == "x86_64" ]]; then
     bit='x64'
@@ -378,7 +378,7 @@ installlot() {
     deb_issue="$(cat /etc/issue)"
     deb_relese="$(echo $deb_issue | grep -io 'Ubuntu\|Debian' | sed -r 's/(.*)/\L\1/')"
     os_ver="$(dpkg --print-architecture)"
-    [ -n "$os_ver" ] || exit 1
+    [ -n "$os_ver" ] || exit
     if [ "$deb_relese" == 'ubuntu' ]; then
       deb_ver="$(echo $deb_issue | grep -o '[0-9]*\.[0-9]*' | head -n1)"
       if [ "$deb_ver" == "14.04" ]; then
@@ -388,7 +388,7 @@ installlot() {
       elif [ "$deb_ver" == "18.04" ]; then
         kernel_version="4.15.0-30-generic" && item="4.15.0-30-generic" && ver='bionic'
       else
-        exit 1
+        exit
       fi
       url='archive.ubuntu.com'
       urls='security.ubuntu.com'
@@ -401,10 +401,10 @@ installlot() {
       elif [ "$deb_ver" == "9" ]; then
         kernel_version="4.9.0-4-${os_ver}" && item="4.9.0-4-${os_ver}" && ver='stretch' && url='archive.debian.org' && urls='archive.debian.org'
       else
-        exit 1
+        exit
       fi
     fi
-    [ -n "$item" ] && [ -n "$urls" ] && [ -n "$url" ] && [ -n "$ver" ] || exit 1
+    [ -n "$item" ] && [ -n "$urls" ] && [ -n "$url" ] && [ -n "$ver" ] || exit
     if [ "$deb_relese" == 'ubuntu' ]; then
       echo "deb http://${url}/${deb_relese} ${ver} main restricted universe multiverse" >/etc/apt/sources.list
       echo "deb http://${url}/${deb_relese} ${ver}-updates main restricted universe multiverse" >>/etc/apt/sources.list
@@ -428,7 +428,7 @@ installlot() {
         dpkg -i '/tmp/linux-image-3.16.0-4-amd64_3.16.43-2+deb8u5_amd64.deb'
 
         if [ $? -ne 0 ]; then
-          exit 1
+          exit
         fi
       elif [ "$deb_ver" == "9" ]; then
         dpkg -l | grep -q 'linux-base' || {
@@ -447,10 +447,10 @@ installlot() {
         #http://snapshot.debian.org/archive/debian/20171224T175424Z/pool/main/l/linux/linux-image-4.9.0-4-amd64_4.9.65-3+deb9u1_amd64.deb
         #http://snapshot.debian.org/archive/debian/20171231T180144Z/pool/main/l/linux/linux-image-4.9.0-4-amd64_4.9.65-3_amd64.deb
         if [ $? -ne 0 ]; then
-          exit 1
+          exit
         fi
       else
-        exit 1
+        exit
       fi
     fi
     apt-get autoremove -y
@@ -477,7 +477,7 @@ installxanmod() {
   kernel_version="5.5.1-xanmod1"
   bit=$(uname -m)
   if [[ ${bit} != "x86_64" ]]; then
-    echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+    echo -e "${Error} 不支持x86_64以外的系统 !" && exit
   fi
   rm -rf xanmod
   mkdir xanmod && cd xanmod || exit
@@ -505,7 +505,7 @@ installxanmod() {
         yum install -y kernel-c7.rpm
         yum install -y kernel-headers-c7.rpm
       else
-        echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+        echo -e "${Error} 不支持x86_64以外的系统 !" && exit
       fi
     elif [[ ${version} == "8" ]]; then
       echo -e "如果下载地址出错，可能当前正在更新，超过半天还是出错请反馈，大陆自行解决污染问题"
@@ -558,7 +558,7 @@ installxanmod() {
       dpkg -i linux-image-d10.deb
       dpkg -i linux-headers-d10.deb
     else
-      echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+      echo -e "${Error} 不支持x86_64以外的系统 !" && exit
     fi
   fi
 
@@ -596,7 +596,7 @@ installbbrplusnew() {
 
   bit=$(uname -m)
   #if [[ ${bit} != "x86_64" ]]; then
-  #  echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+  #  echo -e "${Error} 不支持x86_64以外的系统 !" && exit
   #fi
   rm -rf bbrplusnew
   mkdir bbrplusnew && cd bbrplusnew || exit
@@ -619,7 +619,7 @@ installbbrplusnew() {
         yum install -y kernel-c7.rpm
         yum install -y kernel-headers-c7.rpm
       else
-        echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+        echo -e "${Error} 不支持x86_64以外的系统 !" && exit
       fi
     fi
     if [[ ${version} == "8" ]]; then
@@ -640,7 +640,7 @@ installbbrplusnew() {
         yum install -y kernel-c8.rpm
         yum install -y kernel-headers-c8.rpm
       else
-        echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+        echo -e "${Error} 不支持x86_64以外的系统 !" && exit
       fi
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
@@ -677,7 +677,7 @@ installbbrplusnew() {
       dpkg -i linux-image-d10.deb
       dpkg -i linux-headers-d10.deb
     else
-      echo -e "${Error} 不支持x86_64及arm64/aarch64以外的系统 !" && exit 1
+      echo -e "${Error} 不支持x86_64及arm64/aarch64以外的系统 !" && exit
     fi
   fi
 
@@ -1213,7 +1213,7 @@ Update_Shell() {
     chmod +x "$shell_file"
 
     echo "脚本已更新，请重新运行。"
-    exit 0
+    exit
   else
     echo "脚本是最新版本，无需更新。"
   fi
@@ -1395,7 +1395,7 @@ start_menu() {
     optimizing_ddcc
     ;;
   99)
-    exit 1
+    exit
     ;;
   *)
     clear
@@ -1421,7 +1421,7 @@ detele_kernel() {
       done
       echo --nodeps -e "内核卸载完毕，继续..."
     else
-      echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+      echo -e " 检测到 内核 数量不正确，请检查 !" && exit
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
     deb_total=$(dpkg -l | grep linux-image | awk '{print $2}' | grep -v "${kernel_version}" | wc -l)
@@ -1436,7 +1436,7 @@ detele_kernel() {
       done
       echo -e "内核卸载完毕，继续..."
     else
-      echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+      echo -e " 检测到 内核 数量不正确，请检查 !" && exit
     fi
   fi
 }
@@ -1454,7 +1454,7 @@ detele_kernel_head() {
       done
       echo --nodeps -e "内核卸载完毕，继续..."
     else
-      echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+      echo -e " 检测到 内核 数量不正确，请检查 !" && exit
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
     deb_total=$(dpkg -l | grep linux-headers | awk '{print $2}' | grep -v "${kernel_version}" | wc -l)
@@ -1469,7 +1469,7 @@ detele_kernel_head() {
       done
       echo -e "内核卸载完毕，继续..."
     else
-      echo -e " 检测到 内核 数量不正确，请检查 !" && exit 1
+      echo -e " 检测到 内核 数量不正确，请检查 !" && exit
     fi
   fi
 }
@@ -1532,7 +1532,7 @@ BBR_grub() {
       apt install grub2-common -y
       update-grub
     fi
-    #exit 1
+    #exit
   fi
 }
 
@@ -1746,7 +1746,7 @@ check_sys() {
 
   else
     echo "不支持的操作系统发行版：${release}"
-    exit 1
+    exit
   fi
 }
 
@@ -1768,13 +1768,13 @@ check_sys_bbr() {
     if [[ ${version} == "7" ]]; then
       installbbr
     else
-      echo -e "${Error} BBR内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} BBR内核不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
     apt-get --fix-broken install -y && apt-get autoremove -y
     installbbr
   else
-    echo -e "${Error} BBR内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+    echo -e "${Error} BBR内核不支持当前系统 ${release} ${version} ${bit} !" && exit
   fi
 }
 
@@ -1784,13 +1784,13 @@ check_sys_bbrplus() {
     if [[ ${version} == "7" ]]; then
       installbbrplus
     else
-      echo -e "${Error} BBRplus内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} BBRplus内核不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
     apt-get --fix-broken install -y && apt-get autoremove -y
     installbbrplus
   else
-    echo -e "${Error} BBRplus内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+    echo -e "${Error} BBRplus内核不支持当前系统 ${release} ${version} ${bit} !" && exit
   fi
 }
 
@@ -1801,13 +1801,13 @@ check_sys_bbrplusnew() {
     if [[ ${version} == "7" || ${version} == "8" ]]; then
       installbbrplusnew
     else
-      echo -e "${Error} BBRplusNew内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} BBRplusNew内核不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
     apt-get --fix-broken install -y && apt-get autoremove -y
     installbbrplusnew
   else
-    echo -e "${Error} BBRplusNew内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+    echo -e "${Error} BBRplusNew内核不支持当前系统 ${release} ${version} ${bit} !" && exit
   fi
 }
 
@@ -1817,13 +1817,13 @@ check_sys_xanmod() {
     if [[ ${version} == "7" || ${version} == "8" ]]; then
       installxanmod
     else
-      echo -e "${Error} xanmod内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} xanmod内核不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   elif [[ "${OS_type}" == "Debian" ]]; then
     apt-get --fix-broken install -y && apt-get autoremove -y
     installxanmod
   else
-    echo -e "${Error} xanmod内核不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+    echo -e "${Error} xanmod内核不支持当前系统 ${release} ${version} ${bit} !" && exit
   fi
 }
 
@@ -1832,7 +1832,7 @@ check_sys_Lotsever() {
   check_version
   bit=$(uname -m)
   if [[ ${bit} != "x86_64" ]]; then
-    echo -e "${Error} 不支持x86_64以外的系统 !" && exit 1
+    echo -e "${Error} 不支持x86_64以外的系统 !" && exit
   fi
   if [[ "${OS_type}" == "CentOS" ]]; then
     if [[ ${version} == "6" ]]; then
@@ -1843,7 +1843,7 @@ check_sys_Lotsever() {
       kernel_version="4.11.2-1"
       installlot
     else
-      echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   elif [[ "${release}" == "debian" ]]; then
     if [[ ${version} == "7" || ${version} == "8" ]]; then
@@ -1860,7 +1860,7 @@ check_sys_Lotsever() {
         installlot
       fi
     else
-      echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   elif [[ "${release}" == "ubuntu" ]]; then
     if [[ ${version} -ge "12" ]]; then
@@ -1872,10 +1872,10 @@ check_sys_Lotsever() {
         installlot
       fi
     else
-      echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+      echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit
     fi
   else
-    echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit 1
+    echo -e "${Error} Lotsever不支持当前系统 ${release} ${version} ${bit} !" && exit
   fi
 }
 
@@ -1960,6 +1960,6 @@ check_status() {
 #############系统检测组件#############
 check_sys
 check_version
-[[ "${OS_type}" == "Debian" ]] && [[ "${OS_type}" == "CentOS" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit 1
+[[ "${OS_type}" == "Debian" ]] && [[ "${OS_type}" == "CentOS" ]] && echo -e "${Error} 本脚本不支持当前系统 ${release} !" && exit
 check_github
 start_menu

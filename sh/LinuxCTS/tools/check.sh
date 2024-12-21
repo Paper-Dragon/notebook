@@ -47,7 +47,7 @@ gen_uuid() {
 gen_random_str() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Length missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
     local randomstr=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c "$1")
     echo "${randomstr}"
@@ -56,11 +56,11 @@ gen_random_str() {
 resolve_ip_address() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Domain missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
     if [ -z "$2" ]; then
         echo -e "${Font_Red}DNS Record type missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     local domain="$1"
@@ -118,26 +118,26 @@ resolve_ip_address() {
 validate_proxy() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Param Proxy Address is missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     local tmpresult=$(echo "$1" | grep -P '^(socks|socks4|socks5|http)://([^:]+:[^@]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|(\[[0-9a-fA-F:]+\]|([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}|((([0-9a-fA-F]{1,4}:){1,6})|::(([0-9a-fA-F]{1,4}:){1,6}))([0-9a-fA-F]{1,4}))):(0|[1-9][0-9]{0,4})$')
     if [ -z "$tmpresult" ]; then
         echo -e "${Font_Red}Proxy IP invalid.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     local port=$(echo "$1" | grep -woP ':\K[0-9]+$')
     if [ "$port" -ge 65535 ]; then
         echo -e "${Font_Red}Proxy Port invalid.${Font_Suffix}"
-        exit 1
+        exit
     fi
 }
 
 validate_ip_address() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Param IP Address is missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if echo "$1" | awk '{$1=$1; print}' | grep -Eq '^([0-9]{1,3}\.){3}[0-9]{1,3}$'; then
@@ -167,7 +167,7 @@ validate_intranet() {
 validate_region_id() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Param missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
     local regionid="$1"
     local result=$(echo "$regionid" | grep -E '^[0-9]$|^1[0-1]$|^99$|^66$')
@@ -180,13 +180,13 @@ validate_region_id() {
 validate_net_type() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Param missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
     local netType="$1"
     local result=$(echo "$netType" | grep -E '^4$|^6$|^0$')
     if [ -z "$result" ]; then
         echo -e "${Font_Red}Invalid Network Type.${Font_Suffix}"
-        exit 1
+        exit
     fi
     return 0
 }
@@ -204,7 +204,7 @@ check_proxy_connectivity() {
 check_net_connctivity() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Param missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if [ "$1" == 4 ]; then
@@ -278,7 +278,7 @@ check_os_type() {
     fi
 
     echo -e "${Font_Red}Unsupported OS Type.${Font_Suffix}"
-    exit 1
+    exit
 }
 
 check_dependencies() {
@@ -288,7 +288,7 @@ check_dependencies() {
         source /etc/os-release
         if [ -z "$ID" ]; then
             echo -e "${Font_Red}Unsupported Linux OS Type.${Font_Suffix}"
-            exit 1
+            exit
         fi
 
         case "$ID" in
@@ -321,32 +321,32 @@ check_dependencies() {
 
     if [ -z $(echo 'e' | grep -P 'e' 2>/dev/null) ]; then
         echo -e "${Font_Red}command 'grep' function is incomplete, please install the full version first.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if ! command_exists curl; then
         echo -e "${Font_Red}command 'curl' is missing, please install it first.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if ! gen_uuid >/dev/null; then
         echo -e "${Font_Red}command 'uuidgen' is missing, please install it first.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if ! command_exists openssl; then
         echo -e "${Font_Red}command 'openssl' is missing, please install it first.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if [ "$OS_MACOS" == 1 ]; then
         if ! command_exists md5sum; then
             echo -e "${Font_Red}command 'md5sum' is missing, please install it first.${Font_Suffix}"
-            exit 1
+            exit
         fi
         if ! command_exists sha256sum; then
             echo -e "${Font_Red}command 'sha256sum' is missing, please install it first.${Font_Suffix}"
-            exit 1
+            exit
         fi
     fi
 
@@ -401,7 +401,7 @@ process() {
             ;;
         *)
             echo -e "${Font_Red}Unknown error while processing options.${Font_Suffix}"
-            exit 1
+            exit
             ;;
         esac
         shift
@@ -461,7 +461,7 @@ process() {
 
 delay() {
     if [ -z $1 ]; then
-        exit 1
+        exit
     fi
     local val=$1
     if [ "$USE_USLEEP" == 1 ]; then
@@ -5478,14 +5478,14 @@ function checkPROXY() {
         echo -e " ${Font_SkyBlue}** Checking Results Under Proxy${Font_Suffix}"
         if ! check_proxy_connectivity; then
             echo -e " ${Font_SkyBlue}** Unable to connect to this Proxy${Font_Suffix}"
-            exit 1
+            exit
         fi
     else
         echo -e " ${Font_SkyBlue}** 正在测试代理解锁情况${Font_Suffix} "
 
         if ! check_proxy_connectivity; then
             echo -e " ${Font_SkyBlue}** 无法连接到此 ${proxyType} 代理${Font_Suffix}"
-            exit 1
+            exit
         fi
     fi
 }
@@ -5504,7 +5504,7 @@ function showNetworkInfo() {
 function checkIPConn() {
     if [ -z "$1" ]; then
         echo -e "${Font_Red}Param missing.${Font_Suffix}"
-        exit 1
+        exit
     fi
 
     if [ -z "$NETWORK_TYPE" ]; then
@@ -5569,7 +5569,7 @@ function checkIPConn() {
                 echo -e "${Font_Red}No network available, please check your network.${Font_Suffix}"
                 USE_IPV4=0
                 USE_IPV6=0
-                exit 1
+                exit
             fi
             # When IPv4 is supported, regardless IPv6 status
             if [ "$ipv4Support" == 1 ]; then
@@ -5628,7 +5628,7 @@ function checkIPConn() {
                 echo -e "${Font_Red}当前无网络，请检查您的网络。${Font_Suffix}"
                 USE_IPV4=0
                 USE_IPV6=0
-                exit 1
+                exit
             fi
             # When IPv4 is supported, regardless IPv6 status
             if [ "$ipv4Support" == 1 ]; then

@@ -43,7 +43,7 @@ repeat_test_single(){
 			echo -e "${Info} 请重新输入" && read -p "请选择:" whether_repeat_single
 		done
 	[[ "${whether_repeat_single}" == "1" ]] && test_single
-	[[ "${whether_repeat_single}" == "2" ]] && echo -e "${Info} 退出脚本 ..." && exit 0
+	[[ "${whether_repeat_single}" == "2" ]] && echo -e "${Info} 退出脚本 ..." && exit
 }
 
 
@@ -135,7 +135,7 @@ repeat_test_alternative(){
 			echo -e "${Info} 请重新输入" && read -p "请选择:" whether_repeat_alternative
 		done
 	[[ "${whether_repeat_alternative}" == "1" ]] && test_alternative
-	[[ "${whether_repeat_alternative}" == "2" ]] && echo -e "${Info} 退出脚本 ..." && exit 0
+	[[ "${whether_repeat_alternative}" == "2" ]] && echo -e "${Info} 退出脚本 ..." && exit
 }
 
 

@@ -42,28 +42,28 @@ trap "Global_TrapSigExit_Sig15" 15
 Global_TrapSigExit_Sig1() {
     echo -e "\n\n${Msg_Error}Caught Signal SIGHUP, Exiting ...\n"
     Global_TrapSigExit_Action
-    exit 1
+    exit
 }
 
 # Trap终止信号2 - 处理 (Ctrl+C)
 Global_TrapSigExit_Sig2() {
     echo -e "\n\n${Msg_Error}Caught Signal SIGINT (or Ctrl+C), Exiting ...\n"
     Global_TrapSigExit_Action
-    exit 1
+    exit
 }
 
 # Trap终止信号3 - 处理
 Global_TrapSigExit_Sig3() {
     echo -e "\n\n${Msg_Error}Caught Signal SIGQUIT, Exiting ...\n"
     Global_TrapSigExit_Action
-    exit 1
+    exit
 }
 
 # Trap终止信号15 - 处理 (进程被杀)
 Global_TrapSigExit_Sig15() {
     echo -e "\n\n${Msg_Error}Caught Signal SIGTERM, Exiting ...\n"
     Global_TrapSigExit_Action
-    exit 1
+    exit
 }
 
 # 新版JSON解析
@@ -340,7 +340,7 @@ SystemInfo_GetOSRelease() {
 
 SystemInfo_GetVirtType() {
     if [ -f "/usr/bin/systemd-detect-virt" ]; then
-        Var_VirtType="$(/usr/bin/systemd-detect-virt)"
+        Var_VirtType="$cat)"
         # 虚拟机检测
         if [ "${Var_VirtType}" = "qemu" ]; then
             Bench_Result_VirtType="QEMU"
@@ -537,111 +537,111 @@ Function_GetSystemInfo() {
 Function_ShowSystemInfo() {
     echo -e "\n ${Font_Yellow}-> System Information${Font_Suffix}\n"
     if [ "${Var_OSReleaseVersion_Codename}" != "" ]; then
-        echo -e " ${Font_Yellow}OS Release:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_OSReleaseFullName}${Font_Suffix}"
+        echo -e " ${Font_Yellow}操作系统:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_OSReleaseFullName}${Font_Suffix}"
     else
-        echo -e " ${Font_Yellow}OS Release:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_OSReleaseFullName}${Font_Suffix}"
+        echo -e " ${Font_Yellow}操作系统:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_OSReleaseFullName}${Font_Suffix}"
     fi
     if [ "${Flag_DymanicCPUFreqDetected}" = "1" ]; then
-        echo -e " ${Font_Yellow}CPU Model:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUModelName}${Font_Suffix}  ${Font_White}${Bench_Result_CPUFreqMinGHz}~${Bench_Result_CPUFreqMaxGHz}${Font_Suffix}${Font_SkyBlue} GHz${Font_Suffix}"
+        echo -e " ${Font_Yellow}CPU 型号:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUModelName}${Font_Suffix}  ${Font_White}${Bench_Result_CPUFreqMinGHz}~${Bench_Result_CPUFreqMaxGHz}${Font_Suffix}${Font_SkyBlue} GHz${Font_Suffix}"
     elif [ "${Flag_DymanicCPUFreqDetected}" = "0" ]; then
-        echo -e " ${Font_Yellow}CPU Model:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUModelName}  ${Bench_Result_CPUFreqGHz} GHz${Font_Suffix}"
+        echo -e " ${Font_Yellow}CPU 型号:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUModelName}  ${Bench_Result_CPUFreqGHz} GHz${Font_Suffix}"
     fi
     if [ "${Bench_Result_CPUCacheSize}" != "" ]; then
-        echo -e " ${Font_Yellow}CPU Cache Size:${Font_Suffix}\t${Font_SkyBlue}${Bench_Result_CPUCacheSize}${Font_Suffix}"
+        echo -e " ${Font_Yellow}CPU 缓存:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUCacheSize}${Font_Suffix}"
     else
-        echo -e " ${Font_Yellow}CPU Cache Size:${Font_Suffix}\t${Font_SkyBlue}None${Font_Suffix}"
+        echo -e " ${Font_Yellow}CPU 缓存:${Font_Suffix}\t\t${Font_SkyBlue}None${Font_Suffix}"
     fi
     # CPU数量 分支判断
     if [ "${Bench_Result_CPUIsPhysical}" = "1" ]; then
         # 如果只存在1个物理CPU (单路物理服务器)
         if [ "${Bench_Result_CPUPhysicalNumber}" -eq "1" ]; then
-            echo -e " ${Font_Yellow}CPU Number:${Font_Suffix}\t\t${Bench_Result_CPUPhysicalNumber} ${Font_SkyBlue}Physical CPU${Font_Suffix}, ${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Cores${Font_Suffix}, ${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}Threads${Font_Suffix}"
+            echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUPhysicalNumber} ${Font_SkyBlue}Physical CPU${Font_Suffix}, ${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Cores${Font_Suffix}, ${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}Threads${Font_Suffix}"
         # 存在多个CPU, 继续深入分析检测 (多路物理服务器)
         elif [ "${Bench_Result_CPUPhysicalNumber}" -ge "2" ]; then
-            echo -e " ${Font_Yellow}CPU Number:${Font_Suffix}\t\t${Bench_Result_CPUPhysicalNumber} ${Font_SkyBlue}Physical CPU(s)${Font_Suffix}, ${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Cores/CPU${Font_Suffix}, ${Bench_Result_CPUSiblingsNumber} ${Font_SkyBlue}Threads/CPU${Font_Suffix} (Total ${Font_SkyBlue}${Bench_Result_CPUTotalCoreNumber}${Font_Suffix} Cores, ${Font_SkyBlue}${Bench_Result_CPUProcessorNumber}${Font_Suffix} Threads)"
+            echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUPhysicalNumber} ${Font_SkyBlue}Physical CPU(s)${Font_Suffix}, ${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Cores/CPU${Font_Suffix}, ${Bench_Result_CPUSiblingsNumber} ${Font_SkyBlue}Threads/CPU${Font_Suffix} (Total ${Font_SkyBlue}${Bench_Result_CPUTotalCoreNumber}${Font_Suffix} Cores, ${Font_SkyBlue}${Bench_Result_CPUProcessorNumber}${Font_Suffix} Threads)"
         # 针对树莓派等特殊情况做出检测优化
         elif [ "${Bench_Result_CPUThreadNumber}" = "0" ] && [ "${Bench_Result_CPUProcessorNumber} " -ge "1" ]; then
-             echo -e " ${Font_Yellow}CPU Number:${Font_Suffix}\t\t${Bench_Result_CPUProcessorNumber} ${Font_SkyBlue}Cores${Font_Suffix}"
+             echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUProcessorNumber} ${Font_SkyBlue}Cores${Font_Suffix}"
         fi
         if [ "${Bench_Result_CPUVirtualization}" = "1" ]; then
-            echo -e " ${Font_Yellow}VirtReady:${Font_Suffix}\t\t${Font_SkyBlue}Yes${Font_Suffix} ${Font_SkyBlue}(Based on${Font_Suffix} ${Bench_Result_CPUVirtualizationType}${Font_SkyBlue})${Font_Suffix}"
+            echo -e " ${Font_Yellow}虚拟化开启:${Font_Suffix}\t\t${Font_SkyBlue}Yes${Font_Suffix} ${Font_SkyBlue}(Based on${Font_Suffix} ${Bench_Result_CPUVirtualizationType}${Font_SkyBlue})${Font_Suffix}"
         else
-            echo -e " ${Font_Yellow}VirtReady:${Font_Suffix}\t\t${Font_SkyRed}No${Font_Suffix}"
+            echo -e " ${Font_Yellow}虚拟化开启:${Font_Suffix}\t\t${Font_SkyRed}No${Font_Suffix}"
         fi
     elif [ "${Var_VirtType}" = "openvz" ]; then
-        echo -e " ${Font_Yellow}CPU Number:${Font_Suffix}\t\t${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}vCPU${Font_Suffix} (${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Host Core/Thread${Font_Suffix})"
+        echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}vCPU${Font_Suffix} (${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Host Core/Thread${Font_Suffix})"
     else
         if [ "${Bench_Result_CPUVirtualization}" = "2" ]; then
-            echo -e " ${Font_Yellow}CPU Number:${Font_Suffix}\t\t${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}vCPU${Font_Suffix}"
-            echo -e " ${Font_Yellow}VirtReady:${Font_Suffix}\t\t${Font_SkyBlue}Yes${Font_Suffix} ${Font_SkyBlue}(Nested Virtualization)${Font_Suffix}"
+            echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}vCPU${Font_Suffix}"
+            echo -e " ${Font_Yellow}虚拟化开启:${Font_Suffix}\t\t${Font_SkyBlue}Yes${Font_Suffix} ${Font_SkyBlue}(Nested Virtualization)${Font_Suffix}"
         else
-            echo -e " ${Font_Yellow}CPU Number:${Font_Suffix}\t\t${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}vCPU${Font_Suffix}"
+            echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUThreadNumber} ${Font_SkyBlue}vCPU${Font_Suffix}"
         fi
     fi
-    echo -e " ${Font_Yellow}Virt Type:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_VirtType}${Font_Suffix}"
+    echo -e " ${Font_Yellow}虚拟化类型:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_VirtType}${Font_Suffix}"
     # 内存使用率 分支判断
     if [ "${Bench_Result_MemoryUsed_KB}" -lt "1024" ] && [ "${Bench_Result_MemoryTotal_KB}" -lt "1048576" ]; then
         Bench_Result_Memory="${Bench_Result_MemoryUsed_KB} KB / ${Bench_Result_MemoryTotal_MB} MB"
-        echo -e " ${Font_Yellow}Memory Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_MB} KB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_MB} MB${Font_Suffix}"
+        echo -e " ${Font_Yellow}内存大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_MB} KB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_MB} MB${Font_Suffix}"
     elif [ "${Bench_Result_MemoryUsed_KB}" -lt "1048576" ] && [ "${Bench_Result_MemoryTotal_KB}" -lt "1048576" ]; then
         Bench_Result_Memory="${Bench_Result_MemoryUsed_MB} MB / ${Bench_Result_MemoryTotal_MB} MB"
-        echo -e " ${Font_Yellow}Memory Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_MB} MB${Font_Suffix}"
+        echo -e " ${Font_Yellow}内存大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_MB} MB${Font_Suffix}"
     elif [ "${Bench_Result_MemoryUsed_KB}" -lt "1048576" ] && [ "${Bench_Result_MemoryTotal_KB}" -lt "1073741824" ]; then
         Bench_Result_Memory="${Bench_Result_MemoryUsed_MB} MB / ${Bench_Result_MemoryTotal_GB} GB"
-        echo -e " ${Font_Yellow}Memory Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}内存大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_GB} GB${Font_Suffix}"
     else
         Bench_Result_Memory="${Bench_Result_MemoryUsed_GB} GB / ${Bench_Result_MemoryTotal_GB} GB"
-        echo -e " ${Font_Yellow}Memory Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}内存大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_MemoryUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_MemoryTotal_GB} GB${Font_Suffix}"
     fi
     # Swap使用率 分支判断
     if [ "${Bench_Result_SwapTotal_KB}" -eq "0" ]; then
         Bench_Result_Swap="[ No Swapfile / Swap partition ]"
-        echo -e " ${Font_Yellow}Swap Usage:${Font_Suffix}\t\t${Font_SkyBlue}[ No Swapfile/Swap Partition ]${Font_Suffix}"
+        echo -e " ${Font_Yellow}SWAP大小:${Font_Suffix}\t\t${Font_SkyBlue}[ No Swapfile/Swap Partition ]${Font_Suffix}"
     elif [ "${Bench_Result_SwapUsed_KB}" -lt "1024" ] && [ "${Bench_Result_SwapTotal_KB}" -lt "1048576" ]; then
         Bench_Result_Swap="${Bench_Result_SwapUsed_KB} KB / ${Bench_Result_SwapTotal_MB} MB"
-        echo -e " ${Font_Yellow}Swap Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_KB} KB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_MB} MB${Font_Suffix}"
+        echo -e " ${Font_Yellow}SWAP大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_KB} KB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_MB} MB${Font_Suffix}"
     elif [ "${Bench_Result_SwapUsed_KB}" -lt "1024" ] && [ "${Bench_Result_SwapTotal_KB}" -lt "1073741824" ]; then
         Bench_Result_Swap="${Bench_Result_SwapUsed_KB} KB / ${Bench_Result_SwapTotal_GB} GB"
-        echo -e " ${Font_Yellow}Swap Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_KB} KB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}SWAP大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_KB} KB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_GB} GB${Font_Suffix}"
     elif [ "${Bench_Result_SwapUsed_KB}" -lt "1048576" ] && [ "${Bench_Result_SwapTotal_KB}" -lt "1048576" ]; then
         Bench_Result_Swap="${Bench_Result_SwapUsed_MB} MB / ${Bench_Result_SwapTotal_MB} MB"
-        echo -e " ${Font_Yellow}Swap Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_MB} MB${Font_Suffix}"
+        echo -e " ${Font_Yellow}SWAP大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_MB} MB${Font_Suffix}"
     elif [ "${Bench_Result_SwapUsed_KB}" -lt "1048576" ] && [ "${Bench_Result_SwapTotal_KB}" -lt "1073741824" ]; then
         Bench_Result_Swap="${Bench_Result_SwapUsed_MB} MB / ${Bench_Result_SwapTotal_GB} GB"
-        echo -e " ${Font_Yellow}Swap Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}SWAP大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_GB} GB${Font_Suffix}"
     else
         Bench_Result_Swap="${Bench_Result_SwapUsed_GB} GB / ${Bench_Result_SwapTotal_GB} GB"
-        echo -e " ${Font_Yellow}Swap Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}SWAP大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SwapUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_SwapTotal_GB} GB${Font_Suffix}"
     fi
     # 启动磁盘
-    echo -e " ${Font_Yellow}Boot Device:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskRootPath}${Font_Suffix}"
+    echo -e " ${Font_Yellow}引导设备:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskRootPath}${Font_Suffix}"
     # 磁盘使用率 分支判断
     if [ "${Bench_Result_DiskUsed_KB}" -lt "1000000" ]; then
         Bench_Result_Disk="${Bench_Result_DiskUsed_MB} MB / ${Bench_Result_DiskTotal_MB} MB"
-        echo -e " ${Font_Yellow}Disk Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_MB} MB${Font_Suffix}"
+        echo -e " ${Font_Yellow}硬盘大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_MB} MB${Font_Suffix}"
     elif [ "${Bench_Result_DiskUsed_KB}" -lt "1000000" ] && [ "${Bench_Result_DiskTotal_KB}" -lt "1000000000" ]; then
         Bench_Result_Disk="${Bench_Result_DiskUsed_MB} MB / ${Bench_Result_DiskTotal_GB} GB"
-        echo -e " ${Font_Yellow}Disk Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}硬盘大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_MB} MB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_GB} GB${Font_Suffix}"
     elif [ "${Bench_Result_DiskUsed_KB}" -lt "1000000000" ] && [ "${Bench_Result_DiskTotal_KB}" -lt "1000000000" ]; then
         Bench_Result_Disk="${Bench_Result_DiskUsed_GB} GB / ${Bench_Result_DiskTotal_GB} GB"
-        echo -e " ${Font_Yellow}Disk Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_GB} GB${Font_Suffix}"
+        echo -e " ${Font_Yellow}硬盘大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_GB} GB${Font_Suffix}"
     elif [ "${Bench_Result_DiskUsed_KB}" -lt "1000000000" ] && [ "${Bench_Result_DiskTotal_KB}" -ge "1000000000" ]; then
         Bench_Result_Disk="${Bench_Result_DiskUsed_GB} GB / ${Bench_Result_DiskTotal_TB} TB"
-        echo -e " ${Font_Yellow}Disk Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_TB} TB${Font_Suffix}"
+        echo -e " ${Font_Yellow}硬盘大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_GB} GB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_TB} TB${Font_Suffix}"
     else
         Bench_Result_Disk="${Bench_Result_DiskUsed_TB} TB / ${Bench_Result_DiskTotal_TB} TB"
-        echo -e " ${Font_Yellow}Disk Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_TB} TB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_TB} TB${Font_Suffix}"
+        echo -e " ${Font_Yellow}硬盘大小:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_DiskUsed_TB} TB${Font_Suffix} / ${Font_SkyBlue}${Bench_Result_DiskTotal_TB} TB${Font_Suffix}"
     fi
     # CPU状态
-    echo -e " ${Font_Yellow}CPU Usage:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUStat_UsedAll}% used${Font_Suffix}, ${Font_SkyBlue}${Bench_Result_CPUStat_iowait}% iowait${Font_Suffix}, ${Font_SkyBlue}${Bench_Result_CPUStat_steal}% steal${Font_Suffix}"
+    echo -e " ${Font_Yellow}系统负载${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_CPUStat_UsedAll}% used${Font_Suffix}, ${Font_SkyBlue}${Bench_Result_CPUStat_iowait}% iowait${Font_Suffix}, ${Font_SkyBlue}${Bench_Result_CPUStat_steal}% steal${Font_Suffix}"
     # 系统负载
-    echo -e " ${Font_Yellow}Load (1/5/15min):${Font_Suffix}\t${Font_SkyBlue}${Bench_Result_LoadAverage_1min} ${Bench_Result_LoadAverage_5min} ${Bench_Result_LoadAverage_15min} ${Font_Suffix}"
+    echo -e " ${Font_Yellow}负载 (1/5/15分钟):${Font_Suffix}\t${Font_SkyBlue}${Bench_Result_LoadAverage_1min} ${Bench_Result_LoadAverage_5min} ${Bench_Result_LoadAverage_15min} ${Font_Suffix}"
     # 系统开机时间
-    echo -e " ${Font_Yellow}Uptime:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SystemInfo_Uptime_Day} Days, ${Bench_Result_SystemInfo_Uptime_Hour} Hours, ${Bench_Result_SystemInfo_Uptime_Minute} Minutes, ${Bench_Result_SystemInfo_Uptime_Second} Seconds${Font_Suffix}"
+    echo -e " ${Font_Yellow}开机时长:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_SystemInfo_Uptime_Day} Days, ${Bench_Result_SystemInfo_Uptime_Hour} Hours, ${Bench_Result_SystemInfo_Uptime_Minute} Minutes, ${Bench_Result_SystemInfo_Uptime_Second} Seconds${Font_Suffix}"
     # 内核版本
-    echo -e " ${Font_Yellow}Kernel Version:${Font_Suffix}\t${Font_SkyBlue}${Bench_Result_KernelVersion}${Font_Suffix}"
+    echo -e " ${Font_Yellow}系统内核:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_KernelVersion}${Font_Suffix}"
     # 网络拥塞控制方式
-    echo -e " ${Font_Yellow}Network CC Method:${Font_Suffix}\t${Font_SkyBlue}${Bench_Result_NetworkCCMethod}${Font_Suffix}"
+    echo -e " ${Font_Yellow}网络类型:${Font_Suffix}\t\t${Font_SkyBlue}${Bench_Result_NetworkCCMethod}${Font_Suffix}"
     # 执行完成, 标记FLAG
     Bench_Flag_FinishSystemInfo="1"
 }
@@ -1002,7 +1002,7 @@ Check_Virtwhat() {
     # 二次检测
     if [ ! -f "/usr/sbin/virt-what" ]; then
         echo -e "Virt-What Moudle install Failure! Try Restart Bench or Manually install it! (/usr/sbin/virt-what)"
-        exit 1
+        exit
     fi
 }
 
@@ -1111,7 +1111,7 @@ Check_Speedtest_GetComponent() {
     /usr/local/Bench/bin/speedtest --version >/dev/null 2>&1
     if [ "$?" != "0" ]; then
         echo -e "Speedtest Moudle install Failure! Try Restart Bench or Manually install it!"
-        exit 1
+        exit
     fi
 }
 
@@ -1200,7 +1200,7 @@ Check_BestTrace() {
     # 二次检测
     if [ ! -f "/usr/local/Bench/bin/besttrace" ]; then
         echo -e "BestTrace Moudle install Failure! Try Restart Bench or Manually install it! (/usr/local/Bench/bin/besttrace)"
-        exit 1
+        exit
     fi
 }
 
@@ -1254,7 +1254,7 @@ Check_JSONQuery() {
     # 二次检测
     if [ ! -f "/usr/bin/jq" ]; then
         echo -e "JSON Query Moudle install Failure! Try Restart Bench or Manually install it! (/usr/bin/jq)"
-        exit 1
+        exit
     fi
 }
 
@@ -1287,7 +1287,7 @@ Check_SysBench() {
     # 最终检测
     if [ ! -f "/usr/bin/sysbench" ] && [ ! -f "/usr/local/bin/sysbench" ]; then
         echo -e "${Msg_Error}SysBench Moudle install Failure! Try Restart Bench or Manually install it! (/usr/bin/sysbench)"
-        exit 1
+        exit
     fi
 }
 
