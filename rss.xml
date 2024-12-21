@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 21 Dec 2024 16:09:23 GMT</pubDate>
-    <lastBuildDate>Sat, 21 Dec 2024 16:09:23 GMT</lastBuildDate>
+    <pubDate>Sat, 21 Dec 2024 16:10:29 GMT</pubDate>
+    <lastBuildDate>Sat, 21 Dec 2024 16:10:29 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -23,11 +23,11 @@
       <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</link>
       <guid>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Ubuntu一键设置镜像源</source>
-      <description>Ubuntu一键设置镜像源 简介 本指南简要介绍如何通过此脚本一键更换系统的软件源为中国科学技术大学（USTC）镜像源，加速软件包的下载速度。 执行脚本 使用以下命令一键更换镜像源：</description>
-      <pubDate>Sat, 21 Dec 2024 16:05:16 GMT</pubDate>
+      <description>Ubuntu一键设置镜像源 简介 通过脚本一键更换系统的软件源为中国科学技术大学（USTC）镜像源，加速软件包的下载速度。 执行脚本 使用以下命令一键更换镜像源：</description>
+      <pubDate>Sat, 21 Dec 2024 16:06:39 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>简介</h2>
-<p>本指南简要介绍如何通过此脚本一键更换系统的软件源为中国科学技术大学（USTC）镜像源，加速软件包的下载速度。</p>
+<p>通过脚本一键更换系统的软件源为中国科学技术大学（USTC）镜像源，加速软件包的下载速度。</p>
 <h2>执行脚本</h2>
 <p>使用以下命令一键更换镜像源：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/LinuxCTS/os/apt/ustc-mirror.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
