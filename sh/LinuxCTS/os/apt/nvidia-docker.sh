@@ -13,8 +13,8 @@ else
     hub_docker_url=docker.io/
 fi
 
-CTS_PATH="https://www.geekery.cn/sh/LinuxCTS/"
-source ${CTS_PATH}/tools/init.sh
+CTS_PATH="https://www.geekery.cn/sh/LinuxCTS"
+source <(${CTS_PATH}/tools/init.sh)
 
 # Set Gloabal Variables
     # Detect OS
