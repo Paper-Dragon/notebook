@@ -15,7 +15,7 @@ Warning="${Red}[警告]${Font}"
 source '/etc/os-release'
 VERSION="${VERSION_ID}"
 
-CTS_PATH="https://www.geekeery.cn/sh/LinuxCTS/"
+CTS_PATH="https://www.geekery.cn/sh/LinuxCTS/"
 source ${CTS_PATH}/tools/init.sh
 
 check_version() {
