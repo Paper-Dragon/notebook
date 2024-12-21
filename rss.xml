@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 21 Dec 2024 09:09:38 GMT</pubDate>
-    <lastBuildDate>Sat, 21 Dec 2024 09:09:38 GMT</lastBuildDate>
+    <pubDate>Sat, 21 Dec 2024 16:09:23 GMT</pubDate>
+    <lastBuildDate>Sat, 21 Dec 2024 16:09:23 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -18,6 +18,21 @@
     <category>iptables</category>
     <category>Network</category>
     <category>网络安全</category>
+    <item>
+      <title>Ubuntu一键设置镜像源</title>
+      <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</link>
+      <guid>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Ubuntu一键设置镜像源</source>
+      <description>Ubuntu一键设置镜像源 简介 本指南简要介绍如何通过此脚本一键更换系统的软件源为中国科学技术大学（USTC）镜像源，加速软件包的下载速度。 执行脚本 使用以下命令一键更换镜像源：</description>
+      <pubDate>Sat, 21 Dec 2024 16:05:16 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>简介</h2>
+<p>本指南简要介绍如何通过此脚本一键更换系统的软件源为中国科学技术大学（USTC）镜像源，加速软件包的下载速度。</p>
+<h2>执行脚本</h2>
+<p>使用以下命令一键更换镜像源：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/LinuxCTS/os/apt/ustc-mirror.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Base64在线编码解码</title>
       <link>https://www.geekery.cn/free-service/base64.html</link>
@@ -3141,7 +3156,7 @@ Big O：
 <p>生成随机密码。</p>
 <p>密码随机生成是一个用于生成随机密码的工具。它可以帮助用户创建强密码，以提高帐户的安全性。</p>
 </blockquote>
-<p>源码开源在 <a href="https://github.com/Paper-Dragon/RandomPassword" target="_blank" rel="noopener noreferrer">GitHub 仓库</a> , 目前已经更新为vue版本。</p>
+<p>源码开源在 <a href="https://github.com/Paper-Dragon/GeneratePassword" target="_blank" rel="noopener noreferrer">GitHub 仓库</a> , 目前已经更新为vue版本。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -5516,54 +5531,6 @@ Big O：
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>重启 cron 服务</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cron.service</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>英伟达开源驱动和闭源驱动冲突问题</title>
-      <link>https://www.geekery.cn/note-book/AI-Training/%E8%8B%B1%E4%BC%9F%E8%BE%BE%E5%BC%80%E6%BA%90%E9%A9%B1%E5%8A%A8%E5%92%8C%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98.html</link>
-      <guid>https://www.geekery.cn/note-book/AI-Training/%E8%8B%B1%E4%BC%9F%E8%BE%BE%E5%BC%80%E6%BA%90%E9%A9%B1%E5%8A%A8%E5%92%8C%E9%97%AD%E6%BA%90%E9%A9%B1%E5%8A%A8%E5%86%B2%E7%AA%81%E9%97%AE%E9%A2%98.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">英伟达开源驱动和闭源驱动冲突问题</source>
-      <description>英伟达开源驱动和闭源驱动冲突问题 起因 今天朋友安装驱动遇到了一些问题，给了一张日志图片问我怎么办，我看着显示报错最后一行显示 PCI-E xxx.xxxx.xxx nouveau。就是nvidia显卡驱动的问题八九不离十了。 nvidia给了不同类型的驱动多种版本，开源驱动对Linux支持较差，在切换闭源官方驱动的时候经常出现各种问题。 image-...</description>
-      <pubDate>Fri, 10 Nov 2023 04:55:27 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>起因</h2>
-<p>今天朋友安装驱动遇到了一些问题，给了一张日志图片问我怎么办，我看着显示报错最后一行显示 PCI-E xxx.xxxx.xxx
-nouveau。就是nvidia显卡驱动的问题八九不离十了。</p>
-<p>nvidia给了不同类型的驱动多种版本，开源驱动对Linux支持较差，在切换闭源官方驱动的时候经常出现各种问题。</p>
-<p></p>
-<p>下面是安装步骤的总结</p>
-<h2>正常安装步骤</h2>
-<h3>检查开源驱动的存在情况</h3>
-<p>运行如下指令：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">lsmod</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> nouveau</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>如果有内容输出，则说明nouveau已被启用，需要执行下一个步骤以将nouveau禁用；</p>
-<p>如果没有内容输出，则可以直接安装nvidia驱动。</p>
-<h3>开源驱动加入黑名单</h3>
-<p>blacklist.conf文件的位置：/etc/modprobe.d/blacklist.conf</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vim</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/modprobe.d/blacklist.conf</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>在该文件最后插入以下两行内容：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">blacklist</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> nouveau</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">options</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> nouveau</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> modeset=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">0</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>更新验证生效</h3>
-<p>通过如下命令更新系统，使刚刚修改的文件生效：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">update-initramfs</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -u</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>安装闭源驱动</h3>
-<p>首先通过如下命令获取该.run文件的执行权限。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> +x</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> NVIDIA-Linux-x86_64-535.54.03.run</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>通过如下命令运行下载好的.run文件：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">./NVIDIA-Linux-x86_64-535.54.03.run</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>重启</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">reboot</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>报错处理</h2>
-<h3>无法安装</h3>
-<blockquote>
-<p>you appear to be running an x server; please exit x before installing.`</p>
-</blockquote>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">./NVIDIAxxxx.run</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --no-x-check</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>无法开机</h3>
-<h4>引导界面更改mode</h4>
-<p>进入grub界面，将这个界面的最后部分的“quiet splash —”改为“nomodeset”。F10保存，就可以进入安装界面，进行安装。</p>
-<h4>按照正常安装步骤进行安装</h4>
-]]></content:encoded>
     </item>
   </channel>
 </rss>

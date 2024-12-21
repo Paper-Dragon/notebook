@@ -25,7 +25,7 @@
     },
     {
         "name": "Ubuntu",
-        "value": 106
+        "value": 107
     },
     {
         "name": "Kubernetes",
@@ -1200,10 +1200,6 @@
         "value": 7
     },
     {
-        "name": "Designer",
-        "value": 7
-    },
-    {
         "name": "注意事项",
         "value": 7
     },
@@ -1597,6 +1593,10 @@
     },
     {
         "name": "Binutils",
+        "value": 6
+    },
+    {
+        "name": "压缩文件",
         "value": 6
     }
 ]
