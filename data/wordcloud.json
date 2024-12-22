@@ -16,11 +16,11 @@
         "value": 153
     },
     {
-        "name": "Python",
-        "value": 127
+        "name": "Windows",
+        "value": 128
     },
     {
-        "name": "Windows",
+        "name": "Python",
         "value": 127
     },
     {
@@ -224,6 +224,10 @@
         "value": 24
     },
     {
+        "name": "Bash",
+        "value": 24
+    },
+    {
         "name": "Udev",
         "value": 24
     },
@@ -241,10 +245,6 @@
     },
     {
         "name": "Proxy",
-        "value": 23
-    },
-    {
-        "name": "Bash",
         "value": 23
     },
     {
@@ -552,6 +552,10 @@
         "value": 14
     },
     {
+        "name": "Software",
+        "value": 14
+    },
+    {
         "name": "NotSupportedWarning",
         "value": 14
     },
@@ -613,6 +617,10 @@
     },
     {
         "name": "Android",
+        "value": 12
+    },
+    {
+        "name": "重新启动",
         "value": 12
     },
     {
@@ -680,10 +688,6 @@
         "value": 12
     },
     {
-        "name": "Software",
-        "value": 12
-    },
-    {
         "name": "Timeout",
         "value": 12
     },
@@ -709,10 +713,6 @@
     },
     {
         "name": "管理工具",
-        "value": 11
-    },
-    {
-        "name": "重新启动",
         "value": 11
     },
     {
@@ -1133,6 +1133,10 @@
     },
     {
         "name": "网络适配器",
+        "value": 8
+    },
+    {
+        "name": "Windows11",
         "value": 8
     },
     {
@@ -1593,10 +1597,6 @@
     },
     {
         "name": "Binutils",
-        "value": 6
-    },
-    {
-        "name": "压缩文件",
         "value": 6
     }
 ]

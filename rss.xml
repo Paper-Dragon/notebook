@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 21 Dec 2024 16:10:29 GMT</pubDate>
-    <lastBuildDate>Sat, 21 Dec 2024 16:10:29 GMT</lastBuildDate>
+    <pubDate>Sun, 22 Dec 2024 03:05:45 GMT</pubDate>
+    <lastBuildDate>Sun, 22 Dec 2024 03:05:45 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -18,6 +18,32 @@
     <category>iptables</category>
     <category>Network</category>
     <category>网络安全</category>
+    <item>
+      <title>Windows11恢复Windows10右键菜单</title>
+      <link>https://www.geekery.cn/note-book/Windows/Windows11%E6%81%A2%E5%A4%8DWindows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.html</link>
+      <guid>https://www.geekery.cn/note-book/Windows/Windows11%E6%81%A2%E5%A4%8DWindows10%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Windows11恢复Windows10右键菜单</source>
+      <description>Windows11恢复Windows10右键菜单 Windows 11做了很多降级的操作 ，让人很不习惯，我经常需要右键菜单去做一些高级操作，比如Git Bash、7-Zip、复制粘贴，终于还是无法忍受右键菜单显示更多选项的折磨，下面是解决方法。 解决方法 解决方法是，CMD使用管理员模式输入下面的命令，可以将右键菜单恢复为Windows10模式 恢复...</description>
+      <pubDate>Sun, 22 Dec 2024 03:01:43 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p><strong>Windows 11做了很多降级的操作</strong>   ，让人很不习惯，我经常需要右键菜单去做一些高级操作，比如Git Bash、7-Zip、复制粘贴，终于还是无法忍受右键菜单显示更多选项的折磨，下面是解决方法。</p>
+<h2>解决方法</h2>
+<p>解决方法是，CMD使用管理员模式输入下面的命令，可以将右键菜单恢复为Windows10模式</p>
+<div class="language-powershell line-numbers-mode" data-highlighter="shiki" data-ext="powershell" data-title="powershell" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">reg add </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> /</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">f</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">taskkill </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">F </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">IM </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">explorer.exe</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">explorer.exe</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>恢复Windows11右键菜单的方法</h2>
+<p>如果更换后不习惯，可以使用CMD管理员模式输入下面的命令恢复。</p>
+<div class="language-powershell line-numbers-mode" data-highlighter="shiki" data-ext="powershell" data-title="powershell" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:: 删除注册表项</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">reg delete </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> /</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">f</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:: 强制结束explorer.exe进程</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">taskkill </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">F </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">IM </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">explorer.exe</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:: 重新启动explorer.exe</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">start </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">explorer.exe</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Ubuntu一键设置镜像源</title>
       <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</link>
@@ -5466,71 +5492,6 @@ Big O：
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> __name__</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '__main__'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    app.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">run</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">host</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'0.0.0.0'</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">port</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">8000</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Docker一键部署Clash服务与管理面板</title>
-      <link>https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/Docker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2Clash%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF.html</link>
-      <guid>https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/Docker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2Clash%E6%9C%8D%E5%8A%A1%E4%B8%8E%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Docker一键部署Clash服务与管理面板</source>
-      <description>Docker一键部署Clash服务与管理面板 部分资料来自： https://blog.laoyutang.cn/linux/clash.html 官方Clash部署需要采用两个镜像分别启动服务和面板，博主使用官方Server镜像和官方管理面板前端代码，重新修改打包构建，使用一个镜像可以直接启动服务和管理面板，简单轻量。 Clash和它的面板已经很久不...</description>
-      <pubDate>Sat, 11 Nov 2023 09:24:58 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>部分资料来自： https://blog.laoyutang.cn/linux/clash.html</p>
-</blockquote>
-<p>官方Clash部署需要采用两个镜像分别启动服务和面板，博主使用官方Server镜像和官方管理面板前端代码，重新修改打包构建，使用一个镜像可以直接启动服务和管理面板，简单轻量。</p>
-<blockquote>
-<p>Clash和它的面板已经很久不更新了，建议使用Meta内核和MetaCube面板，随我来这个文档部署：</p>
-<p><a href="https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/Docker%E4%B8%80%E9%94%AE%E9%83%A8%E7%BD%B2Meta%E5%92%8CMetacubexD%E9%9D%A2%E6%9D%BF.html" target="_blank" rel="noopener noreferrer">Docker一键部署Meta和MetacubexD面板</a></p>
-</blockquote>
-<h2>镜像地址</h2>
-<p><a href="https://hub.docker.com/r/laoyutang/clash-and-dashboard" target="_blank" rel="noopener noreferrer">laoyutang/clash-and-dashboard</a></p>
-<h2>修改后源码地址</h2>
-<p><a href="https://github.com/LaoYutang/clash-and-dashboard" target="_blank" rel="noopener noreferrer">Github:clash-and-dashboard</a>
-可以查看源码，自行打包</p>
-<h2>修改内容</h2>
-<ul>
-<li>修改前端接口baseurl，不再通过用户配置，使用页面相对路径<code>/api</code>。</li>
-<li>去除Clash服务接口配置框。</li>
-<li>Docker镜像增加Nginx和前端打包文件。</li>
-<li>Nginx反代Clash管理接口，实现管理页面无需配置直接管理容器内Clash服务。</li>
-</ul>
-<h2>启动容器</h2>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" data-title="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>docker run -d \</span></span>
-<span class="line"><span>  --name clash \</span></span>
-<span class="line"><span>  --restart=always \</span></span>
-<span class="line"><span>  --log-opt max-size=1m \</span></span>
-<span class="line"><span>  --name clash-and-dashboard \</span></span>
-<span class="line"><span>  -v /data/clash/clash.yaml:/root/.config/clash/config.yaml \</span></span>
-<span class="line"><span>  -p 7888:8080 -p 7890:7890 \</span></span>
-<span class="line"><span>  laoyutang/clash-and-dashboard:latest</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
-<li>-v /data/clash/clash.yaml:/root/.config/clash/config.yaml 提供clash的yaml文件，文件如何获取请读者自行解决</li>
-<li>-p 7888:8080 管理<strong>页面端口</strong></li>
-<li>-p 7890:7890 http<strong>代理端口</strong> socks端口使用7891</li>
-<li>laoyutang/clash-and-dashboard:latest 博主修改后的镜像</li>
-</ul>
-<p>访问Ip:7888管理页面即可，注意非本机使用，请勾选<strong>允许局域网连接</strong></p>
-<h2>自动更新yaml文件</h2>
-<h3>配置定期更新</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">crontab</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -e</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>添加如下内容：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 添加以下的内容</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 每隔 8 小时备份配置文件</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">0</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /root/.config/clash/config.yaml</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /root/.config/clash/config.yaml.bak</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 每隔 8 小时延迟 5 分钟支更新配置文件</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">5</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> curl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://xxxxxxx</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/root/.config/clash/config.yaml</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 每隔 8 小时延迟 6 分钟修改配置文件 allow-lan: false 修改为true</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">6</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sed</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 's/allow-lan: false/allow-lan: true/'</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /root/.config/clash/config.yaml</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 每隔 8 小时延迟 7 分钟修改配置文件 external-controller:</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">7</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sed</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 's/external-controller: 127.0.0.1:9090/external-controller: 0.0.0.0:9090/'</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /root/.config/clash/config.yaml</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 每隔 8 小时延迟 8 分钟修改配置文件 external-ui: dashboard 注释掉，即不使用内置的dashboard，有的机场提供的配置文件没有这个配置，就不需要添加这行</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sed</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 's/external-ui: dashboard/#external-ui: dashboard/'</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /root/.config/clash/config.yaml</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 每隔 8 小时延迟 10 分钟重启 clash</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">10</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/8</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> clash-and-dashboard</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>重启 cron 服务</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cron.service</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
