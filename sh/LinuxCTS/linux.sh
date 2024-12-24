@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "正在检测机器所在国家和地区...请稍后...."
 #全局参数
 url=https://ifconfig.icu
 country=$(curl -s ${url}/country)
@@ -9,7 +10,7 @@ else
     download_url=https://raw.githubusercontent.com/hyh1750522171/LinuxCTS/main
 fi
 # 引用全局初始化脚本
-source <(curl -s ${download_url}/tools/init.sh)
+source <(curl -s ${download_url}/os/all/init.sh)
 
 #脚本菜单
 start_linux(){
@@ -42,7 +43,7 @@ start_linux(){
         source <(curl -s ${download_url}/tools/bench.sh)
         ;;
     13)
-        source <(curl -s ${download_url}/tools/tools.sh)
+        source <(curl -s ${download_url}/os/all/tools.sh)
         ;;
     14)
         source <(curl -s ${download_url}/tools/lyzz.sh)

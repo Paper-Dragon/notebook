@@ -16,7 +16,7 @@ source '/etc/os-release'
 VERSION="${VERSION_ID}"
 
 CTS_PATH="https://www.geekery.cn/sh/LinuxCTS"
-source <(${CTS_PATH}/tools/init.sh)
+source <(${CTS_PATH}/os/all/init.sh)
 
 check_version() {
   if [ "$VERSION" != "7" ]; then

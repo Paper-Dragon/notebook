@@ -5,16 +5,24 @@ set -euxo pipefail
 export DEBIAN_FRONTEND=noninteractive
 sudo dpkg --set-selections <<< "cloud-init install" || true
 
+# 检查是否安装成功
+judge() {
+  if [[ $? -eq 0 ]]; then
+    echo -e "${OK} ${GreenBG} $1 完成 ${Font}"
+    sleep 1
+  else
+    echo -e "${Error} ${RedBG} $1 失败 ${Font}"
+    exit
+  fi
+}
+
 country=$(curl -s https://ifconfig.icu/country)
 if [[ $country == *"China"* ]]; then
-    hub_docker_url=docker.ketches.cn/
+    hub_docker_url=hub.geekery.cn/
     # judge "设置Docker镜点 "
 else
     hub_docker_url=docker.io/
 fi
-
-CTS_PATH="https://www.geekery.cn/sh/LinuxCTS"
-source <(${CTS_PATH}/tools/init.sh)
 
 # Set Gloabal Variables
     # Detect OS
@@ -213,7 +221,7 @@ if [[ ! -z "$NVIDIA_PRESENT" ]]; then
     nvidia-smi
 fi
 
-# curl -SsL get-docker.geekery.cn | bash
+curl -SsL get-docker.geekery.cn | bash
 
 # Test / Install nvidia-docker
 if [[ ! -z "$NVIDIA_PRESENT" ]]; then

@@ -67,7 +67,7 @@ download_file(){
     rm -rf /root/frpc
     mkdir -p /root/frpc
     cd /root/frpc
-    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/frp/frp_${version}_linux_amd64.tar.gz
+    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/app/frp_${version}_linux_amd64.tar.gz
     tar -zxvf frp_${version}_linux_amd64.tar.gz
     mv frp_${version}_linux_amd64/frpc /root/frpc
     rm -fr frp_${version}_linux_amd64.tar.gz
@@ -147,7 +147,7 @@ update_file(){
     rm -rf /root/frpc
     mkdir -p /root/frpc
     cd /root/frpc
-    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/frp/frp_${version}_linux_amd64.tar.gz
+    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/app/frp_${version}_linux_amd64.tar.gz
     tar -zxvf frp_${version}_linux_amd64.tar.gz
     mv frp_${version}_linux_amd64/frpc /root/frpc
     mv /root/frpc.ini /root/frpc/frpc.ini

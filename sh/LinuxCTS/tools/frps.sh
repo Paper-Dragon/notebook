@@ -67,7 +67,7 @@ download_file(){
     rm -rf /root/frps
     mkdir -p /root/frps
     cd /root/frps
-    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/frp/frp_${version}_linux_amd64.tar.gz
+    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/app/frp_${version}_linux_amd64.tar.gz
     tar -zxvf frp_${version}_linux_amd64.tar.gz
     mv frp_${version}_linux_amd64/frps /root/frps
     rm -fr frp_${version}_linux_amd64.tar.gz
@@ -127,7 +127,7 @@ update_file(){
     rm -rf /root/frps
     mkdir -p /root/frps
     cd /root/frps
-    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/frp/frp_${version}_linux_amd64.tar.gz
+    wget --no-check-certificate https://gitee.com/muaimingjun/LinuxCTS/raw/main/app/frp_${version}_linux_amd64.tar.gz
     tar -zxvf frp_${version}_linux_amd64.tar.gz
     mv frp_${version}_linux_amd64/frps /root/frps
     mv /root/frps.ini /root/frps/frps.ini
