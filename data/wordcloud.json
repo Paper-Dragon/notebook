@@ -29,7 +29,7 @@
     },
     {
         "name": "Kubernetes",
-        "value": 100
+        "value": 101
     },
     {
         "name": "OpenStack",
@@ -56,12 +56,12 @@
         "value": 87
     },
     {
-        "name": "IP地址",
-        "value": 85
+        "name": "CentOS",
+        "value": 86
     },
     {
-        "name": "CentOS",
-        "value": 84
+        "name": "IP地址",
+        "value": 85
     },
     {
         "name": "RabbitMQ",
@@ -620,6 +620,10 @@
         "value": 12
     },
     {
+        "name": "管理工具",
+        "value": 12
+    },
+    {
         "name": "重新启动",
         "value": 12
     },
@@ -709,10 +713,6 @@
     },
     {
         "name": "Management",
-        "value": 11
-    },
-    {
-        "name": "管理工具",
         "value": 11
     },
     {
