@@ -17,7 +17,7 @@
     },
     {
         "name": "Windows",
-        "value": 128
+        "value": 134
     },
     {
         "name": "Python",
@@ -100,6 +100,10 @@
         "value": 51
     },
     {
+        "name": "System",
+        "value": 49
+    },
+    {
         "name": "Jenkins",
         "value": 49
     },
@@ -110,10 +114,6 @@
     {
         "name": "OpenResty",
         "value": 48
-    },
-    {
-        "name": "System",
-        "value": 46
     },
     {
         "name": "JumpServer",
@@ -212,11 +212,19 @@
         "value": 26
     },
     {
+        "name": "Microsoft",
+        "value": 25
+    },
+    {
         "name": "Network",
         "value": 25
     },
     {
         "name": "Nmap",
+        "value": 24
+    },
+    {
+        "name": "执行命令",
         "value": 24
     },
     {
@@ -250,14 +258,6 @@
     {
         "name": "Password",
         "value": 23
-    },
-    {
-        "name": "Microsoft",
-        "value": 22
-    },
-    {
-        "name": "执行命令",
-        "value": 22
     },
     {
         "name": "内存空间",
@@ -300,6 +300,10 @@
         "value": 20
     },
     {
+        "name": "PowerShell",
+        "value": 20
+    },
+    {
         "name": "Debian",
         "value": 19
     },
@@ -313,10 +317,6 @@
     },
     {
         "name": "Logstash",
-        "value": 19
-    },
-    {
-        "name": "PowerShell",
         "value": 19
     },
     {
@@ -397,6 +397,10 @@
     },
     {
         "name": "Base",
+        "value": 17
+    },
+    {
+        "name": "Software",
         "value": 17
     },
     {
@@ -549,10 +553,6 @@
     },
     {
         "name": "面向对象",
-        "value": 14
-    },
-    {
-        "name": "Software",
         "value": 14
     },
     {
