@@ -1,9 +1,19 @@
 #!/bin/bash
 
-set -euxo pipefail
+# set -euxo pipefail
 
-export DEBIAN_FRONTEND=noninteractive
-sudo dpkg --set-selections <<< "cloud-init install" || true
+# export DEBIAN_FRONTEND=noninteractive
+# sudo dpkg --set-selections <<< "cloud-init install" || true
+
+# 检查是否安装成功
+
+country=$(curl -s https://ifconfig.icu/country)
+if [[ $country == *"China"* ]]; then
+    docker_image=swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/nvidia/cuda:12.4.1-base-ubuntu22.04
+    # judge "设置Docker镜点 "
+else
+    docker_image=nvidia/cuda:12.4.1-base-ubuntu22.04
+fi
 
 # 检查是否安装成功
 judge() {
@@ -225,7 +235,7 @@ curl -SsL get-docker.geekery.cn | bash
 
 # Test / Install nvidia-docker
 if [[ ! -z "$NVIDIA_PRESENT" ]]; then
-    if sudo docker run --rm --gpus all ${hub_docker_url}nvidia/cuda:11.0.3-base-ubuntu18.04 nvidia-smi &>/dev/null; then
+    if sudo docker run --rm --gpus all $docker_image nvidia-smi &>/dev/null; then
         echo "nvidia-docker is enabled and working. Exiting script."
     else
         echo "nvidia-docker does not seem to be enabled. Proceeding with installations..."
@@ -236,15 +246,14 @@ if [[ ! -z "$NVIDIA_PRESENT" ]]; then
         sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
         judge "nvidia-container-toolkit 安装 "
         sudo systemctl restart docker 
-        judge "重启docker "
-        sudo docker run --rm --gpus all ${hub_docker_url}nvidia/cuda:11.0.3-base-ubuntu18.04 nvidia-smi
+        sudo docker run --rm --gpus all $docker_image nvidia-smi
     fi
 fi
-sudo apt-mark hold 'nvidia* libnvidia*'
-# Add docker group and user to group docker
-sudo groupadd docker || true
-sudo usermod -aG docker $USER || true
-newgrp docker || true
+sudo apt-mark hold "nvidia*" "libnvidia*"
+# # Add docker group and user to group docker
+# sudo groupadd docker || true
+# sudo usermod -aG docker $USER || true
+# newgrp docker || true
 # Workaround for NVIDIA Docker Issue
 echo "Applying workaround for NVIDIA Docker issue as per https://github.com/NVIDIA/nvidia-docker/issues/1730"
 # Summary of issue and workaround:
@@ -264,7 +273,7 @@ if [[ $country == *"China"* ]]; then
     "exec-opts": ["native.cgroupdriver=cgroupfs"],
     "registry-mirrors": ["https://docker.ketches.cn/"]
     }
-    EOF'
+EOF'
     sudo systemctl daemon-reload
 
     # judge "设置Docker镜点 "
@@ -279,10 +288,9 @@ else
     },
     "exec-opts": ["native.cgroupdriver=cgroupfs"]
     }
-    EOF'
+EOF'
     echo "当前国家不是China，未执行Docker镜点设置。"
 fi
 
 # Restart Docker to apply changes.
 sudo systemctl restart docker
-judge "重启docker "

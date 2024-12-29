@@ -44,11 +44,25 @@ check_root(){
 
 #安装依赖
 sys_install(){
+    echo -e "${RedBG}检查系统依赖...${Font}"
     if ! type wget >/dev/null 2>&1; then
         echo -e "${RedBG}wget 未安装，准备安装！${Font}"
-	    apt-get install wget -y || yum install wget -y
+	    install wget
         judge "wget 安装"
     fi
+
+    if ! type curl >/dev/null 2>&1; then
+        echo -e "${RedBG}curl 未安装，准备安装！${Font}"
+	    install curl
+        judge "curl 安装"
+    fi
+
+    if ! type nvim >/dev/null 2>&1; then
+        echo -e "${RedBG}vim 未安装，准备安装！${Font}"
+	    install neovim ssh
+        judge "nvim 安装"
+    fi
+
 }
 
 # 定义函数，使用tput命令实现更美观的倒计时
@@ -207,3 +221,82 @@ SystemInfo_GetOSRelease() {
         Bench_Result_OSReleaseFullName="[Error: Unknown Linux Branch !]"
     fi
 }
+
+
+# 安装软件包
+install() {
+	if [ $# -eq 0 ]; then
+		echo "未提供软件包参数!"
+		return
+	fi
+
+	for package in "$@"; do
+		if ! command -v "$package" &>/dev/null; then
+			echo -e "${gl_huang}正在安装 $package...${gl_bai}"
+			if command -v dnf &>/dev/null; then
+				dnf -y update
+				dnf install -y epel-release
+				dnf install -y "$package"
+			elif command -v yum &>/dev/null; then
+				yum -y update
+				yum install -y epel-release
+				yum -y install "$package"
+			elif command -v apt &>/dev/null; then
+				apt update -y
+				apt install -y "$package"
+			elif command -v apk &>/dev/null; then
+				apk update
+				apk add "$package"
+			elif command -v pacman &>/dev/null; then
+				pacman -Syu --noconfirm
+				pacman -S --noconfirm "$package"
+			elif command -v zypper &>/dev/null; then
+				zypper refresh
+				zypper install -y "$package"
+			elif command -v opkg &>/dev/null; then
+				opkg update
+				opkg install "$package"
+			else
+				echo "未知的包管理器!"
+				return
+			fi
+		else
+			echo -e "${gl_lv}$package 已经安装${gl_bai}"
+		fi
+	done
+
+	return
+}
+
+# 卸载软件包
+remove() {
+	if [ $# -eq 0 ]; then
+		echo "未提供软件包参数!"
+		return
+	fi
+
+	for package in "$@"; do
+		echo -e "${gl_huang}正在卸载 $package...${gl_bai}"
+		if command -v dnf &>/dev/null; then
+			dnf remove -y "${package}"*
+		elif command -v yum &>/dev/null; then
+			yum remove -y "${package}"*
+		elif command -v apt &>/dev/null; then
+			apt purge -y "${package}"*
+		elif command -v apk &>/dev/null; then
+			apk del "${package}*"
+		elif command -v pacman &>/dev/null; then
+			pacman -Rns --noconfirm "${package}"
+		elif command -v zypper &>/dev/null; then
+			zypper remove -y "${package}"
+		elif command -v opkg &>/dev/null; then
+			opkg remove "${package}"
+		else
+			echo "未知的包管理器!"
+			return
+		fi
+	done
+
+	return
+}
+
