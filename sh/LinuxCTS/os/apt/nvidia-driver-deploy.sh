@@ -185,7 +185,7 @@ echo "Applying workaround for NVIDIA Docker issue as per https://github.com/NVID
 sudo bash -c 'cat <<EOF > /etc/docker/daemon.json
 {
 	"registry-mirrors": [
-		"https://hub.geekery.cn",
+		"https://hub.icert.top",
 		"https://ghcr.geekery.cn"
 	],
    "runtimes": {

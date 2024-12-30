@@ -28,7 +28,7 @@ judge() {
 
 country=$(curl -s https://ifconfig.icu/country)
 if [[ $country == *"China"* ]]; then
-    hub_docker_url=hub.geekery.cn/
+    hub_docker_url=hub.icert.top/
     # judge "设置Docker镜点 "
 else
     hub_docker_url=docker.io/
