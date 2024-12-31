@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 30 Dec 2024 06:17:56 GMT</pubDate>
-    <lastBuildDate>Mon, 30 Dec 2024 06:17:56 GMT</lastBuildDate>
+    <pubDate>Tue, 31 Dec 2024 07:18:37 GMT</pubDate>
+    <lastBuildDate>Tue, 31 Dec 2024 07:18:37 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -15,6 +15,21 @@
     <category>Shell</category>
     <category>神操作</category>
     <category>VirtualPrivateNetwork</category>
+    <item>
+      <title>VMware最新下载地址</title>
+      <link>https://www.geekery.cn/note-book/VMware/VMware%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.html</link>
+      <guid>https://www.geekery.cn/note-book/VMware/VMware%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">VMware最新下载地址</source>
+      <description>VMware最新下载地址 直接提取了CDN直连地址如下 版本举例： https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.2/24409262/windows/core/VMware-workstation-17.6.2-24409262.exe.tar VMware的直连仓库地址： htt...</description>
+      <pubDate>Tue, 31 Dec 2024 06:45:31 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>直接提取了CDN直连地址如下</p>
+</blockquote>
+<p>版本举例： <a href="https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.2/24409262/windows/core/VMware-workstation-17.6.2-24409262.exe.tar" target="_blank" rel="noopener noreferrer">https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.2/24409262/windows/core/VMware-workstation-17.6.2-24409262.exe.tar</a></p>
+<p>VMware的直连仓库地址： <a href="https://softwareupdate.vmware.com/cds/vmw-desktop/ws/" target="_blank" rel="noopener noreferrer">https://softwareupdate.vmware.com/cds/vmw-desktop/ws/</a></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Windows禁用任务管理器</title>
       <link>https://www.geekery.cn/note-book/Windows/Windows%E7%A6%81%E7%94%A8%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E5%99%A8.html</link>
@@ -5305,36 +5320,6 @@ Big O：
 <p>crt.pem（公钥）</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Bash利用扩展字符集实现rm</title>
-      <link>https://www.geekery.cn/note-book/LinuxOperaSystem/Bash%E5%88%A9%E7%94%A8%E6%89%A9%E5%B1%95%E5%AD%97%E7%AC%A6%E9%9B%86%E5%AE%9E%E7%8E%B0rm.html</link>
-      <guid>https://www.geekery.cn/note-book/LinuxOperaSystem/Bash%E5%88%A9%E7%94%A8%E6%89%A9%E5%B1%95%E5%AD%97%E7%AC%A6%E9%9B%86%E5%AE%9E%E7%8E%B0rm.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Bash利用扩展字符集实现rm</source>
-      <description>Bash利用扩展字符集实现rm 事出有因 昨天在群里看到一个暴躁老哥遇到了一个恶搞教程,使用一段特殊的代码删除了自己的/home目录。气的他直骂自己是傻逼。 果然，自己的快乐是建立在别人的痛苦之上的，不好意思我笑出声来了。 image-20231121165908477 5FEC69FE77FFF255977FC97C31C2E6D7 这个是什么意思呢...</description>
-      <pubDate>Tue, 21 Nov 2023 09:47:28 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>事出有因</h2>
-<p>昨天在群里看到一个暴躁老哥遇到了一个恶搞教程,使用一段特殊的代码删除了自己的/home目录。气的他直骂自己是傻逼。</p>
-<p>果然，自己的快乐是建立在别人的痛苦之上的，不好意思我笑出声来了。</p>
-<p></p>
-<p></p>
-<p>这个是什么意思呢？我这边查了一些资料然后把过程记录下来。</p>
-<h2>过程</h2>
-<h3>金蝉脱壳</h3>
-<p>这个代码的含义是 <code>rm -rf /home</code>。</p>
-<p>仔细去看，其实执行部分在两个尖角号之间，跟管道后面的aplay毛关系都没有。</p>
-<p>至于为啥是echo呢不过也是个障眼法罢了。</p>
-<p>除去管道后面和echo ”“部分，现在已经脱壳完毕，中间部分我们来一点一点的看。</p>
-<h3>查古知今</h3>
-<p>脱壳之后，分段出现了几个符号，我们查询Bash特殊字符列表，得知含义。附加查询表格：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">``</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # 命令引用。也被称作反引号</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">$</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">''</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # 引用字符串扩展。这个结构将转义八进制或十六进制的值转换成ASCII3或Unicode字符。</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">\162\155</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # 进制字符</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4>Bash特殊字符列表</h4>
-<p>| 特殊字符            | 字符含义                                                     |
-|</p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
