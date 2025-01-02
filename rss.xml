@@ -6,15 +6,24 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 31 Dec 2024 09:16:17 GMT</pubDate>
-    <lastBuildDate>Tue, 31 Dec 2024 09:16:17 GMT</lastBuildDate>
+    <pubDate>Thu, 02 Jan 2025 03:18:49 GMT</pubDate>
+    <lastBuildDate>Thu, 02 Jan 2025 03:18:49 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
     <category>Linux</category>
     <category>Shell</category>
     <category>神操作</category>
-    <category>VirtualPrivateNetwork</category>
+    <item>
+      <title>文本字符串倒序</title>
+      <link>https://www.geekery.cn/free-service/text-reverse.html</link>
+      <guid>https://www.geekery.cn/free-service/text-reverse.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">文本字符串倒序</source>
+      <description>文本字符串倒序</description>
+      <pubDate>Thu, 02 Jan 2025 03:15:25 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>VMware最新下载地址</title>
       <link>https://www.geekery.cn/note-book/VMware/VMware%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.html</link>
@@ -5246,80 +5255,6 @@ Big O：
 <p>主要测试稳定性，如果是矿卡，大多数会有暗病，很难顺利通过测试，再进行DX12 20轮循环测试，可以看出显卡的体质，如果是优秀的分数会在99%以上，低于97%的体质表示不合格。</p>
 <p>TODO: 补充图片</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>通过cdn流量伪装防止防火墙封ip和端口</title>
-      <link>https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/%E9%80%9A%E8%BF%87cdn%E6%B5%81%E9%87%8F%E4%BC%AA%E8%A3%85%E9%98%B2%E6%AD%A2%E9%98%B2%E7%81%AB%E5%A2%99%E5%B0%81ip%E5%92%8C%E7%AB%AF%E5%8F%A3.html</link>
-      <guid>https://www.geekery.cn/note-book/VirtualPrivateNetwork/%E7%8B%AD%E4%B9%89VirtualPrivateNetwork/%E9%80%9A%E8%BF%87cdn%E6%B5%81%E9%87%8F%E4%BC%AA%E8%A3%85%E9%98%B2%E6%AD%A2%E9%98%B2%E7%81%AB%E5%A2%99%E5%B0%81ip%E5%92%8C%E7%AB%AF%E5%8F%A3.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">通过cdn流量伪装防止防火墙封ip和端口</source>
-      <description>通过cdn流量伪装防止防火墙封ip和端口 边缘计算系统构建 将域名绑定到CDN上 1.登录CDN网站，找到增加域名选项 image-20220819194959187 2.点击添加域名 image-20220819195044991 3.选择Free计划 image-20220819195120435 4.临时添加一条记录，让CDN去验证域名合法性 i...</description>
-      <category>VirtualPrivateNetwork</category>
-      <pubDate>Fri, 08 Dec 2023 15:59:33 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>边缘计算系统构建</h2>
-<h3>将域名绑定到CDN上</h3>
-<h4><a class="header-anchor" href="#_1-登录cdn网站-找到增加域名选项"><span>1.</span></a><a href="https://dash.cloudflare.com/login/" target="_blank" rel="noopener noreferrer">登录CDN网站</a>，找到增加域名选项</h4>
-<p></p>
-<h4>2.点击添加域名</h4>
-<p></p>
-<h4>3.选择Free计划</h4>
-<p></p>
-<h4>4.临时添加一条记录，让CDN去验证域名合法性</h4>
-<p></p>
-<h4>5.复制新生成的两个ns服务器备用</h4>
-<p></p>
-<h4>6.登录域名服务厂商，找到域名管理处，修改ns服务器为CloudFlare服务器</h4>
-<p></p>
-<p></p>
-<h4>7.等待全球DNS记录刷新，在CloudFlare见到此页面为 ns服务器绑定成功</h4>
-<p></p>
-<h2>节点增加</h2>
-<h3>在Server端安装x-ui</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">输入以下代码自动安装x-ui服务器</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> &lt;(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -Ls</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://raw.githubusercontent.com/chenyue168881/x-ui/master/install.sh)</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h4>1.登录服务器并确认配置</h4>
-<p>内存大于500M，硬盘大于5G</p>
-<p></p>
-<h4>2.运行脚本并安装x-ui，看到如下图为安装成功</h4>
-<p>如果出现 -bash: curl: command not found</p>
-<p>运行</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p></p>
-<p>安装成功</p>
-<p></p>
-<h4>3.修改x-ui web密码</h4>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sqlite3</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &amp;&amp; </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sqlite3</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/x-ui/x-ui.db</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt;&lt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">select * from users where id=1;</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">update users set username='chenyue' where id = 1;</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">update users set password='ac147258@' where id = 1;</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">select * from users where id=1;</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.q</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>出现这个界面为运行成功</p>
-<p></p>
-<h4>4.登录web界面</h4>
-<blockquote>
-<p>url类似于 http://xxx.xxx.xxx.xxx:54321/</p>
-</blockquote>
-<p></p>
-<h3>在CDN上增加域名</h3>
-<p>打开此界面，点击增加A记录</p>
-<p></p>
-<p>如图配置，获得的域名应该是 <code>example-1111.456987.top</code>  指向 <code>45.91.82.122</code> 并通过<code>cf</code>伪装所有流量</p>
-<p>如下图为成功配置</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">测试网站</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ping.chinaz.com</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<p></p>
-<h3>生成加密证书(已生成）</h3>
-<p></p>
-<p></p>
-<p>泛解析</p>
-<p>以下正式用于*.456987.top, 456987.top 有效期15年)</p>
-<p>crt.pem（公钥）</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
