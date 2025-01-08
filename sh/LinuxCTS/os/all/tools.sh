@@ -17,7 +17,7 @@ ${Green}7.${Font} centos安装1panel
 ${Green}8.${Font} ubuntu安装1panel
 ${Green}9.${Font} debian安装1panel
 —————————————————————————— 系统功能 ——————————————————————————
-${Green}10.${Font} 修改root密码
+${Green}10.${Font} 修改root密码                     ${Green}50.${Font} 重启进入BIOS
 ${Green}11.${Font} 修改时间为中国
 ${Green}12.${Font} 重启当前系统
 ${Green}13.${Font} 关闭当前系统
@@ -25,7 +25,7 @@ ${Green}13.${Font} 关闭当前系统
 ${Green}14.${Font} Frps服务端-管理脚本               ${Green}15.${Font} Todesk 安装 (debian/ubuntu)
 ${Green}16.${Font} Frps客户端-管理脚本               ${Green}17.${Font} 鱼香 ros 安装
 ${Green}18.${Font} Nezha哪吒监控-云探针              ${Green}19.${Font} 星火应用商店 安装
-${Green}20.${Font} ServerStatus-云探针               ${Green}21.${Font}  
+${Green}20.${Font} ServerStatus-云探针               ${Green}21.${Font} 原神 grub 主题安装
 ${Green}22.${Font} iptables-端口转发                 ${Green}23.${Font}  
 ${Green}24.${Font} Docker 安装                       ${Green}25.${Font}  
 ${Green}26.${Font} Nvidia显卡驱动安装                ${Green}27.${Font}  
@@ -100,6 +100,9 @@ case $num in
 20)
     source <(curl -s ${download_url}/tools/status.sh)
     ;;
+21)
+    source <(curl -s ${download_url}/os/all/theme.sh)
+    ;;
 22)
     source <(curl -s ${download_url}/tools/dkzf.sh)
     ;;
@@ -119,6 +122,9 @@ case $num in
     ;;
 32)
     source <(curl -s ${download_url}/os/all/uninstall_docker.sh)
+    ;;
+50)
+    systemctl reboot --firmware-setup
     ;;
 99)
     # wget -N https://gitee.com/muaimingjun/LinuxCTS/raw/main/linux.sh && chmod +x linux.sh && bash linux.sh

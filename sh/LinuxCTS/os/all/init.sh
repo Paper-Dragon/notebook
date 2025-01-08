@@ -42,28 +42,6 @@ check_root(){
 	fi
 }
 
-#安装依赖
-sys_install(){
-    echo -e "${RedBG}检查系统依赖...${Font}"
-    if ! type wget >/dev/null 2>&1; then
-        echo -e "${RedBG}wget 未安装，准备安装！${Font}"
-	    install wget
-        judge "wget 安装"
-    fi
-
-    if ! type curl >/dev/null 2>&1; then
-        echo -e "${RedBG}curl 未安装，准备安装！${Font}"
-	    install curl
-        judge "curl 安装"
-    fi
-
-    if ! type nvim >/dev/null 2>&1; then
-        echo -e "${RedBG}vim 未安装，准备安装！${Font}"
-	    install neovim ssh
-        judge "nvim 安装"
-    fi
-
-}
 
 # 定义函数，使用tput命令实现更美观的倒计时
 function countdown_sleep() {

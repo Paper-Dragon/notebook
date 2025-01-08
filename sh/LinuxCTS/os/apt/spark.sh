@@ -74,7 +74,6 @@ gnome_check=$(ps -ef | grep gnome-session | grep -v grep)
 if [ -n "$gnome_check" ]; then
     install_spark
     # 这里可以添加你想要在有GNOME桌面环境时执行的具体操作
-    exit
 else
     echo "当前没有GNOME桌面环境，无法安装 星火应用商店 。"
 fi

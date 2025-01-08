@@ -9,6 +9,23 @@ if [[ $country == *"China"* ]]; then
 else
     download_url=https://raw.githubusercontent.com/hyh1750522171/LinuxCTS/main
 fi
+
+#安装依赖
+sys_install(){
+    echo -e "${RedBG}检查系统依赖...${Font}"
+    if ! type wget >/dev/null 2>&1; then
+        echo -e "${RedBG}wget 未安装，准备安装！${Font}"
+	    install wget
+        judge "wget 安装"
+    fi
+
+    if ! type curl >/dev/null 2>&1; then
+        echo -e "${RedBG}curl 未安装，准备安装！${Font}"
+	    install curl
+        judge "curl 安装"
+    fi
+}
+
 # 引用全局初始化脚本
 source <(curl -s ${download_url}/os/all/init.sh)
 
@@ -22,6 +39,7 @@ start_linux(){
 =  ${Green}12${Font}  Bench系统性能测试  Bench performance test  
 =  ${Green}13${Font}  Linux常用工具安装  Linux utility function  
 =  ${Green}14${Font}  Linux路由追踪检测  Linux traceroute test  
+=  ${Green}15${Font}  Ubuntu 新安装系统初始化配置  Initial configuration of a newly Ubuntu system  
 =
 =  ${Green}21${Font}  Linux修改交换内存  Modify swap memory  
 =  ${Green}22${Font}  Linux修改服务器DNS  Modify server DNS  
@@ -47,6 +65,9 @@ start_linux(){
         ;;
     14)
         source <(curl -s ${download_url}/tools/lyzz.sh)
+        ;;
+    15)
+        source <(curl -s ${download_url}/os/apt/init.sh)
         ;;
     21)
         source <(curl -s ${download_url}/tools/swap.sh)
