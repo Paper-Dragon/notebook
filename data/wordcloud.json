@@ -220,6 +220,10 @@
         "value": 25
     },
     {
+        "name": "Runner",
+        "value": 25
+    },
+    {
         "name": "Nmap",
         "value": 24
     },
@@ -237,10 +241,6 @@
     },
     {
         "name": "Udev",
-        "value": 24
-    },
-    {
-        "name": "Runner",
         "value": 24
     },
     {
@@ -1508,6 +1508,10 @@
         "value": 6
     },
     {
+        "name": "Gitlab",
+        "value": 6
+    },
+    {
         "name": "Advanced",
         "value": 6
     },
@@ -1593,10 +1597,6 @@
     },
     {
         "name": "Ping",
-        "value": 6
-    },
-    {
-        "name": "Binutils",
         "value": 6
     }
 ]

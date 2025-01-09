@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 09 Jan 2025 06:24:38 GMT</pubDate>
-    <lastBuildDate>Thu, 09 Jan 2025 06:24:38 GMT</lastBuildDate>
+    <pubDate>Thu, 09 Jan 2025 10:14:10 GMT</pubDate>
+    <lastBuildDate>Thu, 09 Jan 2025 10:14:10 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -486,9 +486,14 @@
       <link>https://www.geekery.cn/note-book/Gitlab/Gitlab%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</link>
       <guid>https://www.geekery.cn/note-book/Gitlab/Gitlab%E4%B8%80%E9%94%AE%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E6%BA%90.html</guid>
       <source url="https://www.geekery.cn/rss.xml">GitLab一键设置镜像源</source>
-      <description>GitLab一键设置镜像源 添加源 Debian/Ubuntu/Mint RHEL/CentOS/Fedora/Amazon Linux</description>
+      <description>GitLab一键设置镜像源 这个镜像源里面包含Gitlab安装包，Gitlab-Runner安装包. gitlab-runner gitlab 添加源 Debian/Ubuntu/Mint RHEL/CentOS/Fedora/Amazon Linux</description>
       <pubDate>Thu, 31 Oct 2024 05:51:41 GMT</pubDate>
       <content:encoded><![CDATA[
+<blockquote>
+<p>这个镜像源里面包含Gitlab安装包，Gitlab-Runner安装包.
+gitlab-runner
+gitlab</p>
+</blockquote>
 <h2>添加源</h2>
 <h3>Debian/Ubuntu/Mint</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -L</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> bash</span></span></code></pre>
