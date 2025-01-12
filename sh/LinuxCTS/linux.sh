@@ -82,7 +82,7 @@ start_linux(){
         source <(curl -s ${download_url}/tools/tcp.sh)
         ;;
     25)
-        source <(curl -s ${download_url}/tools/net-install.sh)
+        source <(curl -s https://www.cxthhhhh.com/CXT-Library/Network-Reinstall-System-Modify/Network-Reinstall-System-Modify.sh )
         ;;
     99)
         echo -e "\n${GreenBG}感谢使用！欢迎下次使用！${Font}\n" && exit

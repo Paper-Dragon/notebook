@@ -340,7 +340,8 @@ SystemInfo_GetOSRelease() {
 
 SystemInfo_GetVirtType() {
     if [ -f "/usr/bin/systemd-detect-virt" ]; then
-        Var_VirtType="$cat)"
+        # Var_VirtType="$cat)"
+        Var_VirtType="$(/usr/bin/systemd-detect-virt)"
         # 虚拟机检测
         if [ "${Var_VirtType}" = "qemu" ]; then
             Bench_Result_VirtType="QEMU"
@@ -561,7 +562,7 @@ Function_ShowSystemInfo() {
             echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUPhysicalNumber} ${Font_SkyBlue}Physical CPU(s)${Font_Suffix}, ${Bench_Result_CPUCoreNumber} ${Font_SkyBlue}Cores/CPU${Font_Suffix}, ${Bench_Result_CPUSiblingsNumber} ${Font_SkyBlue}Threads/CPU${Font_Suffix} (Total ${Font_SkyBlue}${Bench_Result_CPUTotalCoreNumber}${Font_Suffix} Cores, ${Font_SkyBlue}${Bench_Result_CPUProcessorNumber}${Font_Suffix} Threads)"
         # 针对树莓派等特殊情况做出检测优化
         elif [ "${Bench_Result_CPUThreadNumber}" = "0" ] && [ "${Bench_Result_CPUProcessorNumber} " -ge "1" ]; then
-             echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUProcessorNumber} ${Font_SkyBlue}Cores${Font_Suffix}"
+            echo -e " ${Font_Yellow}CPU 核心数:${Font_Suffix}\t\t${Bench_Result_CPUProcessorNumber} ${Font_SkyBlue}Cores${Font_Suffix}"
         fi
         if [ "${Bench_Result_CPUVirtualization}" = "1" ]; then
             echo -e " ${Font_Yellow}虚拟化开启:${Font_Suffix}\t\t${Font_SkyBlue}Yes${Font_Suffix} ${Font_SkyBlue}(Based on${Font_Suffix} ${Bench_Result_CPUVirtualizationType}${Font_SkyBlue})${Font_Suffix}"

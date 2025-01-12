@@ -19,21 +19,21 @@ CTS_PATH="https://www.geekery.cn/sh/LinuxCTS"
 source <(${CTS_PATH}/os/all/init.sh)
 
 check_version() {
-  if [ "$VERSION" != "7" ]; then
-    echo -e "${Error} ${RedBG} 该脚本仅适用于CentOS 7，当前系统版本为: $VERSION ${Font}"
-    exit
-  fi
-  echo -e "${OK} ${GreenBG} 确认当前系统版本为CentOS 7 ${Font}"
+    if [ "$VERSION" != "7" ]; then
+        echo -e "${Error} ${RedBG} 该脚本仅适用于CentOS 7，当前系统版本为: $VERSION ${Font}"
+        exit
+    fi
+    echo -e "${OK} ${GreenBG} 确认当前系统版本为CentOS 7 ${Font}"
 }
 
 
 # 主函数
 main() {
 
-  check_version
+    check_version
 
-  REPO_DIR="/etc/yum.repos.d/"
-  ALIYUN_REPO_CONTENT='
+    REPO_DIR="/etc/yum.repos.d/"
+    ALIYUN_REPO_CONTENT='
 [base]
 name=CentOS-$releasever - base - mirrors.aliyun.com
 baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/os/$basearch/
@@ -105,19 +105,19 @@ gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 '
 
-  echo -e "${Info} 正在删除原有的repo文件..."
-  rm -f "$REPO_DIR"*.repo
-  judge "删除原有的repo文件"
+    echo -e "${Info} 正在删除原有的repo文件..."
+    rm -f "$REPO_DIR"*.repo
+    judge "删除原有的repo文件"
 
-  echo -e "${Info} 正在将阿里云源写入repo文件..."
-  echo "$ALIYUN_REPO_CONTENT" > "$REPO_DIR/CentOS-Base.repo"
-  judge "写入阿里云源"
+    echo -e "${Info} 正在将阿里云源写入repo文件..."
+    echo "$ALIYUN_REPO_CONTENT" > "$REPO_DIR/CentOS-Base.repo"
+    judge "写入阿里云源"
 
-  echo -e "${Info} 创建新的yum缓存..."
-  yum makecache
-  judge "创建新的yum缓存"
+    echo -e "${Info} 创建新的yum缓存..."
+    yum makecache
+    judge "创建新的yum缓存"
 
-  echo -e "${OK} 阿里云源配置完成！"
+    echo -e "${OK} 阿里云源配置完成！"
 }
 
 main

@@ -36,8 +36,7 @@ NVIDIA_PRESENT=$(lspci | grep -i nvidia || true)
 if [[ -z "$NVIDIA_PRESENT" ]]; then
     
     echo -e "${RedBG} 未在设备上检测到 Nvidia 显卡设备 ${Font}"
-    exit
-    # source <(curl -s https://gitee.com/muaimingjun/LinuxCTS/raw/main/linux.sh)
+    # source <(curl -s ${download_url}/linux.sh)
 else
 # Check if nvidia-smi is available and working
     if command -v nvidia-smi &>/dev/null; then
@@ -163,8 +162,16 @@ else
                 exit
                 ;;
         esac
-	echo "系统现在将在 5 秒后重新启动！"
- 	sleep 5s
-        reboot
+        read -p "当前系统 安装完 Nvidia显卡驱动 需要重启？ (yes/no): " answer
+        if [[ "$answer" =~ ^[Yy][Ee][Ss]$ ]]; then
+            echo -e "\033[5;33m 当前系统 安装完 Nvidia显卡驱动 需要重启\033[0m"
+            echo -e "\033[5;33m 5秒之后系统将会, 重启..... \033[0m"
+            countdown_sleep 5
+            reboot
+        elif [[ "$answer" =~ ^[Nn][Oo]$ ]]; then
+            echo "取消系统重启"
+        else
+            echo "无效的输入，取消系统重启"
+        fi
     fi
 fi

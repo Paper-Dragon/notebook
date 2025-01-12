@@ -8,6 +8,7 @@ headers
 headers_tools="—————————————————————————— 安装软件源 ——————————————————————————
 ${Green}1.${Font} centos添加epel软件源
 ${Green}2.${Font} centos7 更换base源
+${Green}3.${Font} ubuntu 更换 ustc-mirror 源
 —————————————————————————— 系统升级 ——————————————————————————
 ${Green}4.${Font} centos升级软件和系统
 ${Green}5.${Font} ubuntu升级软件和系统
@@ -22,8 +23,8 @@ ${Green}11.${Font} 修改时间为中国
 ${Green}12.${Font} 重启当前系统
 ${Green}13.${Font} 关闭当前系统
 —————————————————————————— 安装软件包 ——————————————————————————
-${Green}14.${Font} Frps服务端-管理脚本               ${Green}15.${Font} Todesk 安装 (debian/ubuntu)
-${Green}16.${Font} Frps客户端-管理脚本               ${Green}17.${Font} 鱼香 ros 安装
+${Green}14.${Font} Frp服务端-管理脚本               ${Green}15.${Font} Todesk 安装 (debian/ubuntu)
+${Green}16.${Font} Frp客户端-管理脚本               ${Green}17.${Font} 鱼香 ros 安装
 ${Green}18.${Font} Nezha哪吒监控-云探针              ${Green}19.${Font} 星火应用商店 安装
 ${Green}20.${Font} ServerStatus-云探针               ${Green}21.${Font} 原神 grub 主题安装
 ${Green}22.${Font} iptables-端口转发                 ${Green}23.${Font}  
@@ -48,6 +49,9 @@ case $num in
     ;;
 2)
     source <(curl -s ${download_url}/os/yum/clean_and_set_mirror_centos7.sh)
+    ;;
+2)
+    source <(curl -s ${download_url}/os/apt/ustc-mirror.sh)
     ;;
 4)
     yum update
@@ -80,13 +84,13 @@ case $num in
     poweroff
     ;;
 14)
-    source <(curl -s ${download_url}/tools/frps.sh)
+    source <(curl -s ${download_url}/os/all/frps.sh)
     ;;
 15)
     source <(curl -s ${download_url}/os/apt/todesk.sh)
     ;;
 16)
-    source <(curl -s ${download_url}/tools/frpc.sh)
+    source <(curl -s ${download_url}/os/all/frpc.sh)
     ;;
 17)
     source <(curl -SLs http://fishros.com/install)
@@ -127,8 +131,8 @@ case $num in
     systemctl reboot --firmware-setup
     ;;
 99)
-    # wget -N https://gitee.com/muaimingjun/LinuxCTS/raw/main/linux.sh && chmod +x linux.sh && bash linux.sh
-    source <(curl -s https://gitee.com/muaimingjun/LinuxCTS/raw/main/linux.sh)
+    # wget -N ${download_url}/linux.sh && chmod +x linux.sh && bash linux.sh
+    source <(curl -s ${download_url}/linux.sh)
     ;;
 0)
     exit

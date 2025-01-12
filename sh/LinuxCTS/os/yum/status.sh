@@ -7,6 +7,7 @@ export PATH
 #  Description: ServerStatus client + server
 #  Version: Test v0.4.1
 #  Author: Toyo, Modified by APTX
+#  Github: https://github.com/cppla/ServerStatus
 #=================================================
 
 sh_ver="0.4.1"
