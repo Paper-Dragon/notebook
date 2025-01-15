@@ -908,6 +908,10 @@
         "value": 9
     },
     {
+        "name": "Cron",
+        "value": 9
+    },
+    {
         "name": "常用命令",
         "value": 9
     },
@@ -1212,6 +1216,10 @@
         "value": 7
     },
     {
+        "name": "非常灵活",
+        "value": 7
+    },
+    {
         "name": "转义字符",
         "value": 7
     },
@@ -1480,6 +1488,10 @@
         "value": 6
     },
     {
+        "name": "特殊符号",
+        "value": 6
+    },
+    {
         "name": "下载安装",
         "value": 6
     },
@@ -1556,10 +1568,6 @@
         "value": 6
     },
     {
-        "name": "非常灵活",
-        "value": 6
-    },
-    {
         "name": "Complete",
         "value": 6
     },
@@ -1589,14 +1597,6 @@
     },
     {
         "name": "LiuDanYi",
-        "value": 6
-    },
-    {
-        "name": "子网掩码",
-        "value": 6
-    },
-    {
-        "name": "Ping",
         "value": 6
     }
 ]
