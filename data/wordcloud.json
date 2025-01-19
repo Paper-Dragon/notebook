@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 354
+        "value": 360
     },
     {
         "name": "Docker",
@@ -48,16 +48,16 @@
         "value": 96
     },
     {
+        "name": "CentOS",
+        "value": 92
+    },
+    {
         "name": "Fonts",
         "value": 89
     },
     {
         "name": "Nginx",
         "value": 87
-    },
-    {
-        "name": "CentOS",
-        "value": 86
     },
     {
         "name": "IP地址",
@@ -1228,6 +1228,10 @@
         "value": 7
     },
     {
+        "name": "Advanced",
+        "value": 7
+    },
+    {
         "name": "高可用性",
         "value": 7
     },
@@ -1521,10 +1525,6 @@
     },
     {
         "name": "Gitlab",
-        "value": 6
-    },
-    {
-        "name": "Advanced",
         "value": 6
     },
     {
