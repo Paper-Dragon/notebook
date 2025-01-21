@@ -27,21 +27,21 @@ judge() {
 }
 
 # Set Gloabal Variables
-    # Detect OS
-        OS="$(uname)"
-        case $OS in
-            "Linux")
-                # Detect Linux Distro
-                if [ -f /etc/os-release ]; then
-                    . /etc/os-release
-                    DISTRO=$ID
-                    VERSION=$VERSION_ID
-                else
-                    echo "Your Linux distribution is not supported."
-                    exit
-                fi
-                ;;
-        esac
+# Detect OS
+OS="$(uname)"
+case $OS in
+    "Linux")
+        # Detect Linux Distro
+        if [ -f /etc/os-release ]; then
+            . /etc/os-release
+            DISTRO=$ID
+            VERSION=$VERSION_ID
+        else
+            echo "Your Linux distribution is not supported."
+            exit
+        fi
+        ;;
+esac
 
 # Detect if an Nvidia GPU is present
 NVIDIA_PRESENT=$(lspci | grep -i nvidia || true)
@@ -214,7 +214,7 @@ else
                 ;;
         esac
 	echo "System will now reboot !!! Please re-run this script after restart to complete installation !"
- 	sleep 5s
+    sleep 5s
     sudo reboot
     fi
 fi

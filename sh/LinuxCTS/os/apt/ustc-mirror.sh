@@ -78,24 +78,41 @@ fi
 source /etc/os-release
 VERSION_CODENAME=$VERSION_CODENAME
 ID=$ID
+VERSION_ID=$VERSION_ID
+#  判断是不是 x86_64 架构
+download_source_list() {
+    TEMP_FILE=$(mktemp)
+    curl -s -o "$TEMP_FILE" "$URL"
+    judge "Curl 命令执行"
+
+    mv "$TEMP_FILE" "$CONFIG_FILE"
+    judge "更新配置文件"
+}
 
 case $OS_TYPE in
     ubuntu|debian)
-        URL="${PROTOCOL}://mirrors.ustc.edu.cn/repogen/conf/${ID}-${PROTOCOL}-${IP_VERSION/*v/}-${VERSION_CODENAME}"
-        CONFIG_FILE="/etc/apt/sources.list"
+        echo -e "${GreenBG}正在进行换中科大镜像源....${Font}"
+        sleep 1
+        if [ "$(uname -m)" != "x86_64" ]; then
+            if [ $OS_TYPE == "ubuntu" ] && [ $VERSION_ID == "24.04" ]; then
+                sed -i 's@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list.d/ubuntu.sources
+            else 
+                sed -i -e 's@//ports.ubuntu.com/\? @//ports.ubuntu.com/ubuntu-ports @g' -e 's@//ports.ubuntu.com@//mirrors.ustc.edu.cn@g' /etc/apt/sources.list
+            fi
+        else
+            URL="${PROTOCOL}://mirrors.ustc.edu.cn/repogen/conf/${ID}-${PROTOCOL}-${IP_VERSION/*v/}-${VERSION_CODENAME}"
+            CONFIG_FILE="/etc/apt/sources.list"
+            download_source_list      
+        fi
         ;;
     arch)
         URL="${PROTOCOL}://mirrors.ustc.edu.cn/repogen/conf/archlinux-${PROTOCOL}-${IP_VERSION/*v/}"
         CONFIG_FILE="/etc/pacman.d/mirrorlist"
+        download_source_list
         ;;
 esac
 
-TEMP_FILE=$(mktemp)
-curl -s -o "$TEMP_FILE" "$URL"
-judge "Curl 命令执行"
 
-mv "$TEMP_FILE" "$CONFIG_FILE"
-judge "更新配置文件"
 
 if [ "$OS_TYPE" == "ubuntu" ] || [ "$OS_TYPE" == "debian" ]; then
     apt-get update

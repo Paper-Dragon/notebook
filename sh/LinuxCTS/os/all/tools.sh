@@ -50,7 +50,7 @@ case $num in
 2)
     source <(curl -s ${download_url}/os/yum/clean_and_set_mirror_centos7.sh)
     ;;
-2)
+3)
     source <(curl -s ${download_url}/os/apt/ustc-mirror.sh)
     ;;
 4)
@@ -105,7 +105,7 @@ case $num in
     source <(curl -s ${download_url}/tools/status.sh)
     ;;
 21)
-    source <(curl -s ${download_url}/os/all/theme.sh)
+    source <(curl -s ${download_url}/os/all/grub.sh)
     ;;
 22)
     source <(curl -s ${download_url}/tools/dkzf.sh)
