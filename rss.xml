@@ -6,14 +6,40 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 21 Jan 2025 09:43:49 GMT</pubDate>
-    <lastBuildDate>Tue, 21 Jan 2025 09:43:49 GMT</lastBuildDate>
+    <pubDate>Tue, 21 Jan 2025 10:11:03 GMT</pubDate>
+    <lastBuildDate>Tue, 21 Jan 2025 10:11:03 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
-    <category>Linux</category>
-    <category>Shell</category>
-    <category>神操作</category>
+    <item>
+      <title>Ubuntu修复CNVD-2024-4920726</title>
+      <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%BF%AE%E5%A4%8DCNVD-2024-4920726.html</link>
+      <guid>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%BF%AE%E5%A4%8DCNVD-2024-4920726.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Ubuntu修复CNVD-2024-4920726</source>
+      <description>Ubuntu修复CNVD-2024-4920726 CNVD-2024-4920726简介 影响版本：Linux Linux kernel &amp;gt;=6.8，&amp;lt;6.8.2 CVE编号：CVE-2024-27071 描述：是在Linux内核中，以下漏洞已得到解决：backlight：hx8357：修复潜在的NULL指针解引用“im”引脚是可选的。在hx8357...</description>
+      <pubDate>Tue, 21 Jan 2025 10:07:29 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>CNVD-2024-4920726简介</h2>
+<ul class="task-list-container">
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-0" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-0"> 影响版本：Linux Linux kernel &gt;=6.8，&lt;6.8.2</label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-1" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-1"> CVE编号：<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-27071" target="_blank" rel="noopener noreferrer">CVE-2024-27071</a></label></li>
+<li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" id="task-item-2" checked="checked" disabled="disabled"><label class="task-list-item-label" for="task-item-2"> 描述：是在Linux内核中，以下漏洞已得到解决：backlight：hx8357：修复潜在的NULL指针解引用“im”引脚是可选的。在hx8357_probe（）中添加缺失检查。</label></li>
+</ul>
+<h2>修复方法</h2>
+<p>更新内核</p>
+<h3>从主线下载deb包</h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">mkdir</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kernel-6.9.0</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &amp;&amp; </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kernel-6.9.0</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://kernel.ubuntu.com/mainline/v6.9/amd64/linux-headers-6.9.0-060900-generic_6.9.0-060900.202405122134_amd64.deb</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://kernel.ubuntu.com/mainline/v6.9/amd64/linux-headers-6.9.0-060900_6.9.0-060900.202405122134_all.deb</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://kernel.ubuntu.com/mainline/v6.9/amd64/linux-image-unsigned-6.9.0-060900-generic_6.9.0-060900.202405122134_amd64.deb</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://kernel.ubuntu.com/mainline/v6.9/amd64/linux-modules-6.9.0-060900-generic_6.9.0-060900.202405122134_amd64.deb</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>安装deb包</h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kernel-6.9.0</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ./</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h2>设置为开机启动使用</h2>
+<p>正常安装好已经是第一项了</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>GRUB锁定密码</title>
       <link>https://www.geekery.cn/note-book/GRUB/GRUB%E9%94%81%E5%AE%9A%E5%AF%86%E7%A0%81.html</link>
@@ -5346,25 +5372,6 @@ Big O：
 <p>| <strong>变量</strong>                 | <strong>组件</strong>              | <strong>描述</strong>                                                     |
 |</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>shell通过函数隐藏命令</title>
-      <link>https://www.geekery.cn/note-book/LinuxOperaSystem/shell%E9%80%9A%E8%BF%87%E5%87%BD%E6%95%B0%E9%9A%90%E8%97%8F%E5%91%BD%E4%BB%A4.html</link>
-      <guid>https://www.geekery.cn/note-book/LinuxOperaSystem/shell%E9%80%9A%E8%BF%87%E5%87%BD%E6%95%B0%E9%9A%90%E8%97%8F%E5%91%BD%E4%BB%A4.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">shell通过函数隐藏命令</source>
-      <description>shell通过函数隐藏命令 隐藏命令 当这个函数被调用时，无论传入什么命令，该命令的输出和错误信息都不会显示在终端上，而是会被丢弃。用户不会在终端上看到任何内容。</description>
-      <category>Linux</category>
-      <category>Shell</category>
-      <category>神操作</category>
-      <pubDate>Wed, 27 Dec 2023 06:42:24 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>隐藏命令</h2>
-<p>当这个函数被调用时，无论传入什么命令，该命令的输出和错误信息都不会显示在终端上，而是会被丢弃。用户不会在终端上看到任何内容。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">function</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> ls</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 将命令的标准输出和标准错误重定向到 /dev/null 中</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    "</span><span style="--shiki-light:#383A42;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">$@</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &amp;&gt;/dev/null    </span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 删除斜线，因为jinja2冲突</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>

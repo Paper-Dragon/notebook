@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 360
+        "value": 363
     },
     {
         "name": "Docker",
@@ -25,7 +25,7 @@
     },
     {
         "name": "Ubuntu",
-        "value": 107
+        "value": 108
     },
     {
         "name": "Kubernetes",
