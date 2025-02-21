@@ -5,7 +5,7 @@
     },
     {
         "name": "Docker",
-        "value": 275
+        "value": 283
     },
     {
         "name": "文件系统",
@@ -24,12 +24,12 @@
         "value": 127
     },
     {
-        "name": "Ubuntu",
-        "value": 108
+        "name": "Kubernetes",
+        "value": 112
     },
     {
-        "name": "Kubernetes",
-        "value": 101
+        "name": "Ubuntu",
+        "value": 110
     },
     {
         "name": "OpenStack",
@@ -177,7 +177,7 @@
     },
     {
         "name": "GitHub",
-        "value": 32
+        "value": 34
     },
     {
         "name": "Time",
@@ -220,15 +220,19 @@
         "value": 25
     },
     {
+        "name": "执行命令",
+        "value": 25
+    },
+    {
+        "name": "Container",
+        "value": 25
+    },
+    {
         "name": "Network",
         "value": 25
     },
     {
         "name": "Bash",
-        "value": 24
-    },
-    {
-        "name": "执行命令",
         "value": 24
     },
     {
@@ -256,6 +260,10 @@
         "value": 23
     },
     {
+        "name": "Github",
+        "value": 23
+    },
+    {
         "name": "Password",
         "value": 23
     },
@@ -265,10 +273,6 @@
     },
     {
         "name": "内存空间",
-        "value": 22
-    },
-    {
-        "name": "Github",
         "value": 22
     },
     {
@@ -472,10 +476,6 @@
         "value": 15
     },
     {
-        "name": "Container",
-        "value": 15
-    },
-    {
         "name": "Store",
         "value": 15
     },
@@ -576,6 +576,10 @@
         "value": 13
     },
     {
+        "name": "Systemd",
+        "value": 13
+    },
+    {
         "name": "Agent",
         "value": 13
     },
@@ -637,10 +641,6 @@
     },
     {
         "name": "管理工具",
-        "value": 12
-    },
-    {
-        "name": "Systemd",
         "value": 12
     },
     {
@@ -740,6 +740,10 @@
         "value": 11
     },
     {
+        "name": "Calico",
+        "value": 11
+    },
+    {
         "name": "Signature",
         "value": 11
     },
@@ -829,6 +833,18 @@
     },
     {
         "name": "ClusterRole",
+        "value": 10
+    },
+    {
+        "name": "NetworkReady",
+        "value": 10
+    },
+    {
+        "name": "NetworkPluginNotReady",
+        "value": 10
+    },
+    {
+        "name": "Networ",
         "value": 10
     },
     {
@@ -956,6 +972,10 @@
         "value": 9
     },
     {
+        "name": "Swap",
+        "value": 9
+    },
+    {
         "name": "Huawei",
         "value": 9
     },
@@ -1080,6 +1100,10 @@
         "value": 8
     },
     {
+        "name": "Group",
+        "value": 8
+    },
+    {
         "name": "AppxPackage",
         "value": 8
     },
@@ -1125,10 +1149,6 @@
     },
     {
         "name": "文件目录",
-        "value": 8
-    },
-    {
-        "name": "Swap",
         "value": 8
     },
     {
@@ -1208,6 +1228,10 @@
         "value": 7
     },
     {
+        "name": "Release",
+        "value": 7
+    },
+    {
         "name": "Production",
         "value": 7
     },
@@ -1217,6 +1241,10 @@
     },
     {
         "name": "符合条件",
+        "value": 7
+    },
+    {
+        "name": "IfNotPresent",
         "value": 7
     },
     {
@@ -1257,10 +1285,6 @@
     },
     {
         "name": "Config",
-        "value": 7
-    },
-    {
-        "name": "Group",
         "value": 7
     },
     {
@@ -1353,10 +1377,6 @@
     },
     {
         "name": "Egress",
-        "value": 7
-    },
-    {
-        "name": "Calico",
         "value": 7
     },
     {
@@ -1484,10 +1504,6 @@
         "value": 6
     },
     {
-        "name": "Release",
-        "value": 6
-    },
-    {
         "name": "Repo",
         "value": 6
     },
@@ -1521,10 +1537,6 @@
     },
     {
         "name": "Gitlab",
-        "value": 6
-    },
-    {
-        "name": "IfNotPresent",
         "value": 6
     },
     {
@@ -1585,18 +1597,6 @@
     },
     {
         "name": "网络协议",
-        "value": 6
-    },
-    {
-        "name": "Unicode",
-        "value": 6
-    },
-    {
-        "name": "Native",
-        "value": 6
-    },
-    {
-        "name": "磁盘驱动器",
         "value": 6
     }
 ]

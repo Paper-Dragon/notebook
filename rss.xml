@@ -6,11 +6,125 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 18 Feb 2025 12:34:15 GMT</pubDate>
-    <lastBuildDate>Tue, 18 Feb 2025 12:34:15 GMT</lastBuildDate>
+    <pubDate>Fri, 21 Feb 2025 00:27:31 GMT</pubDate>
+    <lastBuildDate>Fri, 21 Feb 2025 00:27:31 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Ubuntu 22 安装 Kubernetes 1.29 集群指南</title>
+      <link>https://www.geekery.cn/note-book/Kubernetes/Ubuntu%2022%E5%AE%89%E8%A3%85Kubernetes%201.29.html</link>
+      <guid>https://www.geekery.cn/note-book/Kubernetes/Ubuntu%2022%E5%AE%89%E8%A3%85Kubernetes%201.29.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Ubuntu 22 安装 Kubernetes 1.29 集群指南</source>
+      <description>Ubuntu 22 安装 Kubernetes 1.29 集群指南 本文记录在 Ubuntu 22.04 系统上安装最新 Kubernetes 1.29 集群的完整过程，所有步骤均遵循官方文档操作规范 容器运行时安装 自 Kubernetes 1.20 版本起已弃用 Docker 支持，1.24 及后续版本完全移除了 Docker 依赖。容器运行时改用...</description>
+      <pubDate>Wed, 19 Feb 2025 01:56:51 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>本文记录在 Ubuntu 22.04 系统上安装最新 Kubernetes 1.29 集群的完整过程，所有步骤均遵循官方文档操作规范</p>
+</blockquote>
+<h2>容器运行时安装</h2>
+<p>自 Kubernetes 1.20 版本起已弃用 Docker 支持，1.24 及后续版本完全移除了 Docker 依赖。容器运行时改用 containerd（符合 OCI 规范的标准容器实现）。虽然 Docker 已被弃用，但 containerd 仍由 Docker 公司维护，可通过 Docker 官方渠道安装最新版本。注意：如需安装特定版本 Kubernetes，建议从 GitHub 下载对应版本的 containerd。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 安装基础依赖</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> curl</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 配置Docker官方GPG密钥</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -m</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0755</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -d</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/keyrings</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -fsSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://download.docker.com/linux/ubuntu/gpg</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/keyrings/docker.asc</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> a+r</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/keyrings/docker.asc</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 添加Docker稳定版仓库</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "deb [arch=$(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">dpkg</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --print-architecture</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">) signed-by=/etc/apt/keyrings/docker.asc] </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">https://download.docker.com/linux/ubuntu $(</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/os-release &amp;&amp; </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$VERSION_CODENAME</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">") stable"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tee</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/sources.list.d/docker.list</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/dev/null</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 安装containerd运行时</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> containerd.io</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cri-tools</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>Kubernetes 核心组件安装</h3>
+<p>Kubernetes 集群需要以下三个核心组件：</p>
+<ul>
+<li><strong>kubeadm</strong>：集群引导工具，负责集群组件的部署和初始化</li>
+<li><strong>kubelet</strong>：节点代理服务，负责与控制平面通信并管理节点上的 Pod</li>
+<li><strong>kubectl</strong>：集群管理命令行工具，用于与 Kubernetes API 交互</li>
+</ul>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 安装基础依赖</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &amp;&amp; </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-transport-https</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 配置阿里云 Kubernetes 源</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -fsSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.29/deb/Release.key</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    gpg</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --dearmor</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/keyrings/kubernetes-apt-keyring.gpg</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    </span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">https://mirrors.aliyun.com/kubernetes-new/core/stable/v1.29/deb/ /"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tee</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/apt/sources.list.d/kubernetes.list</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 安装 Kubernetes 组件</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --allow-downgrades</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kubelet</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kubeadm</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kubectl</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>验证安装结果</p>
+<blockquote>
+<p>kubeadm version</p>
+</blockquote>
+<p>kubeadm version: &amp;version.Info{Major:"1", Minor:"28", GitVersion:"v1.28.7", GitCommit:"c8dcb00be9961ec36d141d2e4103f85f92bcf291", GitTreeState:"clean", BuildDate:"2024-02-14T10:39:01Z", GoVersion:"go1.21.7", Compiler:"gc", Platform:"linux/amd64"}</p>
+<h3>系统内核配置</h3>
+<h4>禁用Swap分区</h4>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 临时禁用swap</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">swapoff</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -a</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 永久禁用（注释fstab中的swap配置）</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sed</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '/ swap / s/^\(.*\)$/#\1/g'</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/fstab</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4>加载内核模块</h4>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 创建模块配置文件</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/etc/modules-load.d/containerd.conf</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt;&lt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">overlay</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">br_netfilter</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 立即加载内核模块</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">modprobe</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> overlay</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">modprobe</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> br_netfilter</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4>网络参数配置</h4>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 创建网络调优配置文件</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/etc/sysctl.d/kubernetes.conf</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt;&lt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">net.bridge.bridge-nf-call-ip6tables = 1</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">net.bridge.bridge-nf-call-iptables = 1</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">net.ipv4.ip_forward = 1</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 应用配置</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sysctl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --system</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>安装Kubernetes集群</h3>
+<p>获取kubeadm 默认配置</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" data-title="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">kubeadm</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> print</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> init-defaults</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">kubeadm.conf</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>修改4处地方</p>
+<ul>
+<li>localAPIEndpoint.advertiseAddress为master的ip；</li>
+<li>nodeRegistration.name 为当前节点名称；</li>
+<li>imageRepository为国内源：registry.cn-hangzhou.aliyuncs.com/google_containerspodSubnet 设置pod网段，这里必须 192.168.0.0/16，因为下面安装CNI 插件<code>Calico</code>已经固定网段,如果要安装其他插件自行修改</li>
+<li>kubernetesVersion: 1.29.2 ，查看了kubeadm 版本为1.29.2 ，默认是1.29.0</li>
+</ul>
+<p>修改配置如下</p>
+<div class="language-yaml line-numbers-mode" data-highlighter="shiki" data-ext="yaml" data-title="yaml" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">apiVersion</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">kubeadm.k8s.io/v1beta3</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">bootstrapTokens</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">- </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">groups</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">system:bootstrappers:kubeadm:default-node-token</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  token</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">abcdef.0123456789abcdef</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  ttl</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">24h0m0s</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  usages</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">signing</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">authentication</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">kind</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">InitConfiguration</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">localAPIEndpoint</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  advertiseAddress</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">172.28.14.94</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #当前主机IP</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  bindPort</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">6443</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">nodeRegistration</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  criSocket</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">unix:///var/run/containerd/containerd.sock</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  imagePullPolicy</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">IfNotPresent</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ser</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  taints</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">null</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Ubuntu修复CNVD-2024-4920726</title>
       <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E4%BF%AE%E5%A4%8DCNVD-2024-4920726.html</link>
@@ -5337,40 +5451,6 @@ Big O：
       <pubDate>Thu, 04 Jan 2024 03:37:24 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>TODO</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>zabbix使用容器方式部署</title>
-      <link>https://www.geekery.cn/note-book/Zabbix/zabbix%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2.html</link>
-      <guid>https://www.geekery.cn/note-book/Zabbix/zabbix%E4%BD%BF%E7%94%A8%E5%AE%B9%E5%99%A8%E6%96%B9%E5%BC%8F%E9%83%A8%E7%BD%B2.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">zabbix使用容器方式部署</source>
-      <description>zabbix使用容器方式部署 近期做了一些民间项目，不需要极好的可靠性，要求快速部署和删除。所以做了个Docker方案。进行记录 参考资料： zabbix-docker镜像构建的文档在这里 https://github.com/zabbix/zabbix-docker 该页面所有资料来自官网 https://www.zabbix.com/documen...</description>
-      <pubDate>Thu, 04 Jan 2024 03:24:07 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>近期做了一些民间项目，不需要极好的可靠性，要求快速部署和删除。所以做了个Docker方案。进行记录</p>
-<p>参考资料：</p>
-<ul>
-<li>zabbix-docker镜像构建的文档在这里
-<ul>
-<li>https://github.com/zabbix/zabbix-docker</li>
-</ul>
-</li>
-<li>该页面所有资料来自官网
-<ul>
-<li>https://www.zabbix.com/documentation/current/zh/manual/installation/containers</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<h2>Zabbix-Server</h2>
-<p>Zabbix 组件支持 MySQL 和 PostgreSQL 数据库、Apache2 和 Nginx Web 服务器。这些 image 被分成多个不同的 image。</p>
-<blockquote>
-<p>组件化和降低耦合度能够更加缩小软件的体积。更容易部署和升级。更容易实现负载均衡和高可用。</p>
-</blockquote>
-<h3>变量列表</h3>
-<p>| <strong>变量</strong>                 | <strong>组件</strong>              | <strong>描述</strong>                                                     |
-|</p>
 ]]></content:encoded>
     </item>
   </channel>
