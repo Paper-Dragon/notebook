@@ -1,0 +1,4 @@
+[submodule "provider"]
+	path = provider
+	url = https://github.com/Paper-Dragon/provider.git
+	branch = main

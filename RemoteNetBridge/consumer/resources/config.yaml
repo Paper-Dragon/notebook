@@ -1,0 +1,53 @@
+mixed-port: 10802
+
+allow-lan: true
+
+log-level: debug # 日志等级 silent/error/warning/info/debug
+
+sniffer:
+  enable: true
+
+#  find-process-mode has 3 values:always, strict, off
+#  - always, 开启，强制匹配所有进程
+#  - strict, 默认，由 mihomo 判断是否开启
+#  - off, 不匹配进程，推荐在路由器上使用此模式
+find-process-mode: strict
+
+# rule 规则匹配
+# global 全局代理 (需要在 GLOBAL 策略组选择代理/策略)
+# direct 全局直连
+
+mode: rule
+
+dns:
+  enable: true
+
+proxies:
+  # RDP隧道
+  - name: "rdp-tunnel"
+    type: socks5
+    server: 127.0.0.1
+    port: 1080
+    skip-cert-verify: true
+
+  # http
+  - name: "网络提供者"
+    type: http
+    server: 127.0.0.1
+    port: 10801
+    # username: username
+    # password: password
+    # tls: true # https
+    # skip-cert-verify: true
+    # sni: custom.com
+    # fingerprint: xxxx # 同 experimental.fingerprints 使用 sha256 指纹，配置协议独立的指纹，将忽略 experimental.fingerprints
+    # ip-version: dual
+
+proxy-groups:
+  - name: provider
+    type: url-test
+    proxies:
+    - 网络提供者
+
+rules:
+  - DOMAIN-KEYWORD,.,provider

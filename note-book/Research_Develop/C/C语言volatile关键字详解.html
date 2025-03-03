@@ -52,7 +52,7 @@
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>C语言volatile关键字详解 | 运维开发绿皮书</title><meta name="description" content="C语言volatile关键字详解 1.volatile和什么有关 百度翻译是这样子翻译volatile的： img volatile属于C语言的关键字，《C Primer Plus》 是这样解释关键字的：关键字是C语言的词汇，由于编译器不具备真正的智能，所以你必须用编译器能理解的术语表示你的意图。开发者告诉编译器该变量是易变的，无非就是希望编译器去注意...">
     <link rel="preload" href="/assets/style-CldDG_oh.css" as="style"><link rel="stylesheet" href="/assets/style-CldDG_oh.css">
-    <link rel="modulepreload" href="/assets/app-BezXk3s8.js"><link rel="modulepreload" href="/assets/C语言volatile关键字详解.html-afErKpbl.js">
+    <link rel="modulepreload" href="/assets/app-BF7huAu6.js"><link rel="modulepreload" href="/assets/C语言volatile关键字详解.html-BKWCxQOq.js">
     
   </head>
   <body>
@@ -189,7 +189,7 @@ void _start(void) //gcc编译器中，裸机程序的入口是start，不是main
 	GPIOAALTFN1 &amp;= ~(3&lt;&lt;24);
 	GPIOAOUTENB &amp;= ~(1&lt;&lt;28);
 </code></pre><p>​<br> ​ while(1) ​ { ​ //读取GPIO引脚电平 ​ if(!(GPIOAPAD &amp; (1&lt;&lt;28))) ​ GPIOEOUT &amp;= ~(1&lt;&lt;13); ​ else ​ GPIOEOUT |= (1&lt;&lt;13); ​ } ​ }</p><p>这种情况加volatile的情况是最多的，比如stm32函数库底层的寄存器定义就是加了volatile的：</p><p>所以，也没有实验ahhh！</p></div><!----><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">上次编辑于: </span><span class="vp-meta-info" data-allow-mismatch="text">2024/9/12 17:44:20</span></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Research_Develop/C/ACLLib/" aria-label="ACLLib" iconsizing="both"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->ACLLib</div></a><a class="route-link auto-link next" href="/note-book/Research_Develop/C/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0-%E7%BF%81%E6%81%BA%E6%95%99%E7%A8%8B.html" aria-label="C语言学习-翁恺教程" iconsizing="both"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">C语言学习-翁恺教程<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-BezXk3s8.js" defer></script>
+    <script type="module" src="/assets/app-BF7huAu6.js" defer></script>
 
 
   </body>
