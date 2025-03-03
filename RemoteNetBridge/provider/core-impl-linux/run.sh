@@ -85,10 +85,9 @@ install_service() {
 
 # 参数验证
 if [[ $# -eq 0 ]]; then
-    echo "错误：缺少操作参数"
-    echo "用法：$0 {install|start|stop|status}"
-    exit 2
+    ./core --config config.json
 fi
+
 
 # 执行操作
 case "$1" in
