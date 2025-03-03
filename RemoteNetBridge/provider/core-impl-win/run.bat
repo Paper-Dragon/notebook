@@ -1,0 +1,1 @@
+core.exe run -c config.json

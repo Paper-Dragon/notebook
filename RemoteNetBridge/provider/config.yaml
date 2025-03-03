@@ -1,0 +1,42 @@
+mixed-port: 7890
+# https://d.metacubex.one
+# http://yacd.metacubex.one/
+# http://board.zash.run.place/#/settings
+external-controller: 127.0.0.1:9090
+
+
+mode: rule
+allow-lan: true
+
+log-level: debug # 日志等级 silent/error/warning/info/debug
+
+dns:
+  enable: true
+
+sniffer:
+  enable: true
+
+#  find-process-mode has 3 values:always, strict, off
+#  - always, 开启，强制匹配所有进程
+#  - strict, 默认，由 mihomo 判断是否开启
+#  - off, 不匹配进程，推荐在路由器上使用此模式
+find-process-mode: always
+
+
+
+proxies:
+  - name: 直连节点
+    type: direct
+    udp: true
+    # ip-version: ipv4
+    # interface-name: eth0
+    # routing-mark: 1234
+
+proxy-groups:
+  - name: 直连组
+    type: select
+    proxies:
+      - 直连节点
+
+rules:
+  - MATCH,直连组
