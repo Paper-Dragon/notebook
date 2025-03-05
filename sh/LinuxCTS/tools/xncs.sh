@@ -34,18 +34,6 @@ rm -rf /tmp/report && mkdir /tmp/report
 echo "正在安装必要的依赖，请耐心等待..."
 
 
-
-# Install Virt-what
-if  [ ! -e '/usr/sbin/virt-what' ]; then
-    echo "Installing Virt-What......"
-    if [ "${release}" == "centos" ]; then
-        yum -y install virt-what > /dev/null 2>&1
-    else
-        apt-get update
-        apt-get -y install virt-what > /dev/null 2>&1
-    fi
-fi
-
 # Install uuid
 echo "Installing uuid......"
 if [ "${release}" == "centos" ]; then
@@ -104,19 +92,6 @@ calc_disk() {
     echo ${total_size}
 }
 
-virt_check(){
-	if [[ `virt-what` == "openvz" ]];then
-		echo -e "${SKYBLUE}OVZ 虚拟架构${PLAIN}"
-	elif [[ `virt-what` == "kvm" ]];then
-		echo -e "${SKYBLUE}KVM 虚拟架构${PLAIN}"
-	elif [[ `virt-what` == "vmware" ]];then
-		echo -e "${SKYBLUE}VMware 虚拟架构${PLAIN}"
-	elif [[ `virt-what` == "hyperv" ]];then
-		echo -e "${SKYBLUE}Hyper-V 虚拟架构${PLAIN}"
-	else
-		echo -e "${SKYBLUE}未知 虚拟架构${PLAIN}"
-	fi
-}
 
 cname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo | sed 's/^[ \t]*//;s/[ \t]*$//' )
 cores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
@@ -137,7 +112,8 @@ disk_total_size=$( calc_disk ${disk_size1[@]} )
 disk_used_size=$( calc_disk ${disk_size2[@]} )
 IP=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}')
 IPaddr=$(curl -s myip.ipip.net | awk -F '：' '{print $3}')
-virt=$( virt_check )
+source <(curl -s ${download_url}/os/all/init.sh)
+virt_check
 
 next
 echo -e "CPU 型号       : ${SKYBLUE}$cname${PLAIN}"
@@ -153,7 +129,7 @@ echo -e "系统架构       : ${SKYBLUE}$arch ($lbit Bit)${PLAIN}"
 echo -e "系统内核       : ${SKYBLUE}$kern${PLAIN}"
 echo -e "服务器IP       : ${SKYBLUE}$IP${PLAIN}"
 echo -e "机房位置       : ${SKYBLUE}$IPaddr${PLAIN}"
-echo -e "虚拟化平台     : ${SKYBLUE}$virt${PLAIN}"
+echo -e "虚拟化平台     : ${SKYBLUE}$virtual 虚拟化${PLAIN}"
 
 next
 io1=$( io_test )

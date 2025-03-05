@@ -1,42 +1,23 @@
 #!/usr/bin/env bash
 
-url=https://ifconfig.icu
-country=$(curl -s ${url}/country)
-if [[ $country == *"China"* ]]; then
-    download_url=https://gitee.com/muaimingjun/LinuxCTS/raw/main
-else
-    download_url=https://raw.githubusercontent.com/hyh1750522171/LinuxCTS/main
-fi
-
-#安装依赖
-sys_install(){
-    echo -e "${RedBG}检查系统依赖...${Font}"
-    if ! type wget >/dev/null 2>&1; then
-        echo -e "${RedBG}wget 未安装，准备安装！${Font}"
-	    install wget
-        judge "wget 安装"
-    fi
-
-    if ! type curl >/dev/null 2>&1; then
-        echo -e "${RedBG}curl 未安装，准备安装！${Font}"
-	    install curl
-        judge "curl 安装"
-    fi
-}
-
+echo "正在检测机器所在国家和地区...请稍后...." 
+sleep 1
+# url=https://ifconfig.icu
+# country=$(curl -s ${url}/country)
+# if [[ $country == *"China"* ]]; then
+#     download_url=https://gitee.com/muaimingjun/LinuxCTS/raw/main
+# else
+#     download_url=https://raw.githubusercontent.com/hyh1750522171/LinuxCTS/main
+# fi
+download_url=https://gitee.com/muaimingjun/LinuxCTS/raw/main
 # 引用全局初始化脚本
 source <(curl -s ${download_url}/os/all/init.sh)
 
-# 错误处理
-handle_error() {
-    echo -e "${RedBG}Error: $1${Font}"
-    exit 1
-}
 
 # 检查命令是否存在
 check_command() {
     if ! command -v $1 &> /dev/null; then
-        handle_error "$1 command not found"
+        echo -e "${RedBG}Error: $1 没装 ${Font}"
     fi
 }
 

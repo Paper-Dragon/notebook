@@ -31,6 +31,8 @@ tram=$( awk '/MemTotal/{total=$2;unit=$3;if(unit=="kB"){total/=1024;}else if(uni
 uram=$( awk '/MemTotal/{total=$2;unit=$3;if(unit=="kB"){total/=1024;}else if(unit=="bytes"){total/=(1024*1024);}print int(total)}' /proc/meminfo )
 ipaddr=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print $2}')
 ipdz=$(curl -s myip.ipip.net | awk -F '：' '{print $3}')
+sysarch="$(uname -m)"
+
 
 #检查账号
 check_root(){
@@ -56,13 +58,13 @@ function countdown_sleep() {
 
 # 检查是否安装成功
 judge() {
-  if [[ $? -eq 0 ]]; then
-    echo -e "${OK} ${GreenBG} $1 完成 ${Font}"
-    sleep 1
-  else
-    echo -e "${Error} ${RedBG} $1 失败 ${Font}"
-    exit
-  fi
+    if [[ $? -eq 0 ]]; then
+        echo -e "${OK} ${GreenBG} $1 完成 ${Font}"
+        sleep 1
+    else
+        echo -e "${Error} ${RedBG} $1 失败 ${Font}"
+        exit
+    fi
 }
 
 # 定义函数，使其可以接受参数
@@ -85,120 +87,6 @@ install_docker(){
     fi
 }
 
-# 系统架构
-SystemInfo_GetSystemBit() {
-    local sysarch="$(uname -m)"
-    if [ "${sysarch}" = "unknown" ] || [ "${sysarch}" = "" ]; then
-        local sysarch="$(arch)"
-    fi
-    if [ "${sysarch}" = "x86_64" ]; then
-        # X86平台 64位
-        Bench_Result_SystemBit_Short="64"
-        Bench_Result_SystemBit_Full="amd64"
-    elif [ "${sysarch}" = "i386" ] || [ "${sysarch}" = "i686" ]; then
-        # X86平台 32位
-        Bench_Result_SystemBit_Short="32"
-        Bench_Result_SystemBit_Full="i386"
-    elif [ "${sysarch}" = "armv7l" ] || [ "${sysarch}" = "armv8" ] || [ "${sysarch}" = "armv8l" ] || [ "${sysarch}" = "aarch64" ]; then
-        # ARM平台 暂且将32位/64位统一对待
-        Bench_Result_SystemBit_Short="arm"
-        Bench_Result_SystemBit_Full="arm"
-    else
-        Bench_Result_SystemBit_Short="unknown"
-        Bench_Result_SystemBit_Full="unknown"                
-    fi
-}
-
-# 系统版本
-SystemInfo_GetOSRelease() {
-    if [ -f "/etc/centos-release" ]; then # CentOS
-        Var_OSRelease="centos"
-        local Var_OSReleaseFullName="$(cat /etc/os-release | awk -F '[= "]' '/PRETTY_NAME/{print $3,$4}')"
-        if [ "$(rpm -qa | grep -o el6 | sort -u)" = "el6" ]; then
-            Var_CentOSELRepoVersion="6"
-            local Var_OSReleaseVersion="$(cat /etc/centos-release | awk '{print $3}')"
-        elif [ "$(rpm -qa | grep -o el7 | sort -u)" = "el7" ]; then
-            Var_CentOSELRepoVersion="7"
-            local Var_OSReleaseVersion="$(cat /etc/centos-release | awk '{print $4}')"
-        elif [ "$(rpm -qa | grep -o el8 | sort -u)" = "el8" ]; then
-            Var_CentOSELRepoVersion="8"
-            local Var_OSReleaseVersion="$(cat /etc/centos-release | awk '{print $4}')"
-        else
-            local Var_CentOSELRepoVersion="unknown"
-            local Var_OSReleaseVersion="<Unknown Release>"
-        fi
-        local Var_OSReleaseArch="$(arch)"
-        Bench_Result_OSReleaseFullName="$Var_OSReleaseFullName $Var_OSReleaseVersion ($Var_OSReleaseArch)"
-    elif [ -f "/etc/redhat-release" ]; then # RedHat
-        Var_OSRelease="rhel"
-        local Var_OSReleaseFullName="$(cat /etc/os-release | awk -F '[= "]' '/PRETTY_NAME/{print $3,$4}')"
-        if [ "$(rpm -qa | grep -o el6 | sort -u)" = "el6" ]; then
-            Var_RedHatELRepoVersion="6"
-            local Var_OSReleaseVersion="$(cat /etc/redhat-release | awk '{print $3}')"
-        elif [ "$(rpm -qa | grep -o el7 | sort -u)" = "el7" ]; then
-            Var_RedHatELRepoVersion="7"
-            local Var_OSReleaseVersion="$(cat /etc/redhat-release | awk '{print $4}')"
-        elif [ "$(rpm -qa | grep -o el8 | sort -u)" = "el8" ]; then
-            Var_RedHatELRepoVersion="8"
-            local Var_OSReleaseVersion="$(cat /etc/redhat-release | awk '{print $4}')"
-        else
-            local Var_RedHatELRepoVersion="unknown"
-            local Var_OSReleaseVersion="<Unknown Release>"
-        fi
-        local Var_OSReleaseArch="$(arch)"
-        Bench_Result_OSReleaseFullName="$Var_OSReleaseFullName $Var_OSReleaseVersion ($Var_OSReleaseArch)"
-    elif [ -f "/etc/fedora-release" ]; then # Fedora
-        Var_OSRelease="fedora"
-        local Var_OSReleaseFullName="$(cat /etc/os-release | awk -F '[= "]' '/PRETTY_NAME/{print $3}')"
-        local Var_OSReleaseVersion="$(cat /etc/fedora-release | awk '{print $3,$4,$5,$6,$7}')"
-        local Var_OSReleaseArch="$(arch)"
-        Bench_Result_OSReleaseFullName="$Var_OSReleaseFullName $Var_OSReleaseVersion ($Var_OSReleaseArch)"
-    elif [ -f "/etc/lsb-release" ]; then # Ubuntu
-        Var_OSRelease="ubuntu"
-        local Var_OSReleaseFullName="$(cat /etc/os-release | awk -F '[= "]' '/NAME/{print $3}' | head -n1)"
-        local Var_OSReleaseVersion="$(cat /etc/os-release | awk -F '[= "]' '/VERSION/{print $3,$4,$5,$6,$7}' | head -n1)"
-        local Var_OSReleaseArch="$(arch)"
-        Bench_Result_OSReleaseFullName="$Var_OSReleaseFullName $Var_OSReleaseVersion ($Var_OSReleaseArch)"
-        Var_OSReleaseVersion_Short="$(cat /etc/lsb-release | awk -F '[= "]' '/DISTRIB_RELEASE/{print $2}')"
-    elif [ -f "/etc/debian_version" ]; then # Debian
-        Var_OSRelease="debian"
-        local Var_OSReleaseFullName="$(cat /etc/os-release | awk -F '[= "]' '/PRETTY_NAME/{print $3,$4}')"
-        local Var_OSReleaseVersion="$(cat /etc/debian_version | awk '{print $1}')"
-        local Var_OSReleaseVersionShort="$(cat /etc/debian_version | awk '{printf "%d\n",$1}')"
-        if [ "${Var_OSReleaseVersionShort}" = "7" ]; then
-            Var_OSReleaseVersion_Short="7"
-            Var_OSReleaseVersion_Codename="wheezy"
-            local Var_OSReleaseFullName="${Var_OSReleaseFullName} \"Wheezy\""
-        elif [ "${Var_OSReleaseVersionShort}" = "8" ]; then
-            Var_OSReleaseVersion_Short="8"
-            Var_OSReleaseVersion_Codename="jessie"
-            local Var_OSReleaseFullName="${Var_OSReleaseFullName} \"Jessie\""
-        elif [ "${Var_OSReleaseVersionShort}" = "9" ]; then
-            Var_OSReleaseVersion_Short="9"
-            Var_OSReleaseVersion_Codename="stretch"
-            local Var_OSReleaseFullName="${Var_OSReleaseFullName} \"Stretch\""
-        elif [ "${Var_OSReleaseVersionShort}" = "10" ]; then
-            Var_OSReleaseVersion_Short="10"
-            Var_OSReleaseVersion_Codename="buster"
-            local Var_OSReleaseFullName="${Var_OSReleaseFullName} \"Buster\""
-        else
-            Var_OSReleaseVersion_Short="sid"
-            Var_OSReleaseVersion_Codename="sid"
-            local Var_OSReleaseFullName="${Var_OSReleaseFullName} \"Sid (Testing)\""
-        fi
-        local Var_OSReleaseArch="$(arch)"
-        Bench_Result_OSReleaseFullName="$Var_OSReleaseFullName $Var_OSReleaseVersion ($Var_OSReleaseArch)"
-    elif [ -f "/etc/alpine-release" ]; then # Alpine Linux
-        Var_OSRelease="alpinelinux"
-        local Var_OSReleaseFullName="$(cat /etc/os-release | awk -F '[= "]' '/NAME/{print $3,$4}' | head -n1)"
-        local Var_OSReleaseVersion="$(cat /etc/alpine-release | awk '{print $1}')"
-        local Var_OSReleaseArch="$(arch)"
-        Bench_Result_OSReleaseFullName="$Var_OSReleaseFullName $Var_OSReleaseVersion ($Var_OSReleaseArch)"
-    else
-        Var_OSRelease="unknown" # 未知系统分支
-        Bench_Result_OSReleaseFullName="[Error: Unknown Linux Branch !]"
-    fi
-}
 
 
 # 安装软件包
@@ -278,3 +166,90 @@ remove() {
 	return
 }
 
+# 虚拟化判断
+virt_check() {
+    if [ -f "/usr/bin/systemd-detect-virt" ]; then
+    Var_VirtType="$(/usr/bin/systemd-detect-virt)"
+    # 虚拟机检测
+    if [ "${Var_VirtType}" = "qemu" ]; then
+        virtual="QEMU"
+    elif [ "${Var_VirtType}" = "kvm" ]; then
+        virtual="KVM"
+    elif [ "${Var_VirtType}" = "zvm" ]; then
+        virtual="S390 Z/VM"
+    elif [ "${Var_VirtType}" = "vmware" ]; then
+        virtual="VMware"
+    elif [ "${Var_VirtType}" = "microsoft" ]; then
+        virtual="Microsoft Hyper-V"
+    elif [ "${Var_VirtType}" = "xen" ]; then
+        virtual="Xen Hypervisor"
+    elif [ "${Var_VirtType}" = "bochs" ]; then
+        virtual="BOCHS"
+    elif [ "${Var_VirtType}" = "uml" ]; then
+        virtual="User-mode Linux"
+    elif [ "${Var_VirtType}" = "parallels" ]; then
+        virtual="Parallels"
+    elif [ "${Var_VirtType}" = "bhyve" ]; then
+        virtual="FreeBSD Hypervisor"
+    # 容器虚拟化检测
+    elif [ "${Var_VirtType}" = "openvz" ]; then
+        virtual="OpenVZ"
+    elif [ "${Var_VirtType}" = "lxc" ]; then
+        virtual="LXC"
+    elif [ "${Var_VirtType}" = "lxc-libvirt" ]; then
+        virtual="LXC (libvirt)"
+    elif [ "${Var_VirtType}" = "systemd-nspawn" ]; then
+        virtual="Systemd nspawn"
+    elif [ "${Var_VirtType}" = "docker" ]; then
+        virtual="Docker"
+    elif [ "${Var_VirtType}" = "rkt" ]; then
+        virtual="RKT"
+    # 特殊处理
+    elif [ -c "/dev/lxss" ]; then # 处理WSL虚拟化
+        Var_VirtType="wsl"
+        virtual="Windows Subsystem for Linux (WSL)"
+    # 未匹配到任何结果, 或者非虚拟机
+    elif [ "${Var_VirtType}" = "none" ]; then
+        Var_VirtType="dedicated"
+        virtual="None"
+        local Var_BIOSVendor
+        Var_BIOSVendor="$(dmidecode -s bios-vendor)"
+        if [ "${Var_BIOSVendor}" = "SeaBIOS" ]; then
+        Var_VirtType="Unknown"
+        virtual="Unknown with SeaBIOS BIOS"
+        else
+        Var_VirtType="dedicated"
+        virtual="Dedicated with ${Var_BIOSVendor} BIOS"
+        fi
+    fi
+    elif [ ! -f "/usr/sbin/virt-what" ]; then
+    Var_VirtType="Unknown"
+    virtual="[Error: virt-what not found !]"
+    elif [ -f "/.dockerenv" ]; then # 处理Docker虚拟化
+    Var_VirtType="docker"
+    virtual="Docker"
+    elif [ -c "/dev/lxss" ]; then # 处理WSL虚拟化
+    Var_VirtType="wsl"
+    virtual="Windows Subsystem for Linux (WSL)"
+    else # 正常判断流程
+    Var_VirtType="$(virt-what | xargs)"
+    local Var_VirtTypeCount
+    Var_VirtTypeCount="$(echo $Var_VirtTypeCount | wc -l)"
+    if [ "${Var_VirtTypeCount}" -gt "1" ]; then # 处理嵌套虚拟化
+        virtual="echo ${Var_VirtType}"
+        Var_VirtType="$(echo ${Var_VirtType} | head -n1)"                          # 使用检测到的第一种虚拟化继续做判断
+    elif [ "${Var_VirtTypeCount}" -eq "1" ] && [ "${Var_VirtType}" != "" ]; then # 只有一种虚拟化
+        virtual="${Var_VirtType}"
+    else
+        local Var_BIOSVendor
+        Var_BIOSVendor="$(dmidecode -s bios-vendor)"
+        if [ "${Var_BIOSVendor}" = "SeaBIOS" ]; then
+        Var_VirtType="Unknown"
+        virtual="Unknown with SeaBIOS BIOS"
+        else
+        Var_VirtType="dedicated"
+        virtual="Dedicated with ${Var_BIOSVendor} BIOS"
+        fi
+    fi
+    fi
+}

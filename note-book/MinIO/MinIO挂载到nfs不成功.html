@@ -52,7 +52,7 @@
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>MinIO挂载到nfs不成功 | 运维开发绿皮书</title><meta name="description" content="MinIO挂载到nfs不成功 ERROR Unable to initialize backend: no locks available. 001.png 服务器做了nas共享存储后，修改minio的数据目录为nas共享目录，启动minio服务失败，报错信息如上图所示： 从这个日志来看，应该是minio拿不到nfs文件系统的锁。 解决方案 参考 Gi...">
     <link rel="preload" href="/assets/style-CldDG_oh.css" as="style"><link rel="stylesheet" href="/assets/style-CldDG_oh.css">
-    <link rel="modulepreload" href="/assets/app-BukgvaZj.js"><link rel="modulepreload" href="/assets/MinIO挂载到nfs不成功.html-BmWelamJ.js">
+    <link rel="modulepreload" href="/assets/app-CIflzKGN.js"><link rel="modulepreload" href="/assets/MinIO挂载到nfs不成功.html-BD2CV77O.js">
     
   </head>
   <body>
@@ -60,7 +60,7 @@
 
 使用nfsv4,而不是用nfsv3
 </code></pre><p>参考</p><p>GitLab底层也是用的minio,GitLab官方文档是这么写的</p><p>File locking: GitLab requires advisory file locking, which is only supported natively in NFS version 4. NFSv3 also supports locking as long as Linux Kernel 2.6.5+ is used. We recommend using version 4 and do not specifically test NFSv3</p><p>https://docs.gitlab.com/ee/administration/nfs.html</p><p><img src="/assets/5ab750ee93dd42e3bb43496ffff3b6fc-16918418809433-3OixNbBt.png" alt="002.jpg"> 总结</p><p>最后我们选择了方案2，但是Minio官网是推荐用nfsv4协议挂载.</p></div><!----><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">上次编辑于: </span><span class="vp-meta-info" data-allow-mismatch="text">2024/11/1 09:17:48</span></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><!----><a class="route-link auto-link next" href="/note-book/MinIO/%E4%BD%BF%E7%94%A8Docker%E9%83%A8%E7%BD%B2MinIO.html" aria-label="使用Docker部署MinIO" iconsizing="both"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">使用Docker部署MinIO<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-BukgvaZj.js" defer></script>
+    <script type="module" src="/assets/app-CIflzKGN.js" defer></script>
 
 
   </body>

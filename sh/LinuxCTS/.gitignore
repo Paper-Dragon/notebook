@@ -6,7 +6,7 @@
 .vscode/
 test*
 
-log
+# log
 *.pmcache
 settings.cfg
 

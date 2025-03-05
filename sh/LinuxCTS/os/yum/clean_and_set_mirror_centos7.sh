@@ -15,8 +15,15 @@ Warning="${Red}[警告]${Font}"
 source '/etc/os-release'
 VERSION="${VERSION_ID}"
 
-CTS_PATH="https://www.geekery.cn/sh/LinuxCTS"
-source <(${CTS_PATH}/os/all/init.sh)
+judge() {
+    if [[ $? -eq 0 ]]; then
+        echo -e "${OK} ${GreenBG} $1 完成 ${Font}"
+        sleep 1
+    else
+        echo -e "${Error} ${RedBG} $1 失败 ${Font}"
+        exit
+    fi
+}
 
 check_version() {
     if [ "$VERSION" != "7" ]; then
