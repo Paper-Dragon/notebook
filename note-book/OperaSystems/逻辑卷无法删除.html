@@ -52,7 +52,7 @@
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>逻辑卷删除问题 | 运维开发绿皮书</title><meta name="description" content="逻辑卷删除问题 存储池名称：fs2 逻辑卷名称：fs2 逻辑卷文件系统被占用(Logical volume /dev// contains a filesystem in use.) [root@f1s2001 ldnas]# lvremove -f /dev/fs2/fs2 Logical volume fs2/fs2 contains a file...">
     <link rel="preload" href="/assets/style-D-9z2Qoc.css" as="style"><link rel="stylesheet" href="/assets/style-D-9z2Qoc.css">
-    <link rel="modulepreload" href="/assets/app-BRXYXCjQ.js"><link rel="modulepreload" href="/assets/逻辑卷无法删除.html-Cy-a_-OX.js">
+    <link rel="modulepreload" href="/assets/app-Ctc84h_L.js"><link rel="modulepreload" href="/assets/逻辑卷无法删除.html-DgKG1TrO.js">
     
   </head>
   <body>
@@ -69,7 +69,7 @@
 </code></pre><p>之后再执行删除操作 逻辑卷被其他设备占用(Logical volume /dev/<em>/</em> is used by another device.)</p><p>[root@f1s2001 ldnas]# lvremove -f /dev/fs2/fs2 Logical volume fs2/fs2 is used by another device. 逻辑卷被其他设备占用了，需要先释放掉设备，首先查找到逻辑卷的映射 [root@f1s2001 fine1]# dmsetup info -c | grep fs2 fs2-fs2 253 1 L--w 1 1 0 LVM-OC1NaKa5z4xnsTcIS5chrT4nclVg53lBhaaduekEB7M50Qz70o9vg4sDfSdQSaq9</p><p>然后查找映射设备，命令中的253 和1 在上个命令返回结果中 [root@f1s2001 fine1]# ls -la /sys/dev/block/253:1/holders total 0 drwxr-xr-x 2 root root 0 Nov 18 10:25 . drwxr-xr-x 8 root root 0 Nov 18 10:07 .. lrwxrwxrwx 1 root root 0 Nov 18 10:25 md125 -&gt; ../../md125</p><p>删除md 设备，命令如下： [root@f1s2001 fine1]# mdadm -S /dev/md125 mdadm: stopped /dev/md125</p><pre><code>*若为dm 设备，则删除对应dm-？设备，如：
      dmsetup remove /dev/dm-18
 </code></pre><p>之后再进行逻辑卷的删除</p></div><!----><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="update-time"><span class="vp-meta-label">上次编辑于: </span><span class="vp-meta-info" data-allow-mismatch="text">2024/3/26 05:54:05</span></div><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/OperaSystems/Linux%E7%BD%91%E7%BB%9C%E5%86%85%E6%A0%B8%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96%E7%A7%98%E7%B1%8D.html" aria-label="超全Linux网络内核参数优化秘籍" iconsizing="both"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->超全Linux网络内核参数优化秘籍</div></a><!----></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-BRXYXCjQ.js" defer></script>
+    <script type="module" src="/assets/app-Ctc84h_L.js" defer></script>
 
 
   </body>
