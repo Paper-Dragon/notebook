@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 10 Mar 2025 03:52:06 GMT</pubDate>
-    <lastBuildDate>Mon, 10 Mar 2025 03:52:06 GMT</lastBuildDate>
+    <pubDate>Mon, 10 Mar 2025 03:55:01 GMT</pubDate>
+    <lastBuildDate>Mon, 10 Mar 2025 03:55:01 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -16,11 +16,10 @@
       <link>https://www.geekery.cn/note-book/Rancher/%E6%B8%85%E7%90%86rancher%E8%8A%82%E7%82%B9.html</link>
       <guid>https://www.geekery.cn/note-book/Rancher/%E6%B8%85%E7%90%86rancher%E8%8A%82%E7%82%B9.html</guid>
       <source url="https://www.geekery.cn/rss.xml">清理Rancher节点</source>
-      <description>清理Rancher节点 rancher重新部署，清理不干净的话是个很头疼的事情，官网也给出了清理 残留的Kubernetes组件可能导致资源冲突或部署失败，以下是官方标准清理流程：</description>
-      <pubDate>Fri, 07 Mar 2025 02:06:36 GMT</pubDate>
+      <description>清理Rancher节点 rancher重新部署，清理不干净的话是个很头疼的事情，残留的Kubernetes组件可能导致资源冲突或部署失败，以下是官方标准清理流程：</description>
+      <pubDate>Mon, 10 Mar 2025 03:51:41 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>rancher重新部署，清理不干净的话是个很头疼的事情，官网也给出了清理</h2>
-<p><strong>残留的Kubernetes组件可能导致资源冲突或部署失败</strong>，以下是官方标准清理流程：</p>
+<h2>rancher重新部署，清理不干净的话是个很头疼的事情，<strong>残留的Kubernetes组件可能导致资源冲突或部署失败</strong>，以下是官方标准清理流程：</h2>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#复制粘贴就可以，亲测无误（注意根据实际情况修改安装目录/var/lib/rancher）</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  disable</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kubelet.service</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  disable</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> kube-scheduler.service</span></span>
@@ -53,7 +52,7 @@
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -rf</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/kubelet/</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -rf</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/log/containers/</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -rf</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/log/pods/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 1.sh</span></span>
+<span class="line"></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">network_interface</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ls</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /sys/class/net`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">for</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> net_inter</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> in</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $network_interface</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">do</span></span>
@@ -61,11 +60,10 @@
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> delete</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $net_inter</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">  fi</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">done</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">END</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sh</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 1.sh</span></span>
+<span class="line"></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#因为k8s会进行一些临时配置：防火墙、网络缓存等，需要重启服务器</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> reboot</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>aapanel 7.x 中文语言配置指南</title>
