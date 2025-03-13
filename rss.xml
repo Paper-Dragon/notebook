@@ -6,11 +6,34 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 13 Mar 2025 05:25:52 GMT</pubDate>
-    <lastBuildDate>Thu, 13 Mar 2025 05:25:52 GMT</lastBuildDate>
+    <pubDate>Thu, 13 Mar 2025 05:38:17 GMT</pubDate>
+    <lastBuildDate>Thu, 13 Mar 2025 05:38:17 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Docker老版本runc报错无法启动</title>
+      <link>https://www.geekery.cn/note-book/Docker/Docker%E8%80%81%E7%89%88%E6%9C%ACrunc%E6%8A%A5%E9%94%99%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8.html</link>
+      <guid>https://www.geekery.cn/note-book/Docker/Docker%E8%80%81%E7%89%88%E6%9C%ACrunc%E6%8A%A5%E9%94%99%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Docker老版本runc报错无法启动</source>
+      <description>Docker老版本runc报错无法启动 系统: CentOS 7 Docker版本: 1.13.1 问题概述 执行命令 docker start container-name 无法启动， 报错如下 解决方案 出现原因是docker误认为runc状态错误，这里实际上是docker的bug。 解决方法是从内存中删除错误的状态。</description>
+      <pubDate>Thu, 13 Mar 2025 05:34:46 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>系统: CentOS 7
+Docker版本: 1.13.1</p>
+</blockquote>
+<h2>问题概述</h2>
+<p>执行命令 <code>docker start container-name</code> 无法启动， 报错如下</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Error</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> response</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> from</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> daemon:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OCI</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> runtime</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> create</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> failed:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> container</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> with</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> id</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> exists:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">aaabbbbccccddd</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Error:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> failed</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> start</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> containers:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> container-name</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>解决方案</h2>
+<p>出现原因是docker误认为runc状态错误，这里实际上是docker的bug。 解决方法是从内存中删除错误的状态。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /run/runc/</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rm</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -rfv</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> aaabbbbccccddd</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>清理Rancher节点</title>
       <link>https://www.geekery.cn/note-book/Rancher/%E6%B8%85%E7%90%86rancher%E8%8A%82%E7%82%B9.html</link>
@@ -5526,45 +5549,6 @@ Big O：
 <h2>step4</h2>
 <p>插入u盾到usb口，将会自动弹出网页,选中证书并确认，将会弹出密码输入窗口。u盾即可正常使用。</p>
 <p></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Nginx的url过长导致fastcgi协议崩溃</title>
-      <link>https://www.geekery.cn/note-book/Nginx-OpenResty/Nginx%E7%9A%84url%E8%BF%87%E9%95%BF%E5%AF%BC%E8%87%B4fastcgi%E5%8D%8F%E8%AE%AE%E5%B4%A9%E6%BA%83.html</link>
-      <guid>https://www.geekery.cn/note-book/Nginx-OpenResty/Nginx%E7%9A%84url%E8%BF%87%E9%95%BF%E5%AF%BC%E8%87%B4fastcgi%E5%8D%8F%E8%AE%AE%E5%B4%A9%E6%BA%83.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Nginx的url过长导致fastcgi协议崩溃</source>
-      <description>Nginx的url过长导致fastcgi协议崩溃 Nginx的url过长出现的问题 414 Request-URI Too Large 研发写了个非常脑残的功能，竟然要把图片变成base64编码然后通过patch方法去发送给服务端。我人麻了。竟然要把这么复制的东西放到http head里，这尼玛离谱。下面是这件事的解决过程。 事件原因 研发的postm...</description>
-      <pubDate>Mon, 08 Jan 2024 05:08:02 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>Nginx的url过长出现的问题 414 Request-URI Too Large</p>
-</blockquote>
-<blockquote>
-<p>研发写了个非常脑残的功能，竟然要把图片变成base64编码然后通过patch方法去发送给服务端。我人麻了。竟然要把这么复制的东西放到http head里，这尼玛离谱。下面是这件事的解决过程。</p>
-</blockquote>
-<h2>事件原因</h2>
-<p>研发的postman发出了414错误，报错内容如下：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">414</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Request-URI</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Too</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Large</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 414请求url太大</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>我看到之后，看了他的请求结构，直说他疯了。但是我有不能骂，我怕骂不过他。</p>
-<p>然后我尝试调试这个问题</p>
-<h2>调试过程</h2>
-<p>从网上搜了很多资料都让调试一些nginx配置，实测不生效（nginx模块化设计，在某些模块内已经生效）</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">client_header_buffer_size</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 512k</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">large_client_header_buffers</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 4</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 512k</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">client_max_body_size</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 100m</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>设置了这些参数之后，报错变成了500 服务器内部错误，我心想，问题更严重了，我日！</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[alert] 8300#0: *17306727 fastcgi request record is too big: 66431, client: 192.168.*, server: 192.168.0.183, request: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"GET xxxx...."</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>原因解决</h2>
-<p>从大佬 潘广宇 博客中看到，他翻看了nginx源码，找到原因，代码写死了长度。</p>
-<p>https://github.com/nginx/nginx/blob/f255815f5d161fab0dd310fe826d4f7572e141f2/src/http/modules/ngx_http_fastcgi_module.c#L994</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">len</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &gt; </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">65535</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    ngx_log_error(NGX_LOG_ALERT,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> r</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">-&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">connection</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">-&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">log,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 0,</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">                  "fastcgi request record is too big: %uz"</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> len</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">);</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">    return</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> NGX_ERROR</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>深入探究</h2>
-<p>当GET请求的参数大于65535字节时，Nginx 转发给 FastCGI 的请求头将会大于65535字节，<strong>FastCGI 协议限制 64k 数据</strong>，Nginx会自动抛出异常并中断了请求。</p>
 ]]></content:encoded>
     </item>
   </channel>
