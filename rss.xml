@@ -6,11 +6,42 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 21 Mar 2025 10:14:44 GMT</pubDate>
-    <lastBuildDate>Fri, 21 Mar 2025 10:14:44 GMT</lastBuildDate>
+    <pubDate>Mon, 24 Mar 2025 04:33:35 GMT</pubDate>
+    <lastBuildDate>Mon, 24 Mar 2025 04:33:35 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>在Windows11上构建和运行ARM架构的Docker容器</title>
+      <link>https://www.geekery.cn/note-book/Docker/%E5%9C%A8Windows11%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8CARM%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</link>
+      <guid>https://www.geekery.cn/note-book/Docker/%E5%9C%A8Windows11%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8CARM%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">在Windows11上构建和运行ARM架构的Docker容器</source>
+      <description>在Windows11上构建和运行ARM架构的Docker容器 安装 Docker Desktop 访问 Docker 官网下载最新版本 完成安装后，进入以下配置： 打开 Docker Desktop Settings 导航至 General 选项 勾选 Use the WSL 2 based engine 配置多架构构建环境 启用 Buildx 工具：...</description>
+      <pubDate>Fri, 21 Mar 2025 10:11:32 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>安装 Docker Desktop</h2>
+<p>访问 <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener noreferrer">Docker 官网</a>下载最新版本
+完成安装后，进入以下配置：</p>
+<ul>
+<li>打开 Docker Desktop Settings</li>
+<li>导航至 <strong>General</strong> 选项</li>
+<li>勾选 <strong>Use the WSL 2 based engine</strong></li>
+</ul>
+<h2>配置多架构构建环境</h2>
+<p>启用 Buildx 工具：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> buildx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> create</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --name</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> multiarch-builder</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --use</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>验证构建器状态：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> buildx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ls</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>multiarch-builder 状态为 running</p>
+<p>安装 QEMU 模拟支持：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> run</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --rm</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --privileged</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> multiarch/qemu-user-static</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --reset</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -p</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yes</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>构建项目</h2>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> buildx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> build</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  --platform</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> linux/arm64</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  -t</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sherpa-restful-api:1.0.0</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  --load</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>一键安装Conda</title>
       <link>https://www.geekery.cn/note-book/Anaconda/%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85Conda.html</link>
@@ -5521,20 +5552,6 @@ Big O：
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">a </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "^^hlonqs^^'!nr!(-rxrsdl'!rgtscnvm,r,s0/!("</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">b </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ''</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">join</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">''</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">join</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">([</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">chr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">ord</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(i)</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">+</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">for</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> i </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">in</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a]))</span></span>
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">print</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(b)</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>用shell生成包含大写、小写、数字、特殊字符的随机字符串</title>
-      <link>https://www.geekery.cn/note-book/LinuxOperaSystem/%E7%94%A8shell%E7%94%9F%E6%88%90%E5%8C%85%E5%90%AB%E5%A4%A7%E5%86%99%E3%80%81%E5%B0%8F%E5%86%99%E3%80%81%E6%95%B0%E5%AD%97%E3%80%81%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2.html</link>
-      <guid>https://www.geekery.cn/note-book/LinuxOperaSystem/%E7%94%A8shell%E7%94%9F%E6%88%90%E5%8C%85%E5%90%AB%E5%A4%A7%E5%86%99%E3%80%81%E5%B0%8F%E5%86%99%E3%80%81%E6%95%B0%E5%AD%97%E3%80%81%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%AD%97%E7%AC%A6%E4%B8%B2.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">用shell生成包含大写、小写、数字、特殊字符的随机字符串</source>
-      <description>用shell生成包含大写、小写、数字、特殊字符的随机字符串 tr命令</description>
-      <pubDate>Fri, 12 Jan 2024 05:37:41 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h1><strong>tr命令</strong></h1>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># &lt;/dev/urandom tr -dc  'A-Za-z0-9!"#$%&amp;'\''()*+,-./:;&lt;=&gt;?@[\]^_`{|}~' | head -c 15 ; echo</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># tr -dc   'A-Za-z0-9!"#$%&amp;'\''()*+,-./:;&lt;=&gt;?@[\]^_`{|}~'   &lt;/dev/urandom | head -c 15; echo</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
