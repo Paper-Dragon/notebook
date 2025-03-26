@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 24 Mar 2025 04:33:35 GMT</pubDate>
-    <lastBuildDate>Mon, 24 Mar 2025 04:33:35 GMT</lastBuildDate>
+    <pubDate>Wed, 26 Mar 2025 15:09:51 GMT</pubDate>
+    <lastBuildDate>Wed, 26 Mar 2025 15:09:51 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -542,16 +542,21 @@ Docker版本: 1.13.1</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>VMware最新下载地址</title>
+      <title>VMware最新下载地址（纪念碑）</title>
       <link>https://www.geekery.cn/note-book/VMware/VMware%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.html</link>
       <guid>https://www.geekery.cn/note-book/VMware/VMware%E6%9C%80%E6%96%B0%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">VMware最新下载地址</source>
-      <description>VMware最新下载地址 直接提取了CDN直连地址如下 版本举例： https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.2/24409262/windows/core/VMware-workstation-17.6.2-24409262.exe.tar VMware的直连仓库地址： htt...</description>
+      <source url="https://www.geekery.cn/rss.xml">VMware最新下载地址（纪念碑）</source>
+      <description>VMware最新下载地址（纪念碑） 直接提取了CDN直连地址如下 截至2025年3月26日博通公司已经完全封死CDN下载漏洞 请注册账户并下载： https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&amp;freeDownloa...</description>
       <pubDate>Tue, 31 Dec 2024 06:45:31 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
 <p>直接提取了CDN直连地址如下</p>
 </blockquote>
+<h2>截至2025年3月26日博通公司已经完全封死CDN下载漏洞</h2>
+<p>请注册账户并下载：</p>
+<p>https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&amp;freeDownloads=true</p>
+<p>以下信息为纪念碑信息</p>
+<h2>纪念碑🥲</h2>
 <p>版本举例： <a href="https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.2/24409262/windows/core/VMware-workstation-17.6.2-24409262.exe.tar" target="_blank" rel="noopener noreferrer">https://softwareupdate.vmware.com/cds/vmw-desktop/ws/17.6.2/24409262/windows/core/VMware-workstation-17.6.2-24409262.exe.tar</a></p>
 <p>VMware的直连仓库地址： <a href="https://softwareupdate.vmware.com/cds/vmw-desktop/ws/" target="_blank" rel="noopener noreferrer">https://softwareupdate.vmware.com/cds/vmw-desktop/ws/</a></p>
 ]]></content:encoded>
