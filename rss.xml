@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 03 Apr 2025 06:50:06 GMT</pubDate>
-    <lastBuildDate>Thu, 03 Apr 2025 06:50:06 GMT</lastBuildDate>
+    <pubDate>Mon, 07 Apr 2025 09:35:07 GMT</pubDate>
+    <lastBuildDate>Mon, 07 Apr 2025 09:35:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -1357,14 +1357,25 @@ gitlab</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Windows11安装系统跳过微软账号登录</title>
-      <link>https://www.geekery.cn/note-book/Windows/Windows11%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E8%B7%B3%E8%BF%87%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</link>
-      <guid>https://www.geekery.cn/note-book/Windows/Windows11%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F%E8%B7%B3%E8%BF%87%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Windows11安装系统跳过微软账号登录</source>
-      <description>Windows11安装系统跳过微软账号登录 方式一 适用于24年6月之前的Windows 系统 在安装win11系统，进行到选择语言界面的时候，暂停下。 我们可以按下键盘的Shift+F10按键（部分电脑是Fn+Shift+F10），这时屏幕会出现命令行窗口。 我们需要在命令行内输入代码oobe\bypassnro.cmd然后回车，这时候电脑会重启。 ...</description>
+      <title>Windows11跳过TPM2.0和微软账号登录</title>
+      <link>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87TPM2.0%E5%92%8C%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</link>
+      <guid>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87TPM2.0%E5%92%8C%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Windows11跳过TPM2.0和微软账号登录</source>
+      <description>Windows11跳过TPM2.0和微软账号登录 绕过 TPM2.0 设置区域、时间和输入法 image-20250407172536520 绕过 TPM 这一步是关键，不要点击“现在安装” 按 Shift+F10 呼出命令提示符输入以下命令添加注册表键值。这一步是通过修改注册表绕过 TPM 检查继续安装系统。如果不绕过 TPM 检查则无法安装 Win...</description>
       <pubDate>Thu, 26 Sep 2024 05:42:40 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>方式一</h2>
+<h2>绕过 TPM2.0</h2>
+<h3>设置区域、时间和输入法</h3>
+<p></p>
+<h3>绕过 TPM</h3>
+<p>这一步是关键，不要点击“现在安装” 按 Shift+F10 呼出命令提示符输入以下命令添加注册表键值。这一步是通过修改注册表绕过 TPM  检查继续安装系统。如果不绕过 TPM 检查则无法安装 Windows 11 会提示“这台电脑无法运行 Windows 11”</p>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>REG ADD HKLM\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d 1</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
+<h3>许可条款</h3>
+<p>出现许可条款则说明已经绕过了 TPM 检查；</p>
+<p></p>
+<h2>跳过微软账户登录</h2>
+<h3>方式一</h3>
 <blockquote>
 <p>适用于24年6月之前的Windows 系统</p>
 </blockquote>
@@ -1375,15 +1386,15 @@ gitlab</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>PS：若无法输入命令，可以电脑插入鼠标点击一下命令行窗口（看到窗口外框变黑）再尝试。</p>
 <p>我们就可以选择 我没有Internet链接 这个选项了（此时计算机如果插着网线正在联网的话需要先把网线拔掉才能有此选项）</p>
 <p></p>
-<h2>方式二</h2>
+<h3>方式二</h3>
 <blockquote>
 <p>适用于24年新版系统安装Windows 11跳过微软账户</p>
 </blockquote>
-<h3>新建用户</h3>
+<h4>新建用户</h4>
 <p>Shift + F10 打开cmd， 不需要任何操作</p>
 <p>Win + R 然后输入 Control 调出 控制面板</p>
 <p>在用户账户界面新建账户，该账户用于以后登陆</p>
-<h3>修改注册表</h3>
+<h4>修改注册表</h4>
 <p>Win+R 输入regedit.exe 调出注册表编辑器</p>
 <p></p>
 <p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE</p>
@@ -1395,7 +1406,7 @@ gitlab</p>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：HideWirelessSetuplnOOBE，将值设置为1</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：SkipMachineOOBE，将值设置为1</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：SkipUserOOBE，将值设置为1</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>重启电脑并禁用无用账户</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4>重启电脑并禁用无用账户</h4>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">禁用如下账户</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Administrator</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">default0</span></span>
