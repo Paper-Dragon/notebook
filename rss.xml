@@ -6,11 +6,31 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 16 Apr 2025 03:00:01 GMT</pubDate>
-    <lastBuildDate>Wed, 16 Apr 2025 03:00:01 GMT</lastBuildDate>
+    <pubDate>Thu, 17 Apr 2025 15:21:30 GMT</pubDate>
+    <lastBuildDate>Thu, 17 Apr 2025 15:21:30 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>在x86-64上构建和运行多种架构的Docker容器</title>
+      <link>https://www.geekery.cn/note-book/Docker/%E5%9C%A8x86-64%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8C%E5%A4%9A%E7%A7%8D%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</link>
+      <guid>https://www.geekery.cn/note-book/Docker/%E5%9C%A8x86-64%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8C%E5%A4%9A%E7%A7%8D%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">在x86-64上构建和运行多种架构的Docker容器</source>
+      <description>在x86-64上构建和运行多种架构的Docker容器 支持Docker Desktop 和 Linux Docker CE 配置多架构构建环境 安装CPU指令集模拟平台 相关信息 安装新版CPU指令集模拟平台 相关信息 使用老版本的模拟器在arm64下出现sudo无法使用的问题，使用新版本可以使用。 https://github.com/tonisti...</description>
+      <pubDate>Thu, 17 Apr 2025 02:12:35 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>支持Docker Desktop 和 Linux Docker CE</p>
+</blockquote>
+<h2>配置多架构构建环境</h2>
+<h3>安装CPU指令集模拟平台</h3>
+<div class="hint-container info">
+<p class="hint-container-title">相关信息</p>
+<p>| 名称                 | 功能描述             | 作用                                                         | 关联场景或示例                                               |
+|</p>
+</div>
+]]></content:encoded>
+    </item>
     <item>
       <title>flutter配置镜像站</title>
       <link>https://www.geekery.cn/note-book/Research_Develop/Flutter/flutter%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E7%AB%99.html</link>
@@ -46,37 +66,6 @@
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span>DART_VM_OPTIONS=--root-certs-file=F:\cer\flutter_pub.pem</span></span>
 <span class="line"><span>fluttter pub get -vv</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>在Windows11上构建和运行ARM架构的Docker容器</title>
-      <link>https://www.geekery.cn/note-book/Docker/%E5%9C%A8Windows11%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8CARM%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</link>
-      <guid>https://www.geekery.cn/note-book/Docker/%E5%9C%A8Windows11%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8CARM%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">在Windows11上构建和运行ARM架构的Docker容器</source>
-      <description>在Windows11上构建和运行ARM架构的Docker容器 安装 Docker Desktop 访问 Docker 官网下载最新版本 完成安装后，进入以下配置： 打开 Docker Desktop Settings 导航至 General 选项 勾选 Use the WSL 2 based engine 配置多架构构建环境 启用 Buildx 工具：...</description>
-      <pubDate>Fri, 21 Mar 2025 10:11:32 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>安装 Docker Desktop</h2>
-<p>访问 <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener noreferrer">Docker 官网</a>下载最新版本
-完成安装后，进入以下配置：</p>
-<ul>
-<li>打开 Docker Desktop Settings</li>
-<li>导航至 <strong>General</strong> 选项</li>
-<li>勾选 <strong>Use the WSL 2 based engine</strong></li>
-</ul>
-<h2>配置多架构构建环境</h2>
-<p>启用 Buildx 工具：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> buildx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> create</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --name</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> multiarch-builder</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --use</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>验证构建器状态：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> buildx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ls</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>multiarch-builder 状态为 running</p>
-<p>安装 QEMU 模拟支持：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> run</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --rm</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --privileged</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> multiarch/qemu-user-static</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --reset</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -p</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yes</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>构建项目</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> buildx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> build</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  --platform</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> linux/arm64</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  -t</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sherpa-restful-api:1.0.0</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  --load</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
     <item>
       <title>一键安装Conda</title>
