@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Thu, 17 Apr 2025 15:26:39 GMT</pubDate>
-    <lastBuildDate>Thu, 17 Apr 2025 15:26:39 GMT</lastBuildDate>
+    <pubDate>Sat, 19 Apr 2025 06:20:41 GMT</pubDate>
+    <lastBuildDate>Sat, 19 Apr 2025 06:20:41 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -2586,16 +2586,16 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <h2>拓扑图</h2>
 <p>在此拓扑中，我们有两个路由器（R1和R2），它们通过Serial0/0/0接口连接，并且它们之间的通信需要通过静态路由来实现。</p>
 <p></p>
-<h2>R1的配置</h2>
-<h3>进入特权模式</h3>
+<h2>R1路由器配置</h2>
+<h3>R1进入特权模式</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">enable</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>进入全局配置模式</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>R1进入全局配置模式</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> terminal</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置静态路由</h3>
 <p>添加静态路由，将目的网络和子网掩码与下一跳地址关联。以下命令配置了到达 <code>10.1.1.0/30</code> 和 <code>10.1.2.0/30</code> 网络的静态路由，下一跳地址为 <code>209.165.200.224</code>：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 10.1.1.0 255.255.255.252 209.165.200.224</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 10.1.2.0 255.255.255.252 209.165.200.224</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>查看路由表</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>R1查看路由表</h3>
 <p>使用 <code>show ip route</code> 命令查看路由表，确保静态路由已经添加：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">do</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> show</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> route</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>示例输出：</p>
@@ -2621,32 +2621,27 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">     209.165.200.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> variably</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnetted,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnets,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> masks</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">C</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       209.165.200.224/30</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Serial0/0/0</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">L</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       209.165.200.225/32</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Serial0/0/0</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>退出配置模式并保存配置</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>R1退出配置模式并保存配置</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# exit</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> write</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> memory</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Building</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configuration...</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[OK]</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>R2的配置</h2>
-<h3>进入特权模式</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>R2路由器配置</h2>
+<h3>R2进入特权模式</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">enable</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>进入全局配置模式</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>R2进入全局配置模式</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> terminal</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置静态路由</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>R2配置静态路由</h3>
 <p>添加静态路由，将目的网络和子网掩码与下一跳地址关联。以下命令配置了到达 <code>192.168.10.0/30</code> 和 <code>192.168.11.0/30</code> 网络的静态路由，下一跳地址为 <code>209.165.200.225</code>：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 192.168.10.0 255.255.255.252 209.165.200.225</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 192.168.11.0 255.255.255.252 209.165.200.225</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>退出配置模式并保存配置</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>R2退出配置模式并保存配置</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# exit</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> write</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> memory</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Building</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configuration...</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[OK]</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>总结</h2>
 <p>在R1和R2上配置静态路由可以确保两个路由器之间的网络流量能够正确地转发。通过这些配置命令，你可以有效地管理和维护网络的路由路径。</p>
-<h2>参考</h2>
-<ul>
-<li><a href="https://www.cisco.com/c/en/us/support/docs/ip/ip-routing/1163-1.html" target="_blank" rel="noopener noreferrer">Cisco路由配置手册</a></li>
-<li><a href="https://www.cisco.com/c/en/us/td/docs/ios/12_4/iproute/command/reference/irp_r.html" target="_blank" rel="noopener noreferrer">静态路由基础</a></li>
-</ul>
 ]]></content:encoded>
     </item>
     <item>
@@ -3224,8 +3219,8 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <p>支持获取账号 /info、/settings 信息</p>
 <p>账号 settings 设置</p>
 <p>支持 niji・journey Bot 和 Midjourney Bot</p>
-<p>zlib-stream 安全压缩传输 https://discord.com/developers/docs/topics/gateway</p>
-<p>内嵌MJ管理后台页面，支持多语言 https://github.com/trueai-org/midjourney-proxy-webui</p>
+<p>zlib-stream 安全压缩传输 <a href="https://discord.com/developers/docs/topics/gateway" target="_blank" rel="noopener noreferrer">https://discord.com/developers/docs/topics/gateway</a></p>
+<p>内嵌MJ管理后台页面，支持多语言 <a href="https://github.com/trueai-org/midjourney-proxy-webui" target="_blank" rel="noopener noreferrer">https://github.com/trueai-org/midjourney-proxy-webui</a></p>
 <p>支持MJ账号的增删改查功能</p>
 <p>支持MJ账号的详细信息查询和账号同步操作</p>
 <p>支持MJ账号的并发队列设置</p>
@@ -3236,10 +3231,9 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <h2>在线预览</h2>
 <p>公益接口为慢速模式，接口免费调用，账号池由赞助者提供，请大家合理使用。</p>
 <ul>
-<li>管理后台：https://ai.trueai.org</li>
+<li>管理后台：<a href="https://ai.trueai.org" target="_blank" rel="noopener noreferrer">https://ai.trueai.org</a></li>
 <li>账号密码：<code>无</code></li>
-<li>公益接口：https://ai.trueai.org/mj</li>
-<li>接口文档：https://ai.trueai.org/swagger</li>
+<li>接口文档：<a href="https://ai.trueai.org/swagger" target="_blank" rel="noopener noreferrer">https://ai.trueai.org/swagger</a></li>
 <li>接口密钥：<code>无</code></li>
 </ul>
 <h2>部署项目</h2>
@@ -5204,12 +5198,12 @@ Big O：
 <p>免费学习使用的Docker镜像拉取加速服务，破解Docker官方限制频率等多种应用场景，无限速拉取镜像。</p>
 <p>很多种功能都是独家支持，源码是闭源的，防止被滥用，根据下面教程设置镜像站即可畅快使用。</p>
 <ul>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E7%AB%99%E6%8B%89%E5%8F%96DockerHub%E7%A7%81%E6%9C%89%E8%B4%A6%E6%88%B7%E7%9A%84%E9%95%9C%E5%83%8F">拉取Dockerhub的私有仓库的镜像加速</a></li>
-<li><a href="#%E9%80%9A%E8%BF%87%E9%95%9C%E5%83%8F%E7%AB%99%E6%8E%A8%E9%80%81%E9%95%9C%E5%83%8F%E5%88%B0DockerHub">推送镜像到Dockerhub账户</a></li>
-<li><a href="#%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85docker">一键安装Docker 加速</a></li>
-<li><a href="#Docker%E9%85%8D%E7%BD%AE%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F">公共仓库的镜像加速</a></li>
-<li><a href="#Docker-search%E5%91%BD%E4%BB%A4%E5%8A%A0%E9%80%9F">Docker Search命令专项加速</a></li>
-<li><a href="#%E9%BB%91%E5%90%8D%E5%8D%95">防火墙和黑名单😢</a></li>
+<li>拉取Dockerhub的私有仓库的镜像加速</li>
+<li>推送镜像到Dockerhub账户</li>
+<li>一键安装Docker 加速</li>
+<li>公共仓库的镜像加速</li>
+<li>Docker Search命令专项加速</li>
+<li>防火墙和黑名单😢</li>
 </ul>
 <h2>Docker配置镜像加速</h2>
 <blockquote>
@@ -5270,7 +5264,7 @@ Big O：
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tag</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt; &lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt;</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这里 <code>&lt;namespace&gt;</code> 可以是用户名或组织名，<code>&lt;imagename&gt;</code> 是镜像的名字，<code>&lt;tag&gt;</code> 是镜像的版本标签。</p>
 <h2>通过镜像站推送镜像到DockerHub</h2>
-<h3>登录到镜像站</h3>
+<h3>登录镜像站</h3>
 <p>首先，你需要登陆到镜像站。如果还没有登录，可以使用以下命令：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> login</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后，系统会提示你输入用户名和密码，输入你的dockerhub用户名密码即可登录。</p>
