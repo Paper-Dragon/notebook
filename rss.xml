@@ -6,11 +6,44 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 21 Apr 2025 08:24:58 GMT</pubDate>
-    <lastBuildDate>Mon, 21 Apr 2025 08:24:58 GMT</lastBuildDate>
+    <pubDate>Wed, 23 Apr 2025 05:22:07 GMT</pubDate>
+    <lastBuildDate>Wed, 23 Apr 2025 05:22:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Docker运行kwaivgi-liveportrait</title>
+      <link>https://www.geekery.cn/note-book/Docker/Docker%E8%BF%90%E8%A1%8Ckwaivgi-liveportrait.html</link>
+      <guid>https://www.geekery.cn/note-book/Docker/Docker%E8%BF%90%E8%A1%8Ckwaivgi-liveportrait.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Docker运行kwaivgi-liveportrait</source>
+      <description>Docker运行kwaivgi-liveportrait Docker Compose File 运行容器 将上面的composefile 保存为 docker-comopose.yaml然后运行下面的命令进行安装：</description>
+      <pubDate>Wed, 23 Apr 2025 05:18:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>Docker Compose File</h2>
+<div class="language-yaml line-numbers-mode" data-highlighter="shiki" data-ext="yaml" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">version</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"3"</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">services</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    kwaivgi-liveportrait</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        stdin_open</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">true</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        tty</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">true</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        deploy</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">            resources</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">                reservations</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">                    devices</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">                        - </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">driver</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">nvidia</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">                          count</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">all</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">                          capabilities</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">                              - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">gpu</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        ports</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">            - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">7860:7860</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        restart</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">always</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        container_name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">kwaivgiliveportrait</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        image</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">jokerdragon/kwaivgi-liveportrait:latest</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        command</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">python app.py</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>运行容器</h2>
+<p>将上面的composefile 保存为 docker-comopose.yaml然后运行下面的命令进行安装：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> compose</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> up</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -d</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>在x86-64上构建和运行多种架构的Docker容器</title>
       <link>https://www.geekery.cn/note-book/Docker/%E5%9C%A8x86-64%E4%B8%8A%E6%9E%84%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8C%E5%A4%9A%E7%A7%8D%E6%9E%B6%E6%9E%84%E7%9A%84Docker%E5%AE%B9%E5%99%A8.html</link>
@@ -5508,60 +5541,6 @@ Big O：
 </blockquote>
 <p>:TODO</p>
 <p>没解决，还没找到无痛解决方案。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Windows的WSL2安装cuda驱动</title>
-      <link>https://www.geekery.cn/note-book/AI-Training/Windows%E7%9A%84WSL2%E5%AE%89%E8%A3%85cuda%E9%A9%B1%E5%8A%A8.html</link>
-      <guid>https://www.geekery.cn/note-book/AI-Training/Windows%E7%9A%84WSL2%E5%AE%89%E8%A3%85cuda%E9%A9%B1%E5%8A%A8.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Windows的WSL2安装cuda驱动</source>
-      <description>Windows的WSL2安装cuda驱动 部分资料来自： https://www.bilibili.com/read/cv14608547/ 感谢作者： https://space.bilibili.com/157323585 安装WSL2 这一步可以参考Windows官网，以及其他B站UP主的安装教程，贴两个链接（一定要装WSL2）。 image-2...</description>
-      <pubDate>Sun, 21 Jan 2024 09:17:24 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>部分资料来自： https://www.bilibili.com/read/cv14608547/</p>
-<p>感谢作者： https://space.bilibili.com/157323585</p>
-</blockquote>
-<h2>安装WSL2</h2>
-<p>这一步可以参考Windows官网，以及其他B站UP主的安装教程，贴两个链接（一定要装WSL2）。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://learn.microsoft.com/zh-cn/windows/wsl/install</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<h2>安装Windows的nvidia驱动（Windows下操作）</h2>
-<p>下载并安装带有WSL2驱动的nvidia-Windows驱动</p>
-<p>根据自己电脑显卡类型，分GeForce和QUADRO两个版本，自己电脑是哪个就选哪个。下载驱动后，安装。（安装过程中可以直接选择“精简”模式）</p>
-<p><strong>注意！</strong></p>
-<p><strong>有人会问：不是安装WSL2的驱动吗？为什么装Windows的？实际上，官网文档上标注 了，带有WSL2的官方nvidia驱动是整个过程唯一要装的GPU驱动！！！千万别被其他指南带错路了！（我就是没找到这个，白白浪费很多时间）</strong></p>
-<h2>检测是否安装成功</h2>
-<p>cmd命令行输入：</p>
-<p>nvidia-smi</p>
-<p>如果出现类似于下图效果，即安装完成。</p>
-<p></p>
-<p>记下图中的CUDA version</p>
-<h2>在WSL２中安装CUDA（WSL２中操作）</h2>
-<p>参考CUDA官网，选择自己对应的版本。</p>
-<p></p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://developer.nvidia.com/cuda-downloads</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这里的cuda版本，要比刚才cmd中标注的CUDA version要低。</p>
-<p>比如我的CUDA　version是11.6，我在下载CUDA驱动时，可以安装最新的11.5版本。</p>
-<p><strong>一定要选择标注的WSL版本！！！</strong></p>
-<p></p>
-<p>选择完版本后，下面会有整个安装提示，在WSL２中按照方法来就行，如：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">wget</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://developer.download.nvidia.com/compute/cuda/12.3.2/local_installers/cuda_12.3.2_545.23.08_linux.runsudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sh</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cuda_12.3.2_545.23.08_linux.run</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>安装相关依赖库</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> freeglut3-dev</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> build-essential</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> libx11-dev</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> libxmu-dev</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> libxi-dev</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> libgl1-mesa-glx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> libglu1-mesa</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> libglu1-mesa-dev</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>在Ubuntu上配置CUDA的环境变量，命令行输入：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vim</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ~/.bashrc</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>在末尾添加（注意：将地址里面的11.5换成自己安装的版本！）：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">export</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> PATH</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">usr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">local</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">cuda-11</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">5</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">bin</span><span style="--shiki-light:#E45649;--shiki-dark:#ABB2BF">${</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">PATH</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:+:</span><span style="--shiki-light:#E45649;--shiki-dark:#ABB2BF">${</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">PATH</span><span style="--shiki-light:#E45649;--shiki-dark:#ABB2BF">}}</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">export</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> LD_LIBRARY_PATH</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">usr</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">local</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">cuda-11</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">5</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">/</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">lib64</span><span style="--shiki-light:#E45649;--shiki-dark:#ABB2BF">${</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">LD_LIBRARY_PATH</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:+:</span><span style="--shiki-light:#E45649;--shiki-dark:#ABB2BF">${</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">LD_LIBRARY_PATH</span><span style="--shiki-light:#E45649;--shiki-dark:#ABB2BF">}}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>更新文件：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">source</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ~/.bashrc</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>输入代码检测是否安装完成</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">nvcc</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -V</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>安装CUDNN（在WSL２中安装）</h2>
-<p>需要注册账号，参考如下地址的3.2</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://blog.csdn.net/iwanvan/article/details/122119595</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后可以安装pytorch，可以直接安装最新版本，只要比驱动version低就行。</p>
 ]]></content:encoded>
     </item>
   </channel>
