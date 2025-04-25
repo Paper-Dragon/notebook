@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 25 Apr 2025 09:36:29 GMT</pubDate>
-    <lastBuildDate>Fri, 25 Apr 2025 09:36:29 GMT</lastBuildDate>
+    <pubDate>Fri, 25 Apr 2025 10:01:01 GMT</pubDate>
+    <lastBuildDate>Fri, 25 Apr 2025 10:01:01 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -17,7 +17,7 @@
       <guid>https://www.geekery.cn/note-book/Gitlab/Gitlab-Runner%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Gitlab-Runner的一些问题</source>
       <description>Gitlab-Runner的一些问题 Gitlab在mac下环境变量和用户环境变量不一致的问题 相关信息 具体问题表现： 在zsh和bash下可以运行flutter命令，但是在pipline里面会显示flutter: command not found 解决方法 编辑服务的plist文件，新增环境变量， 编辑服务文件 /Users/mac/Librar...</description>
-      <pubDate>Fri, 25 Apr 2025 09:32:42 GMT</pubDate>
+      <pubDate>Fri, 25 Apr 2025 09:57:24 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Gitlab在mac下环境变量和用户环境变量不一致的问题</h2>
 <div class="hint-container info">
