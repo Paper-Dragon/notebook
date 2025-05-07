@@ -6,11 +6,21 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 30 Apr 2025 14:32:41 GMT</pubDate>
-    <lastBuildDate>Wed, 30 Apr 2025 14:32:41 GMT</lastBuildDate>
+    <pubDate>Wed, 07 May 2025 10:17:56 GMT</pubDate>
+    <lastBuildDate>Wed, 07 May 2025 10:17:56 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>牛马时钟</title>
+      <link>https://www.geekery.cn/free-service/OxHorseClock.html</link>
+      <guid>https://www.geekery.cn/free-service/OxHorseClock.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">牛马时钟</source>
+      <description>牛马时钟</description>
+      <pubDate>Thu, 01 May 2025 02:24:28 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>Gitlab-Runner的一些问题</title>
       <link>https://www.geekery.cn/note-book/Gitlab/Gitlab-Runner%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98.html</link>
@@ -5564,36 +5574,6 @@ Big O：
 <p>这里有很多二进制包。</p>
 <p>可以在网页上找到所有这些 Deb 包的详细文档，https://openresty.org/en/deb-packages.html ，有很多软件包供用户选择。</p>
 <p></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Ubuntu的系统防火墙ufw和docker并存端口策略无效bug</title>
-      <link>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%98%B2%E7%81%AB%E5%A2%99ufw%E5%92%8Cdocker%E5%B9%B6%E5%AD%98%E7%AB%AF%E5%8F%A3%E7%AD%96%E7%95%A5%E6%97%A0%E6%95%88bug.html</link>
-      <guid>https://www.geekery.cn/note-book/OperaSystems/Ubuntu/Ubuntu%E7%9A%84%E7%B3%BB%E7%BB%9F%E9%98%B2%E7%81%AB%E5%A2%99ufw%E5%92%8Cdocker%E5%B9%B6%E5%AD%98%E7%AB%AF%E5%8F%A3%E7%AD%96%E7%95%A5%E6%97%A0%E6%95%88bug.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Ubuntu的系统防火墙ufw和docker并存端口策略无效bug</source>
-      <description>Ubuntu的系统防火墙ufw和docker并存端口策略无效bug UFW 是 Ubuntu 上很流行的一个 iptables 前端，可以非常方便的管理防火墙的规则。但是当安装了 Docker，UFW 无法管理 Docker 发布出来的端口了。 具体现象 在一个对外提供服务的服务器上启用了 UFW，并且默认阻止所有未被允许的传入连接。 运行了一个 Do...</description>
-      <pubDate>Tue, 23 Jan 2024 03:37:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>UFW 是 Ubuntu 上很流行的一个 iptables 前端，可以非常方便的管理防火墙的规则。但是当安装了 Docker，UFW 无法管理 Docker 发布出来的端口了。</p>
-</blockquote>
-<h2>具体现象</h2>
-<ul>
-<li>
-<p>在一个对外提供服务的服务器上启用了 UFW，并且默认阻止所有未被允许的传入连接。</p>
-</li>
-<li>
-<p>运行了一个 Docker 容器，并且使用 <code>-p</code> 选项来把该容器的某个端口发布到服务器的所有 IP 地址上。</p>
-<p>比如：<code>docker run -d --name nginx -p 8080:80 nginx</code> 将会运行一个 nginx服务，并且将容器的 <code>80</code> 端口发布到服务器的 <code>8080</code> 端口上。UFW 将不会阻止所有对 <code>8080</code> 端口访问的请求，用命令 <code>ufw deny 8080</code> 也无法阻止外部访问这个端口。</p>
-</li>
-</ul>
-<p>这个问题其实挺严重的，这说明本来只是为了在内部提供服务的一个端口被暴露在公共网络上。</p>
-<h2>解决这个问题</h2>
-<blockquote>
-<p>我们希望能够通过系统防火墙通过<code>ufw allow 8080</code>，来控制docker的流量的允许或者不允许通过</p>
-</blockquote>
-<p>:TODO</p>
-<p>没解决，还没找到无痛解决方案。</p>
 ]]></content:encoded>
     </item>
   </channel>
