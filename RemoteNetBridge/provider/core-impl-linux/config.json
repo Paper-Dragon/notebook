@@ -27,6 +27,7 @@
       "listen": "0.0.0.0",
       "protocol": "socks",
       "settings": {
+        "auth": "password",
         "accounts": [
           {
             "user": "171209",
