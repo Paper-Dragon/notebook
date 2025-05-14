@@ -14,6 +14,7 @@ Warning="${Red}[警告]${Font}"
 
 source '/etc/os-release'
 VERSION="${VERSION_ID}"
+ARCH=$(uname -m)
 
 judge() {
     if [[ $? -eq 0 ]]; then
@@ -33,14 +34,20 @@ check_version() {
     echo -e "${OK} ${GreenBG} 确认当前系统版本为CentOS 7 ${Font}"
 }
 
+check_architecture() {
+    if [[ "$ARCH" != "x86_64" && ! "$ARCH" =~ ^(aarch64|armhfp|i386|power9|ppc64|ppc64le)$ ]]; then
+        echo -e "${Error} ${RedBG} 不支持的架构类型: $ARCH ${Font}"
+        exit 1
+    fi
+    
+    if [ "$ARCH" == "x86_64" ]; then
+        echo -e "${OK} ${GreenBG} 确认当前系统架构为x86_64 ${Font}"
+    else
+        echo -e "${OK} ${GreenBG} 确认当前ALTARCH架构为$ARCH ${Font}"
+    fi
+}
 
-# 主函数
-main() {
-
-    check_version
-
-    REPO_DIR="/etc/yum.repos.d/"
-    ALIYUN_REPO_CONTENT='
+ALIYUN_REPO_X86_64='
 [base]
 name=CentOS-$releasever - base - mirrors.aliyun.com
 baseurl=http://mirrors.aliyun.com/centos-vault/centos/$releasever/os/$basearch/
@@ -111,6 +118,92 @@ enabled=0
 gpgcheck=1
 gpgkey=http://mirrors.aliyun.com/centos-vault/RPM-GPG-KEY-CentOS-7
 '
+
+ALIYUN_REPO_ALTARCH='
+[base]
+name=CentOS-$releasever - base - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/$releasever/os/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[updates]
+name=CentOS-$releasever - updates - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/$releasever/updates/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[extras]
+name=CentOS-$releasever - extras - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/$releasever/extras/$basearch/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[centosplus]
+name=CentOS-$releasever - centosplus - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/centos/$releasever/centosplus/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[fasttrack]
+name=CentOS-$releasever - fasttrack - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/centos/$releasever/fasttrack/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[atomic]
+name=CentOS-$releasever - atomic - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/centos/$releasever/atomic/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[dotnet]
+name=CentOS-$releasever - dotnet - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/centos/$releasever/dotnet/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[rt]
+name=CentOS-$releasever - rt - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/centos/$releasever/rt/$basearch/
+enabled=0
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[sclo-rh]
+name=CentOS-$releasever - sclo-rh - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/$releasever/sclo/$basearch/rh/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+
+[sclo-sclo]
+name=CentOS-$releasever - sclo-sclo - mirrors.aliyun.com
+baseurl=http://mirrors.aliyun.com/centos-altarch/$releasever/sclo/$basearch/sclo/
+enabled=1
+gpgcheck=1
+gpgkey=http://mirrors.aliyun.com/centos-altarch/RPM-GPG-KEY-CentOS-7
+'
+
+
+# 主函数
+main() {
+
+    check_version
+    check_architecture
+
+    REPO_DIR="/etc/yum.repos.d/"
+    if [ "$ARCH" == "x86_64" ]; then
+        ALIYUN_REPO_CONTENT="$ALIYUN_REPO_X86_64"
+    else
+        ALIYUN_REPO_CONTENT="$ALIYUN_REPO_ALTARCH"
+    fi
 
     echo -e "${Info} 正在删除原有的repo文件..."
     rm -f "$REPO_DIR"*.repo

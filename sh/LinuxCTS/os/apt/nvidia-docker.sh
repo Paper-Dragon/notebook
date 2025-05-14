@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # set -euxo pipefail
-
 # export DEBIAN_FRONTEND=noninteractive
 # sudo dpkg --set-selections <<< "cloud-init install" || true
 

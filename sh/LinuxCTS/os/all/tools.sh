@@ -22,6 +22,7 @@ ${Green}10.${Font} 修改root密码                     ${Green}50.${Font} 重�
 ${Green}11.${Font} 修改时间为中国
 ${Green}12.${Font} 重启当前系统
 ${Green}13.${Font} 关闭当前系统
+${Green}33.${Font} 修复双系统时间问题
 —————————————————————————— 安装软件包 ——————————————————————————
 ${Green}14.${Font} Frp服务端-管理脚本               ${Green}15.${Font} Todesk 安装 (debian/ubuntu)
 ${Green}16.${Font} Frp客户端-管理脚本               ${Green}17.${Font} 鱼香 ros 安装
@@ -83,6 +84,12 @@ case $num in
 13)
     poweroff
     ;;
+33)
+    echo -e "\033[5;33m 正在解决双系统时间问题....\033[0m"
+    sudo apt install ntpdate -y
+    sudo ntpdate time.windows.com
+    sudo hwclock --localtime --systohc
+    ;;
 14)
     source <(curl -s ${download_url}/os/all/frps.sh)
     ;;
@@ -112,6 +119,10 @@ case $num in
     ;;
 24)
     install_docker
+    # 普通用户也可以使用docker
+    # sudo groupadd docker
+    # sudo gpasswd -a ${USER} docker
+    # sudo chmod 666 /var/run/docker.sock
     ;;
 26)
     source <(curl -s ${download_url}/os/apt/nvidia-driver.sh)

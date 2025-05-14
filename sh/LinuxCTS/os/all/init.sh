@@ -44,7 +44,6 @@ check_root(){
 	fi
 }
 
-
 # 定义函数，使用tput命令实现更美观的倒计时
 function countdown_sleep() {
     local countdown_time="$1"  # 接收倒计时总时长作为参数
@@ -86,7 +85,6 @@ install_docker(){
         echo "$PACKAGE_NAME 已安装."
     fi
 }
-
 
 
 # 安装软件包

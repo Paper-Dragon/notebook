@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 
-Version=4.3.3.1
-package="spark-store_${Version}-fix3_amd64.deb" 
-package_url=https://gitee.com/spark-store-project/spark-store/releases/download/4.3.3.1-fix2
+package_url=https://gitee.com/spark-store-project/spark-store/releases/download/4.5.2/spark-store_4.5.2-2_amd64.deb
 yilai_url=${download_url}/app/all.zip
 
 
@@ -23,7 +21,7 @@ case $OS in
 esac
 
 install_spark(){
-    wget --no-check-certificate ${package_url}/${package} -O /tmp/${package}
+    wget --no-check-certificate ${package_url} -O /tmp/${package}
     case $DISTRO in
     "ubuntu")
         case $VERSION in
