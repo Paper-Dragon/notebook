@@ -1,5 +1,9 @@
 [
     {
+        "name": "服务器",
+        "value": 460
+    },
+    {
         "name": "Linux",
         "value": 363
     },
@@ -14,6 +18,22 @@
     {
         "name": "文件系统",
         "value": 226
+    },
+    {
+        "name": "字符串",
+        "value": 222
+    },
+    {
+        "name": "软件包",
+        "value": 215
+    },
+    {
+        "name": "客户端",
+        "value": 206
+    },
+    {
+        "name": "数据库",
+        "value": 169
     },
     {
         "name": "Windows",
@@ -40,6 +60,30 @@
         "value": 109
     },
     {
+        "name": "第一个",
+        "value": 104
+    },
+    {
+        "name": "自定义",
+        "value": 96
+    },
+    {
+        "name": "数据包",
+        "value": 95
+    },
+    {
+        "name": "初始化",
+        "value": 94
+    },
+    {
+        "name": "浏览器",
+        "value": 93
+    },
+    {
+        "name": "宿主机",
+        "value": 90
+    },
+    {
         "name": "Nginx",
         "value": 88
     },
@@ -48,16 +92,56 @@
         "value": 85
     },
     {
+        "name": "防火墙",
+        "value": 83
+    },
+    {
+        "name": "二进制",
+        "value": 80
+    },
+    {
+        "name": "命令行",
+        "value": 78
+    },
+    {
+        "name": "用户名",
+        "value": 78
+    },
+    {
         "name": "Pod",
         "value": 77
+    },
+    {
+        "name": "表达式",
+        "value": 74
+    },
+    {
+        "name": "管理员",
+        "value": 73
     },
     {
         "name": "Server",
         "value": 73
     },
     {
+        "name": "默认值",
+        "value": 71
+    },
+    {
         "name": "Zabbix",
         "value": 71
+    },
+    {
+        "name": "虚拟机",
+        "value": 71
+    },
+    {
+        "name": "路由器",
+        "value": 68
+    },
+    {
+        "name": "文件名",
+        "value": 64
     },
     {
         "name": "环境变量",
@@ -72,12 +156,28 @@
         "value": 58
     },
     {
+        "name": "文件夹",
+        "value": 55
+    },
+    {
+        "name": "分隔符",
+        "value": 54
+    },
+    {
         "name": "Service",
         "value": 53
     },
     {
+        "name": "关键字",
+        "value": 52
+    },
+    {
         "name": "Host",
         "value": 52
+    },
+    {
+        "name": "优先级",
+        "value": 51
     },
     {
         "name": "Prometheus",
@@ -85,6 +185,10 @@
     },
     {
         "name": "解决方案",
+        "value": 50
+    },
+    {
+        "name": "服务端",
         "value": 50
     },
     {
@@ -96,8 +200,16 @@
         "value": 49
     },
     {
+        "name": "根目录",
+        "value": 48
+    },
+    {
         "name": "Desktop",
         "value": 47
+    },
+    {
+        "name": "主机名",
+        "value": 46
     },
     {
         "name": "Firefox",
@@ -112,12 +224,28 @@
         "value": 44
     },
     {
+        "name": "寄存器",
+        "value": 43
+    },
+    {
         "name": "Length",
+        "value": 43
+    },
+    {
+        "name": "编译器",
+        "value": 43
+    },
+    {
+        "name": "运算符",
         "value": 43
     },
     {
         "name": "Btrfs",
         "value": 43
+    },
+    {
+        "name": "相当于",
+        "value": 41
     },
     {
         "name": "驱动程序",
@@ -128,12 +256,28 @@
         "value": 41
     },
     {
+        "name": "版本号",
+        "value": 40
+    },
+    {
         "name": "File",
         "value": 40
     },
     {
+        "name": "虚拟化",
+        "value": 38
+    },
+    {
         "name": "Java",
         "value": 38
+    },
+    {
+        "name": "源代码",
+        "value": 38
+    },
+    {
+        "name": "计算机",
+        "value": 37
     },
     {
         "name": "Request",
@@ -148,6 +292,10 @@
         "value": 36
     },
     {
+        "name": "第一次",
+        "value": 35
+    },
+    {
         "name": "Array",
         "value": 35
     },
@@ -156,7 +304,15 @@
         "value": 34
     },
     {
+        "name": "交换机",
+        "value": 34
+    },
+    {
         "name": "Control",
+        "value": 33
+    },
+    {
+        "name": "注册表",
         "value": 33
     },
     {
@@ -164,7 +320,15 @@
         "value": 32
     },
     {
+        "name": "发行版",
+        "value": 32
+    },
+    {
         "name": "Tomcat",
+        "value": 32
+    },
+    {
+        "name": "控制器",
         "value": 32
     },
     {
@@ -172,8 +336,28 @@
         "value": 31
     },
     {
+        "name": "同一个",
+        "value": 30
+    },
+    {
+        "name": "第二个",
+        "value": 30
+    },
+    {
         "name": "Core",
         "value": 30
+    },
+    {
+        "name": "大小写",
+        "value": 30
+    },
+    {
+        "name": "多线程",
+        "value": 29
+    },
+    {
+        "name": "重定向",
+        "value": 29
     },
     {
         "name": "Install",
@@ -182,6 +366,14 @@
     {
         "name": "Bash",
         "value": 29
+    },
+    {
+        "name": "编辑器",
+        "value": 28
+    },
+    {
+        "name": "流水线",
+        "value": 28
     },
     {
         "name": "Local",
@@ -212,6 +404,10 @@
         "value": 26
     },
     {
+        "name": "控制台",
+        "value": 26
+    },
+    {
         "name": "执行命令",
         "value": 26
     },
@@ -224,7 +420,15 @@
         "value": 26
     },
     {
+        "name": "实际上",
+        "value": 25
+    },
+    {
         "name": "Microsoft",
+        "value": 25
+    },
+    {
+        "name": "缓冲区",
         "value": 25
     },
     {
@@ -240,7 +444,15 @@
         "value": 24
     },
     {
+        "name": "上下文",
+        "value": 24
+    },
+    {
         "name": "详细信息",
+        "value": 24
+    },
+    {
+        "name": "第三方",
         "value": 24
     },
     {
@@ -268,15 +480,35 @@
         "value": 23
     },
     {
+        "name": "分布式",
+        "value": 23
+    },
+    {
         "name": "Example",
         "value": 23
+    },
+    {
+        "name": "自动化",
+        "value": 22
     },
     {
         "name": "Qt",
         "value": 22
     },
     {
+        "name": "是因为",
+        "value": 22
+    },
+    {
         "name": "内存空间",
+        "value": 22
+    },
+    {
+        "name": "意味着",
+        "value": 22
+    },
+    {
+        "name": "一部分",
         "value": 22
     },
     {
@@ -300,11 +532,23 @@
         "value": 22
     },
     {
+        "name": "提供商",
+        "value": 22
+    },
+    {
         "name": "Session",
         "value": 21
     },
     {
+        "name": "安装包",
+        "value": 21
+    },
+    {
         "name": "Files",
+        "value": 21
+    },
+    {
+        "name": "描述符",
         "value": 21
     },
     {
@@ -332,7 +576,19 @@
         "value": 21
     },
     {
+        "name": "开发者",
+        "value": 20
+    },
+    {
+        "name": "计数器",
+        "value": 20
+    },
+    {
         "name": "Enter",
+        "value": 20
+    },
+    {
+        "name": "用户组",
         "value": 20
     },
     {
@@ -356,11 +612,31 @@
         "value": 20
     },
     {
+        "name": "西里尔",
+        "value": 20
+    },
+    {
+        "name": "检查点",
+        "value": 20
+    },
+    {
         "name": "Mac",
         "value": 19
     },
     {
+        "name": "安全性",
+        "value": 19
+    },
+    {
         "name": "Log",
+        "value": 19
+    },
+    {
+        "name": "复制到",
+        "value": 19
+    },
+    {
+        "name": "复杂度",
         "value": 19
     },
     {
@@ -373,6 +649,10 @@
     },
     {
         "name": "Logstash",
+        "value": 19
+    },
+    {
+        "name": "旧版本",
         "value": 19
     },
     {
@@ -412,6 +692,10 @@
         "value": 18
     },
     {
+        "name": "解释器",
+        "value": 18
+    },
+    {
         "name": "Compute",
         "value": 18
     },
@@ -425,6 +709,10 @@
     },
     {
         "name": "Syntax",
+        "value": 18
+    },
+    {
+        "name": "管理器",
         "value": 18
     },
     {
@@ -444,11 +732,27 @@
         "value": 17
     },
     {
+        "name": "重命名",
+        "value": 17
+    },
+    {
+        "name": "子目录",
+        "value": 17
+    },
+    {
+        "name": "换行符",
+        "value": 17
+    },
+    {
         "name": "Shell",
         "value": 17
     },
     {
         "name": "Protocol",
+        "value": 17
+    },
+    {
+        "name": "这时候",
         "value": 17
     },
     {
@@ -461,6 +765,14 @@
     },
     {
         "name": "Unit",
+        "value": 17
+    },
+    {
+        "name": "触发器",
+        "value": 17
+    },
+    {
+        "name": "拷贝到",
         "value": 17
     },
     {
@@ -504,6 +816,10 @@
         "value": 17
     },
     {
+        "name": "消费者",
+        "value": 16
+    },
+    {
         "name": "Program",
         "value": 16
     },
@@ -513,6 +829,10 @@
     },
     {
         "name": "资源配置",
+        "value": 16
+    },
+    {
+        "name": "发送到",
         "value": 16
     },
     {
@@ -528,12 +848,32 @@
         "value": 16
     },
     {
+        "name": "转发给",
+        "value": 16
+    },
+    {
+        "name": "路由表",
+        "value": 16
+    },
+    {
         "name": "Max",
+        "value": 16
+    },
+    {
+        "name": "子系统",
         "value": 16
     },
     {
         "name": "Shadowsocks",
         "value": 16
+    },
+    {
+        "name": "初始值",
+        "value": 15
+    },
+    {
+        "name": "返回值",
+        "value": 15
     },
     {
         "name": "当前目录",
@@ -545,6 +885,10 @@
     },
     {
         "name": "Note",
+        "value": 15
+    },
+    {
+        "name": "大部分",
         "value": 15
     },
     {
@@ -572,7 +916,19 @@
         "value": 15
     },
     {
+        "name": "进一步",
+        "value": 14
+    },
+    {
         "name": "Job",
+        "value": 14
+    },
+    {
+        "name": "扩展性",
+        "value": 14
+    },
+    {
+        "name": "请参阅",
         "value": 14
     },
     {
@@ -596,7 +952,19 @@
         "value": 14
     },
     {
+        "name": "第一行",
+        "value": 14
+    },
+    {
+        "name": "格式化",
+        "value": 14
+    },
+    {
         "name": "Error",
+        "value": 14
+    },
+    {
+        "name": "中间件",
         "value": 14
     },
     {
@@ -617,6 +985,10 @@
     },
     {
         "name": "Oracle",
+        "value": 14
+    },
+    {
+        "name": "发送给",
         "value": 14
     },
     {
@@ -656,7 +1028,19 @@
         "value": 13
     },
     {
+        "name": "转换成",
+        "value": 13
+    },
+    {
         "name": "Runtime",
+        "value": 13
+    },
+    {
+        "name": "输入框",
+        "value": 13
+    },
+    {
+        "name": "稳定性",
         "value": 13
     },
     {
@@ -668,7 +1052,27 @@
         "value": 13
     },
     {
+        "name": "制表符",
+        "value": 13
+    },
+    {
+        "name": "十进制",
+        "value": 13
+    },
+    {
         "name": "Agent",
+        "value": 13
+    },
+    {
+        "name": "端口号",
+        "value": 13
+    },
+    {
+        "name": "解压缩",
+        "value": 13
+    },
+    {
+        "name": "标识符",
         "value": 13
     },
     {
@@ -692,11 +1096,23 @@
         "value": 13
     },
     {
+        "name": "互联网",
+        "value": 13
+    },
+    {
         "name": "Allow",
         "value": 13
     },
     {
         "name": "网络连接",
+        "value": 13
+    },
+    {
+        "name": "处理器",
+        "value": 13
+    },
+    {
+        "name": "主目录",
         "value": 13
     },
     {
@@ -716,7 +1132,19 @@
         "value": 12
     },
     {
+        "name": "生产者",
+        "value": 12
+    },
+    {
+        "name": "高性能",
+        "value": 12
+    },
+    {
         "name": "虚拟地址",
+        "value": 12
+    },
+    {
+        "name": "字节数",
         "value": 12
     },
     {
@@ -733,6 +1161,22 @@
     },
     {
         "name": "Environment",
+        "value": 12
+    },
+    {
+        "name": "替换成",
+        "value": 12
+    },
+    {
+        "name": "连接数",
+        "value": 12
+    },
+    {
+        "name": "一系列",
+        "value": 12
+    },
+    {
+        "name": "兼容性",
         "value": 12
     },
     {
@@ -788,11 +1232,19 @@
         "value": 12
     },
     {
+        "name": "依赖于",
+        "value": 12
+    },
+    {
         "name": "Stack",
         "value": 12
     },
     {
         "name": "系统启动",
+        "value": 12
+    },
+    {
+        "name": "随机化",
         "value": 12
     },
     {
@@ -824,11 +1276,43 @@
         "value": 11
     },
     {
+        "name": "第三个",
+        "value": 11
+    },
+    {
+        "name": "哲学家",
+        "value": 11
+    },
+    {
+        "name": "目的地",
+        "value": 11
+    },
+    {
         "name": "存储设备",
         "value": 11
     },
     {
+        "name": "示意图",
+        "value": 11
+    },
+    {
+        "name": "一致性",
+        "value": 11
+    },
+    {
         "name": "Client",
+        "value": 11
+    },
+    {
+        "name": "大括号",
+        "value": 11
+    },
+    {
+        "name": "八进制",
+        "value": 11
+    },
+    {
+        "name": "修饰符",
         "value": 11
     },
     {
@@ -840,6 +1324,10 @@
         "value": 11
     },
     {
+        "name": "下划线",
+        "value": 11
+    },
+    {
         "name": "特殊字符",
         "value": 11
     },
@@ -848,7 +1336,19 @@
         "value": 11
     },
     {
+        "name": "一次性",
+        "value": 11
+    },
+    {
+        "name": "压缩包",
+        "value": 11
+    },
+    {
         "name": "Exception",
+        "value": 11
+    },
+    {
+        "name": "企业级",
         "value": 11
     },
     {
@@ -872,6 +1372,10 @@
         "value": 11
     },
     {
+        "name": "客户机",
+        "value": 11
+    },
+    {
         "name": "Dependency",
         "value": 11
     },
@@ -884,519 +1388,15 @@
         "value": 11
     },
     {
+        "name": "提供者",
+        "value": 11
+    },
+    {
         "name": "Options",
         "value": 11
     },
     {
         "name": "网络接口",
         "value": 11
-    },
-    {
-        "name": "Newwork",
-        "value": 11
-    },
-    {
-        "name": "内存保护",
-        "value": 11
-    },
-    {
-        "name": "Library",
-        "value": 11
-    },
-    {
-        "name": "Signature",
-        "value": 11
-    },
-    {
-        "name": "Method",
-        "value": 11
-    },
-    {
-        "name": "Sending",
-        "value": 11
-    },
-    {
-        "name": "Vless",
-        "value": 11
-    },
-    {
-        "name": "Portainer",
-        "value": 11
-    },
-    {
-        "name": "Calico",
-        "value": 11
-    },
-    {
-        "name": "Dockerhub",
-        "value": 10
-    },
-    {
-        "name": "Widget",
-        "value": 10
-    },
-    {
-        "name": "解决办法",
-        "value": 10
-    },
-    {
-        "name": "Management",
-        "value": 10
-    },
-    {
-        "name": "内存地址",
-        "value": 10
-    },
-    {
-        "name": "虚拟内存",
-        "value": 10
-    },
-    {
-        "name": "Tool",
-        "value": 10
-    },
-    {
-        "name": "Remote",
-        "value": 10
-    },
-    {
-        "name": "Your",
-        "value": 10
-    },
-    {
-        "name": "Header",
-        "value": 10
-    },
-    {
-        "name": "错误信息",
-        "value": 10
-    },
-    {
-        "name": "Dockerfile",
-        "value": 10
-    },
-    {
-        "name": "Uvh",
-        "value": 10
-    },
-    {
-        "name": "账号密码",
-        "value": 10
-    },
-    {
-        "name": "Email",
-        "value": 10
-    },
-    {
-        "name": "From",
-        "value": 10
-    },
-    {
-        "name": "Setting",
-        "value": 10
-    },
-    {
-        "name": "Digest",
-        "value": 10
-    },
-    {
-        "name": "Mounted",
-        "value": 10
-    },
-    {
-        "name": "Send",
-        "value": 10
-    },
-    {
-        "name": "Processing",
-        "value": 10
-    },
-    {
-        "name": "Intel",
-        "value": 10
-    },
-    {
-        "name": "Domain",
-        "value": 10
-    },
-    {
-        "name": "Bytes",
-        "value": 10
-    },
-    {
-        "name": "Harbor",
-        "value": 10
-    },
-    {
-        "name": "Writing",
-        "value": 10
-    },
-    {
-        "name": "Meta",
-        "value": 10
-    },
-    {
-        "name": "Console",
-        "value": 10
-    },
-    {
-        "name": "Cisco",
-        "value": 10
-    },
-    {
-        "name": "Networ",
-        "value": 10
-    },
-    {
-        "name": "Cluster",
-        "value": 10
-    },
-    {
-        "name": "Action",
-        "value": 9
-    },
-    {
-        "name": "Plus",
-        "value": 9
-    },
-    {
-        "name": "可执行程序",
-        "value": 9
-    },
-    {
-        "name": "程序运行",
-        "value": 9
-    },
-    {
-        "name": "Docs",
-        "value": 9
-    },
-    {
-        "name": "Android",
-        "value": 9
-    },
-    {
-        "name": "Dialogue",
-        "value": 9
-    },
-    {
-        "name": "Test",
-        "value": 9
-    },
-    {
-        "name": "Swap",
-        "value": 9
-    },
-    {
-        "name": "Using",
-        "value": 9
-    },
-    {
-        "name": "Location",
-        "value": 9
-    },
-    {
-        "name": "常用命令",
-        "value": 9
-    },
-    {
-        "name": "After",
-        "value": 9
-    },
-    {
-        "name": "Kibana",
-        "value": 9
-    },
-    {
-        "name": "Bus",
-        "value": 9
-    },
-    {
-        "name": "Step",
-        "value": 9
-    },
-    {
-        "name": "Author",
-        "value": 9
-    },
-    {
-        "name": "Software",
-        "value": 9
-    },
-    {
-        "name": "Cache",
-        "value": 9
-    },
-    {
-        "name": "Avail",
-        "value": 9
-    },
-    {
-        "name": "Authentication",
-        "value": 9
-    },
-    {
-        "name": "Placement",
-        "value": 9
-    },
-    {
-        "name": "Keep",
-        "value": 9
-    },
-    {
-        "name": "Destination",
-        "value": 9
-    },
-    {
-        "name": "Kernel",
-        "value": 9
-    },
-    {
-        "name": "Upload",
-        "value": 9
-    },
-    {
-        "name": "Vary",
-        "value": 9
-    },
-    {
-        "name": "Traefik",
-        "value": 9
-    },
-    {
-        "name": "Maven",
-        "value": 9
-    },
-    {
-        "name": "Branch",
-        "value": 9
-    },
-    {
-        "name": "Backup",
-        "value": 9
-    },
-    {
-        "name": "Gitlab",
-        "value": 9
-    },
-    {
-        "name": "Kubelet",
-        "value": 9
-    },
-    {
-        "name": "Flannel",
-        "value": 9
-    },
-    {
-        "name": "Sentinel",
-        "value": 9
-    },
-    {
-        "name": "搜索引擎",
-        "value": 8
-    },
-    {
-        "name": "Daemon",
-        "value": 8
-    },
-    {
-        "name": "Registry",
-        "value": 8
-    },
-    {
-        "name": "Restart",
-        "value": 8
-    },
-    {
-        "name": "注意事项",
-        "value": 8
-    },
-    {
-        "name": "Perl",
-        "value": 8
-    },
-    {
-        "name": "Summary",
-        "value": 8
-    },
-    {
-        "name": "共享内存",
-        "value": 8
-    },
-    {
-        "name": "如图所示",
-        "value": 8
-    },
-    {
-        "name": "文件目录",
-        "value": 8
-    },
-    {
-        "name": "物理地址",
-        "value": 8
-    },
-    {
-        "name": "First",
-        "value": 8
-    },
-    {
-        "name": "Alex",
-        "value": 8
-    },
-    {
-        "name": "Output",
-        "value": 8
-    },
-    {
-        "name": "Manager",
-        "value": 8
-    },
-    {
-        "name": "设计模式",
-        "value": 8
-    },
-    {
-        "name": "Person",
-        "value": 8
-    },
-    {
-        "name": "面向对象编程",
-        "value": 8
-    },
-    {
-        "name": "Frp",
-        "value": 8
-    },
-    {
-        "name": "系统管理",
-        "value": 8
-    },
-    {
-        "name": "Wed",
-        "value": 8
-    },
-    {
-        "name": "Dec",
-        "value": 8
-    },
-    {
-        "name": "Copyright",
-        "value": 8
-    },
-    {
-        "name": "Group",
-        "value": 8
-    },
-    {
-        "name": "Welcome",
-        "value": 8
-    },
-    {
-        "name": "Corporation",
-        "value": 8
-    },
-    {
-        "name": "间隔时间",
-        "value": 8
-    },
-    {
-        "name": "Do",
-        "value": 8
-    },
-    {
-        "name": "访问控制",
-        "value": 8
-    },
-    {
-        "name": "备份文件",
-        "value": 8
-    },
-    {
-        "name": "Exceeded",
-        "value": 8
-    },
-    {
-        "name": "Physical",
-        "value": 8
-    },
-    {
-        "name": "Security",
-        "value": 8
-    },
-    {
-        "name": "服务器端",
-        "value": 8
-    },
-    {
-        "name": "Jul",
-        "value": 8
-    },
-    {
-        "name": "Limit",
-        "value": 8
-    },
-    {
-        "name": "Extent",
-        "value": 8
-    },
-    {
-        "name": "管理软件",
-        "value": 8
-    },
-    {
-        "name": "Bit",
-        "value": 8
-    },
-    {
-        "name": "Glibc",
-        "value": 8
-    },
-    {
-        "name": "Execute",
-        "value": 8
-    },
-    {
-        "name": "Provide",
-        "value": 8
-    },
-    {
-        "name": "网络适配器",
-        "value": 8
-    },
-    {
-        "name": "Warp",
-        "value": 7
-    },
-    {
-        "name": "Math",
-        "value": 7
-    },
-    {
-        "name": "Tools",
-        "value": 7
-    },
-    {
-        "name": "Engine",
-        "value": 7
-    },
-    {
-        "name": "China",
-        "value": 7
-    },
-    {
-        "name": "下载安装",
-        "value": 7
-    },
-    {
-        "name": "非常灵活",
-        "value": 7
-    },
-    {
-        "name": "Object",
-        "value": 7
-    },
-    {
-        "name": "Systems",
-        "value": 7
     }
 ]
