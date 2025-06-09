@@ -6,11 +6,24 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 08 Jun 2025 11:49:07 GMT</pubDate>
-    <lastBuildDate>Sun, 08 Jun 2025 11:49:07 GMT</lastBuildDate>
+    <pubDate>Mon, 09 Jun 2025 00:24:52 GMT</pubDate>
+    <lastBuildDate>Mon, 09 Jun 2025 00:24:52 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>GPT&amp;DeepSeek模型</title>
+      <link>https://www.geekery.cn/note-book/AI-Training/GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">GPT&amp;DeepSeek模型</source>
+      <description>GPT&amp;DeepSeek模型 GPT系列模型成体系推进 研究视野 技术人员 基础设施 工程实践 数据积累 算法设计 GPT系列模型从18年开始系统迭代，对于大模型发展起到了深远影响</description>
+      <pubDate>Mon, 09 Jun 2025 00:20:57 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>GPT系列模型成体系推进</h2>
+<p>|年份|事件|
+|</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>大模型技术基础</title>
       <link>https://www.geekery.cn/note-book/AI-Training/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80.html</link>
@@ -5469,17 +5482,6 @@ Big O：
     <iframe style="height:800px" src="https://cloudflare-cloudnative-pages.geekery.cn/docker"></iframe>
 </div>
 </div>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>CVE-2023-32233</title>
-      <link>https://www.geekery.cn/note-book/CVE/CVE-2023-32233.html</link>
-      <guid>https://www.geekery.cn/note-book/CVE/CVE-2023-32233.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">CVE-2023-32233</source>
-      <description>CVE-2023-32233 :TODO</description>
-      <pubDate>Sat, 03 Feb 2024 06:01:51 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>:TODO</p>
 ]]></content:encoded>
     </item>
   </channel>
