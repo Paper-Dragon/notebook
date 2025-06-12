@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 09 Jun 2025 07:52:45 GMT</pubDate>
-    <lastBuildDate>Mon, 09 Jun 2025 07:52:45 GMT</lastBuildDate>
+    <pubDate>Thu, 12 Jun 2025 10:43:15 GMT</pubDate>
+    <lastBuildDate>Thu, 12 Jun 2025 10:43:15 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -16,7 +16,7 @@
       <link>https://www.geekery.cn/note-book/AI-Training/GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</link>
       <guid>https://www.geekery.cn/note-book/AI-Training/GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</guid>
       <source url="https://www.geekery.cn/rss.xml">GPT&amp;DeepSeek模型</source>
-      <description>GPT&amp;DeepSeek模型 GPT系列模型成体系推进 研究视野 技术人员 基础设施 工程实践 数据积累 算法设计 GPT系列模型从18年开始系统迭代，对于大模型发展起到了深远影响</description>
+      <description>GPT&amp;DeepSeek模型 GPT系列模型成体系推进 研究视野 技术人员 基础设施 工程实践 数据积累 算法设计 GPT系列模型从18年开始系统迭代，对于大模型发展起到了深远影响 GPT系列模型的技术演变 GPT系列模型发展历程 小模型：GPT-1、GPT-2 大模型：GPT-3、CodeX、GPT-3.5、GPT-4 推理大模型：o-series ...</description>
       <pubDate>Mon, 09 Jun 2025 00:20:57 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>GPT系列模型成体系推进</h2>
