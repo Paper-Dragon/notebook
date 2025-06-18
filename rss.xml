@@ -6,15 +6,81 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 17 Jun 2025 16:38:36 GMT</pubDate>
-    <lastBuildDate>Tue, 17 Jun 2025 16:38:36 GMT</lastBuildDate>
+    <pubDate>Wed, 18 Jun 2025 01:53:12 GMT</pubDate>
+    <lastBuildDate>Wed, 18 Jun 2025 01:53:12 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
     <item>
+      <title>模型架构-Transformer模型</title>
+      <link>https://www.geekery.cn/note-book/AI-Training/03%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84-Transformer%E6%A8%A1%E5%9E%8B.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/03%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84-Transformer%E6%A8%A1%E5%9E%8B.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">模型架构-Transformer模型</source>
+      <description>模型架构-Transformer模型 Why Attention? 搜索场景 在搜索场景中，人们的目光往往会更加关注左上角的三角区域（即第一条搜索结果的位置) image-20250617180226663 阅读中 image-20250617180330064 浏览图文信息 image-20250617180404154 注意力机制 注意力机制，可以...</description>
+      <pubDate>Wed, 18 Jun 2025 01:49:43 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>Why Attention?</h2>
+<h3>搜索场景</h3>
+<p>在搜索场景中，人们的目光往往会更加关注左上角的三角区域（即第一条搜索结果的位置)</p>
+<p></p>
+<h3>阅读中</h3>
+<p></p>
+<h3>浏览图文信息</h3>
+<p></p>
+<h2>注意力机制</h2>
+<p>注意力机制，可以视为一致基于相似度的查表</p>
+<p></p>
+<p>核心模块： 注意力</p>
+<ul>
+<li>Transformer完全抛弃传统的CNN和RNN，整个网络结构完全由注意力机制组成</li>
+</ul>
+<h2>编码器-解码器结构</h2>
+<ul>
+<li>编码器将输入序列变换为隐藏层特征</li>
+<li>解码器将隐藏层特征变换为输出序列</li>
+</ul>
+<p></p>
+<h3>编码器：将输入变换为隐藏层特征</h3>
+<ul>
+<li>N个堆叠的编码器层
+<ul>
+<li>多头注意力</li>
+<li>前馈网络</li>
+<li>残差连接和层归一化</li>
+</ul>
+</li>
+</ul>
+<p></p>
+<h3>解码器：将隐藏层特征变换为自然语言序列</h3>
+<ul>
+<li>N个堆叠的解码器层
+<ul>
+<li>（掩码）多头注意力</li>
+<li>前馈网络</li>
+<li>残差链接和层归一化</li>
+</ul>
+</li>
+</ul>
+<p></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>训练相关资料</title>
+      <link>https://www.geekery.cn/note-book/AI-Training/99%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/99%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">训练相关资料</source>
+      <description>训练相关资料 Mineru MinerU是一个将PDF转换为机器可读格式的工具（例如，markdown，JSON），允许轻松提取为任何格式。 https://github.com/opendatalab/MinerU/blob/master/README.md</description>
+      <pubDate>Wed, 18 Jun 2025 01:49:43 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>Mineru</h2>
+<p>MinerU是一个将PDF转换为机器可读格式的工具（例如，markdown，JSON），允许轻松提取为任何格式。</p>
+<p>https://github.com/opendatalab/MinerU/blob/master/README.md</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>GPT&amp;DeepSeek模型</title>
-      <link>https://www.geekery.cn/note-book/AI-Training/GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</link>
-      <guid>https://www.geekery.cn/note-book/AI-Training/GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</guid>
+      <link>https://www.geekery.cn/note-book/AI-Training/02GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/02GPT_DeepSeek%E6%A8%A1%E5%9E%8B.html</guid>
       <source url="https://www.geekery.cn/rss.xml">GPT&amp;DeepSeek模型</source>
       <description>GPT&amp;DeepSeek模型 GPT系列模型成体系推进 研究视野 技术人员 基础设施 工程实践 数据积累 算法设计 GPT系列模型从18年开始系统迭代，对于大模型发展起到了深远影响 GPT系列模型的技术演变 GPT系列模型发展历程 小模型：GPT-1、GPT-2 大模型：GPT-3、CodeX、GPT-3.5、GPT-4 推理大模型：o-series ...</description>
       <pubDate>Mon, 09 Jun 2025 00:20:57 GMT</pubDate>
@@ -26,8 +92,8 @@
     </item>
     <item>
       <title>大模型技术基础</title>
-      <link>https://www.geekery.cn/note-book/AI-Training/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80.html</link>
-      <guid>https://www.geekery.cn/note-book/AI-Training/%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80.html</guid>
+      <link>https://www.geekery.cn/note-book/AI-Training/01%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/01%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B%E5%9F%BA%E7%A1%80.html</guid>
       <source url="https://www.geekery.cn/rss.xml">大模型技术基础</source>
       <description>大模型技术基础 大语言模型概念 定义： 通常指具有超大规模参数的预训练模型 架构：主要为transformer解码器架构 训练： 预训练（base model) 建立模型的基础能力 数据： 海量文本数据 优化：预测下一个词 后训练 (instruct model) 增强模型的任务能力 数据： 大量指令数据 优化： SFT、RL等方法 下游应用 测速（推...</description>
       <pubDate>Thu, 05 Jun 2025 07:15:14 GMT</pubDate>
@@ -5345,143 +5411,6 @@ Big O：
 
 <h2>联系我</h2>
 <p>如果您有任何问题或建议，请随时评论区联系我。仅供学习使用，非法使用必追究法律责任！</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Nginx作为推流服务器</title>
-      <link>https://www.geekery.cn/note-book/Nginx-OpenResty/Nginx%E4%BD%9C%E4%B8%BA%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
-      <guid>https://www.geekery.cn/note-book/Nginx-OpenResty/Nginx%E4%BD%9C%E4%B8%BA%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Nginx作为推流服务器</source>
-      <description>Nginx作为推流服务器 教程里使用的 https://github.com/arut/nginx-rtmp-module.git 这个模块太老了，3年之前更新过，所以重新更改方案使用了https://github.com/winshining/nginx-http-flv-module，这个模块在实现前者的功能的同时还实现了flv拉流量的功能，功能上...</description>
-      <pubDate>Sun, 18 Feb 2024 10:10:32 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>教程里使用的 <a href="https://github.com/arut/nginx-rtmp-module.git" target="_blank" rel="noopener noreferrer">https://github.com/arut/nginx-rtmp-module.git</a> 这个模块太老了，3年之前更新过，所以重新更改方案使用了<a href="https://github.com/winshining/nginx-http-flv-module" target="_blank" rel="noopener noreferrer">https://github.com/winshining/nginx-http-flv-module</a>，这个模块在实现前者的功能的同时还实现了flv拉流量的功能，功能上强很多，而且更新及时。</p>
-</blockquote>
-<h2>功能对比</h2>
-<ul>
-<li><a href="https://github.com/arut/nginx-rtmp-module" target="_blank" rel="noopener noreferrer">nginx-rtmp-module</a> 提供的所有功能。</li>
-<li>nginx-http-flv-module 的其他功能与 <a href="https://github.com/arut/nginx-rtmp-module" target="_blank" rel="noopener noreferrer">nginx-rtmp-module</a> 的对比：</li>
-</ul>
-<p>| 功能                     | nginx-http-flv-module | nginx-rtmp-module | 备注                                      |
-|</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>DockerHub镜像加速</title>
-      <link>https://www.geekery.cn/free-service/docker-hub-mirror.html</link>
-      <guid>https://www.geekery.cn/free-service/docker-hub-mirror.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">DockerHub镜像加速</source>
-      <description>Docker镜像拉取加速服务及配置指南 6月6日，上海交大的 Docker Hub 镜像加速器 宣布因监管要求被下架，Dockerhub 无法访问。具体可看此通知。 image-20241010100318565 功能简介 免费学习使用的Docker镜像拉取加速服务，破解Docker官方限制频率等多种应用场景，无限速拉取镜像。 很多种功能都是独家支持，...</description>
-      <pubDate>Tue, 06 Feb 2024 07:55:02 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>6月6日，<a href="https://mirrors.ustc.edu.cn/help/dockerhub.html" target="_blank" rel="noopener noreferrer">上海交大的 Docker Hub 镜像加速器</a> 宣布因监管要求被下架，Dockerhub 无法访问。<a href="https://web.archive.org/web/20240606081039/https://sjtug.org/post/mirror-news/2024-06-06-takedown-dockerhub/" target="_blank" rel="noopener noreferrer">具体可看此通知</a>。</p>
-<p></p>
-</blockquote>
-<h2>功能简介</h2>
-<p>免费学习使用的Docker镜像拉取加速服务，破解Docker官方限制频率等多种应用场景，无限速拉取镜像。</p>
-<p>很多种功能都是独家支持，源码是闭源的，防止被滥用，根据下面教程设置镜像站即可畅快使用。</p>
-<ul>
-<li>拉取Dockerhub的私有仓库的镜像加速</li>
-<li>推送镜像到Dockerhub账户</li>
-<li>一键安装Docker 加速</li>
-<li>公共仓库的镜像加速</li>
-<li>Docker Search命令专项加速</li>
-<li>防火墙和黑名单😢</li>
-</ul>
-<h2>Docker配置镜像加速</h2>
-<blockquote>
-<p>Docker镜像加速不同的操作系统有不同的设置方法，需要根据操作系统类型去设置，下面给出了Linux、Windows、Mac操作系统的设置方法。</p>
-<p>为了方便使用，Linux设置镜像站已经写为脚本。</p>
-</blockquote>
-<h3>Linux</h3>
-<p>配置镜像站</p>
-
-<p>适用于Ubuntu、Debian、CentOS、Fedora、Arch Linux、openSUSE 等系统。</p>
-<p>其他版本可能有细微不同，请访问官方文档获取更多详情。</p>
-<h3>MacOS</h3>
-<blockquote>
-<p>评论区帮忙补个MacOS配置图😘</p>
-</blockquote>
-<p>对于MacOS上的Docker For Mac用户，您可以通过以下步骤配置镜像加速服务：</p>
-<p>点击桌面顶栏的docker图标，选择Preferences。</p>
-<p>在Daemon标签下的Registry mirrors列表中加入以下镜像地址：</p>
-<div class="language-json line-numbers-mode" data-highlighter="shiki" data-ext="json" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-json"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">https:</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">//hub.icert.top/</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">https:</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">//ghcr.geekery.cn/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>点击Apply &amp; Restart按钮使设置生效。</p>
-<h3>Windows</h3>
-<p>Windows系统上的Docker For Windows用户可以按照以下步骤配置镜像加速服务：</p>
-<p>在桌面右下角状态栏中右键docker图标，修改在Docker Engine标签页中的json。</p>
-<div class="language-json line-numbers-mode" data-highlighter="shiki" data-ext="json" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-json"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "builder"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    "gc"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: {</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "defaultKeepStorage"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"20GB"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      "enabled"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#0184BC;--shiki-dark:#D19A66">true</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    }</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  },</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "experimental"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#0184BC;--shiki-dark:#D19A66">false</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  "registry-mirrors"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: [</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">   "https://hub.icert.top/"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">   "https://ghcr.geekery.cn"</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  ]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<p>点击Apply&amp;restart，使配置生效。</p>
-<h2>一键安装Docker</h2>
-<blockquote>
-<p>这个脚本适用于Linux</p>
-<p>一键安装脚本，为了防止脚本卡住，于是我做了完整的镜像，包括安装包仓库。默认使用 <code>https://download-docker.geekery.cn</code> 为镜像站</p>
-</blockquote>
-
-<h2>通过镜像站拉取DockerHub私有账户的镜像</h2>
-<h3>登录到镜像站</h3>
-<p>首先，你需要登陆到镜像站。如果还没有登录，可以使用以下命令：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> login</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后，系统会提示你输入用户名和密码，输入你的dockerhub用户名密码即可登录。</p>
-<h3>拉取私有镜像</h3>
-<p>成功登录后，就可以从私有仓库中拉取镜像。使用<code>docker pull</code>命令加上仓库的完整URL以及镜像的名称和标签（如果有的话）。例如：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> pull</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这里 <code>&lt;namespace&gt;</code> 可以是用户名或组织名，<code>&lt;imagename&gt;</code> 是镜像的名字，<code>&lt;tag&gt;</code> 是镜像的版本标签。</p>
-<h3>恢复默认镜像名</h3>
-<p>如果你想要如同DockerHub镜像一般直接不写域名直接跑，方便后面环境的使用，可以增加如下步骤恢复原有的镜像名称。</p>
-<p>执行下面的命令将会更改Docker镜像的镜像站为Dockerhub，方便使用。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tag</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt; &lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这里 <code>&lt;namespace&gt;</code> 可以是用户名或组织名，<code>&lt;imagename&gt;</code> 是镜像的名字，<code>&lt;tag&gt;</code> 是镜像的版本标签。</p>
-<h2>通过镜像站推送镜像到DockerHub</h2>
-<h3>登录镜像站</h3>
-<p>首先，你需要登陆到镜像站。如果还没有登录，可以使用以下命令：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> login</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后，系统会提示你输入用户名和密码，输入你的dockerhub用户名密码即可登录。</p>
-<h3>更改镜像标记</h3>
-<p>你需要tag镜像设置被推送到镜像仓库。使用以下格式的命令来标记镜像：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tag</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">local-image-nam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">local-ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt; </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">hub.icert.top/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>例如，如果你有一个名为 <code>myimage</code> 的本地镜像，并且你想将其推送到 <code>hub.icert.top</code> 上的 <code>myuser</code> 名下的 <code>myrepo</code> 仓库，使用如下命令：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tag</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> myimage:latest</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/myuser/myrepo:latest</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>推送镜像</h3>
-<p>使用 <code>docker push</code> 命令将其推送到私有仓库：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> push</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">namespac</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">imagenam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">g&gt;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>例如：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> push</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/myuser/myrepo:latest</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这会把标记过的镜像推送到你的私有仓库，然后回到dockerhub检查，镜像已经推送到dockerhub当中去了。</p>
-<h2>Docker search命令加速</h2>
-<p>近期看到有人用docker search，但是配置了镜像站仍然无法加速搜索。所以我这里新增了Docker hub的search加速。</p>
-<p>使用如下方式进行搜索</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> search</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">&lt;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">search</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> imag</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e&gt;</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>例如</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> search</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.icert.top/nginx</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<h2>黑名单</h2>
-<p>本站建立的初衷是用于个人学习使用，方便自己也方便别人，近期发现有人滥用，我加功能的时候也写了个防火墙。</p>
-<p>有源地址每天请求几万次，经过日志审计我认为是在生产的集群上使用了本加速镜像。我这边的自动程序处理方法是将你的源ip地址自动添加进黑名单，生产使用请联系我捐助解除禁止。</p>
-<p>使用本镜像站同步镜像站的滥用行为，请求源ip地址将会被加进黑名单。</p>
-<h2>你用的节点在哪里？</h2>
-<div class="hint-container info">
-<p class="hint-container-title">相关信息</p>
-<div id="mobaxterm">
-    <iframe style="height:800px" src="https://cloudflare-cloudnative-pages.geekery.cn/docker"></iframe>
-</div>
-</div>
 ]]></content:encoded>
     </item>
   </channel>

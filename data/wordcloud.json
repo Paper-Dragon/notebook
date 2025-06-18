@@ -1252,6 +1252,10 @@
         "value": 12
     },
     {
+        "name": "Transformer",
+        "value": 12
+    },
+    {
         "name": "Flood",
         "value": 12
     },
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "压缩包",
-        "value": 11
-    },
-    {
-        "name": "特殊字符",
         "value": 11
     }
 ]
