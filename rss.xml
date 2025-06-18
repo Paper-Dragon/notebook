@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 18 Jun 2025 01:53:12 GMT</pubDate>
-    <lastBuildDate>Wed, 18 Jun 2025 01:53:12 GMT</lastBuildDate>
+    <pubDate>Wed, 18 Jun 2025 01:56:46 GMT</pubDate>
+    <lastBuildDate>Wed, 18 Jun 2025 01:56:46 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -17,7 +17,7 @@
       <guid>https://www.geekery.cn/note-book/AI-Training/03%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84-Transformer%E6%A8%A1%E5%9E%8B.html</guid>
       <source url="https://www.geekery.cn/rss.xml">模型架构-Transformer模型</source>
       <description>模型架构-Transformer模型 Why Attention? 搜索场景 在搜索场景中，人们的目光往往会更加关注左上角的三角区域（即第一条搜索结果的位置) image-20250617180226663 阅读中 image-20250617180330064 浏览图文信息 image-20250617180404154 注意力机制 注意力机制，可以...</description>
-      <pubDate>Wed, 18 Jun 2025 01:49:43 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 01:52:45 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Why Attention?</h2>
 <h3>搜索场景</h3>
@@ -70,7 +70,7 @@
       <guid>https://www.geekery.cn/note-book/AI-Training/99%E8%AE%AD%E7%BB%83%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99.html</guid>
       <source url="https://www.geekery.cn/rss.xml">训练相关资料</source>
       <description>训练相关资料 Mineru MinerU是一个将PDF转换为机器可读格式的工具（例如，markdown，JSON），允许轻松提取为任何格式。 https://github.com/opendatalab/MinerU/blob/master/README.md</description>
-      <pubDate>Wed, 18 Jun 2025 01:49:43 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 01:52:45 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>Mineru</h2>
 <p>MinerU是一个将PDF转换为机器可读格式的工具（例如，markdown，JSON），允许轻松提取为任何格式。</p>
