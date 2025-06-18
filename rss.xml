@@ -6,11 +6,21 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 18 Jun 2025 01:56:46 GMT</pubDate>
-    <lastBuildDate>Wed, 18 Jun 2025 01:56:46 GMT</lastBuildDate>
+    <pubDate>Wed, 18 Jun 2025 07:15:37 GMT</pubDate>
+    <lastBuildDate>Wed, 18 Jun 2025 07:15:37 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>大语言模型</title>
+      <link>https://www.geekery.cn/note-book/AI-Training/00%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/00%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">大语言模型</source>
+      <description>大语言模型</description>
+      <pubDate>Wed, 18 Jun 2025 02:22:16 GMT</pubDate>
+      <content:encoded><![CDATA[
+]]></content:encoded>
+    </item>
     <item>
       <title>模型架构-Transformer模型</title>
       <link>https://www.geekery.cn/note-book/AI-Training/03%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84-Transformer%E6%A8%A1%E5%9E%8B.html</link>
@@ -5379,38 +5389,6 @@ Big O：
 </blockquote>
 <h2>原理解析</h2>
 <h3>步骤1 打通两个节点的内网（udp打洞）</h3>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>GitHub加速下载</title>
-      <link>https://www.geekery.cn/free-service/github-direct.html</link>
-      <guid>https://www.geekery.cn/free-service/github-direct.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">GitHub加速下载</source>
-      <description>GitHub加速下载 在Linux上下载GitHub文件太慢了，直接受不了。于是我做了一个用于加速 GitHub 文件下载速度的代理服务，旨在帮助用户更快地获取 GitHub 上的文件、Releases、archive、gist以及raw.githubusercontent.com 文件。通过我们的代理服务，你可以更快地下载这些文件，提高效率，节省时间...</description>
-      <pubDate>Wed, 21 Feb 2024 05:20:51 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>在Linux上下载GitHub文件太慢了，直接受不了。于是我做了一个用于加速 GitHub 文件下载速度的代理服务，旨在帮助用户更快地获取 GitHub 上的文件、Releases、archive、gist以及raw.githubusercontent.com 文件。通过我们的代理服务，你可以更快地下载这些文件，提高效率，节省时间。</p>
-<ul>
-<li>
-<p>地址： <a href="https://github.geekery.cn/" target="_blank" rel="noopener noreferrer">https://github.geekery.cn/</a></p>
-</li>
-<li>
-<p>项目源码： <a href="https://github.com/Paper-Dragon/github-proxy" target="_blank" rel="noopener noreferrer">https://github.com/Paper-Dragon/github-proxy</a></p>
-</li>
-</ul>
-<h2>主要功能</h2>
-<ul>
-<li>加速 GitHub 文件下载</li>
-<li>提供对 Releases 的加速访问</li>
-<li>加速 archive 和 gist 的下载</li>
-<li>优化 <a href="https://raw.githubusercontent.com" target="_blank" rel="noopener noreferrer">https://raw.githubusercontent.com</a> 文件的下载速度</li>
-<li>加速 <a href="https://codeload.github.com" target="_blank" rel="noopener noreferrer">https://codeload.github.com</a> 的下载</li>
-</ul>
-<h2>如何使用</h2>
-<p>您只需将原始URL替换为我代理服务的地址，即可享受到加速下载的便利。举例：</p>
-
-<h2>联系我</h2>
-<p>如果您有任何问题或建议，请随时评论区联系我。仅供学习使用，非法使用必追究法律责任！</p>
 ]]></content:encoded>
     </item>
   </channel>
