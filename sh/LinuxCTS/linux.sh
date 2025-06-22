@@ -37,7 +37,7 @@ start_linux(){
     echo -e "$table_linux"
     echo -e -n "${Green}请输入对应功能的${Font}  ${Red}数字：${Font}"
     
-    read num
+    read -r num
     case $num in
     11)
         source <(curl -s ${download_url}/tools/xncs.sh)

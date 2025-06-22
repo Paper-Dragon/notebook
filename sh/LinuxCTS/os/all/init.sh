@@ -33,7 +33,6 @@ ipaddr=$(curl -s myip.ipip.net | awk -F ' ' '{print $2}' | awk -F '：' '{print 
 ipdz=$(curl -s myip.ipip.net | awk -F '：' '{print $3}')
 sysarch="$(uname -m)"
 
-
 #检查账号
 check_root(){
 	if [[ $EUID != 0 ]];then

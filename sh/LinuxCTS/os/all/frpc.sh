@@ -19,16 +19,17 @@ frpc_ini="${frpc_home}/frpc.ini"
 
 
 check_sys(){
-	if [[ -f /etc/redhat-release ]];then
-		release="CentOS"
-	elif cat /etc/issue | grep -q -i "debian";then
-		release="Debian"
-	elif cat /etc/issue | grep -q -i "ubuntu";then
-		release="Ubuntu"
-	else
-		release="Unknown"
-		echo -e "${RedBG}未知操作系统，可能会有报错${Font}\n"
-	fi
+    if [[ -f /etc/os-release ]]; then
+        source /etc/os-release
+        case $ID in
+            centos|debian|ubuntu)
+                echo "Detected OS: $ID"
+                ;;
+            *)
+                echo -e "${RedBG}未知操作系统，可能会有报错${Font}\n"
+                ;;
+        esac
+    fi
 }
 
 check_root(){
@@ -66,8 +67,7 @@ sys_install(){
 
 download_file(){
     rm -rf ${frpc_home}
-    mkdir -p ${frpc_home}
-    cd ${frpc_home}
+    mkdir -p ${frpc_home} && cd ${frpc_home}
     wget --no-check-certificate ${download_url}/app/frp_${version}_linux_amd64.tar.gz
     tar -zxvf frp_${version}_linux_amd64.tar.gz
     mv frp_${version}_linux_amd64/frpc ${frpc_home}
@@ -146,8 +146,7 @@ EOF
 update_file(){
     mv ${frpc_home}/frpc.ini ${frpc_home}.ini
     rm -rf ${frpc_home}
-    mkdir -p ${frpc_home}
-    cd ${frpc_home}
+    mkdir -p ${frpc_home} &&cd ${frpc_home}
     wget --no-check-certificate ${download_url}/app/frp_${version}_linux_amd64.tar.gz
     tar -zxvf frp_${version}_linux_amd64.tar.gz
     mv frp_${version}_linux_amd64/frpc ${frpc_home}

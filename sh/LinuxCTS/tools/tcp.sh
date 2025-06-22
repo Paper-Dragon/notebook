@@ -1688,7 +1688,7 @@ check_sys() {
         fi
       fi
     fi
-  }
+}
 
   #检查依赖
   if [[ "${OS_type}" == "CentOS" ]]; then

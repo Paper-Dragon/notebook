@@ -9,7 +9,7 @@
 country=$(curl -s https://ifconfig.icu/country)
 if [[ $country == *"China"* ]]; then
     docker_image=swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/nvidia/cuda:12.4.1-base-ubuntu22.04
-    # judge "设置Docker镜点 "
+    judge "设置Docker镜点 "
 else
     docker_image=nvidia/cuda:12.4.1-base-ubuntu22.04
 fi
@@ -29,17 +29,17 @@ judge() {
 # Detect OS
 OS="$(uname)"
 case $OS in
-    "Linux")
-        # Detect Linux Distro
-        if [ -f /etc/os-release ]; then
-            . /etc/os-release
-            DISTRO=$ID
-            VERSION=$VERSION_ID
-        else
-            echo "Your Linux distribution is not supported."
-            exit
-        fi
-        ;;
+"Linux")
+    # Detect Linux Distro
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        DISTRO=$ID
+        VERSION=$VERSION_ID
+    else
+        echo "Your Linux distribution is not supported."
+        exit
+    fi
+    ;;
 esac
 
 # Detect if an Nvidia GPU is present
@@ -267,7 +267,7 @@ if [[ $country == *"China"* ]]; then
 EOF'
     sudo systemctl daemon-reload
 
-    # judge "设置Docker镜点 "
+    judge "设置Docker镜点 "
 else
     sudo bash -c 'cat <<EOF > /etc/docker/daemon.json
     {
