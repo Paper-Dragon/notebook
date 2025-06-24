@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 24 Jun 2025 07:52:34 GMT</pubDate>
-    <lastBuildDate>Tue, 24 Jun 2025 07:52:34 GMT</lastBuildDate>
+    <pubDate>Tue, 24 Jun 2025 07:57:14 GMT</pubDate>
+    <lastBuildDate>Tue, 24 Jun 2025 07:57:14 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -17,7 +17,7 @@
       <guid>https://www.geekery.cn/note-book/Git/%E5%9C%A8PowerShell%E4%B8%AD%E5%90%AF%E5%8A%A8Git%20Bash%E7%9A%84%E6%96%B9%E6%B3%95.html</guid>
       <source url="https://www.geekery.cn/rss.xml">在PowerShell中启动Git Bash的方法</source>
       <description>在PowerShell中启动Git Bash的方法 基本启动命令 在PowerShell中直接运行以下命令启动Git Bash： 指定工作目录启动 通过添加路径参数可直接在指定目录打开Git Bash： 使用场景 PowerShell脚本中集成Git操作 自动化工作流中调用Git命令行工具 在现有PowerShell会话中快速切换至Git环境 注意事项...</description>
-      <pubDate>Tue, 24 Jun 2025 07:26:47 GMT</pubDate>
+      <pubDate>Mon, 23 Jun 2025 02:31:27 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>基本启动命令</h2>
 <p>在PowerShell中直接运行以下命令启动Git Bash：</p>
