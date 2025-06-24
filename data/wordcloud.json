@@ -40,12 +40,12 @@
         "value": 151
     },
     {
-        "name": "操作系统",
-        "value": 145
+        "name": "Git",
+        "value": 151
     },
     {
-        "name": "Git",
-        "value": 143
+        "name": "操作系统",
+        "value": 145
     },
     {
         "name": "Python",
@@ -101,7 +101,7 @@
     },
     {
         "name": "命令行",
-        "value": 78
+        "value": 79
     },
     {
         "name": "用户名",
@@ -117,7 +117,7 @@
     },
     {
         "name": "管理员",
-        "value": 73
+        "value": 74
     },
     {
         "name": "Server",
@@ -320,6 +320,10 @@
         "value": 32
     },
     {
+        "name": "Bash",
+        "value": 32
+    },
+    {
         "name": "Tomcat",
         "value": 32
     },
@@ -361,10 +365,6 @@
     },
     {
         "name": "Install",
-        "value": 29
-    },
-    {
-        "name": "Bash",
         "value": 29
     },
     {
@@ -448,6 +448,10 @@
         "value": 24
     },
     {
+        "name": "Files",
+        "value": 24
+    },
+    {
         "name": "详细信息",
         "value": 24
     },
@@ -476,6 +480,10 @@
         "value": 24
     },
     {
+        "name": "自动化",
+        "value": 23
+    },
+    {
         "name": "State",
         "value": 23
     },
@@ -486,10 +494,6 @@
     {
         "name": "Example",
         "value": 23
-    },
-    {
-        "name": "自动化",
-        "value": 22
     },
     {
         "name": "意味着",
@@ -541,10 +545,6 @@
     },
     {
         "name": "安装包",
-        "value": 21
-    },
-    {
-        "name": "Files",
         "value": 21
     },
     {
@@ -633,6 +633,10 @@
     },
     {
         "name": "复制到",
+        "value": 19
+    },
+    {
+        "name": "Program",
         "value": 19
     },
     {
@@ -829,10 +833,6 @@
     },
     {
         "name": "Go",
-        "value": 16
-    },
-    {
-        "name": "Program",
         "value": 16
     },
     {
@@ -1148,6 +1148,10 @@
         "value": 12
     },
     {
+        "name": "一致性",
+        "value": 12
+    },
+    {
         "name": "Usage",
         "value": 12
     },
@@ -1297,10 +1301,6 @@
     },
     {
         "name": "哲学家",
-        "value": 11
-    },
-    {
-        "name": "一致性",
         "value": 11
     },
     {
