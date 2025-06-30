@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 29 Jun 2025 10:48:25 GMT</pubDate>
-    <lastBuildDate>Sun, 29 Jun 2025 10:48:25 GMT</lastBuildDate>
+    <pubDate>Mon, 30 Jun 2025 07:10:20 GMT</pubDate>
+    <lastBuildDate>Mon, 30 Jun 2025 07:10:20 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -20,7 +20,7 @@
       <pubDate>Sun, 29 Jun 2025 10:44:25 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>通过脚本批量修改Git提交历史中的作者姓名和邮箱：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/LinuxCTS/tools/git_change_author.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> &lt;(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/LinuxCTS/tools/git_change_author.sh)</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>脚本源码</h2>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#!/bin/bash</span></span>
 <span class="line"></span>
