@@ -6,11 +6,145 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 09 Jul 2025 06:18:01 GMT</pubDate>
-    <lastBuildDate>Wed, 09 Jul 2025 06:18:01 GMT</lastBuildDate>
+    <pubDate>Wed, 09 Jul 2025 10:00:23 GMT</pubDate>
+    <lastBuildDate>Wed, 09 Jul 2025 10:00:23 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>模型详解配置</title>
+      <link>https://www.geekery.cn/note-book/AI-Training/04%E6%A8%A1%E5%9E%8B%E8%AF%A6%E8%A7%A3%E9%85%8D%E7%BD%AE.html</link>
+      <guid>https://www.geekery.cn/note-book/AI-Training/04%E6%A8%A1%E5%9E%8B%E8%AF%A6%E8%A7%A3%E9%85%8D%E7%BD%AE.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">模型详解配置</source>
+      <description>模型详解配置 构建大模型需要考虑的因素归一化方法、位置编码、激活函数、注意力计算 image-20250709173129303 层数L、注意力头数N、特征维度N 归一化方法 为什么要做归一化? 不同特征在空间中的尺度不同，对损失优化的影响不一致 特征尺度差异会导致损失函数各方向的梯度下降速度不同。尺度大的特征梯度更新剧烈，迫使模型花费更多迭代次数调整...</description>
+      <pubDate>Wed, 09 Jul 2025 09:56:47 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>构建大模型需要考虑的因素归一化方法、位置编码、激活函数、注意力计算</p>
+<p></p>
+<p>层数L、注意力头数N、特征维度N</p>
+<h2>归一化方法</h2>
+<h4>为什么要做归一化?</h4>
+<ul>
+<li>
+<p><strong>不同特征在空间中的尺度不同，对损失优化的影响不一致</strong><br>
+特征尺度差异会导致损失函数各方向的梯度下降速度不同。尺度大的特征梯度更新剧烈，迫使模型花费更多迭代次数调整其他特征权重，降低优化效率。</p>
+</li>
+<li>
+<p><strong>提升训练稳定性，加速模型收敛</strong><br>
+归一化使所有特征处于相近的数值范围（如[0,1]或[-1,1]）。这使优化路径更平滑，梯度更新方向更稳定，减少震荡风险，从而加快模型收敛速度。</p>
+</li>
+</ul>
+<p></p>
+<h3>方法</h3>
+<p></p>
+<h3>归一化模块位置</h3>
+<p></p>
+<h4>层后归一化(Post-Layer Normalization, Post-Norm)</h4>
+<p><strong>定义</strong>  （归一化模块放置于残差计算之后）</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>加快训练收敛速度</li>
+<li>防止梯度爆炸或梯度消失</li>
+<li>降低神经网络对于超参数的敏感性</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>可能导致训练不稳定</li>
+<li>目前较少单独使用</li>
+</ul>
+<h4>层前归一化(Pre-Layer Normalization, Pre-Norm)</h4>
+<p><strong>定义</strong>  （归一化模块应用在每个子层之前）</p>
+<p><strong>优点</strong></p>
+<ul>
+<li>训练更加稳定</li>
+<li>主流模型采用较多</li>
+</ul>
+<p><strong>缺点</strong></p>
+<ul>
+<li>性能略有逊色</li>
+</ul>
+<h4>夹心归一化(Sandwich-Norm)</h4>
+<p><strong>定义</strong>  （通过双重归一化叠加：在子层<em>前</em>和子层<em>后</em>各加一次归一化）</p>
+<p><strong>核心特性</strong></p>
+<ul>
+<li>Pre-Norm与Post-Norm的复合结构</li>
+<li>归一化逻辑：输入 → <strong>首次归一化</strong> → Sublayer计算 → <strong>二次归一化</strong> → 残差连接</li>
+</ul>
+<p><strong>优势</strong></p>
+<ul>
+<li>理论上融合Pre-Norm的稳定性与Post-Norm的性能增益</li>
+<li>梯度调节能力更强（双重归一化约束）</li>
+</ul>
+<p><strong>局限性</strong></p>
+<ul>
+<li>计算开销显著增加（额外归一化层）</li>
+<li>仍存在训练震荡风险</li>
+<li>实际应用较少，多见于理论研究</li>
+</ul>
+<h2>位置编码</h2>
+<p></p>
+<p>绝对位置编码代表性的是旋转位置编码</p>
+<h3>绝对位置编码：旋转位置编码</h3>
+<p></p>
+<p></p>
+<h3>相对位置编码：ALiBi位置编码</h3>
+<p></p>
+<h2>激活函数</h2>
+<p><strong></strong></p>
+<h2>注意力计算</h2>
+<p></p>
+<h3>对硬件优化</h3>
+<p></p>
+<h2>MOE模型</h2>
+<p>举例： deepseek、Mixtral</p>
+<p>目的是在不显著提升计算成本的同时实现对于模型参数的扩展。</p>
+<p></p>
+<h3>混合专家架构(Mixture-of-Experts, MoE)</h3>
+<p><strong>核心定义</strong><br>
+$$
+\text{MoELayer}(x_t) = \sum_{i=1}^{K} G(x_t)_i \cdot E_i(x_t)<br>
+$$
+其中路由函数：<br>
+$$
+G(x_t) = \text{softmax}(\text{topk}(x_t \cdot W_G))<br>
+$$</p>
+<p><strong>基本组成</strong></p>
+<ol>
+<li>
+<p><strong>专家组件</strong></p>
+<ul>
+<li>$K$个独立的前馈神经网络 ${E_1, E_2, ..., E_K}$</li>
+<li>每个专家具备相同网络结构，参数不同</li>
+</ul>
+</li>
+<li>
+<p><strong>路由网络</strong></p>
+<ul>
+<li>$W_G$：权重矩阵（将输入词元$x_t$映射为$K$维得分向量）</li>
+<li>$\text{topk}$：选择得分最高的$k$个专家（通常$k \ll K$）</li>
+<li>$\text{softmax}$：归一化获得激活权重（未选中专家权重置$0$）</li>
+</ul>
+</li>
+</ol>
+<p><strong>运行流程</strong><br>
+<code>输入词元 → 路由计算→ 筛选topk专家→ 专家并行计算→ 加权输出求和</code></p>
+<p><strong>核心优势</strong></p>
+<ul>
+<li><strong>稀疏激活</strong>：仅计算部分专家输出（节省计算资源）</li>
+<li><strong>超参扩容</strong>：通过增加专家数$K$提升模型容量（计算量仅由$k$决定）</li>
+<li><strong>动态适配</strong>：根据输入特性自动分配处理专家</li>
+</ul>
+<p><strong>显著局限</strong></p>
+<ul>
+<li>路由决策不可导（需直通估计器技巧）</li>
+<li>专家负载不均衡风险（需引入辅助损失）</li>
+<li>通信开销大（分布式训练时专家间数据交换）</li>
+</ul>
+<h2>常用</h2>
+<p>| 模型               | 混合专家    | 归一化      | 位置编码     | 激活函数 | 注意力机制     | 层数 | 隐藏层维度 | 注意力头个数 | 头维度 |
+|</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>修改Git提交历史中的作者信息</title>
       <link>https://www.geekery.cn/note-book/Git/%E4%BF%AE%E6%94%B9Git%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%E4%B8%AD%E7%9A%84%E4%BD%9C%E8%80%85%E4%BF%A1%E6%81%AF.html</link>
@@ -5351,18 +5485,6 @@ Big O：
 <h1>PDF</h1>
 <p><a href="./Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.pdf">Docker学习笔记</a></p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Git拉取全部远程分支</title>
-      <link>https://www.geekery.cn/note-book/Git/Git%E6%8B%89%E5%8F%96%E5%85%A8%E9%83%A8%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF.html</link>
-      <guid>https://www.geekery.cn/note-book/Git/Git%E6%8B%89%E5%8F%96%E5%85%A8%E9%83%A8%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Git拉取全部远程分支</source>
-      <description>Git拉取全部远程分支 命令</description>
-      <pubDate>Tue, 19 Mar 2024 07:51:00 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>命令</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">for</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> i</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> in</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> branch </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">-r</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">do</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> checkout</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">basename</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &amp;&amp; </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> pull</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --all</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">done</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
