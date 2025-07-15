@@ -1,11 +1,11 @@
 [
     {
         "name": "服务器",
-        "value": 460
+        "value": 467
     },
     {
         "name": "Linux",
-        "value": 363
+        "value": 364
     },
     {
         "name": "Docker",
@@ -33,7 +33,7 @@
     },
     {
         "name": "数据库",
-        "value": 169
+        "value": 171
     },
     {
         "name": "Git",
@@ -60,16 +60,16 @@
         "value": 109
     },
     {
+        "name": "数据包",
+        "value": 108
+    },
+    {
         "name": "第一个",
         "value": 104
     },
     {
         "name": "自定义",
         "value": 96
-    },
-    {
-        "name": "数据包",
-        "value": 95
     },
     {
         "name": "浏览器",
@@ -85,15 +85,15 @@
     },
     {
         "name": "Nginx",
-        "value": 88
+        "value": 90
+    },
+    {
+        "name": "防火墙",
+        "value": 86
     },
     {
         "name": "Web",
         "value": 85
-    },
-    {
-        "name": "防火墙",
-        "value": 83
     },
     {
         "name": "二进制",
@@ -112,16 +112,16 @@
         "value": 77
     },
     {
+        "name": "管理员",
+        "value": 75
+    },
+    {
         "name": "表达式",
         "value": 74
     },
     {
-        "name": "管理员",
-        "value": 74
-    },
-    {
         "name": "Server",
-        "value": 73
+        "value": 74
     },
     {
         "name": "虚拟机",
@@ -176,16 +176,16 @@
         "value": 52
     },
     {
+        "name": "解决方案",
+        "value": 51
+    },
+    {
         "name": "Prometheus",
         "value": 51
     },
     {
         "name": "优先级",
         "value": 51
-    },
-    {
-        "name": "解决方案",
-        "value": 50
     },
     {
         "name": "服务端",
@@ -312,12 +312,12 @@
         "value": 33
     },
     {
-        "name": "注册表",
+        "name": "Tomcat",
         "value": 33
     },
     {
-        "name": "Tomcat",
-        "value": 32
+        "name": "注册表",
+        "value": 33
     },
     {
         "name": "Bash",
@@ -364,6 +364,10 @@
         "value": 29
     },
     {
+        "name": "Local",
+        "value": 29
+    },
+    {
         "name": "重定向",
         "value": 29
     },
@@ -373,10 +377,6 @@
     },
     {
         "name": "流水线",
-        "value": 28
-    },
-    {
-        "name": "Local",
         "value": 28
     },
     {
@@ -528,6 +528,10 @@
         "value": 22
     },
     {
+        "name": "计数器",
+        "value": 22
+    },
+    {
         "name": "Pack",
         "value": 22
     },
@@ -604,10 +608,6 @@
         "value": 20
     },
     {
-        "name": "计数器",
-        "value": 20
-    },
-    {
         "name": "网络设备",
         "value": 20
     },
@@ -625,6 +625,10 @@
     },
     {
         "name": "Program",
+        "value": 19
+    },
+    {
+        "name": "Key",
         "value": 19
     },
     {
@@ -677,10 +681,6 @@
     },
     {
         "name": "Script",
-        "value": 18
-    },
-    {
-        "name": "Key",
         "value": 18
     },
     {
@@ -884,6 +884,10 @@
         "value": 15
     },
     {
+        "name": "Check",
+        "value": 15
+    },
+    {
         "name": "Port",
         "value": 15
     },
@@ -1048,10 +1052,6 @@
         "value": 13
     },
     {
-        "name": "Check",
-        "value": 13
-    },
-    {
         "name": "Agent",
         "value": 13
     },
@@ -1077,6 +1077,10 @@
     },
     {
         "name": "Second",
+        "value": 13
+    },
+    {
+        "name": "Timeout",
         "value": 13
     },
     {
@@ -1113,6 +1117,14 @@
     },
     {
         "name": "标识符",
+        "value": 13
+    },
+    {
+        "name": "系统启动",
+        "value": 13
+    },
+    {
+        "name": "网络接口",
         "value": 13
     },
     {
@@ -1192,10 +1204,6 @@
         "value": 12
     },
     {
-        "name": "Timeout",
-        "value": 12
-    },
-    {
         "name": "依赖于",
         "value": 12
     },
@@ -1244,10 +1252,6 @@
         "value": 12
     },
     {
-        "name": "系统启动",
-        "value": 12
-    },
-    {
         "name": "虚拟地址",
         "value": 12
     },
@@ -1277,6 +1281,10 @@
     },
     {
         "name": "Math",
+        "value": 11
+    },
+    {
+        "name": "Action",
         "value": 11
     },
     {
@@ -1384,19 +1392,11 @@
         "value": 11
     },
     {
-        "name": "网络接口",
+        "name": "Kernel",
         "value": 11
     },
     {
         "name": "内存保护",
-        "value": 11
-    },
-    {
-        "name": "Newwork",
-        "value": 11
-    },
-    {
-        "name": "下划线",
         "value": 11
     }
 ]
