@@ -1,11 +1,11 @@
 [
     {
         "name": "服务器",
-        "value": 466
+        "value": 468
     },
     {
         "name": "Linux",
-        "value": 365
+        "value": 366
     },
     {
         "name": "Docker",
@@ -13,11 +13,11 @@
     },
     {
         "name": "配置文件",
-        "value": 249
+        "value": 250
     },
     {
         "name": "文件系统",
-        "value": 226
+        "value": 227
     },
     {
         "name": "字符串",
@@ -25,7 +25,7 @@
     },
     {
         "name": "软件包",
-        "value": 215
+        "value": 220
     },
     {
         "name": "客户端",
@@ -33,7 +33,7 @@
     },
     {
         "name": "数据库",
-        "value": 171
+        "value": 175
     },
     {
         "name": "Git",
@@ -45,7 +45,7 @@
     },
     {
         "name": "操作系统",
-        "value": 144
+        "value": 145
     },
     {
         "name": "Python",
@@ -88,20 +88,20 @@
         "value": 90
     },
     {
+        "name": "Web",
+        "value": 86
+    },
+    {
         "name": "防火墙",
         "value": 86
     },
     {
-        "name": "Web",
-        "value": 85
+        "name": "命令行",
+        "value": 81
     },
     {
         "name": "二进制",
         "value": 80
-    },
-    {
-        "name": "命令行",
-        "value": 79
     },
     {
         "name": "用户名",
@@ -196,12 +196,12 @@
         "value": 50
     },
     {
-        "name": "Jenkins",
-        "value": 49
+        "name": "根目录",
+        "value": 50
     },
     {
-        "name": "根目录",
-        "value": 48
+        "name": "Jenkins",
+        "value": 49
     },
     {
         "name": "Desktop",
@@ -380,6 +380,10 @@
         "value": 28
     },
     {
+        "name": "控制台",
+        "value": 27
+    },
+    {
         "name": "全局变量",
         "value": 27
     },
@@ -397,10 +401,6 @@
     },
     {
         "name": "Markdown",
-        "value": 26
-    },
-    {
-        "name": "控制台",
         "value": 26
     },
     {
@@ -484,16 +484,16 @@
         "value": 23
     },
     {
+        "name": "是因为",
+        "value": 23
+    },
+    {
         "name": "Files",
         "value": 23
     },
     {
         "name": "Example",
         "value": 23
-    },
-    {
-        "name": "是因为",
-        "value": 22
     },
     {
         "name": "Master",
@@ -636,6 +636,10 @@
         "value": 19
     },
     {
+        "name": "管理器",
+        "value": 19
+    },
+    {
         "name": "Starting",
         "value": 19
     },
@@ -688,10 +692,6 @@
         "value": 18
     },
     {
-        "name": "管理器",
-        "value": 18
-    },
-    {
         "name": "Date",
         "value": 18
     },
@@ -701,6 +701,10 @@
     },
     {
         "name": "Token",
+        "value": 18
+    },
+    {
+        "name": "Shell",
         "value": 18
     },
     {
@@ -757,10 +761,6 @@
     },
     {
         "name": "触发器",
-        "value": 17
-    },
-    {
-        "name": "Shell",
         "value": 17
     },
     {
@@ -1044,6 +1044,10 @@
         "value": 13
     },
     {
+        "name": "重新启动",
+        "value": 13
+    },
+    {
         "name": "Runtime",
         "value": 13
     },
@@ -1173,10 +1177,6 @@
     },
     {
         "name": "Transformer",
-        "value": 12
-    },
-    {
-        "name": "重新启动",
         "value": 12
     },
     {
@@ -1364,6 +1364,10 @@
         "value": 11
     },
     {
+        "name": "错误信息",
+        "value": 11
+    },
+    {
         "name": "一次性",
         "value": 11
     },
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "Merge",
-        "value": 11
-    },
-    {
-        "name": "第三个",
         "value": 11
     }
 ]
