@@ -6,11 +6,44 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 06 Aug 2025 07:26:30 GMT</pubDate>
-    <lastBuildDate>Wed, 06 Aug 2025 07:26:30 GMT</lastBuildDate>
+    <pubDate>Thu, 07 Aug 2025 03:15:25 GMT</pubDate>
+    <lastBuildDate>Thu, 07 Aug 2025 03:15:25 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Linux下Ollama开放端口</title>
+      <link>https://www.geekery.cn/note-book/Ollama/Linux%E4%B8%8BOllama%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3.html</link>
+      <guid>https://www.geekery.cn/note-book/Ollama/Linux%E4%B8%8BOllama%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Linux下Ollama开放端口</source>
+      <description>Linux下Ollama开放端口 找到服务配置文件 编辑设置开放端口 添加高亮的 Environment=&amp;quot;OLLAMA_HOST=0.0.0.0&amp;quot; 那一行 重载服务配置文件 重启服务 这样操作完成就可以直接通过外部 ip:端口 访问 ollama。</description>
+      <pubDate>Thu, 07 Aug 2025 03:11:51 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>找到服务配置文件</h2>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vim</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/systemd/system/ollama.service</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>编辑设置开放端口</h2>
+<p>添加高亮的 <code>Environment="OLLAMA_HOST=0.0.0.0"</code> 那一行</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[Unit]</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Description</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">Ollama</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> Service</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">After</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">network-online.target</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[Service]</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">ExecStart</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/usr/local/bin/ollama</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> serve</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">User</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ollama</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Group</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ollama</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Restart</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">always</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">RestartSec</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">3</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Environment</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"OLLAMA_MODELS=/data/ollama/models"</span></span>
+<span class="line highlighted"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Environment</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"OLLAMA_HOST=0.0.0.0"</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[Install]</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">WantedBy</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">default.target</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>重载服务配置文件</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemct</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> daemon-reload</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>重启服务</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ollama</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这样操作完成就可以直接通过外部 <code>ip:端口</code> 访问 ollama。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title></title>
       <link>https://www.geekery.cn/note-book/Iptables/%E8%A7%A3%E5%86%B3%20iptables%20DNAT%20%E6%97%A0%E6%B3%95%E8%BD%AC%E5%8F%91%E5%88%B0%20127.0.0.1%20%E7%9A%84%E9%97%AE%E9%A2%98.html</link>
@@ -5534,20 +5567,6 @@ Big O：
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">net.ipv6.neigh.default.gc_thresh2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> =</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 4096</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">net.ipv6.neigh.default.gc_thresh3</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> =</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 8192</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Radeon镜像站</title>
-      <link>https://www.geekery.cn/free-service/radeon-mirror.html</link>
-      <guid>https://www.geekery.cn/free-service/radeon-mirror.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Radeon镜像站</source>
-      <description>Amd的Radeon镜像站 最近在使用 Ubuntu 安装Amd显卡驱动的时候访问国外镜像站网速特别慢，简直无法忍受，于是乎我自己做了个镜像站，用于加速驱动的下载。 下面的方法仅适用于Ubuntu，其他操作系统按照链接内容安装并替换镜像站 https://rocm.docs.amd.com/projects/install-on-linux/en/la...</description>
-      <pubDate>Sun, 31 Mar 2024 07:15:19 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>最近在使用 Ubuntu 安装Amd显卡驱动的时候访问国外镜像站网速特别慢，简直无法忍受，于是乎我自己做了个镜像站，用于加速驱动的下载。</p>
-<p>下面的方法仅适用于Ubuntu，其他操作系统按照链接内容安装并替换镜像站   <s>我没用到，没写，谁用到了写一个</s> <a href="https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/amdgpu-install.html" target="_blank" rel="noopener noreferrer">https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/amdgpu-install.html</a></p>
-<h2>镜像内容</h2>
-<p>镜像的内容</p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>

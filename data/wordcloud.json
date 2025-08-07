@@ -5,7 +5,7 @@
     },
     {
         "name": "Linux",
-        "value": 366
+        "value": 367
     },
     {
         "name": "Docker",
@@ -13,7 +13,7 @@
     },
     {
         "name": "配置文件",
-        "value": 250
+        "value": 252
     },
     {
         "name": "文件系统",
@@ -156,16 +156,16 @@
         "value": 58
     },
     {
+        "name": "Service",
+        "value": 55
+    },
+    {
         "name": "文件夹",
         "value": 55
     },
     {
         "name": "分隔符",
         "value": 54
-    },
-    {
-        "name": "Service",
-        "value": 53
     },
     {
         "name": "Host",
@@ -344,6 +344,10 @@
         "value": 30
     },
     {
+        "name": "Install",
+        "value": 30
+    },
+    {
         "name": "第二个",
         "value": 30
     },
@@ -354,10 +358,6 @@
     {
         "name": "大小写",
         "value": 30
-    },
-    {
-        "name": "Install",
-        "value": 29
     },
     {
         "name": "编辑器",
@@ -704,6 +704,10 @@
         "value": 18
     },
     {
+        "name": "Unit",
+        "value": 18
+    },
+    {
         "name": "Shell",
         "value": 18
     },
@@ -737,10 +741,6 @@
     },
     {
         "name": "Push",
-        "value": 17
-    },
-    {
-        "name": "Unit",
         "value": 17
     },
     {
@@ -878,6 +878,10 @@
     {
         "name": "子系统",
         "value": 16
+    },
+    {
+        "name": "Environment",
+        "value": 15
     },
     {
         "name": "当前目录",
@@ -1157,10 +1161,6 @@
     },
     {
         "name": "Usage",
-        "value": 12
-    },
-    {
-        "name": "Environment",
         "value": 12
     },
     {
