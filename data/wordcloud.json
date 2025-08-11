@@ -1,19 +1,11 @@
 [
     {
-        "name": "服务器",
-        "value": 469
-    },
-    {
         "name": "Linux",
         "value": 367
     },
     {
         "name": "Docker",
         "value": 294
-    },
-    {
-        "name": "配置文件",
-        "value": 252
     },
     {
         "name": "文件系统",
@@ -1397,6 +1389,14 @@
     },
     {
         "name": "Add",
+        "value": 11
+    },
+    {
+        "name": "Created",
+        "value": 11
+    },
+    {
+        "name": "Win",
         "value": 11
     }
 ]
