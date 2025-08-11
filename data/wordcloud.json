@@ -1,7 +1,7 @@
 [
     {
         "name": "服务器",
-        "value": 468
+        "value": 469
     },
     {
         "name": "Linux",
@@ -9,7 +9,7 @@
     },
     {
         "name": "Docker",
-        "value": 291
+        "value": 294
     },
     {
         "name": "配置文件",
@@ -65,7 +65,7 @@
     },
     {
         "name": "第一个",
-        "value": 104
+        "value": 103
     },
     {
         "name": "自定义",
@@ -73,11 +73,11 @@
     },
     {
         "name": "初始化",
-        "value": 94
+        "value": 95
     },
     {
         "name": "浏览器",
-        "value": 93
+        "value": 94
     },
     {
         "name": "Nginx",
@@ -85,7 +85,7 @@
     },
     {
         "name": "宿主机",
-        "value": 90
+        "value": 89
     },
     {
         "name": "防火墙",
@@ -113,7 +113,7 @@
     },
     {
         "name": "管理员",
-        "value": 75
+        "value": 76
     },
     {
         "name": "表达式",
@@ -356,6 +356,10 @@
         "value": 30
     },
     {
+        "name": "Local",
+        "value": 30
+    },
+    {
         "name": "大小写",
         "value": 30
     },
@@ -369,10 +373,6 @@
     },
     {
         "name": "重定向",
-        "value": 29
-    },
-    {
-        "name": "Local",
         "value": 29
     },
     {
