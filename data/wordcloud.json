@@ -73,7 +73,7 @@
     },
     {
         "name": "Nginx",
-        "value": 90
+        "value": 93
     },
     {
         "name": "宿主机",
@@ -228,6 +228,10 @@
         "value": 43
     },
     {
+        "name": "Apache",
+        "value": 43
+    },
+    {
         "name": "运算符",
         "value": 43
     },
@@ -241,10 +245,6 @@
     },
     {
         "name": "相当于",
-        "value": 41
-    },
-    {
-        "name": "Apache",
         "value": 41
     },
     {
