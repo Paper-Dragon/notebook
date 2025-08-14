@@ -68,12 +68,12 @@
         "value": 95
     },
     {
-        "name": "浏览器",
+        "name": "Nginx",
         "value": 94
     },
     {
-        "name": "Nginx",
-        "value": 93
+        "name": "浏览器",
+        "value": 94
     },
     {
         "name": "宿主机",
