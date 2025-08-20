@@ -6,11 +6,39 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 15 Aug 2025 02:34:47 GMT</pubDate>
-    <lastBuildDate>Fri, 15 Aug 2025 02:34:47 GMT</lastBuildDate>
+    <pubDate>Wed, 20 Aug 2025 07:42:32 GMT</pubDate>
+    <lastBuildDate>Wed, 20 Aug 2025 07:42:32 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Windows11跳过TPM2.0</title>
+      <link>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87TPM2.0.html</link>
+      <guid>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87TPM2.0.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Windows11跳过TPM2.0</source>
+      <description>Windows11跳过TPM2.0 方式一 双击iso文件进入光盘 在次数打开shell，输入命令 在此窗口输入setup.exe /product server，然后敲回车键。注意setup.exe与/ product之间有空格，/product与server之间有空格。 image-20250820153649641 image-202508201...</description>
+      <pubDate>Wed, 20 Aug 2025 07:38:50 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>方式一</h2>
+<p>双击iso文件进入光盘</p>
+<p>在次数打开shell，输入命令</p>
+<p>在此窗口输入setup.exe /product server，然后敲回车键。注意setup.exe与/ product之间有空格，/product与server之间有空格。</p>
+<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">setup.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">exe</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> /</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">product</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> server</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
+<p></p>
+<p>使用这个方法可以成功绕过并继续安装</p>
+<h2>方式二</h2>
+<h3>设置区域、时间和输入法</h3>
+<p></p>
+<h3>绕过 TPM</h3>
+<p>这一步是关键，不要点击“现在安装” 按 Shift+F10 呼出命令提示符输入以下命令添加注册表键值。这一步是通过修改注册表绕过 TPM  检查继续安装系统。如果不绕过 TPM 检查则无法安装 Windows 11 会提示“这台电脑无法运行 Windows 11”</p>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>REG ADD HKLM\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d 1</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
+<h3>许可条款</h3>
+<p>出现许可条款则说明已经绕过了 TPM 检查；</p>
+<p></p>
+]]></content:encoded>
+    </item>
     <item>
       <title>vue配置Nginx伪静态</title>
       <link>https://www.geekery.cn/note-book/vue/vue%E9%85%8D%E7%BD%AENginx%E4%BC%AA%E9%9D%99%E6%80%81.html</link>
@@ -1922,25 +1950,14 @@ gitlab</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>Windows11跳过TPM2.0和微软账号登录</title>
-      <link>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87TPM2.0%E5%92%8C%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</link>
-      <guid>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87TPM2.0%E5%92%8C%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Windows11跳过TPM2.0和微软账号登录</source>
-      <description>Windows11跳过TPM2.0和微软账号登录 绕过 TPM2.0 设置区域、时间和输入法 image-20250407172536520 绕过 TPM 这一步是关键，不要点击“现在安装” 按 Shift+F10 呼出命令提示符输入以下命令添加注册表键值。这一步是通过修改注册表绕过 TPM 检查继续安装系统。如果不绕过 TPM 检查则无法安装 Win...</description>
+      <title>Windows11跳过微软账号登录</title>
+      <link>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</link>
+      <guid>https://www.geekery.cn/note-book/Windows/Windows11%E8%B7%B3%E8%BF%87%E5%BE%AE%E8%BD%AF%E8%B4%A6%E5%8F%B7%E7%99%BB%E5%BD%95.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Windows11跳过微软账号登录</source>
+      <description>Windows11跳过微软账号登录 方式一 适用于24年6月之前的Windows 系统 在安装win11系统，进行到选择语言界面的时候，暂停下。 我们可以按下键盘的Shift+F10按键（部分电脑是Fn+Shift+F10），这时屏幕会出现命令行窗口。 我们需要在命令行内输入代码oobe\bypassnro.cmd然后回车，这时候电脑会重启。 PS：若...</description>
       <pubDate>Thu, 26 Sep 2024 05:42:40 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>绕过 TPM2.0</h2>
-<h3>设置区域、时间和输入法</h3>
-<p></p>
-<h3>绕过 TPM</h3>
-<p>这一步是关键，不要点击“现在安装” 按 Shift+F10 呼出命令提示符输入以下命令添加注册表键值。这一步是通过修改注册表绕过 TPM  检查继续安装系统。如果不绕过 TPM 检查则无法安装 Windows 11 会提示“这台电脑无法运行 Windows 11”</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>REG ADD HKLM\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d 1</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<h3>许可条款</h3>
-<p>出现许可条款则说明已经绕过了 TPM 检查；</p>
-<p></p>
-<h2>跳过微软账户登录</h2>
-<h3>方式一</h3>
+<h2>方式一</h2>
 <blockquote>
 <p>适用于24年6月之前的Windows 系统</p>
 </blockquote>
@@ -1951,15 +1968,15 @@ gitlab</p>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>PS：若无法输入命令，可以电脑插入鼠标点击一下命令行窗口（看到窗口外框变黑）再尝试。</p>
 <p>我们就可以选择 我没有Internet链接 这个选项了（此时计算机如果插着网线正在联网的话需要先把网线拔掉才能有此选项）</p>
 <p></p>
-<h3>方式二</h3>
+<h2>方式二</h2>
 <blockquote>
 <p>适用于24年新版系统安装Windows 11跳过微软账户</p>
 </blockquote>
-<h4>新建用户</h4>
+<h3>新建用户</h3>
 <p>Shift + F10 打开cmd， 不需要任何操作</p>
 <p>Win + R 然后输入 Control 调出 控制面板</p>
 <p>在用户账户界面新建账户，该账户用于以后登陆</p>
-<h4>修改注册表</h4>
+<h3>修改注册表</h3>
 <p>Win+R 输入regedit.exe 调出注册表编辑器</p>
 <p></p>
 <p>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\OOBE</p>
@@ -1971,7 +1988,7 @@ gitlab</p>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：HideWirelessSetuplnOOBE，将值设置为1</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：SkipMachineOOBE，将值设置为1</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> 新建DWORD（32位）值，名称为：SkipUserOOBE，将值设置为1</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4>重启电脑并禁用无用账户</h4>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>重启电脑并禁用无用账户</h3>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">禁用如下账户</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Administrator</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">default0</span></span>
@@ -5276,232 +5293,6 @@ Big O：
 </blockquote>
 <p></p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Huawei-CE5810网络汇聚方案生产案例</title>
-      <link>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Huawei-CE5810%E7%BD%91%E7%BB%9C%E6%B1%87%E8%81%9A%E6%96%B9%E6%A1%88%E7%94%9F%E4%BA%A7%E6%A1%88%E4%BE%8B.html</link>
-      <guid>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Huawei-CE5810%E7%BD%91%E7%BB%9C%E6%B1%87%E8%81%9A%E6%96%B9%E6%A1%88%E7%94%9F%E4%BA%A7%E6%A1%88%E4%BE%8B.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Huawei-CE5810网络汇聚方案生产案例</source>
-      <description>Huawei-CE5810网络汇聚方案生产案例</description>
-      <pubDate>Mon, 01 Apr 2024 09:26:52 GMT</pubDate>
-      <content:encoded><![CDATA[
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[~HUAWEI]display current-configuration</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">!</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Software</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Version</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> V100R003C00SPC600</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">!</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Last</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configuration</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> was</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> updated</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> at</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2023-09-21</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 05:46:58+00:00</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> by</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> admin</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">!</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Last</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configuration</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> was</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> saved</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> at</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2023-09-21</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 05:47:09+00:00</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> by</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> admin</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sysname</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> HUAWEI</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">drop-profile</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vlan</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> batch</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 101</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 130</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">stp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> disable</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> timeout</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> inactive</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 100</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> timeout</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tcp-session</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> export</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> version</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 9</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> origin-as</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> export</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> template</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> timeout-rate</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> export</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> source</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 192.168.101.102</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> export</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> host</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 192.168.101.200</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2055</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">telnet</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> server</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> disable</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">diffserv</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> domain</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">aaa</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> undo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> local-user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> policy</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> security-enhance</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> local-user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> password</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> irreversible-cipher</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $1a$fb</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">:J!Rwy</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">H</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$Dda</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">$</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">+.%mP.5</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">L/~*JWA7R</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">|</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S!3}7[B*zMm</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">{J@IYO=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">$</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> local-user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> service-type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> telnet</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> local-user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> admin</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> level</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 15</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> authentication-scheme</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> authorization-scheme</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> accounting-scheme</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> domain</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> domain</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default_admin</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">stack</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Vlanif1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 192.168.101.101</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 255.255.255.0</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> MEth0/0/0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 192.168.0.233</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 255.255.255.0</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 101</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> qos</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> lr</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cir</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 390</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> mbps</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> outbound</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/2</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 102</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/3</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 103</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/4</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 104</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/5</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 105</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/6</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 106</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/7</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 107</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/8</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 108</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/9</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 109</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/10</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 110</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/11</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 111</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/12</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 112</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/13</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 113</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/14</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 114</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/15</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 115</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/16</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 116</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/17</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 117</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/18</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 118</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/19</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 119</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/20</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 120</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/21</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 121</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/22</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 122</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/23</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 123</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/24</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 124</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/25</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 125</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/26</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 126</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/27</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 127</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/28</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 128</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/29</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 129</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/30</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 130</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/31</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/32</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/33</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/34</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/35</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/36</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/37</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/38</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/39</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/40</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/41</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/42</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/43</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/44</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/45</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/46</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/47</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GE1/0/48</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 10GE1/0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> allow-pass</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 4094</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> inbound</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> outbound</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sampler</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> random-packets</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> inbound</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> netstream</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> sampler</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> random-packets</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> outbound</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 10GE1/0/2</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> allow-pass</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 4094</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 10GE1/0/3</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> allow-pass</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 4094</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 10GE1/0/4</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> port</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> trunk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> allow-pass</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vlan</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 4094</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">interface</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> NULL0</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">snmp-agent</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">snmp-agent</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> local-engineid</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 800007DB0304F938EBDC11</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">snmp-agent</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> community</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> read</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cipher</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> %@%@5Oo</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">|</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">+77#A0K</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">'$Q,6"&amp;#$,r2;#cJH0/"_.&amp;&lt;:NYGur(PNr2&gt;,nK"H/9P{#S6@._S-zbwC2G,r%@%@</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">snmp-agent sys-info version v2c v3</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">lldp enable</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">user-interface con 0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">user-interface vty 0 4</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> authentication-mode aaa</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> user privilege level 15</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> protocol inbound all</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vm-manager</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">#</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">return</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">[~HUAWEI]</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
