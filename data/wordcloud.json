@@ -21,7 +21,7 @@
     },
     {
         "name": "客户端",
-        "value": 206
+        "value": 208
     },
     {
         "name": "数据库",
@@ -33,23 +33,23 @@
     },
     {
         "name": "Windows",
-        "value": 151
+        "value": 150
     },
     {
         "name": "操作系统",
-        "value": 145
+        "value": 144
     },
     {
         "name": "Python",
         "value": 127
     },
     {
-        "name": "Kubernetes",
+        "name": "Ubuntu",
         "value": 113
     },
     {
-        "name": "Ubuntu",
-        "value": 109
+        "name": "Kubernetes",
+        "value": 113
     },
     {
         "name": "数据包",
@@ -89,7 +89,7 @@
     },
     {
         "name": "命令行",
-        "value": 81
+        "value": 82
     },
     {
         "name": "二进制",
@@ -113,7 +113,7 @@
     },
     {
         "name": "Server",
-        "value": 74
+        "value": 72
     },
     {
         "name": "默认值",
@@ -408,10 +408,6 @@
         "value": 26
     },
     {
-        "name": "Password",
-        "value": 26
-    },
-    {
         "name": "Systemback",
         "value": 26
     },
@@ -433,6 +429,10 @@
     },
     {
         "name": "Container",
+        "value": 25
+    },
+    {
+        "name": "Password",
         "value": 25
     },
     {
@@ -484,6 +484,10 @@
         "value": 23
     },
     {
+        "name": "意味着",
+        "value": 23
+    },
+    {
         "name": "Example",
         "value": 23
     },
@@ -505,10 +509,6 @@
     },
     {
         "name": "内存空间",
-        "value": 22
-    },
-    {
-        "name": "意味着",
         "value": 22
     },
     {
@@ -596,10 +596,6 @@
         "value": 20
     },
     {
-        "name": "Installing",
-        "value": 20
-    },
-    {
         "name": "检查点",
         "value": 20
     },
@@ -652,11 +648,11 @@
         "value": 19
     },
     {
-        "name": "Starting",
+        "name": "Logstash",
         "value": 19
     },
     {
-        "name": "Logstash",
+        "name": "Installing",
         "value": 19
     },
     {
@@ -689,6 +685,10 @@
     },
     {
         "name": "Unit",
+        "value": 18
+    },
+    {
+        "name": "Starting",
         "value": 18
     },
     {
@@ -928,6 +928,10 @@
         "value": 15
     },
     {
+        "name": "图形界面",
+        "value": 14
+    },
+    {
         "name": "Provider",
         "value": 14
     },
@@ -961,6 +965,14 @@
     },
     {
         "name": "扩展性",
+        "value": 14
+    },
+    {
+        "name": "端口号",
+        "value": 14
+    },
+    {
+        "name": "主目录",
         "value": 14
     },
     {
@@ -1072,10 +1084,6 @@
         "value": 13
     },
     {
-        "name": "端口号",
-        "value": 13
-    },
-    {
         "name": "处理器",
         "value": 13
     },
@@ -1085,10 +1093,6 @@
     },
     {
         "name": "网络连接",
-        "value": 13
-    },
-    {
-        "name": "主目录",
         "value": 13
     },
     {
@@ -1289,10 +1293,6 @@
     },
     {
         "name": "Cron",
-        "value": 11
-    },
-    {
-        "name": "图形界面",
         "value": 11
     },
     {
