@@ -6,11 +6,32 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Fri, 22 Aug 2025 07:45:46 GMT</pubDate>
-    <lastBuildDate>Fri, 22 Aug 2025 07:45:46 GMT</lastBuildDate>
+    <pubDate>Mon, 25 Aug 2025 07:31:17 GMT</pubDate>
+    <lastBuildDate>Mon, 25 Aug 2025 07:31:17 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Dell EMC PowerEdge R740服务器内存插槽使用说明及正确安装方法</title>
+      <link>https://www.geekery.cn/note-book/%E6%9C%8D%E5%8A%A1%E5%99%A8/Dell%20EMC%20PowerEdge%20R740%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E6%8F%92%E6%A7%BD%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E5%8F%8A%E6%AD%A3%E7%A1%AE%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95.html</link>
+      <guid>https://www.geekery.cn/note-book/%E6%9C%8D%E5%8A%A1%E5%99%A8/Dell%20EMC%20PowerEdge%20R740%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E6%8F%92%E6%A7%BD%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E5%8F%8A%E6%AD%A3%E7%A1%AE%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Dell EMC PowerEdge R740服务器内存插槽使用说明及正确安装方法</source>
+      <description>Dell EMC PowerEdge R740服务器内存插槽使用说明及正确安装方法 摘录自：http://www.dellhpibm.com/js-47.html 系统内存指南 PowerEdge 系统支持 DDR4 寄存式 DIMM (RDIMM)、低负载 DIMM (LRDIMM) 以及非易失性 DIMM (NVDIMM-N) 和 DCPMM。系统...</description>
+      <pubDate>Mon, 25 Aug 2025 07:27:44 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>摘录自：http://www.dellhpibm.com/js-47.html</p>
+</blockquote>
+<h2>系统内存指南</h2>
+<p>PowerEdge 系统支持 DDR4 寄存式 DIMM (RDIMM)、低负载 DIMM (LRDIMM) 以及非易失性 DIMM (NVDIMM-N) 和 DCPMM。系统内存可容纳执行由处理器的说明进行操作。</p>
+<p>系统包含 24 个内存插槽，分为两组（每组 12 个），每个处理器一组。每组的 12 个插槽分入六通道。每个处理器均分配有六个内存通道。在每个通道中，第一个插槽的释放拉杆标为白色，第二个插槽的标为黑色。</p>
+<p>图 1. 内存插槽位置</p>
+<p>![GUID-1F995763-6F1D-4045-985E-114D290C001C-low](./Dell EMC PowerEdge R740服务器内存插槽使用说明及正确安装方法.assets/GUID-1F995763-6F1D-4045-985E-114D290C001C-low.jpg)</p>
+<p>内存通道按如下方式组织：</p>
+<p>| 处理器   | 通道 0        | 通道 1        | 通道 2        | 通道 3         | 通道 4         | 通道 5         |
+|</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>Ubuntu安装VNC教程</title>
       <link>https://www.geekery.cn/note-book/LinuxOperaSystem/VNC/Ubuntu%E5%AE%89%E8%A3%85VNC%E6%95%99%E7%A8%8B.html</link>
@@ -5300,47 +5321,6 @@ Big O：
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>用Python实现如下</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-python"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">c </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> b </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">else</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> b</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>公式：在Python中需要将条件和和条件为True的表达是位置交换</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Nvidia镜像站</title>
-      <link>https://www.geekery.cn/free-service/nvidia-mirror.html</link>
-      <guid>https://www.geekery.cn/free-service/nvidia-mirror.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Nvidia镜像站</source>
-      <description>Nvidia镜像站 在 Ubuntu 系统中使用 Nvidia 显卡时，下载驱动速度可能会非常慢。为了解决这个问题，我搭建了一个镜像站来加速下载。 镜像站提供两个主要地址： 开发者工具镜像站 地址：nvidia-developer.geekery.cn 包含 CUDA 工具等 Nvidia 开发必需资源。 Docker Runtime 镜像站 地址：n...</description>
-      <pubDate>Wed, 03 Apr 2024 06:28:09 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>在 Ubuntu 系统中使用 Nvidia 显卡时，下载驱动速度可能会非常慢。为了解决这个问题，我搭建了一个镜像站来加速下载。</p>
-<p>镜像站提供两个主要地址：</p>
-<p><strong>开发者工具镜像站</strong></p>
-<ul>
-<li>地址：<a href="https://nvidia-developer.geekery.cn" target="_blank" rel="noopener noreferrer">nvidia-developer.geekery.cn</a></li>
-<li>包含 CUDA 工具等 Nvidia 开发必需资源。</li>
-</ul>
-<p><strong>Docker Runtime 镜像站</strong></p>
-<ul>
-<li>地址：<a href="https://nvidia-docker.geekery.cn" target="_blank" rel="noopener noreferrer">nvidia-docker.geekery.cn</a></li>
-<li>提供 libnvidia-container，用于支持容器内的 Nvidia 显卡运行。</li>
-</ul>
-<ul>
-<li>
-<p>预览<strong>libnvidia-container</strong> 镜像源  <a href="https://nvidia-docker.geekery.cn/libnvidia-container/stable/" target="_blank" rel="noopener noreferrer">https://nvidia-docker.geekery.cn/libnvidia-container/stable/</a></p>
-</li>
-<li>
-<p>预览<strong>cuda</strong> 镜像仓库    <a href="https://nvidia-developer.geekery.cn/compute/cuda/repos/" target="_blank" rel="noopener noreferrer">https://nvidia-developer.geekery.cn/compute/cuda/repos/</a></p>
-</li>
-</ul>
-<h2>一键部署Nvidia-Docker脚本</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/sh/LinuxCTS/os/apt/nvidia-docker.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">bash</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>脚本中一键部署了</p>
-<ul>
-<li>cuda工具</li>
-<li>docker runtime</li>
-<li>docker</li>
-</ul>
-<p>支持系统版本</p>
-<p>| 操作系统    | 版本                | 备注                              |
-|</p>
 ]]></content:encoded>
     </item>
   </channel>

@@ -32,6 +32,10 @@
         "value": 153
     },
     {
+        "name": "处理器",
+        "value": 153
+    },
+    {
         "name": "Windows",
         "value": 150
     },
@@ -57,11 +61,11 @@
     },
     {
         "name": "第一个",
-        "value": 103
+        "value": 104
     },
     {
         "name": "自定义",
-        "value": 96
+        "value": 97
     },
     {
         "name": "初始化",
@@ -333,7 +337,11 @@
     },
     {
         "name": "同一个",
-        "value": 30
+        "value": 31
+    },
+    {
+        "name": "第二个",
+        "value": 31
     },
     {
         "name": "Core",
@@ -341,10 +349,6 @@
     },
     {
         "name": "Install",
-        "value": 30
-    },
-    {
-        "name": "第二个",
         "value": 30
     },
     {
@@ -420,6 +424,10 @@
         "value": 25
     },
     {
+        "name": "请参阅",
+        "value": 25
+    },
+    {
         "name": "上下文",
         "value": 25
     },
@@ -433,6 +441,10 @@
     },
     {
         "name": "Password",
+        "value": 25
+    },
+    {
+        "name": "Package",
         "value": 25
     },
     {
@@ -461,10 +473,6 @@
     },
     {
         "name": "Udev",
-        "value": 24
-    },
-    {
-        "name": "Package",
         "value": 24
     },
     {
@@ -816,6 +824,10 @@
         "value": 17
     },
     {
+        "name": "内存模块",
+        "value": 17
+    },
+    {
         "name": "稳定性",
         "value": 16
     },
@@ -952,10 +964,6 @@
         "value": 14
     },
     {
-        "name": "请参阅",
-        "value": 14
-    },
-    {
         "name": "进一步",
         "value": 14
     },
@@ -1081,10 +1089,6 @@
     },
     {
         "name": "系统启动",
-        "value": 13
-    },
-    {
-        "name": "处理器",
         "value": 13
     },
     {
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "Created",
-        "value": 11
-    },
-    {
-        "name": "Win",
         "value": 11
     }
 ]
