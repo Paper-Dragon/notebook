@@ -6,11 +6,66 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 25 Aug 2025 07:31:17 GMT</pubDate>
-    <lastBuildDate>Mon, 25 Aug 2025 07:31:17 GMT</lastBuildDate>
+    <pubDate>Mon, 25 Aug 2025 07:55:11 GMT</pubDate>
+    <lastBuildDate>Mon, 25 Aug 2025 07:55:11 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>GitLab批量创建用户</title>
+      <link>https://www.geekery.cn/note-book/Gitlab/GitLab%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7.html</link>
+      <guid>https://www.geekery.cn/note-book/Gitlab/GitLab%E6%89%B9%E9%87%8F%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">GitLab批量创建用户</source>
+      <description>GitLab批量创建用户 一、获取Personal Access Tokens 1、使用有admin权限的账号登录GitLab； 2、单击右上角的头像，点击&amp;quot;Settings&amp;quot;进入设置页面； 3、点击左侧菜单Access Tokens，然后生成 Personal Access Tokens； image-20250825154257249 4、将生成的...</description>
+      <pubDate>Mon, 25 Aug 2025 07:51:44 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2><strong>一、获取Personal Access Tokens</strong></h2>
+<p>1、使用有admin权限的账号登录GitLab；</p>
+<p>2、单击右上角的头像，点击"Settings"进入设置页面；</p>
+<p>3、点击左侧菜单Access Tokens，然后生成 Personal Access Tokens；</p>
+<p></p>
+<p>4、将生成的personal access token记录下来，后面会用到。</p>
+<h2>二、准备脚本文件</h2>
+<p>创建userlist.txt文件，内容格式如下：</p>
+<div class="language-c line-numbers-mode" data-highlighter="shiki" data-ext="c" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-c"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 songxxxx@xxxxxxxxx.cn xxxx 宋xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 lixxxx@xxxxxxxxx.cn xxxx 李xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 longxxxx@xxxxxxxxx.cn xxxx 龙xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 lixxxx@xxxxxxxxx.cn xxxx 李xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 qixxxx@xxxxxxxxx.cn xxxx 祁xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 zengxxxx@xxxxxxxxx.cn xxxx 曾xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 yuxxxx@xxxxxxxxx.cn xxxx 余xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025 lixxxx@xxxxxxxxx.cn xxxx 李xx</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">xxxxxxx@G1t2025  Shixxxx@xxxxxxxxx.cn  xxxx 师xx</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>对应字段分别是：密码 邮箱 用户名 别名，字段可以按需调整。</p>
+<p>创建 gitlabAddUser.sh 文件，内容如下：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#!/bin/bash</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 用户信息文件</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">userinfo</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"userlist.txt"</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 读取文件</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">while</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> read</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -r</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> line</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">do</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 去除行首尾空格</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    l</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $line</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> |</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> awk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '{gsub(/^\s+|\s+$/, "");print}'`</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $l</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 按照空格分隔  字段顺序按需调整，但需与userinfo.txt文件一致</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    password</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $l</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> |</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> awk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '{print $1}'`</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    email</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $l</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> |</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> awk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '{print $2}'`</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    username</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $l</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> |</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> awk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '{print $3}'`</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    name</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">echo</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $l</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> |</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> awk</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '{print $4}'`</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 发送post请求 token与url需更换为自己的</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -X</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> POST</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -H</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "PRIVATE-TOKEN: token-tokenxxxxxABCDEF"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "http://test.gitlab.com/api/v4/users"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -H</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'cache-control: no-cache'</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -H</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'content-type: application/json'</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">    -d</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> '{ "email": "'"</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$email</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"'", "username": "'"</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$username</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"'", "password": "'"</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$password</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"'", "name": "'"</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$name</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"'", "skip_confirmation": "true" }'</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ""</span></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">done</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &lt; </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$userinfo</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其中PRIVATE-TOKEN需要改为第一步获取到的personal access token，
+API地址http://test.gitlab.com/api/v4/users需要改为自己的gitlab服务器地址，相应的api可查看gitlab的官方文档https://docs.gitlab.com/ce/api/</p>
+<h3>三、执行脚本命令</h3>
+<p>打开shell命令窗口，找到 gitlabAddUser.sh 文件，给此文件添加可执行权限，执行gitlabAddUser.sh。</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> +x</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> gitlabAddUser.sh</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sh</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> gitlabAddUser.sh</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Dell EMC PowerEdge R740服务器内存插槽使用说明及正确安装方法</title>
       <link>https://www.geekery.cn/note-book/%E6%9C%8D%E5%8A%A1%E5%99%A8/Dell%20EMC%20PowerEdge%20R740%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AD%98%E6%8F%92%E6%A7%BD%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E5%8F%8A%E6%AD%A3%E7%A1%AE%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95.html</link>
@@ -5305,23 +5360,6 @@ Big O：
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">WantedBy=multi-user.target</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">EOF</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Python实现三目运算符</title>
-      <link>https://www.geekery.cn/note-book/Research_Develop/Python/Python%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6.html</link>
-      <guid>https://www.geekery.cn/note-book/Research_Develop/Python/Python%E5%AE%9E%E7%8E%B0%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97%E7%AC%A6.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Python实现三目运算符</source>
-      <description>Python实现三目运算符 都知道Python中没有三目运算符，但是熟练C等语言写作方式，如何去实现三目运算符呢？ 实现 这时一段C语言的三目运算符代码 用Python实现如下 公式：在Python中需要将条件和和条件为True的表达是位置交换</description>
-      <pubDate>Sat, 06 Apr 2024 03:40:58 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>都知道Python中没有三目运算符，但是熟练C等语言写作方式，如何去实现三目运算符呢？</p>
-<h2>实现</h2>
-<p>这时一段C语言的三目运算符代码</p>
-<div class="language-c line-numbers-mode" data-highlighter="shiki" data-ext="c" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-c"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">c </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> b</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">?</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> b</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>用Python实现如下</p>
-<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-python"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">c </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> a </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&gt;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> b </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">else</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> b</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>公式：在Python中需要将条件和和条件为True的表达是位置交换</p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
