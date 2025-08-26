@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 26 Aug 2025 02:26:53 GMT</pubDate>
-    <lastBuildDate>Tue, 26 Aug 2025 02:26:53 GMT</lastBuildDate>
+    <pubDate>Tue, 26 Aug 2025 02:35:55 GMT</pubDate>
+    <lastBuildDate>Tue, 26 Aug 2025 02:35:55 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -17,7 +17,7 @@
       <guid>https://www.geekery.cn/note-book/Gitlab/Gitlab%E9%85%8D%E7%BD%AE%E8%AF%A6%E8%A7%A3.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Gitlab配置详解</source>
       <description>Gitlab配置详解 Gitlab配置文件真是又臭又长，将很多款文件合并到一个文件中，整个配置3601行，英文不太好的朋友很容易因为理解偏差误操作，下面是汉化版本的gitlab.rb文件，我已经将它完全汉化。最后记录了汉化脚本。 文件来源： https://gitlab.com/gitlab-org/omnibus-gitlab/-/blob/0186...</description>
-      <pubDate>Tue, 26 Aug 2025 02:22:29 GMT</pubDate>
+      <pubDate>Tue, 26 Aug 2025 02:32:24 GMT</pubDate>
       <content:encoded><![CDATA[
 <p>Gitlab配置文件真是又臭又长，将很多款文件合并到一个文件中，整个配置3601行，英文不太好的朋友很容易因为理解偏差误操作，下面是汉化版本的gitlab.rb文件，我已经将它完全汉化。最后记录了汉化脚本。</p>
 <blockquote>
