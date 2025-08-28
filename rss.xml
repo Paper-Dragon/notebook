@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 26 Aug 2025 15:06:54 GMT</pubDate>
-    <lastBuildDate>Tue, 26 Aug 2025 15:06:54 GMT</lastBuildDate>
+    <pubDate>Thu, 28 Aug 2025 03:06:05 GMT</pubDate>
+    <lastBuildDate>Thu, 28 Aug 2025 03:06:05 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -3915,14 +3915,14 @@ API地址http://test.gitlab.com/api/v4/users需要改为自己的gitlab服务器
 ]]></content:encoded>
     </item>
     <item>
-      <title></title>
+      <title>解决 iptables DNAT 无法转发到 127.0.0.1 的问题及安全风险分析</title>
       <link>https://www.geekery.cn/note-book/Iptables/%E8%A7%A3%E5%86%B3%20iptables%20DNAT%20%E6%97%A0%E6%B3%95%E8%BD%AC%E5%8F%91%E5%88%B0%20127.0.0.1%20%E7%9A%84%E9%97%AE%E9%A2%98.html</link>
       <guid>https://www.geekery.cn/note-book/Iptables/%E8%A7%A3%E5%86%B3%20iptables%20DNAT%20%E6%97%A0%E6%B3%95%E8%BD%AC%E5%8F%91%E5%88%B0%20127.0.0.1%20%E7%9A%84%E9%97%AE%E9%A2%98.html</guid>
-      <source url="https://www.geekery.cn/rss.xml"></source>
+      <source url="https://www.geekery.cn/rss.xml">解决 iptables DNAT 无法转发到 127.0.0.1 的问题及安全风险分析</source>
       <description>解决 iptables DNAT 无法转发到 127.0.0.1 的问题及安全风险分析 一、问题场景 在服务器运维中，我们可能会遇到一个特殊的需求：服务器上有一个服务（如Nginx、Tomcat）监听在本地回环地址（127.0.0.1）的某个端口上（如 8080），但我们希望通过服务器的公网或内网IP的另一个端口（如 80）来访问这个服务。 典型场景:...</description>
       <pubDate>Tue, 15 Jul 2025 09:51:09 GMT</pubDate>
-      <content:encoded><![CDATA[<h2>解决 iptables DNAT 无法转发到 127.0.0.1 的问题及安全风险分析</h2>
-<h3>一、问题场景</h3>
+      <content:encoded><![CDATA[
+<h2>一、问题场景</h2>
 <p>在服务器运维中，我们可能会遇到一个特殊的需求：服务器上有一个服务（如Nginx、Tomcat）监听在本地回环地址（<code>127.0.0.1</code>）的某个端口上（如 <code>8080</code>），但我们希望通过服务器的公网或内网IP的另一个端口（如 <code>80</code>）来访问这个服务。</p>
 <p><strong>典型场景:</strong></p>
 <ul>
