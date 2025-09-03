@@ -6,11 +6,30 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Sep 2025 03:11:07 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Sep 2025 03:11:07 GMT</lastBuildDate>
+    <pubDate>Wed, 03 Sep 2025 04:36:29 GMT</pubDate>
+    <lastBuildDate>Wed, 03 Sep 2025 04:36:29 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>六百万数据 MySQL count(*) 优化</title>
+      <link>https://www.geekery.cn/note-book/MySQL/%E5%85%AD%E7%99%BE%E4%B8%87%E6%95%B0%E6%8D%AE%20mysql%20count%EF%BC%88%EF%BC%89%E4%BC%98%E5%8C%96.html</link>
+      <guid>https://www.geekery.cn/note-book/MySQL/%E5%85%AD%E7%99%BE%E4%B8%87%E6%95%B0%E6%8D%AE%20mysql%20count%EF%BC%88%EF%BC%89%E4%BC%98%E5%8C%96.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">六百万数据 MySQL count(*) 优化</source>
+      <description>六百万数据 MySQL count(*) 优化 一、故事背景 有一张 600万 左右的表做 select count(*) 占用大量CPU并且速度特别慢。 二、原 SQL 分析 Server version: 8.0.35-log MySQL Community Server - GPL SQL 如下，仅仅就是统计 db001.item 这张表的行数，...</description>
+      <pubDate>Wed, 03 Sep 2025 04:32:48 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>一、故事背景</h2>
+<p>有一张 600万 左右的表做 <code>select count(*)</code> 占用大量CPU并且速度特别慢。</p>
+<h2>二、原 SQL 分析</h2>
+<p>Server version: 8.0.35-log MySQL Community Server - GPL</p>
+<p>SQL 如下，仅仅就是统计 <code>db001.item</code> 这张表的行数，一条简单的不能再简单的 SQL，但却占用了大量CPU资源：</p>
+<div class="language-sql line-numbers-mode" data-highlighter="shiki" data-ext="sql" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sql"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> count</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(*) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `db001`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`item`</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> WHERE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> project_id </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">IS</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> AND</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> ((tag </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">IS</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> OR</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> tag </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ''</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">AND</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `item`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`deleted_at`</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> IS</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>我们先去运行一下这条 SQL，可以看到确实运行很慢，要 50 多秒左右，并且CPU使用率高达90%以上，确实很不正常</p>
+<div class="language-sql line-numbers-mode" data-highlighter="shiki" data-ext="sql" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sql"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">SELECT</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> count</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(*) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">FROM</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `db001`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`item`</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> WHERE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> project_id </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">IS</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> AND</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> ((tag </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">IS</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> OR</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> tag </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ''</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)) </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">AND</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> `item`</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">`deleted_at`</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> IS</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD"> NULL</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">;</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">+</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>使用iptables禁止特定子网访问指定端口</title>
       <link>https://www.geekery.cn/note-book/Iptables/%E4%BD%BF%E7%94%A8iptables%E7%A6%81%E6%AD%A2%E7%89%B9%E5%AE%9A%E5%AD%90%E7%BD%91%E8%AE%BF%E9%97%AE%E6%8C%87%E5%AE%9A%E7%AB%AF%E5%8F%A3.html</link>
@@ -8803,27 +8822,6 @@ Big O：
 <li>升级客户端，执行conda update anaconda-client</li>
 <li>升级安装依赖包，执行conda update -f anaconda-client</li>
 </ul>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Iptables实现转发一片连续的端口</title>
-      <link>https://www.geekery.cn/note-book/Iptables/Iptables%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%80%E7%89%87%E8%BF%9E%E7%BB%AD%E7%9A%84%E7%AB%AF%E5%8F%A3.html</link>
-      <guid>https://www.geekery.cn/note-book/Iptables/Iptables%E5%AE%9E%E7%8E%B0%E8%BD%AC%E5%8F%91%E4%B8%80%E7%89%87%E8%BF%9E%E7%BB%AD%E7%9A%84%E7%AB%AF%E5%8F%A3.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Iptables实现转发一片连续的端口</source>
-      <description>Iptables实现转发一片连续的端口 转发命令 解释 --to 是 --to-destination 或 --to-source 的简写 新版防火墙nftables入门解释 https://blog.rachelt.one/articles/new-to-nftables-from-config-to-dnat/</description>
-      <pubDate>Sat, 20 Apr 2024 13:35:26 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>转发命令</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">iptables</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -t</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> nat</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -A</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> PREROUTING</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> xenbr0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -p</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tcp</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --dport</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 64000:65000</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -j</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> DNAT</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --to</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 172.16.10.10:61000-62000</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><strong>解释</strong></p>
-<p><code>--to</code> 是  <code>--to-destination</code> 或 <code>--to-source</code> 的简写</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">DNAT</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> target</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> options:</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> --to-destination</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [&lt;ipaddr&gt;[-&lt;ipaddr&gt;]][:port[-port[/port]]]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">                                Address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> map</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> destination</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">SNAT</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> target</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> options:</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> --to-source</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [&lt;ipaddr&gt;[-&lt;ipaddr&gt;]][:port[-port]]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">                                Address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> map</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> source</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>新版防火墙nftables入门解释 <a href="https://blog.rachelt.one/articles/new-to-nftables-from-config-to-dnat/" target="_blank" rel="noopener noreferrer">https://blog.rachelt.one/articles/new-to-nftables-from-config-to-dnat/</a></p>
 ]]></content:encoded>
     </item>
   </channel>
