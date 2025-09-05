@@ -6,11 +6,37 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 03 Sep 2025 04:36:29 GMT</pubDate>
-    <lastBuildDate>Wed, 03 Sep 2025 04:36:29 GMT</lastBuildDate>
+    <pubDate>Fri, 05 Sep 2025 14:47:37 GMT</pubDate>
+    <lastBuildDate>Fri, 05 Sep 2025 14:47:37 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>VMware 加密 state.tgz 文件解密教程</title>
+      <link>https://www.geekery.cn/note-book/VMware/VMware%20%E5%8A%A0%E5%AF%86%20state.tgz%20%E6%96%87%E4%BB%B6%E8%A7%A3%E5%AF%86%E6%95%99%E7%A8%8B.html</link>
+      <guid>https://www.geekery.cn/note-book/VMware/VMware%20%E5%8A%A0%E5%AF%86%20state.tgz%20%E6%96%87%E4%BB%B6%E8%A7%A3%E5%AF%86%E6%95%99%E7%A8%8B.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">VMware 加密 state.tgz 文件解密教程</source>
+      <description>VMware 加密 state.tgz 文件解密教程 概述 我忘记了VMware Esxi的密码，存储密码的是state.tgz，如果想要更改密码，需要解密并修改，解密部分可以使用crypto-util工具。 解密步骤 1. 准备环境 使用Ubuntu 20.04 Live USB启动系统 挂载包含加密文件的分区： 2. 执行解密命令 使用crypto...</description>
+      <pubDate>Fri, 05 Sep 2025 14:44:11 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>概述</h2>
+<p>我忘记了VMware Esxi的密码，存储密码的是state.tgz，如果想要更改密码，需要解密并修改，解密部分可以使用crypto-util工具。</p>
+<h2>解密步骤</h2>
+<h3>1. 准备环境</h3>
+<ul>
+<li>
+<p>使用Ubuntu 20.04 Live USB启动系统</p>
+</li>
+<li>
+<p>挂载包含加密文件的分区：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> mount</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /dev/sda5</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /mnt</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div></li>
+</ul>
+<h3>2. 执行解密命令</h3>
+<p>使用crypto-util工具解密文件：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">crypto-util</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> envelope</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> extract</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --aad</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ESXConfiguration</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> local.tgz.ve</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> local.tgz</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>六百万数据 MySQL count(*) 优化</title>
       <link>https://www.geekery.cn/note-book/MySQL/%E5%85%AD%E7%99%BE%E4%B8%87%E6%95%B0%E6%8D%AE%20mysql%20count%EF%BC%88%EF%BC%89%E4%BC%98%E5%8C%96.html</link>
@@ -8805,24 +8831,6 @@ Big O：
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># int</span></span>
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">print</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'int</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Anaconda-Navigator打不开的解决方法</title>
-      <link>https://www.geekery.cn/note-book/Anaconda/Anaconda-Navigator%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</link>
-      <guid>https://www.geekery.cn/note-book/Anaconda/Anaconda-Navigator%E6%89%93%E4%B8%8D%E5%BC%80%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Anaconda-Navigator打不开的解决方法</source>
-      <description>Anaconda-Navigator打不开的解决方法 解决方案 使用管理员权限运行 Anaconda Prompt 升级 navigator，执行 conda update anaconda-navigator 重置 navigator，执行 anaconda-navigator --reset 升级客户端，执行conda update anacond...</description>
-      <pubDate>Mon, 06 May 2024 04:11:48 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>解决方案</h2>
-<ul>
-<li>使用管理员权限运行 Anaconda Prompt</li>
-<li>升级 <code>navigator</code>，执行 <code>conda update anaconda-navigator</code></li>
-<li>重置 <code>navigator</code>，执行 <code>anaconda-navigator --reset</code></li>
-<li>升级客户端，执行conda update anaconda-client</li>
-<li>升级安装依赖包，执行conda update -f anaconda-client</li>
-</ul>
-]]></content:encoded>
     </item>
   </channel>
 </rss>

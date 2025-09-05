@@ -48,12 +48,12 @@
         "value": 127
     },
     {
-        "name": "Kubernetes",
+        "name": "Ubuntu",
         "value": 114
     },
     {
-        "name": "Ubuntu",
-        "value": 113
+        "name": "Kubernetes",
+        "value": 114
     },
     {
         "name": "自定义",
