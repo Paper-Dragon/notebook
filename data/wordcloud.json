@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 369
+        "value": 373
     },
     {
         "name": "Docker",
@@ -25,7 +25,7 @@
     },
     {
         "name": "数据库",
-        "value": 187
+        "value": 189
     },
     {
         "name": "Git",
@@ -41,7 +41,7 @@
     },
     {
         "name": "操作系统",
-        "value": 144
+        "value": 146
     },
     {
         "name": "Python",
@@ -113,7 +113,7 @@
     },
     {
         "name": "管理员",
-        "value": 77
+        "value": 78
     },
     {
         "name": "Pod",
@@ -128,12 +128,12 @@
         "value": 74
     },
     {
-        "name": "文件名",
-        "value": 72
+        "name": "虚拟机",
+        "value": 73
     },
     {
-        "name": "虚拟机",
-        "value": 71
+        "name": "文件名",
+        "value": 72
     },
     {
         "name": "Zabbix",
@@ -268,15 +268,15 @@
         "value": 39
     },
     {
+        "name": "虚拟化",
+        "value": 39
+    },
+    {
         "name": "Java",
         "value": 38
     },
     {
         "name": "源代码",
-        "value": 38
-    },
-    {
-        "name": "虚拟化",
         "value": 38
     },
     {
@@ -324,6 +324,10 @@
         "value": 34
     },
     {
+        "name": "发行版",
+        "value": 33
+    },
+    {
         "name": "Control",
         "value": 33
     },
@@ -333,10 +337,6 @@
     },
     {
         "name": "Bash",
-        "value": 32
-    },
-    {
-        "name": "发行版",
         "value": 32
     },
     {
@@ -396,6 +396,10 @@
         "value": 28
     },
     {
+        "name": "控制台",
+        "value": 28
+    },
+    {
         "name": "详细信息",
         "value": 27
     },
@@ -405,10 +409,6 @@
     },
     {
         "name": "第三方",
-        "value": 27
-    },
-    {
-        "name": "控制台",
         "value": 27
     },
     {
@@ -568,6 +568,10 @@
         "value": 22
     },
     {
+        "name": "安全性",
+        "value": 21
+    },
+    {
         "name": "安装包",
         "value": 21
     },
@@ -602,10 +606,6 @@
     {
         "name": "Trojan",
         "value": 21
-    },
-    {
-        "name": "安全性",
-        "value": 20
     },
     {
         "name": "Enter",
@@ -1008,6 +1008,10 @@
         "value": 14
     },
     {
+        "name": "压缩包",
+        "value": 14
+    },
+    {
         "name": "Agent",
         "value": 14
     },
@@ -1153,10 +1157,6 @@
     },
     {
         "name": "Allow",
-        "value": 13
-    },
-    {
-        "name": "压缩包",
         "value": 13
     },
     {
