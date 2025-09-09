@@ -1340,6 +1340,10 @@
         "value": 12
     },
     {
+        "name": "Ansible",
+        "value": 12
+    },
+    {
         "name": "Math",
         "value": 11
     },
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "Exception",
-        "value": 11
-    },
-    {
-        "name": "Signature",
         "value": 11
     }
 ]
