@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
+
     <!-- 添加百度搜索验证代码 -->
     <meta name="baidu-site-verification" content="codeva-udZGoBkoXj" />
     <!-- end 添加百度搜索验证代码 -->
-    
+
     <style>
       html {
         background: var(--bg-color, #fff);
@@ -31,7 +31,7 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Nginx Web架构实战","image":[""],"dateModified":"2025-04-11T02:13:31.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Nginx-OpenResty/nginx03.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="Nginx Web架构实战"><meta property="og:description" content="Nginx Web架构实战 动态网站架构 LNMP动态网站环境部署 ··· Linux Nginx php-fpm mysql php-fpm php接收动态请求的程序 php-mysql php连接mysql的程序 php-gd 图形库程序 gd库可以处理图片，或者生成图片 fastcgi & php-fpm 模块：ngx_fastcgi_modul..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-04-11T02:13:31.000Z"><meta property="article:modified_time" content="2025-04-11T02:13:31.000Z"><script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Nginx Web架构实战","image":[""],"dateModified":"2025-09-14T02:56:50.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Nginx-OpenResty/nginx03.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="Nginx Web架构实战"><meta property="og:description" content="Nginx Web架构实战 动态网站架构 LNMP动态网站环境部署 ··· Linux Nginx php-fpm mysql php-fpm php接收动态请求的程序 php-mysql php连接mysql的程序 php-gd 图形库程序 gd库可以处理图片，或者生成图片 fastcgi & php-fpm 模块：ngx_fastcgi_modul..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-09-14T02:56:50.000Z"><meta property="article:modified_time" content="2025-09-14T02:56:50.000Z"><script>
       /*禁用F12*/
       document.onkeydown = function(){
           if(window.event.keyCode==123) {
@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>Nginx Web架构实战 | 运维开发绿皮书</title><meta name="description" content="Nginx Web架构实战 动态网站架构 LNMP动态网站环境部署 ··· Linux Nginx php-fpm mysql php-fpm php接收动态请求的程序 php-mysql php连接mysql的程序 php-gd 图形库程序 gd库可以处理图片，或者生成图片 fastcgi & php-fpm 模块：ngx_fastcgi_modul...">
-    <link rel="preload" href="/assets/style-BokSeCW8.css" as="style"><link rel="stylesheet" href="/assets/style-BokSeCW8.css">
-    <link rel="modulepreload" href="/assets/app-CJcqO2d5.js"><link rel="modulepreload" href="/assets/nginx03.html-m6CRms2E.js">
+    <link rel="preload" href="/assets/style-BPGP6tij.css" as="style"><link rel="stylesheet" href="/assets/style-BPGP6tij.css">
+    <link rel="modulepreload" href="/assets/app-GrhoROuM.js"><link rel="modulepreload" href="/assets/nginx03.html-DYQ8PMHH.js">
     
   </head>
   <body>
@@ -81,7 +81,7 @@
 </code></pre><h2 id="php-fpm初始化设置" tabindex="-1"><a class="header-anchor" href="#php-fpm初始化设置"><span>php-fpm初始化设置</span></a></h2><h3 id="核心配置文件" tabindex="-1"><a class="header-anchor" href="#核心配置文件"><span>核心配置文件</span></a></h3><pre><code>vim /etc/php.ini
     # date.timezone = PRC  (Asia/Shanghai)    #设置PHP时区
     # open_basedir           #设置PHP脚本访问的目录
-</code></pre><h3 id="全局配置文件" tabindex="-1"><a class="header-anchor" href="#全局配置文件"><span>全局配置文件</span></a></h3><pre><code>vim /etc/php-fpm.conf 
+</code></pre><h3 id="全局配置文件" tabindex="-1"><a class="header-anchor" href="#全局配置文件"><span>全局配置文件</span></a></h3><pre><code>vim /etc/php-fpm.conf
     # pid = /run/php-fpm/php-fpm.pid  //pid文件的位置
     # error_log = log/php-fpm.log    //错误日志的文件
     # log_level = notice　  //记录日志的等级
@@ -90,7 +90,7 @@
 </code></pre><p>日志等级</p><pre><code>  alert（必须立即处理）
   error（错误情况）
   warning（警告情况）
-  notice（一般重要信息）        
+  notice（一般重要信息）
   debug（调试信息）
 
   默认: notice.
@@ -124,7 +124,7 @@
         # pm.max_requests = 1500
 
 2. 重启生效： systemctl  restart  php-fpm
-3. 查看进程数：ps aux|grep php|wc -l    
+3. 查看进程数：ps aux|grep php|wc -l
 </code></pre><h3 id="启动php状态监控页面功能" tabindex="-1"><a class="header-anchor" href="#启动php状态监控页面功能"><span>启动php状态监控页面功能</span></a></h3><p>原理：通过Web前端展示页面详细显示PHP的状态,主要是给PHP工程师搭建</p><pre><code>1. 启动测试页面： vim  /etc/php-fpm.d/www.conf
     # pm.status_path = /php_status
 2. nginx配置页面转发：vim /etc/nginx/conf.d/default.conf
@@ -133,7 +133,7 @@
         fastcgi_param SCRIPT_FILENAME $fastcgi_script_name;  #在运行时用的内置变量参数
         include fastcgi_params;  #包含了用到的变量
     }
-3. 配置生效： systemctl restart php-fpm 
+3. 配置生效： systemctl restart php-fpm
             systemctl restart nginx
 4. 访问测试页面： http://本机IP/php_status
 </code></pre><p>php_status参数解析</p><pre><code>pool                  #fpm池名称,大多数为www
@@ -192,7 +192,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span>        index  index.html index.htm;</span></span>
 <span class="line"><span>         rewrite ^/.* http://www.taobao.com;</span></span>
 <span class="line"><span>    }</span></span>
-<span class="line"><span>    </span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>elinks --dump 39.108.140.0</span></span>
 <span class="line"><span>     *?[14]亲，请登录</span></span>
 <span class="line"><span>     *?? 消息  ?</span></span>
@@ -206,11 +206,11 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span>    }</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>nginx -s reload</span></span>
-<span class="line"><span>elinks --dump 39.108.140.0/abc/a/1.html     </span></span>
-<span class="line"><span>b.html       </span></span>
+<span class="line"><span>elinks --dump 39.108.140.0/abc/a/1.html</span></span>
+<span class="line"><span>b.html</span></span>
 <span class="line"><span># 这个abc目录是没有的，但是只要符合匹配条件就会跳转走</span></span>
 <span class="line"><span>tail -2 /var/log/nginx/access.log</span></span>
-<span class="line"><span>49.233.69.195[04/Nov/2019:12:22:19]&quot;GET /abc/a/1.html HTTP/1.1&quot; 301 169 &quot;-&quot; </span></span>
+<span class="line"><span>49.233.69.195[04/Nov/2019:12:22:19]&quot;GET /abc/a/1.html HTTP/1.1&quot; 301 169 &quot;-&quot;</span></span>
 <span class="line"><span>49.233.69.195[04/Nov/2019:12:22:19]&quot;GET /ccc/bbb/b.htmlHTTP/1.1&quot; 200&quot;http://39.108.140.0/abc/a/1.html&quot;</span></span>
 <span class="line"><span># 无permanent，简单的rewrite请求一次</span></span>
 <span class="line"><span>49.233.69.195 - - [04/Nov/2019:12:27:09 +0800] &quot;GET /abc/a/1.html HTTP/1.1&quot; 200 7 &quot;-&quot;</span></span>
@@ -291,7 +291,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span>if ($http_user_agent ~ MSIE) {</span></span>
 <span class="line"><span>    rewrite ^(.*)$ /msie/$1 break;</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span> </span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>if ($http_user_agent ~ Chrome) {</span></span>
 <span class="line"><span>    rewrite ^(.*)$ /chrome/$1 break;</span></span>
 <span class="line"><span>}</span></span>
@@ -313,7 +313,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span>location ~ .*.(gif|jpg|jpeg|png|bmp)$ {</span></span>
 <span class="line"><span>    expires 30d;</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span> </span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>location ~ .*.(js|css)$ {</span></span>
 <span class="line"><span>    expires 1h;</span></span>
 <span class="line"><span>}</span></span>
@@ -324,7 +324,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span>    expires 99d;</span></span>
 <span class="line"><span>    break;</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span> </span></span>
+<span class="line"><span></span></span>
 <span class="line"><span>location ~(robots.txt) {</span></span>
 <span class="line"><span>    log_not_found off;</span></span>
 <span class="line"><span>    expires 7d;</span></span>
@@ -337,7 +337,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span>#如果你想要进行地址重写，建议直接用rewrite</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>--ngx_http_rewrite_module        # rewrite重写模块</span></span>
 <span class="line"><span>1&gt; last:      # 匹配到规则重新向server发送请求，不会显示跳转之后的URL;</span></span>
 <span class="line"><span>2&gt; break:     # 匹配到这个规则终止匹配，不再匹配后面规则;</span></span>
-<span class="line"><span>3&gt; redirect:  # 返回302临时重定向，浏览器地址显示跳转之后URL: </span></span>
+<span class="line"><span>3&gt; redirect:  # 返回302临时重定向，浏览器地址显示跳转之后URL:</span></span>
 <span class="line"><span># redirect一般只需要临时跳转，这些跳转需要一定时间缓冲，如果跳转过长，可能被百度判断为作弊，会被k站;</span></span>
 <span class="line"><span>4&gt; permanent：返回301永久重定向，浏览器地址显示跳转后URL地址;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>last,break详解</strong></p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>mkdir test</span></span>
 <span class="line"><span>echo break &gt; test/break.html</span></span>
@@ -436,7 +436,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2;">......</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">++++++</span></span>
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2;">.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">++++++</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">e</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> is</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> 65537</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> (0x10001)</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@ca ~]# cat /etc/nginx/ssl/server.key </span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@ca ~]# cat /etc/nginx/ssl/server.key</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">-----BEGIN</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> RSA</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> PRIVATE</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> KEY-----</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">MIICXQIBAAKBgQCetXQ6NXmRY7WoIgN05Vpe3WWysaCn7v39Ag1RhauUWx8lWppD</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">B+J0P9pfoXqueq/9128OM5HgBg2DoQ24pWv7nVroocnqmQX+A5a4Dw4Q0ue3btTk</span></span>
@@ -481,7 +481,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">to be sent with your certificate request</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">A challenge password []: 密码为空</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">An optional company name []: 公司为空</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">[root@ca ~]# cat /etc/nginx/ssl/server.csr </span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">[root@ca ~]# cat /etc/nginx/ssl/server.csr</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-----BEGIN CERTIFICATE REQUEST-----</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">MIIB3DCCAUUCAQAwgZsxCzAJBgNVBAYTAkNOMRAwDgYDVQQIDAdCZWlqaW5nMRAw</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">DgYDVQQHDAdCZWlqaW5nMRgwFgYDVQQKDA9ZVU5KSVNVQU5HT05HU0kxEjAQBgNV</span></span>
@@ -497,12 +497,12 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">2.3  生成CA证书</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">[root@ca ~]# openssl req -x509  -key /etc/nginx/ssl/server.key -days 365  -in  /etc/nginx/ssl/server.csr &gt; /etc/nginx/ssl/server.crt</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">openssl </span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">openssl</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-x509 证书的格式：固定的</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-days 证书的有效期，生产生活中时间不同，价格不同</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-key 指定密钥文件 私钥</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-in 指定证书的申请文件 公钥</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">[root@ca ~]# cat /etc/nginx/ssl/server.crt </span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">[root@ca ~]# cat /etc/nginx/ssl/server.crt</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-----BEGIN CERTIFICATE-----</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">MIIDBjCCAm+gAwIBAgIJANOEcMZNxlhlMA0GCSqGSIb3DQEBCwUAMIGbMQswCQYD</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">VQQGEwJDTjEQMA4GA1UECAwHQmVpamluZzEQMA4GA1UEBwwHQmVpamluZzEYMBYG</span></span>
@@ -521,7 +521,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">RzGKuAYfzZclP1LDOEiTpZBGu0WixLFKATbJIidNmn28cbebCxX9RGPTQhZp+nla</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">ZGasn9JLbTzFZeuNZ88NFV6ZAAHEA/hq9Du4cfp1XVYBFD+/KqFVb6N912wqyxd+</span></span>
 <span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">k39n3uBQkxT60A==</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-----END CERTIFICATE-----</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>生成客户端证书】 4. 生成客户端证书</p><p>生成客户端证书与生成CA证书相似。</p><p>4.1. 先要生成私钥</p><p>使用命令：</p><p>openssl genrsa -out client.key 2048</p><p>如下图所示：</p><p><img src="/assets/561794-20190526213040477-1479819631-D0vRPQur.png" alt="img"></p><p>4.2 生成请求文件</p><p>使用命令：</p><p>openssl req -new -key client.key -out client.csr</p><p>如下图所示：</p><p><img src="/assets/561794-20190526213132971-1527441055-CpWQA6jm.png" alt="img"></p><p>4.3 发给ca签名</p><p>使用命令：</p><p>openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt</p><p>如下图所示：</p><p><img src="/assets/561794-20190526213217410-883671983-B-1aTf3C.png" alt="img"></p><p>部署</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">http</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">{</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">-----END CERTIFICATE-----</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>生成客户端证书】4. 生成客户端证书</p><p>生成客户端证书与生成CA证书相似。</p><p>4.1. 先要生成私钥</p><p>使用命令：</p><p>openssl genrsa -out client.key 2048</p><p>如下图所示：</p><p><img src="/assets/561794-20190526213040477-1479819631-D0vRPQur.png" alt="img"></p><p>4.2 生成请求文件</p><p>使用命令：</p><p>openssl req -new -key client.key -out client.csr</p><p>如下图所示：</p><p><img src="/assets/561794-20190526213132971-1527441055-CpWQA6jm.png" alt="img"></p><p>4.3 发给ca签名</p><p>使用命令：</p><p>openssl x509 -req -days 365 -in client.csr -signkey client.key -out client.crt</p><p>如下图所示：</p><p><img src="/assets/561794-20190526213217410-883671983-B-1aTf3C.png" alt="img"></p><p>部署</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">http</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">{</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">  server</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> {</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">    listen</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> 80</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">    server_name</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> nginx.linux.com</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
@@ -531,15 +531,15 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">  server</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> {</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">  	listen</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> 443</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;">  	# server_name nginx.linux.com;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">  	</span></span>
+<span class="line"></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">  	ssl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> on</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">  	ssl_certificate</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> /etc/nginx/ssl/server.crt</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">  	ssl_cretificate_key</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> /etc/nginx/ssl/server.key</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">  	</span></span>
+<span class="line"></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">    location</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> /</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> {</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">      root</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> /bj</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">      index</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> index.html</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">      </span></span>
+<span class="line"></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">    }</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">  }</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">}</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2、私有CA的https部署实战</p><h4 id="公网ca" tabindex="-1"><a class="header-anchor" href="#公网ca"><span>公网CA</span></a></h4><p>···</p><h2 id="nginx平滑升级" tabindex="-1"><a class="header-anchor" href="#nginx平滑升级"><span>Nginx平滑升级</span></a></h2><p>编译安装nginx1.12</p><pre><code>1. 获取源码包：wget https://nginx.org/download/nginx-1.12.2.tar.gz
@@ -564,9 +564,9 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">    nginx</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> version:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> nginx/1.14.2</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">5.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 查看进程号：ps</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> aux</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">|</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ngin[x]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">root</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">      17266</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  0.0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  0.0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  45948</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  1124</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ?</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">        Ss</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">   01:11</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">   0:00</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> nginx:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> master</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> </span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">root</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">      17266</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  0.0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  0.0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  45948</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">  1124</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ?</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">        Ss</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">   01:11</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">   0:00</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> nginx:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> master</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">6.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 给主进程发送User2信号：kill</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> -USR2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 旧进程号</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">17266</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">) </span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">6.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 给主进程发送User2信号：kill</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> -USR2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 旧进程号</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">17266</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">)</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">   相对应</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ls</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> nginx12/logs/nginx.pid.oldbin</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;">    #pid文件被重命名</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">7.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 发送WINCH信号：</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> kill</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> -WINCH</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> 旧进程号</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">(</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">17266</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">)</span></span>
@@ -579,7 +579,7 @@ max children reached  #程最大数量限制的次数，如果这个数量不为
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">Server:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> nginx/1.14.2</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>回退版本</p><p>Kill –HUP 旧的主进程号:Nginx将在不重载配置文件的情况下启动它的工作进程;</p><p>Kill –QUIT 新的主进程号:从容关闭其他工作进程(woker process);</p><p>Kill –TERM 新的主进程号:强制退出;</p><pre><code>1. 先查看进程：ps aux|grep nginx
 root      17266(旧)  0.0  0.0  46092  1904 ?        Ss   00:47   0:00 nginx:
 root      17279(新)  0.0  0.0  45956  3248 ?        S    00:53   0:00 nginx:
-nginx     17280  0.0  0.0  46404  1872 ?        S    00:53   0:00 nginx:.. 
+nginx     17280  0.0  0.0  46404  1872 ?        S    00:53   0:00 nginx:..
 
 2. 开启旧进程：kill -HUP 17266
 
@@ -595,7 +595,7 @@ nginx     17280  0.0  0.0  46404  1872 ?        S    00:53   0:00 nginx:..
 
 7. 访问网站查看版本号：curl -i http://IP
 HTTP/1.1 200 OK
-Server: nginx/1.12.2 
+Server: nginx/1.12.2
 </code></pre><p>总结</p><p>平滑升级</p><pre><code>作用：为nginx添加新的模块优化,版本性能、稳定性
 
 平滑升级也可以说是&quot;热升级&quot; =&gt; 在不停止对User的服务进行升级版本,继续对外服务,不受影响。
@@ -619,9 +619,7 @@ Server: nginx/1.12.2
 2. 使用QUIT指令将新版本的进程关闭
 3. 在将旧版本的二进制文件替换回来
 4. 使得旧版本重新对外提供服务
-</code></pre></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/4/11 02:13</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>acc20</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Firefox密码提取</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-04-11T02:13:31.000Z">2025/4/11</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>c28e5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">markdown format</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-09-12T17:44:20.000Z">2024/9/12</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>16fb2</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">rename</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-09T09:29:43.000Z">2024/3/9</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>cddba</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">add OpenResty directory</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-01-23T03:38:57.000Z">2024/1/23</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Nginx-OpenResty/nginx02.html" aria-label="Nginx高级进阶篇"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->Nginx高级进阶篇</div></a><a class="route-link auto-link next" href="/note-book/Nginx-OpenResty/Nginx%E4%BD%9C%E4%B8%BA%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8.html" aria-label="Nginx作为推流服务器"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">Nginx作为推流服务器<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-CJcqO2d5.js" defer></script>
-
-
+</code></pre></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/9/14 02:56</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>60862</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">使用pretter进行语法重写</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-09-14T02:56:50.000Z">2025/9/14</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>acc20</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Firefox密码提取</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-04-11T02:13:31.000Z">2025/4/11</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>c28e5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">markdown format</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-09-12T17:44:20.000Z">2024/9/12</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>16fb2</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">rename</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-09T09:29:43.000Z">2024/3/9</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>cddba</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">add OpenResty directory</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-01-23T03:38:57.000Z">2024/1/23</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Nginx-OpenResty/nginx02.html" aria-label="Nginx高级进阶篇"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->Nginx高级进阶篇</div></a><a class="route-link auto-link next" href="/note-book/Nginx-OpenResty/Nginx%E4%BD%9C%E4%B8%BA%E6%8E%A8%E6%B5%81%E6%9C%8D%E5%8A%A1%E5%99%A8.html" aria-label="Nginx作为推流服务器"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">Nginx作为推流服务器<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-GrhoROuM.js" defer></script>
   </body>
 </html>

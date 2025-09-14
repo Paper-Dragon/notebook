@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
+
     <!-- 添加百度搜索验证代码 -->
     <meta name="baidu-site-verification" content="codeva-udZGoBkoXj" />
     <!-- end 添加百度搜索验证代码 -->
-    
+
     <style>
       html {
         background: var(--bg-color, #fff);
@@ -31,7 +31,7 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ELK日志分析系统","image":[""],"dateModified":"2025-04-11T02:13:31.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/ELK/ELK.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="ELK日志分析系统"><meta property="og:description" content="ELK日志分析系统 image-20211116145510909 image-20211116145621627 E Elasticsearch 弹性搜索，日志存储 L Logstash 日志收集 K Kibana 日志展示 实战 环境 操作系统优化 master-slave模式 image-20211117083904657 内存：大于2G Ela..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-04-11T02:13:31.000Z"><meta property="article:modified_time" content="2025-04-11T02:13:31.000Z"><script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"ELK日志分析系统","image":[""],"dateModified":"2025-09-14T02:56:50.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/ELK/ELK.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="ELK日志分析系统"><meta property="og:description" content="ELK日志分析系统 image-20211116145510909 image-20211116145621627 E Elasticsearch 弹性搜索，日志存储 L Logstash 日志收集 K Kibana 日志展示 实战 环境 操作系统优化 master-slave模式 image-20211117083904657 内存：大于2G Ela..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-09-14T02:56:50.000Z"><meta property="article:modified_time" content="2025-09-14T02:56:50.000Z"><script>
       /*禁用F12*/
       document.onkeydown = function(){
           if(window.event.keyCode==123) {
@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>ELK日志分析系统 | 运维开发绿皮书</title><meta name="description" content="ELK日志分析系统 image-20211116145510909 image-20211116145621627 E Elasticsearch 弹性搜索，日志存储 L Logstash 日志收集 K Kibana 日志展示 实战 环境 操作系统优化 master-slave模式 image-20211117083904657 内存：大于2G Ela...">
-    <link rel="preload" href="/assets/style-BokSeCW8.css" as="style"><link rel="stylesheet" href="/assets/style-BokSeCW8.css">
-    <link rel="modulepreload" href="/assets/app-CJcqO2d5.js"><link rel="modulepreload" href="/assets/ELK.html-BV_dL-nJ.js">
+    <link rel="preload" href="/assets/style-BPGP6tij.css" as="style"><link rel="stylesheet" href="/assets/style-BPGP6tij.css">
+    <link rel="modulepreload" href="/assets/app-GrhoROuM.js"><link rel="modulepreload" href="/assets/ELK.html-95ZUsTkk.js">
     
   </head>
   <body>
@@ -113,7 +113,7 @@
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">创建目录及开启服务</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@node1 yum.repos.d]# mkdir -p /data/es-data</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@node1 yum.repos.d]# chown -R elasticsearch:elasticsearch /data/es-data</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@node1 yum.repos.d]# systemctl start elasticsearch.service </span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@node1 yum.repos.d]# systemctl start elasticsearch.service</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@node1 yum.repos.d]# netstat -anpt | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">grep</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> 9200</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">tcp6</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">       0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">      0</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> :::9200</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">                 :::</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B;">*</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">                    LISTEN</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">      54134/java</span></span>
 <span class="line"></span>
@@ -193,7 +193,7 @@
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">[root@apache bin]# logstash -e </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">&#39;input { stdin{} } output { stdout{} }&#39;</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">Settings:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> Default</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> filter</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> workers:</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> 1</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">Logstash</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> startup</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> completed</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">www.baidu.com</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">                       </span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">www.baidu.com</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">2020-11-18T07:53:59.480Z</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> apache</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> www.baidu.com</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>logstash命令选项解释：</p><pre><code>-f：指定logstash的配置文件，根据配置文件配置logstash
 -e：后面跟着字符串，该字符串可以被当做logstash的配置（如果是“ ”，则默认使用stdin做输入，stdout为输出）
 -t：测试配置文件是否正确，然后退出
@@ -309,7 +309,7 @@ ss -tanl 查看一下80端口是否启动
 </code></pre><p>安装logstash</p><pre><code>rpm -ivh logstash-1.5.4-1.noarch.rpm
 
 vim /etc/logstash/conf.d/full.conf #full.conf这个你可以随意起名字
-input { 
+input {
         file {
                 path =&gt; &quot;/var/log/httpd/access_log&quot;
                 type =&gt; &quot;Apache&quot;
@@ -340,7 +340,7 @@ Logstash startup completed
 (integer) 38
 127.0.0.1:6379&gt; LINDEX logstash-Apache 1
 &quot;{\&quot;message\&quot;:\&quot;192.168.1.159 - - [16/May/2018:19:29:39 +0800] \\\&quot;GET / HTTP/1.1\\\&quot; 304 - \\\&quot;-\\\&quot; \\\&quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.221 Safari/537.36 SE 2.X MetaSr 1.0\\\&quot;\&quot;,\&quot;@version\&quot;:\&quot;1\&quot;,\&quot;@timestamp\&quot;:\&quot;2018-05-16T13:13:48.004Z\&quot;,\&quot;host\&quot;:\&quot;0.0.0.0\&quot;,\&quot;path\&quot;:\&quot;/var/log/httpd/access_log\&quot;,\&quot;type\&quot;:\&quot;Apache\&quot;}&quot;
-127.0.0.1:6379&gt; 
+127.0.0.1:6379&gt;
 由此说明已经产生数据到redis了。
 </code></pre><p>接下来在logstash server这台机器上操作</p><p>logstash安装不再演示</p><pre><code>vim fromredis.conf
 input {
@@ -370,14 +370,14 @@ node.name: &quot;linux-node1&quot;
 
 编辑kibana的配置文件：
 /usr/local/kibana/config/kibana.yml
-elasticsearch_url: &quot; #这一项非常重要 
+elasticsearch_url: &quot; #这一项非常重要
 
 启动kibana：
 /usr/local/kibana/bin/kibana
 
 复制一个终端
 ss -tanl 查看5601端口是否开启
-</code></pre><p>浏览器输入&quot; <a href="http://192.168.1.10:5601%22%E6%89%93%E5%BC%80kibana%E7%95%8C%E9%9D%A2" target="_blank" rel="noopener noreferrer">http://192.168.1.10:5601&quot;打开kibana界面</a></p><p>接下来还返回logstash server服务器</p><p>前面，我们是将结果标准输出到了屏幕，这次我们需要把结果输出到elasticsearch服务器</p><pre><code>vim /etc/logstash/conf.d/fromredis.conf 
+</code></pre><p>浏览器输入&quot; <a href="http://192.168.1.10:5601%22%E6%89%93%E5%BC%80kibana%E7%95%8C%E9%9D%A2" target="_blank" rel="noopener noreferrer">http://192.168.1.10:5601&quot;打开kibana界面</a></p><p>接下来还返回logstash server服务器</p><p>前面，我们是将结果标准输出到了屏幕，这次我们需要把结果输出到elasticsearch服务器</p><pre><code>vim /etc/logstash/conf.d/fromredis.conf
 修改为：
 input {
         redis {
@@ -400,12 +400,10 @@ output {
 Configuration OK
 [root@linux-node2 conf.d]# logstash -f /etc/logstash/conf.d/fromredis.conf
 </code></pre><p>想要知道是否成功的信息输出到了es上，可以验证</p><pre><code>[root@linux-node1 ~]# curl -XGET &#39;localhost:9200/_cat/indices&#39;
-yellow open .kibana             1 1   2 2  10.3kb  10.3kb 
-yellow open logstash-2018.05.16 5 1 389 0 170.5kb 170.5kb 
+yellow open .kibana             1 1   2 2  10.3kb  10.3kb
+yellow open logstash-2018.05.16 5 1 389 0 170.5kb 170.5kb
 [root@linux-node1 ~]# curl -XGET &#39;localhost:9200/logstash-2018.05.16/_search?pretty&#39;
-</code></pre><p>接下来在kibana上显示：</p><p>浏览器&quot; <a href="http://192.168.1.10:5601/" target="_blank" rel="noopener noreferrer">http://192.168.1.10:5601/</a>&quot;</p><h1 id="面试题" tabindex="-1"><a class="header-anchor" href="#面试题"><span>面试题</span></a></h1><p>ELK插件</p><p><a href="https://blog.csdn.net/sinat_35930259/article/details/81052139" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/sinat_35930259/article/details/81052139</a></p></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/4/11 02:13</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>acc20</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Firefox密码提取</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-04-11T02:13:31.000Z">2025/4/11</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>e62d8</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">解决一些用tab符合代替代码类型的markdown符号错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-06-17T03:28:49.000Z">2024/6/17</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/ELK/EFK8.4.3%E9%83%A8%E7%BD%B2.html" aria-label="EFK安装过程记录，监听netflow"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->EFK安装过程记录，监听netflow</div></a><!----></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-CJcqO2d5.js" defer></script>
-
-
+</code></pre><p>接下来在kibana上显示：</p><p>浏览器&quot; <a href="http://192.168.1.10:5601/" target="_blank" rel="noopener noreferrer">http://192.168.1.10:5601/</a>&quot;</p><h1 id="面试题" tabindex="-1"><a class="header-anchor" href="#面试题"><span>面试题</span></a></h1><p>ELK插件</p><p><a href="https://blog.csdn.net/sinat_35930259/article/details/81052139" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/sinat_35930259/article/details/81052139</a></p></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/9/14 02:56</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>60862</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">使用pretter进行语法重写</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-09-14T02:56:50.000Z">2025/9/14</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>acc20</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Firefox密码提取</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-04-11T02:13:31.000Z">2025/4/11</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>e62d8</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">解决一些用tab符合代替代码类型的markdown符号错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-06-17T03:28:49.000Z">2024/6/17</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/ELK/EFK8.4.3%E9%83%A8%E7%BD%B2.html" aria-label="EFK安装过程记录，监听netflow"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->EFK安装过程记录，监听netflow</div></a><!----></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-GrhoROuM.js" defer></script>
   </body>
 </html>

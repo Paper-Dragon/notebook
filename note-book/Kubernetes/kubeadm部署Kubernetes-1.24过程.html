@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    
+
     <!-- 添加百度搜索验证代码 -->
     <meta name="baidu-site-verification" content="codeva-udZGoBkoXj" />
     <!-- end 添加百度搜索验证代码 -->
-    
+
     <style>
       html {
         background: var(--bg-color, #fff);
@@ -31,7 +31,7 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"kubeadm部署Kubernetes-1.24过程","image":[""],"dateModified":"2024-03-07T07:39:57.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Kubernetes/kubeadm%E9%83%A8%E7%BD%B2Kubernetes-1.24%E8%BF%87%E7%A8%8B.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="kubeadm部署Kubernetes-1.24过程"><meta property="og:description" content="kubeadm部署Kubernetes-1.24过程 前言 kubeadm 是 Kubernetes 官方提供的用于快速安部署 Kubernetes 集群的工具，伴随 Kubernetes 每个版本的发布都会同步更新，kubeadm 会对集群配置方面的一些实践做调整，通过实验 kubeadm 可以学习到 Kubernetes 官方在集群配置上一些新的最..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2024-03-07T07:39:57.000Z"><meta property="article:modified_time" content="2024-03-07T07:39:57.000Z"><script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"kubeadm部署Kubernetes-1.24过程","image":[""],"dateModified":"2025-09-14T02:56:50.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Kubernetes/kubeadm%E9%83%A8%E7%BD%B2Kubernetes-1.24%E8%BF%87%E7%A8%8B.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="kubeadm部署Kubernetes-1.24过程"><meta property="og:description" content="kubeadm部署Kubernetes-1.24过程 前言 kubeadm 是 Kubernetes 官方提供的用于快速安部署 Kubernetes 集群的工具，伴随 Kubernetes 每个版本的发布都会同步更新，kubeadm 会对集群配置方面的一些实践做调整，通过实验 kubeadm 可以学习到 Kubernetes 官方在集群配置上一些新的最..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-09-14T02:56:50.000Z"><meta property="article:modified_time" content="2025-09-14T02:56:50.000Z"><script>
       /*禁用F12*/
       document.onkeydown = function(){
           if(window.event.keyCode==123) {
@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>kubeadm部署Kubernetes-1.24过程 | 运维开发绿皮书</title><meta name="description" content="kubeadm部署Kubernetes-1.24过程 前言 kubeadm 是 Kubernetes 官方提供的用于快速安部署 Kubernetes 集群的工具，伴随 Kubernetes 每个版本的发布都会同步更新，kubeadm 会对集群配置方面的一些实践做调整，通过实验 kubeadm 可以学习到 Kubernetes 官方在集群配置上一些新的最...">
-    <link rel="preload" href="/assets/style-BokSeCW8.css" as="style"><link rel="stylesheet" href="/assets/style-BokSeCW8.css">
-    <link rel="modulepreload" href="/assets/app-CJcqO2d5.js"><link rel="modulepreload" href="/assets/kubeadm部署Kubernetes-1.24过程.html-DuwnWswE.js">
+    <link rel="preload" href="/assets/style-BPGP6tij.css" as="style"><link rel="stylesheet" href="/assets/style-BPGP6tij.css">
+    <link rel="modulepreload" href="/assets/app-GrhoROuM.js"><link rel="modulepreload" href="/assets/kubeadm部署Kubernetes-1.24过程.html-B5OhU5aX.js">
     
   </head>
   <body>
@@ -89,7 +89,7 @@ modprobe -- nf_conntrack_ipv4
 EOF
 chmod 755 /etc/sysconfig/modules/ipvs.modules &amp;&amp; bash /etc/sysconfig/modules/ipvs.modules &amp;&amp; lsmod | grep -e ip_vs -e nf_conntrack_ipv4
 </code></pre><p>上面脚本创建了的 /etc/sysconfig/modules/ipvs.modules 文件，保证在节点重启后能自动加载所需模块。 使用 lsmod | grep -e ip_vs -e nf_conntrack_ipv4 命令查看是否已经正确加载所需的内核模块。接下来还需要确保各个节点上已经安装了 ipset 软件包，为了便于查看 ipvs 的代理规则，最好安装一下管理工具 ipvsadm。</p><p>yum install -y ipset ipvsadm</p><p>如果不满足以上前提条件，则即使 kube-proxy 的配置开启了 ipvs 模式，也会退回到 iptables 模式。</p><h2 id="_1-3、部署容器运行时-containerd" tabindex="-1"><a class="header-anchor" href="#_1-3、部署容器运行时-containerd"><span>1.3、部署容器运行时 Containerd</span></a></h2><p>在各个服务器节点上安装容器运行时 Containerd。下载Containerd的二进制包:</p><p>wget https://github.com/containerd/containerd/releases/download/v1.6.4/cri-containerd-cni-1.6.4-linux-amd64.tar.gz</p><p>cri-containerd-cni-1.6.4-linux-amd64.tar.gz 压缩包中已经按照官方二进制部署推荐的目录结构布局好。 里面包含了 systemd 配置文件，containerd 以及 cni 的部署文件。 将解压缩到系统的根目录 / 中:</p><pre><code>tar -zxvf cri-containerd-cni-1.6.4-linux-amd64.tar.gz -C /
- 
+
 etc/
 etc/systemd/
 etc/systemd/system/
@@ -313,25 +313,25 @@ W0526 10:22:26.660300   24076 initconfiguration.go:120] Usage of CRI endpoints w
 [kubelet-finalize] Updating &quot;/etc/kubernetes/kubelet.conf&quot; to point to a rotatable kubelet client certificate and key
 [addons] Applied essential addon: CoreDNS
 [addons] Applied essential addon: kube-proxy
- 
+
 Your Kubernetes control-plane has initialized successfully!
- 
+
 To start using your cluster, you need to run the following as a regular user:
- 
+
   mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
- 
+
 Alternatively, if you are the root user, you can run:
- 
+
   export KUBECONFIG=/etc/kubernetes/admin.conf
- 
+
 You should now deploy a pod network to the cluster.
 Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
   https://kubernetes.io/docs/concepts/cluster-administration/addons/
- 
+
 Then you can join any number of worker nodes by running the following on each as root:
- 
+
 kubeadm join 192.168.96.151:6443 --token uufqmm.bvtfj4drwfvvbcev \
  --discovery-token-ca-cert-hash sha256:5814415567d93f6d2d41fe4719be8221f45c29c482b5059aec2e27a832ac36e6
 </code></pre><p>上面记录了完成的初始化输出的内容，根据输出的内容基本上可以看出手动初始化安装一个 Kubernetes 集群所需要的关键步骤。 其中有以下关键内容：</p><pre><code>    [certs]生成相关的各种证书
@@ -353,16 +353,16 @@ etcd-0               Healthy   {&quot;health&quot;:&quot;true&quot;,&quot;reason
 tar -zxvf helm-v3.9.0-linux-amd64.tar.gz
 mv linux-amd64/helm  /usr/local/bin/
 </code></pre><p>执行 helm list 确认没有错误输出。</p><h2 id="_2-4、部署-pod-network-组件-calico" tabindex="-1"><a class="header-anchor" href="#_2-4、部署-pod-network-组件-calico"><span>2.4、部署 Pod Network 组件 Calico</span></a></h2><p>选择 calico 作为 k8s 的 Pod 网络组件，下面使用 helm 在 k8s 集群中安装 calico。下载 tigera-operator 的 helm chart:</p><p>wget https://github.com/projectcalico/calico/releases/download/v3.23.1/tigera-operator-v3.23.1.tgz</p><p>查看这个 chart 的中可定制的配置:</p><pre><code>helm show values tigera-operator-v3.23.1.tgz
- 
+
 imagePullSecrets: {}
- 
+
 installation:
   enabled: true
   kubernetesProvider: &quot;&quot;
- 
+
 apiServer:
   enabled: true
- 
+
 certs:
   node:
     key:
@@ -373,9 +373,9 @@ certs:
     cert:
     commonName:
     caBundle:
- 
+
 resources: {}
- 
+
 # Configuration for the tigera operator
 tigeraOperator:
   image: tigera/operator
@@ -388,7 +388,7 @@ calicoctl:
 # 这里只是个人本地环境测试 k8s 新版本，因此保留 value.yaml 为空即可
 </code></pre><p>使用 helm 安装 calico：</p><p>helm install calico tigera-operator-v3.23.1.tgz -n kube-system --create-namespace -f values.yaml</p><p>等待并确认所有 pod 处于 Running状态:</p><pre><code>kubectl get pod -n kube-system | grep tigera-operator
 tigera-operator-5fb55776df-wxbph   1/1     Running   0             5m10s
- 
+
 kubectl get pods -n calico-system
 NAME                                       READY   STATUS    RESTARTS   AGE
 calico-kube-controllers-68884f975d-5d7p9   1/1     Running   0          5m24s
@@ -427,7 +427,7 @@ networkpolicies                   cnp,caliconetworkpolicy,caliconetworkpolicies 
 networksets                       netsets                                         projectcalico.org/v3                   true         NetworkSet
 profiles                                                                          projectcalico.org/v3                   false        Profile
 </code></pre><p>这些 api 资源是属于 calico 的，因此不建议使用 kubectl 来管理，推荐按照 calicoctl 来管理这些 api 资源。 将 calicoctl 安装为 kubectl 的插件:</p><pre><code>cd /usr/local/bin
-curl -o kubectl-calico -O -L  &quot;https://github.com/projectcalico/calicoctl/releases/download/v3.21.5/calicoctl-linux-amd64&quot; 
+curl -o kubectl-calico -O -L  &quot;https://github.com/projectcalico/calicoctl/releases/download/v3.21.5/calicoctl-linux-amd64&quot;
 chmod +x kubectl-calico
 </code></pre><p>验证插件正常工作:</p><p>kubectl calico -h</p><h2 id="_2-5、验证-k8s-dns-是否可用" tabindex="-1"><a class="header-anchor" href="#_2-5、验证-k8s-dns-是否可用"><span>2.5、验证 k8s DNS 是否可用</span></a></h2><pre><code>kubectl run curl --image=radial/busyboxplus:curl -it
 If you don&#39;t see a command prompt, try pressing enter.
@@ -435,7 +435,7 @@ If you don&#39;t see a command prompt, try pressing enter.
 </code></pre><p>进入后执行 nslookup kubernetes.default 确认解析正常:</p><pre><code>nslookup kubernetes.default
 Server:    10.96.0.10
 Address 1: 10.96.0.10 kube-dns.kube-system.svc.cluster.local
- 
+
 Name:      kubernetes.default
 Address 1: 10.96.0.1 kubernetes.default.svc.cluster.local
 </code></pre><h2 id="_2-6、向-kubernetes-集群中添加-node-节点" tabindex="-1"><a class="header-anchor" href="#_2-6、向-kubernetes-集群中添加-node-节点"><span>2.6、向 Kubernetes 集群中添加 Node 节点</span></a></h2><p>下面将 node2, node3 添加到 Kubernetes 集群中，分别在 node2, node3 上执行:</p><pre><code>kubeadm join 192.168.96.151:6443 --token uufqmm.bvtfj4drwfvvbcev \
@@ -494,7 +494,7 @@ NAME    CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 node1   509m         12%    3654Mi          47%
 node2   133m         3%     1786Mi          23%
 node3   117m         2%     1810Mi          23%
- 
+
 kubectl top pod -n kube-system
 NAME                               CPU(cores)   MEMORY(bytes)
 coredns-74586cf9b6-575nl           6m           16Mi
@@ -534,20 +534,18 @@ metricsScraper:
 -n kube-system \
 -f values.yaml
 </code></pre><p>确认上面的命令部署成功。创建管理员 sa:</p><pre><code>kubectl create serviceaccount kube-dashboard-admin-sa -n kube-system
- 
+
 kubectl create clusterrolebinding kube-dashboard-admin-sa \
 --clusterrole=cluster-admin --serviceaccount=kube-system:kube-dashboard-admin-sa
 </code></pre><p>创建集群管理员登录 dashboard 所需 token:</p><pre><code>kubectl create token kube-dashboard-admin-sa -n kube-system --duration=87600h
- 
+
 eyJhbGciOiJSUzI1NiIsImtpZCI6IlU1SlpSTS1YekNuVzE0T1k5TUdTOFFqN25URWxKckt6OUJBT0xzblBsTncifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjLmNsdXN0ZXIubG9jYWwiXSwiZXhwIjoxOTY4OTA4MjgyLCJpYXQiOjE2NTM1NDgyODIsImlzcyI6Imh0dHBzOi8va3ViZXJuZXRlcy5kZWZhdWx0LnN2Yy5jbHVzdGVyLmxvY2FsIiwia3ViZXJuZXRlcy5pbyI6eyJuYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsInNlcnZpY2VhY2NvdW50Ijp7Im5hbWUiOiJrdWJlLWRhc2hib2FyZC1hZG1pbi1zYSIsInVpZCI6IjY0MmMwMmExLWY1YzktNDFjNy04Mjc5LWQ1ZmI3MGRjYTQ3ZSJ9fSwibmJmIjoxNjUzNTQ4MjgyLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06a3ViZS1kYXNoYm9hcmQtYWRtaW4tc2EifQ.Xqxlo2vJ9Hb6UUVIqwvc8I5bahdxKzSRSaQI_67Yt7_YEHmkkHApxUGlwJYTKF9ufww3btlCmM8PtRn5_Q1yv-HAFyTOYKo8WHZ9UCm1bT3X8V8g4GQwZIl2dwmlUmKb1unBz2-em2uThQ015bMPDE8a42DV_bOwWjljVXat0nwV14nGorC8vKLjXbohrIJ3G1pgCJvlBn99F1RelmSUSQLlolUFoxpN6MamYTElwR6FfD-AGmFXvZSbcFaqVW0oxJHV70Gjs2igOtpqHFxxPlHT8aQzlRiybPtFyBf9Ll87TmVJimT89z8wv2si2Nee8bB2jhsApLn8TJyUSlbTXA
 </code></pre><p>使用上面的 token 登录 k8s dashboard。</p><p><img src="/assets/d77e768317fdf704128c6a92a58bfd41-C4yQGIe6.png" alt="img"></p><p>参考</p><pre><code>    Installing kubeadm
     Creating a cluster with kubeadm
     https://github.com/containerd/containerd
     https://pkg.go.dev/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2
     https://docs.projectcalico.org/
-</code></pre></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/3/7 07:39</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>37663</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">kubeadm部署Kubernetes-1.24过程</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T07:39:57.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>ce21b</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">kubeadm部署Kubernetes 1.24步骤</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-29T03:12:48.000Z">2023/8/29</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Kubernetes/k8s%E5%88%A0%E9%99%A4Terminating%E7%8A%B6%E6%80%81ns.html" aria-label="k8s删除Terminating状态ns"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->k8s删除Terminating状态ns</div></a><a class="route-link auto-link next" href="/note-book/Kubernetes/Kubernetes%20Api%20Endpoint.html" aria-label="API规范"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">API规范<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-CJcqO2d5.js" defer></script>
-
-
+</code></pre></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/9/14 02:56</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>60862</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">使用pretter进行语法重写</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-09-14T02:56:50.000Z">2025/9/14</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>37663</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">kubeadm部署Kubernetes-1.24过程</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T07:39:57.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>ce21b</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">kubeadm部署Kubernetes 1.24步骤</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-29T03:12:48.000Z">2023/8/29</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Kubernetes/k8s%E5%88%A0%E9%99%A4Terminating%E7%8A%B6%E6%80%81ns.html" aria-label="k8s删除Terminating状态ns"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->k8s删除Terminating状态ns</div></a><a class="route-link auto-link next" href="/note-book/Kubernetes/Kubernetes%20Api%20Endpoint.html" aria-label="API规范"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">API规范<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-GrhoROuM.js" defer></script>
   </body>
 </html>
