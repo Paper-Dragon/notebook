@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
+    
     <!-- 添加百度搜索验证代码 -->
     <meta name="baidu-site-verification" content="codeva-udZGoBkoXj" />
     <!-- end 添加百度搜索验证代码 -->
-
+    
     <style>
       html {
         background: var(--bg-color, #fff);
@@ -31,7 +31,7 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Shell文本处理三剑客awk","image":[""],"dateModified":"2025-09-14T02:56:50.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/Shell%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E4%B8%89%E5%89%91%E5%AE%A2awk.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="Shell文本处理三剑客awk"><meta property="og:description" content="Shell文本处理三剑客awk 2.1awk简介 2.2awk的语法格式 2.3awk工作原理 2.4记录与字段相关内部变量：man awk 2.5格式化输出 2.6awk模式和动作 2.7awk脚本编程"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-09-14T02:56:50.000Z"><meta property="article:modified_time" content="2025-09-14T02:56:50.000Z"><script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Shell文本处理三剑客awk","image":[""],"dateModified":"2024-03-25T08:29:56.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/Shell%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86%E4%B8%89%E5%89%91%E5%AE%A2awk.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="Shell文本处理三剑客awk"><meta property="og:description" content="Shell文本处理三剑客awk 2.1awk简介 2.2awk的语法格式 2.3awk工作原理 2.4记录与字段相关内部变量：man awk 2.5格式化输出 2.6awk模式和动作 2.7awk脚本编程"><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2024-03-25T08:29:56.000Z"><meta property="article:modified_time" content="2024-03-25T08:29:56.000Z"><script>
       /*禁用F12*/
       document.onkeydown = function(){
           if(window.event.keyCode==123) {
@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>Shell文本处理三剑客awk | 运维开发绿皮书</title><meta name="description" content="Shell文本处理三剑客awk 2.1awk简介 2.2awk的语法格式 2.3awk工作原理 2.4记录与字段相关内部变量：man awk 2.5格式化输出 2.6awk模式和动作 2.7awk脚本编程">
-    <link rel="preload" href="/assets/style-BPGP6tij.css" as="style"><link rel="stylesheet" href="/assets/style-BPGP6tij.css">
-    <link rel="modulepreload" href="/assets/app-GrhoROuM.js"><link rel="modulepreload" href="/assets/Shell文本处理三剑客awk.html-DZ0Nl-UP.js">
+    <link rel="preload" href="/assets/style-BokSeCW8.css" as="style"><link rel="stylesheet" href="/assets/style-BokSeCW8.css">
+    <link rel="modulepreload" href="/assets/app-JSukfdq9.js"><link rel="modulepreload" href="/assets/Shell文本处理三剑客awk.html-DONKDhLD.js">
     
   </head>
   <body>
@@ -72,14 +72,14 @@
 <span class="line"><span>-----------</span></span>
 <span class="line"><span>BEGIN{} 通常用于定义一些变量，例如BEGIN{FS=&quot;:&quot;;OFS=&quot;---&quot;}</span></span>
 <span class="line"><span>awk命令格式：</span></span>
-<span class="line"><span>awk &#39;pattern&#39; filename</span></span>
-<span class="line"><span>示例：awk -F: &#39;/root/&#39; /etc/passwd</span></span>
-<span class="line"><span>awk &#39;{action}&#39; filename</span></span>
-<span class="line"><span>示例：awk -F: &#39;{print $1}&#39; /etc/passwd</span></span>
-<span class="line"><span>awk &#39;pattern {action}&#39; filename</span></span>
-<span class="line"><span>示例：awk -F: &#39;/root/{print $1,$3}&#39; /etc/passwd</span></span>
+<span class="line"><span>awk &#39;pattern&#39; filename  </span></span>
+<span class="line"><span>示例：awk -F: &#39;/root/&#39; /etc/passwd     </span></span>
+<span class="line"><span>awk &#39;{action}&#39; filename                     </span></span>
+<span class="line"><span>示例：awk -F: &#39;{print $1}&#39; /etc/passwd         </span></span>
+<span class="line"><span>awk &#39;pattern {action}&#39; filename         </span></span>
+<span class="line"><span>示例：awk -F: &#39;/root/{print $1,$3}&#39; /etc/passwd        </span></span>
 <span class="line"><span>示例：awk &#39;BEGIN{FS=&quot;:&quot;} /root/{print $1,$3}&#39; /etc/passwd</span></span>
-<span class="line"><span>command |awk &#39;pattern {action}&#39;</span></span>
+<span class="line"><span>command |awk &#39;pattern {action}&#39;      </span></span>
 <span class="line"><span>示例：df -P| grep  &#39;/&#39; |awk &#39;$4 &gt; 25000 {print $4}&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_2-3awk工作原理" tabindex="-1"><a class="header-anchor" href="#_2-3awk工作原理"><span><strong>2.3awk工作原理</strong></span></a></h2><div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-text"><span class="line"><span>[root@xulei ~}# awk -F: &#39;{print $1,$3}&#39; /etc/passwd</span></span>
 <span class="line"><span>(1)awk使用一行作为输入，并将这一行赋给内部变量$0，每一行也可称为一个记录，以换行符结束</span></span>
 <span class="line"><span>(2)然后，行被:（默认为空格或制表符）分解成字段（或域），每个字段存储在已编号的变量中，从$1开始，</span></span>
@@ -91,7 +91,7 @@
 <span class="line"><span>FNR：   The input record number in the current input file    [root@xulei ~]# awk -F: &#39;{print FNR, $0}&#39; /etc/passwd /etc/hosts</span></span>
 <span class="line"><span>NF：     保存记录的字段数，$1,$2...$100                           [root@xulei ~]# awk -F: &#39;{print $0,NF}&#39; /etc/passwd</span></span>
 <span class="line"><span>FS：     输入字段分隔符，默认空格                                 [root@xulei ~]# awk -F: &#39;/alice/{print $1, $3}&#39; /etc/passwd</span></span>
-<span class="line"><span>[root@xulei ~]# awk -F&#39;[ :\t]&#39; &#39;{print $1,$2,$3}&#39; /etc/passwd</span></span>
+<span class="line"><span>[root@xulei ~]# awk -F&#39;[ :\t]&#39; &#39;{print $1,$2,$3}&#39; /etc/passwd   </span></span>
 <span class="line"><span>[root@xulei ~]# awk &#39;BEGIN{FS=&quot;:&quot;} {print $1,$3}&#39; /etc/passwd</span></span>
 <span class="line"><span>OFS：     输出字段分隔符                                       [root@xulei ~]# awk -F: &#39;/alice/{print $1,$2,$3,$4}&#39; /etc/passwd</span></span>
 <span class="line"><span>[root@xulei ~]# awk &#39;BEGIN{FS=&quot;:&quot;; OFS=&quot;+++&quot;} /^root/{print $1,$2,$3,$4}&#39; passwd</span></span>
@@ -102,13 +102,13 @@
 <span class="line"><span>记录分隔符: RS ORS 默认换行符</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>lab1:</span></span>
-<span class="line"><span>[root@xulei ~]# awk &#39;BEGIN{ORS=&quot; &quot;} {print $0}&#39; /etc/passwd</span></span>
+<span class="line"><span>[root@xulei ~]# awk &#39;BEGIN{ORS=&quot; &quot;} {print $0}&#39; /etc/passwd </span></span>
 <span class="line"><span>将文件每一行合并为一行,ORS默认输出一条记录应该回车，加了一个空格</span></span>
 <span class="line"><span>lab2:</span></span>
 <span class="line"><span>[root@xulei ~]# head -1 /etc/passwd &gt; passwd1</span></span>
-<span class="line"><span>[root@xulei ~]# cat passwd1</span></span>
+<span class="line"><span>[root@xulei ~]# cat passwd1 </span></span>
 <span class="line"><span>root:x:0:0:root:/root:/bin/bash</span></span>
-<span class="line"><span>[root@xulei ~]# awk &#39;BEGIN{RS=&quot;:&quot;} {print $0}&#39; passwd1</span></span>
+<span class="line"><span>[root@xulei ~]# awk &#39;BEGIN{RS=&quot;:&quot;} {print $0}&#39; passwd1 </span></span>
 <span class="line"><span>root</span></span>
 <span class="line"><span>x</span></span>
 <span class="line"><span>0</span></span>
@@ -202,7 +202,7 @@
 <span class="line"><span>格式</span></span>
 <span class="line"><span>{if(表达式1)｛语句;语句；...｝else if(表达式2)｛语句;语句；...｝else if(表达式3)｛语句;语句；...｝else｛语句;语句；...｝}</span></span>
 <span class="line"><span>awk -F: &#39;{if($3==0){i++} else if($3&gt;999){k++} else{j++}} END{print i; print k; print j}&#39; /etc/passwd</span></span>
-<span class="line"><span>awk -F: &#39;{if($3==0){i++} else if($3&gt;999){k++} else{j++}} END{print &quot;管理员个数: &quot;i; print &quot;普通用个数: &quot;k; print &quot;系统用户: &quot;j}&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;{if($3==0){i++} else if($3&gt;999){k++} else{j++}} END{print &quot;管理员个数: &quot;i; print &quot;普通用个数: &quot;k; print &quot;系统用户: &quot;j}&#39; /etc/passwd </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>循环</span></span>
 <span class="line"><span>while:</span></span>
@@ -210,7 +210,7 @@
 <span class="line"><span>[root@blackmed ~]# awk -F: &#39;/^root/{i=1; while(i&lt;=7){print $i; i++}}&#39; passwd</span></span>
 <span class="line"><span>[root@blackmed ~]# awk  &#39;{i=1; while(i&lt;=NF){print $i; i++}}&#39; /etc/hosts</span></span>
 <span class="line"><span>[root@blackmed ~]# awk -F: &#39;{i=1; while(i&lt;=10) {print $0;  i++}}&#39; /etc/passwd      //将每行打印10次</span></span>
-<span class="line"><span>[root@blackmed ~]# cat b.txt</span></span>
+<span class="line"><span>[root@blackmed ~]# cat b.txt </span></span>
 <span class="line"><span>111 222</span></span>
 <span class="line"><span>333 444 555</span></span>
 <span class="line"><span>666 777 888 999</span></span>
@@ -252,9 +252,9 @@
 <span class="line"><span>数组</span></span>
 <span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[++i]=$1} END{print username[1]}&#39; /etc/passwd</span></span>
 <span class="line"><span>root</span></span>
-<span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[i++]=$1} END{print username[1]}&#39; /etc/passwd</span></span>
+<span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[i++]=$1} END{print username[1]}&#39; /etc/passwd </span></span>
 <span class="line"><span>bin</span></span>
-<span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[i++]=$1} END{print username[0]}&#39; /etc/passwd</span></span>
+<span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[i++]=$1} END{print username[0]}&#39; /etc/passwd </span></span>
 <span class="line"><span>root</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>数组遍历：</span></span>
@@ -268,7 +268,9 @@
 <span class="line"><span>按索引遍历</span></span>
 <span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[x++]=$1} END{for(i in username) {print i,username[i]} }&#39; /etc/passwd</span></span>
 <span class="line"><span>[root@xulei ~]# awk -F: &#39;{username[++x]=$1} END{for(i in username) {print i,username[i]} }&#39; /etc/passwd</span></span>
-<span class="line"><span>注：变量i是索引</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/9/14 02:56</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>60862</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">使用pretter进行语法重写</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-09-14T02:56:50.000Z">2025/9/14</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>b1df1</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">修正Markdown语法错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-25T08:29:56.000Z">2024/3/25</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>4dc3f</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">awk</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-19T07:38:34.000Z">2024/3/19</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/awk%E9%AB%98%E7%BA%A7%E8%BE%93%E5%87%BA02.html" aria-label="awk高级输出02"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->awk高级输出02</div></a><!----></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-GrhoROuM.js" defer></script>
+<span class="line"><span>注：变量i是索引</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/3/25 08:29</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>b1df1</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">修正Markdown语法错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-25T08:29:56.000Z">2024/3/25</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>4dc3f</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">awk</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-19T07:38:34.000Z">2024/3/19</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/awk%E9%AB%98%E7%BA%A7%E8%BE%93%E5%87%BA02.html" aria-label="awk高级输出02"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->awk高级输出02</div></a><!----></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-JSukfdq9.js" defer></script>
+
+
   </body>
 </html>

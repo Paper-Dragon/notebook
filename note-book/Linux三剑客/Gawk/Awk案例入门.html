@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
+    
     <!-- 添加百度搜索验证代码 -->
     <meta name="baidu-site-verification" content="codeva-udZGoBkoXj" />
     <!-- end 添加百度搜索验证代码 -->
-
+    
     <style>
       html {
         background: var(--bg-color, #fff);
@@ -31,7 +31,7 @@
         document.documentElement.setAttribute("data-theme", "dark");
       }
     </script>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Awk案例入门","image":[""],"dateModified":"2025-09-14T02:56:50.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/Awk%E6%A1%88%E4%BE%8B%E5%85%A5%E9%97%A8.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="Awk案例入门"><meta property="og:description" content="Awk案例入门 简介 awk 擅长对列进行操作/进行数据信息操作 awk 的基本使用（高级使用在shell) awk把文本文档看作是数据库，每一行看作一条数据库中的记录，可以指定数据列的分隔符，默认的分隔符是”\t”,即Tab。 awk工作流程是这样的：读入有’\n’换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域, 1..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2025-09-14T02:56:50.000Z"><meta property="article:modified_time" content="2025-09-14T02:56:50.000Z"><script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Awk案例入门","image":[""],"dateModified":"2024-03-25T08:29:56.000Z","author":[{"@type":"Person","name":"Paper-Dragon","url":"https://github.com/Paper-Dragon","email":"2678885646@qq.com"}]}</script><meta property="og:url" content="https://www.geekery.cn/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/Awk%E6%A1%88%E4%BE%8B%E5%85%A5%E9%97%A8.html"><meta property="og:site_name" content="运维开发绿皮书"><meta property="og:title" content="Awk案例入门"><meta property="og:description" content="Awk案例入门 简介 awk 擅长对列进行操作/进行数据信息操作 awk 的基本使用（高级使用在shell) awk把文本文档看作是数据库，每一行看作一条数据库中的记录，可以指定数据列的分隔符，默认的分隔符是”\t”,即Tab。 awk工作流程是这样的：读入有’\n’换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域, 1..."><meta property="og:type" content="article"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2024-03-25T08:29:56.000Z"><meta property="article:modified_time" content="2024-03-25T08:29:56.000Z"><script>
       /*禁用F12*/
       document.onkeydown = function(){
           if(window.event.keyCode==123) {
@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>Awk案例入门 | 运维开发绿皮书</title><meta name="description" content="Awk案例入门 简介 awk 擅长对列进行操作/进行数据信息操作 awk 的基本使用（高级使用在shell) awk把文本文档看作是数据库，每一行看作一条数据库中的记录，可以指定数据列的分隔符，默认的分隔符是”\t”,即Tab。 awk工作流程是这样的：读入有’\n’换行符分割的一条记录，然后将记录按指定的域分隔符划分域，填充域，$0则表示所有域, 1...">
-    <link rel="preload" href="/assets/style-BPGP6tij.css" as="style"><link rel="stylesheet" href="/assets/style-BPGP6tij.css">
-    <link rel="modulepreload" href="/assets/app-GrhoROuM.js"><link rel="modulepreload" href="/assets/Awk案例入门.html-CC0RDjif.js">
+    <link rel="preload" href="/assets/style-BokSeCW8.css" as="style"><link rel="stylesheet" href="/assets/style-BokSeCW8.css">
+    <link rel="modulepreload" href="/assets/app-JSukfdq9.js"><link rel="modulepreload" href="/assets/Awk案例入门.html-B5z4WVOU.js">
     
   </head>
   <body>
@@ -60,11 +60,11 @@
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">sed</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> [参数]  ’模式-动作</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">&#39;  文件</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">awk [-F|-f|-v] ‘BEGIN{} //{command1; command2} END{}’ file</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-变量" tabindex="-1"><a class="header-anchor" href="#awk-变量"><span>awk 变量</span></a></h2><table><thead><tr><th>变量</th><th>描述</th></tr></thead><tbody><tr><td>$n</td><td>当前记录的第n个字段，字段间由FS分隔</td></tr><tr><td>$0</td><td>完整的输入记录（默认就是文本的每一行）</td></tr><tr><td>ARGC</td><td>命令行参数的数目</td></tr><tr><td>ARGIND</td><td>命令行中当前文件的位置(从0开始算)</td></tr><tr><td>ARGV</td><td>包含命令行参数的数组</td></tr><tr><td>CONVFMT</td><td>数字转换格式(默认值为%.6g)ENVIRON环境变量关联数组</td></tr><tr><td>ERRNO</td><td>最后一个系统错误的描述</td></tr><tr><td>FIELDWIDTHS</td><td>字段宽度列表(用空格键分隔)</td></tr><tr><td>FILENAME</td><td>当前文件名</td></tr><tr><td>FS</td><td>字段分隔符(默认是任何空格) Field Separator</td></tr><tr><td>IGNORECASE</td><td>如果为真，则进行忽略大小写的匹配</td></tr><tr><td>NF</td><td>一条记录的字段的数目 Number for Field，表示的是浏览记录的域的个数，即被分隔符切开以后，一共有多少列</td></tr><tr><td>$NF</td><td>从后往前数， N F 表 示 的 最 后 一 个 F i e l d （ 列 ） ， 即 输 出 最 后 一 个 字 段 的 内 容 ， 倒 数 第 二 列 ‘ NF 表示的最后一个Field（列），即输出最后一个字段的内容，倒数第二列<code>NF表示的最后一个Field（列），即输出最后一个字段的内容，倒数第二列‘(NF-1)</code></td></tr><tr><td>NR</td><td>已经读出的记录数，就是行号，从1开始 Number of Record</td></tr><tr><td>FNR</td><td>各文件分别计数的行号 FILE Number of Record</td></tr><tr><td>OFMT</td><td>数字的输出格式(默认值是%.6g)</td></tr><tr><td>OFS</td><td>输出记录分隔符（输出换行符），输出时用指定的符号代替换行符 Output Field Separator</td></tr><tr><td>ORS</td><td>输出记录分隔符(默认值是一个换行符) Output Record Separator</td></tr><tr><td>RLENGTH</td><td>由match函数所匹配的字符串的长度</td></tr><tr><td>RS</td><td>记录分隔符(默认是一个换行符) Record Separator</td></tr><tr><td>RSTART</td><td>由match函数所匹配的字符串的第一个位置</td></tr><tr><td>SUBSEP</td><td>数组下标分隔符(默认值是/034)</td></tr><tr><td>~</td><td>匹配，与==相比不是精确比较</td></tr><tr><td>!~</td><td>不匹配，不精确比较</td></tr><tr><td>==</td><td>等于，必须全部相等，精确比较</td></tr><tr><td>!=</td><td>不等于，精确比较</td></tr><tr><td>&amp;&amp;</td><td>逻辑与</td></tr><tr><td>||</td><td>逻辑或</td></tr><tr><td>+</td><td>匹配时表示1个或1个以上</td></tr><tr><td>/[0-9][0-9]+/</td><td>两个或两个以上数字</td></tr><tr><td>/[0-9][0-9]*/</td><td>一个或一个以上数字</td></tr></tbody></table><h3 id="n" tabindex="-1"><a class="header-anchor" href="#n"><span>$n</span></a></h3><p>$1这种内置变量的外侧不能加入双引号，否则$1会被当做文本输出</p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test</span></span>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">awk [-F|-f|-v] ‘BEGIN{} //{command1; command2} END{}’ file</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-变量" tabindex="-1"><a class="header-anchor" href="#awk-变量"><span>awk 变量</span></a></h2><table><thead><tr><th>变量</th><th>描述</th></tr></thead><tbody><tr><td>$n</td><td>当前记录的第n个字段，字段间由FS分隔</td></tr><tr><td>$0</td><td>完整的输入记录（默认就是文本的每一行）</td></tr><tr><td>ARGC</td><td>命令行参数的数目</td></tr><tr><td>ARGIND</td><td>命令行中当前文件的位置(从0开始算)</td></tr><tr><td>ARGV</td><td>包含命令行参数的数组</td></tr><tr><td>CONVFMT</td><td>数字转换格式(默认值为%.6g)ENVIRON环境变量关联数组</td></tr><tr><td>ERRNO</td><td>最后一个系统错误的描述</td></tr><tr><td>FIELDWIDTHS</td><td>字段宽度列表(用空格键分隔)</td></tr><tr><td>FILENAME</td><td>当前文件名</td></tr><tr><td>FS</td><td>字段分隔符(默认是任何空格) Field Separator</td></tr><tr><td>IGNORECASE</td><td>如果为真，则进行忽略大小写的匹配</td></tr><tr><td>NF</td><td>一条记录的字段的数目 Number for Field，表示的是浏览记录的域的个数，即被分隔符切开以后，一共有多少列</td></tr><tr><td>$NF</td><td>从后往前数， N F 表 示 的 最 后 一 个 F i e l d （ 列 ） ， 即 输 出 最 后 一 个 字 段 的 内 容 ， 倒 数 第 二 列 ‘ NF 表示的最后一个Field（列），即输出最后一个字段的内容，倒数第二列<code>NF表示的最后一个Field（列），即输出最后一个字段的内容，倒数第二列‘(NF-1)</code></td></tr><tr><td>NR</td><td>已经读出的记录数，就是行号，从1开始 Number of Record</td></tr><tr><td>FNR</td><td>各文件分别计数的行号 FILE Number of Record</td></tr><tr><td>OFMT</td><td>数字的输出格式(默认值是%.6g)</td></tr><tr><td>OFS</td><td>输出记录分隔符（输出换行符），输出时用指定的符号代替换行符 Output Field Separator</td></tr><tr><td>ORS</td><td>输出记录分隔符(默认值是一个换行符) Output Record Separator</td></tr><tr><td>RLENGTH</td><td>由match函数所匹配的字符串的长度</td></tr><tr><td>RS</td><td>记录分隔符(默认是一个换行符) Record Separator</td></tr><tr><td>RSTART</td><td>由match函数所匹配的字符串的第一个位置</td></tr><tr><td>SUBSEP</td><td>数组下标分隔符(默认值是/034)</td></tr><tr><td>~</td><td>匹配，与==相比不是精确比较</td></tr><tr><td>!~</td><td>不匹配，不精确比较</td></tr><tr><td>==</td><td>等于，必须全部相等，精确比较</td></tr><tr><td>!=</td><td>不等于，精确比较</td></tr><tr><td>&amp;&amp;</td><td>逻辑与</td></tr><tr><td>||</td><td>逻辑或</td></tr><tr><td>+</td><td>匹配时表示1个或1个以上</td></tr><tr><td>/[0-9][0-9]+/</td><td>两个或两个以上数字</td></tr><tr><td>/[0-9][0-9]*/</td><td>一个或一个以上数字</td></tr></tbody></table><h3 id="n" tabindex="-1"><a class="header-anchor" href="#n"><span>$n</span></a></h3><p>$1这种内置变量的外侧不能加入双引号，否则$1会被当做文本输出</p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test </span></span>
 <span class="line"><span>abc 123 iuy ddd</span></span>
 <span class="line"><span>8ua 456 auv php 7y7</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>[root@boy ~]# awk &#39;{print $1}&#39; test</span></span>
+<span class="line"><span>[root@boy ~]# awk &#39;{print $1}&#39; test </span></span>
 <span class="line"><span>abc</span></span>
 <span class="line"><span>8ua</span></span>
 <span class="line"><span>[root@boy ~]# awk &#39;{print &quot;$1&quot;}&#39; test</span></span>
@@ -77,7 +77,7 @@
 <span class="line"><span></span></span>
 <span class="line"><span>    1</span></span>
 <span class="line"><span>    2</span></span>
-<span class="line"><span>    3</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="ofs" tabindex="-1"><a class="header-anchor" href="#ofs"><span>OFS</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test</span></span>
+<span class="line"><span>    3</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="ofs" tabindex="-1"><a class="header-anchor" href="#ofs"><span>OFS</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test </span></span>
 <span class="line"><span>abc 123 iuy ddd</span></span>
 <span class="line"><span>8ua 456 auv php 7y7</span></span>
 <span class="line"><span></span></span>
@@ -104,10 +104,10 @@
 <span class="line"><span>2 8ua 456 auv php 7y7</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="rs" tabindex="-1"><a class="header-anchor" href="#rs"><span>RS</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># RS是输入行分隔符，如果不指定，默认的”行分隔符”就是我们所理解的”回车换行</span></span>
 <span class="line"><span># 假设，我们不想以默认的”回车换行”作为”行分隔符”，而是想使用空格作为所谓的行分隔符，也就是说，我们想让awk认为，每遇到一个空格，就换行，换句话说，我们想让awk以为每次遇到一个空格就是新的一行</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>[root@boy ~]# awk &#39;{print NR,$0}&#39; test</span></span>
+<span class="line"><span>[root@boy ~]# awk &#39;{print NR,$0}&#39; test </span></span>
 <span class="line"><span>1 abc 123 iuy ddd</span></span>
 <span class="line"><span>2 8ua 456 auv php 7y7</span></span>
-<span class="line"><span>[root@boy ~]# awk -v  RS=&quot; &quot; &#39;{print NR,$0}&#39; test</span></span>
+<span class="line"><span>[root@boy ~]# awk -v  RS=&quot; &quot; &#39;{print NR,$0}&#39; test </span></span>
 <span class="line"><span>1 abc</span></span>
 <span class="line"><span>2 123</span></span>
 <span class="line"><span>3 iuy</span></span>
@@ -118,7 +118,7 @@
 <span class="line"><span>7 php</span></span>
 <span class="line"><span>8 7y7</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="ors" tabindex="-1"><a class="header-anchor" href="#ors"><span>ORS</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># awk将人类眼中的”回车换行”，当做”输出行分隔符”，此时，awk的”世界观”与人类的”世界观”是相同的。现在，我们改变一下awk的想法，我们让awk认为，”+++”才是真正的输出行分隔符</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>[root@boy ~]# awk &#39;{print NR,$0}&#39; test</span></span>
+<span class="line"><span>[root@boy ~]# awk &#39;{print NR,$0}&#39; test </span></span>
 <span class="line"><span>1 abc 123 iuy ddd</span></span>
 <span class="line"><span>2 8ua 456 auv php 7y7</span></span>
 <span class="line"><span></span></span>
@@ -175,10 +175,10 @@
 <span class="line"><span>}</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>{print $1}               //效果与awk -F&quot;:&quot; &#39;{print $1}&#39;相同,只是分隔符使用FS在代码自身中指定</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-f-1" tabindex="-1"><a class="header-anchor" href="#awk-f-1"><span>awk -F</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 选取二个作为分隔符,用:和,二个作为分隔符</span></span>
-<span class="line"><span>awk -F &quot;:|,&quot; XXX</span></span>
+<span class="line"><span>awk -F &quot;:|,&quot; XXX  </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 将每一行的前二个字段，分行输出，进一步理解一行一行处理文本</span></span>
-<span class="line"><span>awk -F: &#39;{print $1; print $2}&#39;   /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;{print $1; print $2}&#39;   /etc/passwd                   </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 输出字段1,3,6，以制表符作为分隔符</span></span>
 <span class="line"><span>awk  -F: &#39;{print $1,$3,$6}&#39; OFS=&quot;\t&quot; /etc/passwd</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># -F指定分隔符,$1 指指定分隔符后，第一个字段，$3第三个字段， \t是制表符</span></span>
@@ -193,7 +193,7 @@
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F&quot;:&quot; &#39;{print $1 &quot; &quot; $3}&#39;  /etc/passwd                  # $1与$3之间手动添加空格分隔</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F&quot;:&quot; &#39;{print &quot;Username:&quot; $1 &quot;\t\t Uid:&quot; $3 }&#39; /etc/passwd   # 自定义输出</span></span>
+<span class="line"><span>awk -F&quot;:&quot; &#39;{print &quot;Username:&quot; $1 &quot;\t\t Uid:&quot; $3 }&#39; /etc/passwd   # 自定义输出  </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;{print NF}&#39; /etc/passwd                                 # 显示每行有多少字段</span></span>
 <span class="line"><span></span></span>
@@ -212,16 +212,16 @@
 <span class="line"><span>awk -F: &#39;NR==5 || NR==6{print}&#39;  /etc/passwd                # 显示第5行和第6行</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>awk -F: &#39;{if($3&gt;100) print &quot;large&quot;; else print &quot;small&quot;}&#39; /etc/passwd</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>#  ID大于100,A加1，否则B加1</span></span>
-<span class="line"><span>awk -F: &#39;BEGIN{A=0;B=0} {if($3&gt;100) {A++; print &quot;large&quot;} else {B++; print &quot;small&quot;}} END{print A,&quot;\t&quot;,B}&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;BEGIN{A=0;B=0} {if($3&gt;100) {A++; print &quot;large&quot;} else {B++; print &quot;small&quot;}} END{print A,&quot;\t&quot;,B}&#39; /etc/passwd                         </span></span>
 <span class="line"><span>awk -F: &#39;{if($3&lt;100) next; else print}&#39; /etc/passwd                         # 小于100跳过，否则显示</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;BEGIN{i=1} {if(i&lt;NF) print NR,NF,i++ }&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;BEGIN{i=1} {if(i&lt;NF) print NR,NF,i++ }&#39; /etc/passwd   </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;BEGIN{i=1} {if(i&lt;NF) {print NR,NF} i++ }&#39; /etc/passwd</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 另一种形式</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;{print ($3&gt;100 ? &quot;yes&quot;:&quot;no&quot;)}&#39;  /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;{print ($3&gt;100 ? &quot;yes&quot;:&quot;no&quot;)}&#39;  /etc/passwd </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;{print ($3&gt;100 ? $3&quot;:\tyes&quot;:$3&quot;:\tno&quot;)}&#39;  /etc/passwd</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>awk -F&#39;[:#]&#39; &#39;{print NF}&#39;  helloworld.sh          # 指定多个分隔符: #，输出每行多少字段</span></span>
 <span class="line"><span></span></span>
@@ -229,7 +229,7 @@
 <span class="line"><span> awk &#39;/正则表达式/{动作}&#39;  /xxx/</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 二种语法是行范围模式的语法，它表示，从被正则1匹配到的行开始，到被正则2匹配到的行结束，之间的所有行都会执行对应的动作，所以，这种模式被称为行范围模式，因为它对应的是一个范围以内的所有行，但是需要注意的是，在行范围模式中，不管是正则1，还是正则2，都以第一次匹配到的行为准，就像上述示例中，即使Lee在第2行与第3行中都出现了，但是由于正则1先匹配到第2行中的lee，所以，最终打印出的内容从第2行开始，即使Kevin在第5行与第7行中都出现了，但是由于Kevin第一次出现在第5行，所以最终打印出的内容到第5行结束，也就是说，最终打印出了第2行到第5行以内的所有行</span></span>
-<span class="line"><span> awk &#39;/正则1/,/正则2/{动作}&#39;  /xxx/</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 匹配代码块，//纯字符匹配   !//纯字符不匹配   ~//字段值匹配    !~//字段值不匹配   ~/a1|a2/字段值匹配a1或a2</span></span>
+<span class="line"><span> awk &#39;/正则1/,/正则2/{动作}&#39;  /xxx/</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 匹配代码块，//纯字符匹配   !//纯字符不匹配   ~//字段值匹配    !~//字段值不匹配   ~/a1|a2/字段值匹配a1或a2   </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>cat /etc/passwd | awk &#39;$NF !~/nologin|sync|shutdown|halt/&#39;</span></span>
 <span class="line"><span></span></span>
@@ -257,7 +257,7 @@
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;$1!~/mail/{print $1}&#39; /etc/passwd          //不匹配</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;$1!~/mail|mysql/{print $1}&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;$1!~/mail|mysql/{print $1}&#39; /etc/passwd        </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># ~//字段值匹配</span></span>
 <span class="line"><span>awk -F: &#39;$1~/mail/&#39; /etc/passwd#显示$1字段匹配mail的行</span></span>
@@ -280,10 +280,10 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>=</span></span>
 <span class="line"><span>[root@boy ~]# awk &#39;{ if(NR&gt;1){ next } ; print $0 }&#39; /etc/passwd</span></span>
 <span class="line"><span>root:x:0:0:root:/root:/bin/bash</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="实例" tabindex="-1"><a class="header-anchor" href="#实例"><span>实例</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 文件开头加REDHAT，末尾加WESTOS，打印行号和内容</span></span>
-<span class="line"><span> awk -F: &#39;BEGIN {print &quot;REDHAT&quot;} {print NR;print} END {print &quot;WESTOS&quot;}&#39; passwd</span></span>
+<span class="line"><span> awk -F: &#39;BEGIN {print &quot;REDHAT&quot;} {print NR;print} END {print &quot;WESTOS&quot;}&#39; passwd </span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>[root@server19 mnt]# awk &#39;BEGIN{i=0}{i+=NF}END{print i}&#39; test.txt</span></span>
-<span class="line"><span>7</span></span>
+<span class="line"><span>[root@server19 mnt]# awk &#39;BEGIN{i=0}{i+=NF}END{print i}&#39; test.txt </span></span>
+<span class="line"><span>7 </span></span>
 <span class="line"><span># 统计Nginx连接数</span></span>
 <span class="line"><span> netstat -n | awk &#39;/^tcp/ {++S[$NF]} END {for(a in S) print a,S[a]}&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-if" tabindex="-1"><a class="header-anchor" href="#awk-if"><span>awk if</span></a></h2><h3 id="if-分支" tabindex="-1"><a class="header-anchor" href="#if-分支"><span>if 分支</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># IF语句,必须用在{}中，且比较内容用()扩起来</span></span>
 <span class="line"><span></span></span>
@@ -308,7 +308,7 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>awk &#39;NR != 1 {if($2 &lt;= 30){print $1,&quot;年轻人&quot;} else if($2&gt;=30 &amp;&amp; $2&lt;=50){print $1,&quot;中年人&quot;} else{print $1,&quot;老年人&quot;}}&#39; xxx</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-for" tabindex="-1"><a class="header-anchor" href="#awk-for"><span>awk for</span></a></h2><ul><li><p>continue的作用：跳出”当前”循环</p></li><li><p>break的作用：跳出”整个”循环</p></li></ul><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 生成1-5序列</span></span>
 <span class="line"><span> awk &#39;BEGIN{for(i=1;i&lt;=5;i++){print i}}&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>#</span></span>
+<span class="line"><span># </span></span>
 <span class="line"><span> awk &#39;BEGIN{ for(i=1;i&lt;=6;i++){print i}}&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
@@ -319,13 +319,13 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>4</span></span>
 <span class="line"><span>5</span></span>
 <span class="line"><span>6</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-while" tabindex="-1"><a class="header-anchor" href="#awk-while"><span>awk while</span></a></h2><ul><li>continue的作用：跳出”当前”循环</li><li>break的作用：跳出”整个”循环</li></ul><h3 id="while" tabindex="-1"><a class="header-anchor" href="#while"><span>while</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 实例一：</span></span>
-<span class="line"><span> awk &#39;i=1 {} BEGIN {while (i&lt;3) {++i;print i}}&#39; test.txt</span></span>
+<span class="line"><span> awk &#39;i=1 {} BEGIN {while (i&lt;3) {++i;print i}}&#39; test.txt </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 实例二：</span></span>
-<span class="line"><span> awk &#39;BEGIN {do {++i;print i} while (i&lt;3)}&#39; test.txt</span></span>
+<span class="line"><span> awk &#39;BEGIN {do {++i;print i} while (i&lt;3)}&#39; test.txt </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;BEGIN{i=1} {while(i&lt;NF) print NF,$i,i++}&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;BEGIN{i=1} {while(i&lt;NF) print NF,$i,i++}&#39; /etc/passwd </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>[root@boy ~]# awk -v i=1 &#39;BEGIN{ while(i&lt;=5){print i; i++}}&#39;</span></span>
@@ -340,16 +340,16 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span></span></span>
 <span class="line"><span># i如果没有默认赋值，初始为空，i++后从1开始</span></span>
 <span class="line"><span>[root@boy ~]# awk &#39;BEGIN{do{print &quot;test&quot;,i;i++}while(i&lt;=5)}&#39;</span></span>
-<span class="line"><span>test</span></span>
+<span class="line"><span>test </span></span>
 <span class="line"><span>test 1</span></span>
 <span class="line"><span>test 2</span></span>
 <span class="line"><span>test 3</span></span>
 <span class="line"><span>test 4</span></span>
-<span class="line"><span>test 5</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-条件表达式" tabindex="-1"><a class="header-anchor" href="#awk-条件表达式"><span>awk 条件表达式</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 条件表达式    ==   !=   &gt;   &gt;=</span></span>
+<span class="line"><span>test 5</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-条件表达式" tabindex="-1"><a class="header-anchor" href="#awk-条件表达式"><span>awk 条件表达式</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 条件表达式    ==   !=   &gt;   &gt;=  </span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F&quot;:&quot; &#39;$1==&quot;mysql&quot;{print $3}&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F&quot;:&quot; &#39;$1==&quot;mysql&quot;{print $3}&#39; /etc/passwd  </span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F&quot;:&quot; &#39;{if($1==&quot;mysql&quot;) print $3}&#39; /etc/passwd          //与上面相同</span></span>
+<span class="line"><span>awk -F&quot;:&quot; &#39;{if($1==&quot;mysql&quot;) print $3}&#39; /etc/passwd          //与上面相同 </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F&quot;:&quot; &#39;$1!=&quot;mysql&quot;{print $3}&#39; /etc/passwd                 //不等于</span></span>
 <span class="line"><span></span></span>
@@ -359,7 +359,7 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F&quot;:&quot; &#39;$3&lt;1{print $3}&#39; /etc/passwd                            //小于</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F&quot;:&quot; &#39;$3&lt;=1{print $3}&#39; /etc/passwd                         //小于等于</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-逻辑运算符" tabindex="-1"><a class="header-anchor" href="#awk-逻辑运算符"><span>awk 逻辑运算符</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 逻辑运算符 ，&amp;&amp;　||</span></span>
+<span class="line"><span>awk -F&quot;:&quot; &#39;$3&lt;=1{print $3}&#39; /etc/passwd                         //小于等于</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-逻辑运算符" tabindex="-1"><a class="header-anchor" href="#awk-逻辑运算符"><span>awk 逻辑运算符</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 逻辑运算符 ，&amp;&amp;　|| </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;$1~/mail/ &amp;&amp; $3&gt;8 {print }&#39; /etc/passwd         //逻辑与，$1匹配mail，并且$3&gt;8</span></span>
 <span class="line"><span></span></span>
@@ -369,13 +369,13 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;{if($1~/mail/ || $3&gt;1000) print }&#39; /etc/passwd</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-数值运算" tabindex="-1"><a class="header-anchor" href="#awk-数值运算"><span>awk 数值运算</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;$3 &gt; 100&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;$3 &gt; 100&#39; /etc/passwd    </span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;$3 &gt; 100 || $3 &lt; 5&#39; /etc/passwd</span></span>
+<span class="line"><span>awk -F: &#39;$3 &gt; 100 || $3 &lt; 5&#39; /etc/passwd  </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;$3+$4 &gt; 200&#39; /etc/passwd</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F: &#39;/mysql|mail/{print $3+10}&#39; /etc/passwd                    # 第三个字段加10打印</span></span>
+<span class="line"><span>awk -F: &#39;/mysql|mail/{print $3+10}&#39; /etc/passwd                    # 第三个字段加10打印 </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk -F: &#39;/mysql/{print $3-$4}&#39; /etc/passwd                         # 减法</span></span>
 <span class="line"><span></span></span>
@@ -393,18 +393,18 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>netstat -anp|awk &#39;$6~/LISTEN|CONNECTED/{sum[$6]++} END{for (i in sum) printf &quot;%-10s %-6s %-3s \n&quot;, i,&quot; &quot;,sum[i]}&#39;</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 统计/home目录下不同用户的普通文件的总数是多少？</span></span>
-<span class="line"><span>ls -l|awk &#39;NR!=1 &amp;&amp; !/^d/{sum[$3]++} END{for (i in sum) printf &quot;%-6s %-5s %-3s \n&quot;,i,&quot; &quot;,sum[i]}&#39;</span></span>
+<span class="line"><span>ls -l|awk &#39;NR!=1 &amp;&amp; !/^d/{sum[$3]++} END{for (i in sum) printf &quot;%-6s %-5s %-3s \n&quot;,i,&quot; &quot;,sum[i]}&#39;   </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span># 统计/home目录下不同用户的普通文件的大小总size是多少？</span></span>
 <span class="line"><span>ls -l|awk &#39;NR!=1 &amp;&amp; !/^d/{sum[$3]+=$5} END{for (i in sum) printf &quot;%-6s %-5s %-3s %-2s \n&quot;,i,&quot; &quot;,sum[i]/1024/1024,&quot;MB&quot;}&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 输出成绩表</span></span>
-<span class="line"><span>[root@localhost home]# cat test0</span></span>
+<span class="line"><span>[root@localhost home]# cat test0 </span></span>
 <span class="line"><span>Marry   2143 78 84 77</span></span>
 <span class="line"><span>Jack    2321 66 78 45</span></span>
 <span class="line"><span>Tom     2122 48 77 71</span></span>
 <span class="line"><span>Mike    2537 87 97 95</span></span>
 <span class="line"><span>Bob     2415 40 57 62</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk &#39;BEGIN{math=0;eng=0;com=0;printf &quot;Lineno.   Name    No.    Math   English   Computer    Total\n&quot;;printf &quot;------------------------------------------------------------\n&quot;}{math+=$3; eng+=$4; com+=$5;printf &quot;%-8s %-7s %-7s %-7s %-9s %-10s %-7s \n&quot;,NR,$1,$2,$3,$4,$5,$3+$4+$5} END{printf &quot;------------------------------------------------------------\n&quot;;printf &quot;%-24s %-7s %-9s %-20s \n&quot;,&quot;Total:&quot;,math,eng,com;printf &quot;%-24s %-7s %-9s %-20s \n&quot;,&quot;Avg:&quot;,math/NR,eng/NR,com/NR}&#39; test0</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-数组" tabindex="-1"><a class="header-anchor" href="#awk-数组"><span>awk 数组</span></a></h2><h3 id="数组遍历" tabindex="-1"><a class="header-anchor" href="#数组遍历"><span>数组遍历</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test.sh</span></span>
+<span class="line"><span>awk &#39;BEGIN{math=0;eng=0;com=0;printf &quot;Lineno.   Name    No.    Math   English   Computer    Total\n&quot;;printf &quot;------------------------------------------------------------\n&quot;}{math+=$3; eng+=$4; com+=$5;printf &quot;%-8s %-7s %-7s %-7s %-9s %-10s %-7s \n&quot;,NR,$1,$2,$3,$4,$5,$3+$4+$5} END{printf &quot;------------------------------------------------------------\n&quot;;printf &quot;%-24s %-7s %-9s %-20s \n&quot;,&quot;Total:&quot;,math,eng,com;printf &quot;%-24s %-7s %-9s %-20s \n&quot;,&quot;Avg:&quot;,math/NR,eng/NR,com/NR}&#39; test0</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-数组" tabindex="-1"><a class="header-anchor" href="#awk-数组"><span>awk 数组</span></a></h2><h3 id="数组遍历" tabindex="-1"><a class="header-anchor" href="#数组遍历"><span>数组遍历</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test.sh </span></span>
 <span class="line"><span>#!/bin/awk</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>BEGIN{</span></span>
@@ -414,7 +414,7 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span> for(key in array)</span></span>
 <span class="line"><span>  print key,array[key];</span></span>
 <span class="line"><span>}</span></span>
-<span class="line"><span>[root@boy ~]# awk -f test.sh</span></span>
+<span class="line"><span>[root@boy ~]# awk -f test.sh </span></span>
 <span class="line"><span>1 boy1</span></span>
 <span class="line"><span>2 boy2</span></span>
 <span class="line"><span>3 boy3</span></span>
@@ -464,7 +464,7 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>[root@boy ~]# netstat -tunlp | awk &#39;NR&gt;2 &amp;&amp; NF==7 &amp;&amp; /^tcp/ {S[$6]++}END{for(key in S){print key,S[key]}}&#39; | sort -rn -k2 | head</span></span>
 <span class="line"><span>LISTEN 4</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="实例-2" tabindex="-1"><a class="header-anchor" href="#实例-2"><span>实例</span></a></h3><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>netstat -anp|awk &#39;NR!=1{a[$6]++} END{for (i in a) print i,&quot;\t&quot;,a[i]}&#39;</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>netstat -anp|awk &#39;NR!=1{a[$6]++} END{for (i in a) printf &quot;%-20s %-10s %-5s \n&quot;, i,&quot;\t&quot;,a[i]}&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-分隔符" tabindex="-1"><a class="header-anchor" href="#awk-分隔符"><span>awk 分隔符</span></a></h2><ul><li>awk内置变量FS可以用于指定输入分隔符，但是在使用变量时，需要使用-v选项，用于指定对应的变量，比如 -v FS=’#’，效果与-F一样</li><li>内置变量OFS来设定awk的输出分隔符，当然，使用变量的时候要配合使用-v选项</li></ul><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test</span></span>
+<span class="line"><span>netstat -anp|awk &#39;NR!=1{a[$6]++} END{for (i in a) printf &quot;%-20s %-10s %-5s \n&quot;, i,&quot;\t&quot;,a[i]}&#39;</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-分隔符" tabindex="-1"><a class="header-anchor" href="#awk-分隔符"><span>awk 分隔符</span></a></h2><ul><li>awk内置变量FS可以用于指定输入分隔符，但是在使用变量时，需要使用-v选项，用于指定对应的变量，比如 -v FS=’#’，效果与-F一样</li><li>内置变量OFS来设定awk的输出分隔符，当然，使用变量的时候要配合使用-v选项</li></ul><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# cat test </span></span>
 <span class="line"><span>abc 123 iuy ddd</span></span>
 <span class="line"><span>8ua 456 auv php 7y7</span></span>
 <span class="line"><span></span></span>
@@ -482,26 +482,26 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span># 可见a,b默认是空的</span></span>
 <span class="line"><span>[root@boy ~]# awk -F: &#39;BEGIN{print a;b} {$3&lt;500?a++:b++;print $0,a,b}END{print a,b}&#39; /etc/passwd</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>root:x:0:0:root:/root:/bin/bash 1</span></span>
-<span class="line"><span>bin:x:1:1:bin:/bin:/sbin/nologin 2</span></span>
-<span class="line"><span>daemon:x:2:2:daemon:/sbin:/sbin/nologin 3</span></span>
-<span class="line"><span>adm:x:3:4:adm:/var/adm:/sbin/nologin 4</span></span>
-<span class="line"><span>lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin 5</span></span>
-<span class="line"><span>sync:x:5:0:sync:/sbin:/bin/sync 6</span></span>
-<span class="line"><span>shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown 7</span></span>
-<span class="line"><span>halt:x:7:0:halt:/sbin:/sbin/halt 8</span></span>
-<span class="line"><span>mail:x:8:12:mail:/var/spool/mail:/sbin/nologin 9</span></span>
-<span class="line"><span>operator:x:11:0:operator:/root:/sbin/nologin 10</span></span>
-<span class="line"><span>games:x:12:100:games:/usr/games:/sbin/nologin 11</span></span>
-<span class="line"><span>ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin 12</span></span>
-<span class="line"><span>nobody:x:99:99:Nobody:/:/sbin/nologin 13</span></span>
-<span class="line"><span>systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin 14</span></span>
-<span class="line"><span>dbus:x:81:81:System message bus:/:/sbin/nologin 15</span></span>
+<span class="line"><span>root:x:0:0:root:/root:/bin/bash 1 </span></span>
+<span class="line"><span>bin:x:1:1:bin:/bin:/sbin/nologin 2 </span></span>
+<span class="line"><span>daemon:x:2:2:daemon:/sbin:/sbin/nologin 3 </span></span>
+<span class="line"><span>adm:x:3:4:adm:/var/adm:/sbin/nologin 4 </span></span>
+<span class="line"><span>lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin 5 </span></span>
+<span class="line"><span>sync:x:5:0:sync:/sbin:/bin/sync 6 </span></span>
+<span class="line"><span>shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown 7 </span></span>
+<span class="line"><span>halt:x:7:0:halt:/sbin:/sbin/halt 8 </span></span>
+<span class="line"><span>mail:x:8:12:mail:/var/spool/mail:/sbin/nologin 9 </span></span>
+<span class="line"><span>operator:x:11:0:operator:/root:/sbin/nologin 10 </span></span>
+<span class="line"><span>games:x:12:100:games:/usr/games:/sbin/nologin 11 </span></span>
+<span class="line"><span>ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin 12 </span></span>
+<span class="line"><span>nobody:x:99:99:Nobody:/:/sbin/nologin 13 </span></span>
+<span class="line"><span>systemd-network:x:192:192:systemd Network Management:/:/sbin/nologin 14 </span></span>
+<span class="line"><span>dbus:x:81:81:System message bus:/:/sbin/nologin 15 </span></span>
 <span class="line"><span>polkitd:x:999:998:User for polkitd:/:/sbin/nologin 15 1</span></span>
 <span class="line"><span>sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin 16 1</span></span>
 <span class="line"><span>postfix:x:89:89::/var/spool/postfix:/sbin/nologin 17 1</span></span>
 <span class="line"><span>chrony:x:998:996::/var/lib/chrony:/sbin/nologin 17 2</span></span>
-<span class="line"><span>17 2</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# awk &#39;1{print $0}&#39; test</span></span>
+<span class="line"><span>17 2</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>[root@boy ~]# awk &#39;1{print $0}&#39; test </span></span>
 <span class="line"><span>name   sex    age</span></span>
 <span class="line"><span>jack   men    18</span></span>
 <span class="line"><span>cnm    women  18</span></span>
@@ -511,8 +511,8 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>jack   men    18</span></span>
 <span class="line"><span>cnm    women  18</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>[root@boy ~]# awk &#39;0&#39; test</span></span>
-<span class="line"><span>[root@boy ~]# awk &#39;!0&#39; test</span></span>
+<span class="line"><span>[root@boy ~]# awk &#39;0&#39; test </span></span>
+<span class="line"><span>[root@boy ~]# awk &#39;!0&#39; test </span></span>
 <span class="line"><span>name   sex    age</span></span>
 <span class="line"><span>jack   men    18</span></span>
 <span class="line"><span>cnm    women  18</span></span>
@@ -575,7 +575,7 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>[root@boy ~]# printf &quot;%7s %5s %4s\n&quot; 姓名 性别 年龄 尼玛 男 20 你妹 女 18</span></span>
 <span class="line"><span> 姓名 性别 年龄</span></span>
 <span class="line"><span> 尼玛   男   20</span></span>
-<span class="line"><span> 你妹   女   18</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="awk" tabindex="-1"><a class="header-anchor" href="#awk"><span>awk</span></a></h4><p>我们来总结一下，在awk中使用printf动作时，需要注意以下3点。</p><ul><li><p>使用printf动作输出的文本不会换行，如果需要换行，可以在对应的”格式替换符”后加入”\n”进行转义。</p></li><li><p>使用printf动作时，”指定的格式” 与 “被格式化的文本” 之间，需要用”逗号”隔开。</p></li><li><p>使用printf动作时，”格式”中的”格式替换符”必须与 “被格式化的文本” 一一对应</p></li></ul><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>netstat -anp|awk &#39;{printf &quot;%-8s %-8s %-10s\n&quot;,$1,$2,$3}&#39;</span></span>
+<span class="line"><span> 你妹   女   18</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="awk" tabindex="-1"><a class="header-anchor" href="#awk"><span>awk</span></a></h4><p>我们来总结一下，在awk中使用printf动作时，需要注意以下3点。</p><ul><li><p>使用printf动作输出的文本不会换行，如果需要换行，可以在对应的”格式替换符”后加入”\n”进行转义。</p></li><li><p>使用printf动作时，”指定的格式” 与 “被格式化的文本” 之间，需要用”逗号”隔开。</p></li><li><p>使用printf动作时，”格式”中的”格式替换符”必须与 “被格式化的文本” 一一对应</p></li></ul><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>netstat -anp|awk &#39;{printf &quot;%-8s %-8s %-10s\n&quot;,$1,$2,$3}&#39; </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>printf表示格式输出</span></span>
 <span class="line"><span></span></span>
@@ -613,12 +613,12 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>adm         3</span></span>
 <span class="line"><span>lp          4</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出处理结果到文件</p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># 输出处理结果到文件</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>①在命令代码块中直接输出    route -n|awk &#39;NR!=1{print &gt; &quot;./fs&quot;}&#39;</span></span>
+<span class="line"><span>①在命令代码块中直接输出    route -n|awk &#39;NR!=1{print &gt; &quot;./fs&quot;}&#39;   </span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>②使用重定向进行输出           route -n|awk &#39;NR!=1{print}&#39;  &gt; ./fs</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-替换" tabindex="-1"><a class="header-anchor" href="#awk-替换"><span>awk 替换</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># sub匹配第一次出现的符合模式的字符串，相当于 sed &#39;s//&#39;</span></span>
-<span class="line"><span># gsub匹配所有的符合模式的字符串，相当于 sed &#39;s//g&#39;</span></span>
+<span class="line"><span>②使用重定向进行输出           route -n|awk &#39;NR!=1{print}&#39;  &gt; ./fs</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="awk-替换" tabindex="-1"><a class="header-anchor" href="#awk-替换"><span>awk 替换</span></a></h2><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># sub匹配第一次出现的符合模式的字符串，相当于 sed &#39;s//&#39; </span></span>
+<span class="line"><span># gsub匹配所有的符合模式的字符串，相当于 sed &#39;s//g&#39; </span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>awk -F &#39;|&#39;  &#39;{sub(/[0-9]+/,&quot;&quot;,$2);print $0}&#39; data.test</span></span>
+<span class="line"><span>awk -F &#39;|&#39;  &#39;{sub(/[0-9]+/,&quot;&quot;,$2);print $0}&#39; data.test </span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>awk &#39;{sub(/Mac/,&quot;Macintosh&quot;);print}&#39; urfile    用Macintosh替换Mac</span></span>
 <span class="line"><span>awk &#39;{sub(/Mac/,&quot;MacIntosh&quot;,$1); print}&#39; file    第一个域内用Macintosh替换Mac</span></span>
@@ -630,7 +630,7 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span>    $ awk &#39;{ sub(/test/, &quot;mytest&quot;, $1); print }&#39; testfile #在整个记录的第一个域中进行匹配，替换只发生在第一次匹配发生的时候</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>​</span></span>
+<span class="line"><span>​ </span></span>
 <span class="line"><span># 如要在整个文件中进行匹配需要用到gsubgsub函数作用如sub，但它在整个文档中进行匹配。格式如下：</span></span>
 <span class="line"><span> gsub (regular expression, substitution string)</span></span>
 <span class="line"><span> gsub (regular expression, substitution string, target string)</span></span>
@@ -638,12 +638,14 @@ next与continue有些类似，只是，continue是针对”循环”而言的，
 <span class="line"><span> $ awk &#39;{ gsub(/test/, &quot;mytest&quot;, $1); print }&#39; testfile #在整个文档的第一个域中匹配，所有匹配的都被替换成mytest</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>​</span></span>
+<span class="line"><span>​ </span></span>
 <span class="line"><span># 删除所有空白：（空格、TAB等）【注：三条语句等效】：</span></span>
 <span class="line"><span>    [oracle@localhost 201402261951.script]$ echo &#39;a bc  d&#39; | awk &#39;{gsub(/[[:blank:]]/, &quot;&quot;,$0)}&#39;</span></span>
 <span class="line"><span>    abcd</span></span>
 <span class="line"><span>    [oracle@localhost 201402261951.script]$ echo &#39;a bc  d&#39; | awk &#39;gsub(/[[:blank:]]/, &quot;&quot;,$0)&#39;</span></span>
-<span class="line"><span>abcd</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/9/14 02:56</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>60862</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">使用pretter进行语法重写</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-09-14T02:56:50.000Z">2025/9/14</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>b1df1</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">修正Markdown语法错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-25T08:29:56.000Z">2024/3/25</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>4dc3f</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">awk</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-19T07:38:34.000Z">2024/3/19</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/awk%E5%8C%B9%E9%85%8D%E7%89%B9%E5%AE%9A%E5%AD%97%E7%AC%A6%E5%B9%B6%E8%BE%93%E5%87%BA%E5%85%B6%E5%90%8E%E7%9A%84%E8%8B%A5%E5%B9%B2%E8%A1%8C.html" aria-label="awk匹配特定字符并输出其后的若干行"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->awk匹配特定字符并输出其后的若干行</div></a><a class="route-link auto-link next" href="/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/awk%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001.html" aria-label="awk语言学习笔记01"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">awk语言学习笔记01<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-GrhoROuM.js" defer></script>
+<span class="line"><span>abcd</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/3/25 08:29</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>b1df1</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">修正Markdown语法错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-25T08:29:56.000Z">2024/3/25</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>4dc3f</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">awk</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-19T07:38:34.000Z">2024/3/19</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/awk%E5%8C%B9%E9%85%8D%E7%89%B9%E5%AE%9A%E5%AD%97%E7%AC%A6%E5%B9%B6%E8%BE%93%E5%87%BA%E5%85%B6%E5%90%8E%E7%9A%84%E8%8B%A5%E5%B9%B2%E8%A1%8C.html" aria-label="awk匹配特定字符并输出其后的若干行"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->awk匹配特定字符并输出其后的若干行</div></a><a class="route-link auto-link next" href="/note-book/Linux%E4%B8%89%E5%89%91%E5%AE%A2/Gawk/awk%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B001.html" aria-label="awk语言学习笔记01"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">awk语言学习笔记01<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-JSukfdq9.js" defer></script>
+
+
   </body>
 </html>
