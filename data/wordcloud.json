@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 373
+        "value": 374
     },
     {
         "name": "Docker",
@@ -193,7 +193,7 @@
     },
     {
         "name": "优先级",
-        "value": 51
+        "value": 52
     },
     {
         "name": "Pull",
@@ -324,6 +324,10 @@
         "value": 34
     },
     {
+        "name": "重定向",
+        "value": 33
+    },
+    {
         "name": "发行版",
         "value": 33
     },
@@ -381,10 +385,6 @@
     },
     {
         "name": "编辑器",
-        "value": 29
-    },
-    {
-        "name": "重定向",
         "value": 29
     },
     {
@@ -672,6 +672,10 @@
         "value": 19
     },
     {
+        "name": "Block",
+        "value": 19
+    },
+    {
         "name": "旧版本",
         "value": 19
     },
@@ -713,10 +717,6 @@
     },
     {
         "name": "Date",
-        "value": 18
-    },
-    {
-        "name": "Block",
         "value": 18
     },
     {
@@ -913,6 +913,10 @@
     },
     {
         "name": "Max",
+        "value": 16
+    },
+    {
+        "name": "Ingress",
         "value": 16
     },
     {
@@ -1113,10 +1117,6 @@
     },
     {
         "name": "Pulled",
-        "value": 14
-    },
-    {
-        "name": "Ingress",
         "value": 14
     },
     {
