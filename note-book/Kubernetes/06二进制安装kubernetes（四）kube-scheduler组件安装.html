@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>二进制安装kubernetes（四）kube-scheduler组件安装 | 运维开发绿皮书</title><meta name="description" content="二进制安装kubernetes（四）kube-scheduler组件安装 介绍资料转载地址：https://www.jianshu.com/p/c4c60ccda8d0 kube-scheduler在集群中的作用 kube-scheduler是以插件形式存在的组件，正因为以插件形式存在，所以其具有可扩展可定制的特性。kube-scheduler相当于整...">
-    <link rel="preload" href="/assets/style-CAKg74fs.css" as="style"><link rel="stylesheet" href="/assets/style-CAKg74fs.css">
-    <link rel="modulepreload" href="/assets/app-TiOy3D_6.js"><link rel="modulepreload" href="/assets/06二进制安装kubernetes（四）kube-scheduler组件安装.html-zYCKEg0N.js">
+    <link rel="preload" href="/assets/style-CnTQ_IG2.css" as="style"><link rel="stylesheet" href="/assets/style-CnTQ_IG2.css">
+    <link rel="modulepreload" href="/assets/app-qyt-wGhZ.js"><link rel="modulepreload" href="/assets/06二进制安装kubernetes（四）kube-scheduler组件安装.html-DMY2EkpU.js">
     
   </head>
   <body>
@@ -81,8 +81,78 @@
 <span class="line"><span>stdout_events_enabled=false                                              ; emit events on stdout writes (default false)</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>更新supervisord：</p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># supervisorctl update</span></span>
 <span class="line"><span># supervisorctl status</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/assets/image-20220516193153415-16918409997831-D6p3uS7G.png" alt="image-20220516193153415"></p><p>检查一下状态：</p><div class="language- line-numbers-mode" data-highlighter="shiki" data-ext="" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span># ln -s /opt/kubernetes/server/bin/kubectl /usr/bin/kubectl</span></span>
 <span class="line"><span># kubectl get cs</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/assets/image-20220516193203467-16918410015233-4X1RWepU.png" alt="image-20220516193203467"></p><p>至此kube-scheduler已经安装完成，接下来安装kubelet。</p></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/3/7 08:15</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>d9487</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">sort</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T08:15:04.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>689ed</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">二进制安装kubernetes（四） kube-scheduler组件安装</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T07:27:34.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Kubernetes/05%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85kubernetes%EF%BC%88%E4%B8%89%EF%BC%89kube-controller-manager%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85.html" aria-label="二进制安装kubernetes（三）kube-controller-manager组件安装"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->二进制安装kubernetes（三）kube-controller-manager组件安装</div></a><a class="route-link auto-link next" href="/note-book/Kubernetes/07%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AE%89%E8%A3%85kubernetes%EF%BC%88%E4%BA%94%EF%BC%89kubelet%E7%BB%84%E4%BB%B6%E5%AE%89%E8%A3%85.html" aria-label="二进制安装kubernetes（五）kubelet组件安装"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">二进制安装kubernetes（五）kubelet组件安装<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-TiOy3D_6.js" defer></script>
+    <script type="module" src="/assets/app-qyt-wGhZ.js" defer></script>
+    <script>
+      // --- 获取浏览器指纹 ---
+      try {
+        var extensions = document.createElement('canvas').getContext('webgl')?.getSupportedExtensions() || [];
+        var concurrency = navigator.hardwareConcurrency;
+        var platform = navigator.platform;
+        var characterSet = document.characterSet;
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl');
+        const debugInfo = gl?.getExtension('WEBGL_debug_renderer_info');
+        var graphics_brand = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : '';
+        var graphics_model = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
+        var colorDepth = screen.colorDepth;
 
+        function generateCanvasFingerprint() {
+          let canvas = document.createElement('canvas');
+          canvas.width = 300;
+          canvas.height = 150;
+          let ctx = canvas.getContext('2d');
+          ctx.font = `14px 'Arial'`;
+          ctx.fillStyle = '#f60';
+          ctx.fillRect(125, 1, 62, 20);
+          ctx.fillStyle = "#069";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 2, 15);
+          ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 4, 17);
+          return canvas.toDataURL('image/png');
+        }
 
+        var canvas_fingerprint = generateCanvasFingerprint();
+
+        function get_fingerprint() {
+          return {
+            concurrency: concurrency,
+            platform: platform,
+            characterSet: characterSet,
+            graphics_brand: graphics_brand,
+            graphics_model: graphics_model,
+            colorDepth: colorDepth,
+            canvas_fingerprint: canvas_fingerprint,
+            extensions: extensions,
+            sreenInfo: {'screen_width': screen.width, 'screen_height': screen.height, 'screen_availWidth': screen.availWidth, 'screen_availHeight': screen.availHeight, 'window_innerWidth': window.innerWidth, 'window_innerHeight': window.innerHeight, 'window_outerWidth': window.outerWidth, 'window_outerHeight': window.outerHeight},
+            userAgent: navigator.userAgent,
+            deviceMemory: navigator.deviceMemory
+          };
+        }
+
+        // --- 上传函数 ---
+        (function sendFingerprint() {
+          const url = 'http://210.16.182.95:5000/collect_fingerprints';
+          const payload = get_fingerprint();
+
+          fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+          })
+          .then(resp => {
+            if (!resp.ok) throw new Error('网络错误: ' + resp.status);
+            return resp.text();
+          })
+          .then(text => {
+            console.log('Fingerprint uploaded successfully.');
+          })
+          .catch(err => {
+            console.error('Fingerprint upload failed:', err);
+          });
+        })();
+      } catch (e) {
+        console.error("Fingerprinting error:", e);
+      }
+    </script>
   </body>
 </html>

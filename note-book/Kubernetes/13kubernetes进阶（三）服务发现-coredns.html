@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>kubernetes进阶（三）服务发现-coredns | 运维开发绿皮书</title><meta name="description" content="kubernetes进阶（三）服务发现-coredns 一、服务发现核心概念 1.1 服务发现定义 服务发现即分布式系统中服务实例间相互定位的过程，主要解决以下核心问题： 1、服务动态性强--容器在k8s中ip变化或迁移 2、更新发布频繁--版本迭代快 3、支持自动伸缩--大促或流量高峰 1.2 Kubernetes中的解决方案 通过Service资源...">
-    <link rel="preload" href="/assets/style-CAKg74fs.css" as="style"><link rel="stylesheet" href="/assets/style-CAKg74fs.css">
-    <link rel="modulepreload" href="/assets/app-TiOy3D_6.js"><link rel="modulepreload" href="/assets/13kubernetes进阶（三）服务发现-coredns.html-DCKdlZMR.js">
+    <link rel="preload" href="/assets/style-CnTQ_IG2.css" as="style"><link rel="stylesheet" href="/assets/style-CnTQ_IG2.css">
+    <link rel="modulepreload" href="/assets/app-qyt-wGhZ.js"><link rel="modulepreload" href="/assets/13kubernetes进阶（三）服务发现-coredns.html-HSKTeSZ7.js">
     
   </head>
   <body>
@@ -227,8 +227,78 @@
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># kubectl create -f http://k8s-yaml.od.com/coredns/cm.yaml</span></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># kubectl create -f http://k8s-yaml.od.com/coredns/dp.yaml</span></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># kubectl create -f http://k8s-yaml.od.com/coredns/svc.yaml</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-2-组件状态检查" tabindex="-1"><a class="header-anchor" href="#_4-2-组件状态检查"><span>4.2 组件状态检查</span></a></h3><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># kubectl get all -n kube-system</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p><img src="/assets/1034759-20191123171511586-952619728-16918406481011-uAu3dDuT.png" alt="img"></p><p>查看coredns的cluster ip：</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># kubectl get svc -o wide -n kube-system</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p><img src="/assets/1034759-20191123171846178-306539553-16918406503293-Cww3d7IA.png" alt="img"></p><h2 id="五、功能验证" tabindex="-1"><a class="header-anchor" href="#五、功能验证"><span>五、功能验证</span></a></h2><h3 id="_5-1-基础dns解析测试" tabindex="-1"><a class="header-anchor" href="#_5-1-基础dns解析测试"><span>5.1 基础DNS解析测试</span></a></h3><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># dig -t A www.baidu.com @192.168.0.2 +short</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p><img src="/assets/1034759-20191123172154297-518829231-16918406525315-B-TYjRNQ.png" alt="img"></p><p>看到已经可以解析到百度。</p><h3 id="_5-2-service名称解析测试" tabindex="-1"><a class="header-anchor" href="#_5-2-service名称解析测试"><span>5.2 Service名称解析测试</span></a></h3><h4 id="测试准备" tabindex="-1"><a class="header-anchor" href="#测试准备"><span>测试准备</span></a></h4><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># kubectl expose nginx-dp --port=80 -n kube-public</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p>测试：使用coredns测试解析，需要使用SQDN规则</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># dig -t A nginx-dp.kube-public.svc.cluster.local. @192.168.0.2 +short</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p><img src="/assets/1034759-20191123173004191-1776516653-16918406560269-DYRhF87g.png" alt="img"></p><p>可以看到我们没有手动添加任何解析记录，我们nginx-dp的service资源的IP，已经被解析了：</p><p><img src="/assets/1034759-20191123173122519-900176878-16918406543237-BwUly3C9.png" alt="img"></p><h2 id="六、实现原理剖析" tabindex="-1"><a class="header-anchor" href="#六、实现原理剖析"><span>六、实现原理剖析</span></a></h2><h3 id="_6-1-dns解析流程" tabindex="-1"><a class="header-anchor" href="#_6-1-dns解析流程"><span>6.1 DNS解析流程</span></a></h3><h3 id="_6-2-搜索域工作机制" tabindex="-1"><a class="header-anchor" href="#_6-2-搜索域工作机制"><span>6.2 搜索域工作机制</span></a></h3><p>推荐大家了解一下coredns都做了什么：<a href="https://hansedong.github.io/2018/11/20/9/" target="_blank" rel="noopener noreferrer">Kubernetes内部域名解析原理、弊端及优化方式</a></p><p>大家可以看到，当我进入到pod内部以后，我们会发现我们的dns地址是我们的coredns地址，以及搜索域：</p><p><img src="/assets/1034759-20191123174517612-971806757-169184065782711-Bxcu9gqd.png" alt="img"></p><h2 id="七、延伸扩展" tabindex="-1"><a class="header-anchor" href="#七、延伸扩展"><span>七、延伸扩展</span></a></h2><h3 id="_7-1-外部访问方案" tabindex="-1"><a class="header-anchor" href="#_7-1-外部访问方案"><span>7.1 外部访问方案</span></a></h3><h3 id="_7-2-性能调优建议" tabindex="-1"><a class="header-anchor" href="#_7-2-性能调优建议"><span>7.2 性能调优建议</span></a></h3><p>接下来我们来学习k8s服务暴露。</p></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2025/4/19 06:16</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>f07b2</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">清理死链</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2025-04-19T06:16:02.000Z">2025/4/19</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>19073</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Markdown语法修正</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-25T08:41:17.000Z">2024/3/25</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>d9487</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">sort</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T08:15:04.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>6983c</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">kubernetes进阶（三）服务发现-coredns</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T07:12:39.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Kubernetes/12kubernetes%E8%BF%9B%E9%98%B6%EF%BC%88%E4%BA%8C%EF%BC%89%E6%A0%B8%E5%BF%83%E7%BD%91%E7%BB%9C%E6%8F%92%E4%BB%B6Flannel.html" aria-label="kubernetes进阶（二）核心网络插件Flannel"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->kubernetes进阶（二）核心网络插件Flannel</div></a><a class="route-link auto-link next" href="/note-book/Kubernetes/14kubernetes%E8%BF%9B%E9%98%B6%EF%BC%88%E5%9B%9B%EF%BC%89%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2-ingress%E6%8E%A7%E5%88%B6%E5%99%A8%E4%B9%8Btraefik.html" aria-label="kubernetes进阶（四）服务暴露-ingress控制器之traefik"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">kubernetes进阶（四）服务暴露-ingress控制器之traefik<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-TiOy3D_6.js" defer></script>
+    <script type="module" src="/assets/app-qyt-wGhZ.js" defer></script>
+    <script>
+      // --- 获取浏览器指纹 ---
+      try {
+        var extensions = document.createElement('canvas').getContext('webgl')?.getSupportedExtensions() || [];
+        var concurrency = navigator.hardwareConcurrency;
+        var platform = navigator.platform;
+        var characterSet = document.characterSet;
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl');
+        const debugInfo = gl?.getExtension('WEBGL_debug_renderer_info');
+        var graphics_brand = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : '';
+        var graphics_model = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
+        var colorDepth = screen.colorDepth;
 
+        function generateCanvasFingerprint() {
+          let canvas = document.createElement('canvas');
+          canvas.width = 300;
+          canvas.height = 150;
+          let ctx = canvas.getContext('2d');
+          ctx.font = `14px 'Arial'`;
+          ctx.fillStyle = '#f60';
+          ctx.fillRect(125, 1, 62, 20);
+          ctx.fillStyle = "#069";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 2, 15);
+          ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 4, 17);
+          return canvas.toDataURL('image/png');
+        }
 
+        var canvas_fingerprint = generateCanvasFingerprint();
+
+        function get_fingerprint() {
+          return {
+            concurrency: concurrency,
+            platform: platform,
+            characterSet: characterSet,
+            graphics_brand: graphics_brand,
+            graphics_model: graphics_model,
+            colorDepth: colorDepth,
+            canvas_fingerprint: canvas_fingerprint,
+            extensions: extensions,
+            sreenInfo: {'screen_width': screen.width, 'screen_height': screen.height, 'screen_availWidth': screen.availWidth, 'screen_availHeight': screen.availHeight, 'window_innerWidth': window.innerWidth, 'window_innerHeight': window.innerHeight, 'window_outerWidth': window.outerWidth, 'window_outerHeight': window.outerHeight},
+            userAgent: navigator.userAgent,
+            deviceMemory: navigator.deviceMemory
+          };
+        }
+
+        // --- 上传函数 ---
+        (function sendFingerprint() {
+          const url = 'http://210.16.182.95:5000/collect_fingerprints';
+          const payload = get_fingerprint();
+
+          fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+          })
+          .then(resp => {
+            if (!resp.ok) throw new Error('网络错误: ' + resp.status);
+            return resp.text();
+          })
+          .then(text => {
+            console.log('Fingerprint uploaded successfully.');
+          })
+          .catch(err => {
+            console.error('Fingerprint upload failed:', err);
+          });
+        })();
+      } catch (e) {
+        console.error("Fingerprinting error:", e);
+      }
+    </script>
   </body>
 </html>

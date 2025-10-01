@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>Frp实现p2p穿透流量不经过公网服务器 | 运维开发绿皮书</title><meta name="description" content="Frp实现p2p穿透流量不经过公网服务器 从公网买服务器的时候经常遇到带宽太小的问题，国内的网络又非常的慢，导致每MB的价格非常的昂贵，搭建frp服务器总会被流量低速卡脖子卡脖子，有一天我看到Frp提供了一个叫Xtcp的传输模式，这种模式可以点对点的传输流量而流量不经过公网服务器，只要两台个人电脑都可以被穿透就可以，这让我非常感兴趣，解决了带宽卡脖子的...">
-    <link rel="preload" href="/assets/style-CAKg74fs.css" as="style"><link rel="stylesheet" href="/assets/style-CAKg74fs.css">
-    <link rel="modulepreload" href="/assets/app-TiOy3D_6.js"><link rel="modulepreload" href="/assets/Frp实现p2p穿透流量不经过公网服务器.html-BtrMH7GW.js">
+    <link rel="preload" href="/assets/style-CnTQ_IG2.css" as="style"><link rel="stylesheet" href="/assets/style-CnTQ_IG2.css">
+    <link rel="modulepreload" href="/assets/app-qyt-wGhZ.js"><link rel="modulepreload" href="/assets/Frp实现p2p穿透流量不经过公网服务器.html-BCfm2DFI.js">
     
   </head>
   <body>
@@ -112,8 +112,78 @@
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># If not empty, only visitors from specified users can connect.</span></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;"># Otherwise, visitors from same user can connect. &#39;*&#39; means allow all users.</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75;">allowUsers</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> = [</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">&quot;*&quot;</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;">]</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>命令行启动</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">./frpc</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> -c</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> frpc.toml</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p>启动服务器</p><p>如果安装了Python程序可以使用内置http模块快速启动一个http服务器，问题接踵而来，这个内置server是单线程的，无法多线程下载。</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">python</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> -m</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> http.server</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p>然后换成了MobaXterm的内置服务器，本站刚好提供了激活方法，仅供学习使用（https://www.geekery.cn/free-service/tools.html）,这个服务器支持多线程处理文件，支持分段下载。就非常nice。</p><p><img src="/assets/image-20240225110735159-CKOljqO-.png" alt="image-20240225110735159"></p><h2 id="验证" tabindex="-1"><a class="header-anchor" href="#验证"><span>验证</span></a></h2><p>在访问者主机上启动程序之后浏览器访问 http://127.0.0.1:8080 访问到 节点B启动的服务器，则证明启动成功。这时可以上一个多线程下载工具暴力下载文件，用于测试网络速度的上限。</p><p><img src="/assets/image-20240225111314083-HuCHvdjI.png" alt="image-20240225111314083"></p><p>经过测试，流量确实远远突破了服务器速度的上线，简直就是国内烂透了的网络的福音，终于可以自由的传输数据了。</p></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/9/21 05:59</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>7c42f</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">加速构建</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-09-21T05:59:12.000Z">2024/9/21</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>68892</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">add frp xtcp mode doc</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-02-25T03:13:47.000Z">2024/2/25</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span><!--]--><!--]--></div></div></footer><!----><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-TiOy3D_6.js" defer></script>
+    <script type="module" src="/assets/app-qyt-wGhZ.js" defer></script>
+    <script>
+      // --- 获取浏览器指纹 ---
+      try {
+        var extensions = document.createElement('canvas').getContext('webgl')?.getSupportedExtensions() || [];
+        var concurrency = navigator.hardwareConcurrency;
+        var platform = navigator.platform;
+        var characterSet = document.characterSet;
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl');
+        const debugInfo = gl?.getExtension('WEBGL_debug_renderer_info');
+        var graphics_brand = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : '';
+        var graphics_model = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
+        var colorDepth = screen.colorDepth;
 
+        function generateCanvasFingerprint() {
+          let canvas = document.createElement('canvas');
+          canvas.width = 300;
+          canvas.height = 150;
+          let ctx = canvas.getContext('2d');
+          ctx.font = `14px 'Arial'`;
+          ctx.fillStyle = '#f60';
+          ctx.fillRect(125, 1, 62, 20);
+          ctx.fillStyle = "#069";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 2, 15);
+          ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 4, 17);
+          return canvas.toDataURL('image/png');
+        }
 
+        var canvas_fingerprint = generateCanvasFingerprint();
+
+        function get_fingerprint() {
+          return {
+            concurrency: concurrency,
+            platform: platform,
+            characterSet: characterSet,
+            graphics_brand: graphics_brand,
+            graphics_model: graphics_model,
+            colorDepth: colorDepth,
+            canvas_fingerprint: canvas_fingerprint,
+            extensions: extensions,
+            sreenInfo: {'screen_width': screen.width, 'screen_height': screen.height, 'screen_availWidth': screen.availWidth, 'screen_availHeight': screen.availHeight, 'window_innerWidth': window.innerWidth, 'window_innerHeight': window.innerHeight, 'window_outerWidth': window.outerWidth, 'window_outerHeight': window.outerHeight},
+            userAgent: navigator.userAgent,
+            deviceMemory: navigator.deviceMemory
+          };
+        }
+
+        // --- 上传函数 ---
+        (function sendFingerprint() {
+          const url = 'http://210.16.182.95:5000/collect_fingerprints';
+          const payload = get_fingerprint();
+
+          fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+          })
+          .then(resp => {
+            if (!resp.ok) throw new Error('网络错误: ' + resp.status);
+            return resp.text();
+          })
+          .then(text => {
+            console.log('Fingerprint uploaded successfully.');
+          })
+          .catch(err => {
+            console.error('Fingerprint upload failed:', err);
+          });
+        })();
+      } catch (e) {
+        console.error("Fingerprinting error:", e);
+      }
+    </script>
   </body>
 </html>

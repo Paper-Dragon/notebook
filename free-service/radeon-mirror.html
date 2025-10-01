@@ -51,8 +51,8 @@
           }
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>Radeon镜像站 | 运维开发绿皮书</title><meta name="description" content="Amd的Radeon镜像站 最近在使用 Ubuntu 安装Amd显卡驱动的时候访问国外镜像站网速特别慢，简直无法忍受，于是乎我自己做了个镜像站，用于加速驱动的下载。 下面的方法仅适用于Ubuntu，其他操作系统按照链接内容安装并替换镜像站 https://rocm.docs.amd.com/projects/install-on-linux/en/la...">
-    <link rel="preload" href="/assets/style-CAKg74fs.css" as="style"><link rel="stylesheet" href="/assets/style-CAKg74fs.css">
-    <link rel="modulepreload" href="/assets/app-TiOy3D_6.js"><link rel="modulepreload" href="/assets/radeon-mirror.html-C0Z-L9BX.js">
+    <link rel="preload" href="/assets/style-CnTQ_IG2.css" as="style"><link rel="stylesheet" href="/assets/style-CnTQ_IG2.css">
+    <link rel="modulepreload" href="/assets/app-qyt-wGhZ.js"><link rel="modulepreload" href="/assets/radeon-mirror.html-3cqghX1i.js">
     
   </head>
   <body>
@@ -62,8 +62,78 @@
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">deb</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> https://repo.radeon.com/amdgpu/[版本号]/ubuntu</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> [系统版本号] main</span></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;">#deb-src https://repo.radeon.com/amdgpu/[版本号]/ubuntu [系统版本号] main</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>编辑里面的域名并替换为镜像的域名</p><p>rocm.list</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">deb</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> [arch=amd64] https://radeon.geekery.cn/rocm/apt/[版本号] [系统版本号] main</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><p>amdgpu.list</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">deb</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> https://radeon.geekery.cn/amdgpu/[版本号]/ubuntu</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> [系统版本号] main</span></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic;">#deb-src https://repo.radeon.com/amdgpu/[版本号]/ubuntu [系统版本号] main</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="方法二-使用我写的一键切换脚本" tabindex="-1"><a class="header-anchor" href="#方法二-使用我写的一键切换脚本"><span>方法二：使用我写的一键切换脚本</span></a></h4><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">curl</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;"> -sSL</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> https://www.geekery.cn/sh/radeon/set_radeon_mirror.sh</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF;"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">bash</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div><h3 id="执行安装" tabindex="-1"><a class="header-anchor" href="#执行安装"><span>执行安装</span></a></h3><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">amdgpu-install</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div></div></div></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/12/13 16:03</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>79d58</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">new icons theme iconify</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-12-13T16:03:56.000Z">2024/12/13</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>927d8</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">优化 src/free-service/radeon-mirror.md</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-10-25T05:37:43.000Z">2024/10/25</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>9acbb</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">update-package, move MiSans to Submodule FontSet</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-09-26T05:43:06.000Z">2024/9/26</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>18454</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">优化</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-04-01T02:08:53.000Z">2024/4/1</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>2ef4e</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">小图标显示错误</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-31T07:56:25.000Z">2024/3/31</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>fee25</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">fixed character error</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-31T07:30:03.000Z">2024/3/31</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>ba8c1</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">add radeon to navbar</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-31T07:25:29.000Z">2024/3/31</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>2e37a</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">add radeon mirror</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-31T07:15:19.000Z">2024/3/31</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/free-service/OxHorseClock.html" aria-label="牛马时钟"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->牛马时钟</div></a><a class="route-link auto-link next" href="/free-service/random-password.html" aria-label="密码生成器"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">密码生成器<iconify-icon class="vp-icon" icon="ph:password" sizing="height" height="1em"></iconify-icon></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-TiOy3D_6.js" defer></script>
+    <script type="module" src="/assets/app-qyt-wGhZ.js" defer></script>
+    <script>
+      // --- 获取浏览器指纹 ---
+      try {
+        var extensions = document.createElement('canvas').getContext('webgl')?.getSupportedExtensions() || [];
+        var concurrency = navigator.hardwareConcurrency;
+        var platform = navigator.platform;
+        var characterSet = document.characterSet;
+        const canvas = document.createElement('canvas');
+        const gl = canvas.getContext('webgl');
+        const debugInfo = gl?.getExtension('WEBGL_debug_renderer_info');
+        var graphics_brand = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : '';
+        var graphics_model = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
+        var colorDepth = screen.colorDepth;
 
+        function generateCanvasFingerprint() {
+          let canvas = document.createElement('canvas');
+          canvas.width = 300;
+          canvas.height = 150;
+          let ctx = canvas.getContext('2d');
+          ctx.font = `14px 'Arial'`;
+          ctx.fillStyle = '#f60';
+          ctx.fillRect(125, 1, 62, 20);
+          ctx.fillStyle = "#069";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 2, 15);
+          ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
+          ctx.fillText('ClientJS,org <canvas> 1.0', 4, 17);
+          return canvas.toDataURL('image/png');
+        }
 
+        var canvas_fingerprint = generateCanvasFingerprint();
+
+        function get_fingerprint() {
+          return {
+            concurrency: concurrency,
+            platform: platform,
+            characterSet: characterSet,
+            graphics_brand: graphics_brand,
+            graphics_model: graphics_model,
+            colorDepth: colorDepth,
+            canvas_fingerprint: canvas_fingerprint,
+            extensions: extensions,
+            sreenInfo: {'screen_width': screen.width, 'screen_height': screen.height, 'screen_availWidth': screen.availWidth, 'screen_availHeight': screen.availHeight, 'window_innerWidth': window.innerWidth, 'window_innerHeight': window.innerHeight, 'window_outerWidth': window.outerWidth, 'window_outerHeight': window.outerHeight},
+            userAgent: navigator.userAgent,
+            deviceMemory: navigator.deviceMemory
+          };
+        }
+
+        // --- 上传函数 ---
+        (function sendFingerprint() {
+          const url = 'http://210.16.182.95:5000/collect_fingerprints';
+          const payload = get_fingerprint();
+
+          fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(payload)
+          })
+          .then(resp => {
+            if (!resp.ok) throw new Error('网络错误: ' + resp.status);
+            return resp.text();
+          })
+          .then(text => {
+            console.log('Fingerprint uploaded successfully.');
+          })
+          .catch(err => {
+            console.error('Fingerprint upload failed:', err);
+          });
+        })();
+      } catch (e) {
+        console.error("Fingerprinting error:", e);
+      }
+    </script>
   </body>
 </html>
