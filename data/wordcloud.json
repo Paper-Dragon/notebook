@@ -25,7 +25,7 @@
     },
     {
         "name": "数据库",
-        "value": 189
+        "value": 210
     },
     {
         "name": "Git",
@@ -41,7 +41,7 @@
     },
     {
         "name": "操作系统",
-        "value": 146
+        "value": 145
     },
     {
         "name": "Python",
@@ -64,6 +64,10 @@
         "value": 108
     },
     {
+        "name": "Redis",
+        "value": 108
+    },
+    {
         "name": "第一个",
         "value": 105
     },
@@ -77,15 +81,15 @@
     },
     {
         "name": "浏览器",
-        "value": 95
+        "value": 96
+    },
+    {
+        "name": "Web",
+        "value": 89
     },
     {
         "name": "宿主机",
         "value": 89
-    },
-    {
-        "name": "Web",
-        "value": 88
     },
     {
         "name": "防火墙",
@@ -97,10 +101,6 @@
     },
     {
         "name": "用户名",
-        "value": 82
-    },
-    {
-        "name": "Redis",
         "value": 82
     },
     {
@@ -264,11 +264,11 @@
         "value": 39
     },
     {
-        "name": "缓冲区",
+        "name": "Request",
         "value": 39
     },
     {
-        "name": "Request",
+        "name": "缓冲区",
         "value": 39
     },
     {
@@ -280,11 +280,11 @@
         "value": 38
     },
     {
-        "name": "计算机",
-        "value": 37
+        "name": "Sentinel",
+        "value": 38
     },
     {
-        "name": "Sentinel",
+        "name": "计算机",
         "value": 37
     },
     {
@@ -468,6 +468,10 @@
         "value": 25
     },
     {
+        "name": "分布式",
+        "value": 25
+    },
+    {
         "name": "Password",
         "value": 25
     },
@@ -492,10 +496,6 @@
         "value": 24
     },
     {
-        "name": "分布式",
-        "value": 24
-    },
-    {
         "name": "Image",
         "value": 24
     },
@@ -509,6 +509,10 @@
     },
     {
         "name": "Alive",
+        "value": 24
+    },
+    {
+        "name": "Memcached",
         "value": 24
     },
     {
@@ -556,11 +560,11 @@
         "value": 22
     },
     {
-        "name": "Master",
+        "name": "Token",
         "value": 22
     },
     {
-        "name": "Token",
+        "name": "Master",
         "value": 22
     },
     {
@@ -700,6 +704,10 @@
         "value": 19
     },
     {
+        "name": "数据量",
+        "value": 19
+    },
+    {
         "name": "Logstash",
         "value": 19
     },
@@ -732,19 +740,15 @@
         "value": 18
     },
     {
-        "name": "Unit",
-        "value": 18
-    },
-    {
-        "name": "数据量",
-        "value": 18
-    },
-    {
         "name": "Date",
         "value": 18
     },
     {
         "name": "解释器",
+        "value": 18
+    },
+    {
+        "name": "Unit",
         "value": 18
     },
     {
@@ -804,10 +808,6 @@
         "value": 17
     },
     {
-        "name": "网络服务",
-        "value": 17
-    },
-    {
         "name": "换行符",
         "value": 17
     },
@@ -817,6 +817,10 @@
     },
     {
         "name": "这时候",
+        "value": 17
+    },
+    {
+        "name": "网络服务",
         "value": 17
     },
     {
@@ -1048,14 +1052,6 @@
         "value": 14
     },
     {
-        "name": "重新启动",
-        "value": 14
-    },
-    {
-        "name": "发送给",
-        "value": 14
-    },
-    {
         "name": "Match",
         "value": 14
     },
@@ -1096,11 +1092,19 @@
         "value": 14
     },
     {
+        "name": "重新启动",
+        "value": 14
+    },
+    {
         "name": "网络连接",
         "value": 14
     },
     {
         "name": "版本信息",
+        "value": 14
+    },
+    {
+        "name": "发送给",
         "value": 14
     },
     {
@@ -1145,6 +1149,10 @@
     },
     {
         "name": "Usage",
+        "value": 13
+    },
+    {
+        "name": "高性能",
         "value": 13
     },
     {
@@ -1229,10 +1237,6 @@
     },
     {
         "name": "Fast",
-        "value": 12
-    },
-    {
-        "name": "高性能",
         "value": 12
     },
     {
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "目的地",
-        "value": 11
-    },
-    {
-        "name": "Add",
         "value": 11
     }
 ]
