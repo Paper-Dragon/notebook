@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 13 Oct 2025 06:20:17 GMT</pubDate>
-    <lastBuildDate>Mon, 13 Oct 2025 06:20:17 GMT</lastBuildDate>
+    <pubDate>Thu, 16 Oct 2025 02:27:40 GMT</pubDate>
+    <lastBuildDate>Thu, 16 Oct 2025 02:27:40 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -4121,7 +4121,7 @@ API地址http://test.gitlab.com/api/v4/users需要改为自己的gitlab服务器
 <p>PowerEdge 系统支持 DDR4 寄存式 DIMM (RDIMM)、低负载 DIMM (LRDIMM) 以及非易失性 DIMM (NVDIMM-N) 和 DCPMM。系统内存可容纳执行由处理器的说明进行操作。</p>
 <p>系统包含 24 个内存插槽，分为两组（每组 12 个），每个处理器一组。每组的 12 个插槽分入六通道。每个处理器均分配有六个内存通道。在每个通道中，第一个插槽的释放拉杆标为白色，第二个插槽的标为黑色。</p>
 <p>图 1. 内存插槽位置</p>
-<p>![GUID-1F995763-6F1D-4045-985E-114D290C001C-low](./Dell EMC PowerEdge R740服务器内存插槽使用说明及正确安装方法.assets/GUID-1F995763-6F1D-4045-985E-114D290C001C-low.jpg)</p>
+<p></p>
 <p>内存通道按如下方式组织：</p>
 <p>| 处理器   | 通道 0        | 通道 1        | 通道 2        | 通道 3         | 通道 4         | 通道 5         |
 |</p>
