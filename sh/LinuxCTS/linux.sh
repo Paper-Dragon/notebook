@@ -75,7 +75,7 @@ start_linux(){
     *)
         clear
         echo -e "${Error}:请输入正确数字 [0-99],${Font} 5秒后刷新"
-        countdown_sleep 5
+        sleep 5
         start_linux
         ;;
     esac

@@ -38,20 +38,9 @@ check_root(){
 	if [[ $EUID != 0 ]];then
 		echo -e "${RedBG}当前不是ROOT账号，建议更换ROOT账号使用。${Font}"
 		echo -e "${Yellow}不要是用 sudo 执行脚本，直接使用 ROOT 账号执行。${Font} "
-		countdown_sleep 5
+		sleep 5
         exit
 	fi
-}
-
-# 定义函数，使用tput命令实现更美观的倒计时
-function countdown_sleep() {
-    local countdown_time="$1"  # 接收倒计时总时长作为参数
-
-    for ((i = countdown_time; i >= 1; i--)); do
-        echo -ne "\r 倒计时还剩: ${Yellow} $i ${Font} 秒 "
-        sleep 1
-    done
-    clear
 }
 
 # 检查是否安装成功

@@ -48,6 +48,8 @@ else
                     "ubuntu")
                         # 定义NVIDIA驱动版本列表
                         nvidia_versions=(
+                            "nvidia-driver-575"
+                            "nvidia-driver-570"
                             "nvidia-driver-550"
                             "nvidia-driver-545"
                             "nvidia-driver-535"
@@ -105,7 +107,7 @@ else
                                 ;;
 
                             "24.04")
-                                # Commands specific to Ubuntu 18.04
+                                # Commands specific to Ubuntu 24.04
                                 apt-get update -y
                                 apt install $selected_version -y
                                 ;;
@@ -166,7 +168,7 @@ else
         if [[ "$answer" =~ ^[Yy][Ee][Ss]$ ]]; then
             echo -e "\033[5;33m 当前系统 安装完 Nvidia显卡驱动 需要重启\033[0m"
             echo -e "\033[5;33m 5秒之后系统将会, 重启..... \033[0m"
-            countdown_sleep 5
+            sleep 5
             reboot
         elif [[ "$answer" =~ ^[Nn][Oo]$ ]]; then
             echo "取消系统重启"

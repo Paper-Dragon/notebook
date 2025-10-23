@@ -248,7 +248,7 @@ deprecation_notice() {
 	echo
 	printf   "Press \033[1mCtrl+C\033[0m now to abort this script, or wait for the installation to continue."
 	echo
-	countdown_sleep 10
+	sleep 10
 }
 
 get_distribution() {

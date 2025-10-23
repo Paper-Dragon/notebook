@@ -34,10 +34,10 @@ check_sys(){
 check_root(){
 	if [[ $EUID != 0 ]];then
 		echo -e "${RedBG}当前不是ROOT账号，建议更换ROOT账号使用。${Font}\n"
-		countdown_sleep 5
+		sleep 5
 	else
 		echo -e "${GreenBG}ROOT账号权限检查通过，祝你使用愉快！${Font}\n"
-		countdown_sleep 2
+		sleep 2
 	fi
 }
 
