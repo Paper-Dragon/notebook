@@ -16,12 +16,12 @@
         "value": 225
     },
     {
-        "name": "软件包",
-        "value": 221
+        "name": "客户端",
+        "value": 222
     },
     {
-        "name": "客户端",
-        "value": 220
+        "name": "软件包",
+        "value": 221
     },
     {
         "name": "数据库",
@@ -77,7 +77,7 @@
     },
     {
         "name": "Nginx",
-        "value": 99
+        "value": 100
     },
     {
         "name": "浏览器",
@@ -696,6 +696,10 @@
         "value": 19
     },
     {
+        "name": "代理服务器",
+        "value": 19
+    },
+    {
         "name": "Compute",
         "value": 19
     },
@@ -849,10 +853,6 @@
     },
     {
         "name": "Chain",
-        "value": 17
-    },
-    {
-        "name": "代理服务器",
         "value": 17
     },
     {
@@ -1160,10 +1160,6 @@
         "value": 13
     },
     {
-        "name": "Authorization",
-        "value": 13
-    },
-    {
         "name": "十进制",
         "value": 13
     },
@@ -1264,6 +1260,10 @@
         "value": 12
     },
     {
+        "name": "Authorization",
+        "value": 12
+    },
+    {
         "name": "兼容性",
         "value": 12
     },
@@ -1317,6 +1317,10 @@
     },
     {
         "name": "Rails",
+        "value": 12
+    },
+    {
+        "name": "Forwarded",
         "value": 12
     },
     {
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "哲学家",
-        "value": 11
-    },
-    {
-        "name": "目的地",
         "value": 11
     }
 ]
