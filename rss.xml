@@ -6,11 +6,35 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 08 Nov 2025 03:35:03 GMT</pubDate>
-    <lastBuildDate>Sat, 08 Nov 2025 03:35:03 GMT</lastBuildDate>
+    <pubDate>Sun, 09 Nov 2025 01:21:07 GMT</pubDate>
+    <lastBuildDate>Sun, 09 Nov 2025 01:21:07 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>Docker Desktop 安装到其他位置</title>
+      <link>https://www.geekery.cn/note-book/Docker/Docker%20Desktop%E5%AE%89%E8%A3%85%E5%88%B0%E5%85%B6%E4%BB%96%E4%BD%8D%E7%BD%AE.html</link>
+      <guid>https://www.geekery.cn/note-book/Docker/Docker%20Desktop%E5%AE%89%E8%A3%85%E5%88%B0%E5%85%B6%E4%BB%96%E4%BD%8D%E7%BD%AE.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Docker Desktop 安装到其他位置</source>
+      <description>Docker Desktop 安装到其他位置 本文档将指导您如何在 Windows 系统上将 Docker Desktop 安装到非默认位置，并配置其数据根目录。 官方文档 参考官方文档：https://docs.docker.com/desktop/setup/install/windows-install/#data-root-and-disk-l...</description>
+      <pubDate>Sun, 09 Nov 2025 01:17:24 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>本文档将指导您如何在 Windows 系统上将 Docker Desktop 安装到非默认位置，并配置其数据根目录。</p>
+<h2>官方文档</h2>
+<p>参考官方文档：<a href="https://docs.docker.com/desktop/setup/install/windows-install/#data-root-and-disk-location" target="_blank" rel="noopener noreferrer"><code>https://docs.docker.com/desktop/setup/install/windows-install/#data-root-and-disk-location</code></a></p>
+<h2>安装命令</h2>
+<p>以下命令演示了如何将 Docker Desktop 安装到指定位置，并将 Hyper-V、Windows 容器和 WSL 的数据根目录也配置到指定位置。</p>
+<p><strong>请提前创建数据目录</strong></p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">"Docker Desktop Installer.exe"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --installation-dir=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Z:\Docker"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --hyper-v-default-data-root=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Z:\Docker\hyperv"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --windows-containers-default-data-root=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Z:\Docker\windowscontainer"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --wsl-default-data-root=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"Z:\Docker\wsl-data"</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>命令参数说明</h2>
+<ul>
+<li><code>--installation-dir="Z:\Docker"</code>: 指定 Docker Desktop 的安装路径。</li>
+<li><code>--hyper-v-default-data-root="Z:\Docker\hyperv"</code>: 指定 Hyper-V 虚拟机的默认数据根目录。</li>
+<li><code>--windows-containers-default-data-root="Z:\Docker\windowscontainer"</code>: 指定 Windows 容器的默认数据根目录。</li>
+<li><code>--wsl-default-data-root="Z:\Docker\wsl-data"</code>: 指定 WSL 2 的默认数据根目录。</li>
+</ul>
+]]></content:encoded>
+    </item>
     <item>
       <title>tc常用命令总结</title>
       <link>https://www.geekery.cn/note-book/Iptables/tc%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html</link>
@@ -8972,77 +8996,6 @@ Big O：
       <pubDate>Wed, 29 May 2024 02:44:55 GMT</pubDate>
       <content:encoded><![CDATA[
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Alpine的apk数据库解释</title>
-      <link>https://www.geekery.cn/note-book/OperaSystems/Alpine/Alpine%E7%B3%BB%E7%BB%9F%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D-%E6%81%B6%E6%84%8F%E8%AE%BE%E7%BD%AE%E6%95%B4%E4%B8%AA%E6%A0%B9%E7%9B%AE%E5%BD%95000%E6%9D%83%E9%99%90.html</link>
-      <guid>https://www.geekery.cn/note-book/OperaSystems/Alpine/Alpine%E7%B3%BB%E7%BB%9F%E7%81%BE%E9%9A%BE%E6%81%A2%E5%A4%8D-%E6%81%B6%E6%84%8F%E8%AE%BE%E7%BD%AE%E6%95%B4%E4%B8%AA%E6%A0%B9%E7%9B%AE%E5%BD%95000%E6%9D%83%E9%99%90.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Alpine的apk数据库解释</source>
-      <description>Alpine的apk数据库解释 apk对于已安装文件用于跟踪已安装的软件包以及这些软件包对系统所做的修改。 该文件位于/lib/apk/db/installed 文件示例 目录结构 解释说明 在源码中的定义 https://gitlab.alpinelinux.org/alpine/apk-tools/-/blob/ff7c8f6ee9dfa2add5...</description>
-      <pubDate>Sat, 25 May 2024 07:27:46 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>apk对于已安装文件用于跟踪已安装的软件包以及这些软件包对系统所做的修改。</p>
-<p>该文件位于/lib/apk/db/installed</p>
-</blockquote>
-<h2>文件示例</h2>
-<div class="language-txt line-numbers-mode" data-highlighter="shiki" data-ext="txt" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-txt"><span class="line"><span>localhost:/lib/apk/db# head -50 installed</span></span>
-<span class="line"><span>C:Q1uFrSebP91NTnM7BIHm3YcRY7ih0=</span></span>
-<span class="line"><span>P:alpine-base</span></span>
-<span class="line"><span>V:3.20.0-r0</span></span>
-<span class="line"><span>A:x86_64</span></span>
-<span class="line"><span>S:1492</span></span>
-<span class="line"><span>I:4096</span></span>
-<span class="line"><span>T:Meta package for minimal alpine base</span></span>
-<span class="line"><span>U:https://alpinelinux.org</span></span>
-<span class="line"><span>L:MIT</span></span>
-<span class="line"><span>o:alpine-base</span></span>
-<span class="line"><span>m:Natanael Copa &lt;ncopa@alpinelinux.org&gt;</span></span>
-<span class="line"><span>t:1716371157</span></span>
-<span class="line"><span>c:1402388a3a746e9961791846350e35f1d4d4618d</span></span>
-<span class="line"><span>D:alpine-baselayout alpine-conf alpine-release apk-tools busybox busybox-mdev-openrc busybox-openrc busybox-suid musl-utils openrc</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>C:Q1qKcZ+j23xssAXmgQhkOO8dHnbWw=</span></span>
-<span class="line"><span>P:alpine-baselayout</span></span>
-<span class="line"><span>V:3.6.5-r0</span></span>
-<span class="line"><span>A:x86_64</span></span>
-<span class="line"><span>S:8515</span></span>
-<span class="line"><span>I:315392</span></span>
-<span class="line"><span>T:Alpine base dir structure and init scripts</span></span>
-<span class="line"><span>U:https://git.alpinelinux.org/cgit/aports/tree/main/alpine-baselayout</span></span>
-<span class="line"><span>L:GPL-2.0-only</span></span>
-<span class="line"><span>o:alpine-baselayout</span></span>
-<span class="line"><span>m:Natanael Copa &lt;ncopa@alpinelinux.org&gt;</span></span>
-<span class="line"><span>t:1714981135</span></span>
-<span class="line"><span>c:66187892e05b03a41d08e9acabd19b7576a1c875</span></span>
-<span class="line"><span>D:alpine-baselayout-data=3.6.5-r0 /bin/sh</span></span>
-<span class="line"><span>r:alpine-baselayout</span></span>
-<span class="line"><span>q:1000</span></span>
-<span class="line"><span>F:dev</span></span>
-<span class="line"><span>F:dev/pts</span></span>
-<span class="line"><span>F:dev/shm</span></span>
-<span class="line"><span>F:etc</span></span>
-<span class="line"><span>R:motd</span></span>
-<span class="line"><span>Z:Q1SLkS9hBidUbPwwrw+XR0Whv3ww8=</span></span>
-<span class="line"><span>F:etc/crontabs</span></span>
-<span class="line"><span>R:root</span></span>
-<span class="line"><span>a:0:0:600</span></span>
-<span class="line"><span>Z:Q1vfk1apUWI4yLJGhhNRd0kJixfvY=</span></span>
-<span class="line"><span>F:etc/modprobe.d</span></span>
-<span class="line"><span>R:aliases.conf</span></span>
-<span class="line"><span>Z:Q1WUbh6TBYNVK7e4Y+uUvLs/7viqk=</span></span>
-<span class="line"><span>R:blacklist.conf</span></span>
-<span class="line"><span>Z:Q14TdgFHkTdt3uQC+NBtrntOnm9n4=</span></span>
-<span class="line"><span>R:i386.conf</span></span>
-<span class="line"><span>Z:Q1pnay/njn6ol9cCssL7KiZZ8etlc=</span></span>
-<span class="line"><span>R:kms.conf</span></span>
-<span class="line"><span>Z:Q1ynbLn3GYDpvajba/ldp1niayeog=</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>目录结构</p>
-<div class="language-txt line-numbers-mode" data-highlighter="shiki" data-ext="txt" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-txt"><span class="line"><span>localhost:/lib/apk/db# ls -lh</span></span>
-<span class="line"><span>total 504K</span></span>
-<span class="line"><span>-rw-r--r--    1 root     root      467.9K May 25 14:51 installed</span></span>
-<span class="line"><span>-rw</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>

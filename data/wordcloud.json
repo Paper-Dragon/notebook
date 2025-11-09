@@ -5,7 +5,7 @@
     },
     {
         "name": "Docker",
-        "value": 297
+        "value": 310
     },
     {
         "name": "文件系统",
@@ -32,12 +32,12 @@
         "value": 159
     },
     {
-        "name": "处理器",
+        "name": "Windows",
         "value": 153
     },
     {
-        "name": "Windows",
-        "value": 150
+        "name": "处理器",
+        "value": 153
     },
     {
         "name": "操作系统",
@@ -129,7 +129,7 @@
     },
     {
         "name": "虚拟机",
-        "value": 73
+        "value": 74
     },
     {
         "name": "文件名",
@@ -172,6 +172,10 @@
         "value": 55
     },
     {
+        "name": "根目录",
+        "value": 55
+    },
+    {
         "name": "Host",
         "value": 55
     },
@@ -192,12 +196,12 @@
         "value": 52
     },
     {
-        "name": "关键字",
+        "name": "Desktop",
         "value": 52
     },
     {
-        "name": "根目录",
-        "value": 50
+        "name": "关键字",
+        "value": 52
     },
     {
         "name": "Pull",
@@ -206,10 +210,6 @@
     {
         "name": "Jenkins",
         "value": 49
-    },
-    {
-        "name": "Desktop",
-        "value": 47
     },
     {
         "name": "Firefox",
