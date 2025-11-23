@@ -6,11 +6,44 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 12 Nov 2025 03:15:21 GMT</pubDate>
-    <lastBuildDate>Wed, 12 Nov 2025 03:15:21 GMT</lastBuildDate>
+    <pubDate>Sun, 23 Nov 2025 02:38:26 GMT</pubDate>
+    <lastBuildDate>Sun, 23 Nov 2025 02:38:26 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>VMware的ubuntu完整安装vm-tools支持粘贴板</title>
+      <link>https://www.geekery.cn/note-book/VMware/VMware%E7%9A%84ubuntu%E5%AE%8C%E6%95%B4%E5%AE%89%E8%A3%85vm-tools%E6%94%AF%E6%8C%81%E7%B2%98%E8%B4%B4%E6%9D%BF.html</link>
+      <guid>https://www.geekery.cn/note-book/VMware/VMware%E7%9A%84ubuntu%E5%AE%8C%E6%95%B4%E5%AE%89%E8%A3%85vm-tools%E6%94%AF%E6%8C%81%E7%B2%98%E8%B4%B4%E6%9D%BF.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">VMware的ubuntu完整安装vm-tools支持粘贴板</source>
+      <description>VMware的ubuntu完整安装vm-tools支持粘贴板 安装命令 包信息</description>
+      <pubDate>Sun, 23 Nov 2025 02:33:58 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>安装命令</h2>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> autoremove</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> open-vm-tools</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> open-vm-tools</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> open-vm-tools-desktop</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>包信息</h2>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># apt search open-vm*</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">open-vm-tools/resolute,now</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2:13.0.5-1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> amd64</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [installed]</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  用于托管在</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 上的虚拟机的开放式</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 工具</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (CLI)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">open-vm-tools-containerinfo/resolute</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2:13.0.5-1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> amd64</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  用于托管在</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 上的虚拟机的开放式</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 工具</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (服务发现插件)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">open-vm-tools-desktop/resolute,now</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2:13.0.5-1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> amd64</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [installed]</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  用于托管在</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 上的虚拟机的开放式</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 工具</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (GUI)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">open-vm-tools-dev/resolute</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2:13.0.5-1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> amd64</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  用于托管在</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 上的虚拟机的开放式</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 工具</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (开发)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">open-vm-tools-salt-minion/resolute</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2:13.0.5-1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> amd64</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  用于托管在</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 上的虚拟机的开放式</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 工具</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (服务发现插件)</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">open-vm-tools-sdmp/resolute</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2:13.0.5-1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> amd64</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  用于托管在</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 上的虚拟机的开放式</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> VMware</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 工具</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (服务发现插件)</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>Docker Desktop 安装到其他位置</title>
       <link>https://www.geekery.cn/note-book/Docker/Docker%20Desktop%E5%AE%89%E8%A3%85%E5%88%B0%E5%85%B6%E4%BB%96%E4%BD%8D%E7%BD%AE.html</link>
@@ -8985,16 +9018,6 @@ Big O：
 <p>Docker容器间数据挂载与共享 | 远程共享&amp;挂载数据卷</p>
 </li>
 </ol>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Openresty和lua脚本实战</title>
-      <link>https://www.geekery.cn/note-book/Nginx-OpenResty/Openresty%E5%92%8Clua%E8%84%9A%E6%9C%AC%E5%AE%9E%E6%88%98.html</link>
-      <guid>https://www.geekery.cn/note-book/Nginx-OpenResty/Openresty%E5%92%8Clua%E8%84%9A%E6%9C%AC%E5%AE%9E%E6%88%98.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Openresty和lua脚本实战</source>
-      <description>Openresty和lua脚本实战</description>
-      <pubDate>Wed, 29 May 2024 02:44:55 GMT</pubDate>
-      <content:encoded><![CDATA[
 ]]></content:encoded>
     </item>
   </channel>
