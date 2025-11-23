@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 23 Nov 2025 02:41:50 GMT</pubDate>
-    <lastBuildDate>Sun, 23 Nov 2025 02:41:50 GMT</lastBuildDate>
+    <pubDate>Sun, 23 Nov 2025 02:43:30 GMT</pubDate>
+    <lastBuildDate>Sun, 23 Nov 2025 02:43:30 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -17,7 +17,7 @@
       <guid>https://www.geekery.cn/note-book/VMware/VMware%E7%9A%84ubuntu%E5%AE%8C%E6%95%B4%E5%AE%89%E8%A3%85vm-tools%E6%94%AF%E6%8C%81%E7%B2%98%E8%B4%B4%E6%9D%BF.html</guid>
       <source url="https://www.geekery.cn/rss.xml">VMware的ubuntu完整安装vm-tools支持粘贴板</source>
       <description>VMware的ubuntu完整安装vm-tools支持粘贴板 安装命令 包信息</description>
-      <pubDate>Thu, 13 Nov 2025 02:19:11 GMT</pubDate>
+      <pubDate>Sun, 23 Nov 2025 02:39:51 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>安装命令</h2>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> apt-get</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> autoremove</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> open-vm-tools</span></span>
