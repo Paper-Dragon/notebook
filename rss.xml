@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 29 Nov 2025 14:01:41 GMT</pubDate>
-    <lastBuildDate>Sat, 29 Nov 2025 14:01:41 GMT</lastBuildDate>
+    <pubDate>Sun, 30 Nov 2025 01:11:14 GMT</pubDate>
+    <lastBuildDate>Sun, 30 Nov 2025 01:11:14 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -16,14 +16,16 @@
       <link>https://www.geekery.cn/note-book/Bing/%E5%BF%85%E5%BA%94%E6%90%9C%E7%B4%A2%E5%B1%8F%E8%94%BD%E5%9E%83%E5%9C%BE%E7%BD%91%E7%AB%99.html</link>
       <guid>https://www.geekery.cn/note-book/Bing/%E5%BF%85%E5%BA%94%E6%90%9C%E7%B4%A2%E5%B1%8F%E8%94%BD%E5%9E%83%E5%9C%BE%E7%BD%91%E7%AB%99.html</guid>
       <source url="https://www.geekery.cn/rss.xml">必应搜索屏蔽垃圾网站</source>
-      <description>必应搜索屏蔽垃圾网站 默认的必应搜索搜索代码相关的信息很多csdn的文章，质量不行，使用 -*.csdn.net过滤掉 屏蔽后 搜索Linux 国内版 [https://cn.bing.com/search?q=Linux%20-site:.csdn.net](https://cn.bing.com/search?q=Linux -site:.csdn...</description>
+      <description>必应搜索屏蔽垃圾网站 默认的必应搜索搜索代码相关的信息很多csdn的文章，质量不行，使用 -*.csdn.net过滤掉 屏蔽后 搜索Linux 国内版：https://cn.bing.com/search?q=Linux%20-site:*.csdn.net 国际版： https://bing.com/search?q=Linux%20-site:*....</description>
       <pubDate>Fri, 28 Nov 2025 08:58:49 GMT</pubDate>
       <content:encoded><![CDATA[
+<blockquote>
 <p>默认的必应搜索搜索代码相关的信息很多csdn的文章，质量不行，使用 -*.csdn.net过滤掉</p>
+</blockquote>
 <h2>屏蔽后</h2>
 <p>搜索Linux</p>
-<p>国内版  [https://cn.bing.com/search?q=Linux%20-site:<em>.csdn.net](<a href="https://cn.bing.com/search?q=Linux" target="_blank" rel="noopener noreferrer">https://cn.bing.com/search?q=Linux</a> -site:</em>.csdn.net)
-国际版  [https://bing.com/search?q=Linux%20-site:<em>.csdn.net](<a href="https://bing.com/search?q=Linux" target="_blank" rel="noopener noreferrer">https://bing.com/search?q=Linux</a> -site:</em>.csdn.net)</p>
+<p>国内版：<a href="https://cn.bing.com/search?q=Linux%20-site:*.csdn.net" target="_blank" rel="noopener noreferrer">https://cn.bing.com/search?q=Linux%20-site:*.csdn.net</a></p>
+<p>国际版： <a href="https://bing.com/search?q=Linux%20-site:*.csdn.net" target="_blank" rel="noopener noreferrer">https://bing.com/search?q=Linux%20-site:*.csdn.net</a></p>
 <h2>Firefox搜搜引擎配置</h2>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">https://bing.com/search?q</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">=%s%20-site:*.csdn.net</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
