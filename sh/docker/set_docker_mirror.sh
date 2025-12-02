@@ -37,7 +37,7 @@ judge() {
     fi
 }
 
-MIRRORS=(https://hub.icert.top https://ghcr.geekery.cn https://quay.geekery.cn	https://gcr.geekery.cn)
+MIRRORS=(https://hub.certauth.top https://ghcr.geekery.cn https://quay.geekery.cn	https://gcr.geekery.cn)
 DAEMON_JSON_PATH="/etc/docker/daemon.json"
 
 install_jq() {

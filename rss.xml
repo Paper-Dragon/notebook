@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 30 Nov 2025 01:11:14 GMT</pubDate>
-    <lastBuildDate>Sun, 30 Nov 2025 01:11:14 GMT</lastBuildDate>
+    <pubDate>Tue, 02 Dec 2025 09:06:58 GMT</pubDate>
+    <lastBuildDate>Tue, 02 Dec 2025 09:06:58 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -6347,7 +6347,7 @@ gitlab</p>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  --network</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> host</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  -v</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ./config.yaml:/root/.config/mihomo/config.yaml</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  -v</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /dev/net/tun:/dev/net/tun</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">    hub.icert.top/metacubex/mihomo:Alpha</span></span></code></pre>
+<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">    hub.certauth.top/metacubex/mihomo:Alpha</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>使用 Docker Compose</h3>
 <p>建议使用 Docker Compose 管理多个容器，可以创建一个 <code>docker-compose.yml</code> 文件，内容如下所示：</p>
 <div class="language-yaml line-numbers-mode" data-highlighter="shiki" data-ext="yaml" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-yaml"><span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">version</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'3'</span></span>
@@ -6362,7 +6362,7 @@ gitlab</p>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  meta</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    container_name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">meta</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    image</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">hub.icert.top/metacubex/mihomo:Alpha</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    image</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">hub.certauth.top/metacubex/mihomo:Alpha</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    restart</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">always</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    pid</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">host</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    ipc</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">host</span></span>
