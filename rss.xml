@@ -6,19 +6,19 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 24 Dec 2025 15:19:31 GMT</pubDate>
-    <lastBuildDate>Wed, 24 Dec 2025 15:19:31 GMT</lastBuildDate>
+    <pubDate>Sat, 27 Dec 2025 18:44:42 GMT</pubDate>
+    <lastBuildDate>Sat, 27 Dec 2025 18:44:42 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
     <item>
-      <title></title>
+      <title>为 Containerd 配置 Harbor 无证书镜像站</title>
       <link>https://www.geekery.cn/note-book/Docker/%E4%B8%BAContainerd%E9%85%8D%E7%BD%AEharbor%E6%97%A0%E8%AF%81%E4%B9%A6%E9%95%9C%E5%83%8F%E7%AB%99.html</link>
       <guid>https://www.geekery.cn/note-book/Docker/%E4%B8%BAContainerd%E9%85%8D%E7%BD%AEharbor%E6%97%A0%E8%AF%81%E4%B9%A6%E9%95%9C%E5%83%8F%E7%AB%99.html</guid>
-      <source url="https://www.geekery.cn/rss.xml"></source>
+      <source url="https://www.geekery.cn/rss.xml">为 Containerd 配置 Harbor 无证书镜像站</source>
       <description>为 Containerd 配置 Harbor 无证书镜像站 目录结构要求 在 /etc/containerd 下需要有如下结构： v3 风格配置示例 1. hosts.toml 配置 路径：/etc/containerd/certs.d/11.0.1.143/hosts.toml 2. config.toml 中启用 certs.d 目录 路径：/et...</description>
       <pubDate>Wed, 24 Dec 2025 15:15:42 GMT</pubDate>
-      <content:encoded><![CDATA[<h2>为 Containerd 配置 Harbor 无证书镜像站</h2>
+      <content:encoded><![CDATA[
 <h2>目录结构要求</h2>
 <p>在 <code>/etc/containerd</code> 下需要有如下结构：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">root@node1:/etc/containerd#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tree</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span>
