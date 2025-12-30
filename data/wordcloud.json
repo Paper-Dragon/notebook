@@ -496,6 +496,10 @@
         "value": 24
     },
     {
+        "name": "是因为",
+        "value": 24
+    },
+    {
         "name": "Image",
         "value": 24
     },
@@ -525,10 +529,6 @@
     },
     {
         "name": "意味着",
-        "value": 23
-    },
-    {
-        "name": "是因为",
         "value": 23
     },
     {
@@ -904,6 +904,10 @@
         "value": 16
     },
     {
+        "name": "Error",
+        "value": 16
+    },
+    {
         "name": "大部分",
         "value": 16
     },
@@ -1061,10 +1065,6 @@
     },
     {
         "name": "Agent",
-        "value": 14
-    },
-    {
-        "name": "Error",
         "value": 14
     },
     {
