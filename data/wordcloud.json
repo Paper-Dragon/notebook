@@ -5,19 +5,19 @@
     },
     {
         "name": "Docker",
-        "value": 310
+        "value": 312
     },
     {
         "name": "文件系统",
         "value": 230
     },
     {
-        "name": "字符串",
-        "value": 225
+        "name": "客户端",
+        "value": 228
     },
     {
-        "name": "客户端",
-        "value": 222
+        "name": "字符串",
+        "value": 225
     },
     {
         "name": "软件包",
@@ -45,7 +45,7 @@
     },
     {
         "name": "Python",
-        "value": 127
+        "value": 128
     },
     {
         "name": "Ubuntu",
@@ -73,7 +73,7 @@
     },
     {
         "name": "初始化",
-        "value": 102
+        "value": 103
     },
     {
         "name": "Nginx",
@@ -85,7 +85,7 @@
     },
     {
         "name": "Web",
-        "value": 89
+        "value": 92
     },
     {
         "name": "宿主机",
@@ -112,11 +112,11 @@
         "value": 80
     },
     {
-        "name": "默认值",
-        "value": 78
+        "name": "管理员",
+        "value": 79
     },
     {
-        "name": "管理员",
+        "name": "默认值",
         "value": 78
     },
     {
@@ -160,6 +160,10 @@
         "value": 59
     },
     {
+        "name": "服务端",
+        "value": 57
+    },
+    {
         "name": "解决方案",
         "value": 56
     },
@@ -178,10 +182,6 @@
     {
         "name": "Host",
         "value": 55
-    },
-    {
-        "name": "服务端",
-        "value": 54
     },
     {
         "name": "分隔符",
@@ -1108,6 +1108,10 @@
         "value": 14
     },
     {
+        "name": "有效期",
+        "value": 14
+    },
+    {
         "name": "Generating",
         "value": 14
     },
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "第三个",
-        "value": 11
-    },
-    {
-        "name": "哲学家",
         "value": 11
     }
 ]
