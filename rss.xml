@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Tue, 30 Dec 2025 06:56:16 GMT</pubDate>
-    <lastBuildDate>Tue, 30 Dec 2025 06:56:16 GMT</lastBuildDate>
+    <pubDate>Tue, 30 Dec 2025 07:20:56 GMT</pubDate>
+    <lastBuildDate>Tue, 30 Dec 2025 07:20:56 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
@@ -17,7 +17,7 @@
       <guid>https://www.geekery.cn/note-book/Project/Python%E6%8E%88%E6%9D%83.html</guid>
       <source url="https://www.geekery.cn/rss.xml">Python授权服务使用文档</source>
       <description>Python授权服务使用文档 简介 基于 FastAPI 的软件授权管理系统，支持设备授权验证、AES加密传输、本地缓存、Web管理界面。 项目地址：https://github.com/Paper-Dragon/py-auth 功能特性 ✅ 设备授权管理、AES加密传输 ✅ 本地缓存机制（7天有效期） ✅ Web管理界面、JWT认证 ✅ Docker...</description>
-      <pubDate>Tue, 30 Dec 2025 06:52:34 GMT</pubDate>
+      <pubDate>Tue, 30 Dec 2025 07:17:06 GMT</pubDate>
       <content:encoded><![CDATA[
 <h2>简介</h2>
 <p>基于 FastAPI 的软件授权管理系统，支持设备授权验证、AES加密传输、本地缓存、Web管理界面。</p>
