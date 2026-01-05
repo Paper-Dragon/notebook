@@ -6,155 +6,80 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 04 Jan 2026 05:26:50 GMT</pubDate>
-    <lastBuildDate>Sun, 04 Jan 2026 05:26:50 GMT</lastBuildDate>
+    <pubDate>Mon, 05 Jan 2026 01:44:04 GMT</pubDate>
+    <lastBuildDate>Mon, 05 Jan 2026 01:44:04 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
     <item>
-      <title>Python授权服务使用文档</title>
-      <link>https://www.geekery.cn/note-book/Project/Python%E6%8E%88%E6%9D%83.html</link>
-      <guid>https://www.geekery.cn/note-book/Project/Python%E6%8E%88%E6%9D%83.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Python授权服务使用文档</source>
-      <description>Python授权服务使用文档 简介 基于 FastAPI 的软件授权管理系统，支持设备授权验证、AES加密传输、本地缓存、Web管理界面。 项目地址：https://github.com/Paper-Dragon/py-auth 功能特性 ✅ 设备授权管理、AES加密传输 ✅ 本地缓存机制（7天有效期） ✅ Web管理界面、JWT认证 ✅ Docker...</description>
-      <pubDate>Tue, 30 Dec 2025 07:17:06 GMT</pubDate>
+      <title>Python软件授权</title>
+      <link>https://www.geekery.cn/note-book/Project/Python%E8%BD%AF%E4%BB%B6%E6%8E%88%E6%9D%83.html</link>
+      <guid>https://www.geekery.cn/note-book/Project/Python%E8%BD%AF%E4%BB%B6%E6%8E%88%E6%9D%83.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Python软件授权</source>
+      <description>Python软件授权 项目地址：https://github.com/Paper-Dragon/py-auth Python 软件授权管理系统，支持设备授权验证、AES加密传输、本地缓存、Web管理界面。 服务端部署 Docker Compose 部署 实际使用中，我直接使用 SQLite 数据库，更简单方便，不需要单独部署 MySQL。 docker...</description>
+      <pubDate>Mon, 05 Jan 2026 01:40:37 GMT</pubDate>
       <content:encoded><![CDATA[
-<h2>简介</h2>
-<p>基于 FastAPI 的软件授权管理系统，支持设备授权验证、AES加密传输、本地缓存、Web管理界面。</p>
-<p><strong>项目地址</strong>：https://github.com/Paper-Dragon/py-auth</p>
-<h2>功能特性</h2>
-<ul>
-<li>✅ 设备授权管理、AES加密传输</li>
-<li>✅ 本地缓存机制（7天有效期）</li>
-<li>✅ Web管理界面、JWT认证</li>
-<li>✅ Docker一键部署</li>
-</ul>
-<h2>快速开始</h2>
+<p><strong>项目地址</strong>：<a href="https://github.com/Paper-Dragon/py-auth" target="_blank" rel="noopener noreferrer">https://github.com/Paper-Dragon/py-auth</a></p>
+<p>Python 软件授权管理系统，支持设备授权验证、AES加密传输、本地缓存、Web管理界面。</p>
+<h2>服务端部署</h2>
 <h3>Docker Compose 部署</h3>
-<ol>
-<li><strong>克隆仓库</strong></li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> clone</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://github.com/Paper-Dragon/py-auth.git</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> py-auth</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2">
-<li><strong>配置环境</strong></li>
-</ol>
-<p>复制 <code>env.example</code> 为 <code>.env</code>，修改关键配置：</p>
-<ul>
-<li><code>MYSQL_ROOT_PASSWORD</code>: MySQL密码</li>
-<li><code>ADMIN_PASSWORD</code>: 管理员密码</li>
-<li><code>CLIENT_SECRET</code>: 客户端密钥（与服务端一致）</li>
-<li><code>SECRET_KEY</code>: JWT密钥</li>
-</ul>
-<ol start="3">
-<li><strong>docker-compose.yml 配置</strong></li>
-</ol>
+<p>实际使用中，我直接使用 SQLite 数据库，更简单方便，不需要单独部署 MySQL。</p>
+<p><strong>docker-compose.yaml 配置：</strong></p>
 <div class="language-yaml line-numbers-mode" data-highlighter="shiki" data-ext="yaml" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-yaml"><span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">version</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'3.8'</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">services</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  mysql</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    image</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">mysql:8.0</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    container_name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth-mysql</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    environment</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_ROOT_PASSWORD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${MYSQL_ROOT_PASSWORD:-password}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_DATABASE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${MYSQL_DATABASE:-auth_db}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    volumes</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">mysql_data:/var/lib/mysql</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    healthcheck</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      test</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: [</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"CMD"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"mysqladmin"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"ping"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"-h"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"localhost"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">]</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      interval</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">10s</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      timeout</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">5s</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      retries</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">5</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    networks</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth-network</span></span>
-<span class="line"></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  auth-service</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    image</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">jockerdragon/py-auth-service</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    build</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">.</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    container_name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth-service</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    depends_on</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      mysql</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">        condition</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">service_healthy</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    environment</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_HOST</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">mysql</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_PORT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">3306</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_USER</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">root</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_PASSWORD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${MYSQL_ROOT_PASSWORD:-password}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_DATABASE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${MYSQL_DATABASE:-auth_db}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      CLIENT_SECRET</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${CLIENT_SECRET:-your-client-secret-key-change-in-production}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      SECRET_KEY</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${SECRET_KEY:-your-secret-key-change-in-production-12345678}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      ACCESS_TOKEN_EXPIRE_MINUTES</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${ACCESS_TOKEN_EXPIRE_MINUTES:-1440}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      ADMIN_USERNAME</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${ADMIN_USERNAME:-admin}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      ADMIN_PASSWORD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${ADMIN_PASSWORD:-admin123}</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # ports:</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    #   - "${SERVICE_PORT:-8000}:8000"</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    volumes</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">./app:/app/app</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">./main.py:/app/main.py</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    restart</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">unless-stopped</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    networks</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth-network</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  phpmyadmin</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    image</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">phpmyadmin/phpmyadmin:latest</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    container_name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth-phpmyadmin</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    depends_on</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">mysql</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    environment</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      PMA_HOST</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">mysql</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      PMA_PORT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">3306</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      PMA_USER</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">root</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      PMA_PASSWORD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${MYSQL_ROOT_PASSWORD:-password}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      MYSQL_ROOT_PASSWORD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">${MYSQL_ROOT_PASSWORD:-password}</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      UPLOAD_LIMIT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">300M</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      DATABASE_TYPE</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">sqlite</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      SQLITE_PATH</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/app/data/auth.db</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      CLIENT_SECRET</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">aB3cD5eF7gH9iJ1kL3mN5oP7qR9sT1uV3wX5yZ7aB9cD1eF3gH5iJ7kL9mN1oP3qR5sT7uV9wX1yZ3</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      SECRET_KEY</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">M2nP4qR6sT8uV0wX2yZ4aB6cD8eF0gH2iJ4kL6mN8oP0qR2sT4uV6wX8yZ0aB2cD4eF6gH8iJ0</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      ACCESS_TOKEN_EXPIRE_MINUTES</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1440</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      ADMIN_USERNAME</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">admin</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">      ADMIN_PASSWORD</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">admin123</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    ports</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"${PHPMYADMIN_PORT:-8080}:80"</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"8000:8000"</span></span>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    volumes</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth_data:/app/data</span></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    restart</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">unless-stopped</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    networks</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">      - </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">auth-network</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">volumes</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  mysql_data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">networks</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  auth-network</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">    driver</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">: </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">bridge</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="4">
-<li><strong>启动服务</strong></li>
-</ol>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> compose</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> up</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -d</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ol start="5">
-<li><strong>访问服务</strong></li>
-</ol>
+<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">  auth_data</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>启动服务：</strong></p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> clone</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://github.com/Paper-Dragon/py-auth.git</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> py-auth</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> compose</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> up</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -d</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><strong>访问地址：</strong></p>
 <ul>
-<li>Web管理界面：http://localhost:8000（默认账户：<code>admin</code> / <code>admin123</code>）</li>
+<li>Web管理界面：http://localhost:8000（账户：<code>admin</code> / <code>admin123</code>）</li>
 <li>API文档：http://localhost:8000/docs</li>
-<li>phpMyAdmin：http://localhost:8080</li>
 </ul>
-<ol start="6">
-<li><strong>查看日志</strong></li>
-</ol>
+<p><strong>查看日志：</strong></p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> compose</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> logs</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -f</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> auth-service</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>客户端SDK使用</h2>
-<h3>功能特性</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><strong>注意事项：</strong></p>
 <ul>
-<li>✅ 设备授权状态检查</li>
-<li>✅ 本地缓存机制（7天有效期）</li>
-<li>✅ AES加密传输</li>
-<li>✅ 自动设备信息收集</li>
-<li>✅ 离线缓存支持</li>
+<li>生产环境请修改 <code>CLIENT_SECRET</code>、<code>SECRET_KEY</code> 和 <code>ADMIN_PASSWORD</code> 为强密码</li>
+<li>数据存储在 Docker volume <code>auth_data</code> 中，删除容器不会丢失数据</li>
+<li>如果需要使用 MySQL，可以参考项目中的 <code>env.example</code> 配置</li>
 </ul>
-<h3>安装客户端SDK</h3>
-<p>客户端SDK托管在私有PyPI仓库中，使用以下命令安装：</p>
+<h2>客户端SDK使用</h2>
+<h3>安装</h3>
+<p>客户端SDK托管在私有PyPI仓库：</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">pip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> py-auth-client</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --extra-index-url</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://www.geekery.cn/pip/simple/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><strong>包索引地址</strong>：https://www.geekery.cn/pip/simple/py-auth-client/index.html</p>
-<h3>快速开始</h3>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p><strong>包索引地址</strong>：<a href="https://www.geekery.cn/pip/simple/py-auth-client/index.html" target="_blank" rel="noopener noreferrer">https://www.geekery.cn/pip/simple/py-auth-client/index.html</a></p>
+<h3>基本使用</h3>
+<p>参考项目中的 <code>client/example.py</code>：</p>
 <div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> py_auth_client </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> AuthClient, AuthorizationError</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 初始化客户端</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">client </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF"> AuthClient</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    server_url</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"http://localhost:8000"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
 <span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    software_name</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"我的软件"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    client_secret</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"your-client-secret-key-change-in-production"</span></span>
+<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    client_secret</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"aB3cD5eF7gH9iJ1kL3mN5oP7qR9sT1uV3wX5yZ7aB9cD1eF3gH5iJ7kL9mN1oP3qR5sT7uV9wX1yZ3"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # debug=True  # 开启调试日志，便于排查网络/缓存状态</span></span>
 <span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"></span>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 检查授权</span></span>
@@ -165,30 +90,59 @@
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">    print</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">f</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"❌ 授权失败: </span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">{</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">}</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">    exit</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
 <span class="line"></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 你的软件代码...</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>配置参数</h3>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 获取授权信息</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">print</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(client.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">get_authorization_info</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">())</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>重要配置说明</h3>
 <p><strong>必需参数：</strong></p>
 <ul>
-<li><code>server_url</code>: 授权服务器地址</li>
-<li><code>client_secret</code>: 客户端密钥（必须与服务端一致）</li>
+<li><code>server_url</code>: 授权服务器地址（注意协议和端口）</li>
+<li><code>client_secret</code>: 客户端密钥（<strong>必须与服务端完全一致</strong>，否则会验证失败）</li>
 </ul>
 <p><strong>可选参数：</strong></p>
 <ul>
-<li><code>device_id</code>: 设备ID（不提供则自动生成）</li>
-<li><code>software_name</code>: 软件名称</li>
-<li><code>device_info</code>: 设备信息字典（不提供则自动收集）</li>
-<li><code>cache_dir</code>: 缓存目录（默认使用系统隐藏目录）</li>
-<li><code>enable_cache</code>: 是否启用缓存（默认True）</li>
-<li><code>cache_validity_days</code>: 缓存有效期（天，默认7天）</li>
-<li><code>check_interval_days</code>: 检查间隔（天，默认2天）</li>
+<li><code>device_id</code>: 设备ID（不提供则自动生成，基于硬件信息）</li>
+<li><code>software_name</code>: 软件名称（用于在管理界面显示）</li>
+<li><code>debug</code>: 开启调试日志（默认False，排查问题时很有用）</li>
 </ul>
-<h3>缓存机制</h3>
+<h3>缓存机制说明</h3>
+<p>实际使用中的缓存策略：</p>
 <ul>
-<li>缓存有效期：7天</li>
-<li>始终向服务端发送请求并更新本地缓存</li>
-<li>在线验证失败时，在有效期内使用缓存作为后备</li>
-<li>缓存文件经过混淆加密，隐藏在系统目录中</li>
+<li><strong>缓存有效期</strong>：7天</li>
+<li><strong>验证流程</strong>：始终向服务端发送请求并更新本地缓存</li>
+<li><strong>离线支持</strong>：网络失败时，在有效期内使用缓存作为后备</li>
+<li><strong>缓存位置</strong>：系统隐藏目录，经过混淆加密</li>
 </ul>
+<p><strong>注意事项：</strong></p>
+<ul>
+<li>如果服务端拒绝授权，即使有缓存也会失败</li>
+<li>缓存主要用于网络故障时的容错，不是绕过验证的手段</li>
+<li>可以通过 <code>debug=True</code> 查看缓存状态和网络请求情况</li>
+</ul>
+<h3>常见问题</h3>
+<ol>
+<li>
+<p><strong>授权失败：密钥不匹配</strong></p>
+<ul>
+<li>检查客户端和服务端的 <code>CLIENT_SECRET</code> 是否完全一致</li>
+<li>注意不要有多余的空格或换行</li>
+</ul>
+</li>
+<li>
+<p><strong>网络连接失败</strong></p>
+<ul>
+<li>检查 <code>server_url</code> 是否正确</li>
+<li>检查服务端是否正常运行</li>
+<li>开启 <code>debug=True</code> 查看详细错误信息</li>
+</ul>
+</li>
+<li>
+<p><strong>设备ID变化</strong></p>
+<ul>
+<li>设备ID基于硬件信息自动生成</li>
+<li>更换硬件可能导致设备ID变化，需要在管理界面重新授权</li>
+</ul>
+</li>
+</ol>
 ]]></content:encoded>
     </item>
     <item>
