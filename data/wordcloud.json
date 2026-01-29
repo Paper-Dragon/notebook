@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 379
+        "value": 378
     },
     {
         "name": "Docker",
@@ -684,10 +684,6 @@
         "value": 19
     },
     {
-        "name": "Shell",
-        "value": 19
-    },
-    {
         "name": "管理器",
         "value": 19
     },
@@ -753,6 +749,10 @@
     },
     {
         "name": "Unit",
+        "value": 18
+    },
+    {
+        "name": "Shell",
         "value": 18
     },
     {
