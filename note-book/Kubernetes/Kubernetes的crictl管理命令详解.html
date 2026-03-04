@@ -52,7 +52,7 @@
       }
       </script><link rel="alternate" type="application/rss+xml" href="https://www.geekery.cn/rss.xml" title="运维开发绿皮书 RSS Feed"><title>Kubernetes的crictl管理命令详解 | 运维开发绿皮书</title><meta name="description" content="Kubernetes的crictl管理命令详解 介绍 crictl 是 CRI 兼容的容器运行时命令行接口。 你可以使用它来检查和调试 Kubernetes 节点上的容器运行时和应用程序。 crictl 和它的源代码在 cri-tools 代码库。 安装 crictl 下载：https://github.com/kubernetes-sigs/cri-...">
     <link rel="preload" href="/assets/style-D5Tzykxl.css" as="style"><link rel="stylesheet" href="/assets/style-D5Tzykxl.css">
-    <link rel="modulepreload" href="/assets/app-ClDY9Mjh.js"><link rel="modulepreload" href="/assets/Kubernetes的crictl管理命令详解.html-CD9E4Kux.js">
+    <link rel="modulepreload" href="/assets/app-BjB2qY7U.js"><link rel="modulepreload" href="/assets/Kubernetes的crictl管理命令详解.html-BdEi0lEL.js">
     
   </head>
   <body>
@@ -174,78 +174,6 @@
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">3e025dd50a72d956c4f14881fbb5b1080c9275674e95fb67f965f6478a957d60</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div></div></div><p>确认容器的状态为 Running。</p><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34;"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">crictl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ps</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">CONTAINER</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ID</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">        IMAGE</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">               CREATED</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">              STATE</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">               NAME</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">                ATTEMPT</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF;">3e025dd50a72d</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">       busybox</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">             About</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> a</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> minute</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;"> ago</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">   Running</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379;">             busybox</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66;">             0</span></span></code></pre><div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0;"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!----><!--[--><h2 id="doc-changelog" tabindex="-1"><a href="#doc-changelog" class="header-anchor"><span>更新日志</span></a></h2><div class="vp-changelog-wrapper"><div class="vp-changelog-header"><div class="vp-latest-updated"><span class="vp-changelog-icon"></span><span data-allow-mismatch>2024/3/7 07:26</span></div><div><span class="vp-changelog-menu-icon"></span><span>查看所有更新日志</span></div></div><ul class="vp-changelog-list"><!--[--><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>0e2a9</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Kubernetes的crictl管理命令详解</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2024-03-07T07:26:08.000Z">2024/3/7</time></span></li><li class="vp-changelog-item-commit"><span class="vp-changelog-hash" target="_blank" rel="noreferrer"><code>392a5</code></span><span class="vp-changelog-divider">-</span><span class="vp-changelog-message">Create The Worid!</span><span class="vp-changelog-date" data-allow-mismatch>于 <time datetime="2023-08-13T15:08:38.000Z">2023/8/13</time></span></li><!--]--></ul></div><!--]--><!----></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><!----><div class="contributors"><span class="vp-meta-label">贡献者: </span><!--[--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">Paper-Dragon</span>,<!--]--><!--[--><span class="vp-meta-info" title="email: 2678885646@qq.com">PaperDragon-SH</span><!--]--><!--]--></div></div></footer><nav class="vp-page-nav"><a class="route-link auto-link prev" href="/note-book/Kubernetes/kubernetes%E4%BC%9A%E8%AF%9D%E4%BF%9D%E6%8C%81%EF%BC%88session%EF%BC%89%E9%85%8D%E7%BD%AE.html" aria-label="kubernetes会话保持（session）配置"><div class="hint"><span class="arrow start"></span>上一页</div><div class="link"><!---->kubernetes会话保持（session）配置</div></a><a class="route-link auto-link next" href="/note-book/Kubernetes/Kubernetes%E7%9A%84NetworkPlicy.html" aria-label="Kubernetes的NetworkPlicy"><div class="hint">下一页<span class="arrow end"></span></div><div class="link">Kubernetes的NetworkPlicy<!----></div></a></nav><div id="comment" class="waline-wrapper vp-comment" vp-comment darkmode="false" style="display:block;"><!----></div><!----><!--]--></main><!--]--><footer class="vp-footer-wrapper" vp-footer><div class="vp-footer">运维开发绿皮书</div><div class="vp-copyright">copyleft 2023-至今 PaperDragon</div></footer></div><!--]--><!--[--><!----><!--[--><!--]--><!--]--><!--]--></div>
-    <script type="module" src="/assets/app-ClDY9Mjh.js" defer></script>
-    <script>
-      // --- 获取浏览器指纹 ---
-      try {
-        var extensions = document.createElement('canvas').getContext('webgl')?.getSupportedExtensions() || [];
-        var concurrency = navigator.hardwareConcurrency;
-        var platform = navigator.platform;
-        var characterSet = document.characterSet;
-        const canvas = document.createElement('canvas');
-        const gl = canvas.getContext('webgl');
-        const debugInfo = gl?.getExtension('WEBGL_debug_renderer_info');
-        var graphics_brand = debugInfo ? gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) : '';
-        var graphics_model = debugInfo ? gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) : '';
-        var colorDepth = screen.colorDepth;
-
-        function generateCanvasFingerprint() {
-          let canvas = document.createElement('canvas');
-          canvas.width = 300;
-          canvas.height = 150;
-          let ctx = canvas.getContext('2d');
-          ctx.font = `14px 'Arial'`;
-          ctx.fillStyle = '#f60';
-          ctx.fillRect(125, 1, 62, 20);
-          ctx.fillStyle = "#069";
-          ctx.fillText('ClientJS,org <canvas> 1.0', 2, 15);
-          ctx.fillStyle = "rgba(102, 204, 0, 0.7)";
-          ctx.fillText('ClientJS,org <canvas> 1.0', 4, 17);
-          return canvas.toDataURL('image/png');
-        }
-
-        var canvas_fingerprint = generateCanvasFingerprint();
-
-        function get_fingerprint() {
-          return {
-            concurrency: concurrency,
-            platform: platform,
-            characterSet: characterSet,
-            graphics_brand: graphics_brand,
-            graphics_model: graphics_model,
-            colorDepth: colorDepth,
-            canvas_fingerprint: canvas_fingerprint,
-            extensions: extensions,
-            sreenInfo: {'screen_width': screen.width, 'screen_height': screen.height, 'screen_availWidth': screen.availWidth, 'screen_availHeight': screen.availHeight, 'window_innerWidth': window.innerWidth, 'window_innerHeight': window.innerHeight, 'window_outerWidth': window.outerWidth, 'window_outerHeight': window.outerHeight},
-            userAgent: navigator.userAgent,
-            deviceMemory: navigator.deviceMemory
-          };
-        }
-
-        // --- 上传函数 ---
-        (function sendFingerprint() {
-          const url = 'https://www.geekery.cn/collect_fingerprints';
-          const payload = get_fingerprint();
-
-          fetch(url, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(payload)
-          })
-          .then(resp => {
-            if (!resp.ok) throw new Error('网络错误: ' + resp.status);
-            return resp.text();
-          })
-          .then(text => {
-            console.log('Fingerprint uploaded successfully.');
-          })
-          .catch(err => {
-            console.error('Fingerprint upload failed:', err);
-          });
-        })();
-      } catch (e) {
-        console.error("Fingerprinting error:", e);
-      }
-    </script>
+    <script type="module" src="/assets/app-BjB2qY7U.js" defer></script>
   </body>
 </html>
