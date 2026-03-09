@@ -6,11 +6,41 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 09 Mar 2026 12:45:49 GMT</pubDate>
-    <lastBuildDate>Mon, 09 Mar 2026 12:45:49 GMT</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2026 17:35:12 GMT</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2026 17:35:12 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>TOTP验证码生成器</title>
+      <link>https://www.geekery.cn/free-service/totp.html</link>
+      <guid>https://www.geekery.cn/free-service/totp.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">TOTP验证码生成器</source>
+      <description>TOTP验证码生成器 基于时间的一次性密码生成工具，支持多账户管理 关于 TOTP 1、TOTP（Time-based One-Time Password）是一种基于时间的一次性密码算法，广泛应用于双因素认证（2FA）。 2、TOTP 根据当前时间和共享密钥生成一个临时的验证码，通常每 30 秒更新一次。 3、常见应用场景包括：Google Authe...</description>
+      <category>Tools</category>
+      <pubDate>Mon, 09 Mar 2026 17:30:44 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>基于时间的一次性密码生成工具，支持多账户管理</p>
+</blockquote>
+<div class="hint-container info">
+<p class="hint-container-title">关于 TOTP</p>
+<p>1、TOTP（Time-based One-Time Password）是一种基于时间的一次性密码算法，广泛应用于双因素认证（2FA）。</p>
+<p>2、TOTP 根据当前时间和共享密钥生成一个临时的验证码，通常每 30 秒更新一次。</p>
+<p>3、常见应用场景包括：Google Authenticator、Microsoft Authenticator、各类网站的双因素认证等。</p>
+<p>4、本工具所有数据仅存储在浏览器本地（localStorage），不会上传到任何服务器，请妥善保管您的密钥。</p>
+</div>
+<div class="hint-container warning">
+<p class="hint-container-title">安全提示</p>
+<ul>
+<li>TOTP 密钥是敏感信息，请妥善保管</li>
+<li>建议仅在私人设备上使用</li>
+<li>定期备份您的重要配置信息</li>
+<li>清除浏览器数据会删除所有配置信息</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
     <item>
       <title>CKS Simulator Kubernetes 1.25</title>
       <link>https://www.geekery.cn/note-book/Kubernetes/CKS%20Simulator%20Kubernetes%201.25.html</link>
@@ -8821,39 +8851,6 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <p>提交清空工作区后的更改。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">git</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> commit</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -m</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "Initial commit"</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>现在，你就创建了一个无根的空的新分支，可以在这个分支上开始新的工作了。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>使用tar命令进行分段压缩</title>
-      <link>https://www.geekery.cn/note-book/LinuxOperaSystem/%E4%BD%BF%E7%94%A8tar%E5%91%BD%E4%BB%A4%E8%BF%9B%E8%A1%8C%E5%88%86%E6%AE%B5%E5%8E%8B%E7%BC%A9.html</link>
-      <guid>https://www.geekery.cn/note-book/LinuxOperaSystem/%E4%BD%BF%E7%94%A8tar%E5%91%BD%E4%BB%A4%E8%BF%9B%E8%A1%8C%E5%88%86%E6%AE%B5%E5%8E%8B%E7%BC%A9.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">使用tar命令进行分段压缩</source>
-      <description>使用tar命令进行分段压缩 很多时候，我们在进行大量小文件传输的时候，速度非常不理想。于是找到了分段压缩在传输的方法。 在 CentOS 7 上，你可以使用 tar 命令来对文件进行分段压缩、解压缩 步骤 1：压缩文件并分段 假设要压缩名为 largefile 的文件夹，并将其分割成每个 1GB 的小文件。 这条命令做了以下几件事情： tar -cv ...</description>
-      <pubDate>Tue, 25 Jun 2024 10:00:59 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>很多时候，我们在进行大量小文件传输的时候，速度非常不理想。于是找到了分段压缩在传输的方法。</p>
-<p>在 CentOS 7 上，你可以使用 tar 命令来对文件进行分段压缩、解压缩</p>
-<h2>步骤 1：压缩文件并分段</h2>
-<p>假设要压缩名为 largefile 的文件夹，并将其分割成每个 1GB 的小文件。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tar</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -cv</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> largefile/</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">split</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -b</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 1G</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> largefile.tar.gz.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>这条命令做了以下几件事情：</p>
-<ul>
-<li><code>tar -cv largefile/</code>：将 largefile 文件夹打包成一个 tar 文件，并将过程显示在终端中。</li>
-<li><code>split -b 1G - largefile.tar.gz.</code>：通过管道将 tar 文件传送给 split 命令，使用 <code>-b 1G</code> 参数将数据按照 1GB 的大小进行分割，并以 <code>largefile.tar.gz.</code> 为前缀生成分段文件。</li>
-</ul>
-<h2>步骤 2：传输分段压缩文件</h2>
-<p>使用 scp 命令将分割后的文件传输到目标机器：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">scp</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -r</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> largefile.tar.gz.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> user@remote:/path/to/destination/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>传输所有以 <code>largefile.tar.gz.</code> 开头的分段文件到目标机器的指定路径。</p>
-<h2>步骤 3：在目标机器上合并并解压</h2>
-<p>在目标机器上，将分段文件合并并解压：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> largefile.tar.gz.</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tar</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -xzvf</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><ul>
-<li><code>cat largefile.tar.gz.*</code>：将所有以 <code>largefile.tar.gz.</code> 开头的分段文件内容输出到 STDOUT。</li>
-<li><code>tar -xzvf -</code>：通过管道将 STDOUT 的内容传送给 tar 命令进行解压缩。</li>
-<li><code>-xzvf</code> 参数用于解压缩并显示过程中的详细信息。</li>
-</ul>
-<p>通过这些步骤，可以在 CentOS 7 上使用 tar 命令将大文件分段压缩、传输和解压缩，实现文件的高效传输和处理。</p>
 ]]></content:encoded>
     </item>
   </channel>
