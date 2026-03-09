@@ -6,11 +6,62 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 08 Mar 2026 06:24:43 GMT</pubDate>
-    <lastBuildDate>Sun, 08 Mar 2026 06:24:43 GMT</lastBuildDate>
+    <pubDate>Mon, 09 Mar 2026 09:49:41 GMT</pubDate>
+    <lastBuildDate>Mon, 09 Mar 2026 09:49:41 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>CKS Simulator Kubernetes 1.25</title>
+      <link>https://www.geekery.cn/note-book/Kubernetes/CKS%20Simulator%20Kubernetes%201.25.html</link>
+      <guid>https://www.geekery.cn/note-book/Kubernetes/CKS%20Simulator%20Kubernetes%201.25.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">CKS Simulator Kubernetes 1.25</source>
+      <description>CKS Simulator Kubernetes 1.25 https://killer.sh Pre Setup Once you&amp;apos;ve gained access to your terminal it might be wise to spend ~1 minute to setup your environment. You could set...</description>
+      <pubDate>Mon, 09 Mar 2026 09:45:47 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>https://killer.sh</p>
+<h2>Pre Setup</h2>
+<p>Once you've gained access to your terminal it might be wise to spend ~1 minute to setup your environment. You could set these:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">alias</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> k</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">kubectl                         </span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># will already be pre-configured</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">export</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> do</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"--dry-run=client -o yaml"</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # k create deploy nginx --image=nginx $do</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">export</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> now</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"--force --grace-period 0"</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">   # k delete pod x $now</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Vim
+The following settings will already be configured in your real exam environment in ~/.vimrc. But it can never hurt to be able to type these down:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">set</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tabstop=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">2</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">set</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> expandtab</span></span>
+<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">set</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shiftwidth=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">2</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>More setup suggestions are in the tips section.</p>
+<h2>Contexts</h2>
+<h4>Task weight: 1%</h4>
+<p>You have access to multiple clusters from your main terminal through kubectl contexts. Write all context names into /opt/course/1/contexts, one per line.</p>
+<p>From the kubeconfig extract the certificate of user restricted@infra-prod and write it decoded to /opt/course/1/cert.</p>
+<h4>Answer:</h4>
+<p>Maybe the fastest way is just to run:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> get-contexts</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # copy by hand</span></span>
+<span class="line"></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> get-contexts</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> name</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/opt/course/1/contexts</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Or using jsonpath:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> view</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> jsonpath="{.contexts[*].name}"</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> view</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> jsonpath="{.contexts[*].name}"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tr</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> " "</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "\n"</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # new lines</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> view</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> jsonpath="{.contexts[*].name}"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tr</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> " "</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "\n"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/opt/course/1/contexts</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>The content could then look like:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#/opt/course/1/contexts</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">gianna@infra-prod</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">infra-prod</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">restricted@infra-prod</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">workload-prod</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">workload-stage</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>For the certificate we could just run</p>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>k config view --raw</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>And copy it manually. Or we do:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> view</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --raw</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ojsonpath=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"{.users[2].user.client-certificate-data}"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">base64</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -d</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/opt/course/1/cert</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>Or even:</p>
+<div class="language-sh line-numbers-mode" data-highlighter="shiki" data-ext="sh" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-sh"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">k</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> view</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --raw</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ojsonpath=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"{.users[?(.name == 'restricted@infra-prod')].user.client-certificate-data}"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">base64</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -d</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> > </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/opt/course/1/cert</span></span>
+<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># /opt/course/1/cert</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
+    </item>
     <item>
       <title>direct-ssh-passthrough-nat 脚本使用说明</title>
       <link>https://www.geekery.cn/note-book/Frp/direct-ssh-passthrough-nat%E8%84%9A%E6%9C%AC%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.html</link>
@@ -8804,71 +8855,6 @@ PS：get-appxpackage [你要卸载的程序]</p>
 </ul>
 <p>通过这些步骤，可以在 CentOS 7 上使用 tar 命令将大文件分段压缩、传输和解压缩，实现文件的高效传输和处理。</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>OpenResty的所有模块</title>
-      <link>https://www.geekery.cn/note-book/Nginx-OpenResty/OpenResty%E7%9A%84%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97.html</link>
-      <guid>https://www.geekery.cn/note-book/Nginx-OpenResty/OpenResty%E7%9A%84%E6%89%80%E6%9C%89%E6%A8%A1%E5%9D%97.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">OpenResty的所有模块</source>
-      <description>OpenResty的所有模块 OpenResty版本1.25</description>
-      <pubDate>Sun, 23 Jun 2024 11:06:18 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>OpenResty版本1.25</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">./configure</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--prefix=/usr/local/openresty/nginx </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-cc-opt=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'-O2 \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-DNGX_LUA_ABORT_AT_PANIC \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-I/usr/local/openresty/zlib/include \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-I/usr/local/openresty/pcre/include \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-I/usr/local/openresty/openssl111/include'</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../ngx_devel_kit-0.3.3 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../echo-nginx-module-0.63 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../xss-nginx-module-0.06 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../ngx_coolkit-0.2 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../set-misc-nginx-module-0.33 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../form-input-nginx-module-0.12 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../encrypted-session-nginx-module-0.09 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../srcache-nginx-module-0.33 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../ngx_lua-0.10.26 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../ngx_lua_upstream-0.07 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../headers-more-nginx-module-0.37 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../array-var-nginx-module-0.06 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../memc-nginx-module-0.20 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../redis2-nginx-module-0.15 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../redis-nginx-module-0.3.9 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--add-module=../ngx_stream_lua-0.0.14 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-ld-opt=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'-Wl,-rpath,/usr/local/openresty/luajit/lib \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-L/usr/local/openresty/zlib/lib \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-L/usr/local/openresty/pcre/lib \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-L/usr/local/openresty/openssl111/lib \</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-Wl,-rpath,/usr/local/openresty/zlib/lib:/usr/local/openresty/pcre/lib:/usr/local/openresty/openssl111/lib'</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-cc=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">'ccache gcc -fdiagnostics-color=always'</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2"> \</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-pcre-jit </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-stream </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-stream_ssl_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-stream_ssl_preread_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_v2_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--without-mail_pop3_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--without-mail_imap_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--without-mail_smtp_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_stub_status_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_realip_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_addition_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_auth_request_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_secure_link_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_random_index_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_gzip_static_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_sub_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_dav_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_flv_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_mp4_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_gunzip_module </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-threads </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-compat </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-stream </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--without-pcre2 </span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">\</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">--with-http_ssl_module</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
