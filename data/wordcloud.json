@@ -56,12 +56,12 @@
         "value": 124
     },
     {
-        "name": "Ubuntu",
+        "name": "自定义",
         "value": 116
     },
     {
-        "name": "自定义",
-        "value": 111
+        "name": "Ubuntu",
+        "value": 116
     },
     {
         "name": "数据包",
@@ -133,7 +133,7 @@
     },
     {
         "name": "文件名",
-        "value": 72
+        "value": 74
     },
     {
         "name": "Zabbix",
@@ -652,6 +652,10 @@
         "value": 22
     },
     {
+        "name": "生成器",
+        "value": 21
+    },
+    {
         "name": "描述符",
         "value": 21
     },
@@ -1008,10 +1012,6 @@
         "value": 17
     },
     {
-        "name": "生成器",
-        "value": 16
-    },
-    {
         "name": "Using",
         "value": 16
     },
@@ -1170,6 +1170,10 @@
     {
         "name": "Lua",
         "value": 15
+    },
+    {
+        "name": "二维码",
+        "value": 14
     },
     {
         "name": "Fast",
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "虚拟地址",
-        "value": 12
-    },
-    {
-        "name": "字节数",
         "value": 12
     }
 ]
