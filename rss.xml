@@ -6,11 +6,207 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Wed, 11 Mar 2026 10:54:51 GMT</pubDate>
-    <lastBuildDate>Wed, 11 Mar 2026 10:54:51 GMT</lastBuildDate>
+    <pubDate>Thu, 12 Mar 2026 14:24:24 GMT</pubDate>
+    <lastBuildDate>Thu, 12 Mar 2026 14:24:24 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>BMI 计算</title>
+      <link>https://www.geekery.cn/free-service/bmi.html</link>
+      <guid>https://www.geekery.cn/free-service/bmi.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">BMI 计算</source>
+      <description>BMI 计算器 功能说明 计算身体质量指数 显示健康分类（偏瘦/正常/偏胖/肥胖）</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>计算身体质量指数</li>
+<li>显示健康分类（偏瘦/正常/偏胖/肥胖）</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>颜色转换</title>
+      <link>https://www.geekery.cn/free-service/color.html</link>
+      <guid>https://www.geekery.cn/free-service/color.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">颜色转换</source>
+      <description>颜色转换工具 功能说明 HEX/RGB/HSL/HSV 颜色格式互转 实时预览颜色 滑块调节RGB值 颜色选择器，支持任意颜色选择 24种预设颜色快速选择</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>HEX/RGB/HSL/HSV 颜色格式互转</li>
+<li>实时预览颜色</li>
+<li>滑块调节RGB值</li>
+<li>颜色选择器，支持任意颜色选择</li>
+<li>24种预设颜色快速选择</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Hash 生成器</title>
+      <link>https://www.geekery.cn/free-service/hash.html</link>
+      <guid>https://www.geekery.cn/free-service/hash.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Hash 生成器</source>
+      <description>Hash 生成器 功能说明 支持 MD5、SHA1、SHA256、SHA384、SHA512、SM3 一键生成全部算法 支持大写输出 纯前端计算，数据不上传</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>支持 MD5、SHA1、SHA256、SHA384、SHA512、SM3</li>
+<li>一键生成全部算法</li>
+<li>支持大写输出</li>
+<li>纯前端计算，数据不上传</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>JSON 格式化</title>
+      <link>https://www.geekery.cn/free-service/json.html</link>
+      <guid>https://www.geekery.cn/free-service/json.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">JSON 格式化</source>
+      <description>JSON 格式化与压缩 功能说明 格式化：美化JSON，添加缩进 压缩：移除所有空格和换行 校验：验证JSON格式是否正确 支持缩进选择：2空格、4空格、Tab 支持键排序功能</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>格式化：美化JSON，添加缩进</li>
+<li>压缩：移除所有空格和换行</li>
+<li>校验：验证JSON格式是否正确</li>
+<li>支持缩进选择：2空格、4空格、Tab</li>
+<li>支持键排序功能</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>JWT 解码</title>
+      <link>https://www.geekery.cn/free-service/jwt.html</link>
+      <guid>https://www.geekery.cn/free-service/jwt.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">JWT 解码</source>
+      <description>JWT 解码器 功能说明 解码JSON Web Token 显示Header、Payload、Signature 输入时自动解码 显示签名信息</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>解码JSON Web Token</li>
+<li>显示Header、Payload、Signature</li>
+<li>输入时自动解码</li>
+<li>显示签名信息</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>房贷计算</title>
+      <link>https://www.geekery.cn/free-service/loan.html</link>
+      <guid>https://www.geekery.cn/free-service/loan.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">房贷计算</source>
+      <description>房贷计算器 功能说明 支持等额本息和等额本金 显示每月还款和总利息 可查看每月还款明细</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>支持等额本息和等额本金</li>
+<li>显示每月还款和总利息</li>
+<li>可查看每月还款明细</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>时间戳转换</title>
+      <link>https://www.geekery.cn/free-service/timestamp.html</link>
+      <guid>https://www.geekery.cn/free-service/timestamp.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">时间戳转换</source>
+      <description>时间戳转换工具 功能说明 秒/毫秒时间戳与日期时间互转 支持Unix时间戳格式 支持时区选择：本地、UTC、北京时间</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>秒/毫秒时间戳与日期时间互转</li>
+<li>支持Unix时间戳格式</li>
+<li>支持时区选择：本地、UTC、北京时间</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>URL 编码</title>
+      <link>https://www.geekery.cn/free-service/url-encode.html</link>
+      <guid>https://www.geekery.cn/free-service/url-encode.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">URL 编码</source>
+      <description>URL 编码/解码 功能说明 URL编码/解码（encodeURI） 组件编码/解码（encodeURIComponent） 双向转换模式</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>URL编码/解码（encodeURI）</li>
+<li>组件编码/解码（encodeURIComponent）</li>
+<li>双向转换模式</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>UUID 生成</title>
+      <link>https://www.geekery.cn/free-service/uuid.html</link>
+      <guid>https://www.geekery.cn/free-service/uuid.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">UUID 生成</source>
+      <description>UUID 生成器 功能说明 支持UUID版本：v4随机、v1时间戳、v7时间排序 多种格式：标准连字符、无分隔符、URN、花括号 批量生成，自定义数量 一键复制全部</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>支持UUID版本：v4随机、v1时间戳、v7时间排序</li>
+<li>多种格式：标准连字符、无分隔符、URN、花括号</li>
+<li>批量生成，自定义数量</li>
+<li>一键复制全部</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>字数统计</title>
+      <link>https://www.geekery.cn/free-service/word-count.html</link>
+      <guid>https://www.geekery.cn/free-service/word-count.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">字数统计</source>
+      <description>字数统计工具 功能说明 统计字符数、中文数、英文数、数字数 统计行数、段落数、单词数 支持详细统计模式</description>
+      <category>Tools</category>
+      <pubDate>Thu, 12 Mar 2026 14:20:26 GMT</pubDate>
+      <content:encoded><![CDATA[
+<div class="hint-container info">
+<p class="hint-container-title">功能说明</p>
+<ul>
+<li>统计字符数、中文数、英文数、数字数</li>
+<li>统计行数、段落数、单词数</li>
+<li>支持详细统计模式</li>
+</ul>
+</div>
+]]></content:encoded>
+    </item>
     <item>
       <title>二维码批量生成器</title>
       <link>https://www.geekery.cn/free-service/qrcode.html</link>
@@ -5222,6 +5418,7 @@ $$</p>
       <guid>https://www.geekery.cn/free-service/OxHorseClock.html</guid>
       <source url="https://www.geekery.cn/rss.xml">牛马时钟</source>
       <description>牛马时钟 摸鱼小贴士 工作再累，也要记得喝水休息 合理安排时间，提高工作效率 适度摸鱼，保持心情愉悦</description>
+      <category>Tools</category>
       <pubDate>Thu, 01 May 2025 02:24:28 GMT</pubDate>
       <content:encoded><![CDATA[
 <div class="hint-container info">
@@ -8173,783 +8370,6 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 或者</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> copy</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> running-config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startup-config</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco路由器配置静态路由</title>
-      <link>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1.html</link>
-      <guid>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Cisco路由器配置静态路由</source>
-      <description>Cisco路由器配置静态路由 本文档介绍了如何在Cisco路由器（R1和R2）上配置静态路由，以确保它们能够正确地相互通信。我们将详细讲解如何在两台路由器上设置静态路由，包括具体的配置步骤和验证命令。 拓扑图 在此拓扑中，我们有两个路由器（R1和R2），它们通过Serial0/0/0接口连接，并且它们之间的通信需要通过静态路由来实现。 image-20...</description>
-      <pubDate>Thu, 25 Jul 2024 10:54:23 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>本文档介绍了如何在Cisco路由器（R1和R2）上配置静态路由，以确保它们能够正确地相互通信。我们将详细讲解如何在两台路由器上设置静态路由，包括具体的配置步骤和验证命令。</p>
-</blockquote>
-<h2>拓扑图</h2>
-<p>在此拓扑中，我们有两个路由器（R1和R2），它们通过Serial0/0/0接口连接，并且它们之间的通信需要通过静态路由来实现。</p>
-<p></p>
-<h2>R1路由器配置</h2>
-<h3>R1进入特权模式</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">> </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">enable</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>R1进入全局配置模式</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> terminal</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置静态路由</h3>
-<p>添加静态路由，将目的网络和子网掩码与下一跳地址关联。以下命令配置了到达 <code>10.1.1.0/30</code> 和 <code>10.1.2.0/30</code> 网络的静态路由，下一跳地址为 <code>209.165.200.224</code>：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 10.1.1.0 255.255.255.252 209.165.200.224</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 10.1.2.0 255.255.255.252 209.165.200.224</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>R1查看路由表</h3>
-<p>使用 <code>show ip route</code> 命令查看路由表，确保静态路由已经添加：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">do</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> show</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> route</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>示例输出：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Codes:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> L</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> local,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> C</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> S</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> static,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> R</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> RIP,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> M</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> mobile,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> B</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> BGP</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">       D</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> EIGRP,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> EX</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> EIGRP</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> external,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> O</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OSPF,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> IA</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OSPF</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> inter</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> area</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">       N1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OSPF</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> NSSA</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> external</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 1,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> N2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OSPF</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> NSSA</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> external</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> type</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">       E1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OSPF</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> external</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 1,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> E2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> OSPF</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> external</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> type</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> E</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> EGP</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">       i</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> IS-IS,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> L1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> IS-IS</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> level-1,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> L2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> IS-IS</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> level-2,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ia</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> IS-IS</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> inter</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> area</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">       *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> candidate</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> default,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> U</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> per-user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> static</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> route,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> o</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ODR</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">       P</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> -</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> periodic</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> downloaded</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> static</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> route</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Gateway</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> last</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> resort</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> not</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">     10.0.0.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnetted,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnets</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       10.1.1.0/24</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [1/0] via 209.165.200.224</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       10.1.2.0/24</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [1/0] via 209.165.200.224</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">     192.168.10.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> variably</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnetted,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnets,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> masks</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">C</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       192.168.10.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GigabitEthernet0/0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">L</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       192.168.10.1/32</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GigabitEthernet0/0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">     192.168.11.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> variably</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnetted,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnets,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> masks</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">C</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       192.168.11.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GigabitEthernet0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">L</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       192.168.11.1/32</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GigabitEthernet0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">     209.165.200.0/24</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> variably</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnetted,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> subnets,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> masks</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">C</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       209.165.200.224/30</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Serial0/0/0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">L</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">       209.165.200.225/32</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> is</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> directly</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> connected,</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Serial0/0/0</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>R1退出配置模式并保存配置</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# exit</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> write</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> memory</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Building</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configuration...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[OK]</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>R2路由器配置</h2>
-<h3>R2进入特权模式</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">> </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">enable</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>R2进入全局配置模式</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> terminal</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>R2配置静态路由</h3>
-<p>添加静态路由，将目的网络和子网掩码与下一跳地址关联。以下命令配置了到达 <code>192.168.10.0/30</code> 和 <code>192.168.11.0/30</code> 网络的静态路由，下一跳地址为 <code>209.165.200.225</code>：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 192.168.10.0 255.255.255.252 209.165.200.225</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 192.168.11.0 255.255.255.252 209.165.200.225</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>R2退出配置模式并保存配置</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# exit</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R2#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> write</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> memory</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Building</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> configuration...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[OK]</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>总结</h2>
-<p>在R1和R2上配置静态路由可以确保两个路由器之间的网络流量能够正确地转发。通过这些配置命令，你可以有效地管理和维护网络的路由路径。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco交换机Vlan中继配置</title>
-      <link>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E4%BA%A4%E6%8D%A2%E6%9C%BAVlan%E4%B8%AD%E7%BB%A7%E9%85%8D%E7%BD%AE.html</link>
-      <guid>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E4%BA%A4%E6%8D%A2%E6%9C%BAVlan%E4%B8%AD%E7%BB%A7%E9%85%8D%E7%BD%AE.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Cisco交换机Vlan中继配置</source>
-      <description>Cisco交换机Vlan中继配置 在以太网交换机的网络中，中继（Trunking）是一个关键概念，用于在交换机之间传输多个VLAN的数据流。配置中继可以确保不同VLAN之间的流量能够跨越多个交换机进行传输。中继端口通常用于连接交换机、路由器或其他网络设备，以支持跨VLAN的通信。 在本文档中，我们将介绍如何在Cisco交换机上配置中继端口，包括二层交换...</description>
-      <pubDate>Thu, 25 Jul 2024 10:48:40 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>在以太网交换机的网络中，中继（Trunking）是一个关键概念，用于在交换机之间传输多个VLAN的数据流。配置中继可以确保不同VLAN之间的流量能够跨越多个交换机进行传输。中继端口通常用于连接交换机、路由器或其他网络设备，以支持跨VLAN的通信。</p>
-<p>在本文档中，我们将介绍如何在Cisco交换机上配置中继端口，包括二层交换机和三层交换机的不同配置步骤。</p>
-</blockquote>
-<h2>配置步骤</h2>
-<h3>1. 进入接口配置模式</h3>
-<p>首先，你需要进入你要配置的接口模式。假设我们配置的是接口 <code>fa0/1</code>，输入以下命令：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# interface fa0/1</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>2. 配置为中继模式</h3>
-<p>将接口模式设置为中继模式，这样可以允许多个VLAN通过此接口传输：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport mode trunk</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>3. 允许所有VLAN通过中继</h3>
-<p>配置中继接口允许所有VLAN通过：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport trunk allow vlan all</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>4. 设置本地VLAN（Native VLAN）</h3>
-<p>指定一个本地VLAN（Native VLAN），这是未标记的流量将会使用的VLAN。我们将本地VLAN设置为99：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport trunk native vlan 99</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>5. （仅适用于三层交换机）配置封装类型</h3>
-<p>如果你正在配置三层交换机，还需要指定封装类型。在这种情况下，我们使用IEEE 802.1Q封装：</p>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>S1(config-if)# switchport trunk encapsulation dot1q</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>配置示例</h2>
-<p>完整的配置示例如下：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# interface fa0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport mode trunk</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport trunk allow vlan all</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport trunk native vlan 99</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">S1(config-if</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# switchport trunk encapsulation dot1q</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco路由器配置动态NAT</title>
-      <link>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E5%8A%A8%E6%80%81NAT.html</link>
-      <guid>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E5%8A%A8%E6%80%81NAT.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Cisco路由器配置动态NAT</source>
-      <description>Cisco路由器配置动态NAT TODO Lost Forever!!!</description>
-      <pubDate>Thu, 25 Jul 2024 10:48:40 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>TODO</h2>
-<p>Lost Forever!!!</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>RabbitMQ基础概念篇</title>
-      <link>https://www.geekery.cn/note-book/RabbitMQ/RabbitMQ%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E7%AF%87.html</link>
-      <guid>https://www.geekery.cn/note-book/RabbitMQ/RabbitMQ%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E7%AF%87.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">RabbitMQ基础概念篇</source>
-      <description>RabbitMQ基础概念篇 消息队列简介 消息队列是一种用于应用程序间通信的方法，其中“消息”指的是应用程序之间传输的数据包。“消息队列”则是这种数据传输机制的核心组件，它提供了异步处理、解耦和负载均衡的能力。 消息 指的是应用之间传输的数据 消息队列 应用之间通信的一种方式 为什么要用消息队列 异步协作机制 消息队列允许发送者和接收者之间实现松散耦合...</description>
-      <pubDate>Tue, 23 Jul 2024 06:27:01 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>消息队列简介</h2>
-<p>消息队列是一种用于应用程序间通信的方法，其中“消息”指的是应用程序之间传输的数据包。“消息队列”则是这种数据传输机制的核心组件，它提供了异步处理、解耦和负载均衡的能力。</p>
-<ul>
-<li>消息  指的是应用之间传输的数据</li>
-<li>消息队列  应用之间通信的一种方式</li>
-</ul>
-<h2>为什么要用消息队列 异步协作机制</h2>
-<p>消息队列允许发送者和接收者之间实现松散耦合，即发送者无需等待接收者的响应即可继续执行后续逻辑，而接收者可以独立于发送者的时间线处理消息。这种机制类似于快递员与菜鸟驿站的关系，快递员只需将包裹送至驿站，而无需知道包裹何时会被收件人领取。</p>
-<blockquote>
-<p>消息的发布者不知道谁接受的，消息的接收者不需要知道谁发出的，两者都不需要知道互相之间的存在</p>
-</blockquote>
-<p>异步协作机制</p>
-<p>
-就像是，快递员与菜鸟驿站</p>
-<h2>RabbitMQ特性</h2>
-<p>RabbitMQ是一个由Erlang语言编写的开源消息代理软件，它实现了高级消息队列协议（AMQP）。AMQP是一种开放标准的应用层协议，为消息代理的设计提供了统一的框架，不受特定编程语言或平台的限制。</p>
-<p>AMQP：Advanced Message Queue ，高级消息队列协议。应用层。方便中间件设计。（一种标准，不受语言限制，符合标准就可以）</p>
-<ul>
-<li><strong>集群能力</strong>：支持多节点集群，提高可用性和扩展性。</li>
-<li><strong>高可用性</strong>：通过镜像队列和其他机制确保即使在部分节点故障时，消息依然可以被处理。</li>
-<li><strong>灵活的路由</strong>：提供丰富的路由策略，使得消息可以根据预定义的规则被定向到不同的队列。</li>
-<li><strong>管理界面</strong>：提供图形化的管理界面，便于监控和管理。</li>
-<li><strong>跟踪机制</strong>：可以追踪消息的流转过程，便于调试和问题排查。</li>
-<li><strong>可靠性</strong>：保证消息的持久存储和可靠投递。</li>
-</ul>
-<h2>RabbitMQ安装启动关闭</h2>
-<h3>安装步骤</h3>
-<ol>
-<li><strong>安装Erlang</strong>：RabbitMQ依赖于Erlang运行环境。</li>
-<li><strong>安装RabbitMQ</strong>：通过包管理器或官方源进行安装。</li>
-</ol>
-<h3>RabbitMQ的启动和关闭</h3>
-<h4>启动RabbitMQ</h4>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit1 ~]# rabbitmq-server start &#x26;</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[1] </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">1732</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit1 ~]# </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">              RabbitMQ</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 3.3.5.</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Copyright</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (C) 2007-2014 GoPivotal, Inc.</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  ##  ##      Licensed under the MPL.  See http://www.rabbitmq.com/</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  ##  ##</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  ##########  Logs: /var/log/rabbitmq/rabbit@rabbit1.log</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  ######  ##        /var/log/rabbitmq/rabbit@rabbit1-sasl.log</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  ##########</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">              Starting</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> broker...</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> completed</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> with</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> plugins.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit1 ~]#</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h5>报错处理</h5>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">这里如果出现报错</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 可能是/var/lib/rabbitmq/.relang.cookie无权限</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">解决方案，chown或者chmod</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h4>关闭RabbitMQ</h4>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmq-server</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>RabbitMQ插件管理</h2>
-<p>RabbitMQ通过插件系统提供了丰富的扩展性。常用的操作包括：</p>
-<h3>添加插件</h3>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>rabbitmq-plugins enable {插件名}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>删除插件</h3>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>rabbitmq-plugins disable {插件名}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>开启浏览器控制面板</h3>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>rabbitmq-plugins enable rabbit_management</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>访问地址 http://YOUR_IP_ADDRESS:15672</span></span>
-<span class="line"><span>但登录不进去，因为没用户</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>RabbitMQ用户和权限管理</h2>
-<h3>添加用户</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add_user</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">usernam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">passwor</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">d></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit1 ~]# rabbitmqctl add_user root root</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Creating</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "root"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>删除用户</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> delete_user</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">usernam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>更改密码</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> change_password</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">usernam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">new_passwor</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">d></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>设置用户角色</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set_user_tags</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">usernam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">tag</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">s></span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit1 ~]# rabbitmqctl set_user_tags root administration</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Setting</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> tags</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> for</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> user</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "root"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [administration] ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>tag可以取的值: management monitoring policymarker administator</p>
-<div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-text"><span class="line"><span>FROM : https://www.cnblogs.com/iiwen/p/5287790.html</span></span>
-<span class="line"><span>RabbitMQ各类角色描述：</span></span>
-<span class="line"><span>none</span></span>
-<span class="line"><span>不能访问 management plugin</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>management</span></span>
-<span class="line"><span>用户可以通过AMQP做的任何事外加：</span></span>
-<span class="line"><span>列出自己可以通过AMQP登入的virtual hosts  </span></span>
-<span class="line"><span>查看自己的virtual hosts中的queues, exchanges 和 bindings</span></span>
-<span class="line"><span>查看和关闭自己的channels 和 connections</span></span>
-<span class="line"><span>查看有关自己的virtual hosts的“全局”的统计信息，包含其他用户在这些virtual hosts中的活动。</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>policymaker </span></span>
-<span class="line"><span>management可以做的任何事外加：</span></span>
-<span class="line"><span>查看、创建和删除自己的virtual hosts所属的policies和parameters</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>monitoring  </span></span>
-<span class="line"><span>management可以做的任何事外加：</span></span>
-<span class="line"><span>列出所有virtual hosts，包括他们不能登录的virtual hosts</span></span>
-<span class="line"><span>查看其他用户的connections和channels</span></span>
-<span class="line"><span>查看节点级别的数据如clustering和memory使用情况</span></span>
-<span class="line"><span>查看真正的关于所有virtual hosts的全局的统计信息</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span>administrator   </span></span>
-<span class="line"><span>policymaker和monitoring可以做的任何事外加:</span></span>
-<span class="line"><span>创建和删除virtual hosts</span></span>
-<span class="line"><span>查看、创建和删除users</span></span>
-<span class="line"><span>查看创建和删除permissions</span></span>
-<span class="line"><span>关闭其他用户的connections</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>RabbitMQ权限管理</h2>
-<h3>授权</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set_permissions</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> [-p &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">vhos</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">t></span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">]</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">use</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">r> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">con</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">f> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">writ</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">rea</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">d></span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">-p</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vhostpath</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> :</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 一个命名空间</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ，eg:</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -p</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 表示根命名空间</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{user} 用户名</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{conf} 一个正则表达式match ，哪些资源能够被用户配置</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{write} 一个正则表达式match，哪些资源能够被用户读取</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{read} 一个正则表达式match，哪些资源能够被用户访问</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>查看权限</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list_permissions</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">vhos</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">t></span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">查看根路径下的用户权限</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rebbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list_permissions</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">查看指定命名空间下的所有用户权限</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbirmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list_permissions</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /abc</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>查看指定用户的权限</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list_user_permissions</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> {username}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>清空指定用户的权限</h3>
-<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>rabbitmqctl clear_permissions &#x3C;username></span></span>
-<span class="line"><span>[root@rabbit1 ~]#  rabbitmqctl clear_permissions  root</span></span>
-<span class="line"><span>Clearing permissions for user "root" in vhost "/" ...</span></span>
-<span class="line"><span>...done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>虚拟主机（Virtual Hosts）</h2>
-<p>虚拟主机类似于隔离的容器，可以用来组织和隔离不同的消息队列和交换器。</p>
-<h3>添加虚拟主机</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> add_vhost</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">vhost_nam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>删除虚拟主机</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> delete_vhost</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">vhost_nam</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">e></span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>RabbitMQ消息订阅和发送机制</h2>
-<p>消费者订阅队列，生产者发送消息，然后发布到队列，最后将消息发送给消费者，
-
-
-</p>
-<p></p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>RabbitMQ镜像集群搭建指南</title>
-      <link>https://www.geekery.cn/note-book/RabbitMQ/RabbitMQ%E9%95%9C%E5%83%8F%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.html</link>
-      <guid>https://www.geekery.cn/note-book/RabbitMQ/RabbitMQ%E9%95%9C%E5%83%8F%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">RabbitMQ镜像集群搭建指南</source>
-      <description>RabbitMQ镜像集群搭建指南 概述 RabbitMQ是一个开源的消息代理和队列服务器，提供多种传输协议，如AMQP 0-9-1，MQTT，STOMP等。当需要构建高可用和高吞吐量的系统时，RabbitMQ的集群功能变得尤为重要。本文档将指导你如何在三台服务器上设置RabbitMQ镜像集群。 这种模式，才是所谓的 RabbitMQ 的高可用模式。跟普...</description>
-      <pubDate>Tue, 23 Jul 2024 06:11:47 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>概述</h2>
-<p>RabbitMQ是一个开源的消息代理和队列服务器，提供多种传输协议，如AMQP 0-9-1，MQTT，STOMP等。当需要构建高可用和高吞吐量的系统时，RabbitMQ的集群功能变得尤为重要。本文档将指导你如何在三台服务器上设置RabbitMQ镜像集群。</p>
-<p>这种模式，才是所谓的 RabbitMQ 的高可用模式。跟普通集群模式不一样的是，在镜像集群模式下，你创建的 queue，无论元数据还是 queue 里的消息都会存在于多个实例上，就是说，每个 RabbitMQ 节点都有这个 queue 的一个完整镜像，包含 queue 的全部数据的意思。然后每次你写消息到 queue 的时候，都会自动把消息同步到多个实例的 queue 上。</p>
-<h2>环境准备</h2>
-<p>采用3节点rabbit1、rabbit2、rabbit3进行搭建。</p>
-<p></p>
-<h3>安装与配置</h3>
-<p>确保在所有节点上已经安装了RabbitMQ，并且版本相同。</p>
-<h2>步骤</h2>
-<h3>创建管理员用户</h3>
-<p>在每个节点上创建一个具有管理员权限的用户：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set_user_tags</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> root</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> administrator</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set_permissions</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -p</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> root</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ".*"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ".*"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ".*"</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>分享Erlang Cookie</h3>
-<p>为了保证节点之间的安全通信，你需要在所有节点上分享相同的Erlang Cookie。例如，在Node1上查看并复制Cookie：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cat</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后，使用<code>scp</code>命令将Cookie文件复制到其他节点：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">scp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit2:/var/lib/rabbitmq/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">scp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit3:/var/lib/rabbitmq/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>停止并重启RabbitMQ服务</h3>
-<p>在进行集群配置前，确保停止RabbitMQ服务：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmq-server</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后重新启动服务：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmq-server</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -detached</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>启动app</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># rabbitmqctl stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> start_app</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>配置集群</h3>
-<p>在Node2和Node3上使用以下命令加入Node1的集群：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> join_cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit1</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>5. 验证集群状态</h3>
-<p>在每个节点上使用以下命令检查集群状态：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cluster_status</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>预期输出如下所示：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit1 ~]# rabbitmqctl cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[{nodes,[{disc,[rabbit@rabbit1,rabbit@rabbit2,rabbit@rabbit3]}]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {running_nodes,[rabbit@rabbit3,rabbit@rabbit2,rabbit@rabbit1]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {cluster_name,</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;&#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"rabbit@rabbit1"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">>></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {partitions,[]}]</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit2 ~]# rabbitmqctl cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit2</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[{nodes,[{disc,[rabbit@rabbit1,rabbit@rabbit2,rabbit@rabbit3]}]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {running_nodes,[rabbit@rabbit3,rabbit@rabbit1,rabbit@rabbit2]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {cluster_name,</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;&#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"rabbit@rabbit1"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">>></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {partitions,[]}]</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit2 ~]#</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit3 ~]# rabbitmqctl cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit3</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[{nodes,[{disc,[rabbit@rabbit1,rabbit@rabbit2,rabbit@rabbit3]}]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {running_nodes,[rabbit@rabbit1,rabbit@rabbit2,rabbit@rabbit3]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {cluster_name,</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;&#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"rabbit@rabbit1"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">>></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {partitions,[]}]</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit3 ~]#</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>6. 配置高可用队列</h3>
-<h4>添加高可用规则</h4>
-<p></p>
-<p></p>
-<p></p>
-<p>确保在所有节点上配置镜像队列策略，所有节点策略保持一致，这样即使某个节点宕机，消息仍能在集群内传递。</p>
-<h4>配置队列</h4>
-<p></p>
-<h2>结论</h2>
-<p>现在你已经成功搭建了一个由三个节点组成的RabbitMQ镜像集群，该集群能够提供高可用性和容错能力，适合生产环境部署。</p>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>RabbitMQ普通集群搭建指南</title>
-      <link>https://www.geekery.cn/note-book/RabbitMQ/RabbitMQ%E6%99%AE%E9%80%9A%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.html</link>
-      <guid>https://www.geekery.cn/note-book/RabbitMQ/RabbitMQ%E6%99%AE%E9%80%9A%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">RabbitMQ普通集群搭建指南</source>
-      <description>RabbitMQ普通集群搭建指南 目标架构 本次搭建的目标是构建一个由三个节点组成的RabbitMQ集群，节点信息如下： rabbit02: IP地址 192.168.10.132 rabbit03: IP地址 192.168.10.133 rabbit04: IP地址 192.168.10.134 预备工作 在开始之前，确保所有节点上都已安装Rabb...</description>
-      <pubDate>Tue, 23 Jul 2024 05:43:49 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>目标架构</h2>
-<p>本次搭建的目标是构建一个由三个节点组成的RabbitMQ集群，节点信息如下：</p>
-<ul>
-<li><strong>rabbit02</strong>: IP地址 <code>192.168.10.132</code></li>
-<li><strong>rabbit03</strong>: IP地址 <code>192.168.10.133</code></li>
-<li><strong>rabbit04</strong>: IP地址 <code>192.168.10.134</code></li>
-</ul>
-<h2>预备工作</h2>
-<p>在开始之前，确保所有节点上都已安装RabbitMQ Server。如果尚未安装，可以通过以下命令进行安装：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> epel-release</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><p>同时，设置主机名和修改<code>/etc/hosts</code>文件以正确解析各节点的名称。</p>
-<h2>同步.erlang.cookie</h2>
-<p>为了允许节点间通信，需要确保所有节点上的.erlang.cookie文件内容相同。使用以下命令从<code>rabbit02</code>节点复制cookie到其他节点</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit02 ~]# scp /var/lib/rabbitmq/.erlang.cookie rabbit03:/var/lib/rabbitmq/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">The</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> authenticity</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> host</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'rabbit03 (192.168.10.133)'</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> can't be established.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ECDSA key fingerprint is SHA256:ImtbIE2DzY9M7yqwTDfMn3EzHOjk0CGowUigMe00exk.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ECDSA key fingerprint is MD5:23:d8:46:37:71:8b:e3:56:d1:48:d4:f5:a9:64:80:f0.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">Are you sure you want to continue connecting (yes/no)? yes</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">Warning: Permanently added 'rabbit03,192.168.10.133' (ECDSA) to the list of known hosts.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">root@rabbit03's</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> password:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">.erlang.cookie</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">                                                                                                                                             100%</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">   20</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">    24.5KB/s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">   00:00</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    </span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit02 ~]# scp /var/lib/rabbitmq/.erlang.cookie rabbit04:/var/lib/rabbitmq/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">The</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> authenticity</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> host</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 'rabbit04 (192.168.10.134)'</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> can't be established.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ECDSA key fingerprint is SHA256:ImtbIE2DzY9M7yqwTDfMn3EzHOjk0CGowUigMe00exk.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">ECDSA key fingerprint is MD5:23:d8:46:37:71:8b:e3:56:d1:48:d4:f5:a9:64:80:f0.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">Are you sure you want to continue connecting (yes/no)? yes</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">Warning: Permanently added 'rabbit04,192.168.10.134' (ECDSA) to the list of known hosts.</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">root@rabbit04's</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> password:</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">.erlang.cookie</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">                                                                                                                                             100%</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">   20</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">    21.1KB/s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">   00:00</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    </span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit02 ~]#</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>集群配置</h2>
-<p>在<code>rabbit03</code>和<code>rabbit04</code>上执行以下步骤：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# rabbitmqctl stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Stopping</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit03</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# rabbitmqctl reset</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Resetting</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit03</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# systemctl stop firewalld</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# rabbitmqctl join_cluster --ram rabbit@rabbit02</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Clustering</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit03</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> with</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit02</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit04 ~]# rabbitmqctl stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Stopping</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit04</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit04 ~]# systemctl stop firewalld</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit04 ~]# rabbitmqctl stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Stopping</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit04</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit04 ~]# rabbitmqctl reset</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Resetting</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit04</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit04 ~]# rabbitmqctl join_cluster --ram rabbit@rabbit02</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Clustering</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit04</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> with</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit02</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>最终确认</h2>
-<p>在<code>rabbit02</code>上执行以下步骤来确认集群状态：</p>
-<p>这表明集群已经成功建立，并且<code>rabbit02</code>作为磁盘节点，<code>rabbit03</code>和<code>rabbit04</code>作为RAM节点加入了集群。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit02 ~]# rabbitmqctl cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit02</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[{nodes,[{disc,[rabbit@rabbit02]},{ram,[rabbit@rabbit04,rabbit@rabbit03]}]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {running_nodes,[rabbit@rabbit02]},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {cluster_name,</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">&#x3C;&#x3C;</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"rabbit@rabbit02"</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">>></span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">},</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> {partitions,[]}]</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit02 ~]# </span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# rabbitmqctl cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit03</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[{nodes,[{disc,[rabbit@rabbit02]},{ram,[rabbit@rabbit03]}]}]</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# </span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@rabbit03 ~]# rabbitmqctl cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Cluster</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> of</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> node</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit03</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[{nodes,[{disc,[rabbit@rabbit02]},{ram,[rabbit@rabbit03]}]}]</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">..</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>END</h2>
-<p>一些有用没用的历史命令！！！可以不用看了</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> epel</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> ;</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vi</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/hosts</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">hostnamectl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set-hostname</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit02</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vi</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/hosts</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">find</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -name</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">man</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmq-server</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -detached</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">scp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit03:/var/lib/rabbitmq/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">scp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit04:/var/lib/rabbitmq/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 400</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">find</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -name</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> firewalld</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">history</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> epel</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> ;</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">hostnamectl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set-hostname</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit03</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vi</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/hosts</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> rabbitmq-server</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -detached</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 400</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 400</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmq-server</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -detached</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> start</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ps</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ef</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">kill</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -9</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1969</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ps</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ef</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">kill</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -9</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1999</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ps</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ef</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> start</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server.service</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> reset</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> join_cluster</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --ram</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit02</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> firewalld</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> join_cluster</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --ram</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit02</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cluster_status</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">history</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> </span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> epel</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B">*</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> ;</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -y</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">hostnamectl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> set-hostname</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit04</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">vi</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/hosts</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> rabbitmq-server</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -detached</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 400</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lib/rabbitmq/.erlang.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmq-server</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -detached</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">find</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -name</span><span style="--shiki-light:#E45649;--shiki-dark:#E5C07B"> *</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">.cookie</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ps</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ef</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit</span></span>
-<span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">kill</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -9</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">  1960</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 1990</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ps</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -ef</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">grep</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbitmq-server</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> firewalld</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop_app</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> reset</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> join_cluster</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --ram</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> rabbit@rabbit02</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">rabbitmqctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cluster_status</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Uvicorn修改headers内的server名字</title>
-      <link>https://www.geekery.cn/note-book/Research_Develop/Python/Uvicorn%E4%BF%AE%E6%94%B9headers%E5%86%85%E7%9A%84server%E5%90%8D%E5%AD%97.html</link>
-      <guid>https://www.geekery.cn/note-book/Research_Develop/Python/Uvicorn%E4%BF%AE%E6%94%B9headers%E5%86%85%E7%9A%84server%E5%90%8D%E5%AD%97.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Uvicorn修改headers内的server名字</source>
-      <description>Uvicorn修改headers内的server名字 原有的uvicorn的server会显示一些uvicron的信息，这个服务器并不是很专业的web服务器，安全性较低，如何从代码里修改呢？下面是主要的额步骤 举例 剔除 server: uvicorn, 减少信息泄露。 实例代码 然后重启整个uvicorn服务器，自动重新加载无效。 结果 举例 剔除 ...</description>
-      <pubDate>Tue, 23 Jul 2024 05:31:26 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>原有的uvicorn的server会显示一些uvicron的信息，这个服务器并不是很专业的web服务器，安全性较低，如何从代码里修改呢？下面是主要的额步骤</p>
-<h2>举例</h2>
-<p>剔除 server: uvicorn, 减少信息泄露。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Response</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> headers</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-length:</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 168</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-type:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> application/json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> date:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Thu,10</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Aug</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2023</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 05:52:06</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GMT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> server:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> uvicorn</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # 要剔除这行</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>实例代码</h2>
-<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> uvicorn</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> fastapi </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> FastAPI</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">app </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF"> FastAPI</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    title</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"uvicorn"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    description</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"uvicorn教程"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    version</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"beta 0.1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> __name__</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "__main__"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    uvicorn.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">run</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">        "run:app"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        host</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"127.0.0.1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        port</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">8000</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        log_level</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"info"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        reload</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        workers</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">8</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        debug</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        headers</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"server"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"2678885646@qq.com.server"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    )</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后重启整个uvicorn服务器，自动重新加载无效。</p>
-<h2>结果</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-length:</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 168</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-type:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> application/json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> date:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Thu,10</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Aug</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2023</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 05:55:20</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GMT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> server:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2678885646@qq.com.server</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>举例</h2>
-<p>剔除 server: uvicorn, 减少信息泄露</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Response</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> headers</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-length:</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 168</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-type:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> application/json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> date:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Thu,10</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Aug</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2023</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 05:52:06</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GMT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> server:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> uvicorn</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> # 要剔除这行</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>实例代码</h2>
-<div class="language-python line-numbers-mode" data-highlighter="shiki" data-ext="python" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-python"><span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> uvicorn</span></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">from</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> fastapi </span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">import</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> FastAPI</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">app </span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF"> FastAPI</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    title</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"uvicorn"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    description</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"uvicorn教程"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">    version</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"beta 0.1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">if</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> __name__</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> ==</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "__main__"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">:</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    uvicorn.</span><span style="--shiki-light:#383A42;--shiki-dark:#61AFEF">run</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">(</span></span>
-<span class="line"><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">        "run:app"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        host</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"127.0.0.1"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        port</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">8000</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        log_level</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"info"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        reload</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        workers</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">8</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        debug</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">True</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">,</span></span>
-<span class="line"><span style="--shiki-light:#986801;--shiki-light-font-style:inherit;--shiki-dark:#E06C75;--shiki-dark-font-style:italic">        headers</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[(</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"server"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">, </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"2678885646@qq.com.server"</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)]</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">    )</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后重启整个uvicorn服务器，自动重新加载无效。</p>
-<h2>结果</h2>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-length:</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 168</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> content-type:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> application/json</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> date:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Thu,10</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Aug</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 2023</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 05:55:20</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> GMT</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  </span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> server:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2678885646@qq.com.server</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Docker的Pull和Push接口调用流程</title>
-      <link>https://www.geekery.cn/note-book/Security/Docker%E7%9A%84Pull%E5%92%8CPush%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B.html</link>
-      <guid>https://www.geekery.cn/note-book/Security/Docker%E7%9A%84Pull%E5%92%8CPush%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Docker的Pull和Push接口调用流程</source>
-      <description>Docker的Pull和Push接口调用流程 找了很多的资料，没有人写过Docker接口逆向的教程。国家封锁了海外的Dockerhub镜像站，而且禁止国内的各大高校和企业镜像官方仓库。这下技术人员犯了难，所需要的镜像都没有了，趁手的工具都没有了，怎么去搞技术，于是乎开始有民间制作的Dockerhub镜像加速地址。这些加速地址优良参差不齐，有的速度极慢、...</description>
-      <pubDate>Mon, 22 Jul 2024 17:22:39 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>找了很多的资料，没有人写过Docker接口逆向的教程。国家封锁了海外的Dockerhub镜像站，而且禁止国内的各大高校和企业镜像官方仓库。这下技术人员犯了难，所需要的镜像都没有了，趁手的工具都没有了，怎么去搞技术，于是乎开始有民间制作的Dockerhub镜像加速地址。这些加速地址优良参差不齐，有的速度极慢、有的要趁机收费发一笔横财、有的被滥用（白嫖过度）甚至过不了几天就要跑路。我配置在docker damon进程里的镜像加速地址换了又换，自己的实验地址这样操作是没问题的，可是业务容器不能容忍重启daemon进程，会导致整个namespace重置，业务中断，这就让人犯了难，于是乎我就根据大佬的教程搭建了一个镜像站，加速是实现了，速度也还能够满足，利用全球网络流量占比20%的CloudFlare Worker每天100,000次的免费请求进行无成本构建，满足了需求，并打通了Dockerhub的高速流量隧道。</p>
-<p>可是我并不满足这些仅仅支持下载加速的地址，Dockerhub的免费无限存储空间呢？Docker私有账户存储的镜像怎么办？我想要一个支持登录和上传的镜像地址，于是我又找了网上几乎所有的教程，他们的实现方式要么成本较高，实现方法需要自己的服务器来做，难以承受巨额的流量费；要么用的是Github Action来做，等待Action去下载然后打包，你在本地导入，这丧失了很多优点，不具备实时性、无法与Linux里面安装的Docker客户端进行交互。于是我做了同时支持账户登录，账户私有镜像加速，推送到官方Dockerhub的镜像站，同时无成本实现。这篇文章用来记录逆向过程、账户推送镜像的原理和过程，顺带讲一点点DockerHub镜像站的架构、原理。</p>
-<h2>伪造证书认证中心的安装</h2>
-<p>因为Docker强制使用tls加密，无法解析到数据包里面的内容，则无法进行数据的逆向查看。这里利用伪造证书认证中心（CA）的方式让他使用指定的证书认证机构进行数据加密，而这个认证中心是假的，我具有这个认证中心的数据解码方法，这个tls无法解密的问题就解决了。</p>
-<h3>启动BurpSuite并导出CA</h3>
-<p>打开设置</p>
-<p></p>
-<p>导出证书</p>
-<p></p>
-<p>导出的文件名我设置的是</p>
-<ul>
-<li>burpsuite-cacert.der</li>
-<li>burpsuite-cakey.der</li>
-</ul>
-<h3>CA证书解析为系统可识别的格式</h3>
-<p>仅需要安装CA证书即可，不需要安装ca密钥！！！</p>
-<h4>证书解析和安装进操作系统</h4>
-<p>详细过程和另一种不适用dpkg-reconfigure的方法</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">openssl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> x509</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -inform</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> der</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -in</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> burpsuite-cacert.der</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -out</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> burpsuite-ca.crt</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">mkdir</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /usr/share/ca-certificates/extra</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">cp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> burpsuite-ca.crt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /usr/share/ca-certificates/extra/</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">dpkg-reconfigure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在这里勾选你的证书并下一步，直到完成就结束了</p>
-<p></p>
-<h2>Docker CS架构抓包的困难性和解决方法</h2>
-<p>我想了各种办去做docker本身的流量拦截定向到burp正向代理里解析，我尝试了常用的proxychain4去单程序拦截可是不奏效，甚至我都要扒出tun网卡来拦截了，恰好找到了Docker Daemon进程写进配置文件的方式，数据果然出来的，Docker Dameon进程跟Dockerhub交互的流量全部被抓取出来（经过后续的查看，这个东西没有代理Dockerfile编译成镜像过程当时产生的流量，请知悉）。</p>
-<h3>proxychain4的尝试（失败）</h3>
-<p>在配置文件里设置代理</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">┌──(root㉿localhost</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)-[~]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">└─#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cat</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -n</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/proxychains4.conf</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> | </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">tail</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   154</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  #         * raw: The traffic is simply forwarded to the proxy without modification.</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   155</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  #        ( auth types supported: "basic"-http  "user/pass"-socks )</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   156</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  #</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   157</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  [ProxyList]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   158</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # add proxy here ...</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   159</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # meanwile</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   160</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # defaults set to "tor"</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   161</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  #socks4         127.0.0.1 9050</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   162</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  http</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 127.0.0.1</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 8080</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">   163</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试，结果失败，burp里没获取到任何流量</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">┌──(root㉿localhost</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)-[~]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">└─#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> proxychains</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> login</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.certauth.top</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>Daemon进程直接对接正向代理</h3>
-<p>（失败）在daemon配置文件里配置，这种设置方法我认为是一种正确的设置方法，但是不知道为什么会报错。于是乎我换了一种方式，</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">  "proxies"</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> {</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    "http-proxy"</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "http://proxy.example.com:3128",</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    "https-proxy"</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "https://proxy.example.com:3129",</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">    "no-proxy"</span><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">:</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> "*.test.example.com,.example.org,127.0.0.0/8"</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">  }</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">}</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>直接在systemd service里设置，注意看第17、18行是我新加的。这样设置之后即可抓取daemon流量。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">┌──(root㉿localhost</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)-[~]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">└─#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cat</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> docker</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># /usr/lib/systemd/system/docker.service</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[Unit]</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Description</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">Docker</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> Application</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Container</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Engine</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Documentation</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">https://docs.docker.com</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">After</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">network-online.target</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> docker.socket</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> firewalld.service</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> containerd.service</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Wants</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">network-online.target</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> containerd.service</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Requires</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">docker.socket</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[Service]</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Type</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">notify</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># the default is not to use systemd for cgroups because the delegate issues still</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># exists and systemd currently does not support the cgroup feature set required</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># for containers run by docker</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">EnvironmentFile</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">-/etc/default/docker</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Environment</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"HTTP_PROXY=http://127.0.0.1:8080"</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Environment</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"HTTPS_PROXY=http://127.0.0.1:8080"</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">ExecStart</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/usr/sbin/dockerd</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> -H</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> fd://</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --containerd=/run/containerd/containerd.sock</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $DOCKER_OPTS</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">ExecReload</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">/bin/kill</span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF"> -s</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> HUP</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> $MAINPID</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">LimitNOFILE</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">1048576</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Having non-zero Limit*s causes performance problems due to accounting overhead</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># in the kernel. We recommend using cgroups to do container-local accounting.</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">LimitNPROC</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">infinity</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">LimitCORE</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">infinity</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Uncomment TasksMax if your systemd version supports it.</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Only systemd 226 and above support this version.</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">TasksMax</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">infinity</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">TimeoutStartSec</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">0</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># set delegate yes so that systemd does not reset the cgroups of docker containers</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Delegate</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">yes</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># kill only the docker process, not all processes in the cgroup</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">KillMode</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">process</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># restart the docker process if it exits prematurely</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Restart</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">on-failure</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">StartLimitBurst</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">3</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">StartLimitInterval</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">60s</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[Install]</span></span>
-<span class="line"><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">WantedBy</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2">=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">multi-user.target</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>利用BurpSuite进行记录和解析流量</h2>
-<h4>初始设置</h4>
-<p>关闭这个选项，不然出一个请求停一下抓取。实话说这个工具挺难用的，java编写的程序，4G内存占用先不说，在分析具备blob数据的时候经常性卡顿，南勇的一逼，不知道是否是我没买企业版的原因哈哈哈。</p>
-<p></p>
-<p></p>
-<h4>Login流量过程</h4>
-<p>第一个直接登录流量包，先试探是否为无密码登录，返回401代码未授权，并且通过location触发跳转登录链接</p>
-<p></p>
-<p>客户端携带用户名密码加密的base64字符串去请求接口，返回一个具有期限的token</p>
-<p></p>
-<p></p>
-<p></p>
-<p>再次请求镜像站，这次会携带token进行球球，返回200状态码，则登录成功</p>
-<p></p>
-<p></p>
-<h4>Push流量过程</h4>
-<p>编译一个新的镜像进行测试</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">┌──(root㉿kali</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)-[~/ifconfig.icu]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">└─#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> build</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -t</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hub.certauth.top/jockerdragon/test:0.0.0.3</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --no-cache</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> .</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Sending</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> build</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> context</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> to</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Docker</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> daemon</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">  58.26MB</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Step</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 1/8</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> :</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FROM</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> python:3.12.3-alpine3.18</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Kali安装CA证书</title>
-      <link>https://www.geekery.cn/note-book/Security/Kali%E5%AE%89%E8%A3%85CA%E8%AF%81%E4%B9%A6.html</link>
-      <guid>https://www.geekery.cn/note-book/Security/Kali%E5%AE%89%E8%A3%85CA%E8%AF%81%E4%B9%A6.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Kali安装CA证书</source>
-      <description>Kali安装CA证书 准备证书文件 这个文章写了给Kali安装ca证书来逆向Web接口,的ca证书安装过程。 在进行任何操作之前，确保你拥有正确的证书文件。通常情况下，企业或组织会提供根证书，其扩展名可能为.cer。为了兼容性，我们需要将这些证书转换为.pem格式。 转换证书格式 对于.cer文件，使用OpenSSL将其转换为.pem格式： 导入证书至...</description>
-      <pubDate>Mon, 22 Jul 2024 14:47:13 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>准备证书文件</h2>
-<p>这个文章写了给Kali安装ca证书来逆向Web接口,的ca证书安装过程。
-在进行任何操作之前，确保你拥有正确的证书文件。通常情况下，企业或组织会提供根证书，其扩展名可能为<code>.cer</code>。为了兼容性，我们需要将这些证书转换为<code>.pem</code>格式。</p>
-<h3>转换证书格式</h3>
-<p>对于<code>.cer</code>文件，使用OpenSSL将其转换为<code>.pem</code>格式：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">openssl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> x509</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -inform</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> der</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -in</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> burpsuite-cacert.der</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> -out</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> burpsuite-ca.crt</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h2>导入证书至Linux系统</h2>
-<h3>创建额外证书目录</h3>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> mkdir</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /usr/share/ca-certificates/extra</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>拷贝证书文件</h3>
-<p>将转换后的<code>.crt</code>或<code>.pem</code>证书文件拷贝到<code>extra</code>目录下：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cp</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> burpsuite-ca.crt</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /usr/share/ca-certificates/extra/</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置证书</h3>
-<p>方法1： 更新证书配置文件以包含新的证书：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> dpkg-reconfigure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">┌──(root㉿kali</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)-[/home/kali/Downloads]</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">└─#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> dpkg-reconfigure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Updating</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> certificates</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> in</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/ssl/certs...</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">1</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> added,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> removed</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; done.</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">正在处理用于</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (20240203) 的触发器 ...</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Updating</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> certificates</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> in</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/ssl/certs...</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">0</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> added,</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> removed</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">; done.</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">Running</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> hooks</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> in</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /etc/ca-certificates/update.d...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">done.</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">正在处理用于</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ca-certificates-java</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> (20240118) 的触发器 ...</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">done.</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>方法2：或者手动编辑<code>/etc/ca-certificates.conf</code>文件，添加一行指向你的证书路径：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">extra/burpsuite-ca.crt</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>然后运行：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> update-ca-certificates</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>孤独与信仰：我们该如何面对</title>
-      <link>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E5%AD%A4%E7%8B%AC%E4%B8%8E%E4%BF%A1%E4%BB%B0%EF%BC%9A%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9.html</link>
-      <guid>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E5%AD%A4%E7%8B%AC%E4%B8%8E%E4%BF%A1%E4%BB%B0%EF%BC%9A%E6%88%91%E4%BB%AC%E8%AF%A5%E5%A6%82%E4%BD%95%E9%9D%A2%E5%AF%B9.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">孤独与信仰：我们该如何面对</source>
-      <description>孤独与信仰：我们该如何面对 ​ 有一种药，如果吃了就能彻底治愈，不再需要继续服用。我们称这种药为解药或良药。然而，如果有一种药，你吃了之后还会想吃，想要更多，甚至希望每天都服用，并希望身边的人也一同分享，这绝对不是解药，而是毒药。而我所知道，这种药叫做信仰。 image-20240720113523197 ​ 信仰为何如此诱人？因为信仰紧紧抓住了人类的...</description>
-      <pubDate>Sat, 20 Jul 2024 03:43:15 GMT</pubDate>
-      <content:encoded><![CDATA[
-<p>​	有一种药，如果吃了就能彻底治愈，不再需要继续服用。我们称这种药为解药或良药。然而，如果有一种药，你吃了之后还会想吃，想要更多，甚至希望每天都服用，并希望身边的人也一同分享，这绝对不是解药，而是毒药。而我所知道，这种药叫做信仰。</p>
-<p></p>
-<p>​	信仰为何如此诱人？因为信仰紧紧抓住了人类的软肋——孤独。信仰承诺了一个美好的未来和幻境，以安抚我们对孤独的恐惧。然而，我们必须明白，孤独不仅仅是一种修辞，它更是一种真实的感受。因此，如果你不想感到孤独，就不要总想着“终将”。享受当下的每一刻，不要在夏天思考秋天，不要在相聚时忧虑离别。但如果你想深入思考人生的终极意义，就不可避免地要面对孤独。</p>
-<p>​	你问我，我身边朋友朋友父亲最孤独的那一刻是哪一刻？是我朋友父亲48岁那一年，那是他的第四个本命年。我的朋友的奶奶因突发心肌梗塞去世。人在极度悲痛的背后，往往会陷入一种平静。在火葬场回家的路上，他的父亲非常平静地说了一句：“妈走了，家散了。”那一年夏天，随着拖拉机的轰鸣，我朋友家的老街被推平。老街曾承载了他父亲的青春，也承载了他的童年。</p>
-<p></p>
-<p>​	尽管现在他们逢年过节依旧团团聚聚，一起吃饭，对方说：“你看，其实家没有散，因为我家现在逢年过节也是一家子团团聚聚，一起吃饭。其实老街也没有散，因为现在那一条老街被更繁华的星巴克和麦当劳所占据。”然而，我知道那一刻，世界上再也没有人记得我朋友的父亲是如何长大的了。没有任何记忆能够填补前面的一段记忆。</p>
-<p>​	我们有时觉得自己不孤独，觉得自己特别完整、自足和满足，但其实，我们并不是完整的个体，而是因为每一片碎片都有一个地方和一个人替我们珍藏。可是，我要告诉大家的是，终有一天，这些触角将永远消失。就像90后开始失去了，00后开始失去了，互联网也开始坍缩了，总有一天我们都会失去。今天，青春年少时我们风光无限，风雨无阻。我们不断收集碎片，有些碎片可以和别人的拼接，拼接成越来越大的版图。然而，终有一天，我们转头一看，会发现满目疮痍，曾经的记忆已被遗忘。</p>
-<p></p>
-<p>​	最终，没有人能够告诉我们，我们是从何而来，我们将向何处去。因为没有人能活着告诉我们死亡的真实感受。人生最悲哀的事，莫过于终将变成孤儿。在时间的维度面前，人类不过是时间的孤儿。然而，这恰恰是人类最幸运的事情。因为人终将成为孤儿，所以我们不可依赖于天赋，也不寻找上帝。只有我是自己的主人
-只有我能是自己的主人，那一刻，我感受到了孤独给予我的自由。</p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
