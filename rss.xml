@@ -6,11 +6,35 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 14 Mar 2026 09:55:06 GMT</pubDate>
-    <lastBuildDate>Sat, 14 Mar 2026 09:55:06 GMT</lastBuildDate>
+    <pubDate>Sun, 15 Mar 2026 14:03:02 GMT</pubDate>
+    <lastBuildDate>Sun, 15 Mar 2026 14:03:02 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Tools</category>
+    <item>
+      <title>HTTPS 双向认证与 USB 加密锁配置实战</title>
+      <link>https://www.geekery.cn/note-book/SSL/HTTPS%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81%E4%B8%8EUSB%E5%8A%A0%E5%AF%86%E9%94%81%E9%85%8D%E7%BD%AE%E5%AE%9E%E6%88%98.html</link>
+      <guid>https://www.geekery.cn/note-book/SSL/HTTPS%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81%E4%B8%8EUSB%E5%8A%A0%E5%AF%86%E9%94%81%E9%85%8D%E7%BD%AE%E5%AE%9E%E6%88%98.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">HTTPS 双向认证与 USB 加密锁配置实战</source>
+      <description>HTTPS 双向认证与 USB 加密锁配置实战 HTTPS 单向认证只验证服务端身份，双向认证（mTLS）要求客户端也提供证书，服务端会验证客户端的合法性。 本文基于真实项目，使用 Nginx + Docker 实现 mTLS，并将客户端证书写入 USB 硬件加密锁（ET199），实现&amp;quot;不插锁就无法访问&amp;quot;的硬件级访问控制。 整体流程...</description>
+      <pubDate>Sun, 15 Mar 2026 06:01:05 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>HTTPS 单向认证只验证服务端身份，双向认证（mTLS）要求客户端也提供证书，服务端会验证客户端的合法性。</p>
+<p>本文基于真实项目，使用 Nginx + Docker 实现 mTLS，并将客户端证书写入 USB 硬件加密锁（ET199），实现&quot;不插锁就无法访问&quot;的硬件级访问控制。</p>
+<p>整体流程：</p>
+<ul>
+<li>搭建本地 CA，签发服务端和客户端证书</li>
+<li>配置 Nginx 开启 mTLS，Docker 容器化部署</li>
+<li>将客户端证书导入 USB 加密锁</li>
+<li>验证效果</li>
+</ul>
+</blockquote>
+<h2>环境说明</h2>
+<p>| 组件 | 说明 |
+|</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>BMI 计算</title>
       <link>https://www.geekery.cn/free-service/bmi.html</link>
@@ -6520,19 +6544,18 @@ Docker版本: 1.13.1</p>
 ]]></content:encoded>
     </item>
     <item>
-      <title>SSL 证书生成</title>
+      <title>SSL 证书工具</title>
       <link>https://www.geekery.cn/free-service/SSLGenerate.html</link>
       <guid>https://www.geekery.cn/free-service/SSLGenerate.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">SSL 证书生成</source>
-      <description>SSL 证书生成 声明： 本服务为学习用途，通过自建 CA 签发 SSL 证书。请勿用于生产环境。 网上的证书签发要么签发门槛很高，要么价格极高。 我去查询了阿某云的价格表格。 这价格很是惊人，于是乎我自己做了CA服务器，仅供学习。 用途上的话网站急需证书却无法签发可以使用，切勿生产使用。</description>
+      <source url="https://www.geekery.cn/rss.xml">SSL 证书工具</source>
+      <description>SSL 证书工具 声明： 本工具完全在浏览器本地运行，私钥等敏感数据不会上传至任何服务器。自签名证书建议不要用于生产环境。 本工具集成了常用的 SSL/TLS 证书相关操作，包含以下功能：</description>
       <pubDate>Fri, 13 Dec 2024 10:43:06 GMT</pubDate>
       <content:encoded><![CDATA[
 <blockquote>
-<p><strong>声明：</strong> 本服务为学习用途，通过自建 CA 签发 SSL 证书。<strong>请勿用于生产环境</strong>。</p>
+<p><strong>声明：</strong> 本工具完全在浏览器本地运行，私钥等敏感数据不会上传至任何服务器。<strong>自签名证书建议不要用于生产环境</strong>。</p>
 </blockquote>
-<p>网上的证书签发要么签发门槛很高，要么价格极高。</p>
-<p>我去查询了阿某云的价格表格。</p>
-<p>| 证书类型       | 适用场景                | 支持域名        | 价格（人民币/月） |
+<p>本工具集成了常用的 SSL/TLS 证书相关操作，包含以下功能：</p>
+<p>| 功能 | 说明 |
 |</p>
 ]]></content:encoded>
     </item>
@@ -8321,55 +8344,6 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <h2>解释</h2>
 <p>这句指令的作用只有一个，就是记录开机时间的隐形命令，touch完了立马rm.</p>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco路由器RIPv2配置</title>
-      <link>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8RIPv2%E9%85%8D%E7%BD%AE.html</link>
-      <guid>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8RIPv2%E9%85%8D%E7%BD%AE.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Cisco路由器RIPv2配置</source>
-      <description>Cisco路由器RIPv2配置 本文档详细说明了如何在路由器 R1 上配置RIP 协议，然后确保网络流量能够通过指定的接口离开，并正确通告路由信息。 在现代网络中使用的较少！！！ 什么是 RIP 协议？ RIP（Routing Information Protocol，路由信息协议）是一种基于距离矢量的路由协议，最早定义在 RFC 1058 中。它是互...</description>
-      <pubDate>Thu, 25 Jul 2024 13:58:41 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>本文档详细说明了如何在路由器 R1 上配置RIP 协议，然后确保网络流量能够通过指定的接口离开，并正确通告路由信息。</p>
-<p>在现代网络中使用的较少！！！</p>
-</blockquote>
-<h2>什么是 RIP 协议？</h2>
-<p>RIP（Routing Information Protocol，路由信息协议）是一种基于距离矢量的路由协议，最早定义在 RFC 1058 中。它是互联网中最早被广泛使用的路由协议之一。RIP 使用跳数作为度量值，最多允许 15 跳，16 跳被认为是不可达。RIP 的更新周期为 30 秒，通过周期性广播整个路由表来维护和更新路由信息。</p>
-<p><strong>路由信息协议（RIP）</strong>协议是基于距离矢量路由的域内（内部）路由协议，它在自治系统内部使用。路由器和网络链路称为节点。路由表的第一列是目标地址。该协议中度量的成本是跳数，跳数是到达目的地需要传递的网络数。在这里，无限是由固定数字16定义的，这意味着使用Rip，网络的跳数不能超过15。</p>
-<p>使用 RIP 协议的主要原因包括：</p>
-<ul>
-<li>简单易用，配置方便。</li>
-<li>对小型和中型网络环境足够有效。</li>
-<li>兼容性好，许多路由器都支持。</li>
-</ul>
-<h2>配置步骤</h2>
-<h3>步骤 1：创建默认路由</h3>
-<p>使用适当的命令在 R1 上创建默认路由，以使所有互联网流量通过 S0/0/1 离开网络。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# ip route 0.0.0.0 0.0.0.0 serial 0/0/1</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>步骤 2：进入 RIP 协议配置模式</h3>
-<p>进入 RIP 协议配置模式，准备进行后续的 RIP 配置。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# router rip</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>步骤 3：配置 RIP 协议的第 2 版并禁用网络汇总</h3>
-<p>在 RIP 协议配置模式下，启用 RIP 的第 2 版，并禁用自动汇总功能。RIP 第 2 版支持无类路由和多播传输，改进了第 1 版的许多限制。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config-router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# version 2</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config-router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# no auto-summary</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>步骤 4：为连接到 R1 的网络配置 RIP</h3>
-<p>在 RIP 协议配置模式下，配置 R1 的直连网络，使其能够通过 RIP 协议进行通告。这确保了这些网络能够被 RIP 路由器正确识别和路由。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config-router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# network 192.168.1.0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config-router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# network 192.168.2.0</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>步骤 5：配置不含路由器的 LAN 端口</h3>
-<p>配置不含路由器的 LAN 端口，这样端口就不会发出任何路由信息。这样可以减少不必要的 RIP 路由更新，减少网络负载。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config-router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# passive-interface gigabitEthernet 0/0</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>步骤 6：通告默认路由</h3>
-<p>通过其他 RIP 路由器，通告步骤 1 中配置的默认路由。这使得网络中的其他 RIP 路由器知道如何访问外部网络。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1(config-router</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">)# default-information originate</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>步骤 7：保存配置</h3>
-<p>保存当前的运行配置到启动配置，以确保配置在重启后依然有效。</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> wr</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># 或者</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">R1#</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> copy</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> running-config</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> startup-config</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
