@@ -6,11 +6,88 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 15 Mar 2026 14:03:02 GMT</pubDate>
-    <lastBuildDate>Sun, 15 Mar 2026 14:03:02 GMT</lastBuildDate>
+    <pubDate>Mon, 16 Mar 2026 03:44:11 GMT</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2026 03:44:11 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+    <category>Nginx-OpenResty</category>
     <category>Tools</category>
+    <item>
+      <title>CentOS7 安装 OpenResty</title>
+      <link>https://www.geekery.cn/note-book/Nginx-OpenResty/CentOS7%E5%AE%89%E8%A3%85OpenResty%E6%95%99%E7%A8%8B.html</link>
+      <guid>https://www.geekery.cn/note-book/Nginx-OpenResty/CentOS7%E5%AE%89%E8%A3%85OpenResty%E6%95%99%E7%A8%8B.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">CentOS7 安装 OpenResty</source>
+      <description>在 CentOS7 上通过官方 yum 仓库安装 OpenResty，包含服务管理与验证步骤。</description>
+      <category>Nginx-OpenResty</category>
+      <pubDate>Fri, 25 Jan 2019 00:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[
+<blockquote>
+<p>OpenResty 基于 Nginx，每个 worker 使用一个 LuaVM，请求到来时在 LuaVM 内创建协程处理。协程之间数据隔离，各自拥有独立的全局变量 <code>_G</code>。</p>
+<p>OpenResty 致力于将服务器应用完全运行于 Nginx 中，充分利用 Nginx 事件模型进行非阻塞 I/O，对 MySQL、Redis、Memcached 的 I/O 操作同样非阻塞，可轻松应对 ==10K+== 并发连接。</p>
+</blockquote>
+<h2>安装</h2>
+<h3>1. 添加 OpenResty 官方 yum 仓库</h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yum-utils</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yum-config-manager</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --add-repo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> https://openresty.org/package/centos/openresty.repo</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>2. 安装 OpenResty</h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>3. 安装命令行工具 resty</h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yum</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> install</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty-resty</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><div class="hint-container info">
+<p class="hint-container-title">其他工具包</p>
+<ul>
+<li><code>openresty-opm</code> — 包管理工具 opm</li>
+<li><code>openresty-doc</code> — 文档工具 restydoc</li>
+</ul>
+</div>
+<h3>4. 查看仓库中可用的软件包</h3>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> yum</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --disablerepo=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"*"</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --enablerepo=</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"openresty"</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> list</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> available</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><details class="hint-container details"><summary>点击展开输出示例</summary>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>Available Packages</span></span>
+<span class="line"><span>openresty.x86_64                1.13.6.2-1.el7.centos    openresty</span></span>
+<span class="line"><span>openresty-resty.noarch          1.13.6.2-1.el7.centos    openresty</span></span>
+<span class="line"><span>openresty-opm.noarch            1.13.6.2-1.el7.centos    openresty</span></span>
+<span class="line"><span>openresty-doc.noarch            1.13.6.2-1.el7.centos    openresty</span></span>
+<span class="line"><span>openresty-debug.x86_64          1.13.6.2-1.el7.centos    openresty</span></span>
+<span class="line"><span>openresty-openssl.x86_64        1.1.0h-3.el7.centos      openresty</span></span>
+<span class="line"><span>openresty-pcre.x86_64           8.42-1.el7.centos        openresty</span></span>
+<span class="line"><span>openresty-zlib.x86_64           1.2.11-3.el7.centos      openresty</span></span>
+<span class="line"><span>...</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2>默认安装路径</h2>
+<p>安装完成后，OpenResty 默认位于 <code>/usr/local/openresty</code>：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">cd</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /usr/local/openresty</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x26;&#x26; </span><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ll</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><details class="hint-container details"><summary>目录结构</summary>
+<div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>total 24</span></span>
+<span class="line"><span>drwxr-xr-x. 2 root root    36 Jan 25 21:41 bin</span></span>
+<span class="line"><span>-rw-r--r--. 1 root root 22924 May 15  2018 COPYRIGHT</span></span>
+<span class="line"><span>drwxr-xr-x. 6 root root    56 Jan 25 21:40 luajit</span></span>
+<span class="line"><span>drwxr-xr-x. 5 root root    59 Jan 25 21:40 lualib</span></span>
+<span class="line"><span>drwxr-xr-x. 7 root root    68 Jan 25 21:40 nginx</span></span>
+<span class="line"><span>drwxr-xr-x. 4 root root    28 Jan 25 21:40 openssl</span></span>
+<span class="line"><span>drwxr-xr-x. 3 root root    17 Jan 25 21:40 pcre</span></span>
+<span class="line"><span>drwxr-xr-x. 3 root root    20 Jan 25 21:40 zlib</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></details>
+<h2>服务管理</h2>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> start</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">    # 启动</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> stop</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">     # 停止</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> restart</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">  # 重启</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> enable</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">   # 开机自启</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> systemctl</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> status</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> openresty</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">   # 查看状态</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>建议同时执行 <code>enable</code>，确保服务器重启后 OpenResty 自动拉起。</p>
+</div>
+<h2>验证安装</h2>
+<p>启动后访问 <code>http://localhost</code>，看到 OpenResty 欢迎页即表示安装成功。</p>
+<div class="hint-container warning">
+<p class="hint-container-title">注意</p>
+<p>CentOS7 防火墙默认拦截 80 端口，若无法访问请先放行：</p>
+<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> firewall-cmd</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --permanent</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --add-service=http</span></span>
+<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">sudo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> firewall-cmd</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> --reload</span></span></code></pre>
+<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div></div>
+]]></content:encoded>
+    </item>
     <item>
       <title>HTTPS 双向认证与 USB 加密锁配置实战</title>
       <link>https://www.geekery.cn/note-book/SSL/HTTPS%E5%8F%8C%E5%90%91%E8%AE%A4%E8%AF%81%E4%B8%8EUSB%E5%8A%A0%E5%AF%86%E9%94%81%E9%85%8D%E7%BD%AE%E5%AE%9E%E6%88%98.html</link>
@@ -8305,45 +8382,6 @@ PS：get-appxpackage [你要卸载的程序]</p>
 <p>删除网卡组：如果需要删除已创建的网卡组，可以使用以下命令：</p>
 <div class="language-powershell line-numbers-mode" data-highlighter="shiki" data-ext="powershell" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-powershell"><span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">Remove-NetSwitchTeam</span><span style="--shiki-light:#383A42;--shiki-dark:#56B6C2"> -</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">Name </span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379">"2Gbps"</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>Linux解释etc下面rc.local的含义</title>
-      <link>https://www.geekery.cn/note-book/LinuxOperaSystem/Linux%E8%A7%A3%E9%87%8Aetc%E4%B8%8B%E9%9D%A2rc.local%E7%9A%84%E5%90%AB%E4%B9%89.html</link>
-      <guid>https://www.geekery.cn/note-book/LinuxOperaSystem/Linux%E8%A7%A3%E9%87%8Aetc%E4%B8%8B%E9%9D%A2rc.local%E7%9A%84%E5%90%AB%E4%B9%89.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Linux解释etc下面rc.local的含义</source>
-      <description>Linux解释etc下面rc.local的含义 rc.local是在系统启动过程中不起眼的一个文件，现在对这个文件进行解释。 初探这个文件 这个配置文件会在用户登陆之前读取，这个文件中写入了什么命令，在每次系统启动时都会执行一次。也就是说，如果有任何需要在系统启动时运行的工作，则只需写入 /etc/rc.d/rc.local 配置文件即可。这个文件的内...</description>
-      <pubDate>Thu, 25 Jul 2024 14:45:52 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>rc.local是在系统启动过程中不起眼的一个文件，现在对这个文件进行解释。</p>
-</blockquote>
-<h2>初探这个文件</h2>
-<blockquote>
-<p>这个配置文件会在用户登陆之前读取，这个文件中写入了什么命令，在每次系统启动时都会执行一次。也就是说，如果有任何需要在系统启动时运行的工作，则只需写入 /etc/rc.d/rc.local 配置文件即可。这个文件的内容如下：</p>
-</blockquote>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">[root@hcss-ecs-3689 etc]# cat /etc/rc.local</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#!/bin/bash</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># THIS FILE IS ADDED FOR COMPATIBILITY PURPOSES</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># It is highly advisable to create own systemd services or udev rules</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># to run scripts during boot instead of using this file.</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># In contrast to previous versions due to parallel execution during boot</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># this script will NOT be run after all other services.</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic">#</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># Please note that you must run 'chmod +x /etc/rc.d/rc.local' to ensure</span></span>
-<span class="line"><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"># that this script will be executed during boot.</span></span>
-<span class="line"></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">touch</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lock/subsys/local</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>解释语句</h2>
-<p>整个文件只有一个语句，作用是<strong>系统的启动时间。</strong></p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">touch</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> /var/lock/subsys/local</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>默认会touch这个文件，每次系统启动时都会touch这个文件，这个文件的修改时间就是<strong>记录系统的启动时间</strong></p>
-<p>然后我查看了touch命令的man页，touch不止有创建文件的作用还有创建文件时更改日期的作用。</p>
-<p>用法奇特。</p>
-<h2>解释</h2>
-<p>这句指令的作用只有一个，就是记录开机时间的隐形命令，touch完了立马rm.</p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>

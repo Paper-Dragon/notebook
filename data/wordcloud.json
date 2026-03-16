@@ -21,7 +21,7 @@
     },
     {
         "name": "软件包",
-        "value": 221
+        "value": 222
     },
     {
         "name": "数据库",
@@ -60,16 +60,16 @@
         "value": 119
     },
     {
+        "name": "Nginx",
+        "value": 119
+    },
+    {
         "name": "Ubuntu",
         "value": 116
     },
     {
-        "name": "Nginx",
-        "value": 114
-    },
-    {
         "name": "Redis",
-        "value": 109
+        "value": 110
     },
     {
         "name": "浏览器",
@@ -97,11 +97,11 @@
     },
     {
         "name": "防火墙",
-        "value": 86
+        "value": 87
     },
     {
         "name": "命令行",
-        "value": 83
+        "value": 84
     },
     {
         "name": "用户名",
@@ -448,6 +448,10 @@
         "value": 28
     },
     {
+        "name": "全局变量",
+        "value": 28
+    },
+    {
         "name": "生成器",
         "value": 27
     },
@@ -485,10 +489,6 @@
     },
     {
         "name": "Example",
-        "value": 27
-    },
-    {
-        "name": "全局变量",
         "value": 27
     },
     {
@@ -548,6 +548,10 @@
         "value": 25
     },
     {
+        "name": "Memcached",
+        "value": 25
+    },
+    {
         "name": "Files",
         "value": 24
     },
@@ -573,10 +577,6 @@
     },
     {
         "name": "Alive",
-        "value": 24
-    },
-    {
-        "name": "Memcached",
         "value": 24
     },
     {
@@ -1080,6 +1080,10 @@
         "value": 16
     },
     {
+        "name": "Packages",
+        "value": 16
+    },
+    {
         "name": "子系统",
         "value": 16
     },
@@ -1169,10 +1173,6 @@
     },
     {
         "name": "Port",
-        "value": 15
-    },
-    {
-        "name": "Packages",
         "value": 15
     },
     {
@@ -1340,6 +1340,10 @@
         "value": 13
     },
     {
+        "name": "管理工具",
+        "value": 13
+    },
+    {
         "name": "解压缩",
         "value": 13
     },
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "Internet",
-        "value": 13
-    },
-    {
-        "name": "输入框",
         "value": 13
     }
 ]
