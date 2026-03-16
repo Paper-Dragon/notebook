@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Mon, 16 Mar 2026 08:51:21 GMT</pubDate>
-    <lastBuildDate>Mon, 16 Mar 2026 08:51:21 GMT</lastBuildDate>
+    <pubDate>Mon, 16 Mar 2026 08:55:27 GMT</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2026 08:55:27 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>Nginx-OpenResty</category>
@@ -462,7 +462,10 @@ The following settings will already be configured in your real exam environment 
 </blockquote>
 <h2>轿车（Saloon car）</h2>
 <p>轿车（Saloon car）是指用于载送人员及其随身物品，且座位布置在两轴之间的汽车。包括驾驶者在内，座位数一般为5个。轿车强调的是舒适性，而且是从经济性考虑出发，选择马力适中、排量小、耗油量小的发动机。</p>
-<p>油耗参考（燃油车，L/100km）：小型/紧凑轿车约 5–8；中大型轿车约 7–10。受排量/车重/路况/驾驶习惯影响很大，仅供参考。</p>
+<div class="hint-container info">
+<p class="hint-container-title">油耗参考（燃油车，L/100km）</p>
+<p>小型/紧凑轿车约 5–8；中大型轿车约 7–10。受排量/车重/路况/驾驶习惯影响很大，<strong>仅供参考</strong>。</p>
+</div>
 <p>轿车分三厢轿车和两厢轿车。</p>
 <h3>三厢车</h3>
 <p>三厢车：是指车身结构由三个相互封闭用途各异的“厢”所组成的车，三厢分别为前部的发动机舱、车身中部的乘员舱和后部的行李舱。</p>
@@ -5020,12 +5023,18 @@ API地址http://test.gitlab.com/api/v4/users需要改为自己的gitlab服务器
 <div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">setup.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">exe</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> /</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">product</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> server</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p></p>
-<p>使用这个方法可以成功绕过并继续安装</p>
+<div class="hint-container tip">
+<p class="hint-container-title">提示</p>
+<p>使用此方法可成功绕过 TPM 检查并继续安装。</p>
+</div>
 <h2>方式二</h2>
 <h3>设置区域、时间和输入法</h3>
 <p></p>
 <h3>绕过 TPM</h3>
-<p>这一步是关键，不要点击“现在安装” 按 Shift+F10 呼出命令提示符输入以下命令添加注册表键值。这一步是通过修改注册表绕过 TPM  检查继续安装系统。如果不绕过 TPM 检查则无法安装 Windows 11 会提示“这台电脑无法运行 Windows 11”</p>
+<div class="hint-container warning">
+<p class="hint-container-title">关键步骤</p>
+<p><strong>不要点击「现在安装」</strong>。按 <code>Shift+F10</code> 呼出命令提示符，输入下方命令添加注册表键值，通过修改注册表绕过 TPM 检查。若不绕过 TPM 检查，将无法继续安装并提示「这台电脑无法运行 Windows 11」。</p>
+</div>
 <div class="language- line-numbers-mode" data-highlighter="shiki" data-ext style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-"><span class="line"><span>REG ADD HKLM\SYSTEM\Setup\LabConfig /v BypassTPMCheck /t REG_DWORD /d 1</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <h3>许可条款</h3>

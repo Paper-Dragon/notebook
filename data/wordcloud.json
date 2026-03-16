@@ -5,7 +5,7 @@
     },
     {
         "name": "Docker",
-        "value": 328
+        "value": 330
     },
     {
         "name": "客户端",
@@ -29,11 +29,11 @@
     },
     {
         "name": "Git",
-        "value": 163
+        "value": 164
     },
     {
         "name": "Windows",
-        "value": 154
+        "value": 153
     },
     {
         "name": "处理器",
@@ -416,6 +416,10 @@
         "value": 30
     },
     {
+        "name": "编辑器",
+        "value": 30
+    },
+    {
         "name": "Core",
         "value": 30
     },
@@ -425,10 +429,6 @@
     },
     {
         "name": "详细信息",
-        "value": 29
-    },
-    {
-        "name": "编辑器",
         "value": 29
     },
     {
