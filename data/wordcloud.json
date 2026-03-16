@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 382
+        "value": 388
     },
     {
         "name": "Docker",
@@ -88,6 +88,10 @@
         "value": 105
     },
     {
+        "name": "Server",
+        "value": 105
+    },
+    {
         "name": "Web",
         "value": 101
     },
@@ -97,7 +101,11 @@
     },
     {
         "name": "防火墙",
-        "value": 87
+        "value": 89
+    },
+    {
+        "name": "Zabbix",
+        "value": 85
     },
     {
         "name": "命令行",
@@ -109,10 +117,6 @@
     },
     {
         "name": "二进制",
-        "value": 81
-    },
-    {
-        "name": "Server",
         "value": 81
     },
     {
@@ -140,10 +144,6 @@
         "value": 73
     },
     {
-        "name": "Zabbix",
-        "value": 71
-    },
-    {
         "name": "Prometheus",
         "value": 70
     },
@@ -162,6 +162,10 @@
     {
         "name": "Service",
         "value": 62
+    },
+    {
+        "name": "主机名",
+        "value": 60
     },
     {
         "name": "Host",
@@ -196,10 +200,6 @@
         "value": 55
     },
     {
-        "name": "主机名",
-        "value": 53
-    },
-    {
         "name": "优先级",
         "value": 52
     },
@@ -226,6 +226,10 @@
     {
         "name": "Content",
         "value": 46
+    },
+    {
+        "name": "Agent",
+        "value": 45
     },
     {
         "name": "Package",
@@ -268,11 +272,11 @@
         "value": 43
     },
     {
-        "name": "相当于",
-        "value": 41
+        "name": "第一次",
+        "value": 42
     },
     {
-        "name": "第一次",
+        "name": "相当于",
         "value": 41
     },
     {
@@ -793,10 +797,6 @@
     },
     {
         "name": "Mac",
-        "value": 19
-    },
-    {
-        "name": "Agent",
         "value": 19
     },
     {
@@ -1340,6 +1340,10 @@
         "value": 13
     },
     {
+        "name": "Hostname",
+        "value": 13
+    },
+    {
         "name": "管理工具",
         "value": 13
     },
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "生命周期",
-        "value": 13
-    },
-    {
-        "name": "Internet",
         "value": 13
     }
 ]
