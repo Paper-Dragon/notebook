@@ -140,6 +140,10 @@
         "value": 74
     },
     {
+        "name": "路由器",
+        "value": 74
+    },
+    {
         "name": "服务端",
         "value": 73
     },
@@ -150,10 +154,6 @@
     {
         "name": "环境变量",
         "value": 69
-    },
-    {
-        "name": "路由器",
-        "value": 68
     },
     {
         "name": "Namespace",
@@ -632,6 +632,10 @@
         "value": 23
     },
     {
+        "name": "Router",
+        "value": 23
+    },
+    {
         "name": "Log",
         "value": 22
     },
@@ -1028,6 +1032,10 @@
         "value": 17
     },
     {
+        "name": "Base",
+        "value": 17
+    },
+    {
         "name": "Push",
         "value": 17
     },
@@ -1037,6 +1045,10 @@
     },
     {
         "name": "Option",
+        "value": 17
+    },
+    {
+        "name": "Cisco",
         "value": 17
     },
     {
@@ -1097,10 +1109,6 @@
     },
     {
         "name": "Storage",
-        "value": 16
-    },
-    {
-        "name": "Base",
         "value": 16
     },
     {
@@ -1389,14 +1397,6 @@
     },
     {
         "name": "系统启动",
-        "value": 13
-    },
-    {
-        "name": "十进制",
-        "value": 13
-    },
-    {
-        "name": "生命周期",
         "value": 13
     }
 ]
