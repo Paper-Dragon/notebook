@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-package_url=https://gitee.com/spark-store-project/spark-store/releases/download/4.5.2/spark-store_4.5.2-2_amd64.deb
+package_url=https://gitee.com/spark-store-project/spark-store/releases/download/4.8.3/spark-store_4.8.3_amd64.deb
 dependencies=${download_url}/app/all.zip
 
 

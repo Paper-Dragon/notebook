@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-Version=v4.7.2.0
+Version=v4.8.1.0
 package="todesk-${Version}-amd64.deb" 
 
 OS="$(uname)"
@@ -24,7 +24,7 @@ install_todesk(){
     case $DISTRO in
     "ubuntu")
         case $VERSION in
-        "24.04"|"22.04")
+        "24.04"|"22.04"|"26.04")
             sed -i 's/#WaylandEnable=false/WaylandEnable=false/' /etc/gdm3/custom.conf
             read -p "当前系统 安装完 todesk 需要重启？ (yes/no): " answer
             if [[ "$answer" =~ ^[Yy][Ee][Ss]$ ]]; then

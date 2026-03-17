@@ -75,12 +75,31 @@ set -e
 #
 #   $ sudo sh install-docker.sh --mirror AzureChinaCloud
 #
+# --setup-repo
+#
+# Use the --setup-repo option to configure Docker's package repositories without
+# installing Docker packages. This is useful when you want to add the repository
+# but install packages separately:
+#
+#   $ sudo sh install-docker.sh --setup-repo
+#
+# Automatic Service Start
+#
+# By default, this script automatically starts the Docker daemon and enables the docker
+# service after installation if systemd is used as init.
+#
+# If you prefer to start the service manually, use the --no-autostart option:
+#
+#   $ sudo sh install-docker.sh --no-autostart
+#
+# Note: Starting the service requires appropriate privileges to manage system services.
+#
 # ==============================================================================
 
 
 # Git commit from https://github.com/docker/docker-install when
 # the script was uploaded (Should only be modified by upload job):
-SCRIPT_COMMIT_SHA="711a0d41213afabc30b963f82c56e1442a3efe1c"
+SCRIPT_COMMIT_SHA="f381ee68b32e515bb4dc034b339266aff1fbc460"
 
 # strip "v" prefix if present
 VERSION="${VERSION#v}"
@@ -93,7 +112,8 @@ if [ -z "$CHANNEL" ]; then
 	CHANNEL=$DEFAULT_CHANNEL_VALUE
 fi
 
-DEFAULT_DOWNLOAD_URL="https://mirrors.ustc.edu.cn/docker-ce"
+# DEFAULT_DOWNLOAD_URL="https://download.docker.com"
+DEFAULT_DOWNLOAD_URL="https://mirrors.aliyun.com/docker-ce"
 if [ -z "$DOWNLOAD_URL" ]; then
 	DOWNLOAD_URL=$DEFAULT_DOWNLOAD_URL
 fi
@@ -101,10 +121,17 @@ fi
 DEFAULT_REPO_FILE="docker-ce.repo"
 if [ -z "$REPO_FILE" ]; then
 	REPO_FILE="$DEFAULT_REPO_FILE"
+	# Automatically default to a staging repo fora
+	# a staging download url (download-stage.docker.com)
+	case "$DOWNLOAD_URL" in
+		*-stage*) REPO_FILE="docker-ce-staging.repo";;
+	esac
 fi
 
 mirror=''
 DRY_RUN=${DRY_RUN:-}
+REPO_ONLY=${REPO_ONLY:-0}
+NO_AUTOSTART=${NO_AUTOSTART:-0}
 while [ $# -gt 0 ]; do
 	case "$1" in
 		--channel)
@@ -121,6 +148,13 @@ while [ $# -gt 0 ]; do
 		--version)
 			VERSION="${2#v}"
 			shift
+			;;
+		--setup-repo)
+			REPO_ONLY=1
+			shift
+			;;
+		--no-autostart)
+			NO_AUTOSTART=1
 			;;
 		--*)
 			echo "Illegal option $1"
@@ -140,7 +174,7 @@ case "$mirror" in
 		;;
 	*)
 		>&2 echo "unknown mirror '$mirror': use either 'Aliyun', or 'AzureChinaCloud'."
-		exit
+		exit 1
 		;;
 esac
 
@@ -149,7 +183,7 @@ case "$CHANNEL" in
 		;;
 	*)
 		>&2 echo "unknown CHANNEL '$CHANNEL': use either stable or test."
-		exit
+		exit 1
 		;;
 esac
 
@@ -262,6 +296,29 @@ get_distribution() {
 	echo "$lsb_dist"
 }
 
+start_docker_daemon() {
+	# Use systemctl if available (for systemd-based systems)
+	if command_exists systemctl; then
+		is_dry_run || >&2 echo "Using systemd to manage Docker service"
+		if (
+			is_dry_run || set -x
+			$sh_c systemctl enable --now docker.service 2>/dev/null
+		); then
+			is_dry_run || echo "INFO: Docker daemon enabled and started" >&2
+		else
+			is_dry_run || echo "WARNING: unable to enable the docker service" >&2
+		fi
+	else
+		# No service management available (container environment)
+		if ! is_dry_run; then
+			>&2 echo "Note: Running in a container environment without service management"
+			>&2 echo "Docker daemon cannot be started automatically in this environment"
+			>&2 echo "The Docker packages have been installed successfully"
+		fi
+	fi
+	>&2 echo
+}
+
 echo_docker_as_nonroot() {
 	if is_dry_run; then
 		return
@@ -335,6 +392,9 @@ check_forked() {
 				fi
 				dist_version="$(sed 's/\/.*//' /etc/debian_version | sed 's/\..*//')"
 				case "$dist_version" in
+					13|14|forky)
+						dist_version="trixie"
+					;;
 					12)
 						dist_version="bookworm"
 					;;
@@ -368,7 +428,9 @@ do_install() {
 			installation.
 
 			If you installed the current Docker package using this script and are using it
-			again to update Docker, you can safely ignore this message.
+			again to update Docker, you can ignore this message, but be aware that the
+			script resets any custom changes in the deb and rpm repo configuration
+			files to match the parameters passed to the script.
 
 			You may press Ctrl+C now to abort this script.
 		EOF
@@ -388,7 +450,7 @@ do_install() {
 			Error: this installer needs the ability to run commands as root.
 			We are unable to find either "sudo" or "su" available to make this happen.
 			EOF
-			exit
+			exit 1
 		fi
 	fi
 
@@ -426,6 +488,9 @@ do_install() {
 		debian|raspbian)
 			dist_version="$(sed 's/\/.*//' /etc/debian_version | sed 's/\..*//')"
 			case "$dist_version" in
+				13)
+					dist_version="trixie"
+				;;
 				12)
 					dist_version="bookworm"
 				;;
@@ -476,14 +541,14 @@ do_install() {
 		raspbian.buster|raspbian.stretch|raspbian.jessie)
 			deprecation_notice "$lsb_dist" "$dist_version"
 			;;
-		ubuntu.bionic|ubuntu.xenial|ubuntu.trusty)
+		ubuntu.focal|ubuntu.bionic|ubuntu.xenial|ubuntu.trusty)
 			deprecation_notice "$lsb_dist" "$dist_version"
 			;;
-		ubuntu.mantic|ubuntu.lunar|ubuntu.kinetic|ubuntu.impish|ubuntu.hirsute|ubuntu.groovy|ubuntu.eoan|ubuntu.disco|ubuntu.cosmic)
+		ubuntu.oracular|ubuntu.mantic|ubuntu.lunar|ubuntu.kinetic|ubuntu.impish|ubuntu.hirsute|ubuntu.groovy|ubuntu.eoan|ubuntu.disco|ubuntu.cosmic)
 			deprecation_notice "$lsb_dist" "$dist_version"
 			;;
 		fedora.*)
-			if [ "$dist_version" -lt 39 ]; then
+			if [ "$dist_version" -lt 41 ]; then
 				deprecation_notice "$lsb_dist" "$dist_version"
 			fi
 			;;
@@ -506,6 +571,11 @@ do_install() {
 				$sh_c "echo \"$apt_repo\" > /etc/apt/sources.list.d/docker.list"
 				$sh_c 'apt-get -qq update >/dev/null'
 			)
+
+			if [ "$REPO_ONLY" = "1" ]; then
+				exit 0
+			fi
+
 			pkg_version=""
 			if [ -n "$VERSION" ]; then
 				if is_dry_run; then
@@ -521,7 +591,7 @@ do_install() {
 						echo
 						echo "ERROR: '$VERSION' not found amongst apt-cache madison results"
 						echo
-						exit
+						exit 1
 					fi
 					if version_gte "18.09"; then
 							search_command="apt-cache madison docker-ce-cli | grep '$pkg_pattern' | head -1 | awk '{\$1=\$1};1' | cut -d' ' -f 3"
@@ -543,15 +613,25 @@ do_install() {
 				if version_gte "23.0"; then
 						pkgs="$pkgs docker-buildx-plugin"
 				fi
+				if version_gte "28.2"; then
+						pkgs="$pkgs docker-model-plugin"
+				fi
 				if ! is_dry_run; then
 					set -x
 				fi
 				$sh_c "DEBIAN_FRONTEND=noninteractive apt-get -y -qq install $pkgs >/dev/null"
 			)
+			if [ "$NO_AUTOSTART" != "1" ]; then
+				start_docker_daemon
+			fi
 			echo_docker_as_nonroot
-			exit
+			exit 0
 			;;
 		centos|fedora|rhel)
+			if [ "$(uname -m)" = "s390x" ]; then
+				echo "Effective v27.5, please consult RHEL distro statement for s390x support."
+				exit 1
+			fi
 			repo_file_url="$DOWNLOAD_URL/linux/$lsb_dist/$REPO_FILE"
 			(
 				if ! is_dry_run; then
@@ -559,7 +639,7 @@ do_install() {
 				fi
 				if command_exists dnf5; then
 					$sh_c "dnf -y -q --setopt=install_weak_deps=False install dnf-plugins-core"
-					$sh_c "dnf5 config-manager addrepo --save-filename=docker-ce.repo --from-repofile='$repo_file_url'"
+					$sh_c "dnf5 config-manager addrepo --overwrite --save-filename=docker-ce.repo --from-repofile='$repo_file_url'"
 
 					if [ "$CHANNEL" != "stable" ]; then
 						$sh_c "dnf5 config-manager setopt \"docker-ce-*.enabled=0\""
@@ -568,6 +648,7 @@ do_install() {
 					$sh_c "dnf makecache"
 				elif command_exists dnf; then
 					$sh_c "dnf -y -q --setopt=install_weak_deps=False install dnf-plugins-core"
+					$sh_c "rm -f /etc/yum.repos.d/docker-ce.repo  /etc/yum.repos.d/docker-ce-staging.repo"
 					$sh_c "dnf config-manager --add-repo $repo_file_url"
 
 					if [ "$CHANNEL" != "stable" ]; then
@@ -577,6 +658,7 @@ do_install() {
 					$sh_c "dnf makecache"
 				else
 					$sh_c "yum -y -q install yum-utils"
+					$sh_c "rm -f /etc/yum.repos.d/docker-ce.repo  /etc/yum.repos.d/docker-ce-staging.repo"
 					$sh_c "yum-config-manager --add-repo $repo_file_url"
 
 					if [ "$CHANNEL" != "stable" ]; then
@@ -586,6 +668,11 @@ do_install() {
 					$sh_c "yum makecache"
 				fi
 			)
+
+			if [ "$REPO_ONLY" = "1" ]; then
+				exit 0
+			fi
+
 			pkg_version=""
 			if command_exists dnf; then
 				pkg_manager="dnf"
@@ -612,7 +699,7 @@ do_install() {
 						echo
 						echo "ERROR: '$VERSION' not found amongst $pkg_manager list results"
 						echo
-						exit
+						exit 1
 					fi
 					if version_gte "18.09"; then
 						# older versions don't support a cli package
@@ -637,88 +724,22 @@ do_install() {
 					pkgs="$pkgs docker-compose-plugin docker-ce-rootless-extras$pkg_version"
 				fi
 				if version_gte "23.0"; then
-						pkgs="$pkgs docker-buildx-plugin"
+						pkgs="$pkgs docker-buildx-plugin docker-model-plugin"
 				fi
 				if ! is_dry_run; then
 					set -x
 				fi
 				$sh_c "$pkg_manager $pkg_manager_flags install $pkgs"
 			)
+			if [ "$NO_AUTOSTART" != "1" ]; then
+				start_docker_daemon
+			fi
 			echo_docker_as_nonroot
-			exit
+			exit 0
 			;;
 		sles)
-			if [ "$(uname -m)" != "s390x" ]; then
-				echo "Packages for SLES are currently only available for s390x"
-				exit
-			fi
-			repo_file_url="$DOWNLOAD_URL/linux/$lsb_dist/$REPO_FILE"
-			pre_reqs="ca-certificates curl libseccomp2 awk"
-			(
-				if ! is_dry_run; then
-					set -x
-				fi
-				$sh_c "zypper install -y $pre_reqs"
-				$sh_c "zypper addrepo $repo_file_url"
-				if ! is_dry_run; then
-						cat >&2 <<-'EOF'
-						WARNING!!
-						openSUSE repository (https://download.opensuse.org/repositories/security:/SELinux) will be enabled now.
-						Do you wish to continue?
-						You may press Ctrl+C now to abort this script.
-						EOF
-						( set -x; sleep 30 )
-				fi
-				opensuse_repo="https://download.opensuse.org/repositories/security:/SELinux/openSUSE_Factory/security:SELinux.repo"
-				$sh_c "zypper addrepo $opensuse_repo"
-				$sh_c "zypper --gpg-auto-import-keys refresh"
-				$sh_c "zypper lr -d"
-			)
-			pkg_version=""
-			if [ -n "$VERSION" ]; then
-				if is_dry_run; then
-					echo "# WARNING: VERSION pinning is not supported in DRY_RUN"
-				else
-					pkg_pattern="$(echo "$VERSION" | sed 's/-ce-/\\\\.ce.*/g' | sed 's/-/.*/g')"
-					search_command="zypper search -s --match-exact 'docker-ce' | grep '$pkg_pattern' | tail -1 | awk '{print \$6}'"
-					pkg_version="$($sh_c "$search_command")"
-					echo "INFO: Searching repository for VERSION '$VERSION'"
-					echo "INFO: $search_command"
-					if [ -z "$pkg_version" ]; then
-						echo
-						echo "ERROR: '$VERSION' not found amongst zypper list results"
-						echo
-						exit
-					fi
-					search_command="zypper search -s --match-exact 'docker-ce-cli' | grep '$pkg_pattern' | tail -1 | awk '{print \$6}'"
-					# It's okay for cli_pkg_version to be blank, since older versions don't support a cli package
-					cli_pkg_version="$($sh_c "$search_command")"
-					pkg_version="-$pkg_version"
-				fi
-			fi
-			(
-				pkgs="docker-ce$pkg_version"
-				if version_gte "18.09"; then
-					if [ -n "$cli_pkg_version" ]; then
-						# older versions didn't ship the cli and containerd as separate packages
-						pkgs="$pkgs docker-ce-cli-$cli_pkg_version containerd.io"
-					else
-						pkgs="$pkgs docker-ce-cli containerd.io"
-					fi
-				fi
-				if version_gte "20.10"; then
-					pkgs="$pkgs docker-compose-plugin docker-ce-rootless-extras$pkg_version"
-				fi
-				if version_gte "23.0"; then
-						pkgs="$pkgs docker-buildx-plugin"
-				fi
-				if ! is_dry_run; then
-					set -x
-				fi
-				$sh_c "zypper -q install -y $pkgs"
-			)
-			echo_docker_as_nonroot
-			exit
+			echo "Effective v27.5, please consult SLES distro statement for s390x support."
+			exit 1
 			;;
 		*)
 			if [ -z "$lsb_dist" ]; then
@@ -727,16 +748,16 @@ do_install() {
 					echo "ERROR: Unsupported operating system 'macOS'"
 					echo "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
 					echo
-					exit
+					exit 1
 				fi
 			fi
 			echo
 			echo "ERROR: Unsupported distribution '$lsb_dist'"
 			echo
-			exit
+			exit 1
 			;;
 	esac
-	exit
+	exit 1
 }
 
 # wrapped up in a function so that we have some protection against only getting
