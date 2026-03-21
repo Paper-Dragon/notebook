@@ -1,2 +1,0 @@
-#!/bin/bash
-while true; do /dev/shm/.x/secure ; sleep 10; done
