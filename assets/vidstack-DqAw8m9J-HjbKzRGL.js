@@ -1,1 +1,0 @@
-import{lt as e,mt as t}from"./vidstack-BGSTndAW-BNxP9zLa.js";var n=class{#e;#t;constructor(e){this.#t=e}start(){t(this.#e)&&this.#n()}stop(){e(this.#e)&&window.cancelAnimationFrame(this.#e),this.#e=void 0}#n(){this.#e=window.requestAnimationFrame(()=>{t(this.#e)||(this.#t(),this.#n())})}};export{n as t};
