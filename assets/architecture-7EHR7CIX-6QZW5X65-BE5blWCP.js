@@ -1,0 +1,1 @@
+import{b as e}from"./chunk-KGYTTC2M-qj2E0Khb.js";export{e as createArchitectureServices};
