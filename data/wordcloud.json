@@ -1,7 +1,7 @@
 [
     {
         "name": "Linux",
-        "value": 390
+        "value": 391
     },
     {
         "name": "Docker",
@@ -33,7 +33,7 @@
     },
     {
         "name": "Windows",
-        "value": 155
+        "value": 163
     },
     {
         "name": "处理器",
@@ -68,12 +68,12 @@
         "value": 116
     },
     {
-        "name": "Redis",
-        "value": 110
+        "name": "浏览器",
+        "value": 114
     },
     {
-        "name": "浏览器",
-        "value": 109
+        "name": "Redis",
+        "value": 110
     },
     {
         "name": "数据包",
@@ -97,7 +97,7 @@
     },
     {
         "name": "管理员",
-        "value": 90
+        "value": 101
     },
     {
         "name": "宿主机",
@@ -116,12 +116,12 @@
         "value": 84
     },
     {
-        "name": "用户名",
+        "name": "二进制",
         "value": 82
     },
     {
-        "name": "二进制",
-        "value": 81
+        "name": "用户名",
+        "value": 82
     },
     {
         "name": "默认值",
@@ -136,15 +136,15 @@
         "value": 76
     },
     {
+        "name": "文件名",
+        "value": 75
+    },
+    {
         "name": "服务端",
         "value": 74
     },
     {
         "name": "路由器",
-        "value": 74
-    },
-    {
-        "name": "文件名",
         "value": 74
     },
     {
@@ -348,11 +348,19 @@
         "value": 35
     },
     {
+        "name": "摄像头",
+        "value": 35
+    },
+    {
         "name": "Array",
         "value": 35
     },
     {
         "name": "交换机",
+        "value": 34
+    },
+    {
+        "name": "Microsoft",
         "value": 34
     },
     {
@@ -380,7 +388,7 @@
         "value": 33
     },
     {
-        "name": "Microsoft",
+        "name": "Go",
         "value": 33
     },
     {
@@ -400,10 +408,6 @@
         "value": 33
     },
     {
-        "name": "Go",
-        "value": 32
-    },
-    {
         "name": "Local",
         "value": 32
     },
@@ -417,6 +421,10 @@
     },
     {
         "name": "第二个",
+        "value": 31
+    },
+    {
+        "name": "重命名",
         "value": 31
     },
     {
@@ -508,6 +516,10 @@
         "value": 27
     },
     {
+        "name": "自动化",
+        "value": 26
+    },
+    {
         "name": "请参阅",
         "value": 26
     },
@@ -538,10 +550,6 @@
     {
         "name": "Systemback",
         "value": 26
-    },
-    {
-        "name": "自动化",
-        "value": 25
     },
     {
         "name": "分布式",
@@ -700,6 +708,10 @@
         "value": 21
     },
     {
+        "name": "Tools",
+        "value": 21
+    },
+    {
         "name": "归一化",
         "value": 21
     },
@@ -745,10 +757,6 @@
     },
     {
         "name": "Shell",
-        "value": 20
-    },
-    {
-        "name": "Tools",
         "value": 20
     },
     {
@@ -976,6 +984,10 @@
         "value": 17
     },
     {
+        "name": "Runtime",
+        "value": 17
+    },
+    {
         "name": "进一步",
         "value": 17
     },
@@ -1009,10 +1021,6 @@
     },
     {
         "name": "Chain",
-        "value": 17
-    },
-    {
-        "name": "重命名",
         "value": 17
     },
     {
@@ -1100,6 +1108,10 @@
         "value": 16
     },
     {
+        "name": "Release",
+        "value": 16
+    },
+    {
         "name": "Storage",
         "value": 16
     },
@@ -1124,6 +1136,10 @@
         "value": 16
     },
     {
+        "name": "Project",
+        "value": 15
+    },
+    {
         "name": "Documentation",
         "value": 15
     },
@@ -1144,7 +1160,7 @@
         "value": 15
     },
     {
-        "name": "Runtime",
+        "name": "图形界面",
         "value": 15
     },
     {
@@ -1153,6 +1169,14 @@
     },
     {
         "name": "Port",
+        "value": 15
+    },
+    {
+        "name": "版本信息",
+        "value": 15
+    },
+    {
+        "name": "错误信息",
         "value": 15
     },
     {
@@ -1181,6 +1205,10 @@
     },
     {
         "name": "Forwarded",
+        "value": 15
+    },
+    {
+        "name": "有效期",
         "value": 15
     },
     {
@@ -1228,10 +1256,6 @@
         "value": 14
     },
     {
-        "name": "Project",
-        "value": 14
-    },
-    {
         "name": "End",
         "value": 14
     },
@@ -1240,19 +1264,11 @@
         "value": 14
     },
     {
-        "name": "图形界面",
-        "value": 14
-    },
-    {
         "name": "二维码",
         "value": 14
     },
     {
         "name": "重新启动",
-        "value": 14
-    },
-    {
-        "name": "版本信息",
         "value": 14
     },
     {
@@ -1269,10 +1285,6 @@
     },
     {
         "name": "发送给",
-        "value": 14
-    },
-    {
-        "name": "错误信息",
         "value": 14
     },
     {
@@ -1297,10 +1309,6 @@
     },
     {
         "name": "Forbidden",
-        "value": 14
-    },
-    {
-        "name": "有效期",
         "value": 14
     },
     {
@@ -1389,14 +1397,6 @@
     },
     {
         "name": "Authorization",
-        "value": 13
-    },
-    {
-        "name": "一致性",
-        "value": 13
-    },
-    {
-        "name": "管理工具",
         "value": 13
     }
 ]
