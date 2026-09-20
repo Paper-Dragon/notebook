@@ -45,7 +45,7 @@
     },
     {
         "name": "Kubernetes",
-        "value": 140
+        "value": 142
     },
     {
         "name": "Python",
@@ -61,7 +61,7 @@
     },
     {
         "name": "Nginx",
-        "value": 119
+        "value": 120
     },
     {
         "name": "Ubuntu",
