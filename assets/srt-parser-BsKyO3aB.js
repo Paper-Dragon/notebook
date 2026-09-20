@@ -1,0 +1,2 @@
+import{VTTCue as e,n as t,r as n}from"./prod-DhHZ1xm2.js";var r=/,/g,i=`-->`,a=class extends n{parse(n,r){if(n===``)this.c&&=(this.l.push(this.c),this.h.onCue?.(this.c),null),this.e=t.None;else if(this.e===t.Cue)this.c.text+=(this.c.text?`
+`:``)+n;else if(n.includes(i)){let i=this.q(n,r);i&&(this.c=new e(i[0],i[1],i[2].join(` `)),this.c.id=this.n,this.e=t.Cue)}this.n=n}q(e,t){return super.q(e.replace(r,`.`),t)}};function o(){return new a}export{o as default};
