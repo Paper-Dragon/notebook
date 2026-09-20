@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 20 Sep 2026 00:45:31 GMT</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2026 00:45:31 GMT</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2026 00:54:43 GMT</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2026 00:54:43 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>VMware</category>
@@ -15,6 +15,33 @@
     <category>Project</category>
     <category>Nginx-OpenResty</category>
     <category>Tools</category>
+    <item>
+      <title>Syncthing 实现多设备文件同步与备份</title>
+      <link>https://www.geekery.cn/note-book/misc/Syncthing%E5%AE%9E%E7%8E%B0%E5%A4%9A%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%A4%87%E4%BB%BD.html</link>
+      <guid>https://www.geekery.cn/note-book/misc/Syncthing%E5%AE%9E%E7%8E%B0%E5%A4%9A%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E4%B8%8E%E5%A4%87%E4%BB%BD.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">Syncthing 实现多设备文件同步与备份</source>
+      <description>Syncthing 实现多设备文件同步与备份 什么是 Syncthing Syncthing 是一个开源的、去中心化的持续文件同步程序，能够在两台或多台设备之间实时同步文件。它具备以下核心特性： 去中心化：没有中央服务器，数据仅存储在你自己的设备上 端到端加密：所有通信使用 TLS 加密，支持完美前向保密 强认证：每个设备通过加密证书进行唯一标识 开放...</description>
+      <pubDate>Sun, 20 Sep 2026 00:48:41 GMT</pubDate>
+      <content:encoded><![CDATA[
+<h2>什么是 Syncthing</h2>
+<p>Syncthing 是一个开源的、去中心化的持续文件同步程序，能够在两台或多台设备之间实时同步文件。它具备以下核心特性：</p>
+<ol>
+<li>去中心化：没有中央服务器，数据仅存储在你自己的设备上</li>
+<li>端到端加密：所有通信使用 TLS 加密，支持完美前向保密</li>
+<li>强认证：每个设备通过加密证书进行唯一标识</li>
+<li>开放协议：同步协议完全公开文档化</li>
+<li>跨平台：支持 Windows、macOS、Linux、FreeBSD、Android 等</li>
+</ol>
+<blockquote>
+<p>官网：<a href="https://syncthing.net/" target="_blank" rel="noopener noreferrer">https://syncthing.net/</a>
+GitHub：<a href="https://github.com/syncthing/syncthing" target="_blank" rel="noopener noreferrer">https://github.com/syncthing/syncthing</a>
+文档：<a href="https://docs.syncthing.net/" target="_blank" rel="noopener noreferrer">https://docs.syncthing.net/</a></p>
+</blockquote>
+<h2>典型应用场景</h2>
+<p>| 场景      | 说明                        |
+|</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>五次开智</title>
       <link>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E4%BA%94%E6%AC%A1%E5%BC%80%E6%99%BA.html</link>
@@ -8212,106 +8239,6 @@ gitlab</p>
 <li>在修改网络配置后及时更新OpenStack相关配置文件</li>
 </ul>
 ]]></content:encoded>
-    </item>
-    <item>
-      <title>Cisco路由器配置ipv4和ipv6的VTY账户密码</title>
-      <link>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AEipv4%E5%92%8Cipv6%E7%9A%84VTY%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81.html</link>
-      <guid>https://www.geekery.cn/note-book/%E4%BA%A4%E6%8D%A2%E6%9C%BA/Cisco%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AEipv4%E5%92%8Cipv6%E7%9A%84VTY%E8%B4%A6%E6%88%B7%E5%AF%86%E7%A0%81.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">Cisco路由器配置ipv4和ipv6的VTY账户密码</source>
-      <description>Cisco路由器配置ipv4和ipv6的VTY账户密码 本指南旨在详细描述如何配置两个分支机构的网络设备。分支机构 A 和 B 分别采用 IPv4 和 IPv6 地址方案。学习本文档，帮助网络管理员可以了解如何设置主机名、密码、接口 IP 地址以及其他基本的网络配置，以确保网络的安全性和稳定性。 Branch-A IPv4 配置 进入特权模式 在开始配...</description>
-      <pubDate>Thu, 01 Aug 2024 06:53:44 GMT</pubDate>
-      <content:encoded><![CDATA[
-<blockquote>
-<p>本指南旨在详细描述如何配置两个分支机构的网络设备。分支机构 A 和 B 分别采用 IPv4 和 IPv6 地址方案。学习本文档，帮助网络管理员可以了解如何设置主机名、密码、接口 IP 地址以及其他基本的网络配置，以确保网络的安全性和稳定性。</p>
-</blockquote>
-<h2>Branch-A IPv4 配置</h2>
-<h3>进入特权模式</h3>
-<p>在开始配置之前，需要进入设备的特权模式。可以使用以下命令：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">enable</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>进入全局配置模式</h3>
-<p>进入全局配置模式后，可以进行设备的全局设置：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">configure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> terminal</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>设置主机名</h3>
-<p>设置主机名有助于网络管理和识别：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">hostname</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Branch-A</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>设置公告标语</h3>
-<p>公告标语用于在用户连接到设备时显示重要信息：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">banner</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> motd</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #Branch-A#</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置特权 EXEC 密码</h3>
-<p>为确保安全，设置特权 EXEC 密码：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">enable</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> secret</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> class</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置控制台密码</h3>
-<p>控制台密码用于本地设备访问的身份验证：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">line</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> console</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">password</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cisco</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">login</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>加密所有密码</h3>
-<p>为提高安全性，加密所有已设置的密码：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">service</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> password-encryption</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置 VTY 密码</h3>
-<p>VTY 密码用于远程访问的身份验证：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">line</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vty</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 15</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">password</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cisco</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>1.9 配置接口 IP 地址</h3>
-<p>配置每个接口的 IP 地址以便于网络通信：</p>
-<p>接口 g0/2：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">int</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> g0/2</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 172.20.31.254</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 255.255.255.252</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接口 g0/0：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">int</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> g0/0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 172.20.16.1</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 255.255.254.0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接口 g0/1：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">int</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> g0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ip</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 172.20.18.1</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 255.255.255.0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2>Branch-B IPv6 配置</h2>
-<h3>进入特权模式</h3>
-<p>与分支 A 相同，首先进入特权模式：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">enable</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>进入全局配置模式</h3>
-<p>进入全局配置模式后开始配置：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">configure</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> terminal</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>设置主机名</h3>
-<p>设置主机名为 Branch-B：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">hostname</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> Branch-B</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>设置公告标语</h3>
-<p>设置公告标语：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">banner</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> motd</span><span style="--shiki-light:#A0A1A7;--shiki-light-font-style:italic;--shiki-dark:#7F848E;--shiki-dark-font-style:italic"> #Branch-B#</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置特权 EXEC 密码</h3>
-<p>设置特权 EXEC 密码以保护设备：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">enable</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> secret</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> class</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置控制台密码</h3>
-<p>配置控制台密码以保护本地访问：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">line</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> console</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">password</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cisco</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">login</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3>加密所有密码</h3>
-<p>加密所有密码以防止未授权访问：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">service</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> password-encryption</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><h3>配置 VTY 密码</h3>
-<p>配置 VTY 密码以保护远程访问：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">line</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> vty</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 0</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66"> 15</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">password</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> cisco</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>配置接口 IPv6 地址</h3>
-<p>配置每个接口的 IPv6 地址：</p>
-<p>接口 g0/2：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">int</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> g0/2</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2001:DB8:FFFF:FFFF::2/64</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FE80::B</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-local</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接口 g0/0：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">int</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> g0/0</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2001:DB8:FADE:00FF::1/64</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FE80::B</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-local</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接口 g0/1：</p>
-<div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">int</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> g0/1</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> 2001:DB8:FADE:0100::1/64</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FE80::B</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-local</span></span>
-<span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
     </item>
   </channel>
 </rss>
