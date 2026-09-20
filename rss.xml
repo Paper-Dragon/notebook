@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sun, 20 Sep 2026 01:25:36 GMT</pubDate>
-    <lastBuildDate>Sun, 20 Sep 2026 01:25:36 GMT</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2026 01:42:39 GMT</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2026 01:42:39 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>VMware</category>
@@ -5114,7 +5114,7 @@ R8</p>
 <span class="line"><span style="--shiki-light:#0184BC;--shiki-dark:#56B6C2">    echo</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> ""</span></span>
 <span class="line"><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">done</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> &#x3C; </span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">$userinfo</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>其中PRIVATE-TOKEN需要改为第一步获取到的personal access token，
-API地址http://test.gitlab.com/api/v4/users需要改为自己的gitlab服务器地址，相应的api可查看gitlab的官方文档https://docs.gitlab.com/ce/api/</p>
+API地址 <code>http://test.gitlab.com/api/v4/users</code> 需要改为自己的gitlab服务器地址，相应的api可查看gitlab的官方文档 https://docs.gitlab.com/ce/api/</p>
 <h3>三、执行脚本命令</h3>
 <p>打开shell命令窗口，找到 gitlabAddUser.sh 文件，给此文件添加可执行权限，执行gitlabAddUser.sh。</p>
 <div class="language-bash line-numbers-mode" data-highlighter="shiki" data-ext="bash" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-bash"><span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">chmod</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> +x</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> gitlabAddUser.sh</span></span>
