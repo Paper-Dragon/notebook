@@ -252,6 +252,10 @@
         "value": 44
     },
     {
+        "name": "第一次",
+        "value": 43
+    },
+    {
         "name": "Error",
         "value": 43
     },
@@ -274,10 +278,6 @@
     {
         "name": "寄存器",
         "value": 43
-    },
-    {
-        "name": "第一次",
-        "value": 42
     },
     {
         "name": "Cloudflare",

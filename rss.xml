@@ -6,8 +6,8 @@
     <link>https://www.geekery.cn/</link>
     <description>放置运维开发笔记、搜集、摘录、实践，保持好奇心，看文需谨慎，后果很严重！</description>
     <language>zh-CN</language>
-    <pubDate>Sat, 25 Jul 2026 23:56:21 GMT</pubDate>
-    <lastBuildDate>Sat, 25 Jul 2026 23:56:21 GMT</lastBuildDate>
+    <pubDate>Sun, 20 Sep 2026 00:39:01 GMT</pubDate>
+    <lastBuildDate>Sun, 20 Sep 2026 00:39:01 GMT</lastBuildDate>
     <generator>@vuepress/plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <category>VMware</category>
@@ -15,6 +15,21 @@
     <category>Project</category>
     <category>Nginx-OpenResty</category>
     <category>Tools</category>
+    <item>
+      <title>五次开智</title>
+      <link>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E4%BA%94%E6%AC%A1%E5%BC%80%E6%99%BA.html</link>
+      <guid>https://www.geekery.cn/note-book/%E7%94%9F%E6%B4%BB/%E4%BA%94%E6%AC%A1%E5%BC%80%E6%99%BA.html</guid>
+      <source url="https://www.geekery.cn/rss.xml">五次开智</source>
+      <description>五次开智 第一次开智是我发现人的性格和认知是由环境塑造的，于是令我厌恶的人，我不再讨厌，我试着推测是什么样的经历塑造了现在的他们。 第二次开智是我意识到自己陷入了认知的傲慢，发现自己经常分析他人，于是我将目光收回到自身，我知道了潜意识投射，所有关系都是我内心的显化。 第三次开智是我被现实抽打，我发现代际之间的交流，人与人之间的障碍无法轻易消除，于是我开...</description>
+      <pubDate>Sun, 20 Sep 2026 00:28:58 GMT</pubDate>
+      <content:encoded><![CDATA[
+<p>第一次开智是我发现人的性格和认知是由环境塑造的，于是令我厌恶的人，我不再讨厌，我试着推测是什么样的经历塑造了现在的他们。</p>
+<p>第二次开智是我意识到自己陷入了认知的傲慢，发现自己经常分析他人，于是我将目光收回到自身，我知道了潜意识投射，所有关系都是我内心的显化。</p>
+<p>第三次开智是我被现实抽打，我发现代际之间的交流，人与人之间的障碍无法轻易消除，于是我开始怀疑自己，怀疑世界。</p>
+<p>第四次开智是我陷入了虚无的深渊，我意识到许多事物都是没有意义的，世界是荒诞的，是否知晓与认同都无所谓。</p>
+<p>第五次开智是我陷入虚无的深渊时，做了一场梦，梦里我快死了，真切感受到了生命的消亡以及与世界的脱离，醒来后我重新思考生命的本质，发现自己还是想经历一些事物的，即使失败和伤心也无所谓，于是勇气出现了。</p>
+]]></content:encoded>
+    </item>
     <item>
       <title>硬盘不够时借用其他盘合并 VMDK 快照链</title>
       <link>https://www.geekery.cn/note-book/VMware/%E7%A1%AC%E7%9B%98%E4%B8%8D%E5%A4%9F%E6%97%B6%E5%80%9F%E7%94%A8%E5%85%B6%E4%BB%96%E7%9B%98%E5%90%88%E5%B9%B6VMDK%E5%BF%AB%E7%85%A7%E9%93%BE.html</link>
@@ -5176,7 +5191,7 @@ API地址http://test.gitlab.com/api/v4/users需要改为自己的gitlab服务器
 <p>双击iso文件进入光盘</p>
 <p>在次数打开shell，输入命令</p>
 <p>在此窗口输入setup.exe /product server，然后敲回车键。注意setup.exe与/ product之间有空格，/product与server之间有空格。</p>
-<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">setup.</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">exe</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF"> /</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">product</span><span style="--shiki-light:#C18401;--shiki-dark:#E5C07B"> server</span></span></code></pre>
+<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">setup.exe /product server</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p></p>
 <p></p>
 <div class="hint-container tip">
@@ -5892,15 +5907,15 @@ $$</p>
 <p></p>
 <h3>登录信息存放位置</h3>
 <p>用户的Firefox各种配置文件存储在自己的Appdata\Roaming目录下：</p>
-<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">C:\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Users</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">admin</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">AppData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Roaming</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Firefox</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Profiles</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\&#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">random</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> text</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>.</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">default</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span></span></code></pre>
+<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">C:\Users\admin\AppData\Roaming\Firefox\Profiles\&#x3C;random text>.default\</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>不同版本的Firefox浏览器，存放登录信息文件和存放密钥文件也不同，其中用到的加密方式也有少许不同：</p>
 <div class="language-text line-numbers-mode" data-highlighter="shiki" data-ext="text" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-text"><span class="line"><span>Firefox 版本 &#x3C;32 (key3.db, signons.sqlite)</span></span>
 <span class="line"><span>Firefox 版本 >=32 (key3.db, logins.json)</span></span>
 <span class="line"><span>Firefox 版本 >=58.0.2 (key4.db, logins.json)</span></span>
 <span class="line"><span>Firefox 版本 >=75.0 (sha1 pbkdf2 sha256 aes256 cbc used by key4.db, logins.json)</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如果Firefox 版本 &gt;=58.0.2 那么接下来需要找的两个文件路径分别是：</p>
-<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">C:\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Users</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">admin</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">AppData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Roaming</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Firefox</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Profiles</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\&#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">random</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> text</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>.</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">default</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\key4.db</span></span>
-<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">C:\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Users</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">admin</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">AppData</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Roaming</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Firefox</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">Profiles</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\&#x3C;</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75">random</span><span style="--shiki-light:#E45649;--shiki-dark:#E06C75"> text</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">>.</span><span style="--shiki-light:#A626A4;--shiki-dark:#C678DD">default</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">\logins.json</span></span></code></pre>
+<div class="language-cmd line-numbers-mode" data-highlighter="shiki" data-ext="cmd" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-cmd"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">C:\Users\admin\AppData\Roaming\Firefox\Profiles\&#x3C;random text>.default\key4.db</span></span>
+<span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">C:\Users\admin\AppData\Roaming\Firefox\Profiles\&#x3C;random text>.default\logins.json</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div></div></div><h3>登录信息存储过程</h3>
 <p>以Firefox 版本 &gt;=58.0.2为例，<code>logins.json</code>将用户所有登录信息（包括URL，用户名，密码和其他元数据）存储为JSON。值得注意的是，这些文件中的用户名和密码均经过3DES加密，然后经过ASN.1编码，最后写入base64编码的文件中，用一个测试登录信息如下所示，其中encryptedUsername和encryptedPassword就是被加密的用户名和密码：</p>
 <div class="language-json line-numbers-mode" data-highlighter="shiki" data-ext="json" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-json"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">{</span></span>
@@ -8297,34 +8312,6 @@ gitlab</p>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">ipv6</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> address</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> FE80::B</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> link-local</span></span>
 <span class="line"><span style="--shiki-light:#4078F2;--shiki-dark:#61AFEF">no</span><span style="--shiki-light:#50A14F;--shiki-dark:#98C379"> shutdown</span></span></code></pre>
 <div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>使用Powershell卸载windows默认程序</title>
-      <link>https://www.geekery.cn/note-book/Windows/%E4%BD%BF%E7%94%A8Powershell%E5%8D%B8%E8%BD%BDwindows%E9%BB%98%E8%AE%A4%E7%A8%8B%E5%BA%8F.html</link>
-      <guid>https://www.geekery.cn/note-book/Windows/%E4%BD%BF%E7%94%A8Powershell%E5%8D%B8%E8%BD%BDwindows%E9%BB%98%E8%AE%A4%E7%A8%8B%E5%BA%8F.html</guid>
-      <source url="https://www.geekery.cn/rss.xml">使用Powershell卸载windows默认程序</source>
-      <description>使用Powershell卸载windows默认程序 管理员身份打开Powershell 输入 Win 键打开开始菜单，输入Powershell，然后选择管理员身份运行。 显示：左键单击Windows Powershell（管理员） 在这里插入图片描述 寻找你要卸载的程序 （这里以TranslatorforMicrosoftEdge为例） 你可能记不住程...</description>
-      <pubDate>Sun, 28 Jul 2024 06:09:33 GMT</pubDate>
-      <content:encoded><![CDATA[
-<h2>管理员身份打开Powershell</h2>
-<p>输入 <kbd>Win</kbd> 键打开开始菜单，输入Powershell，然后选择管理员身份运行。</p>
-<p>显示：左键单击Windows Powershell（管理员）</p>
-<p></p>
-<h2>寻找你要卸载的程序</h2>
-<p>（这里以TranslatorforMicrosoftEdge为例）</p>
-<p>你可能记不住程序的全名，使用*进行代替,进行模糊搜索，其实除了程序开发者外的其他人，或许没有人能够记住程序的全名了吧！！</p>
-<p>使用get-appxpackage <em>edge</em>命令进行模糊搜索（你想要卸载什么程序就将edge换为什么程序）
-PS：get-appxpackage [你要卸载的程序]</p>
-<p>复制<code>PackageFullName</code>（包全名）备用在这个例子中即</p>
-<div class="language-powershell line-numbers-mode" data-highlighter="shiki" data-ext="powershell" style="--shiki-light:#383A42;--shiki-dark:#abb2bf;--shiki-light-bg:#FAFAFA;--shiki-dark-bg:#282c34"><pre class="shiki shiki-themes one-light one-dark-pro vp-code"><code class="language-powershell"><span class="line"><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">Microsoft.TranslatorforMicrosoftEdge_0.</span><span style="--shiki-light:#986801;--shiki-dark:#D19A66">91.51</span><span style="--shiki-light:#383A42;--shiki-dark:#ABB2BF">.0_neutral_8wekyb3d8bbwe</span></span></code></pre>
-<div class="line-numbers" aria-hidden="true" style="counter-reset:line-number 0"><div class="line-number"></div></div></div><p>如图</p>
-<p></p>
-<h2>使用命令卸载程序</h2>
-<p>1、remove-appxpackage [你要卸载的包全名]</p>
-<p>2、打回车<kbd>Enter</kbd></p>
-<p>3、程序自动卸载</p>
-<p></p>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
