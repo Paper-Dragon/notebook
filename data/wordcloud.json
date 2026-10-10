@@ -33,7 +33,7 @@
     },
     {
         "name": "Git",
-        "value": 161
+        "value": 160
     },
     {
         "name": "处理器",
@@ -113,7 +113,7 @@
     },
     {
         "name": "命令行",
-        "value": 85
+        "value": 86
     },
     {
         "name": "用户名",
@@ -157,7 +157,7 @@
     },
     {
         "name": "文件夹",
-        "value": 67
+        "value": 68
     },
     {
         "name": "Namespace",
@@ -280,12 +280,12 @@
         "value": 43
     },
     {
-        "name": "相当于",
+        "name": "Cloudflare",
         "value": 42
     },
     {
-        "name": "Cloudflare",
-        "value": 41
+        "name": "相当于",
+        "value": 42
     },
     {
         "name": "版本号",
@@ -816,6 +816,10 @@
         "value": 19
     },
     {
+        "name": "Release",
+        "value": 19
+    },
+    {
         "name": "Memory",
         "value": 19
     },
@@ -1036,10 +1040,6 @@
         "value": 17
     },
     {
-        "name": "Release",
-        "value": 17
-    },
-    {
         "name": "Action",
         "value": 17
     },
@@ -1089,6 +1089,10 @@
     },
     {
         "name": "稳定性",
+        "value": 16
+    },
+    {
+        "name": "有效期",
         "value": 16
     },
     {
@@ -1172,6 +1176,10 @@
         "value": 15
     },
     {
+        "name": "输入框",
+        "value": 15
+    },
+    {
         "name": "一次性",
         "value": 15
     },
@@ -1217,10 +1225,6 @@
     },
     {
         "name": "Forwarded",
-        "value": 15
-    },
-    {
-        "name": "有效期",
         "value": 15
     },
     {
@@ -1393,10 +1397,6 @@
     },
     {
         "name": "Clash",
-        "value": 13
-    },
-    {
-        "name": "输入框",
         "value": 13
     }
 ]
