@@ -1,0 +1,1 @@
+export{default}from"./pt-BR-BrSjHTYN.js";
